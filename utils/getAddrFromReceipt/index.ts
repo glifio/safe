@@ -1,12 +1,12 @@
 import cbor from 'cbor'
 import address from '@glif/filecoin-address'
 
-const bytesToAddress = (payload, test = false) => {
+const bytesToAddress = (payload, test = false): string => {
   const addr = new address.Address(payload)
   return address.encode(test ? 't' : 'f', addr)
 }
 
-const getAddrFromReceipt = (base64Return) => {
+const getAddrFromReceipt = (base64Return: string) => {
   const [, cborBytes] = cbor.decode(Buffer.from(base64Return, 'base64'))
   return bytesToAddress(cborBytes)
 }

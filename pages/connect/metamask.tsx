@@ -1,13 +1,13 @@
-import React, { useCallback } from 'react'
-import { ConnectLedger as ConnectLedgerComponent } from '@glif/wallet-provider-react'
-import { Box, useChromeDesktopBrowser } from '@glif/react-components'
+import { useCallback } from 'react'
+import { Box, useDesktopBrowser } from '@glif/react-components'
+import { ConnectMM } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 import useReset from '../../utils/useReset'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
-export default function ConnectLedger() {
-  useChromeDesktopBrowser()
+export default function ConnectMetaMask() {
+  useDesktopBrowser()
   const router = useRouter()
   const resetState = useReset()
   const back = useCallback(() => {
@@ -18,7 +18,6 @@ export default function ConnectLedger() {
   const next = useCallback(() => {
     navigate(router, { pageUrl: PAGE.MSIG_CHOOSE_ACCOUNTS })
   }, [router])
-
   return (
     <Box
       display='flex'
@@ -27,7 +26,7 @@ export default function ConnectLedger() {
       alignContent='center'
       padding={[2, 3, 5]}
     >
-      <ConnectLedgerComponent back={back} next={next} />
+      <ConnectMM next={next} back={back} />
     </Box>
   )
 }

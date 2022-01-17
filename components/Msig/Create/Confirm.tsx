@@ -1,6 +1,8 @@
-import React, { SyntheticEvent, useState } from 'react'
+import React, { SyntheticEvent, useEffect, useState } from 'react'
 import { func, string } from 'prop-types'
 import { useRouter } from 'next/router'
+import confirmMessage from '@glif/filecoin-message-confirmer'
+import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import {
   Card,
   Box,
@@ -15,6 +17,7 @@ import {
 import { useMsig } from '../../../MsigProvider'
 import { PAGE } from '../../../constants'
 import { navigate } from '../../../utils/urlParams'
+import getAddrFromReceipt from '../../../utils/getAddrFromReceipt'
 
 const NextOption = ({
   text,
@@ -51,12 +54,44 @@ NextOption.propTypes = {
 }
 
 const Confirm = () => {
-  const [msigError, setMsigError] = useState('')
+  const [msigError, setMsigError] = useState(false)
+  const [confirming, setConfirming] = useState(false)
   const { setMsigActor, Address } = useMsig()
   const router = useRouter()
-  const msgCid = ''
 
-  if (msigError) {
+  useEffect(() => {
+    const confirm = async () => {
+      const confirmed = await confirmMessage(router.query.cid as string, {
+        apiAddress: process.env.LOTUS_NODE_JSONRPC
+      })
+
+      if (confirmed) {
+        const lCli = new LotusRPCEngine({
+          apiAddress: process.env.LOTUS_NODE_JSONRPC
+        })
+        const receipt = (await lCli.request(
+          'StateGetReceipt',
+          { '/': router.query.cid },
+          null
+        )) as { ExitCode: number; GasUsed: number; Return: string }
+
+        if (receipt.ExitCode === 0) {
+          const addr = getAddrFromReceipt(receipt.Return)
+          if (addr) setMsigActor(addr)
+          else setMsigError(true)
+        } else {
+          setMsigError(true)
+        }
+      }
+    }
+
+    if (!Address && !confirming && router.query.cid) {
+      setConfirming(true)
+      confirm()
+    }
+  }, [router.query.cid, Address, setMsigActor, confirming, setConfirming])
+
+  if (msigError || !router.query.cid) {
     return (
       <Box
         display='flex'
@@ -67,14 +102,14 @@ const Confirm = () => {
       >
         <Box display='flex' justifyContent='center' flexDirection='column'>
           <Box display='flex' justifyContent='center' alignItems='center'>
-            <Title ml={2}>
-              There was an error when creating your multisig.
-            </Title>
+            <Title ml={2}>There was an error when creating your Safe.</Title>
           </Box>
           <Box display='flex' justifyContent='center' alignItems='center'>
             <Text mr={2}>With CID: </Text>
-            <StyledATag href={`https://filfox.info/en/message/${msgCid}`}>
-              {msgCid}
+            <StyledATag
+              href={`https://filfox.info/en/message/${router.query.cid}`}
+            >
+              {router.query.cid}
             </StyledATag>
             <br />
           </Box>
@@ -99,7 +134,7 @@ const Confirm = () => {
           alignItems='center'
           justifyContent='center'
         >
-          <Title>Your multisig has been created.</Title>
+          <Title>Your Safe has been created.</Title>
           <Card
             maxWidth={13}
             width='100%'
@@ -115,7 +150,7 @@ const Confirm = () => {
             <Text mt={2}>{Address}</Text>
           </Card>
           <NextOption
-            text='Go to Multisig home'
+            text='Go to Safe home'
             onClick={() => {
               navigate(router, { pageUrl: PAGE.MSIG_HOME })
             }}
@@ -123,27 +158,27 @@ const Confirm = () => {
         </Box>
       ) : (
         <>
-          {pending.length > 0 && (
-            <Box display='flex' justifyContent='center' flexDirection='column'>
-              <Box display='flex' justifyContent='center' alignItems='center'>
-                <IconPending />
-                <Text ml={2}>
-                  We&apos;re waiting for your transaction to confirm.
-                </Text>
-              </Box>
-              <Box display='flex' justifyContent='center' alignItems='center'>
-                <Text mr={2}>With CID: </Text>
-                <StyledATag href={`https://filfox.info/en/message/${msgCid}`}>
-                  {msgCid}
-                </StyledATag>
-                <br />
-              </Box>
-              <Text>
-                This screen will automatically show you your new Multisig wallet
-                address once the transaction confirms.
+          <Box display='flex' justifyContent='center' flexDirection='column'>
+            <Box display='flex' justifyContent='center' alignItems='center'>
+              <IconPending />
+              <Text ml={2}>
+                We&apos;re waiting for your transaction to confirm.
               </Text>
             </Box>
-          )}
+            <Box display='flex' justifyContent='center' alignItems='center'>
+              <Text mr={2}>With CID: </Text>
+              <StyledATag
+                href={`https://filfox.info/en/message/${router.query.cid}`}
+              >
+                {router.query.cid}
+              </StyledATag>
+              <br />
+            </Box>
+            <Text>
+              This screen will automatically show you your new Safe address once
+              the transaction confirms.
+            </Text>
+          </Box>
         </>
       )}
     </Box>

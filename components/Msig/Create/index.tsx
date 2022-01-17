@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import dayjs from 'dayjs'
+import React, { useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
@@ -13,38 +12,39 @@ import {
   Text,
   Form,
   Card,
-  Input
+  Input,
+  ErrorCard
 } from '@glif/react-components'
 import {
   useWalletProvider,
   useWallet,
-  reportLedgerConfigError,
-  hasLedgerError
+  ConfirmationCard,
+  CustomizeFee
 } from '@glif/wallet-provider-react'
 
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
-import ErrorCard from '../../Wallet/Send/ErrorCard'
-import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import {
-  LEDGER,
-  emptyGasInfo,
-  EXEC,
-  EXEC_ACTOR,
-  PAGE
-} from '../../../constants'
-import CustomizeFee from '../../Wallet/Send/CustomizeFee'
-import reportError from '../../../utils/reportError'
+import { emptyGasInfo, EXEC_ACTOR, PAGE } from '../../../constants'
 import { navigate } from '../../../utils/urlParams'
 
-const isValidAmount = (value, balance, errorFromForms) => {
-  const valueFieldFilledOut = value && value.isGreaterThan(0)
+const isValidAmount = (
+  value: BigNumber,
+  balance: BigNumber,
+  errorFromForms: string
+) => {
+  const valueFieldFilledOut = value && value.isGreaterThanOrEqualTo(0)
   const enoughInTheBank = balance.isGreaterThanOrEqualTo(value)
   return valueFieldFilledOut && enoughInTheBank && !errorFromForms
 }
 
 const Create = () => {
-  const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
+  const {
+    getProvider,
+    resetLedgerState,
+    walletError,
+    loginOption,
+    resetWalletError
+  } = useWalletProvider()
   const wallet = useWallet()
   const wasm = useWasm()
   const [step, setStep] = useState(1)
@@ -63,6 +63,12 @@ const Create = () => {
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
   const [frozen, setFrozen] = useState(false)
   const router = useRouter()
+
+  const errorMsg = useMemo(() => {
+    if (walletError()) return walletError()
+    if (uncaughtError) return uncaughtError
+    return ''
+  }, [uncaughtError, walletError])
 
   const onClose = () => router.back()
 
@@ -101,13 +107,12 @@ const Create = () => {
     }
   }
 
-  const sendMsg = async () => {
+  const sendMsg = async (): Promise<string> => {
     setFetchingTxDetails(true)
-    const provider = await connectLedger()
-
+    const provider = await getProvider()
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
-      const { message, params } = constructMsg(nonce, startEpoch)
+      const { message } = constructMsg(nonce, startEpoch)
       setFetchingTxDetails(false)
       const messageObj = message.toLotusType()
       const signedMessage = await provider.wallet.sign(
@@ -119,25 +124,7 @@ const Create = () => {
       const validMsg = await provider.simulateMessage(message.toLotusType())
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        // @ts-expect-error
-        const messageForTxHistory: LotusMessage & {
-          cid: string
-          timestamp: number
-          maxFee: string
-          paidFee: string
-          value: string
-          method: string
-          params: string | object
-        } = { ...messageObj }
-        messageForTxHistory.cid = msgCid['/']
-        messageForTxHistory.timestamp = dayjs().unix()
-        messageForTxHistory.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
-        // dont know how much was actually paid in this message yet, so we mark it as 0
-        messageForTxHistory.paidFee = '0'
-        // reformat the params and method for tx table
-        messageForTxHistory.params = params
-        messageForTxHistory.method = EXEC
-        return messageForTxHistory
+        return msgCid['/']
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -168,11 +155,14 @@ const Create = () => {
     } else if (step === 5) {
       setAttemptingTx(true)
       try {
-        const msg = await sendMsg()
+        const cid = await sendMsg()
         setAttemptingTx(false)
-        if (msg) {
+        if (cid) {
           setPageChanging(true)
-          navigate(router, { pageUrl: PAGE.MSIG_CREATE_CONFIRM })
+          navigate(router, {
+            pageUrl: PAGE.MSIG_CREATE_CONFIRM,
+            newQueryParams: { cid }
+          })
         }
       } catch (err) {
         if (err.message.includes('19')) {
@@ -194,7 +184,7 @@ const Create = () => {
             'Please make sure expert mode is enabled on your Ledger Filecoin app.'
           )
         } else {
-          reportError(20, false, err.message, err.stack)
+          console.log('err message', err.message)
           setUncaughtError(err.message || err)
         }
         setStep(2)
@@ -229,7 +219,7 @@ const Create = () => {
     return false
   }
 
-  const onSignerAddressChange = (val, idx) => {
+  const onSignerAddressChange = (val: string, idx: number) => {
     return setSignerAddresses((addresses) => {
       const addressesCopy = [...addresses]
       if (addressesCopy.includes(val)) {
@@ -245,7 +235,7 @@ const Create = () => {
     })
   }
 
-  const onSignerAddressRm = (idx) => {
+  const onSignerAddressRm = (idx: number) => {
     setSignerAddressError('')
     return setSignerAddresses((addresses) => {
       const addressesCopy = [...addresses]
@@ -279,17 +269,14 @@ const Create = () => {
           flexGrow='1'
         >
           <Box>
-            {hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
+            {!!errorMsg && (
               <ErrorCard
-                error={reportLedgerConfigError({
-                  ...ledger,
-                  otherError: uncaughtError
-                })}
+                error={errorMsg}
                 reset={() => {
                   setAttemptingTx(false)
                   setUncaughtError('')
                   setGasError('')
-                  resetLedgerState()
+                  resetWalletError()
                   setStep(2)
                 }}
               />
@@ -297,32 +284,31 @@ const Create = () => {
             {attemptingTx && (
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
-                walletType={LEDGER}
+                walletType={loginOption}
                 currentStep={5}
                 totalSteps={5}
                 msig
               />
             )}
-            {!attemptingTx &&
-              !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
-                <Card
-                  display='flex'
-                  flexDirection='column'
-                  justifyContent='space-between'
-                  border='none'
-                  width='auto'
-                  my={2}
-                  backgroundColor='blue.muted700'
-                >
-                  <StepHeader
-                    title='Create Multisig Wallet'
-                    currentStep={step}
-                    totalSteps={5}
-                    glyphAcronym='Cr'
-                  />
-                  <CreateMultisigHeaderText step={step} />
-                </Card>
-              )}
+            {!attemptingTx && !errorMsg && (
+              <Card
+                display='flex'
+                flexDirection='column'
+                justifyContent='space-between'
+                border='none'
+                width='auto'
+                my={2}
+                backgroundColor='blue.muted700'
+              >
+                <StepHeader
+                  title='Create Safe'
+                  currentStep={step}
+                  totalSteps={5}
+                  glyphAcronym='Cs'
+                />
+                <CreateMultisigHeaderText step={step} />
+              </Card>
+            )}
             <Box boxShadow={2} borderRadius={4}>
               <>
                 <CardHeader
@@ -418,6 +404,7 @@ const Create = () => {
                       error={valueError}
                       setError={setValueError}
                       disabled={step > 2}
+                      allowZeroValue
                     />
                   </Box>
                 )}

@@ -2,7 +2,6 @@ import React, { useCallback, useMemo, useState } from 'react'
 import {
   AppTile,
   Box,
-  IconCaution,
   Footer,
   PhishingBanner,
   LandingPageContainer,
@@ -20,9 +19,7 @@ import {
   ResponsiveWalletTile,
   ConnectContentContainer,
   ConnectBtn,
-  BurnerWallet,
-  TextBox,
-  Caution
+  TextBox
 } from './Helpers'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
@@ -44,17 +41,17 @@ export default function Landing() {
       <LandingPageContainer>
         <LandingPageContentContainer phishingBannerClosed={closed}>
           <PhishingBanner
-            href='https://wallet.glif.io'
+            href='https://safe.glif.io'
             closed={closed}
             setClosed={() => setClosed(true)}
           />
           <ResponsiveWalletTile phishingBannerClosed={closed}>
             <AppTile
-              title='Sender'
-              oldTileName='Wallet'
-              description='A lightweight interface for sending Filecoin.'
-              imgSrc='/bg-sender.jpg'
-              imgSrcHover='/bg-sender-hover.jpg'
+              title='Safe'
+              oldTileName='Vault'
+              description='A Filecoin multisig wallet.'
+              imgSrc='/bg-safe.jpg'
+              imgSrcHover='/bg-safe-hover.jpg'
               small={false}
               large
             />
@@ -101,39 +98,18 @@ export default function Landing() {
                     }
                   `}
                 >
-                  <ConnectBtn large>MetaMask</ConnectBtn>
-                  <ConnectBtn large>Brave</ConnectBtn>
+                  <ConnectBtn
+                    large
+                    onClick={() => connect(PAGE.CONNECT_METAMASK)}
+                  >
+                    MetaMask
+                  </ConnectBtn>
                   <ConnectBtn
                     large
                     onClick={() => connect(PAGE.CONNECT_LEDGER)}
                   >
                     Ledger Device
                   </ConnectBtn>
-                  <ConnectBtn large>Glif CLI</ConnectBtn>
-                  <Caution>
-                    <IconCaution />
-                    <P>
-                      Burner Wallets (use with caution, <a>read more</a>)
-                    </P>
-                  </Caution>
-                  <BurnerWallet
-                    large
-                    onClick={() => connect(PAGE.CONNECT_BURNER_CREATE_SEED)}
-                  >
-                    Generate Seed Phrase
-                  </BurnerWallet>
-                  <BurnerWallet
-                    large
-                    onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_SEED)}
-                  >
-                    Import Seed Phrase
-                  </BurnerWallet>
-                  <BurnerWallet
-                    large
-                    onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_PK)}
-                  >
-                    Import Private Key
-                  </BurnerWallet>
                 </Box>
                 <Box mt={6}>
                   <P

@@ -1,7 +1,6 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 
 /* WALLET TYPES */
-export const LEDGER = 'LEDGER'
 export const HD_WALLET = 'HD_WALLET'
 export const SINGLE_KEY = 'SINGLE_KEY'
 
@@ -9,6 +8,9 @@ export const SINGLE_KEY = 'SINGLE_KEY'
 export const IMPORT_MNEMONIC = 'IMPORT_MNEMONIC'
 export const CREATE_MNEMONIC = 'CREATE_MNEMONIC'
 export const IMPORT_SINGLE_KEY = 'IMPORT_SINGLE_KEY'
+
+export const LEDGER = 'LEDGER'
+export const METAMASK = 'METAMASK'
 
 /* API ENDPOINTS */
 export const FILSCAN = 'https://api.filscan.io:8700/v0/filscan'
@@ -73,26 +75,21 @@ export const SCREEN_MAX_WIDTH = 1440
 /* PAGES */
 /* eslint-disable no-unused-vars */
 export enum PAGE {
-  WALLET_HOME = '/home',
-  WALLET_SEND = '/send',
-  WALLET_CHOOSE_ACCOUNTS = '/home/accounts',
   SPEED_UP = '/speed-up',
-  MSIG_LANDING = '/vault',
-  MSIG_HOME = '/vault/home',
-  MSIG_HISTORY = '/vault/history',
-  MSIG_ADMIN = '/vault/admin',
-  MSIG_WITHDRAW = '/vault/withdraw',
-  MSIG_CHANGE_SIGNER = '/vault/change-signer',
-  MSIG_REMOVE_SIGNER = '/vault/remove-signer',
-  MSIG_ADD_SIGNER = '/vault/add-signer',
-  MSIG_CREATE_CONFIRM = '/vault/create/confirm',
-  MSIG_CREATE = '/vault/create',
-  MSIG_CHOOSE = '/vault/choose',
-  MSIG_CHOOSE_ACCOUNTS = '/vault/accounts',
+  MSIG_HOME = '/home',
+  MSIG_HISTORY = '/history',
+  MSIG_PROPOSALS = '/proposals',
+  MSIG_ADMIN = '/admin',
+  MSIG_WITHDRAW = '/withdraw',
+  MSIG_CHANGE_SIGNER = '/change-signer',
+  MSIG_REMOVE_SIGNER = '/remove-signer',
+  MSIG_ADD_SIGNER = '/add-signer',
+  MSIG_CREATE_CONFIRM = '/create/confirm',
+  MSIG_CREATE = '/create',
+  MSIG_CHOOSE = '/choose',
+  MSIG_CHOOSE_ACCOUNTS = '/accounts',
   CONNECT_LEDGER = '/connect/ledger',
-  CONNECT_BURNER_IMPORT_SEED = '/connect/burner/import-seed',
-  CONNECT_BURNER_IMPORT_PK = '/connect/burner/import-private-key',
-  CONNECT_BURNER_CREATE_SEED = '/connect/burner/create-seed',
+  CONNECT_METAMASK = '/connect/metamask',
   LANDING = '/'
 }
 

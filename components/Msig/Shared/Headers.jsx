@@ -206,10 +206,10 @@ export const CreateMultisigHeaderText = ({ step }) => {
 
   switch (step) {
     case 1:
-      text = 'First, please select one or more owner(s) of the multisig wallet.'
+      text = 'First, please select one or more owner(s) of the Safe.'
       break
     case 2:
-      text = 'Next, please choose how much FIL to send to the multisig.'
+      text = 'Next, please choose how much FIL to send to the Safe.'
       break
     case 3:
       text = 'Next, please choose a vesting duration (in # of blocks).'
@@ -227,7 +227,7 @@ export const CreateMultisigHeaderText = ({ step }) => {
   return (
     <>
       <Text textAlign='center'>
-        Your Ledger Address pays the transaction fee.
+        Your Signer Address pays the transaction fee.
       </Text>
       <Text textAlign='center'>{text}</Text>
     </>
