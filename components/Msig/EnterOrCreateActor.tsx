@@ -39,8 +39,7 @@ const EnterActorAddress = () => {
   const { setMsigActor, errors: msigActorErrors, ActorCode } = useMsig()
   const router = useRouter()
   const [err, setErr] = useState('')
-  const input = useRef('')
-
+  const input = useRef<HTMLInputElement>(null)
   useEffect(() => {
     if (!err && msigActorErrors.actorNotFound) {
       setErr(ACTOR_NOT_FOUND_ERR)
@@ -106,7 +105,8 @@ const EnterActorAddress = () => {
             <Text mr={3}>Don&apos;t have a multisig actor ID?</Text>
             <StyledLink
               href={generateRouteWithRequiredUrlParams({
-                pageUrl: PAGE.MSIG_CREATE
+                pageUrl: PAGE.MSIG_CREATE,
+                existingQParams: {}
               })}
               name='Create one'
               target='_self'

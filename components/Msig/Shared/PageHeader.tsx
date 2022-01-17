@@ -20,7 +20,7 @@ const PageHeader = ({ msigAddress }) => {
             transform: rotate(-90deg);
           `}
         />
-        <Title ml={2}>Vault</Title>
+        <Title ml={2}>Safe</Title>
       </Box>
       <Box
         display='flex'

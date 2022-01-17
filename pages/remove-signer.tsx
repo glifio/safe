@@ -1,13 +1,14 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
-import { AddSigner } from '../../components/Msig'
-import { MsigPageWrapper } from '../../components/Msig/Shared'
-import { navigate } from '../../utils/urlParams'
-import { PAGE } from '../../constants'
+import RemoveSigner from '../components/Msig/AddRmSigners/RemoveSigner'
+import { MsigPageWrapper } from '../components/Msig/Shared'
+import { navigate } from '../utils/urlParams'
+import { PAGE } from '../constants'
 
-const Add = () => {
+const Remove = () => {
   const router = useRouter()
+  const address = router.query?.address || ''
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
     [router]
@@ -15,10 +16,10 @@ const Add = () => {
   return (
     <RequireWallet gatekeep={gatekeep}>
       <MsigPageWrapper hideNav>
-        <AddSigner />
+        <RemoveSigner signerAddress={address} />
       </MsigPageWrapper>
     </RequireWallet>
   )
 }
 
-export default Add
+export default Remove

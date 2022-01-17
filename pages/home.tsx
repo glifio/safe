@@ -2,9 +2,9 @@ import { useCallback } from 'react'
 import { RequireWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
-import MsigHome from '../../components/Msig/Home'
-import { navigate } from '../../utils/urlParams'
-import { PAGE } from '../../constants'
+import MsigHome from '../components/Msig/Home'
+import { navigate } from '../utils/urlParams'
+import { PAGE } from '../constants'
 
 const Home = () => {
   const router = useRouter()

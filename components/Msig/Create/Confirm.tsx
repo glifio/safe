@@ -150,7 +150,7 @@ const Confirm = () => {
             <Text mt={2}>{Address}</Text>
           </Card>
           <NextOption
-            text='Go to Safe home'
+            text='Go to Safe dashboard'
             onClick={() => {
               navigate(router, { pageUrl: PAGE.MSIG_HOME })
             }}
