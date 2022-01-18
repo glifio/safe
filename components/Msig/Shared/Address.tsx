@@ -17,7 +17,16 @@ const Address = ({
   label,
   glyphAcronym,
   onRemoveSigner,
-  onChangeSigner
+  onChangeSigner,
+  ...props
+}: {
+  widthOverride?: string
+  address: string
+  label: string
+  glyphAcronym: string
+  onRemoveSigner?: () => void
+  onChangeSigner?: () => void
+  [x: string]: any
 }) => {
   return (
     <Box
@@ -34,6 +43,7 @@ const Address = ({
       maxWidth={widthOverride ? 'none' : 12}
       width={widthOverride || 'auto'}
       minWidth={11}
+      {...props}
     >
       {glyphAcronym ? (
         <Glyph

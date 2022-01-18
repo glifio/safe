@@ -2,10 +2,10 @@ import React, { useCallback } from 'react'
 import { RequireWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
-import { MsigWithdraw } from '../../components/Msig'
-import { MsigPageWrapper } from '../../components/Msig/Shared'
-import { navigate } from '../../utils/urlParams'
-import { PAGE } from '../../constants'
+import MsigWithdraw from '../components/Msig/Withdraw'
+import { MsigPageWrapper } from '../components/Msig/Shared'
+import { navigate } from '../utils/urlParams'
+import { PAGE } from '../constants'
 
 const Withdraw = () => {
   const router = useRouter()

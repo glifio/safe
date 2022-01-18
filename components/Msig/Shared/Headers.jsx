@@ -206,10 +206,10 @@ export const CreateMultisigHeaderText = ({ step }) => {
 
   switch (step) {
     case 1:
-      text = 'First, please select one or more owner(s) of the Safe.'
+      text = 'First, please add one or more owner(s) to your Safe.'
       break
     case 2:
-      text = 'Next, please choose how much FIL to send to the Safe.'
+      text = 'Next, please choose how much FIL to send to your Safe.'
       break
     case 3:
       text = 'Next, please choose a vesting duration (in # of blocks).'

@@ -1,12 +1,18 @@
 import { useCallback } from 'react'
-import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import { NavLink, Box, Title, IconGlif } from '@glif/react-components'
 import { Address } from '../Shared'
 import { PAGE } from '../../../constants'
 import { generateRouteWithRequiredUrlParams } from '../../../utils/urlParams'
+import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-const PageHeader = ({ msigAddress }) => {
+const PageHeader = ({
+  msigAddress,
+  walletAddress
+}: {
+  msigAddress: string
+  walletAddress: string
+}) => {
   const router = useRouter()
   const getRoute = useCallback(generateRouteWithRequiredUrlParams, [
     router.query
@@ -29,7 +35,12 @@ const PageHeader = ({ msigAddress }) => {
         justifyContent='space-between'
         mb={3}
       >
-        <Box display='flex' alignItems='center' flexDirection='row' mx='auto'>
+        <Box
+          display='flex'
+          alignItems='flex-start'
+          flexDirection='row'
+          mx='auto'
+        >
           <NavLink
             href={getRoute({
               existingQParams: router.query as Record<string, string>,
@@ -53,6 +64,16 @@ const PageHeader = ({ msigAddress }) => {
           <NavLink
             href={getRoute({
               existingQParams: router.query as Record<string, string>,
+              pageUrl: PAGE.MSIG_PROPOSALS
+            })}
+            isActive={router.pathname === PAGE.MSIG_PROPOSALS}
+            mr={3}
+          >
+            Proposals
+          </NavLink>
+          <NavLink
+            href={getRoute({
+              existingQParams: router.query as Record<string, string>,
               pageUrl: PAGE.MSIG_ADMIN
             })}
             isActive={router.pathname === PAGE.MSIG_ADMIN}
@@ -60,11 +81,18 @@ const PageHeader = ({ msigAddress }) => {
           >
             Admin
           </NavLink>
-          <Address
-            label='Multisig Address'
-            address={msigAddress}
-            glyphAcronym='Ms'
-          />
+          <Box>
+            <Address
+              label='Multisig Address'
+              address={msigAddress}
+              glyphAcronym='Ms'
+            />
+            <Address
+              label='Wallet Address'
+              address={walletAddress}
+              glyphAcronym='Wa'
+            />
+          </Box>
         </Box>
       </Box>
     </Box>
@@ -72,7 +100,8 @@ const PageHeader = ({ msigAddress }) => {
 }
 
 PageHeader.propTypes = {
-  msigAddress: PropTypes.string.isRequired
+  msigAddress: ADDRESS_PROPTYPE,
+  walletAddress: ADDRESS_PROPTYPE
 }
 
 export default PageHeader

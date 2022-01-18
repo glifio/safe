@@ -6,6 +6,7 @@ import {
   Tooltip,
   BaseButton as ButtonLogout
 } from '@glif/react-components'
+import { useWallet } from '@glif/wallet-provider-react'
 
 import { useMsig } from '../../../MsigProvider'
 import { resetWallet } from '../../../utils/urlParams'
@@ -20,6 +21,7 @@ const MsigPageWrapper = ({
   hideNav: boolean
 }) => {
   const msig = useMsig()
+  const wallet = useWallet()
 
   return (
     <Box
@@ -45,7 +47,10 @@ const MsigPageWrapper = ({
             {msig.loading && <LoadingScreen width='100%' />}
             {!msig.loading && (
               <Box display='flex' flexDirection='column' width='100%'>
-                <PageHeader msigAddress={msig.Address} />
+                <PageHeader
+                  msigAddress={msig.Address}
+                  walletAddress={wallet.address}
+                />
                 {cloneElement(children, props)}
               </Box>
             )}

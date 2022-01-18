@@ -1,25 +1,13 @@
-# Glif Wallet
+# Glif Safe
 
 <!-- Glif art/branding -->
 
-The Glif Wallet is a Filecoin web wallet built with Next.js that allows you to:
-
-- **send and receive** Filecoin with your Ledger device
-- **create** test accounts to send small amounts of FIL
-- **import** accounts with seed phrases and private keys (SECURITY NOTICE: this is unsecure and is for testing and sending small amounts. If you need to recover an account, do it offline.)
-
-The Glif Vault is a (currently limited functionality) Filecoin web multisig wallet that allows users to:
+The Glif Safe is a Filecoin multisig built with Next.js that allows you to:
 
 - **view** available and vesting balances
 - **withdraw** available balances from a multisig to another Filecoin address
 - **change owners** of a multisig wallet
 - **remove a PL signer** of a multisig wallet
-
-The Vault currently only supports multisigs that are 1:1 (1 signer, 1 required signature threshold). It can only be used with a Ledger device.
-
-### Support and audits
-
-This project was funded by a Filecoin Ecosystem Grant from Protocol Labs. The wallet functionality has been audited by a 3rd party security auditor. **The multisig (Vault) functionality has not been audited yet.**
 
 ### Install
 
@@ -57,12 +45,15 @@ In order to develop packages locally and see the changes live in this local wall
 Package linking is a two-step process.
 
 First, from your local package folder, run:
+
 ```
 npm link
 ```
 
 Next, from this main wallet repository, run:
+
 ```
 npm link @glif/<package-name>
 ```
+
 for example, use `npm link @glif/react-components` to symlink the `react-components` package to your local version. See the npm link docs for details.

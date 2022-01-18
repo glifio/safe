@@ -1,5 +1,4 @@
-import React, { useCallback, useState } from 'react'
-import dayjs from 'dayjs'
+import React, { useCallback, useMemo, useState } from 'react'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
@@ -12,23 +11,21 @@ import {
   Title,
   Form,
   Card,
-  Input
+  Input,
+  ErrorCard
 } from '@glif/react-components'
 import {
   useWalletProvider,
   useWallet,
-  reportLedgerConfigError,
-  hasLedgerError
+  ConfirmationCard,
+  CustomizeFee
 } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import { useMsig } from '../../../MsigProvider'
 import { CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
-import ErrorCard from '../../Wallet/Send/ErrorCard'
-import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import CustomizeFee from '../../Wallet/Send/CustomizeFee'
-import { LEDGER, PROPOSE, emptyGasInfo, PAGE } from '../../../constants'
+import { emptyGasInfo, PAGE } from '../../../constants'
 import reportError from '../../../utils/reportError'
 import { navigate } from '../../../utils/urlParams'
 
@@ -39,7 +36,8 @@ const isValidAmount = (value, balance, errorFromForms) => {
 }
 
 const Withdrawing = () => {
-  const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
+  const { getProvider, walletError, resetWalletError, loginOption } =
+    useWalletProvider()
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
@@ -66,6 +64,12 @@ const Withdrawing = () => {
     navigate(router, { pageUrl: PAGE.MSIG_HISTORY })
   }, [router])
 
+  const errorMsg = useMemo(() => {
+    if (walletError()) return walletError()
+    if (uncaughtError) return uncaughtError
+    return ''
+  }, [uncaughtError, walletError])
+
   const constructMsg = (nonce = 0) => {
     const params = {
       to: toAddress,
@@ -91,13 +95,13 @@ const Withdrawing = () => {
     }
   }
 
-  const sendMsg = async () => {
+  const sendMsg = async (): Promise<string> => {
     setFetchingTxDetails(true)
-    const provider = await connectLedger()
+    const provider = await getProvider()
 
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
-      const { message, params } = constructMsg(nonce)
+      const { message } = constructMsg(nonce)
 
       setFetchingTxDetails(false)
 
@@ -111,29 +115,7 @@ const Withdrawing = () => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        // @ts-expect-error
-        const messageForTxHistory: LotusMessage & {
-          cid: string
-          timestamp: number
-          maxFee: string
-          paidFee: string
-          value: string
-          method: string
-          params: string | object
-        } = { ...messageObj }
-        messageForTxHistory.cid = msgCid['/']
-        messageForTxHistory.timestamp = dayjs().unix()
-        messageForTxHistory.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
-        // dont know how much was actually paid in this message yet, so we mark it as 0
-        messageForTxHistory.paidFee = '0'
-        messageForTxHistory.value = new FilecoinNumber(
-          messageObj.Value,
-          'attofil'
-        ).toFil()
-        // reformat the params and method for tx table
-        messageForTxHistory.params = params
-        messageForTxHistory.method = PROPOSE
-        return messageForTxHistory
+        return msgCid?.['/']
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -153,9 +135,9 @@ const Withdrawing = () => {
     } else if (step === 4) {
       setAttemptingTx(true)
       try {
-        const msg = await sendMsg()
+        const msgCid = await sendMsg()
         setAttemptingTx(false)
-        if (msg) {
+        if (msgCid) {
           setValue(new FilecoinNumber('0', 'fil'))
           onComplete()
         }
@@ -221,7 +203,7 @@ const Withdrawing = () => {
             setAttemptingTx(false)
             setUncaughtError('')
             setGasError('')
-            resetLedgerState()
+            resetWalletError()
             onClose()
           }}
         />
@@ -235,17 +217,14 @@ const Withdrawing = () => {
             justifyContent='flex-start'
           >
             <Box>
-              {hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
+              {!!errorMsg && (
                 <ErrorCard
-                  error={reportLedgerConfigError({
-                    ...ledger,
-                    otherError: uncaughtError
-                  })}
+                  error={errorMsg}
                   reset={() => {
                     setAttemptingTx(false)
                     setUncaughtError('')
                     setGasError('')
-                    resetLedgerState()
+                    resetWalletError()
                     setStep(2)
                   }}
                 />
@@ -253,36 +232,35 @@ const Withdrawing = () => {
               {attemptingTx && (
                 <ConfirmationCard
                   loading={fetchingTxDetails || mPoolPushing}
-                  walletType={LEDGER}
+                  walletType={loginOption}
                   currentStep={5}
                   totalSteps={5}
                   msig
                 />
               )}
-              {!attemptingTx &&
-                !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
-                  <>
-                    <Card
-                      display='flex'
-                      flexDirection='column'
-                      justifyContent='space-between'
-                      border='none'
-                      width='auto'
-                      my={2}
-                      backgroundColor='blue.muted700'
-                    >
-                      <StepHeader
-                        title='Withdrawing Filecoin'
-                        currentStep={step}
-                        totalSteps={5}
-                        glyphAcronym='Wd'
-                      />
-                      <Box mt={3} mb={4}>
-                        <WithdrawHeaderText step={step} />
-                      </Box>
-                    </Card>
-                  </>
-                )}
+              {!attemptingTx && !errorMsg && (
+                <>
+                  <Card
+                    display='flex'
+                    flexDirection='column'
+                    justifyContent='space-between'
+                    border='none'
+                    width='auto'
+                    my={2}
+                    backgroundColor='blue.muted700'
+                  >
+                    <StepHeader
+                      title='Withdrawing Filecoin'
+                      currentStep={step}
+                      totalSteps={5}
+                      glyphAcronym='Wd'
+                    />
+                    <Box mt={3} mb={4}>
+                      <WithdrawHeaderText step={step} />
+                    </Box>
+                  </Card>
+                </>
+              )}
               <Box boxShadow={2} borderRadius={4}>
                 <CardHeader
                   msig
@@ -393,7 +371,7 @@ const Withdrawing = () => {
                   setAttemptingTx(false)
                   setUncaughtError('')
                   setGasError('')
-                  resetLedgerState()
+                  resetWalletError()
                   if (step === 1) {
                     onClose()
                   } else {

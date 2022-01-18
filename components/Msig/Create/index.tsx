@@ -13,7 +13,8 @@ import {
   Form,
   Card,
   Input,
-  ErrorCard
+  ErrorCard,
+  Label
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -37,6 +38,15 @@ const isValidAmount = (
   return valueFieldFilledOut && enoughInTheBank && !errorFromForms
 }
 
+const isValidNumApprovals = (
+  signers: number,
+  numApprovals: number
+): boolean => {
+  if (numApprovals < 0) return false
+  if (numApprovals > signers) return false
+  return true
+}
+
 const Create = () => {
   const {
     getProvider,
@@ -51,6 +61,8 @@ const Create = () => {
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [signerAddresses, setSignerAddresses] = useState([wallet.address])
   const [signerAddressError, setSignerAddressError] = useState('')
+  const [numApprovalsThreshold, setNumApprovalsThreshold] = useState(1)
+  const [numApprovalsError, setNumApprovalsError] = useState('')
   const [value, setValue] = useState(new FilecoinNumber('0', 'fil'))
   const [valueError, setValueError] = useState('')
   const [vest, setVest] = useState(0)
@@ -99,7 +111,7 @@ const Create = () => {
     return {
       message,
       params: {
-        num_approvals_threshold: 1,
+        num_approvals_threshold: numApprovalsThreshold,
         signers: [...signerAddresses],
         start_epoch: startEpoch.toString(),
         unlock_duration: vest.toString()
@@ -133,10 +145,16 @@ const Create = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    if (step === 1 && !signerAddresses.every(validateAddressString)) {
-      setSignerAddressError('Invalid to address')
-    } else if (step === 1 && signerAddresses.every(validateAddressString)) {
-      setStep(2)
+    if (step === 1) {
+      if (!signerAddresses.every(validateAddressString)) {
+        setSignerAddressError('Invalid to address')
+      } else if (
+        !isValidNumApprovals(signerAddresses.length, numApprovalsThreshold)
+      ) {
+        setNumApprovalsError('Number of approvals exceeds number of signers')
+      } else {
+        setStep(2)
+      }
     } else if (step === 2 && !valueError) {
       setStep(3)
     } else if (step === 3) {
@@ -361,8 +379,8 @@ const Create = () => {
                             if (signerAddressError) setSignerAddressError('')
                           }}
                         />
-                        <Box display='flex' alignItems='center' width={6}>
-                          {i > 0 && step === 1 && (
+                        {i > 0 && step === 1 && (
+                          <Box display='flex' alignItems='center' width={6}>
                             <ButtonClose
                               onClick={() => onSignerAddressRm(i)}
                               disabled={disabled}
@@ -370,11 +388,34 @@ const Create = () => {
                               borderColor='card.error.background'
                               ml={2}
                             />
-                          )}
-                        </Box>
+                          </Box>
+                        )}
                       </Box>
                     )
                   })}
+                  <Box>
+                    <Input.Number
+                      name='numApprovalsThreshold'
+                      label='Required approvals'
+                      value={numApprovalsThreshold}
+                      onChange={(e) => {
+                        setNumApprovalsError('')
+                        setNumApprovalsThreshold(e.target.value)
+                      }}
+                      disabled={step > 1}
+                      error={numApprovalsError}
+                    />
+                    {numApprovalsError && (
+                      <Label
+                        pt={2}
+                        color='status.fail.background'
+                        m={0}
+                        textAlign='right'
+                      >
+                        {numApprovalsError}
+                      </Label>
+                    )}
+                  </Box>
                   {step === 1 && (
                     <Button
                       title='Add Another Signer'
