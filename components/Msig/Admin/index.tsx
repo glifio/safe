@@ -50,7 +50,7 @@ export default function Owners() {
       >
         <Box width='100%'>
           <Box display='flex' flexWrap='wrap' my={6}>
-            <Title display='inline-flex'>
+            <Title display='inline-flex' alignItems='center'>
               <Glyph
                 acronym={NumApprovalsThreshold.toString()}
                 size={5}
@@ -65,7 +65,7 @@ export default function Owners() {
             <Title>Signers</Title>
             <Tooltip content='These are the Filecoin addresses that can approve and reject proposals from your Multisig wallet.' />
           </Box>
-          <Box position='relative' display='flex' flexWrap='wrap' my={3}>
+          <Box position='relative' display='flex' flexWrap='wrap' mt={3}>
             <Address
               address={wallet.address}
               glyphAcronym='1'

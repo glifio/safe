@@ -84,13 +84,16 @@ const Create = () => {
 
   const onClose = () => router.back()
 
-  const constructMsg = (nonce = 0, epoch = startEpoch) => {
+  const constructMsg = (
+    nonce = 0,
+    epoch = startEpoch
+  ): { message: Message } => {
     // @ts-expect-error
     const tx = wasm.createMultisig(
       wallet.address,
       [...signerAddresses],
       value.toAttoFil(),
-      1,
+      numApprovalsThreshold,
       nonce,
       vest.toString(),
       epoch.toString()
@@ -109,13 +112,7 @@ const Create = () => {
     })
 
     return {
-      message,
-      params: {
-        num_approvals_threshold: numApprovalsThreshold,
-        signers: [...signerAddresses],
-        start_epoch: startEpoch.toString(),
-        unlock_duration: vest.toString()
-      }
+      message
     }
   }
 
