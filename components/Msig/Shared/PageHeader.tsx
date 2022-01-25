@@ -66,7 +66,10 @@ const PageHeader = ({
               existingQParams: router.query as Record<string, string>,
               pageUrl: PAGE.MSIG_PROPOSALS
             })}
-            isActive={router.pathname === PAGE.MSIG_PROPOSALS}
+            isActive={
+              router.pathname === PAGE.MSIG_PROPOSALS ||
+              router.pathname.includes(PAGE.MSIG_PROPOSAL)
+            }
             mr={3}
           >
             Proposals

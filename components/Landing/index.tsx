@@ -39,12 +39,12 @@ export default function Landing() {
   return (
     <>
       <LandingPageContainer>
+        <PhishingBanner
+          href='https://safe.glif.io'
+          closed={closed}
+          setClosed={() => setClosed(true)}
+        />
         <LandingPageContentContainer phishingBannerClosed={closed}>
-          <PhishingBanner
-            href='https://safe.glif.io'
-            closed={closed}
-            setClosed={() => setClosed(true)}
-          />
           <ResponsiveWalletTile phishingBannerClosed={closed}>
             <AppTile
               title='Safe'
