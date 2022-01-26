@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
-import ApproveReject from '../components/Msig/ApproveCancel'
+import ApproveCancel from '../components/Msig/ApproveCancel'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
-const Approve = () => {
+const Cancel = () => {
   const router = useRouter()
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
@@ -14,9 +14,9 @@ const Approve = () => {
 
   return (
     <RequireWallet gatekeep={gatekeep}>
-      <ApproveReject />
+      <ApproveCancel />
     </RequireWallet>
   )
 }
 
-export default Approve
+export default Cancel

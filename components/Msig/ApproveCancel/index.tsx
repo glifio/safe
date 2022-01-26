@@ -27,7 +27,7 @@ import {
 } from '@glif/wallet-provider-react'
 
 import { useMsig } from '../../../MsigProvider'
-import { CardHeader, WithdrawHeaderText } from '../Shared'
+import { CardHeader, ApproveCancelHeaderText } from '../Shared'
 import { emptyGasInfo, PAGE } from '../../../constants'
 import { navigate } from '../../../utils/urlParams'
 import { useWasm } from '../../../lib/WasmLoader'
@@ -90,10 +90,7 @@ export default function ApproveReject() {
   const constructMsg = (nonce = 0) => {
     const params = {
       TxnID: proposal.id,
-      ProposalHashData: Buffer.from(
-        proposal.proposalHash as string,
-        'base64'
-      ).toString('base64')
+      ProposalHashData: proposal.proposalHash
     }
 
     const serializedParams = Buffer.from(serializeParams(params), 'hex')
@@ -252,13 +249,17 @@ export default function ApproveReject() {
                     backgroundColor='blue.muted700'
                   >
                     <StepHeader
-                      title='Approving Safe Proposal'
+                      title={
+                        method === 3
+                          ? 'Approving Safe Proposal'
+                          : 'Canceling Safe Proposal'
+                      }
                       currentStep={attemptingTx ? 2 : 1}
                       totalSteps={2}
                       glyphAcronym='Ap'
                     />
                     <Box mt={3} mb={4}>
-                      <WithdrawHeaderText step={attemptingTx ? 2 : 1} />
+                      <ApproveCancelHeaderText step={attemptingTx ? 2 : 1} />
                     </Box>
                   </Card>
                 </>
@@ -391,7 +392,7 @@ export default function ApproveReject() {
               />
               <Button
                 variant='primary'
-                title='Approve'
+                title={method === 3 ? 'Approve' : 'Cancel'}
                 disabled={isSubmitBtnDisabled}
                 type='submit'
               />
