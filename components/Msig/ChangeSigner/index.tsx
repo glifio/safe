@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import { BigNumber } from '@glif/filecoin-number'
-import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import {
@@ -14,13 +13,15 @@ import {
   CopyText,
   Warning,
   StepHeader,
-  Input
+  Input,
+  useSubmittedMessages,
+  ErrorCard
 } from '@glif/react-components'
 import {
   useWalletProvider,
   useWallet,
-  reportLedgerConfigError,
-  hasLedgerError
+  ConfirmationCard,
+  CustomizeFee
 } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
@@ -28,22 +29,15 @@ import truncateAddress from '../../../utils/truncateAddress'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { CardHeader, ChangeSignerHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
-import ErrorCard from '../../Wallet/Send/ErrorCard'
-import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import {
-  LEDGER,
-  PROPOSE,
-  emptyGasInfo,
-  PAGE,
-  MSIG_METHOD
-} from '../../../constants'
-import CustomizeFee from '../../Wallet/Send/CustomizeFee'
+import { emptyGasInfo, PAGE, MSIG_METHOD } from '../../../constants'
 import reportError from '../../../utils/reportError'
 import { useMsig } from '../../../MsigProvider'
 import { navigate } from '../../../utils/urlParams'
 
 const ChangeOwner = ({ oldSignerAddress }) => {
-  const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
+  const { getProvider, walletError, resetWalletError, loginOption } =
+    useWalletProvider()
+  const { pushPendingMessage } = useSubmittedMessages()
   const wallet = useWallet()
   const router = useRouter()
   // @ts-expect-error
@@ -67,6 +61,12 @@ const ChangeOwner = ({ oldSignerAddress }) => {
   const onComplete = useCallback(() => {
     navigate(router, { pageUrl: PAGE.MSIG_HISTORY })
   }, [router])
+
+  const errorMsg = useMemo(() => {
+    if (walletError()) return walletError()
+    if (uncaughtError) return uncaughtError
+    return ''
+  }, [uncaughtError, walletError])
 
   const constructMsg = (nonce = 0) => {
     const innerParams = {
@@ -108,11 +108,10 @@ const ChangeOwner = ({ oldSignerAddress }) => {
 
   const sendMsg = async () => {
     setFetchingTxDetails(true)
-    const provider = await connectLedger()
-
+    const provider = await getProvider()
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
-      const { message, params } = constructMsg(nonce)
+      const { message } = constructMsg(nonce)
       const messageObj = message.toLotusType()
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
@@ -124,25 +123,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        // @ts-expect-error
-        const messageForTxHistory: LotusMessage & {
-          cid: string
-          timestamp: number
-          maxFee: string
-          paidFee: string
-          value: string
-          method: string
-          params: string | object
-        } = { ...messageObj }
-        messageForTxHistory.cid = msgCid['/']
-        messageForTxHistory.timestamp = dayjs().unix()
-        messageForTxHistory.maxFee = gasInfo.estimatedTransactionFee.toAttoFil() // dont know how much was actually paid in this message yet, so we mark it as 0
-        messageForTxHistory.paidFee = '0'
-        messageForTxHistory.value = '0'
-        // reformat the params and method for tx table
-        messageForTxHistory.params = params
-        messageForTxHistory.method = PROPOSE
-        return messageForTxHistory
+        return message.toPendingMessage(msgCid['/'])
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -160,9 +141,10 @@ const ChangeOwner = ({ oldSignerAddress }) => {
     } else if (step === 3) {
       setAttemptingTx(true)
       try {
-        const msg = await sendMsg()
+        const msgPending = await sendMsg()
         setAttemptingTx(false)
-        if (msg) {
+        if (msgPending) {
+          pushPendingMessage(msgPending)
           onComplete()
         }
       } catch (err) {
@@ -224,7 +206,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
         onClick={() => {
           setAttemptingTx(false)
           setUncaughtError('')
-          resetLedgerState()
+          resetWalletError()
           onClose()
         }}
       />
@@ -238,17 +220,14 @@ const ChangeOwner = ({ oldSignerAddress }) => {
           justifyContent='flex-start'
         >
           <Box>
-            {hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
+            {!!errorMsg && (
               <ErrorCard
-                error={reportLedgerConfigError({
-                  ...ledger,
-                  otherError: uncaughtError
-                })}
+                error={errorMsg}
                 reset={() => {
                   setAttemptingTx(false)
                   setUncaughtError('')
                   setGasError('')
-                  resetLedgerState()
+                  resetWalletError()
                   setStep(2)
                 }}
               />
@@ -256,33 +235,31 @@ const ChangeOwner = ({ oldSignerAddress }) => {
             {attemptingTx && (
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
-                walletType={LEDGER}
+                walletType={loginOption}
                 currentStep={4}
                 totalSteps={4}
                 msig
               />
             )}
-            {!attemptingTx &&
-              step > 1 &&
-              !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
-                <Card
-                  display='flex'
-                  flexDirection='column'
-                  justifyContent='space-between'
-                  border='none'
-                  width='auto'
-                  my={2}
-                  backgroundColor='blue.muted700'
-                >
-                  <StepHeader
-                    title='Change Ownership'
-                    currentStep={step}
-                    totalSteps={4}
-                    glyphAcronym='Ch'
-                  />
-                  <ChangeSignerHeaderText step={step} />
-                </Card>
-              )}
+            {!attemptingTx && step > 1 && !errorMsg && (
+              <Card
+                display='flex'
+                flexDirection='column'
+                justifyContent='space-between'
+                border='none'
+                width='auto'
+                my={2}
+                backgroundColor='blue.muted700'
+              >
+                <StepHeader
+                  title='Change Ownership'
+                  currentStep={step}
+                  totalSteps={4}
+                  glyphAcronym='Ch'
+                />
+                <ChangeSignerHeaderText step={step} />
+              </Card>
+            )}
             {step === 1 && (
               <Warning
                 title='Warning'
@@ -386,7 +363,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
                 setAttemptingTx(false)
                 setUncaughtError('')
                 setGasError('')
-                resetLedgerState()
+                resetWalletError()
                 if (step === 1) {
                   onClose()
                 } else {

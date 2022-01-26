@@ -25,7 +25,12 @@ const MessageHistory = () => {
       >
         {router.query.cid ? (
           <Box display='flex' flexDirection='row'>
-            <MessageDetail cid={router.query.cid as string} />
+            <MessageDetail
+              cid={router.query.cid as string}
+              addressHref={(address: string) =>
+                `https://message.glif.io/${address}`
+              }
+            />
             <ButtonClose
               alignSelf='flex-start'
               ml={7}
@@ -36,7 +41,11 @@ const MessageHistory = () => {
         ) : (
           <MessageHistoryTable
             address={Address}
+            addressHref={(address: string) =>
+              `https://message.glif.io/${address}`
+            }
             cidHref={(cid: string) => `/history?cid=${cid}`}
+            inspectingAddress={Address}
           />
         )}
       </Box>
