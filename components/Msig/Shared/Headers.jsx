@@ -109,7 +109,7 @@ export const WithdrawHeaderText = ({ step }) => {
         width='auto'
         href='https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO'
       >
-        Click here for our guided Filecoin Vault tutorial.
+        Click here for our guided Glif Safe tutorial.
       </StyledATag>
     </Box>
   )
@@ -235,5 +235,33 @@ export const CreateMultisigHeaderText = ({ step }) => {
 }
 
 CreateMultisigHeaderText.propTypes = {
+  step: PropTypes.number.isRequired
+}
+
+export const ApproveCancelHeaderText = ({ step }) => {
+  let text = ''
+
+  switch (step) {
+    case 1:
+      text = 'Please review the transaction details.'
+      break
+    default:
+      text = ''
+  }
+
+  return (
+    <Box display='flex' flexDirection='column' alignItems='center'>
+      <Text textAlign='center'>{text}</Text>
+      <StyledATag
+        width='auto'
+        href='https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO'
+      >
+        Click here for our guided Glif Safe tutorial.
+      </StyledATag>
+    </Box>
+  )
+}
+
+ApproveCancelHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }

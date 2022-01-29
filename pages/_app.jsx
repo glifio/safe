@@ -1,7 +1,11 @@
 import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
-import { theme, ThemeProvider, client } from '@glif/react-components'
+import {
+  theme,
+  ThemeProvider,
+  PendingMessageProvider
+} from '@glif/react-components'
 import Script from 'next/script'
 
 import {
@@ -12,10 +16,13 @@ import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
 import { MsigProviderWrapper } from '../MsigProvider'
 import { WasmLoader } from '../lib/WasmLoader'
+import { createApolloClient } from '../apolloClient'
 import ErrorBoundary from '../components/ErrorBoundary'
 import JSONLD from '../JSONLD'
 import '../stylesheets/normalize.css'
 import '../stylesheets/styles.css'
+
+const client = createApolloClient()
 
 class MyApp extends App {
   render() {
@@ -75,9 +82,11 @@ class MyApp extends App {
                 <WalletProviderWrapper>
                   <MsigProviderWrapper>
                     <BalancePoller />
-                    <ErrorBoundary>
-                      <Component {...pageProps} />
-                    </ErrorBoundary>
+                    <PendingMessageProvider>
+                      <ErrorBoundary>
+                        <Component {...pageProps} />
+                      </ErrorBoundary>
+                    </PendingMessageProvider>
                   </MsigProviderWrapper>
                 </WalletProviderWrapper>
               </WasmLoader>
