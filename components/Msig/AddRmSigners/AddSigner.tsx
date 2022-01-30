@@ -30,8 +30,13 @@ import { navigate } from '../../../utils/urlParams'
 import { AddSignerInput } from './SignerInput'
 
 const AddSigner = () => {
-  const { getProvider, walletError, resetWalletError, loginOption } =
-    useWalletProvider()
+  const {
+    getProvider,
+    walletError,
+    resetWalletError,
+    loginOption,
+    walletProvider
+  } = useWalletProvider()
   const { pushPendingMessage } = useSubmittedMessages()
   const { Address: address, AvailableBalance: balance } = useMsig()
   const wallet = useWallet()
@@ -230,10 +235,11 @@ const AddSigner = () => {
             {attemptingTx && (
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
-                walletType={loginOption}
+                loginOption={loginOption}
                 currentStep={4}
                 totalSteps={4}
                 msig
+                method={MSIG_METHOD.ADD_SIGNER}
               />
             )}
             {!attemptingTx && step > 1 && !errorMsg && (
@@ -291,6 +297,9 @@ const AddSigner = () => {
                     setError={setGasError}
                     error={gasError}
                     feeMustBeLessThanThisAmount={wallet.balance}
+                    wallet={wallet}
+                    gasEstimateMaxFee={walletProvider.gasEstimateMaxFee}
+                    gasEstimateMessageGas={walletProvider.gasEstimateMessageGas}
                   />
                 </Box>
               )}

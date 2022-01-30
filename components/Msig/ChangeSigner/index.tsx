@@ -15,7 +15,8 @@ import {
   StepHeader,
   Input,
   useSubmittedMessages,
-  ErrorCard
+  ErrorCard,
+  MessagePending
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -106,7 +107,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
     return { message, params: { ...outerParams, params: { ...innerParams } } }
   }
 
-  const sendMsg = async () => {
+  const sendMsg = async (): Promise<MessagePending> => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
     if (provider) {
@@ -235,10 +236,11 @@ const ChangeOwner = ({ oldSignerAddress }) => {
             {attemptingTx && (
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
-                walletType={loginOption}
+                loginOption={loginOption}
                 currentStep={4}
                 totalSteps={4}
                 msig
+                method={MSIG_METHOD.SWAP_SIGNER}
               />
             )}
             {!attemptingTx && step > 1 && !errorMsg && (
@@ -336,6 +338,11 @@ const ChangeOwner = ({ oldSignerAddress }) => {
                         setError={setGasError}
                         error={gasError}
                         feeMustBeLessThanThisAmount={wallet.balance}
+                        wallet={wallet}
+                        gasEstimateMaxFee={walletProvider.gasEstimateMaxFee}
+                        gasEstimateMessageGas={
+                          walletProvider.gasEstimateMessageGas
+                        }
                       />
                     </Box>
                   )}
