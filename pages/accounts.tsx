@@ -29,6 +29,7 @@ const Accounts = () => {
         nWalletsToLoad={nWalletsToShow}
         coinType={COIN_TYPE}
         showSelectedAccount
+        back={gatekeep}
       />
     </RequireWallet>
   )

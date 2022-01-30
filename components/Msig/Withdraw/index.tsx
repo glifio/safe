@@ -13,7 +13,7 @@ import {
   Card,
   Input,
   ErrorCard,
-  PendingMessage,
+  MessagePending,
   useSubmittedMessages
 } from '@glif/react-components'
 import {
@@ -38,8 +38,13 @@ const isValidAmount = (value, balance, errorFromForms) => {
 }
 
 const Withdrawing = () => {
-  const { getProvider, walletError, resetWalletError, loginOption } =
-    useWalletProvider()
+  const {
+    getProvider,
+    walletError,
+    resetWalletError,
+    loginOption,
+    walletProvider
+  } = useWalletProvider()
   const { pushPendingMessage } = useSubmittedMessages()
   const wallet = useWallet()
   // @ts-expect-error
@@ -98,7 +103,7 @@ const Withdrawing = () => {
     }
   }
 
-  const sendMsg = async (): Promise<PendingMessage> => {
+  const sendMsg = async (): Promise<MessagePending> => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
 
@@ -236,10 +241,11 @@ const Withdrawing = () => {
               {attemptingTx && (
                 <ConfirmationCard
                   loading={fetchingTxDetails || mPoolPushing}
-                  walletType={loginOption}
+                  loginOption={loginOption}
                   currentStep={5}
                   totalSteps={5}
                   msig
+                  method={0}
                 />
               )}
               {!attemptingTx && !errorMsg && (
@@ -315,6 +321,11 @@ const Withdrawing = () => {
                         setError={setGasError}
                         error={gasError}
                         feeMustBeLessThanThisAmount={wallet.balance}
+                        wallet={wallet}
+                        gasEstimateMaxFee={walletProvider.gasEstimateMaxFee}
+                        gasEstimateMessageGas={
+                          walletProvider.gasEstimateMessageGas
+                        }
                       />
                     </Box>
                     {step > 3 && (
