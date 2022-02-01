@@ -53,7 +53,8 @@ const Create = () => {
     resetLedgerState,
     walletError,
     loginOption,
-    resetWalletError
+    resetWalletError,
+    walletProvider
   } = useWalletProvider()
   const wallet = useWallet()
   const wasm = useWasm()
@@ -299,10 +300,11 @@ const Create = () => {
             {attemptingTx && (
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
-                walletType={loginOption}
+                loginOption={loginOption}
                 currentStep={5}
                 totalSteps={5}
                 msig
+                method={1}
               />
             )}
             {!attemptingTx && !errorMsg && (
@@ -491,6 +493,11 @@ const Create = () => {
                       setError={setGasError}
                       error={gasError}
                       feeMustBeLessThanThisAmount={wallet.balance}
+                      gasEstimateMaxFee={walletProvider.gasEstimateMaxFee}
+                      gasEstimateMessageGas={
+                        walletProvider.gasEstimateMessageGas
+                      }
+                      wallet={wallet}
                     />
                   </Box>
                 )}

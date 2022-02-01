@@ -47,8 +47,13 @@ const ProposalLineItem = styled(Box).attrs((props) => {
 })``
 
 export default function ApproveReject() {
-  const { getProvider, walletError, resetWalletError, loginOption } =
-    useWalletProvider()
+  const {
+    getProvider,
+    walletError,
+    resetWalletError,
+    loginOption,
+    walletProvider
+  } = useWalletProvider()
   const { pushPendingMessage } = useSubmittedMessages()
   const wallet = useWallet()
   // @ts-expect-error
@@ -66,7 +71,7 @@ export default function ApproveReject() {
   const proposal = useMemo(
     () => JSON.parse(decodeURI(router.query.proposal as string)),
     [router]
-  ) as MsigTransaction
+  ) as MsigTransaction & { approvalsUntilExecution: number }
 
   const method = useMemo(() => {
     if (router.pathname.includes(PAGE.MSIG_APPROVE)) return 3
@@ -231,10 +236,12 @@ export default function ApproveReject() {
               {attemptingTx && (
                 <ConfirmationCard
                   loading={fetchingTxDetails || mPoolPushing}
-                  walletType={loginOption}
+                  loginOption={loginOption}
                   currentStep={5}
                   totalSteps={5}
                   msig
+                  method={method}
+                  approvalsUntilExecution={proposal.approvalsUntilExecution}
                 />
               )}
               {!attemptingTx && !errorMsg && (
@@ -305,7 +312,7 @@ export default function ApproveReject() {
                         return (
                           <ProposalLineItem>
                             <Text m={0}>{key}</Text>
-                            <Badge color='purple' m={0}>
+                            <Badge color='purple'>
                               {getMethodName('/multisig', value as number)}
                             </Badge>
                           </ProposalLineItem>
@@ -355,6 +362,9 @@ export default function ApproveReject() {
                     setError={setGasError}
                     error={gasError}
                     feeMustBeLessThanThisAmount={wallet.balance}
+                    wallet={wallet}
+                    gasEstimateMessageGas={walletProvider.gasEstimateMessageGas}
+                    gasEstimateMaxFee={walletProvider.gasEstimateMaxFee}
                   />
                 </Box>
               </Box>
@@ -392,7 +402,7 @@ export default function ApproveReject() {
               />
               <Button
                 variant='primary'
-                title={method === 3 ? 'Approve' : 'Cancel'}
+                title='Submit'
                 disabled={isSubmitBtnDisabled}
                 type='submit'
               />

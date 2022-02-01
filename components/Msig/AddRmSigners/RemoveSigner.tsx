@@ -30,8 +30,13 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { navigate } from '../../../utils/urlParams'
 
 const RemoveSigner = ({ signerAddress }) => {
-  const { getProvider, walletError, resetWalletError, loginOption } =
-    useWalletProvider()
+  const {
+    getProvider,
+    walletError,
+    resetWalletError,
+    loginOption,
+    walletProvider
+  } = useWalletProvider()
   const { pushPendingMessage } = useSubmittedMessages()
   const wallet = useWallet()
   const router = useRouter()
@@ -224,10 +229,11 @@ const RemoveSigner = ({ signerAddress }) => {
             {attemptingTx && (
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
-                walletType={loginOption}
+                loginOption={loginOption}
                 currentStep={3}
                 totalSteps={3}
                 msig
+                method={MSIG_METHOD.REMOVE_SIGNER}
               />
             )}
             {step === 1 && <Preface method={MSIG_METHOD.REMOVE_SIGNER} />}
@@ -279,6 +285,11 @@ const RemoveSigner = ({ signerAddress }) => {
                         setError={setGasError}
                         error={gasError}
                         feeMustBeLessThanThisAmount={wallet.balance}
+                        wallet={wallet}
+                        gasEstimateMaxFee={walletProvider.gasEstimateMaxFee}
+                        gasEstimateMessageGas={
+                          walletProvider.gasEstimateMessageGas
+                        }
                       />
                     </Box>
                   </Box>
