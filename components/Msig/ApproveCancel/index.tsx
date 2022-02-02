@@ -297,7 +297,7 @@ export default function ApproveReject() {
                     switch (key) {
                       case 'value':
                         return (
-                          <ProposalLineItem>
+                          <ProposalLineItem key={key}>
                             <Text m={0}>{key}</Text>
                             <Text m={0}>{`${new FilecoinNumber(
                               value as string,
@@ -307,14 +307,14 @@ export default function ApproveReject() {
                         )
                       case 'id':
                         return (
-                          <ProposalLineItem>
+                          <ProposalLineItem key={key}>
                             <Text m={0}>{key}</Text>
                             <Text m={0}>{value}</Text>
                           </ProposalLineItem>
                         )
                       case 'method':
                         return (
-                          <ProposalLineItem>
+                          <ProposalLineItem key={key}>
                             <Text m={0}>{key}</Text>
                             <Badge color='purple'>
                               {getMethodName('/multisig', value as number)}
@@ -323,7 +323,7 @@ export default function ApproveReject() {
                         )
                       case 'approved':
                         return (
-                          <ProposalLineItem>
+                          <ProposalLineItem key={key}>
                             <Text m={0}>approvals</Text>
                             <Text m={0}>{(value as Address[]).length}</Text>
                           </ProposalLineItem>
@@ -340,7 +340,7 @@ export default function ApproveReject() {
                         }
                         if (toAddr)
                           return (
-                            <ProposalLineItem>
+                            <ProposalLineItem key={key}>
                               <Text m={0}>{key}</Text>
                               <Text m={0}>{toAddrTxt}</Text>
                             </ProposalLineItem>
