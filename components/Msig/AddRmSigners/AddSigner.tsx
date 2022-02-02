@@ -149,14 +149,14 @@ const AddSigner = () => {
         }
       } catch (err) {
         if (err.message.includes('19')) {
-          setUncaughtError('Insufficient Multisig wallet available balance.')
+          setUncaughtError('Insufficient Safe available balance.')
         } else if (err.message.includes('2')) {
           setUncaughtError(
             `${wallet.address} has insufficient funds to pay for the transaction.`
           )
         } else if (err.message.includes('18')) {
           setUncaughtError(
-            `${wallet.address} is not a signer of the multisig wallet ${address}.`
+            `${wallet.address} is not a signer of the Safe ${address}.`
           )
         } else if (
           err.message

@@ -33,7 +33,7 @@ export const CardHeader = ({ address, msigBalance, signerBalance, msig }) => {
         justifyContent='space-between'
       >
         <Box display='flex' flexDirection='row' alignItems='center'>
-          <Glyph acronym='Ms' color='white' mr={3} />
+          <Glyph acronym='Sa' color='white' mr={3} />
           <Box display='flex' flexDirection='column' alignItems='flex-start'>
             <Text m={0}>From</Text>
             <Text m={0}>{truncateAddress(address)}</Text>
@@ -125,7 +125,7 @@ export const ChangeSignerHeaderText = ({ step }) => {
   switch (step) {
     case 2:
       text =
-        'Please input the new Filecoin address you want to be the signer of your multisig wallet.'
+        'Please input the new Filecoin address you want to be the signer of your Safe.'
       break
     case 3:
       text =
@@ -163,7 +163,8 @@ export const AddRmSignerHeader = ({ method, step }) => {
         </Text>
         {step === 2 && (
           <Text textAlign='center'>
-            Please enter a Filecoin address to add as a signer and click Next.
+            Please enter a Filecoin address to add as a signer to your Safe and
+            click Next.
           </Text>
         )}
         {step === 3 && (
@@ -180,8 +181,8 @@ export const AddRmSignerHeader = ({ method, step }) => {
       <>
         <StepHeader
           title='Remove Signer'
-          currentStep={step}
-          totalSteps={4}
+          currentStep={step - 1}
+          totalSteps={2}
           glyphAcronym='Rs'
         />
 
@@ -189,7 +190,8 @@ export const AddRmSignerHeader = ({ method, step }) => {
           Your Ledger Address pays the transaction fee.
         </Text>
         <Text textAlign='center'>
-          Please review the transaction fee details and click Next to continue.
+          Please review the signer address you would like to remove and the
+          transaction fee details, and click Next to continue.
         </Text>
       </>
     )

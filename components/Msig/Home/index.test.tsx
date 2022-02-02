@@ -34,7 +34,7 @@ describe('Msig Home', () => {
     )
 
     expect(screen.getByText('Available Balance')).toBeInTheDocument()
-    expect(screen.getByText('Multisig Address')).toBeInTheDocument()
+    expect(screen.getByText('Safe Address')).toBeInTheDocument()
     expect(screen.getByText('Total Vesting')).toBeInTheDocument()
 
     expect(container).toMatchSnapshot()

@@ -596,28 +596,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   font-size: 1.5rem;
 }
 
-.c58 {
-  cursor: not-allowed;
-  border: 1px solid #C4C4C4;
-  background-color: #C4C4C4;
-  border-color: #C4C4C4;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c58:hover {
-  opacity: 1;
-}
-
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -677,6 +655,28 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c58 {
+  cursor: not-allowed;
+  border: 1px solid #C4C4C4;
+  background-color: #C4C4C4;
+  border-color: #C4C4C4;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c58:hover {
+  opacity: 1;
 }
 
 .c2 {
@@ -1088,7 +1088,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   target="_blank"
                   width="auto"
                 >
-                  Click here for our guided Filecoin Vault tutorial.
+                  Click here for our guided Glif Safe tutorial.
                 </a>
               </div>
             </div>
@@ -1118,7 +1118,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div
@@ -2008,28 +2008,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   font-size: 1.5rem;
 }
 
-.c58 {
-  cursor: not-allowed;
-  border: 1px solid #C4C4C4;
-  background-color: #C4C4C4;
-  border-color: #C4C4C4;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c58:hover {
-  opacity: 1;
-}
-
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -2089,6 +2067,28 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c58 {
+  cursor: not-allowed;
+  border: 1px solid #C4C4C4;
+  background-color: #C4C4C4;
+  border-color: #C4C4C4;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c58:hover {
+  opacity: 1;
 }
 
 .c2 {
@@ -2500,7 +2500,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   target="_blank"
                   width="auto"
                 >
-                  Click here for our guided Filecoin Vault tutorial.
+                  Click here for our guided Glif Safe tutorial.
                 </a>
               </div>
             </div>
@@ -2530,7 +2530,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div
@@ -3190,6 +3190,50 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
+.c13 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c15 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c21 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c28 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c34 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c38 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -3233,50 +3277,6 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
 
 .c39:hover {
   opacity: 1;
-}
-
-.c13 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c15 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c21 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c28 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c34 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
 }
 
 .c2 {
@@ -3589,7 +3589,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                   target="_blank"
                   width="auto"
                 >
-                  Click here for our guided Filecoin Vault tutorial.
+                  Click here for our guided Glif Safe tutorial.
                 </a>
               </div>
             </div>
@@ -3619,7 +3619,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div
@@ -4228,6 +4228,50 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   font-size: 1.5rem;
 }
 
+.c13 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c15 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c21 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c28 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c34 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c46 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -4271,50 +4315,6 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
 
 .c47:hover {
   opacity: 1;
-}
-
-.c13 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c15 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c21 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c28 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c34 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
 }
 
 .c2 {
@@ -4683,7 +4683,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                   target="_blank"
                   width="auto"
                 >
-                  Click here for our guided Filecoin Vault tutorial.
+                  Click here for our guided Glif Safe tutorial.
                 </a>
               </div>
             </div>
@@ -4713,7 +4713,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div
@@ -5522,52 +5522,6 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c59 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c59:hover {
-  opacity: 0.8;
-}
-
-.c60 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c60:hover {
-  opacity: 0.8;
-}
-
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -5627,6 +5581,52 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c59 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c59:hover {
+  opacity: 0.8;
+}
+
+.c60 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c60:hover {
+  opacity: 0.8;
 }
 
 .c2 {
@@ -6052,7 +6052,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                   target="_blank"
                   width="auto"
                 >
-                  Click here for our guided Filecoin Vault tutorial.
+                  Click here for our guided Glif Safe tutorial.
                 </a>
               </div>
             </div>
@@ -6082,7 +6082,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div
@@ -7023,52 +7023,6 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c62 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c62:hover {
-  opacity: 0.8;
-}
-
-.c63 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c63:hover {
-  opacity: 0.8;
-}
-
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -7137,6 +7091,52 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c62 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c62:hover {
+  opacity: 0.8;
+}
+
+.c63 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c63:hover {
+  opacity: 0.8;
 }
 
 .c2 {
@@ -7560,7 +7560,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                   target="_blank"
                   width="auto"
                 >
-                  Click here for our guided Filecoin Vault tutorial.
+                  Click here for our guided Glif Safe tutorial.
                 </a>
               </div>
             </div>
@@ -7590,7 +7590,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div

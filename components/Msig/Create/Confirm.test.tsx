@@ -28,7 +28,7 @@ jest
 
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
   return {
-    query: { network: 't' },
+    query: { cid: 'QmZ' },
     pathname: PAGE.MSIG_CREATE_CONFIRM,
     push: jest.fn()
   }
@@ -40,36 +40,36 @@ describe('confirmation of newly created multisig', () => {
     jest.clearAllMocks()
   })
 
-  test('it renders message pending UI while the transaction is pending', () => {
+  test('it renders message pending UI while the transaction is pending', async () => {
     const { Tree } = composeMockAppTree('pendingMsigCreate')
-    let container, unmount
-    act(() => {
+    let unmount
+    await act(async () => {
       const rendered = render(
         <Tree>
           <Confirm />
         </Tree>
       )
 
-      container = rendered.container
       unmount = rendered.unmount
+      // we throw these assertions inside the act, so we dont test things after they update
+      expect(
+        screen.getByText(/waiting for your transaction to confirm./)
+      ).toBeInTheDocument()
+      expect(
+        screen.getByText(
+          /This screen will automatically show you your new Safe address once the transaction confirms./
+        )
+      ).toBeInTheDocument()
+      expect(rendered.container.firstChild).toMatchSnapshot()
     })
 
-    expect(
-      screen.getByText(/waiting for your transaction to confirm./)
-    ).toBeInTheDocument()
-    expect(
-      screen.getByText(
-        /This screen will automatically show you your new Multisig wallet address once the transaction confirms./
-      )
-    ).toBeInTheDocument()
-    expect(container.firstChild).toMatchSnapshot()
     unmount()
   })
 
   test('it attempts to confirm the pending msig create message', async () => {
     const { Tree } = composeMockAppTree('pendingMsigCreate')
     let unmount
-    act(() => {
+    await act(async () => {
       const rendered = render(
         <Tree>
           <Confirm />
@@ -77,7 +77,6 @@ describe('confirmation of newly created multisig', () => {
       )
       unmount = rendered.unmount
     })
-
     expect(mockMessageConfirmation).toHaveBeenCalled()
     unmount()
   })
@@ -97,7 +96,7 @@ describe('confirmation of newly created multisig', () => {
     await flushPromises()
 
     expect(mockMessageConfirmation).toHaveBeenCalled()
-    expect(screen.getByText(/Your multisig has been created./))
+    expect(screen.getByText(/Your Safe has been created./))
     expect(container.firstChild).toMatchSnapshot()
     unmount()
   })

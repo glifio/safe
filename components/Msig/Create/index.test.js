@@ -7,10 +7,20 @@ import Create from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
 import { createMultisig } from '../../../__mocks__/@zondax/filecoin-signing-tools'
+import { PAGE } from '../../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('@glif/filecoin-rpc-client')
 jest.mock('../../../MsigProvider')
+
+const routerPushMock = jest.fn()
+jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
+  return {
+    query: {},
+    pathname: PAGE.MSIG_CREATE,
+    push: routerPushMock
+  }
+})
 
 const CHAIN_HEAD = '1000'
 const VEST = 100
@@ -40,7 +50,7 @@ describe('Create msig flow', () => {
     })
 
     test('it allows a user to create a multisig', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const filAmount = new FilecoinNumber(1, 'fil')
       await act(async () => {
         render(
@@ -86,6 +96,7 @@ describe('Create msig flow', () => {
 
       await next()
       await next()
+      await flushPromises()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
@@ -114,7 +125,9 @@ describe('Create msig flow', () => {
         '2000'
       )
 
-      expect(store.getState().messages.pending.length).toBe(1)
+      expect(routerPushMock).toHaveBeenCalledWith(
+        expect.stringContaining(`${PAGE.MSIG_CREATE_CONFIRM}?cid=`)
+      )
       expect(screen.getByText('Next')).toBeDisabled()
     })
 
@@ -151,7 +164,7 @@ describe('Create msig flow', () => {
     })
 
     test('it allows a user to add multiple signers to the multisig create', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const filAmount = new FilecoinNumber(1, 'fil')
       const secondSigner = 'f0100'
       await act(async () => {
@@ -225,12 +238,10 @@ describe('Create msig flow', () => {
       expect(multisigCreateCalls[multisigCreateCalls.length - 1][6]).toBe(
         CHAIN_HEAD
       )
-
-      expect(store.getState().messages.pending.length).toBe(1)
     })
 
     test('it allows a user to create a multisig with 0 vest duration', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const filAmount = new FilecoinNumber(1, 'fil')
       await act(async () => {
         render(
@@ -280,12 +291,10 @@ describe('Create msig flow', () => {
       expect(multisigCreateCalls[multisigCreateCalls.length - 1][3]).toBe(1)
       expect(multisigCreateCalls[multisigCreateCalls.length - 1][5]).toBe('0')
       expect(multisigCreateCalls[multisigCreateCalls.length - 1][6]).toBe('0')
-
-      expect(store.getState().messages.pending.length).toBe(1)
     })
 
     test('it populates the start epoch with chain head', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const filAmount = new FilecoinNumber(1, 'fil')
       await act(async () => {
         render(
@@ -347,13 +356,11 @@ describe('Create msig flow', () => {
       expect(multisigCreateCalls[multisigCreateCalls.length - 1][6]).toBe(
         CHAIN_HEAD
       )
-
-      expect(store.getState().messages.pending.length).toBe(1)
     })
 
     test('it populates the start epoch with chain head', async () => {
       const START_EPOCH = '100000'
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const filAmount = new FilecoinNumber(1, 'fil')
       await act(async () => {
         render(
@@ -423,8 +430,6 @@ describe('Create msig flow', () => {
       expect(multisigCreateCalls[multisigCreateCalls.length - 1][6]).toBe(
         START_EPOCH
       )
-
-      expect(store.getState().messages.pending.length).toBe(1)
     })
 
     describe('snapshots', () => {
@@ -441,7 +446,8 @@ describe('Create msig flow', () => {
 
         expect(screen.getByText(/Balance/)).toBeInTheDocument()
         expect(screen.getByText(/1 FIL/)).toBeInTheDocument()
-        expect(screen.getByText(/Signer Address/)).toBeInTheDocument()
+        expect(screen.getByText(/Required approvals/)).toBeInTheDocument()
+        expect(screen.getAllByText(/Signer Address/).length > 0).toBeTruthy()
         expect(screen.getByText(/Add Another Signer/)).toBeInTheDocument()
         expect(
           screen.getByDisplayValue(/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi/)
@@ -489,7 +495,7 @@ describe('Create msig flow', () => {
         expect(screen.getByText(/Step 2/)).toBeInTheDocument()
         expect(
           screen.getByText(
-            /Next, please choose how much FIL to send to the multisig./
+            /Next, please choose how much FIL to send to your Safe./
           )
         ).toBeInTheDocument()
         expect(screen.getByText(/Amount/)).toBeInTheDocument()

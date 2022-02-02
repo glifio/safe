@@ -1,5 +1,7 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
+export * from '../../node_modules/@glif/filecoin-wallet-provider/dist/errors'
+
 import { TESTNET } from '../../constants'
 
 const mockGetAccounts = jest
@@ -80,7 +82,9 @@ class MockWalletProvider {
     maxFee: new FilecoinNumber('1000000', 'attofil'),
     message: { ...message, GasLimit: 1, GasFeeCap: '1', GasPremium: '1' }
   }))
-  sendMessage = jest.fn().mockImplementation(() => 'QmZCid!')
+  sendMessage = jest.fn().mockImplementation(() => {
+    return { '/': 'QmZCid!' }
+  })
   simulateMessage = mockSimulateMessage
 }
 

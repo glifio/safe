@@ -143,14 +143,14 @@ const RemoveSigner = ({ signerAddress }) => {
         }
       } catch (err) {
         if (err.message.includes('19')) {
-          setUncaughtError('Insufficient Multisig wallet available balance.')
+          setUncaughtError('Insufficient Safe available balance.')
         } else if (err.message.includes('2')) {
           setUncaughtError(
             `${wallet.address} has insufficient funds to pay for the transaction.`
           )
         } else if (err.message.includes('18')) {
           setUncaughtError(
-            `${wallet.address} is not a signer of the multisig wallet ${address}.`
+            `${wallet.address} is not a signer of the Safe ${address}.`
           )
         } else if (
           err.message
@@ -239,28 +239,26 @@ const RemoveSigner = ({ signerAddress }) => {
                 method={MSIG_METHOD.REMOVE_SIGNER}
               />
             )}
+            {!attemptingTx && step > 1 && !errorMsg && (
+              <Card
+                display='flex'
+                flexDirection='column'
+                justifyContent='space-between'
+                border='none'
+                width='auto'
+                my={2}
+                backgroundColor='blue.muted700'
+              >
+                <AddRmSignerHeader
+                  step={step}
+                  method={MSIG_METHOD.REMOVE_SIGNER}
+                />
+              </Card>
+            )}
             {step === 1 && <Preface method={MSIG_METHOD.REMOVE_SIGNER} />}
             <>
               {step >= 2 && (
                 <>
-                  {!attemptingTx && !!errorMsg && (
-                    <Box boxShadow={2} borderRadius={4}>
-                      <Card
-                        display='flex'
-                        flexDirection='column'
-                        justifyContent='space-between'
-                        border='none'
-                        width='auto'
-                        my={2}
-                        backgroundColor='blue.muted700'
-                      >
-                        <AddRmSignerHeader
-                          step={step}
-                          method={MSIG_METHOD.REMOVE_SIGNER}
-                        />
-                      </Card>
-                    </Box>
-                  )}
                   <Box boxShadow={2} borderRadius={4}>
                     <CardHeader
                       msig

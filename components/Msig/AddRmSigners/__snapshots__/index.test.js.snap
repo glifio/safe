@@ -197,6 +197,23 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders prefac
   font-size: 1.5rem;
 }
 
+.c12 {
+  color: #661800;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c14 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+}
+
 .c18 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -241,23 +258,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders prefac
 
 .c19:hover {
   opacity: 0.8;
-}
-
-.c12 {
-  color: #661800;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c14 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 0;
 }
 
 .c2 {
@@ -800,6 +800,50 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
   font-size: 1.5rem;
 }
 
+.c13 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c15 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c31 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c35 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -844,50 +888,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
 
 .c36:hover {
   opacity: 0.8;
-}
-
-.c13 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c15 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c19 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c25 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c31 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
 }
 
 .c2 {
@@ -1165,7 +1165,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
               font-size="2"
               font-weight="400"
             >
-              Please enter a Filecoin address to add as a signer and click Next.
+              Please enter a Filecoin address to add as a signer to your Safe and click Next.
             </p>
           </div>
           <div
@@ -1193,7 +1193,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div
@@ -1833,52 +1833,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   font-size: 1.5rem;
 }
 
-.c49 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c49:hover {
-  opacity: 0.8;
-}
-
-.c50 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c50:hover {
-  opacity: 0.8;
-}
-
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -1938,6 +1892,52 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c49 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c49:hover {
+  opacity: 0.8;
+}
+
+.c50 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c50:hover {
+  opacity: 0.8;
 }
 
 .c2 {
@@ -2310,7 +2310,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div
@@ -2743,6 +2743,23 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders pref
   font-size: 1.5rem;
 }
 
+.c12 {
+  color: #661800;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c14 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+}
+
 .c17 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -2787,23 +2804,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders pref
 
 .c18:hover {
   opacity: 0.8;
-}
-
-.c12 {
-  color: #661800;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c14 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 0;
 }
 
 .c2 {
@@ -3060,13 +3060,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
 .c6 {
   min-width: 0;
   box-sizing: border-box;
-  border-radius: 16px;
-  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
-}
-
-.c7 {
-  min-width: 0;
-  box-sizing: border-box;
   border: none;
   border-radius: 4px;
   border-width: 1px;
@@ -3089,7 +3082,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   justify-content: space-between;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3105,7 +3098,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   align-items: center;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -3128,13 +3121,13 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   justify-content: center;
 }
 
-.c13 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c15 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -3146,7 +3139,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   display: flex;
 }
 
-.c17 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3159,7 +3152,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   align-items: center;
 }
 
-.c18 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -3171,7 +3164,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   height: 8px;
 }
 
-.c19 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -3181,6 +3174,13 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   display: inline-block;
   width: 8px;
   height: 8px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
 .c21 {
@@ -3476,10 +3476,72 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   text-align: left;
 }
 
-.c12 {
+.c11 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
+}
+
+.c13 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c15 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c51 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  width: 100%;
+}
+
+.c30 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.c44 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
 }
 
 .c53 {
@@ -3558,68 +3620,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
 
 .c34:hover {
   opacity: 0.8;
-}
-
-.c14 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c16 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c20 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c25 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c51 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  width: 100%;
-}
-
-.c30 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.c44 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
 }
 
 .c2 {
@@ -3738,7 +3738,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   align-items: center;
 }
 
-.c8 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -3758,7 +3758,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   justify-content: space-between;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3827,136 +3827,110 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
         >
           <div
             class="c6"
+            display="flex"
+            overflow="hidden"
+            width="auto"
           >
-            <div
+            <ul
               class="c7"
               display="flex"
-              overflow="hidden"
-              width="auto"
+              width="100%"
             >
-              <ul
+              <div
                 class="c8"
                 display="flex"
-                width="100%"
               >
-                <div
+                <li
                   class="c9"
                   display="flex"
                 >
-                  <li
+                  <div
                     class="c10"
+                    color="#000"
                     display="flex"
+                    size="6"
                   >
-                    <div
+                    <h3
                       class="c11"
-                      color="#000"
-                      display="flex"
-                      size="6"
                     >
-                      <h3
-                        class="c12"
-                      >
-                        Rs
-                      </h3>
-                    </div>
-                  </li>
-                  <div
-                    class="c13"
-                    width="2"
-                  />
-                  <h2
-                    class="c14"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    Remove Signer
-                  </h2>
-                </div>
-                <li
-                  class=""
-                >
-                  <div
-                    class="c15"
-                    display="flex"
-                  >
-                    <p
-                      class="c16"
-                      color="core.nearblack"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="2"
-                      font-weight="400"
-                    >
-                      Step 
-                      2
-                    </p>
-                    <div
-                      class="c17"
-                      display="flex"
-                    >
-                      <div
-                        class="c18"
-                        display="inline-block"
-                        height="2"
-                        width="2"
-                      />
-                    </div>
-                    <div
-                      class="c17"
-                      display="flex"
-                    >
-                      <div
-                        class="c18"
-                        display="inline-block"
-                        height="2"
-                        width="2"
-                      />
-                    </div>
-                    <div
-                      class="c17"
-                      display="flex"
-                    >
-                      <div
-                        class="c19"
-                        display="inline-block"
-                        height="2"
-                        width="2"
-                      />
-                    </div>
-                    <div
-                      class="c17"
-                      display="flex"
-                    >
-                      <div
-                        class="c19"
-                        display="inline-block"
-                        height="2"
-                        width="2"
-                      />
-                    </div>
+                      Rs
+                    </h3>
                   </div>
                 </li>
-              </ul>
-              <p
-                class="c20"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
+                <div
+                  class="c12"
+                  width="2"
+                />
+                <h2
+                  class="c13"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  Remove Signer
+                </h2>
+              </div>
+              <li
+                class=""
               >
-                Your Ledger Address pays the transaction fee.
-              </p>
-              <p
-                class="c20"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                Please review the transaction fee details and click Next to continue.
-              </p>
-            </div>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <p
+                    class="c15"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Step 
+                    1
+                  </p>
+                  <div
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c18"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p
+              class="c19"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your Ledger Address pays the transaction fee.
+            </p>
+            <p
+              class="c19"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Please review the signer address you would like to remove and the transaction fee details, and click Next to continue.
+            </p>
           </div>
           <div
-            class="c6"
+            class="c20"
           >
             <div
               class="c21"
@@ -3968,7 +3942,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                 display="flex"
               >
                 <div
-                  class="c9"
+                  class="c8"
                   display="flex"
                 >
                   <div
@@ -3978,9 +3952,9 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                     size="6"
                   >
                     <h3
-                      class="c12"
+                      class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div
@@ -4074,7 +4048,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                   Removing signer
                 </h4>
                 <div
-                  class="c9"
+                  class="c8"
                   display="flex"
                 >
                   <a

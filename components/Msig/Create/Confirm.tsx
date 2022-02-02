@@ -143,9 +143,9 @@ const Confirm = () => {
             boxShadow={2}
             border={0}
           >
-            <Glyph acronym='Ms' />
+            <Glyph acronym='Sa' />
             <Text my={0} mt={3} color='core.darkgray'>
-              Your Address{' '}
+              Your Safe Address{' '}
             </Text>
             <Text mt={2}>{Address}</Text>
           </Card>

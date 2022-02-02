@@ -99,16 +99,21 @@ Object {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c12 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c13 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -137,7 +142,7 @@ Object {
   justify-content: flex-start;
 }
 
-.c13 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -162,7 +167,7 @@ Object {
   justify-content: center;
 }
 
-.c15 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   -webkit-box-flex: 1;
@@ -171,7 +176,7 @@ Object {
   flex-grow: 1;
 }
 
-.c17 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   color: #262626;
@@ -185,7 +190,7 @@ Object {
   align-items: center;
 }
 
-.c28 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   margin: 0 auto;
@@ -204,13 +209,13 @@ Object {
   justify-content: center;
 }
 
-.c29 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
 }
 
-.c30 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -224,7 +229,7 @@ Object {
   flex-wrap: wrap;
 }
 
-.c32 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -248,7 +253,7 @@ Object {
   justify-content: start;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -256,14 +261,14 @@ Object {
   margin-right: 8px;
 }
 
-.c37 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   padding: 8px;
 }
 
-.c40 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -276,24 +281,11 @@ Object {
   flex-wrap: wrap;
 }
 
-.c42 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   margin-top: 16px;
-  margin-bottom: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c46 {
-  min-width: 0;
-  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -304,6 +296,18 @@ Object {
 }
 
 .c47 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c48 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -332,7 +336,7 @@ Object {
   justify-content: flex-start;
 }
 
-.c49 {
+.c50 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 4px;
@@ -346,13 +350,98 @@ Object {
   align-items: center;
 }
 
-.c14 {
+.c15 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c20 {
+.c7 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.c19 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  overflow: hidden;
+  margin: 0;
+}
+
+.c32 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0;
+}
+
+.c42 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c36 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c40 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  display: block;
+  margin: 0;
+}
+
+.c46 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c17 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c26 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  min-width: 64px;
+  margin: 0;
+  margin-top: 0;
+  margin-left: 4px;
+}
+
+.c21 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -380,11 +469,11 @@ Object {
   border-radius: 4px;
 }
 
-.c20:hover {
+.c21:hover {
   opacity: 0.8;
 }
 
-.c43 {
+.c44 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -418,36 +507,11 @@ Object {
   background-color: transparent;
 }
 
-.c43:hover {
+.c44:hover {
   opacity: 0.8;
 }
 
-.c50 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 100px;
-  margin: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  min-width: 80px;
-  height: 40px;
-  border-radius: 100px;
-  border-width: 1px;
-}
-
-.c50:hover {
-  opacity: 0.8;
-}
-
-.c51 {
+.c52 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -482,93 +546,8 @@ Object {
   border-radius: 4px;
 }
 
-.c51:hover {
+.c52:hover {
   opacity: 0.8;
-}
-
-.c7 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 8px;
-}
-
-.c18 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  overflow: hidden;
-  margin: 0;
-}
-
-.c31 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin: 0;
-}
-
-.c41 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c35 {
-  color: #000;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c39 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: left;
-  display: block;
-  margin: 0;
-}
-
-.c45 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c16 {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c25 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  text-align: left;
-  min-width: 64px;
-  margin: 0;
-  margin-top: 0;
-  margin-left: 4px;
 }
 
 .c5 {
@@ -576,18 +555,18 @@ Object {
   height: 48px;
 }
 
-.c22 {
+.c23 {
   width: 24;
   height: 24;
 }
 
-.c44 {
+.c45 {
   margin-right: 8px;
   width: 24px;
   height: 24px;
 }
 
-.c21 {
+.c22 {
   height: auto;
   opacity: 1 !important;
   border: 0;
@@ -596,28 +575,58 @@ Object {
   outline: none;
 }
 
-.c24 {
+.c25 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c19:hover .c23 {
+.c20:hover .c24 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c27 {
+.c28 {
   -webkit-transition: 0.18s ease-in;
   transition: 0.18s ease-in;
   opacity: 0;
 }
 
-.c19:hover .c26 {
+.c20:hover .c27 {
   opacity: 1;
 }
 
-.c38 {
+.c51 {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 26px;
+  font-size: 18px;
+  border: 1px solid black;
+  color: black;
+  background: transparent;
+}
+
+.c51:hover {
+  color: #5E26FF;
+  border-color: #5E26FF;
+}
+
+.c39 {
   position: absolute;
   display: none;
   height: -webkit-fit-content;
@@ -642,7 +651,7 @@ Object {
   transition: 0.24s ease-in-out;
 }
 
-.c34 {
+.c35 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -667,7 +676,7 @@ Object {
   color: #000;
 }
 
-.c34:hover ~ .c36 {
+.c35:hover ~ .c37 {
   display: block;
 }
 
@@ -745,7 +754,7 @@ Object {
   opacity: 0.8;
 }
 
-.c48 {
+.c49 {
   outline: 0;
   border: 0;
   background: transparent;
@@ -755,7 +764,7 @@ Object {
   display: inline-block;
 }
 
-.c48:hover {
+.c49:hover {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
@@ -767,12 +776,24 @@ Object {
   transform: rotate(-90deg);
 }
 
-.c52 {
+.c53 {
   background-color: #E0D7FE00;
 }
 
-.c52:hover {
+.c53:hover {
   background-color: #E0D7FE;
+}
+
+@media (max-width:480px) {
+  .c51 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width:480px) {
+  .c51 {
+    font-size: 16px;
+  }
 }
 
 <body>
@@ -821,7 +842,7 @@ Object {
                   font-size="4"
                   font-weight="400"
                 >
-                  Vault
+                  Safe
                 </h2>
               </div>
               <div
@@ -836,7 +857,7 @@ Object {
                     class="c10"
                     font-size="3"
                     height="6"
-                    href="/vault/home"
+                    href="/home"
                     width="9"
                   >
                     Assets
@@ -845,110 +866,217 @@ Object {
                     class="c10"
                     font-size="3"
                     height="6"
-                    href="/vault/history"
+                    href="/history"
                     width="9"
                   >
                     History
                   </a>
                   <a
+                    class="c10"
+                    font-size="3"
+                    height="6"
+                    href="/proposals"
+                    width="9"
+                  >
+                    Proposals
+                  </a>
+                  <a
                     class="c11"
                     font-size="3"
                     height="6"
-                    href="/vault/admin"
+                    href="/admin"
                     width="9"
                   >
                     Admin
                   </a>
                   <div
                     class="c12"
-                    color="core.darkgray"
-                    display="flex"
-                    height="6"
-                    width="auto"
                   >
                     <div
                       class="c13"
-                      color="core.nearblack"
+                      color="core.darkgray"
                       display="flex"
-                      size="5"
+                      height="6"
+                      width="auto"
                     >
-                      <h3
-                        class="c14"
-                      >
-                        Ms
-                      </h3>
-                    </div>
-                    <div
-                      class="c15"
-                    >
-                      <h4
-                        class="c16"
-                        font-family="RT-Alias-Grotesk"
-                        font-size="1"
-                        font-weight="400"
-                      >
-                        Multisig Address
-                      </h4>
                       <div
-                        class="c17"
+                        class="c14"
                         color="core.nearblack"
                         display="flex"
+                        size="5"
                       >
-                        <h2
-                          class="c18"
-                          font-family="RT-Alias-Grotesk"
-                          font-size="3"
-                          font-weight="1"
-                          overflow="hidden"
+                        <h3
+                          class="c15"
                         >
-                          f2m4f2 ... sha5za
-                        </h2>
-                        <div
+                          Sa
+                        </h3>
+                      </div>
+                      <div
+                        class="c16"
+                      >
+                        <h4
                           class="c17"
+                          font-family="RT-Alias-Grotesk"
+                          font-size="1"
+                          font-weight="400"
+                        >
+                          Safe Address
+                        </h4>
+                        <div
+                          class="c18"
                           color="core.nearblack"
                           display="flex"
                         >
-                          <button
-                            class="c19 c20 c21"
-                            display="flex"
+                          <h2
+                            class="c19"
+                            font-family="RT-Alias-Grotesk"
                             font-size="3"
-                            height="6"
-                            role="button"
-                            type="button"
+                            font-weight="1"
+                            overflow="hidden"
                           >
-                            <svg
-                              class="c22 c23 c24"
-                              fill="none"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              width="24"
-                              xmlns="http://www.w3.org/2000/svg"
+                            f2m4f2 ... sha5za
+                          </h2>
+                          <div
+                            class="c18"
+                            color="core.nearblack"
+                            display="flex"
+                          >
+                            <button
+                              class="c20 c21 c22"
+                              display="flex"
+                              font-size="3"
+                              height="6"
+                              role="button"
+                              type="button"
                             >
-                              <rect
-                                fill="#1A0066"
-                                height="12"
-                                width="12"
-                                x="8"
-                                y="4"
-                              />
-                              <rect
-                                fill="#E0D7FE"
-                                height="12"
-                                width="12"
-                                x="4"
-                                y="8"
-                              />
-                            </svg>
-                            <h4
-                              class="c25 c26 c27"
-                              color="core.nearblack"
-                              font-family="RT-Alias-Grotesk"
-                              font-size="2"
-                              font-weight="400"
+                              <svg
+                                class="c23 c24 c25"
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#1A0066"
+                                  height="12"
+                                  width="12"
+                                  x="8"
+                                  y="4"
+                                />
+                                <rect
+                                  fill="#E0D7FE"
+                                  height="12"
+                                  width="12"
+                                  x="4"
+                                  y="8"
+                                />
+                              </svg>
+                              <h4
+                                class="c26 c27 c28"
+                                color="core.nearblack"
+                                font-family="RT-Alias-Grotesk"
+                                font-size="2"
+                                font-weight="400"
+                              >
+                                Copy
+                              </h4>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="c13"
+                      color="core.darkgray"
+                      display="flex"
+                      height="6"
+                      width="auto"
+                    >
+                      <div
+                        class="c14"
+                        color="core.nearblack"
+                        display="flex"
+                        size="5"
+                      >
+                        <h3
+                          class="c15"
+                        >
+                          Wa
+                        </h3>
+                      </div>
+                      <div
+                        class="c16"
+                      >
+                        <h4
+                          class="c17"
+                          font-family="RT-Alias-Grotesk"
+                          font-size="1"
+                          font-weight="400"
+                        >
+                          Wallet Address
+                        </h4>
+                        <div
+                          class="c18"
+                          color="core.nearblack"
+                          display="flex"
+                        >
+                          <h2
+                            class="c19"
+                            font-family="RT-Alias-Grotesk"
+                            font-size="3"
+                            font-weight="1"
+                            overflow="hidden"
+                          >
+                            t1z225 ... 6z6wgi
+                          </h2>
+                          <div
+                            class="c18"
+                            color="core.nearblack"
+                            display="flex"
+                          >
+                            <button
+                              class="c20 c21 c22"
+                              display="flex"
+                              font-size="3"
+                              height="6"
+                              role="button"
+                              type="button"
                             >
-                              Copy
-                            </h4>
-                          </button>
+                              <svg
+                                class="c23 c24 c25"
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  fill="#1A0066"
+                                  height="12"
+                                  width="12"
+                                  x="8"
+                                  y="4"
+                                />
+                                <rect
+                                  fill="#E0D7FE"
+                                  height="12"
+                                  width="12"
+                                  x="4"
+                                  y="8"
+                                />
+                              </svg>
+                              <h4
+                                class="c26 c27 c28"
+                                color="core.nearblack"
+                                font-family="RT-Alias-Grotesk"
+                                font-size="2"
+                                font-weight="400"
+                              >
+                                Copy
+                              </h4>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -957,33 +1085,33 @@ Object {
               </div>
             </div>
             <div
-              class="c28"
+              class="c29"
               display="flex"
               width="100%"
             >
               <div
-                class="c29"
+                class="c30"
                 width="100%"
               >
                 <div
-                  class="c30"
+                  class="c31"
                   display="flex"
                 >
                   <h2
-                    class="c31"
+                    class="c32"
                     display="inline-flex"
                     font-family="RT-Alias-Grotesk"
                     font-size="4"
                     font-weight="400"
                   >
                     <div
-                      class="c32"
+                      class="c33"
                       color="#000"
                       display="flex"
                       size="5"
                     >
                       <h3
-                        class="c14"
+                        class="c15"
                       >
                         1
                       </h3>
@@ -991,15 +1119,15 @@ Object {
                     Required Approvals
                   </h2>
                   <div
-                    class="c33"
+                    class="c34"
                   >
                     <a
                       aria-label="Tooltip"
-                      class="c34"
+                      class="c35"
                       color="core.black"
                     >
                       <p
-                        class="c35"
+                        class="c36"
                         color="core.black"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1009,10 +1137,10 @@ Object {
                       </p>
                     </a>
                     <div
-                      class="c36 c37 c38"
+                      class="c37 c38 c39"
                     >
                       <p
-                        class="c39"
+                        class="c40"
                         display="block"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1024,11 +1152,11 @@ Object {
                   </div>
                 </div>
                 <div
-                  class="c40"
+                  class="c41"
                   display="flex"
                 >
                   <h2
-                    class="c41"
+                    class="c42"
                     font-family="RT-Alias-Grotesk"
                     font-size="4"
                     font-weight="400"
@@ -1036,15 +1164,15 @@ Object {
                     Signers
                   </h2>
                   <div
-                    class="c33"
+                    class="c34"
                   >
                     <a
                       aria-label="Tooltip"
-                      class="c34"
+                      class="c35"
                       color="core.black"
                     >
                       <p
-                        class="c35"
+                        class="c36"
                         color="core.black"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1054,10 +1182,10 @@ Object {
                       </p>
                     </a>
                     <div
-                      class="c36 c37 c38"
+                      class="c37 c38 c39"
                     >
                       <p
-                        class="c39"
+                        class="c40"
                         display="block"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1069,33 +1197,33 @@ Object {
                   </div>
                 </div>
                 <div
-                  class="c42"
+                  class="c43"
                   display="flex"
                 >
                   <div
-                    class="c12"
+                    class="c13"
                     color="core.darkgray"
                     display="flex"
                     height="6"
                     width="auto"
                   >
                     <div
-                      class="c13"
+                      class="c14"
                       color="core.nearblack"
                       display="flex"
                       size="5"
                     >
                       <h3
-                        class="c14"
+                        class="c15"
                       >
                         1
                       </h3>
                     </div>
                     <div
-                      class="c15"
+                      class="c16"
                     >
                       <h4
-                        class="c16"
+                        class="c17"
                         font-family="RT-Alias-Grotesk"
                         font-size="1"
                         font-weight="400"
@@ -1103,12 +1231,12 @@ Object {
                         Signer 1 - Your Ledger
                       </h4>
                       <div
-                        class="c17"
+                        class="c18"
                         color="core.nearblack"
                         display="flex"
                       >
                         <h2
-                          class="c18"
+                          class="c19"
                           font-family="RT-Alias-Grotesk"
                           font-size="3"
                           font-weight="1"
@@ -1117,12 +1245,12 @@ Object {
                           t1z225 ... 6z6wgi
                         </h2>
                         <div
-                          class="c17"
+                          class="c18"
                           color="core.nearblack"
                           display="flex"
                         >
                           <button
-                            class="c19 c20 c21"
+                            class="c20 c21 c22"
                             display="flex"
                             font-size="3"
                             height="6"
@@ -1130,7 +1258,7 @@ Object {
                             type="button"
                           >
                             <svg
-                              class="c22 c23 c24"
+                              class="c23 c24 c25"
                               fill="none"
                               height="24"
                               viewBox="0 0 24 24"
@@ -1153,7 +1281,7 @@ Object {
                               />
                             </svg>
                             <h4
-                              class="c25 c26 c27"
+                              class="c26 c27 c28"
                               color="core.nearblack"
                               font-family="RT-Alias-Grotesk"
                               font-size="2"
@@ -1167,14 +1295,14 @@ Object {
                     </div>
                   </div>
                   <button
-                    class="c43"
+                    class="c44"
                     color="core.nearblack"
                     display="flex"
                     font-size="3"
                     height="6"
                   >
                     <svg
-                      class="c44"
+                      class="c45"
                       fill="none"
                       height="40px"
                       size="4"
@@ -1190,7 +1318,7 @@ Object {
                       />
                     </svg>
                     <p
-                      class="c45"
+                      class="c46"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1199,15 +1327,15 @@ Object {
                     </p>
                   </button>
                   <div
-                    class="c33"
+                    class="c34"
                   >
                     <a
                       aria-label="Tooltip"
-                      class="c34"
+                      class="c35"
                       color="core.black"
                     >
                       <p
-                        class="c35"
+                        class="c36"
                         color="core.black"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1217,10 +1345,10 @@ Object {
                       </p>
                     </a>
                     <div
-                      class="c36 c37 c38"
+                      class="c37 c38 c39"
                     >
                       <p
-                        class="c39"
+                        class="c40"
                         display="block"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1232,33 +1360,33 @@ Object {
                   </div>
                 </div>
                 <div
-                  class="c46"
+                  class="c47"
                   display="flex"
                 >
                   <div
-                    class="c47"
+                    class="c48"
                     color="core.darkgray"
                     display="flex"
                     height="6"
                     width="100%"
                   >
                     <div
-                      class="c13"
+                      class="c14"
                       color="core.nearblack"
                       display="flex"
                       size="5"
                     >
                       <h3
-                        class="c14"
+                        class="c15"
                       >
                         2
                       </h3>
                     </div>
                     <div
-                      class="c15"
+                      class="c16"
                     >
                       <h4
-                        class="c16"
+                        class="c17"
                         font-family="RT-Alias-Grotesk"
                         font-size="1"
                         font-weight="400"
@@ -1266,12 +1394,12 @@ Object {
                         Additional Signer
                       </h4>
                       <div
-                        class="c17"
+                        class="c18"
                         color="core.nearblack"
                         display="flex"
                       >
                         <h2
-                          class="c18"
+                          class="c19"
                           font-family="RT-Alias-Grotesk"
                           font-size="3"
                           font-weight="1"
@@ -1280,12 +1408,12 @@ Object {
                           f1nq5k ... btuo3a
                         </h2>
                         <div
-                          class="c17"
+                          class="c18"
                           color="core.nearblack"
                           display="flex"
                         >
                           <button
-                            class="c19 c20 c21"
+                            class="c20 c21 c22"
                             display="flex"
                             font-size="3"
                             height="6"
@@ -1293,7 +1421,7 @@ Object {
                             type="button"
                           >
                             <svg
-                              class="c22 c23 c24"
+                              class="c23 c24 c25"
                               fill="none"
                               height="24"
                               viewBox="0 0 24 24"
@@ -1316,7 +1444,7 @@ Object {
                               />
                             </svg>
                             <h4
-                              class="c25 c26 c27"
+                              class="c26 c27 c28"
                               color="core.nearblack"
                               font-family="RT-Alias-Grotesk"
                               font-size="2"
@@ -1330,14 +1458,14 @@ Object {
                     </div>
                     <button
                       aria-label="edit-signer"
-                      class="c48"
+                      class="c49"
                       display="inline-block"
                       role="button"
                       stroke="core.darkgray"
                       type="button"
                     >
                       <svg
-                        class="c22"
+                        class="c23"
                         fill="none"
                         height="24"
                         stroke="#666666"
@@ -1356,14 +1484,14 @@ Object {
                     </button>
                     <button
                       aria-label="remove-signer"
-                      class="c48"
+                      class="c49"
                       display="inline-block"
                       fill="core.darkgray"
                       role="button"
                       type="button"
                     >
                       <svg
-                        class="c22"
+                        class="c23"
                         fill="core.darkgray"
                         height="24"
                         viewBox="0 0 24 24"
@@ -1381,14 +1509,11 @@ Object {
                   </div>
                 </div>
                 <div
-                  class="c49"
+                  class="c50"
                   display="flex"
                 >
                   <button
-                    class="c50"
-                    font-size="3"
-                    height="40px"
-                    type="button"
+                    class="c51"
                   >
                     Add Signer
                   </button>
@@ -1397,22 +1522,22 @@ Object {
             </div>
           </div>
           <button
-            class="c51 c52"
+            class="c52 c53"
             display="flex"
             font-size="3"
             height="6"
           >
             Logout
             <div
-              class="c33"
+              class="c34"
             >
               <a
                 aria-label="Tooltip"
-                class="c34"
+                class="c35"
                 color="core.black"
               >
                 <p
-                  class="c35"
+                  class="c36"
                   color="core.black"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1422,10 +1547,10 @@ Object {
                 </p>
               </a>
               <div
-                class="c36 c37 c38"
+                class="c37 c38 c39"
               >
                 <p
-                  class="c39"
+                  class="c40"
                   display="block"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1485,7 +1610,7 @@ Object {
                 font-size="4"
                 font-weight="400"
               >
-                Vault
+                Safe
               </h2>
             </div>
             <div
@@ -1493,14 +1618,14 @@ Object {
               display="flex"
             >
               <div
-                class="Box-sc-16t49rp-0 knKxTX"
+                class="Box-sc-16t49rp-0 vEZSu"
                 display="flex"
               >
                 <a
                   class="NavLink__StyledNavLink-sc-1kcp6eq-0 cOEfcH"
                   font-size="3"
                   height="6"
-                  href="/vault/home"
+                  href="/home"
                   width="9"
                 >
                   Assets
@@ -1509,110 +1634,217 @@ Object {
                   class="NavLink__StyledNavLink-sc-1kcp6eq-0 cOEfcH"
                   font-size="3"
                   height="6"
-                  href="/vault/history"
+                  href="/history"
                   width="9"
                 >
                   History
                 </a>
                 <a
+                  class="NavLink__StyledNavLink-sc-1kcp6eq-0 cOEfcH"
+                  font-size="3"
+                  height="6"
+                  href="/proposals"
+                  width="9"
+                >
+                  Proposals
+                </a>
+                <a
                   class="NavLink__StyledNavLink-sc-1kcp6eq-0 jPPMFo"
                   font-size="3"
                   height="6"
-                  href="/vault/admin"
+                  href="/admin"
                   width="9"
                 >
                   Admin
                 </a>
                 <div
-                  class="Box-sc-16t49rp-0 hkSfei"
-                  color="core.darkgray"
-                  display="flex"
-                  height="6"
-                  width="auto"
+                  class="Box-sc-16t49rp-0 eaEsWQ"
                 >
                   <div
-                    class="Box-sc-16t49rp-0 esOeDF"
-                    color="core.nearblack"
+                    class="Box-sc-16t49rp-0 hkSfei"
+                    color="core.darkgray"
                     display="flex"
-                    size="5"
+                    height="6"
+                    width="auto"
                   >
-                    <h3
-                      class="Glyph__GlyphText-sc-n069ej-0 jORGgJ"
-                    >
-                      Ms
-                    </h3>
-                  </div>
-                  <div
-                    class="Box-sc-16t49rp-0 cQSPNr"
-                  >
-                    <h4
-                      class="Typography__H4Base-sc-gm91tw-3 fkBfnJ"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="1"
-                      font-weight="400"
-                    >
-                      Multisig Address
-                    </h4>
                     <div
-                      class="Box-sc-16t49rp-0 caPHnD"
+                      class="Box-sc-16t49rp-0 esOeDF"
                       color="core.nearblack"
                       display="flex"
+                      size="5"
                     >
-                      <h2
-                        class="Typography__H2Base-sc-gm91tw-1 bfyzkz"
-                        font-family="RT-Alias-Grotesk"
-                        font-size="3"
-                        font-weight="1"
-                        overflow="hidden"
+                      <h3
+                        class="Glyph__GlyphText-sc-n069ej-0 jORGgJ"
                       >
-                        f2m4f2 ... sha5za
-                      </h2>
+                        Sa
+                      </h3>
+                    </div>
+                    <div
+                      class="Box-sc-16t49rp-0 cQSPNr"
+                    >
+                      <h4
+                        class="Typography__H4Base-sc-gm91tw-3 fkBfnJ"
+                        font-family="RT-Alias-Grotesk"
+                        font-size="1"
+                        font-weight="400"
+                      >
+                        Safe Address
+                      </h4>
                       <div
                         class="Box-sc-16t49rp-0 caPHnD"
                         color="core.nearblack"
                         display="flex"
                       >
-                        <button
-                          class="BaseButton-sc-expoia-0 CopyText__Copy-sc-n6rbbk-0 hxgdmp jiWBwR"
-                          display="flex"
+                        <h2
+                          class="Typography__H2Base-sc-gm91tw-1 bfyzkz"
+                          font-family="RT-Alias-Grotesk"
                           font-size="3"
-                          height="6"
-                          role="button"
-                          type="button"
+                          font-weight="1"
+                          overflow="hidden"
                         >
-                          <svg
-                            class="Icons__IconBase-sc-1idz9m0-0 gxDGyc CopyText__StyledIconCopyAccountAddress-sc-n6rbbk-1 bqUtvB"
-                            fill="none"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            width="24"
-                            xmlns="http://www.w3.org/2000/svg"
+                          f2m4f2 ... sha5za
+                        </h2>
+                        <div
+                          class="Box-sc-16t49rp-0 caPHnD"
+                          color="core.nearblack"
+                          display="flex"
+                        >
+                          <button
+                            class="BaseButton-sc-expoia-0 CopyText__Copy-sc-n6rbbk-0 hxgdmp jiWBwR"
+                            display="flex"
+                            font-size="3"
+                            height="6"
+                            role="button"
+                            type="button"
                           >
-                            <rect
-                              fill="#1A0066"
-                              height="12"
-                              width="12"
-                              x="8"
-                              y="4"
-                            />
-                            <rect
-                              fill="#E0D7FE"
-                              height="12"
-                              width="12"
-                              x="4"
-                              y="8"
-                            />
-                          </svg>
-                          <h4
-                            class="Typography__H4Base-sc-gm91tw-3 kDHdXH CopyText__LabelCopy-sc-n6rbbk-2 gmmBNO"
-                            color="core.nearblack"
-                            font-family="RT-Alias-Grotesk"
-                            font-size="2"
-                            font-weight="400"
+                            <svg
+                              class="Icons__IconBase-sc-1idz9m0-0 gxDGyc CopyText__StyledIconCopyAccountAddress-sc-n6rbbk-1 bqUtvB"
+                              fill="none"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              width="24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#1A0066"
+                                height="12"
+                                width="12"
+                                x="8"
+                                y="4"
+                              />
+                              <rect
+                                fill="#E0D7FE"
+                                height="12"
+                                width="12"
+                                x="4"
+                                y="8"
+                              />
+                            </svg>
+                            <h4
+                              class="Typography__H4Base-sc-gm91tw-3 kDHdXH CopyText__LabelCopy-sc-n6rbbk-2 gmmBNO"
+                              color="core.nearblack"
+                              font-family="RT-Alias-Grotesk"
+                              font-size="2"
+                              font-weight="400"
+                            >
+                              Copy
+                            </h4>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="Box-sc-16t49rp-0 hkSfei"
+                    color="core.darkgray"
+                    display="flex"
+                    height="6"
+                    width="auto"
+                  >
+                    <div
+                      class="Box-sc-16t49rp-0 esOeDF"
+                      color="core.nearblack"
+                      display="flex"
+                      size="5"
+                    >
+                      <h3
+                        class="Glyph__GlyphText-sc-n069ej-0 jORGgJ"
+                      >
+                        Wa
+                      </h3>
+                    </div>
+                    <div
+                      class="Box-sc-16t49rp-0 cQSPNr"
+                    >
+                      <h4
+                        class="Typography__H4Base-sc-gm91tw-3 fkBfnJ"
+                        font-family="RT-Alias-Grotesk"
+                        font-size="1"
+                        font-weight="400"
+                      >
+                        Wallet Address
+                      </h4>
+                      <div
+                        class="Box-sc-16t49rp-0 caPHnD"
+                        color="core.nearblack"
+                        display="flex"
+                      >
+                        <h2
+                          class="Typography__H2Base-sc-gm91tw-1 bfyzkz"
+                          font-family="RT-Alias-Grotesk"
+                          font-size="3"
+                          font-weight="1"
+                          overflow="hidden"
+                        >
+                          t1z225 ... 6z6wgi
+                        </h2>
+                        <div
+                          class="Box-sc-16t49rp-0 caPHnD"
+                          color="core.nearblack"
+                          display="flex"
+                        >
+                          <button
+                            class="BaseButton-sc-expoia-0 CopyText__Copy-sc-n6rbbk-0 hxgdmp jiWBwR"
+                            display="flex"
+                            font-size="3"
+                            height="6"
+                            role="button"
+                            type="button"
                           >
-                            Copy
-                          </h4>
-                        </button>
+                            <svg
+                              class="Icons__IconBase-sc-1idz9m0-0 gxDGyc CopyText__StyledIconCopyAccountAddress-sc-n6rbbk-1 bqUtvB"
+                              fill="none"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              width="24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#1A0066"
+                                height="12"
+                                width="12"
+                                x="8"
+                                y="4"
+                              />
+                              <rect
+                                fill="#E0D7FE"
+                                height="12"
+                                width="12"
+                                x="4"
+                                y="8"
+                              />
+                            </svg>
+                            <h4
+                              class="Typography__H4Base-sc-gm91tw-3 kDHdXH CopyText__LabelCopy-sc-n6rbbk-2 gmmBNO"
+                              color="core.nearblack"
+                              font-family="RT-Alias-Grotesk"
+                              font-size="2"
+                              font-weight="400"
+                            >
+                              Copy
+                            </h4>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1733,7 +1965,7 @@ Object {
                 </div>
               </div>
               <div
-                class="Box-sc-16t49rp-0 knCxfH"
+                class="Box-sc-16t49rp-0 burmKx"
                 display="flex"
               >
                 <div
@@ -2049,10 +2281,7 @@ Object {
                 display="flex"
               >
                 <button
-                  class="BaseButton-sc-expoia-0 kqRmMI"
-                  font-size="3"
-                  height="40px"
-                  type="button"
+                  class="V2__ButtonV2-sc-1uu4kt5-0 NxrZs"
                 >
                   Add Signer
                 </button>
