@@ -1,7 +1,7 @@
 import React, { useContext, createContext } from 'react'
 import dynamic from 'next/dynamic'
 import { node } from 'prop-types'
-import { errorLogger } from '../../logger'
+import { logger } from '../../logger'
 import CantLoadWasm from './CantLoadWasm'
 
 export const WasmContext = createContext({ loaded: false })
@@ -15,7 +15,7 @@ export const WasmLoader = dynamic({
     try {
       rustModule = await import('@zondax/filecoin-signing-tools')
     } catch (err) {
-      errorLogger.error(
+      logger.error(
         err instanceof Error ? err.message : JSON.stringify(err),
         'WasmLoader'
       )

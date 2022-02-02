@@ -31,7 +31,7 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { CardHeader, ChangeSignerHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import { emptyGasInfo, PAGE, MSIG_METHOD } from '../../../constants'
-import { errorLogger } from '../../../logger'
+import { logger } from '../../../logger'
 import { useMsig } from '../../../MsigProvider'
 import { navigate } from '../../../utils/urlParams'
 
@@ -173,7 +173,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
             'Please make sure expert mode is enabled on your Ledger Filecoin app.'
           )
         } else {
-          errorLogger.error(
+          logger.error(
             err instanceof Error ? err.message : JSON.stringify(err),
             'ChangeOwner'
           )

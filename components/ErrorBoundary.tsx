@@ -1,6 +1,6 @@
 import React from 'react'
 import { ErrorView } from '@glif/react-components'
-import { errorLogger } from '../logger'
+import { logger } from '../logger'
 
 interface ErrorState {
   hasError: boolean
@@ -19,7 +19,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    errorLogger.error(
+    logger.error(
       error instanceof Error ? error.message : JSON.stringify(error),
       errorInfo,
       'ErrorBoundary'

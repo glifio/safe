@@ -28,7 +28,7 @@ import { useMsig } from '../../../MsigProvider'
 import { CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import { emptyGasInfo, PAGE } from '../../../constants'
-import { errorLogger } from '../../../logger'
+import { logger } from '../../../logger'
 import { navigate } from '../../../utils/urlParams'
 
 const isValidAmount = (value, balance, errorFromForms) => {
@@ -170,7 +170,7 @@ const Withdrawing = () => {
             'Please make sure expert mode is enabled on your Ledger Filecoin app.'
           )
         } else {
-          errorLogger.error(
+          logger.error(
             err instanceof Error ? err.message : JSON.stringify(err),
             'Withdraw'
           )

@@ -23,7 +23,7 @@ import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'
 import { useWasm } from '../../../lib/WasmLoader'
 import { emptyGasInfo, PAGE, MSIG_METHOD } from '../../../constants'
-import { errorLogger } from '../../../logger'
+import { logger } from '../../../logger'
 import { RemoveSignerInput } from './SignerInput'
 import { useMsig } from '../../../MsigProvider'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
@@ -161,7 +161,7 @@ const RemoveSigner = ({ signerAddress }) => {
             'Please make sure expert mode is enabled on your Ledger Filecoin app.'
           )
         } else {
-          errorLogger.error(
+          logger.error(
             err instanceof Error ? err.message : JSON.stringify(err),
             'RemoveSigner'
           )

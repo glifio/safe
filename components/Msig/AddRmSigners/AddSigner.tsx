@@ -20,7 +20,7 @@ import {
   CustomizeFee
 } from '@glif/wallet-provider-react'
 
-import { errorLogger } from '../../../logger'
+import { logger } from '../../../logger'
 import { useMsig } from '../../../MsigProvider'
 import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'
@@ -167,7 +167,7 @@ const AddSigner = () => {
             'Please make sure expert mode is enabled on your Ledger Filecoin app.'
           )
         } else {
-          errorLogger.error(
+          logger.error(
             err instanceof Error ? err.message : JSON.stringify(err),
             'AddSigner'
           )

@@ -26,7 +26,7 @@ import {
   CustomizeFee
 } from '@glif/wallet-provider-react'
 
-import { errorLogger } from '../../../logger'
+import { logger } from '../../../logger'
 import { useMsig } from '../../../MsigProvider'
 import { CardHeader, ApproveCancelHeaderText } from '../Shared'
 import { emptyGasInfo, PAGE } from '../../../constants'
@@ -172,7 +172,7 @@ export default function ApproveReject() {
           'Please make sure expert mode is enabled on your Ledger Filecoin app.'
         )
       } else {
-        errorLogger.error(
+        logger.error(
           err instanceof Error ? err.message : JSON.stringify(err),
           `ApproveReject: ${method.toString()}`
         )
