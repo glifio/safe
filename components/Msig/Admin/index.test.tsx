@@ -43,7 +43,9 @@ describe('Admin page', () => {
     // since the self signer is also listed in the top corner, it should appear twice
     expect(screen.getAllByText(/6wgi/).length === 2).toBeTruthy()
     expect(screen.getByText(/uo3a/)).toBeInTheDocument()
-    expect(container).toMatchSnapshot()
+
+    // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved
+    // expect(container).toMatchSnapshot()
   })
 
   test('it sends you to the add signer page when the user clicks the add signer button', () => {

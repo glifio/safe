@@ -4,7 +4,7 @@ import { SWRConfig } from 'swr'
 import { emptyMsigState, MsigActorState } from '../../MsigProvider/types'
 import {
   composeMsigProviderState,
-  presets
+  Preset
 } from '../../test-utils/composeMockAppTree/composeState'
 
 export const emptyMsigProviderContext = {
@@ -12,8 +12,6 @@ export const emptyMsigProviderContext = {
   loading: false,
   setMsigActor: null
 }
-
-type Preset = keyof typeof presets
 
 const MsigProviderContextMock = createContext<
   MsigActorState & {

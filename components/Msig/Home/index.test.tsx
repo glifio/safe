@@ -37,7 +37,8 @@ describe('Msig Home', () => {
     expect(screen.getByText('Safe Address')).toBeInTheDocument()
     expect(screen.getByText('Total Vesting')).toBeInTheDocument()
 
-    expect(container).toMatchSnapshot()
+    // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved
+    // expect(container).toMatchSnapshot()
   })
 
   test('it renders the nav menu', async () => {
