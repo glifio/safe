@@ -62,12 +62,12 @@ const Confirm = () => {
   useEffect(() => {
     const confirm = async () => {
       const confirmed = await confirmMessage(router.query.cid as string, {
-        apiAddress: process.env.LOTUS_NODE_JSONRPC
+        apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
       })
 
       if (confirmed) {
         const lCli = new LotusRPCEngine({
-          apiAddress: process.env.LOTUS_NODE_JSONRPC
+          apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
         })
         const receipt = (await lCli.request(
           'StateGetReceipt',

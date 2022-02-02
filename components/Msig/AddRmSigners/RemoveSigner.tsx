@@ -10,7 +10,7 @@ import {
   Card,
   ErrorCard,
   useSubmittedMessages,
-  MessagePending
+  MessagePending as MessagePendingGQL
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -23,7 +23,7 @@ import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'
 import { useWasm } from '../../../lib/WasmLoader'
 import { emptyGasInfo, PAGE, MSIG_METHOD } from '../../../constants'
-import reportError from '../../../utils/reportError'
+import { errorLogger } from '../../../logger'
 import { RemoveSignerInput } from './SignerInput'
 import { useMsig } from '../../../MsigProvider'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
@@ -103,7 +103,7 @@ const RemoveSigner = ({ signerAddress }) => {
     return { message, params: { ...outerParams, params: { ...innerParams } } }
   }
 
-  const sendMsg = async (): Promise<MessagePending> => {
+  const sendMsg = async () => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
 
@@ -121,7 +121,7 @@ const RemoveSigner = ({ signerAddress }) => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        return message.toPendingMessage(msgCid['/'])
+        return message.toPendingMessage(msgCid['/']) as MessagePendingGQL
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -161,7 +161,10 @@ const RemoveSigner = ({ signerAddress }) => {
             'Please make sure expert mode is enabled on your Ledger Filecoin app.'
           )
         } else {
-          reportError(20, false, err.message, err.stack)
+          errorLogger.error(
+            err instanceof Error ? err.message : JSON.stringify(err),
+            'RemoveSigner'
+          )
           setUncaughtError(err.message || err)
         }
         setStep(2)

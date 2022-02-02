@@ -9,7 +9,7 @@ export default async function fetchAndSetMsigActor(
   setMsigError: Dispatch<string>
 ): Promise<void> {
   const lCli = new LotusRpcEngine({
-    apiAddress: process.env.LOTUS_NODE_JSONRPC
+    apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
   })
   try {
     const receipt = await lCli.request<MessageReceipt>(

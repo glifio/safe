@@ -158,7 +158,7 @@ const Create = () => {
     } else if (step === 3) {
       if (vest > 0) {
         const lCli = new LotusRPCEngine({
-          apiAddress: process.env.LOTUS_NODE_JSONRPC
+          apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
         })
         const { Height } = await lCli.request('ChainHead')
         setStartEpoch(Height)

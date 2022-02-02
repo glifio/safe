@@ -12,7 +12,7 @@ import {
   Card,
   ErrorCard,
   useSubmittedMessages,
-  MessagePending,
+  MessagePending as MessagePendingGQL,
   Text,
   MsigTransaction,
   Label,
@@ -26,6 +26,7 @@ import {
   CustomizeFee
 } from '@glif/wallet-provider-react'
 
+import { errorLogger } from '../../../logger'
 import { useMsig } from '../../../MsigProvider'
 import { CardHeader, ApproveCancelHeaderText } from '../Shared'
 import { emptyGasInfo, PAGE } from '../../../constants'
@@ -114,7 +115,7 @@ export default function ApproveReject() {
     }
   }
 
-  const sendMsg = async (): Promise<MessagePending> => {
+  const sendMsg = async (): Promise<MessagePendingGQL> => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
 
@@ -134,7 +135,7 @@ export default function ApproveReject() {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        return message.toPendingMessage(msgCid['/'])
+        return message.toPendingMessage(msgCid['/']) as MessagePendingGQL
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -171,7 +172,10 @@ export default function ApproveReject() {
           'Please make sure expert mode is enabled on your Ledger Filecoin app.'
         )
       } else {
-        // reportError(20, false, err, err.message, err.stack)
+        errorLogger.error(
+          err instanceof Error ? err.message : JSON.stringify(err),
+          `ApproveReject: ${method.toString()}`
+        )
         setUncaughtError(err.message || err)
       }
     } finally {

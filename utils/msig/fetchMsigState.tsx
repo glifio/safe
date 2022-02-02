@@ -7,7 +7,7 @@ import { decodeActorCID } from '../actorCode'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
 
 const lCli = new LotusRPCEngine({
-  apiAddress: process.env.LOTUS_NODE_JSONRPC
+  apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
 })
 
 export default async function fetchMsigState(
