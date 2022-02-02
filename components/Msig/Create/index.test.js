@@ -131,6 +131,90 @@ describe('Create msig flow', () => {
       expect(screen.getByText('Next')).toBeDisabled()
     })
 
+    test('it allows a user to create a multisig with > 1 required approval', async () => {
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
+      const secondSigner = 't0100'
+      const filAmount = new FilecoinNumber(1, 'fil')
+      await act(async () => {
+        render(
+          <Tree>
+            <Create />
+          </Tree>
+        )
+
+        fireEvent.click(screen.getByText(/Add Another Signer/))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText(/f1.../)[1], {
+          target: { value: secondSigner },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+
+        fireEvent.change(screen.getByDisplayValue(1), {
+          target: { value: 2 },
+          preventDefault: () => {}
+        })
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
+        await flushPromises()
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+          target: { value: VEST }
+        })
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
+        await flushPromises()
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(
+          screen.getByPlaceholderText(CHAIN_HEAD.toString()),
+          {
+            target: { value: 2000 }
+          }
+        )
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
+        await flushPromises()
+      })
+
+      await next()
+      await next()
+      await flushPromises()
+
+      expect(walletProvider.getNonce).toHaveBeenCalled()
+      expect(walletProvider.wallet.sign).toHaveBeenCalled()
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
+      expect(Number(message.gaspremium) > 0).toBe(true)
+      expect(typeof message.gaspremium).toBe('string')
+      expect(Number(message.gasfeecap) > 0).toBe(true)
+      expect(typeof message.gasfeecap).toBe('string')
+      expect(message.gaslimit > 0).toBe(true)
+      expect(typeof message.gaslimit).toBe('number')
+      expect(!!message.value).toBe(true)
+      expect(Number(message.value)).not.toBe('NaN')
+      expect(message.to).toBe('f01')
+
+      const multisigCreateCalls = createMultisig.mock.calls
+      expect(
+        Number(createMultisig.mock.calls[multisigCreateCalls.length - 1][3])
+      ).toBe(2)
+    })
+
     test('it does not allow a user to fund the multisig with a balance higher than the wallet balance', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const filAmount = new FilecoinNumber(5, 'fil')
