@@ -12,7 +12,7 @@ import {
   Card,
   ErrorCard,
   useSubmittedMessages,
-  MessagePending,
+  MessagePending as MessagePendingGQL,
   Text,
   MsigTransaction,
   Label,
@@ -26,6 +26,7 @@ import {
   CustomizeFee
 } from '@glif/wallet-provider-react'
 
+import { logger } from '../../../logger'
 import { useMsig } from '../../../MsigProvider'
 import { CardHeader, ApproveCancelHeaderText } from '../Shared'
 import { emptyGasInfo, PAGE } from '../../../constants'
@@ -114,7 +115,7 @@ export default function ApproveReject() {
     }
   }
 
-  const sendMsg = async (): Promise<MessagePending> => {
+  const sendMsg = async (): Promise<MessagePendingGQL> => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
 
@@ -134,7 +135,7 @@ export default function ApproveReject() {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        return message.toPendingMessage(msgCid['/'])
+        return message.toPendingMessage(msgCid['/']) as MessagePendingGQL
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -153,14 +154,14 @@ export default function ApproveReject() {
       }
     } catch (err) {
       if (err.message.includes('19')) {
-        setUncaughtError('Insufficient Multisig wallet available balance.')
+        setUncaughtError('Insufficient Safe available balance.')
       } else if (err.message.includes('2')) {
         setUncaughtError(
           `${wallet.address} has insufficient funds to pay for the transaction.`
         )
       } else if (err.message.includes('18')) {
         setUncaughtError(
-          `${wallet.address} is not a signer of the multisig wallet ${address}.`
+          `${wallet.address} is not a signer of the Safe ${address}.`
         )
       } else if (
         err.message
@@ -171,7 +172,10 @@ export default function ApproveReject() {
           'Please make sure expert mode is enabled on your Ledger Filecoin app.'
         )
       } else {
-        // reportError(20, false, err, err.message, err.stack)
+        logger.error(
+          err instanceof Error ? err.message : JSON.stringify(err),
+          `ApproveReject: ${method.toString()}`
+        )
         setUncaughtError(err.message || err)
       }
     } finally {
@@ -293,7 +297,7 @@ export default function ApproveReject() {
                     switch (key) {
                       case 'value':
                         return (
-                          <ProposalLineItem>
+                          <ProposalLineItem key={key}>
                             <Text m={0}>{key}</Text>
                             <Text m={0}>{`${new FilecoinNumber(
                               value as string,
@@ -303,14 +307,14 @@ export default function ApproveReject() {
                         )
                       case 'id':
                         return (
-                          <ProposalLineItem>
+                          <ProposalLineItem key={key}>
                             <Text m={0}>{key}</Text>
                             <Text m={0}>{value}</Text>
                           </ProposalLineItem>
                         )
                       case 'method':
                         return (
-                          <ProposalLineItem>
+                          <ProposalLineItem key={key}>
                             <Text m={0}>{key}</Text>
                             <Badge color='purple'>
                               {getMethodName('/multisig', value as number)}
@@ -319,7 +323,7 @@ export default function ApproveReject() {
                         )
                       case 'approved':
                         return (
-                          <ProposalLineItem>
+                          <ProposalLineItem key={key}>
                             <Text m={0}>approvals</Text>
                             <Text m={0}>{(value as Address[]).length}</Text>
                           </ProposalLineItem>
@@ -336,7 +340,7 @@ export default function ApproveReject() {
                         }
                         if (toAddr)
                           return (
-                            <ProposalLineItem>
+                            <ProposalLineItem key={key}>
                               <Text m={0}>{key}</Text>
                               <Text m={0}>{toAddrTxt}</Text>
                             </ProposalLineItem>

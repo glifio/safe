@@ -10,7 +10,7 @@ import {
   Form,
   Card,
   useSubmittedMessages,
-  MessagePending,
+  MessagePending as MessagePendingGQL,
   ErrorCard
 } from '@glif/react-components'
 import {
@@ -20,12 +20,12 @@ import {
   CustomizeFee
 } from '@glif/wallet-provider-react'
 
+import { logger } from '../../../logger'
 import { useMsig } from '../../../MsigProvider'
 import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'
 import { useWasm } from '../../../lib/WasmLoader'
 import { emptyGasInfo, MSIG_METHOD, PAGE } from '../../../constants'
-import reportError from '../../../utils/reportError'
 import { navigate } from '../../../utils/urlParams'
 import { AddSignerInput } from './SignerInput'
 
@@ -106,7 +106,7 @@ const AddSigner = () => {
     return { message, params: { ...outerParams, params: { ...innerParams } } }
   }
 
-  const sendMsg = async (): Promise<MessagePending> => {
+  const sendMsg = async () => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
     if (provider) {
@@ -123,7 +123,7 @@ const AddSigner = () => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        return message.toPendingMessage(msgCid['/'])
+        return message.toPendingMessage(msgCid['/']) as MessagePendingGQL
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -149,14 +149,14 @@ const AddSigner = () => {
         }
       } catch (err) {
         if (err.message.includes('19')) {
-          setUncaughtError('Insufficient Multisig wallet available balance.')
+          setUncaughtError('Insufficient Safe available balance.')
         } else if (err.message.includes('2')) {
           setUncaughtError(
             `${wallet.address} has insufficient funds to pay for the transaction.`
           )
         } else if (err.message.includes('18')) {
           setUncaughtError(
-            `${wallet.address} is not a signer of the multisig wallet ${address}.`
+            `${wallet.address} is not a signer of the Safe ${address}.`
           )
         } else if (
           err.message
@@ -167,7 +167,10 @@ const AddSigner = () => {
             'Please make sure expert mode is enabled on your Ledger Filecoin app.'
           )
         } else {
-          reportError(20, false, err.message, err.stack)
+          logger.error(
+            err instanceof Error ? err.message : JSON.stringify(err),
+            'AddSigner'
+          )
           setUncaughtError(err.message || err)
         }
         setStep(2)

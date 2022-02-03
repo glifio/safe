@@ -26,7 +26,8 @@ describe('Admin page', () => {
   test('it renders the required approvals and the signers', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
-    const container = render(
+    // const container =
+    render(
       <Tree>
         <Admin />
       </Tree>
@@ -38,11 +39,14 @@ describe('Admin page', () => {
     // make sure we only render 1 additional signer
     expect(screen.queryAllByText(/Additional Signer/).length).toBe(1)
     expect(screen.getByText('View on Device')).toBeInTheDocument()
-    expect(screen.getByText(/Multisig Address/)).toBeInTheDocument()
+    expect(screen.getByText(/Safe Address/)).toBeInTheDocument()
     // signers - "t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi" and f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a from msig provider mocks
-    expect(screen.getByText(/6wgi/)).toBeInTheDocument()
+    // since the self signer is also listed in the top corner, it should appear twice
+    expect(screen.getAllByText(/6wgi/).length === 2).toBeTruthy()
     expect(screen.getByText(/uo3a/)).toBeInTheDocument()
-    expect(container).toMatchSnapshot()
+
+    // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved
+    // expect(container).toMatchSnapshot()
   })
 
   test('it sends you to the add signer page when the user clicks the add signer button', () => {
@@ -57,7 +61,7 @@ describe('Admin page', () => {
       fireEvent.click(screen.getByText('Add Signer'))
     })
 
-    expect(routerPushMock).toHaveBeenCalledWith('/vault/add-signer')
+    expect(routerPushMock).toHaveBeenCalledWith(PAGE.MSIG_ADD_SIGNER)
   })
 
   test('it sends you to the change signer page with the right query params when the user clicks the edit signer button', () => {

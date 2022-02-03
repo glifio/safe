@@ -4,7 +4,7 @@ import {
   Glyph,
   Text,
   Title,
-  Button,
+  ButtonV2,
   IconLedger,
   Tooltip,
   BaseButton
@@ -98,18 +98,14 @@ export default function Owners() {
           </Box>
           <Signers signers={signers} walletAddress={wallet.address} />
           <Box display='flex' alignItems='center' mt={1}>
-            <Button
-              type='button'
-              variant='secondary'
+            <ButtonV2
               onClick={() => {
                 navigate(router, { pageUrl: PAGE.MSIG_ADD_SIGNER })
               }}
-              title='Add Signer'
-              minWidth={8}
-              height='40px'
-              borderRadius={6}
-              m={1}
-            />
+              small
+            >
+              Add Signer
+            </ButtonV2>
           </Box>
         </Box>
       </Box>

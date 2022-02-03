@@ -13,7 +13,7 @@ import {
   Card,
   Input,
   ErrorCard,
-  MessagePending,
+  MessagePending as MessagePendingGQL,
   useSubmittedMessages
 } from '@glif/react-components'
 import {
@@ -28,7 +28,7 @@ import { useMsig } from '../../../MsigProvider'
 import { CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import { emptyGasInfo, PAGE } from '../../../constants'
-import reportError from '../../../utils/reportError'
+import { logger } from '../../../logger'
 import { navigate } from '../../../utils/urlParams'
 
 const isValidAmount = (value, balance, errorFromForms) => {
@@ -103,7 +103,7 @@ const Withdrawing = () => {
     }
   }
 
-  const sendMsg = async (): Promise<MessagePending> => {
+  const sendMsg = async (): Promise<MessagePendingGQL> => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
 
@@ -123,7 +123,7 @@ const Withdrawing = () => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        return message.toPendingMessage(msgCid['/'])
+        return message.toPendingMessage(msgCid['/']) as MessagePendingGQL
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -152,14 +152,14 @@ const Withdrawing = () => {
         }
       } catch (err) {
         if (err.message.includes('19')) {
-          setUncaughtError('Insufficient Multisig wallet available balance.')
+          setUncaughtError('Insufficient Safe available balance.')
         } else if (err.message.includes('2')) {
           setUncaughtError(
             `${wallet.address} has insufficient funds to pay for the transaction.`
           )
         } else if (err.message.includes('18')) {
           setUncaughtError(
-            `${wallet.address} is not a signer of the multisig wallet ${address}.`
+            `${wallet.address} is not a signer of the Safe ${address}.`
           )
         } else if (
           err.message
@@ -170,7 +170,10 @@ const Withdrawing = () => {
             'Please make sure expert mode is enabled on your Ledger Filecoin app.'
           )
         } else {
-          reportError(20, false, err, err.message, err.stack)
+          logger.error(
+            err instanceof Error ? err.message : JSON.stringify(err),
+            'Withdraw'
+          )
           setUncaughtError(err.message || err)
         }
         setStep(2)

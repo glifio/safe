@@ -16,7 +16,7 @@ import {
   Input,
   useSubmittedMessages,
   ErrorCard,
-  MessagePending
+  MessagePending as MessagePendingGQL
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -31,13 +31,18 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { CardHeader, ChangeSignerHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import { emptyGasInfo, PAGE, MSIG_METHOD } from '../../../constants'
-import reportError from '../../../utils/reportError'
+import { logger } from '../../../logger'
 import { useMsig } from '../../../MsigProvider'
 import { navigate } from '../../../utils/urlParams'
 
 const ChangeOwner = ({ oldSignerAddress }) => {
-  const { getProvider, walletError, resetWalletError, loginOption } =
-    useWalletProvider()
+  const {
+    getProvider,
+    walletError,
+    resetWalletError,
+    loginOption,
+    walletProvider
+  } = useWalletProvider()
   const { pushPendingMessage } = useSubmittedMessages()
   const wallet = useWallet()
   const router = useRouter()
@@ -107,7 +112,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
     return { message, params: { ...outerParams, params: { ...innerParams } } }
   }
 
-  const sendMsg = async (): Promise<MessagePending> => {
+  const sendMsg = async (): Promise<MessagePendingGQL> => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
     if (provider) {
@@ -124,7 +129,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        return message.toPendingMessage(msgCid['/'])
+        return message.toPendingMessage(msgCid['/']) as MessagePendingGQL
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -150,14 +155,14 @@ const ChangeOwner = ({ oldSignerAddress }) => {
         }
       } catch (err) {
         if (err.message.includes('19')) {
-          setUncaughtError('Insufficient Multisig wallet available balance.')
+          setUncaughtError('Insufficient Safe available balance.')
         } else if (err.message.includes('2')) {
           setUncaughtError(
             `${wallet.address} has insufficient funds to pay for the transaction.`
           )
         } else if (err.message.includes('18')) {
           setUncaughtError(
-            `${wallet.address} is not a signer of the multisig wallet ${address}.`
+            `${wallet.address} is not a signer of the Safe ${address}.`
           )
         } else if (
           err.message
@@ -168,7 +173,10 @@ const ChangeOwner = ({ oldSignerAddress }) => {
             'Please make sure expert mode is enabled on your Ledger Filecoin app.'
           )
         } else {
-          reportError(20, false, err.message, err.stack)
+          logger.error(
+            err instanceof Error ? err.message : JSON.stringify(err),
+            'ChangeOwner'
+          )
           setUncaughtError(err.message || err)
         }
         setStep(2)
@@ -237,8 +245,8 @@ const ChangeOwner = ({ oldSignerAddress }) => {
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
                 loginOption={loginOption}
-                currentStep={4}
-                totalSteps={4}
+                currentStep={3}
+                totalSteps={3}
                 msig
                 method={MSIG_METHOD.SWAP_SIGNER}
               />
@@ -255,8 +263,8 @@ const ChangeOwner = ({ oldSignerAddress }) => {
               >
                 <StepHeader
                   title='Change Ownership'
-                  currentStep={step}
-                  totalSteps={4}
+                  currentStep={step - 1}
+                  totalSteps={3}
                   glyphAcronym='Ch'
                 />
                 <ChangeSignerHeaderText step={step} />

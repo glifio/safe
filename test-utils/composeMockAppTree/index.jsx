@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { Converter } from '@glif/filecoin-number'
 import WalletProviderWrapper, {
   initialState as walletProviderInitialState
 } from '@glif/wallet-provider-react'
-import { theme, ThemeProvider } from '@glif/react-components'
+import {
+  theme,
+  ThemeProvider,
+  PendingMessageProvider
+} from '@glif/react-components'
 import { MockedProvider } from '@apollo/client/testing'
-import { ConverterContext } from '../../lib/Converter'
 import { WasmContext } from '../../lib/WasmLoader'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 import * as wasmMethods from '../../__mocks__/@zondax/filecoin-signing-tools'
@@ -36,12 +38,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
     return (
       <MockedProvider mocks={[]} addTypeName={false}>
         <WasmContext.Provider value={wasmMethods}>
-          <ConverterContext.Provider
-            value={{
-              converter: new Converter(),
-              converterError: options.converterError || null
-            }}
-          >
+          <PendingMessageProvider>
             <WalletProviderWrapper
               options={options}
               statePreset={statePreset}
@@ -52,7 +49,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
                 <ThemeProvider theme={theme}>{children}</ThemeProvider>
               </MsigProviderWrapper>
             </WalletProviderWrapper>
-          </ConverterContext.Provider>
+          </PendingMessageProvider>
         </WasmContext.Provider>
       </MockedProvider>
     )

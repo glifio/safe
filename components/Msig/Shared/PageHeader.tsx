@@ -86,9 +86,9 @@ const PageHeader = ({
           </NavLink>
           <Box>
             <Address
-              label='Multisig Address'
+              label='Safe Address'
               address={msigAddress}
-              glyphAcronym='Ms'
+              glyphAcronym='Sa'
             />
             <Address
               label='Wallet Address'

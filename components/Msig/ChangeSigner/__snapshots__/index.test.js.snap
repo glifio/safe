@@ -200,6 +200,23 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   font-size: 1.5rem;
 }
 
+.c12 {
+  color: #661800;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c14 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+}
+
 .c18 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -244,23 +261,6 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
 
 .c19:hover {
   opacity: 0.8;
-}
-
-.c12 {
-  color: #661800;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c14 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 0;
 }
 
 .c2 {
@@ -859,6 +859,60 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   font-size: 1.5rem;
 }
 
+.c13 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c15 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c30 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding-left: 0;
+}
+
+.c41 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c45 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -935,60 +989,6 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
 
 .c34:hover {
   opacity: 0.8;
-}
-
-.c13 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c15 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c19 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c25 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c30 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  padding-left: 0;
-}
-
-.c41 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
 }
 
 .c2 {
@@ -1237,19 +1237,8 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     font-weight="400"
                   >
                     Step 
-                    2
+                    1
                   </p>
-                  <div
-                    class="c16"
-                    display="flex"
-                  >
-                    <div
-                      class="c17"
-                      display="inline-block"
-                      height="2"
-                      width="2"
-                    />
-                  </div>
                   <div
                     class="c16"
                     display="flex"
@@ -1300,7 +1289,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Please input the new Filecoin address you want to be the signer of your multisig wallet.
+              Please input the new Filecoin address you want to be the signer of your Safe.
             </p>
           </div>
           <div
@@ -1328,7 +1317,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div
@@ -2083,6 +2072,77 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.5rem;
 }
 
+.c13 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c15 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c56 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  width: 100%;
+}
+
+.c30 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding-left: 0;
+}
+
+.c41 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c49 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c58 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -2159,77 +2219,6 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
 
 .c34:hover {
   opacity: 0.8;
-}
-
-.c13 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c15 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c19 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c25 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c56 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  width: 100%;
-}
-
-.c30 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  padding-left: 0;
-}
-
-.c41 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c49 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
 }
 
 .c2 {
@@ -2531,19 +2520,8 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     font-weight="400"
                   >
                     Step 
-                    3
+                    2
                   </p>
-                  <div
-                    class="c16"
-                    display="flex"
-                  >
-                    <div
-                      class="c17"
-                      display="inline-block"
-                      height="2"
-                      width="2"
-                    />
-                  </div>
                   <div
                     class="c16"
                     display="flex"
@@ -2622,7 +2600,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     <h3
                       class="c11"
                     >
-                      Ms
+                      Sa
                     </h3>
                   </div>
                   <div

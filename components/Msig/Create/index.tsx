@@ -158,7 +158,7 @@ const Create = () => {
     } else if (step === 3) {
       if (vest > 0) {
         const lCli = new LotusRPCEngine({
-          apiAddress: process.env.LOTUS_NODE_JSONRPC
+          apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
         })
         const { Height } = await lCli.request('ChainHead')
         setStartEpoch(Height)
@@ -182,15 +182,13 @@ const Create = () => {
         }
       } catch (err) {
         if (err.message.includes('19')) {
-          setUncaughtError('Insufficient Multisig wallet available balance.')
+          setUncaughtError('Insufficient Safe available balance.')
         } else if (err.message.includes('2')) {
           setUncaughtError(
             `${wallet.address} has insufficient funds to pay for the transaction.`
           )
         } else if (err.message.includes('18')) {
-          setUncaughtError(
-            `${wallet.address} is not a signer of the multisig wallet.`
-          )
+          setUncaughtError(`${wallet.address} is not a signer of the Safe.`)
         } else if (
           err.message
             .toLowerCase()
@@ -212,7 +210,7 @@ const Create = () => {
     }
   }
 
-  const isSubmitBtnDisabled = () => {
+  const isSubmitBtnDisabled = useMemo(() => {
     if (frozen) return true
     if (uncaughtError) return true
     if (attemptingTx) return true
@@ -224,7 +222,19 @@ const Create = () => {
       return true
     if (step === 3 && gasError) return true
     if (step > 5) return true
-  }
+  }, [
+    frozen,
+    uncaughtError,
+    attemptingTx,
+    mPoolPushing,
+    pageChanging,
+    step,
+    signerAddresses,
+    gasError,
+    value,
+    wallet.balance,
+    valueError
+  ])
 
   const isBackBtnDisabled = () => {
     if (frozen) return true
@@ -539,7 +549,7 @@ const Create = () => {
             <Button
               variant='primary'
               title='Next'
-              disabled={isSubmitBtnDisabled()}
+              disabled={isSubmitBtnDisabled}
               type='submit'
             />
           </Box>

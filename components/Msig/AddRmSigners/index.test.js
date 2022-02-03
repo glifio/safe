@@ -3,7 +3,9 @@ import { Message } from '@glif/filecoin-message'
 
 import { AddSigner, RemoveSigner } from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
+import { pushPendingMessageSpy } from '../../../__mocks__/@glif/react-components'
 import { flushPromises, MULTISIG_ACTOR_ADDRESS } from '../../../test-utils'
+import { MSIG_METHOD } from '../../../constants'
 
 jest.mock('../../../MsigProvider')
 
@@ -27,7 +29,7 @@ describe('Multisig add & remove  flow', () => {
     })
 
     test('it allows a user to add a signer', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const toAddr = 't0100'
 
       await act(async () => {
@@ -66,11 +68,19 @@ describe('Multisig add & remove  flow', () => {
       expect(Number(message.value)).not.toBe('NaN')
       expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
 
-      expect(store.getState().messages.pending.length).toBe(1)
+      const pendingMsg = pushPendingMessageSpy.mock.calls[0][0]
+      expect(pendingMsg.to.robust).toBe(MULTISIG_ACTOR_ADDRESS)
+      expect(pendingMsg.from.robust).toBeTruthy()
+      expect(Number(pendingMsg.gasFeeCap) > 0).toBeTruthy()
+      expect(Number(pendingMsg.gasLimit) > 0).toBeTruthy()
+      expect(Number(pendingMsg.gasPremium) > 0).toBeTruthy()
+      expect(!!pendingMsg.value).toBe(true)
+      expect(Number(pendingMsg.value)).not.toBe('NaN')
+      expect(Number(pendingMsg.method)).toBe(MSIG_METHOD.PROPOSE)
     })
 
     test('it does not allow a user to add signer if address is poorly formed', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
 
       await act(async () => {
         render(
@@ -92,7 +102,7 @@ describe('Multisig add & remove  flow', () => {
       expect(screen.getByText(/Invalid address/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
-      expect(store.getState().messages.pending.length).toBe(0)
+      expect(pushPendingMessageSpy).not.toHaveBeenCalled()
     })
 
     test('it allows the user to see the max transaction fee', async () => {
@@ -216,7 +226,7 @@ describe('Multisig add & remove  flow', () => {
         expect(res.container).toMatchSnapshot()
         expect(
           screen.getByText(
-            /Please enter a Filecoin address to add as a signer and click Next./
+            /Please enter a Filecoin address to add as a signer to your Safe and click Next./
           )
         ).toBeInTheDocument()
       })
@@ -258,7 +268,7 @@ describe('Multisig add & remove  flow', () => {
     })
 
     test('it allows a user to remove a signer', async () => {
-      const { Tree, getWalletProviderState, walletProvider, store } =
+      const { Tree, getWalletProviderState, walletProvider } =
         composeMockAppTree('postOnboard')
       const { wallets, selectedWalletIdx } = getWalletProviderState()
       await act(async () => {
@@ -287,7 +297,15 @@ describe('Multisig add & remove  flow', () => {
       expect(Number(message.value)).not.toBe('NaN')
       expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
 
-      expect(store.getState().messages.pending.length).toBe(1)
+      const pendingMsg = pushPendingMessageSpy.mock.calls[0][0]
+      expect(pendingMsg.to.robust).toBe(MULTISIG_ACTOR_ADDRESS)
+      expect(pendingMsg.from.robust).toBeTruthy()
+      expect(Number(pendingMsg.gasFeeCap) > 0).toBeTruthy()
+      expect(Number(pendingMsg.gasLimit) > 0).toBeTruthy()
+      expect(Number(pendingMsg.gasPremium) > 0).toBeTruthy()
+      expect(!!pendingMsg.value).toBe(true)
+      expect(Number(pendingMsg.value)).not.toBe('NaN')
+      expect(Number(pendingMsg.method)).toBe(MSIG_METHOD.PROPOSE)
     })
 
     test('it allows the user to see the max transaction fee', async () => {
@@ -401,7 +419,7 @@ describe('Multisig add & remove  flow', () => {
         expect(res.container).toMatchSnapshot()
         expect(
           screen.getByText(
-            /lease review the transaction fee details and click Next to continue./
+            /Please review the signer address you would like to remove and the transaction fee details, and click Next to continue./
           )
         ).toBeInTheDocument()
       })

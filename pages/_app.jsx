@@ -79,7 +79,10 @@ class MyApp extends App {
           <SWRConfig value={{ refreshInterval: 10000 }}>
             <ThemeProvider theme={theme}>
               <WasmLoader>
-                <WalletProviderWrapper>
+                <WalletProviderWrapper
+                  lotusApiAddr={process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC}
+                  coinType={process.env.NEXT_PUBLIC_COIN_TYPE}
+                >
                   <MsigProviderWrapper>
                     <BalancePoller />
                     <PendingMessageProvider>

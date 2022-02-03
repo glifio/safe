@@ -1,12 +1,13 @@
 import '@testing-library/jest-dom/extend-expect'
 import { act, renderHook } from '@testing-library/react-hooks'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { cleanup } from '@testing-library/react'
 import { ReactNode } from 'react'
 import WalletProviderWrapper, {
   initialState as _walletProviderInitialState
 } from '@glif/wallet-provider-react'
 
-import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
+import { MULTISIG_ACTOR_ADDRESS, WALLET_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
 import { MsigActorState } from './types'
 import { composeWalletProviderState } from '../test-utils/composeMockAppTree/composeState'
@@ -20,13 +21,52 @@ describe('Not a signer error handling', () => {
   let Tree = ({ children }) => <>{children}</>
   beforeEach(() => {
     jest.clearAllMocks()
+
+    jest
+      .spyOn(require('@glif/filecoin-rpc-client'), 'default')
+      .mockImplementation(() => {
+        return {
+          request: jest.fn(async (method) => {
+            switch (method) {
+              case 'StateGetActor': {
+                return {
+                  Code: { '/': 'bafkqadtgnfwc6nrpnv2wy5djonuwo' },
+                  Balance: '80000000000'
+                }
+              }
+              case 'StateReadState': {
+                return {
+                  Balance: new FilecoinNumber('1', 'fil').toAttoFil(),
+                  State: {
+                    InitialBalance: new FilecoinNumber('1', 'fil').toAttoFil(),
+                    NextTxnID: 2,
+                    NumApprovalsThreshold: 1,
+                    Signers: ['f01234'],
+                    StartEpoch: 1000,
+                    UnlockDuration: 0
+                  }
+                }
+              }
+              case 'MsigGetAvailableBalance': {
+                return '1000000'
+              }
+              case 'StateAccountKey': {
+                return WALLET_ADDRESS
+              }
+              case 'StateLookupID': {
+                return 't0123445'
+              }
+            }
+          })
+        }
+      })
+
     const statePreset = 'postOnboard'
     const walletProviderInitialState = composeWalletProviderState(
       _walletProviderInitialState,
       statePreset
     )
     Tree = ({ children }: { children: ReactNode }) => (
-      /* @ts-expect-error */
       <WalletProviderWrapper
         getState={() => {}}
         statePreset={statePreset}

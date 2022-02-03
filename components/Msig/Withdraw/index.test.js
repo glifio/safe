@@ -5,7 +5,8 @@ import { Message } from '@glif/filecoin-message'
 import Withdraw from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises, MULTISIG_ACTOR_ADDRESS } from '../../../test-utils'
-import { PAGE } from '../../../constants'
+import { PAGE, MSIG_METHOD } from '../../../constants'
+import { pushPendingMessageSpy } from '../../../__mocks__/@glif/react-components'
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('../../../MsigProvider')
@@ -39,7 +40,7 @@ describe('Multisig withdraw flow', () => {
     })
 
     test('it allows a user to withdraw filecoin', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('1', 'fil')
@@ -85,11 +86,19 @@ describe('Multisig withdraw flow', () => {
       expect(Number(message.value)).not.toBe('NaN')
       expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
 
-      expect(store.getState().messages.pending.length).toBe(1)
+      const pendingMsg = pushPendingMessageSpy.mock.calls[0][0]
+      expect(pendingMsg.to.robust).toBe(MULTISIG_ACTOR_ADDRESS)
+      expect(pendingMsg.from.robust).toBeTruthy()
+      expect(Number(pendingMsg.gasFeeCap) > 0).toBeTruthy()
+      expect(Number(pendingMsg.gasLimit) > 0).toBeTruthy()
+      expect(Number(pendingMsg.gasPremium) > 0).toBeTruthy()
+      expect(!!pendingMsg.value).toBe(true)
+      expect(Number(pendingMsg.value)).not.toBe('NaN')
+      expect(Number(pendingMsg.method)).toBe(MSIG_METHOD.PROPOSE)
     })
 
     test('it does not allow a user to withdraw FIL if address is poorly formed', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const toAddr = 't5100'
 
       await act(async () => {
@@ -109,11 +118,11 @@ describe('Multisig withdraw flow', () => {
       expect(screen.getByText(/Invalid to address/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
-      expect(store.getState().messages.pending.length).toBe(0)
+      expect(pushPendingMessageSpy).not.toHaveBeenCalled()
     })
 
     test('it does not allow a user to proceed if address is left blank', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
 
       await act(async () => {
         render(
@@ -132,11 +141,11 @@ describe('Multisig withdraw flow', () => {
       expect(screen.getByText(/Step 1/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
-      expect(store.getState().messages.pending.length).toBe(0)
+      expect(pushPendingMessageSpy).not.toHaveBeenCalled()
     })
 
     test('it does not allow a user to send a message if balance is less than total amount intended to send', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('2', 'fil')
@@ -170,11 +179,11 @@ describe('Multisig withdraw flow', () => {
       ).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
-      expect(store.getState().messages.pending.length).toBe(0)
+      expect(pushPendingMessageSpy).not.toHaveBeenCalled()
     })
 
     test('it does not allow a user to send a message if value intended to send is 0', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('0', 'fil')
@@ -205,7 +214,7 @@ describe('Multisig withdraw flow', () => {
       ).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
-      expect(store.getState().messages.pending.length).toBe(0)
+      expect(pushPendingMessageSpy).not.toHaveBeenCalled()
     })
 
     test('it allows the user to see the max transaction fee', async () => {
