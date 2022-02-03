@@ -1,4 +1,6 @@
 import '@testing-library/jest-dom/extend-expect'
+import { FilecoinNumber } from '@glif/filecoin-number'
+import { SWRConfig } from 'swr'
 import { act, renderHook } from '@testing-library/react-hooks'
 import { cleanup } from '@testing-library/react'
 import { ReactNode } from 'react'
@@ -6,7 +8,7 @@ import WalletProviderWrapper, {
   initialState as _walletProviderInitialState
 } from '@glif/wallet-provider-react'
 
-import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
+import { MULTISIG_ACTOR_ADDRESS, WALLET_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
 import { MsigActorState } from './types'
 import { EXEC_ACTOR } from '../constants'
@@ -19,20 +21,63 @@ describe('Multisig provider', () => {
     beforeEach(() => {
       jest.clearAllMocks()
 
+      jest
+        .spyOn(require('@glif/filecoin-rpc-client'), 'default')
+        .mockImplementation(() => {
+          return {
+            request: jest.fn(async (method) => {
+              switch (method) {
+                case 'StateGetActor': {
+                  return {
+                    Code: { '/': 'bafkqadtgnfwc6nrpnv2wy5djonuwo' },
+                    Balance: '80000000000'
+                  }
+                }
+                case 'StateReadState': {
+                  return {
+                    Balance: new FilecoinNumber('1', 'fil').toAttoFil(),
+                    State: {
+                      InitialBalance: new FilecoinNumber(
+                        '1',
+                        'fil'
+                      ).toAttoFil(),
+                      NextTxnID: 2,
+                      NumApprovalsThreshold: 1,
+                      Signers: ['f01234'],
+                      StartEpoch: 1000,
+                      UnlockDuration: 0
+                    }
+                  }
+                }
+                case 'MsigGetAvailableBalance': {
+                  return '1000000'
+                }
+                case 'StateAccountKey': {
+                  return WALLET_ADDRESS
+                }
+                case 'StateLookupID': {
+                  return 't0123445'
+                }
+              }
+            })
+          }
+        })
+
       const statePreset = 'postOnboard'
       const walletProviderInitialState = composeWalletProviderState(
         _walletProviderInitialState,
         statePreset
       )
       Tree = ({ children }: { children: ReactNode }) => (
-        /* @ts-expect-error */
-        <WalletProviderWrapper
-          getState={() => {}}
-          statePreset={statePreset}
-          initialState={walletProviderInitialState}
-        >
-          <MsigProviderWrapper test>{children}</MsigProviderWrapper>
-        </WalletProviderWrapper>
+        <SWRConfig value={{ dedupingInterval: 0 }}>
+          <WalletProviderWrapper
+            getState={() => {}}
+            statePreset={statePreset}
+            initialState={walletProviderInitialState}
+          >
+            <MsigProviderWrapper test>{children}</MsigProviderWrapper>
+          </WalletProviderWrapper>
+        </SWRConfig>
       )
     })
 
@@ -59,6 +104,7 @@ describe('Multisig provider', () => {
       jest
         .spyOn(require('../utils/msig/isAddressSigner'), 'default')
         .mockImplementation(async () => true)
+
       let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
@@ -92,18 +138,31 @@ describe('Multisig provider', () => {
         statePreset
       )
       Tree = ({ children }: { children: ReactNode }) => (
-        /* @ts-expect-error */
-        <WalletProviderWrapper
-          getState={() => {}}
-          statePreset={statePreset}
-          initialState={walletProviderInitialState}
-        >
-          <MsigProviderWrapper test>{children}</MsigProviderWrapper>
-        </WalletProviderWrapper>
+        <SWRConfig value={{ dedupingInterval: 0 }}>
+          <WalletProviderWrapper
+            getState={() => {}}
+            statePreset={statePreset}
+            initialState={walletProviderInitialState}
+          >
+            <MsigProviderWrapper test>{children}</MsigProviderWrapper>
+          </WalletProviderWrapper>
+        </SWRConfig>
       )
     })
 
     test('if address is not a multisig actor address, the not multisig actor error should get thrown', async () => {
+      jest
+        .spyOn(require('@glif/filecoin-rpc-client'), 'default')
+        .mockImplementation(() => {
+          return {
+            request: jest.fn(async () => {
+              return {
+                Balance: '0',
+                Code: { '/': 'xyz' }
+              }
+            })
+          }
+        })
       let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
@@ -117,7 +176,16 @@ describe('Multisig provider', () => {
       unmount()
     })
 
-    test('if address is not an actor, the not actor error should get thrown', async () => {
+    test('if address is not an actor, the actor not found error should get thrown', async () => {
+      jest
+        .spyOn(require('@glif/filecoin-rpc-client'), 'default')
+        .mockImplementation(() => {
+          return {
+            request: jest.fn(async () => {
+              throw new Error('actor not found')
+            })
+          }
+        })
       let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
         wrapper: Tree
       })

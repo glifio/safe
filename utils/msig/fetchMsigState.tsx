@@ -6,15 +6,15 @@ import isAddressSigner from './isAddressSigner'
 import { decodeActorCID } from '../actorCode'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
 
-const lCli = new LotusRPCEngine({
-  apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
-})
-
 export default async function fetchMsigState(
   actorID: string,
   signerAddress: string
 ): Promise<MsigActorState> {
   try {
+    const lCli = new LotusRPCEngine({
+      apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
+    })
+
     const { Code } = await lCli.request<{ Code: CID }>(
       'StateGetActor',
       actorID,
