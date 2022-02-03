@@ -83,16 +83,17 @@ describe('confirmation of newly created multisig', () => {
 
   test('it displays the multisig address after the message is confirmed', async () => {
     const { Tree } = composeMockAppTree('pendingMsigCreate')
-    let container
+    // let container
     await act(async () => {
-      const rendered = render(
+      // const rendered =
+      render(
         <Tree>
           <Confirm />
         </Tree>
       )
 
       await flushPromises()
-      container = rendered.container
+      // container = rendered.container
     })
     expect(mockMessageConfirmation).toHaveBeenCalled()
     expect(screen.getByText(/Your Safe has been created./))

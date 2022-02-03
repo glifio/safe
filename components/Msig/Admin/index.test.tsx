@@ -26,7 +26,8 @@ describe('Admin page', () => {
   test('it renders the required approvals and the signers', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
-    const container = render(
+    // const container =
+    render(
       <Tree>
         <Admin />
       </Tree>
