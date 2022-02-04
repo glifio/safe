@@ -1,15 +1,17 @@
-import React, { cloneElement, ReactElement } from 'react'
+import React, { cloneElement, ReactElement, useCallback } from 'react'
 import { bool, node } from 'prop-types'
 import {
   Box,
   LoadingScreen,
-  Tooltip,
-  BaseButton as ButtonLogout
+  ButtonV2,
+  NetworkConnection
 } from '@glif/react-components'
 import { useWallet } from '@glif/wallet-provider-react'
+import { useRouter } from 'next/router'
 
 import { useMsig } from '../../../MsigProvider'
-import { resetWallet } from '../../../utils/urlParams'
+import { resetWallet, navigate } from '../../../utils/urlParams'
+import { PAGE } from '../../../constants'
 import PageHeader from './PageHeader'
 
 const MsigPageWrapper = ({
@@ -22,6 +24,11 @@ const MsigPageWrapper = ({
 }) => {
   const msig = useMsig()
   const wallet = useWallet()
+  const router = useRouter()
+
+  const onNodeDisconnect = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.NODE_DISCONNECTED })
+  }, [router])
 
   return (
     <Box
@@ -54,28 +61,28 @@ const MsigPageWrapper = ({
                 {cloneElement(children, props)}
               </Box>
             )}
-            <ButtonLogout
-              position='absolute'
-              variant='secondary'
-              bottom='0'
-              left='0'
-              m={5}
-              display='flex'
-              alignItems='center'
-              justifyContent='space-between'
+
+            <ButtonV2
               css={`
-                background-color: ${({ theme }) =>
-                  theme.colors.core.secondary}00;
-                &:hover {
-                  background-color: ${({ theme }) =>
-                    theme.colors.core.secondary};
-                }
+                position: absolute;
+                bottom: 0;
+                left: 0;
               `}
+              m={5}
               onClick={resetWallet}
             >
               Logout
-              <Tooltip content='Logging out clears all your sensitive information from the browser and sends you back to the home page' />
-            </ButtonLogout>
+            </ButtonV2>
+            <NetworkConnection
+              position='absolute'
+              bottom='0'
+              right='0'
+              m={5}
+              lotusApiAddr={process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC}
+              apiKey={process.env.NEXT_PUBLIC_NODE_STATUS_API_KEY}
+              statusApiAddr={process.env.NEXT_PUBLIC_NODE_STATUS_API_ADDRESS}
+              errorCallback={onNodeDisconnect}
+            />
           </Box>
         </>
       )}

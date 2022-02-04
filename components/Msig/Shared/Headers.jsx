@@ -137,7 +137,7 @@ export const ChangeSignerHeaderText = ({ step }) => {
   return (
     <>
       <Text textAlign='center'>
-        Your Ledger Address pays the transaction fee.
+        Your Signer address pays the transaction fee.
       </Text>
       <Text textAlign='center'>{text}</Text>
     </>
@@ -159,7 +159,7 @@ export const AddRmSignerHeader = ({ method, step }) => {
           glyphAcronym='As'
         />
         <Text textAlign='center'>
-          Your Ledger Address pays the transaction fee.
+          Your Signer address pays the transaction fee.
         </Text>
         {step === 2 && (
           <Text textAlign='center'>
@@ -187,7 +187,7 @@ export const AddRmSignerHeader = ({ method, step }) => {
         />
 
         <Text textAlign='center'>
-          Your Ledger Address pays the transaction fee.
+          Your Signer address pays the transaction fee.
         </Text>
         <Text textAlign='center'>
           Please review the signer address you would like to remove and the
@@ -200,6 +200,41 @@ export const AddRmSignerHeader = ({ method, step }) => {
 
 AddRmSignerHeader.propTypes = {
   method: PropTypes.number.isRequired,
+  step: PropTypes.number.isRequired
+}
+
+export const ChangeNumApprovalsHeader = ({ step }) => {
+  let text = ''
+
+  switch (step) {
+    case 1:
+      text = 'Please input a new number of required approvals for your Safe.'
+      break
+    case 2:
+      text = 'Please review the transaction fee details.'
+      break
+    default:
+      text = ''
+  }
+
+  return (
+    <>
+      <StepHeader
+        title='Change Approval Threshold'
+        currentStep={step}
+        totalSteps={3}
+        glyphAcronym='Ca'
+      />
+
+      <Text textAlign='center'>
+        Your Signer address pays the transaction fee.
+      </Text>
+      <Text textAlign='center'>{text}</Text>
+    </>
+  )
+}
+
+ChangeNumApprovalsHeader.propTypes = {
   step: PropTypes.number.isRequired
 }
 
@@ -229,7 +264,7 @@ export const CreateMultisigHeaderText = ({ step }) => {
   return (
     <>
       <Text textAlign='center'>
-        Your Signer Address pays the transaction fee.
+        Your Signer address pays the transaction fee.
       </Text>
       <Text textAlign='center'>{text}</Text>
     </>
