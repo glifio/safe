@@ -937,7 +937,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
               font-size="2"
               font-weight="400"
             >
-              Your Signer Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"
@@ -2114,7 +2114,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
               font-size="2"
               font-weight="400"
             >
-              Your Signer Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"
@@ -3334,7 +3334,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
               font-size="2"
               font-weight="400"
             >
-              Your Signer Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"
@@ -4647,7 +4647,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
               font-size="2"
               font-weight="400"
             >
-              Your Signer Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"
@@ -6006,7 +6006,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
               font-size="2"
               font-weight="400"
             >
-              Your Signer Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"
@@ -7529,7 +7529,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
               font-size="2"
               font-weight="400"
             >
-              Your Signer Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c18"
