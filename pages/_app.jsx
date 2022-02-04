@@ -1,3 +1,4 @@
+import '@glif/base-css'
 import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
@@ -19,8 +20,6 @@ import { WasmLoader } from '../lib/WasmLoader'
 import { createApolloClient } from '../apolloClient'
 import ErrorBoundary from '../components/ErrorBoundary'
 import JSONLD from '../JSONLD'
-import '../stylesheets/normalize.css'
-import '../stylesheets/styles.css'
 
 const client = createApolloClient()
 
