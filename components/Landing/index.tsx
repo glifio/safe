@@ -11,7 +11,8 @@ import {
   H2,
   P,
   isMobileOrTablet,
-  theme
+  theme,
+  useNetworkName
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
@@ -36,6 +37,10 @@ export default function Landing() {
     [router]
   )
 
+  const { networkName } = useNetworkName(
+    process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
+  )
+
   return (
     <>
       <LandingPageContainer>
@@ -47,7 +52,11 @@ export default function Landing() {
         <LandingPageContentContainer phishingBannerClosed={closed}>
           <ResponsiveWalletTile phishingBannerClosed={closed}>
             <AppTile
-              title='Safe'
+              title={
+                networkName && networkName !== 'Mainnet'
+                  ? `Safe (${networkName})`
+                  : 'Safe'
+              }
               oldTileName='Vault'
               description='A Filecoin multisig wallet.'
               imgSrc='/bg-safe.jpg'
@@ -117,11 +126,17 @@ export default function Landing() {
                       font-size: ${fontSize('default')};
                     `}
                   >
-                    Want to load this app directly from IPFS/FIL?
+                    Want to load this app directly from IPFS or Filecoin?
                     <br />
-                    Check our <a href='#'>release page</a>
+                    Check our{' '}
+                    <a
+                      href='https://github.com/glifio/safe/releases'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      release page
+                    </a>
                   </P>
-
                   <P
                     css={`
                       font-size: ${fontSize('default')};
@@ -129,7 +144,22 @@ export default function Landing() {
                   >
                     Need help?
                     <br />
-                    <a href='#'>Reach out</a> to us
+                    Open a{' '}
+                    <a
+                      href='https://github.com/glifio/safe/issues/new/choose'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      GitHub issue
+                    </a>{' '}
+                    or hit us up on{' '}
+                    <a
+                      href='https://twitter.com/glifio'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Twitter
+                    </a>
                   </P>
                 </Box>
               </Box>

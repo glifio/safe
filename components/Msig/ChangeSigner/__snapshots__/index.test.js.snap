@@ -1281,7 +1281,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Your Ledger Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"
@@ -2564,7 +2564,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Your Ledger Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"

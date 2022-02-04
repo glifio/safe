@@ -1157,7 +1157,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
               font-size="2"
               font-weight="400"
             >
-              Your Ledger Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"
@@ -2274,7 +2274,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
               font-size="2"
               font-weight="400"
             >
-              Your Ledger Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"
@@ -3918,7 +3918,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
               font-size="2"
               font-weight="400"
             >
-              Your Ledger Address pays the transaction fee.
+              Your Signer address pays the transaction fee.
             </p>
             <p
               class="c19"

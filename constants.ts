@@ -87,12 +87,14 @@ export enum PAGE {
   MSIG_CHANGE_SIGNER = '/change-signer',
   MSIG_REMOVE_SIGNER = '/remove-signer',
   MSIG_ADD_SIGNER = '/add-signer',
+  MSIG_CHANGE_APPROVAL_THRESHOLD = '/change-approval-threshold',
   MSIG_CREATE_CONFIRM = '/create/confirm',
   MSIG_CREATE = '/create',
   MSIG_CHOOSE = '/choose',
   MSIG_CHOOSE_ACCOUNTS = '/accounts',
   CONNECT_LEDGER = '/connect/ledger',
   CONNECT_METAMASK = '/connect/metamask',
+  NODE_DISCONNECTED = '/error/node-disconnected',
   LANDING = '/'
 }
 
