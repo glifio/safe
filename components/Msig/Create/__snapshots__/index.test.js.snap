@@ -207,7 +207,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1452,7 +1452,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2559,7 +2559,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3833,7 +3833,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5192,7 +5192,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6584,7 +6584,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

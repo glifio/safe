@@ -687,7 +687,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1573,7 +1573,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3222,7 +3222,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

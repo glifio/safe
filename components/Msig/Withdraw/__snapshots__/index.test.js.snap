@@ -226,7 +226,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1638,7 +1638,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3050,7 +3050,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3996,7 +3996,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5152,7 +5152,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6613,7 +6613,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
