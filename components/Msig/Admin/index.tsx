@@ -15,18 +15,18 @@ import { useMsig } from '../../../MsigProvider'
 const ShowOnDevice = ({ ledgerErr, shouldView, onShowOnLedger }) => {
   if (ledgerErr)
     return (
-      <ButtonV2 ml={3} onClick={onShowOnLedger} disabled small>
+      <ButtonV2 ml={3} onClick={onShowOnLedger} disabled>
         Ledger Device Error
       </ButtonV2>
     )
   if (shouldView)
     return (
-      <ButtonV2 ml={3} onClick={onShowOnLedger} disabled small>
+      <ButtonV2 ml={3} onClick={onShowOnLedger} disabled>
         Check Ledger Device
       </ButtonV2>
     )
   return (
-    <ButtonV2 ml={3} onClick={onShowOnLedger} small>
+    <ButtonV2 ml={3} onClick={onShowOnLedger}>
       View on Device
     </ButtonV2>
   )
@@ -93,7 +93,6 @@ export default function Owners() {
                     pageUrl: PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD
                   })
                 }}
-                small
               >
                 Edit
               </ButtonV2>
@@ -113,7 +112,6 @@ export default function Owners() {
                 onClick={() => {
                   navigate(router, { pageUrl: PAGE.MSIG_ADD_SIGNER })
                 }}
-                small
               >
                 Add Signer
               </ButtonV2>

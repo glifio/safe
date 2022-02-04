@@ -704,7 +704,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1770,7 +1770,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

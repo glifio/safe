@@ -68,7 +68,6 @@ const MsigPageWrapper = ({
                 bottom: 0;
                 left: 0;
               `}
-              small
               m={5}
               onClick={resetWallet}
             >
