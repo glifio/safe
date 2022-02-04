@@ -1,10 +1,56 @@
 import { useCallback } from 'react'
+import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { NavLink, Box, Title, IconGlif } from '@glif/react-components'
-import { Address } from '../Shared'
+import {
+  NavLink,
+  Box,
+  Title,
+  IconGlif,
+  Label,
+  CopyText
+} from '@glif/react-components'
 import { PAGE } from '../../../constants'
 import { generateRouteWithRequiredUrlParams } from '../../../utils/urlParams'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
+import truncateAddress from '../../../utils/truncateAddress'
+
+const A = styled.a`
+  color: ${(props) => props.theme.colors.core.primary};
+  text-decoration: none;
+  text-wrap: overflow;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
+const Address = ({ address, label }: { address: string; label: string }) => {
+  return (
+    <Box
+      display='flex'
+      alignItems='center'
+      justifyContent='flex-start'
+      color='core.darkgray'
+      height={6}
+      borderRadius={2}
+      mb={1}
+    >
+      <Box pl={3}>
+        <Label fontSize={1}>{label}</Label>
+        <Box display='flex' flexDirection='row'>
+          <A
+            href={`${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`}
+            target='_blank'
+            rel='noopenner noreferrer'
+          >
+            {truncateAddress(address)}
+          </A>
+          <CopyText color='core.nearblack' text={address} hideCopyText />
+        </Box>
+      </Box>
+    </Box>
+  )
+}
 
 const PageHeader = ({
   msigAddress,
@@ -17,16 +63,19 @@ const PageHeader = ({
   const getRoute = useCallback(generateRouteWithRequiredUrlParams, [
     router.query
   ])
+
   return (
     <Box mb={6}>
-      <Box display='flex' alignItems='center' position='absolute'>
-        <IconGlif
-          size={6}
-          css={`
-            transform: rotate(-90deg);
-          `}
-        />
-        <Title ml={2}>Safe</Title>
+      <Box position='absolute'>
+        <Box display='flex' alignItems='center'>
+          <IconGlif
+            size={6}
+            css={`
+              transform: rotate(-90deg);
+            `}
+          />
+          <Title ml={2}>Safe</Title>
+        </Box>
       </Box>
       <Box
         display='flex'
@@ -84,17 +133,9 @@ const PageHeader = ({
           >
             Admin
           </NavLink>
-          <Box>
-            <Address
-              label='Safe Address'
-              address={msigAddress}
-              glyphAcronym='Sa'
-            />
-            <Address
-              label='Wallet Address'
-              address={walletAddress}
-              glyphAcronym='Wa'
-            />
+          <Box display='flex' flexDirection='row' mt={1}>
+            <Address label='Safe Address' address={msigAddress} />
+            <Address label='Wallet Address' address={walletAddress} />
           </Box>
         </Box>
       </Box>

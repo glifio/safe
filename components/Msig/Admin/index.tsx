@@ -1,17 +1,8 @@
-import React, { useState, useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
+import { Box, Title, ButtonV2, Tooltip } from '@glif/react-components'
 import {
-  Box,
-  Glyph,
-  Text,
-  Title,
-  ButtonV2,
-  IconLedger,
-  Tooltip,
-  BaseButton
-} from '@glif/react-components'
-import {
-  useWalletProvider,
   useWallet,
+  useWalletProvider,
   reportLedgerConfigError
 } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
@@ -21,11 +12,31 @@ import { Address, Signers, MsigPageWrapper } from '../Shared'
 import { navigate } from '../../../utils/urlParams'
 import { useMsig } from '../../../MsigProvider'
 
+const ShowOnDevice = ({ ledgerErr, shouldView, onShowOnLedger }) => {
+  if (ledgerErr)
+    return (
+      <ButtonV2 ml={3} onClick={onShowOnLedger} disabled small>
+        Ledger Device Error
+      </ButtonV2>
+    )
+  if (shouldView)
+    return (
+      <ButtonV2 ml={3} onClick={onShowOnLedger} disabled small>
+        Check Ledger Device
+      </ButtonV2>
+    )
+  return (
+    <ButtonV2 ml={3} onClick={onShowOnLedger} small>
+      View on Device
+    </ButtonV2>
+  )
+}
+
 export default function Owners() {
   const router = useRouter()
   const { NumApprovalsThreshold, Signers: signers } = useMsig()
   const wallet = useWallet()
-  const { ledger, connectLedger } = useWalletProvider()
+  const { ledger, connectLedger, loginOption } = useWalletProvider()
   const [ledgerBusy, setLedgerBusy] = useState(false)
   const onShowOnLedger = useCallback(async () => {
     setLedgerBusy(true)
@@ -49,64 +60,87 @@ export default function Owners() {
         margin='0 auto'
       >
         <Box width='100%'>
-          <Box display='flex' flexWrap='wrap' my={6}>
+          <Box
+            display='flex'
+            flexWrap='wrap'
+            my={6}
+            flexDirection='row'
+            alignItems='center'
+          >
             <Title display='inline-flex' alignItems='center'>
-              <Glyph
-                acronym={NumApprovalsThreshold.toString()}
-                size={5}
-                justifyContent='start'
-                border={0}
-              />
-              Required Approvals
+              Required Approvals:
             </Title>
-            <Tooltip content='The number of approvals required for a transaction' />
+            <Title
+              display='inline-flex'
+              alignItems='center'
+              ml={3}
+              css={`
+                font-weight: 800;
+              `}
+            >
+              {`${NumApprovalsThreshold.toString()}`}
+            </Title>
+            <Box
+              display='flex'
+              flexWrap='wrap'
+              flexDirection='row'
+              alignItems='flex-start'
+            >
+              <ButtonV2
+                ml={3}
+                onClick={() => {
+                  navigate(router, {
+                    pageUrl: PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD
+                  })
+                }}
+                small
+              >
+                Edit
+              </ButtonV2>
+              <Tooltip content='The number of approvals required for a Safe proposal to execute.' />
+            </Box>
           </Box>
-          <Box position='relative' display='flex' flexWrap='wrap'>
+          <Box
+            position='relative'
+            display='flex'
+            flexWrap='wrap'
+            alignItems='center'
+          >
             <Title>Signers</Title>
-            <Tooltip content='These are the Filecoin addresses that can approve and reject proposals from your Multisig wallet.' />
+            <Box display='flex' flexDirection='row' alignItems='flex-start'>
+              <ButtonV2
+                ml={3}
+                onClick={() => {
+                  navigate(router, { pageUrl: PAGE.MSIG_ADD_SIGNER })
+                }}
+                small
+              >
+                Add Signer
+              </ButtonV2>
+              <Tooltip content='These are the Filecoin addresses that can approve and reject proposals from your Safe.' />
+            </Box>
           </Box>
-          <Box position='relative' display='flex' flexWrap='wrap' mt={3}>
+          <Box
+            position='relative'
+            display='flex'
+            flexWrap='wrap'
+            mt={3}
+            alignItems='center'
+          >
             <Address
               address={wallet.address}
               glyphAcronym='1'
-              label='Signer 1 - Your Ledger'
+              label='Signer 1 - You'
             />
-
-            <BaseButton
-              display='flex'
-              alignItems='center'
-              maxWidth={10}
-              onClick={onShowOnLedger}
-              disabled={ledgerBusy}
-              color='core.nearblack'
-              border={1}
-              bg='transparent'
-              my={1}
-              ml={3}
-              height={6}
-              borderRadius={6}
-            >
-              <IconLedger size={4} mr={2} />
-              {!ledgerErr && ledgerBusy ? (
-                <Text>Check Ledger Device</Text>
-              ) : (
-                <Text>View on Device</Text>
-              )}
-              {ledgerErr && <Text>Ledger Device Error</Text>}
-            </BaseButton>
-            <Tooltip content='Displays your address on your Ledger device' />
+            {loginOption === 'LEDGER' && (
+              <ShowOnDevice
+                onClick={onShowOnLedger}
+                shouldView={ledgerBusy}
+                {...ledgerErr}
+              />
+            )}
           </Box>
           <Signers signers={signers} walletAddress={wallet.address} />
-          <Box display='flex' alignItems='center' mt={1}>
-            <ButtonV2
-              onClick={() => {
-                navigate(router, { pageUrl: PAGE.MSIG_ADD_SIGNER })
-              }}
-              small
-            >
-              Add Signer
-            </ButtonV2>
-          </Box>
         </Box>
       </Box>
     </MsigPageWrapper>

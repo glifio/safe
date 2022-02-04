@@ -94,6 +94,7 @@ export enum PAGE {
   MSIG_CHOOSE_ACCOUNTS = '/accounts',
   CONNECT_LEDGER = '/connect/ledger',
   CONNECT_METAMASK = '/connect/metamask',
+  NODE_DISCONNECTED = '/error/node-disconnected',
   LANDING = '/'
 }
 
