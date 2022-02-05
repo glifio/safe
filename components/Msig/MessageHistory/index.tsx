@@ -28,7 +28,7 @@ const MessageHistory = () => {
             <MessageDetail
               cid={router.query.cid as string}
               addressHref={(address: string) =>
-                `https://message.glif.io/${address}`
+                `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
               }
             />
             <ButtonClose
@@ -42,7 +42,7 @@ const MessageHistory = () => {
           <MessageHistoryTable
             address={Address}
             addressHref={(address: string) =>
-              `https://message.glif.io/${address}`
+              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
             }
             cidHref={(cid: string) => `/history?cid=${cid}`}
             inspectingAddress={Address}

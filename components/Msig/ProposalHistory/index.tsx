@@ -61,7 +61,7 @@ const ProposalHistory = () => {
                 })
               }}
               addressHref={(address: string) =>
-                `https://messenger.glif.io/${address}`
+                `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
               }
             />
             <ButtonClose
