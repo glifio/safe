@@ -35,8 +35,8 @@ class MyApp extends App {
             name='keywords'
             content='Filecoin,Wallet,Web,Storage,Blockchain,Crypto,FIL'
           />
-          <meta property='og:image' content='/bg-sender.jpg' />
-          <meta property='og:title' content='GLIF Sender' />
+          <meta property='og:image' content='/bg-safe.jpg' />
+          <meta property='og:title' content='GLIF Safe' />
           <meta
             property='og:description'
             content='A Filecoin multisig wallet.'
