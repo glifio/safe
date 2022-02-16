@@ -1,32 +1,30 @@
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import {
+  AppHeader,
   AppTile,
   Box,
   Footer,
   PhishingBanner,
-  LandingPageContainer,
-  LandingPageContentContainer,
+  LandingPageOuter,
+  LandingPageInner,
+  LandingPageAppTile,
+  LandingPageContent,
   space,
   fontSize,
   P,
   isMobileOrTablet,
   theme,
-  useNetworkName
+  useNetworkName,
+  SmartLink
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import {
-  ResponsiveWalletTile,
-  ConnectContentContainer,
-  ConnectBtn,
-  TextBox
-} from './Helpers'
+import { ConnectBtn, TextBox } from './Helpers'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 export default function Landing() {
   const isUnsupportedDevice = useMemo(() => isMobileOrTablet(), [])
-  const [closed, setClosed] = useState(false)
   const router = useRouter()
 
   const connect = useCallback(
@@ -42,14 +40,16 @@ export default function Landing() {
 
   return (
     <>
-      <LandingPageContainer>
-        <PhishingBanner
-          href='https://safe.glif.io'
-          closed={closed}
-          setClosed={() => setClosed(true)}
+      <LandingPageOuter>
+        <PhishingBanner href='https://safe.glif.io' />
+        <AppHeader
+          homeUrl={process.env.NEXT_PUBLIC_HOME_URL}
+          blogUrl={process.env.NEXT_PUBLIC_BLOG_URL}
+          walletUrl={process.env.NEXT_PUBLIC_WALLET_URL}
+          safeUrl={process.env.NEXT_PUBLIC_SAFE_URL}
         />
-        <LandingPageContentContainer phishingBannerClosed={closed}>
-          <ResponsiveWalletTile phishingBannerClosed={closed}>
+        <LandingPageInner>
+          <LandingPageAppTile>
             <AppTile
               title={
                 networkName && networkName !== 'Mainnet'
@@ -63,13 +63,8 @@ export default function Landing() {
               small={false}
               large
             />
-          </ResponsiveWalletTile>
-          <ConnectContentContainer
-            style={{
-              display: 'flex',
-              alignItems: 'center'
-            }}
-          >
+          </LandingPageAppTile>
+          <LandingPageContent>
             {isUnsupportedDevice ? (
               <TextBox style={{ background: theme.colors.core.primary }}>
                 <P
@@ -83,9 +78,8 @@ export default function Landing() {
                 </P>
               </TextBox>
             ) : (
-              <Box>
+              <>
                 <h2>Connect</h2>
-
                 <Box
                   display='flex'
                   flexDirection='column'
@@ -109,56 +103,34 @@ export default function Landing() {
                     Ledger Device
                   </ConnectBtn>
                 </Box>
-                <Box mt={6}>
-                  <P
-                    css={`
-                      font-size: ${fontSize('default')};
-                    `}
-                  >
+                <Box mt={6} fontSize='1.125rem'>
+                  <P>
                     Want to load this app directly from IPFS or Filecoin?
                     <br />
                     Check our{' '}
-                    <a
-                      href='https://github.com/glifio/safe/releases'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
+                    <SmartLink href='https://github.com/glifio/safe/releases'>
                       release page
-                    </a>
+                    </SmartLink>
                   </P>
-                  <P
-                    css={`
-                      font-size: ${fontSize('default')};
-                    `}
-                  >
+                  <P>
                     Need help?
                     <br />
                     Open a{' '}
-                    <a
-                      href='https://github.com/glifio/safe/issues/new/choose'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
+                    <SmartLink href='https://github.com/glifio/safe/issues/new/choose'>
                       GitHub issue
-                    </a>{' '}
-                    or hit us up on{' '}
-                    <a
-                      href='https://twitter.com/glifio'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
+                    </SmartLink>
+                    {' '}or hit us up on{' '}
+                    <SmartLink href='https://twitter.com/glifio'>
                       Twitter
-                    </a>
+                    </SmartLink>
                   </P>
                 </Box>
-              </Box>
+              </>
             )}
-          </ConnectContentContainer>
-        </LandingPageContentContainer>
-      </LandingPageContainer>
-      <Box p={`0 ${space()} ${space()}`}>
-        <Footer />
-      </Box>
+          </LandingPageContent>
+        </LandingPageInner>
+      </LandingPageOuter>
+      <Footer />
     </>
   )
 }
