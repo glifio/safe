@@ -2,8 +2,7 @@ import React, { useCallback, useMemo } from 'react'
 import {
   AppTile,
   Box,
-  LandingPageWrapper,
-  LandingPageAppTile,
+  LandingPageColumns,
   LandingPageContent,
   space,
   fontSize,
@@ -43,22 +42,20 @@ export default function Landing() {
       walletUrl={process.env.NEXT_PUBLIC_WALLET_URL}
       explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
     >
-      <LandingPageWrapper>
-        <LandingPageAppTile>
-          <AppTile
-            title={
-              networkName && networkName !== 'Mainnet'
-                ? `Safe (${networkName})`
-                : 'Safe'
-            }
-            oldTileName='Vault'
-            description='A Filecoin multisig wallet.'
-            imgSrc='/bg-safe.jpg'
-            imgSrcHover='/bg-safe-hover.jpg'
-            small={false}
-            large
-          />
-        </LandingPageAppTile>
+      <LandingPageColumns>
+        <AppTile
+          title={
+            networkName && networkName !== 'Mainnet'
+              ? `Safe (${networkName})`
+              : 'Safe'
+          }
+          oldTileName='Vault'
+          description='A Filecoin multisig wallet.'
+          imgSrc='/bg-safe.jpg'
+          imgSrcHover='/bg-safe-hover.jpg'
+          small={false}
+          large
+        />
         <LandingPageContent>
           {isUnsupportedDevice ? (
             <TextBox style={{ background: theme.colors.core.primary }}>
@@ -113,14 +110,12 @@ export default function Landing() {
                   GitHub issue
                 </SmartLink>{' '}
                 or hit us up on{' '}
-                <SmartLink href='https://twitter.com/glifio'>
-                  Twitter
-                </SmartLink>
+                <SmartLink href='https://twitter.com/glifio'>Twitter</SmartLink>
               </p>
             </>
           )}
         </LandingPageContent>
-      </LandingPageWrapper>
+      </LandingPageColumns>
     </Page>
   )
 }
