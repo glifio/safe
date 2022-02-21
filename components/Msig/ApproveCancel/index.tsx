@@ -17,7 +17,8 @@ import {
   MsigTransaction,
   Label,
   getMethodName,
-  Badge
+  Badge,
+  StyledATag
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -159,6 +160,8 @@ export default function ApproveReject() {
         setUncaughtError(
           `${wallet.address} has insufficient funds to pay for the transaction.`
         )
+      } else if (err.message.includes('17')) {
+        setUncaughtError('Proposal no longer exists.')
       } else if (err.message.includes('18')) {
         setUncaughtError(
           `${wallet.address} is not a signer of the Safe ${address}.`
@@ -331,10 +334,12 @@ export default function ApproveReject() {
                       case 'to': {
                         const toAddr = value as Address
                         let toAddrTxt = ''
+                        let makeLink = false
                         if (toAddr.id && toAddr.robust) {
                           toAddrTxt = `${truncateAddress(toAddr.robust)} (${
                             toAddr.id
                           })`
+                          makeLink = true
                         } else {
                           toAddrTxt = toAddr.robust || toAddr.id
                         }
@@ -342,7 +347,19 @@ export default function ApproveReject() {
                           return (
                             <ProposalLineItem key={key}>
                               <Text m={0}>{key}</Text>
-                              <Text m={0}>{toAddrTxt}</Text>
+                              {makeLink ? (
+                                <StyledATag
+                                  href={`${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${toAddr.robust}`}
+                                  css={`
+                                    cursor: pointer;
+                                  `}
+                                  m={0}
+                                >
+                                  {toAddrTxt}
+                                </StyledATag>
+                              ) : (
+                                <Text m={0}>{toAddrTxt}</Text>
+                              )}
                             </ProposalLineItem>
                           )
                       }
