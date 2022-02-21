@@ -1,0 +1,19 @@
+name = "glif-safe"
+type = "webpack"
+route = ''
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+site = {bucket = "./out",entry-point = "workers-site"}
+compatibility_date = "2022-02-21"
+
+[env.calibration]
+name = "safe-calibration"
+vars = { ENVIRONMENT = "calibration" }
+route = 'safe-calibration.glif.link/*'
+
+[env.mainnet]
+name = "safe-mainnet"
+vars = { ENVIRONMENT = "production" }
+route = 'safe.glif.link/*'
