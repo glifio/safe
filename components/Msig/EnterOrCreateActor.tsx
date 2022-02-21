@@ -29,11 +29,10 @@ const Form = styled.form`
   align-items: center;
 `
 
-const ACTOR_NOT_FOUND_ERR = 'Actor not found'
+const ACTOR_NOT_FOUND_ERR = 'Safe not found'
 const NOT_A_SIGNER_ERR =
-  'Your wallet is not an owner of this multisig. Please go back and choose a wallet address that is a signer of this multisig.'
-const NOT_MSIG_ACTOR_ERR =
-  'The actor you entered is not a multisig wallet. Glif only supports multisig actors.'
+  'Your wallet is not an owner of this Safe. Please go back and choose a wallet address that is an owner of this Safe.'
+const NOT_MSIG_ACTOR_ERR = 'The address you entered is not a Glif Safe.'
 
 const EnterActorAddress = () => {
   const { setMsigActor, errors: msigActorErrors, ActorCode } = useMsig()
@@ -80,7 +79,7 @@ const EnterActorAddress = () => {
     const trimmedAddr = input.current.value.trim()
     if (!validateAddressString(trimmedAddr)) return setErr('Invalid address.')
     if (Number(trimmedAddr[1]) !== 0 && Number(trimmedAddr[1]) !== 2)
-      return setErr('Invalid Actor Address. Second character must be 0 or 2.')
+      return setErr('Invalid Safe Address. Second character must be 0 or 2.')
     setMsigActor(trimmedAddr)
   }
 
@@ -89,8 +88,8 @@ const EnterActorAddress = () => {
       <Form autoComplete='on' onSubmit={onSubmit}>
         <OnboardCard>
           <StepHeader showStepper={false} Icon={IconLedger} />
-          <Title mt={3}>Actor ID</Title>
-          <Text>Please input your actor ID address below to continue </Text>
+          <Title mt={3}>Safe ID</Title>
+          <Text>Please input your Safe ID address below to continue </Text>
           <Input.Text
             // @ts-expect-error
             ref={input}
