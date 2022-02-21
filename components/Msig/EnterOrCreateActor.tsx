@@ -92,6 +92,7 @@ const EnterActorAddress = () => {
           <Title mt={3}>Actor ID</Title>
           <Text>Please input your actor ID address below to continue </Text>
           <Input.Text
+            // @ts-expect-error
             ref={input}
             autoComplete='on'
             label='ID'

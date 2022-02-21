@@ -28,7 +28,7 @@ const MessageHistory = () => {
             <MessageDetail
               cid={router.query.cid as string}
               addressHref={(address: string) =>
-                `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
+                `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
               }
             />
             <ButtonClose
@@ -42,12 +42,11 @@ const MessageHistory = () => {
           <MessageHistoryTable
             address={Address}
             addressHref={(address: string) =>
-              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
+              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
             }
             cidHref={(cid: string) =>
-              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/message/${cid}`
+              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/message/?cid?${cid}`
             }
-            inspectingAddress={Address}
           />
         )}
       </Box>
