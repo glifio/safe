@@ -1078,7 +1078,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   font-size="2"
                   font-weight="400"
                 >
-                  Please review transaction fee details. Please note, the transaction fee is paid from the Filecoin wallet on your Ledger device, not your multisig wallet.
+                  Please review transaction fee details. Please note, the transaction fee is paid by the Safe owner, not your multisig wallet.
                 </p>
                 <a
                   class="c22"
@@ -2490,7 +2490,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   font-size="2"
                   font-weight="400"
                 >
-                  Please review transaction fee details. Please note, the transaction fee is paid from the Filecoin wallet on your Ledger device, not your multisig wallet.
+                  Please review transaction fee details. Please note, the transaction fee is paid by the Safe owner, not your multisig wallet.
                 </p>
                 <a
                   class="c22"
@@ -6042,7 +6042,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Please review transaction fee details. Please note, the transaction fee is paid from the Filecoin wallet on your Ledger device, not your multisig wallet.
+                  Please review transaction fee details. Please note, the transaction fee is paid by the Safe owner, not your multisig wallet.
                 </p>
                 <a
                   class="c22"
