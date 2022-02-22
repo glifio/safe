@@ -77,6 +77,7 @@ const ProposalHistory = () => {
             idHref={(id: number) =>
               `${PAGE.MSIG_PROPOSAL}?id=${id}&address=${Address}`
             }
+            walletAddr={wallet.address}
           />
         )}
       </Box>
