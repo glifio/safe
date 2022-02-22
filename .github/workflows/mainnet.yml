@@ -38,6 +38,7 @@ jobs:
           SENTRY_DSN: 'https://bc9449e8f4fc439f943374373b9a3f7a@o1126745.ingest.sentry.io/6186018'
           SENTRY_ENV: 'mainnet'
           NODE_STATUS_API_KEY: 'm786191525-b3192b91db66217a44f7d4be'
+      - run: npm i -g @cloudflare/wrangler
       - run: npm run publish:mainnet
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}

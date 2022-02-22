@@ -25,6 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm ci --ignore-scripts
+      # - run: npm run lint
       - run: npm test
       - run: npm run export
         env:
@@ -40,6 +41,7 @@ jobs:
           SENTRY_DSN: 'https://bc9449e8f4fc439f943374373b9a3f7a@o1126745.ingest.sentry.io/6186018'
           SENTRY_ENV: 'calibration'
           NODE_STATUS_API_KEY: 'm787669344-2a9b90eb03dbff3e503c93c7'
+      - run: npm i -g @cloudflare/wrangler
       - run: npm run publish:calibration
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
