@@ -14,6 +14,7 @@
     "test:watch": "jest --watch",
     "export": "next build && next export",
     "serve": "npx serve ./out",
+    "store-ipfs": "npx @glif/deployment-cli ipfs ./out $WEB3_STORAGE_TOKEN",
     "tsc": "tsc",
     "publish:calibration": "wrangler publish --env calibration",
     "publish:mainnet": "wrangler publish --env mainnet"
