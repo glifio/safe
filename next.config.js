@@ -24,6 +24,7 @@ const webpack = (config) => {
 module.exports = (phase) => {
   return {
     webpack,
+    trailingSlash: true,
     env: {
       NEXT_PUBLIC_GRAPH_API_URL:
         process.env.GRAPH_API_URL || 'graph.glif.host/query',
