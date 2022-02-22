@@ -16,8 +16,8 @@
     "serve": "npx serve ./out",
     "store-ipfs": "npx @glif/deployment-cli ipfs ./out $WEB3_STORAGE_TOKEN",
     "tsc": "tsc",
-    "publish:calibration": "npx @cloudflare/wrangler publish --env calibration",
-    "publish:mainnet": "npx @cloudflare/wrangler publish --env mainnet"
+    "publish:calibration": "wrangler publish --env calibration",
+    "publish:mainnet": "wrangler publish --env mainnet"
   },
   "dependencies": {
     "@apollo/client": "^3.5.7",
