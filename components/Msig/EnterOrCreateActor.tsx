@@ -36,6 +36,7 @@ const NOT_MSIG_ACTOR_ERR = 'The address you entered is not a Glif Safe.'
 
 const EnterActorAddress = () => {
   const { setMsigActor, errors: msigActorErrors, ActorCode } = useMsig()
+  const [submittedForm, setSubmittedForm] = useState(false)
   const router = useRouter()
   const [err, setErr] = useState('')
   const input = useRef<HTMLInputElement>(null)
@@ -68,13 +69,14 @@ const EnterActorAddress = () => {
   // we push the user to the msig home
   useEffect(() => {
     // as long as there is an ActorCode, we know we successfully retrieved the multisig
-    if (!err && !!ActorCode) {
+    if (!err && !!ActorCode && submittedForm) {
       navigate(router, { pageUrl: PAGE.MSIG_HOME })
     }
-  }, [err, router, ActorCode])
+  }, [submittedForm, err, router, ActorCode])
 
   const onSubmit = (e) => {
     e.preventDefault()
+    setSubmittedForm(true)
     setErr('')
     const trimmedAddr = input.current.value.trim()
     if (!validateAddressString(trimmedAddr)) return setErr('Invalid address.')
