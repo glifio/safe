@@ -93,7 +93,7 @@ export const WithdrawHeaderText = ({ step }) => {
       break
     case 3:
       text =
-        'Please review transaction fee details. Please note, the transaction fee is paid from the Filecoin wallet on your Ledger device, not your multisig wallet.'
+        'Please review transaction fee details. Please note, the transaction fee is paid by the Safe owner, not your multisig wallet.'
       break
     case 4:
       text = 'Please review the transaction details.'

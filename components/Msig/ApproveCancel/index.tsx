@@ -244,8 +244,8 @@ export default function ApproveReject() {
                 <ConfirmationCard
                   loading={fetchingTxDetails || mPoolPushing}
                   loginOption={loginOption}
-                  currentStep={5}
-                  totalSteps={5}
+                  currentStep={2}
+                  totalSteps={2}
                   msig
                   method={method}
                   approvalsUntilExecution={proposal.approvalsUntilExecution}

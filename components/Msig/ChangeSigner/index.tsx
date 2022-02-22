@@ -309,7 +309,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
                       >
                         <StyledATag
                           target='_blank'
-                          href={`https://filfox.info/en/address/${oldSignerAddress}`}
+                          href={`${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${oldSignerAddress}`}
                         >{`${truncateAddress(oldSignerAddress)}`}</StyledATag>
                         <CopyText text={oldSignerAddress} hideCopyText />
                       </Box>

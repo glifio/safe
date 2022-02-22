@@ -1418,7 +1418,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     class="c31"
                     color="core.primary"
                     font-size="2"
-                    href="https://filfox.info/en/address/f1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                    href="undefined/actor/?address=f1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                     target="_blank"
                   >
                     f1z225 ... 6z6wgi
@@ -2701,7 +2701,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     class="c31"
                     color="core.primary"
                     font-size="2"
-                    href="https://filfox.info/en/address/f1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                    href="undefined/actor/?address=f1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                     target="_blank"
                   >
                     f1z225 ... 6z6wgi
