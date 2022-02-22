@@ -45,7 +45,7 @@ const MessageHistory = () => {
               `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
             }
             cidHref={(cid: string) =>
-              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/message/?cid?${cid}`
+              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/message/?cid=${cid}`
             }
           />
         )}
