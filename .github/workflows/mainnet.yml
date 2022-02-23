@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       newversion:
-        description: 'npm publish {major,minor,patch,prerelease}'
+        description: 'npm publish {major,minor,patch}'
         required: true
 
 concurrency:
