@@ -3,7 +3,6 @@ import { RequireWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import MsigWithdraw from '../components/Msig/Withdraw'
-import { MsigPageWrapper } from '../components/Msig/Shared'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
@@ -15,9 +14,7 @@ const Withdraw = () => {
   )
   return (
     <RequireWallet gatekeep={gatekeep}>
-      <MsigPageWrapper hideNav>
-        <MsigWithdraw />
-      </MsigPageWrapper>
+      <MsigWithdraw />
     </RequireWallet>
   )
 }

@@ -1,5 +1,5 @@
 import React, { cloneElement, ReactElement, useCallback } from 'react'
-import { bool, node } from 'prop-types'
+import { node } from 'prop-types'
 import {
   Box,
   LoadingScreen,
@@ -16,11 +16,9 @@ import PageHeader from './PageHeader'
 
 const MsigPageWrapper = ({
   children,
-  hideNav,
   ...props
 }: {
   children: ReactElement
-  hideNav: boolean
 }) => {
   const msig = useMsig()
   const wallet = useWallet()
@@ -29,10 +27,6 @@ const MsigPageWrapper = ({
   const onNodeDisconnect = useCallback(() => {
     navigate(router, { pageUrl: PAGE.NODE_DISCONNECTED })
   }, [router])
-
-  if (hideNav) {
-    return cloneElement(children, props)
-  }
 
   return (
     <Box
@@ -81,12 +75,7 @@ const MsigPageWrapper = ({
 }
 
 MsigPageWrapper.propTypes = {
-  children: node.isRequired,
-  hideNav: bool
-}
-
-MsigPageWrapper.defaultProps = {
-  hideNav: false
+  children: node.isRequired
 }
 
 export default MsigPageWrapper

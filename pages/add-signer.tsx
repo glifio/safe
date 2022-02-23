@@ -2,7 +2,6 @@ import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
 import AddSigner from '../components/Msig/AddRmSigners/AddSigner'
-import { MsigPageWrapper } from '../components/Msig/Shared'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
@@ -14,9 +13,7 @@ const Add = () => {
   )
   return (
     <RequireWallet gatekeep={gatekeep}>
-      <MsigPageWrapper hideNav>
-        <AddSigner />
-      </MsigPageWrapper>
+      <AddSigner />
     </RequireWallet>
   )
 }

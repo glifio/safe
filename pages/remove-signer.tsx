@@ -2,7 +2,6 @@ import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
 import RemoveSigner from '../components/Msig/AddRmSigners/RemoveSigner'
-import { MsigPageWrapper } from '../components/Msig/Shared'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
@@ -15,9 +14,7 @@ const Remove = () => {
   )
   return (
     <RequireWallet gatekeep={gatekeep}>
-      <MsigPageWrapper hideNav>
-        <RemoveSigner signerAddress={address} />
-      </MsigPageWrapper>
+      <RemoveSigner signerAddress={address} />
     </RequireWallet>
   )
 }
