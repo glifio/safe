@@ -15,14 +15,7 @@ const MessageHistory = () => {
   const router = useRouter()
   return (
     <MsigPageWrapper>
-      <Box
-        display='flex'
-        flexWrap='wrap'
-        justifyContent='center'
-        width='100%'
-        maxWidth={18}
-        margin='0 auto'
-      >
+      <Box>
         {router.query.cid ? (
           <Box display='flex' flexDirection='row'>
             <MessageDetail

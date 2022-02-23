@@ -20,14 +20,7 @@ const ProposalHistory = () => {
   const router = useRouter()
   return (
     <MsigPageWrapper>
-      <Box
-        display='flex'
-        flexWrap='wrap'
-        justifyContent='center'
-        width='100%'
-        maxWidth={18}
-        margin='0 auto'
-      >
+      <Box>
         {router.query.id && router.query.address ? (
           <Box display='flex' flexDirection='row'>
             <ProposalDetail
