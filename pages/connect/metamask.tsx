@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { Box, useDesktopBrowser } from '@glif/react-components'
+import { Page, OneColumnCentered, useDesktopBrowser } from '@glif/react-components'
 import { ConnectMM } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 import useReset from '../../utils/useReset'
@@ -19,14 +19,16 @@ export default function ConnectMetaMask() {
     navigate(router, { pageUrl: PAGE.MSIG_CHOOSE_ACCOUNTS })
   }, [router])
   return (
-    <Box
-      display='flex'
-      minHeight='100vh'
-      justifyContent='center'
-      alignContent='center'
-      padding={[2, 3, 5]}
+    <Page
+      back={back}
+      homeUrl={process.env.NEXT_PUBLIC_HOME_URL}
+      blogUrl={process.env.NEXT_PUBLIC_BLOG_URL}
+      walletUrl={process.env.NEXT_PUBLIC_WALLET_URL}
+      explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
     >
-      <ConnectMM next={next} back={back} />
-    </Box>
+      <OneColumnCentered>
+        <ConnectMM next={next} back={back} />
+      </OneColumnCentered>
+    </Page>
   )
 }
