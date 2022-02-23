@@ -33,9 +33,6 @@ const MsigPageWrapper = ({
       position='relative'
       display='flex'
       justifyContent='center'
-      width='100%'
-      p={3}
-      // padding for logout button to ensure it never sits on top of the content
       paddingBottom={8}
     >
       {msig.loading && <LoadingScreen width='100%' />}
