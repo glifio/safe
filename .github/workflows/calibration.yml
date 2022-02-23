@@ -18,16 +18,42 @@ jobs:
         node: [14]
 
     steps:
-      - uses: actions/checkout@v2.4.0
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2.5.0
+      - uses: actions/checkout@v2.3.4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci --ignore-scripts
-      - run: npm run lint
-      - run: npm test
-      - run: npm run export
+          # fetch full history so things like auto-changelog work properly
+          fetch-depth: 0
+      - name: Use Node.js ${{ env.node_version }}
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: ${{ env.node_version }}
+
+      - run: git config --global user.email "${{ env.git_email }}"
+      - run: git config --global user.name "${{ github.actor }}"
+
+      - name: Install
+        run: npm ci --ignore-scripts
+
+      - name: Test
+        run: |
+          npm run lint
+          npm test
+
+      # Create a prerelease tag
+      - name: Tag
+        run: npm version prerelease --preid calibration
+
+      - name: Get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
+
+      # push to git
+      - name: Push
+        run: |
+          git push origin v${{ steps.package-version.outputs.current-version}}
+          git push origin primary
+
+      - name: Build
+        run: npm run export
         env:
           LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io'
           GRAPH_API_URL: 'graph.glif.host/query'
@@ -41,12 +67,32 @@ jobs:
           SENTRY_DSN: 'https://bc9449e8f4fc439f943374373b9a3f7a@o1126745.ingest.sentry.io/6186018'
           SENTRY_ENV: 'calibration'
           NODE_STATUS_API_KEY: 'm787669344-2a9b90eb03dbff3e503c93c7'
-      - run: npm i -g @cloudflare/wrangler
-      - run: npm run publish:calibration
+
+      - name: Deploy-cloudflare
+        run: |
+          npm i -g @cloudflare/wrangler
+          npm run publish:calibration
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-      - run: npm run store-ipfs
+
+      - name: Changelog
+        uses: scottbrenner/generate-changelog-action@master
+        id: Changelog
+
+      - name: IPFS
+        id: ipfs
+        run: npm run store-ipfs
         env:
           WEB3_STORAGE_TOKEN: ${{ secrets.WEB3_STORAGE_TOKEN }}
+
+      - name: Release-to-calibration
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Calibration release - v${{ steps.package-version.outputs.current-version }}
+          tag_name: v${{ steps.package-version.outputs.current-version }}
+          prerelease: true
+          body: |
+            Visit at: https://${{ steps.ipfs.outputs.cid }}.ipfs.dweb.link
+            ${{ steps.Changelog.outputs.changelog }}
