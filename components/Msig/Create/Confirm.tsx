@@ -108,69 +108,59 @@ const Confirm = () => {
     )
   }
 
-  return (
-    <Box
-      display='flex'
-      justifyContent='center'
-      width='100%'
-      minHeight='100vh'
-      p={3}
-    >
-      {Address ? (
-        <Box
-          p={5}
-          display='flex'
-          flexDirection='column'
-          alignItems='center'
-          justifyContent='center'
+  if (Address) {
+    return (
+      <Box
+        display='flex'
+        flexDirection='column'
+        alignItems='center'
+      >
+        <Title>Your Safe has been created.</Title>
+        <Card
+          maxWidth={13}
+          width='100%'
+          my={3}
+          bg='background.screen'
+          boxShadow={2}
+          border={0}
         >
-          <Title>Your Safe has been created.</Title>
-          <Card
-            maxWidth={13}
-            width='100%'
-            my={3}
-            bg='background.screen'
-            boxShadow={2}
-            border={0}
-          >
-            <Glyph acronym='Sa' />
-            <Text my={0} mt={3} color='core.darkgray'>
-              Your Safe Address{' '}
-            </Text>
-            <Text mt={2}>{Address}</Text>
-          </Card>
-          <NextOption
-            text='Go to Safe dashboard'
-            onClick={() => {
-              navigate(router, { pageUrl: PAGE.MSIG_HOME })
-            }}
-          />
-        </Box>
-      ) : (
-        <>
-          <Box display='flex' justifyContent='center' flexDirection='column'>
-            <Box display='flex' justifyContent='center' alignItems='center'>
-              <IconPending />
-              <Text ml={2}>
-                We&apos;re waiting for your transaction to confirm.
-              </Text>
-            </Box>
-            <Box display='flex' justifyContent='center' alignItems='center'>
-              <Text mr={2}>With CID: </Text>
-              <StyledATag
-                href={`https://filfox.info/en/message/${router.query.cid}`}
-              >
-                {router.query.cid}
-              </StyledATag>
-              <br />
-            </Box>
-            <Text>
-              This screen will automatically show you your new Safe address once
-              the transaction confirms.
-            </Text>
-          </Box>
-        </>
-      )}
+          <Glyph acronym='Sa' />
+          <Text my={0} mt={3} color='core.darkgray'>
+            Your Safe Address{' '}
+          </Text>
+          <Text mt={2}>{Address}</Text>
+        </Card>
+        <NextOption
+          text='Go to Safe dashboard'
+          onClick={() => {
+            navigate(router, { pageUrl: PAGE.MSIG_HOME })
+          }}
+        />
+      </Box>
+    )
+  }
+
+  return (
+    <Box display='flex' justifyContent='center' flexDirection='column'>
+      <Box display='flex' justifyContent='center' alignItems='center'>
+        <IconPending />
+        <Text ml={2}>
+          We&apos;re waiting for your transaction to confirm.
+        </Text>
+      </Box>
+      <Box display='flex' justifyContent='center' alignItems='center'>
+        <Text mr={2}>With CID: </Text>
+        <StyledATag
+          href={`https://filfox.info/en/message/${router.query.cid}`}
+        >
+          {router.query.cid}
+        </StyledATag>
+        <br />
+      </Box>
+      <Text>
+        This screen will automatically show you your new Safe address once
+        the transaction confirms.
+      </Text>
     </Box>
   )
 }
