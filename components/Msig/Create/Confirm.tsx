@@ -141,9 +141,16 @@ const Confirm = () => {
   }
 
   return (
-    <Box display='flex' justifyContent='center' flexDirection='column'>
+    <Card
+      width='100%'
+      maxWidth={16}
+      bg='background.screen'
+      boxShadow={2}
+      border={0}
+      textAlign='center'
+    >
       <Box display='flex' justifyContent='center' alignItems='center'>
-        <IconPending />
+        <IconPending flexShrink='0' />
         <Text ml={2}>
           We&apos;re waiting for your transaction to confirm.
         </Text>
@@ -153,7 +160,7 @@ const Confirm = () => {
         <StyledATag
           href={`https://filfox.info/en/message/${router.query.cid}`}
         >
-          {router.query.cid}
+          <span style={{ wordBreak: 'break-all' }}>{router.query.cid}</span>
         </StyledATag>
         <br />
       </Box>
@@ -161,7 +168,7 @@ const Confirm = () => {
         This screen will automatically show you your new Safe address once
         the transaction confirms.
       </Text>
-    </Box>
+    </Card>
   )
 }
 
