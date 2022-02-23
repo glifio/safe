@@ -3,6 +3,10 @@
 
 name: deploy - calibration
 
+env:
+  node_version: 14
+  git_email: jpschwartz2@uwalumni.com
+
 on:
   push:
     branches: [primary]
