@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { CoinType } from '@glif/filecoin-address'
 import { AccountSelector, RequireWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
-import { useDesktopBrowser } from '@glif/react-components'
+import { Page, OneColumn, useDesktopBrowser } from '@glif/react-components'
 import { PAGE } from '../constants'
 import { navigate } from '../utils/urlParams'
 
@@ -22,18 +22,27 @@ const Accounts = () => {
     [router]
   )
   return (
-    <RequireWallet gatekeep={gatekeep}>
-      <AccountSelector
-        title='Select Account'
-        helperText={`Your connected wallet creates hundreds of individual accounts. We're showing you the first ${nWalletsToShow}.`}
-        onSelectAccount={onSelectAccount}
-        nWalletsToLoad={nWalletsToShow}
-        coinType={COIN_TYPE}
-        showSelectedAccount
-        back={gatekeep}
-        isProd={!!IS_PROD}
-      />
-    </RequireWallet>
+    <Page
+      back={gatekeep}
+      homeUrl={process.env.NEXT_PUBLIC_HOME_URL}
+      blogUrl={process.env.NEXT_PUBLIC_BLOG_URL}
+      walletUrl={process.env.NEXT_PUBLIC_WALLET_URL}
+      explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
+    >
+      <OneColumn>
+        <RequireWallet gatekeep={gatekeep}>
+          <AccountSelector
+            title='Select Account'
+            helperText={`Your connected wallet creates hundreds of individual accounts. We're showing you the first ${nWalletsToShow}.`}
+            onSelectAccount={onSelectAccount}
+            nWalletsToLoad={nWalletsToShow}
+            coinType={COIN_TYPE}
+            showSelectedAccount
+            isProd={!!IS_PROD}
+          />
+        </RequireWallet>
+      </OneColumn>
+    </Page>
   )
 }
 
