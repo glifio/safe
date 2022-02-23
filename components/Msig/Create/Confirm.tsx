@@ -93,28 +93,18 @@ const Confirm = () => {
 
   if (msigError || !router.query.cid) {
     return (
-      <Box
-        display='flex'
-        justifyContent='center'
-        width='100%'
-        minHeight='100vh'
-        p={3}
-      >
-        <Box display='flex' justifyContent='center' flexDirection='column'>
-          <Box display='flex' justifyContent='center' alignItems='center'>
-            <Title ml={2}>There was an error when creating your Safe.</Title>
-          </Box>
-          <Box display='flex' justifyContent='center' alignItems='center'>
-            <Text mr={2}>With CID: </Text>
-            <StyledATag
-              href={`${process.env.NEXT_PUBLIC_EXPLORER_URL}/message/?cid=${router.query.cid}`}
-            >
-              {router.query.cid}
-            </StyledATag>
-            <br />
-          </Box>
+      <>
+        <Title ml={2}>There was an error when creating your Safe.</Title>
+        <Box display='flex' justifyContent='center' alignItems='center'>
+          <Text mr={2}>With CID: </Text>
+          <StyledATag
+            href={`${process.env.NEXT_PUBLIC_EXPLORER_URL}/message/?cid=${router.query.cid}`}
+          >
+            {router.query.cid}
+          </StyledATag>
+          <br />
         </Box>
-      </Box>
+      </>
     )
   }
 
