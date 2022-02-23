@@ -42,19 +42,12 @@ jobs:
           npm run lint
           npm test
 
-      # Create a prerelease tag
       - name: Tag
         run: npm version prerelease --preid calibration
 
       - name: Get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
-
-      # push to git
-      - name: Push
-        run: |
-          git push origin v${{ steps.package-version.outputs.current-version}}
-          git push origin primary
 
       - name: Build
         run: npm run export
@@ -85,11 +78,16 @@ jobs:
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
 
-      - name: IPFS
+      - name: Filecoin-archive
         id: ipfs
         run: npm run store-ipfs
         env:
           WEB3_STORAGE_TOKEN: ${{ secrets.WEB3_STORAGE_TOKEN }}
+
+      - name: Git-push
+        run: |
+          git push origin v${{ steps.package-version.outputs.current-version}}
+          git push origin primary
 
       - name: Release-to-calibration
         uses: softprops/action-gh-release@v1
