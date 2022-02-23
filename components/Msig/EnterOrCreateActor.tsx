@@ -24,7 +24,6 @@ const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   justify-content: center;
   align-items: center;
 `
@@ -84,53 +83,51 @@ const EnterActorAddress = () => {
   }
 
   return (
-    <Box padding={[2, 3, 5]}>
-      <Form autoComplete='on' onSubmit={onSubmit}>
-        <OnboardCard>
-          <StepHeader showStepper={false} Icon={IconLedger} />
-          <Title mt={3}>Safe ID</Title>
-          <Text>Please input your Safe ID address below to continue </Text>
-          <Input.Text
-            // @ts-expect-error
-            ref={input}
-            autoComplete='on'
-            label='ID'
-            name='ID'
-            placeholder='f02'
-            error={err}
-          />
+    <Form autoComplete='on' onSubmit={onSubmit}>
+      <OnboardCard>
+        <StepHeader showStepper={false} Icon={IconLedger} />
+        <Title mt={3}>Safe ID</Title>
+        <Text>Please input your Safe ID address below to continue </Text>
+        <Input.Text
+          // @ts-expect-error
+          ref={input}
+          autoComplete='on'
+          label='ID'
+          name='ID'
+          placeholder='f02'
+          error={err}
+        />
 
-          <br />
-          <Box display='flex' flexDirection='row' alignItems='center'>
-            <Text mr={3}>Don&apos;t have a multisig actor ID?</Text>
-            <StyledLink
-              href={generateRouteWithRequiredUrlParams({
-                pageUrl: PAGE.MSIG_CREATE,
-                existingQParams: {}
-              })}
-              name='Create one'
-              target='_self'
-            />
-          </Box>
-        </OnboardCard>
-        <Box
-          mt={6}
-          display='flex'
-          flexDirection='row'
-          justifyContent='space-between'
-          width='100%'
-          maxWidth={13}
-        >
-          <Button
-            title='Back'
-            onClick={router.back}
-            variant='secondary'
-            mr={2}
+        <br />
+        <Box display='flex' flexDirection='row' alignItems='center'>
+          <Text mr={3}>Don&apos;t have a multisig actor ID?</Text>
+          <StyledLink
+            href={generateRouteWithRequiredUrlParams({
+              pageUrl: PAGE.MSIG_CREATE,
+              existingQParams: {}
+            })}
+            name='Create one'
+            target='_self'
           />
-          <Button title='Submit' type='submit' variant='primary' ml={2} />
         </Box>
-      </Form>
-    </Box>
+      </OnboardCard>
+      <Box
+        mt={6}
+        display='flex'
+        flexDirection='row'
+        justifyContent='space-between'
+        width='100%'
+        maxWidth={13}
+      >
+        <Button
+          title='Back'
+          onClick={router.back}
+          variant='secondary'
+          mr={2}
+        />
+        <Button title='Submit' type='submit' variant='primary' ml={2} />
+      </Box>
+    </Form>
   )
 }
 
