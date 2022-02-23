@@ -12,6 +12,7 @@ const webpack = (config) => {
 
   adjustedConf.resolve.alias = {
     ...config.resolve.alias,
+    '@glif/react-components': path.resolve('./node_modules/@glif/react-components'),
     react: path.resolve('./node_modules/react'),
     'react-dom': path.resolve('./node_modules/react-dom'),
     next: path.resolve('./node_modules/next'),
