@@ -1,11 +1,12 @@
 import { useCallback } from 'react'
 import { RequireWallet } from '@glif/wallet-provider-react'
-import { Page, OneColumn } from '@glif/react-components'
+import { OneColumn } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
 import MsigHome from '../components/Msig/Home'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
+import SafePageLoggedIn from '../components/SafePageLoggedIn'
 
 const Home = () => {
   const router = useRouter()
@@ -14,19 +15,13 @@ const Home = () => {
     [router]
   )
   return (
-    <Page
-      back={gatekeep}
-      homeUrl={process.env.NEXT_PUBLIC_HOME_URL}
-      blogUrl={process.env.NEXT_PUBLIC_BLOG_URL}
-      walletUrl={process.env.NEXT_PUBLIC_WALLET_URL}
-      explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
-    >
+    <SafePageLoggedIn>
       <OneColumn>
         <RequireWallet gatekeep={gatekeep}>
           <MsigHome />
         </RequireWallet>
       </OneColumn>
-    </Page>
+    </SafePageLoggedIn>
   )
 }
 
