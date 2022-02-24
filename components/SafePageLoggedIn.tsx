@@ -3,14 +3,20 @@ import PropTypes from 'prop-types'
 import { NetworkConnection } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { resetWallet, navigate, generateRouteWithRequiredUrlParams } from '../utils/urlParams';
-import { PAGE } from '../constants';
-import SafePage from './SafePage';
+import {
+  resetWallet,
+  navigate,
+  generateRouteWithRequiredUrlParams
+} from '../utils/urlParams'
+import { PAGE } from '../constants'
+import SafePage from './SafePage'
 
 export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
   const { children, showPhishingBanner } = props
   const router = useRouter()
-  const getRoute = useCallback(generateRouteWithRequiredUrlParams, [router.query])
+  const getRoute = useCallback(generateRouteWithRequiredUrlParams, [
+    router.query
+  ])
   const onNodeDisconnect = useCallback(() => {
     navigate(router, { pageUrl: PAGE.NODE_DISCONNECTED })
   }, [router])
@@ -19,14 +25,14 @@ export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
     <SafePage
       showPhishingBanner={showPhishingBanner}
       logout={resetWallet}
-      connection={(
+      connection={
         <NetworkConnection
           lotusApiAddr={process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC}
           apiKey={process.env.NEXT_PUBLIC_NODE_STATUS_API_KEY}
           statusApiAddr={process.env.NEXT_PUBLIC_NODE_STATUS_API_ADDRESS}
           errorCallback={onNodeDisconnect}
         />
-      )}
+      }
       appHeaderLinks={[
         {
           title: 'Assets',
