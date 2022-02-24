@@ -480,10 +480,7 @@ const Create = () => {
                   bg='background.screen'
                 >
                   <CustomizeFee
-                    message={constructMsg(
-                      0,
-                      startEpoch
-                    ).message.toLotusType()}
+                    message={constructMsg(0, startEpoch).message.toLotusType()}
                     gasInfo={gasInfo}
                     setGasInfo={setGasInfo}
                     setFrozen={setFrozen}
@@ -491,9 +488,7 @@ const Create = () => {
                     error={gasError}
                     feeMustBeLessThanThisAmount={wallet.balance}
                     gasEstimateMaxFee={walletProvider.gasEstimateMaxFee}
-                    gasEstimateMessageGas={
-                      walletProvider.gasEstimateMessageGas
-                    }
+                    gasEstimateMessageGas={walletProvider.gasEstimateMessageGas}
                     wallet={wallet}
                   />
                 </Box>

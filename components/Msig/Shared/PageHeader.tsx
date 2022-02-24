@@ -1,9 +1,5 @@
 import styled from 'styled-components'
-import {
-  Box,
-  Label,
-  CopyText
-} from '@glif/react-components'
+import { Box, Label, CopyText } from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import truncateAddress from '../../../utils/truncateAddress'
 

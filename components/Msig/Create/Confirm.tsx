@@ -110,11 +110,7 @@ const Confirm = () => {
 
   if (Address) {
     return (
-      <Box
-        display='flex'
-        flexDirection='column'
-        alignItems='center'
-      >
+      <Box display='flex' flexDirection='column' alignItems='center'>
         <Title>Your Safe has been created.</Title>
         <Card
           maxWidth={13}
@@ -151,22 +147,18 @@ const Confirm = () => {
     >
       <Box display='flex' justifyContent='center' alignItems='center'>
         <IconPending flexShrink='0' />
-        <Text ml={2}>
-          We&apos;re waiting for your transaction to confirm.
-        </Text>
+        <Text ml={2}>We&apos;re waiting for your transaction to confirm.</Text>
       </Box>
       <Box display='flex' justifyContent='center' alignItems='center'>
         <Text mr={2}>With CID: </Text>
-        <StyledATag
-          href={`https://filfox.info/en/message/${router.query.cid}`}
-        >
+        <StyledATag href={`https://filfox.info/en/message/${router.query.cid}`}>
           <span style={{ wordBreak: 'break-all' }}>{router.query.cid}</span>
         </StyledATag>
         <br />
       </Box>
       <Text>
-        This screen will automatically show you your new Safe address once
-        the transaction confirms.
+        This screen will automatically show you your new Safe address once the
+        transaction confirms.
       </Text>
     </Card>
   )

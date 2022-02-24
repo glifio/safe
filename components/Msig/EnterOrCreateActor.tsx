@@ -119,12 +119,7 @@ const EnterActorAddress = () => {
         width='100%'
         maxWidth={13}
       >
-        <Button
-          title='Back'
-          onClick={router.back}
-          variant='secondary'
-          mr={2}
-        />
+        <Button title='Back' onClick={router.back} variant='secondary' mr={2} />
         <Button title='Submit' type='submit' variant='primary' ml={2} />
       </Box>
     </Form>

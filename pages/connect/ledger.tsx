@@ -1,6 +1,9 @@
 import { useCallback } from 'react'
 import { ConnectLedger as ConnectLedgerComponent } from '@glif/wallet-provider-react'
-import { OneColumnCentered, useChromeDesktopBrowser } from '@glif/react-components'
+import {
+  OneColumnCentered,
+  useChromeDesktopBrowser
+} from '@glif/react-components'
 import { useRouter } from 'next/router'
 import useReset from '../../utils/useReset'
 import { navigate } from '../../utils/urlParams'
