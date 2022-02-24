@@ -1,10 +1,11 @@
 import { useCallback } from 'react'
 import { ConnectLedger as ConnectLedgerComponent } from '@glif/wallet-provider-react'
-import { Page, OneColumnCentered, useChromeDesktopBrowser } from '@glif/react-components'
+import { OneColumnCentered, useChromeDesktopBrowser } from '@glif/react-components'
 import { useRouter } from 'next/router'
 import useReset from '../../utils/useReset'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
+import SafePage from '../../components/SafePage'
 
 export default function ConnectLedger() {
   useChromeDesktopBrowser()
@@ -20,16 +21,10 @@ export default function ConnectLedger() {
   }, [router])
 
   return (
-    <Page
-      back={back}
-      homeUrl={process.env.NEXT_PUBLIC_HOME_URL}
-      blogUrl={process.env.NEXT_PUBLIC_BLOG_URL}
-      walletUrl={process.env.NEXT_PUBLIC_WALLET_URL}
-      explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
-    >
+    <SafePage>
       <OneColumnCentered>
         <ConnectLedgerComponent back={back} next={next} />
       </OneColumnCentered>
-    </Page>
+    </SafePage>
   )
 }

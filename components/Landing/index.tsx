@@ -7,7 +7,6 @@ import {
   space,
   fontSize,
   P,
-  Page,
   isMobileOrTablet,
   theme,
   useNetworkName,
@@ -15,6 +14,7 @@ import {
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
+import SafePage from '../SafePage'
 import { ConnectBtn, TextBox } from './Helpers'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
@@ -35,13 +35,7 @@ export default function Landing() {
   )
 
   return (
-    <Page
-      phishingUrl='https://safe.glif.io'
-      homeUrl={process.env.NEXT_PUBLIC_HOME_URL}
-      blogUrl={process.env.NEXT_PUBLIC_BLOG_URL}
-      walletUrl={process.env.NEXT_PUBLIC_WALLET_URL}
-      explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
-    >
+    <SafePage showPhishingBanner>
       <LandingPageColumns>
         <AppTile
           title={
@@ -116,6 +110,6 @@ export default function Landing() {
           )}
         </LandingPageContent>
       </LandingPageColumns>
-    </Page>
+    </SafePage>
   )
 }

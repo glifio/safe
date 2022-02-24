@@ -2,9 +2,10 @@ import { useCallback } from 'react'
 import { CoinType } from '@glif/filecoin-address'
 import { AccountSelector, RequireWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
-import { Page, OneColumn, useDesktopBrowser } from '@glif/react-components'
+import { OneColumn, useDesktopBrowser } from '@glif/react-components'
 import { PAGE } from '../constants'
 import { navigate } from '../utils/urlParams'
+import SafePage from '../components/SafePage'
 
 const COIN_TYPE = process.env.NEXT_PUBLIC_COIN_TYPE! as CoinType
 const IS_PROD = process.env.NEXT_PUBLIC_IS_PROD
@@ -22,13 +23,7 @@ const Accounts = () => {
     [router]
   )
   return (
-    <Page
-      back={gatekeep}
-      homeUrl={process.env.NEXT_PUBLIC_HOME_URL}
-      blogUrl={process.env.NEXT_PUBLIC_BLOG_URL}
-      walletUrl={process.env.NEXT_PUBLIC_WALLET_URL}
-      explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
-    >
+    <SafePage>
       <OneColumn>
         <RequireWallet gatekeep={gatekeep}>
           <AccountSelector
@@ -42,7 +37,7 @@ const Accounts = () => {
           />
         </RequireWallet>
       </OneColumn>
-    </Page>
+    </SafePage>
   )
 }
 
