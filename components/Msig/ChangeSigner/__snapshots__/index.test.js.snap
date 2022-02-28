@@ -516,7 +516,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c44 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -811,13 +811,13 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c38 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 8px;
 }
 
-.c40 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -836,7 +836,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c42 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -904,7 +904,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   padding-left: 0;
 }
 
-.c41 {
+.c40 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -913,7 +913,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
-.c45 {
+.c44 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -932,62 +932,30 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 4px;
 }
 
+.c44:hover {
+  opacity: 0.8;
+}
+
+.c45 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
 .c45:hover {
-  opacity: 0.8;
-}
-
-.c46 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c46:hover {
-  opacity: 0.8;
-}
-
-.c34 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin-left: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c34:hover {
   opacity: 0.8;
 }
 
@@ -996,21 +964,37 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   height: 24;
 }
 
-.c35 {
+.c34 {
   height: auto;
-  opacity: 1 !important;
+  cursor: pointer;
+  opacity: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: 0;
   background: transparent;
   padding: 0;
   outline: none;
 }
 
-.c37 {
+.c36 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c33:hover .c36 {
+.c33:hover .c35 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
@@ -1030,7 +1014,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   border-bottom: 2px solid #5E26FF;
 }
 
-.c43 {
+.c42 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1055,18 +1039,18 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   border-color: #999999;
 }
 
-.c43:hover {
+.c42:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c43:focus {
+.c42:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c39 {
+.c38 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
@@ -1429,15 +1413,13 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     display="flex"
                   >
                     <button
-                      class="c33 c34 c35"
+                      class="c33 c34"
                       display="flex"
-                      font-size="3"
-                      height="6"
                       role="button"
                       type="button"
                     >
                       <svg
-                        class="c2 c36 c37"
+                        class="c2 c35 c36"
                         fill="none"
                         height="24"
                         viewBox="0 0 24 24"
@@ -1464,21 +1446,21 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                 </div>
               </div>
               <div
-                class="c38"
+                class="c37"
               >
                 <div
-                  class="c39"
+                  class="c38"
                 >
                   <div
                     class="c16"
                     display="flex"
                   >
                     <div
-                      class="c40"
+                      class="c39"
                       display="flex"
                     >
                       <h4
-                        class="c41"
+                        class="c40"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1488,11 +1470,11 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                       </h4>
                     </div>
                     <div
-                      class="c42"
+                      class="c41"
                       display="flex"
                     >
                       <input
-                        class="c43"
+                        class="c42"
                         display="inline-block"
                         height="6"
                         name=""
@@ -1510,12 +1492,12 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c44"
+          class="c43"
           display="flex"
           width="100%"
         >
           <button
-            class="c45"
+            class="c44"
             font-size="3"
             height="6"
             type="button"
@@ -1523,7 +1505,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
             Back
           </button>
           <button
-            class="c46"
+            class="c45"
             font-size="3"
             height="6"
             type="submit"
@@ -1582,7 +1564,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c57 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -1877,13 +1859,13 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c38 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 8px;
 }
 
-.c40 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -1902,7 +1884,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c42 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1919,7 +1901,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c44 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1939,7 +1921,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c45 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   background-color: #EFF3FD;
@@ -1960,7 +1942,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c46 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1981,7 +1963,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   flex-grow: 1;
 }
 
-.c47 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1995,7 +1977,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c48 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -2006,7 +1988,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   text-align: left;
 }
 
-.c50 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2024,7 +2006,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c53 {
+.c52 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -2051,7 +2033,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c55 {
+.c54 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2107,7 +2089,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c56 {
+.c55 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2126,7 +2108,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   padding-left: 0;
 }
 
-.c41 {
+.c40 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2135,7 +2117,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c49 {
+.c48 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -2143,7 +2125,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c58 {
+.c57 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2162,62 +2144,30 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
+.c57:hover {
+  opacity: 0.8;
+}
+
+.c58 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
 .c58:hover {
-  opacity: 0.8;
-}
-
-.c59 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c59:hover {
-  opacity: 0.8;
-}
-
-.c34 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin-left: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c34:hover {
   opacity: 0.8;
 }
 
@@ -2226,21 +2176,37 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   height: 24;
 }
 
-.c35 {
+.c34 {
   height: auto;
-  opacity: 1 !important;
+  cursor: pointer;
+  opacity: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: 0;
   background: transparent;
   padding: 0;
   outline: none;
 }
 
-.c37 {
+.c36 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c33:hover .c36 {
+.c33:hover .c35 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
@@ -2260,7 +2226,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-bottom: 2px solid #5E26FF;
 }
 
-.c43 {
+.c42 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2285,18 +2251,18 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-color: #999999;
 }
 
-.c43:hover {
+.c42:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c43:focus {
+.c42:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c51 {
+.c50 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2322,35 +2288,35 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-color: #999999;
 }
 
-.c51:hover {
+.c50:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c51:focus {
+.c50:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c39 {
+.c38 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c54 {
+.c53 {
   text-align: center;
   position: relative;
   background: #d1ddfa;
 }
 
-.c52 {
+.c51 {
   -moz-appearance: textfield;
 }
 
-.c52::-webkit-outer-spin-button,
-.c52::-webkit-inner-spin-button {
+.c51::-webkit-outer-spin-button,
+.c51::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -2712,15 +2678,13 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     display="flex"
                   >
                     <button
-                      class="c33 c34 c35"
+                      class="c33 c34"
                       display="flex"
-                      font-size="3"
-                      height="6"
                       role="button"
                       type="button"
                     >
                       <svg
-                        class="c2 c36 c37"
+                        class="c2 c35 c36"
                         fill="none"
                         height="24"
                         viewBox="0 0 24 24"
@@ -2747,21 +2711,21 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                 </div>
               </div>
               <div
-                class="c38"
+                class="c37"
               >
                 <div
-                  class="c39"
+                  class="c38"
                 >
                   <div
                     class="c16"
                     display="flex"
                   >
                     <div
-                      class="c40"
+                      class="c39"
                       display="flex"
                     >
                       <h4
-                        class="c41"
+                        class="c40"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -2771,11 +2735,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       </h4>
                     </div>
                     <div
-                      class="c42"
+                      class="c41"
                       display="flex"
                     >
                       <input
-                        class="c43"
+                        class="c42"
                         disabled=""
                         display="inline-block"
                         height="6"
@@ -2792,32 +2756,32 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c44"
+              class="c43"
               display="flex"
               width="100%"
             >
               <div
-                class="c45"
+                class="c44"
                 display="flex"
               >
                 <div
-                  class="c46"
+                  class="c45"
                   display="flex"
                 >
                   <div
-                    class="c39"
+                    class="c38"
                     name="tx-fee"
                   >
                     <div
-                      class="c47"
+                      class="c46"
                       display="flex"
                     >
                       <div
-                        class="c48"
+                        class="c47"
                         display="inline-block"
                       >
                         <h4
-                          class="c49"
+                          class="c48"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -2826,13 +2790,13 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                         </h4>
                       </div>
                       <div
-                        class="c50"
+                        class="c49"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c51 c52"
+                          class="c50 c51"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -2840,7 +2804,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                           width="100%"
                         />
                         <div
-                          class="c53 c54"
+                          class="c52 c53"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -2852,12 +2816,12 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="c55"
+                    class="c54"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c56"
+                      class="c55"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -2886,12 +2850,12 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c57"
+          class="c56"
           display="flex"
           width="100%"
         >
           <button
-            class="c58"
+            class="c57"
             font-size="3"
             height="6"
             type="button"
@@ -2899,7 +2863,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
             Back
           </button>
           <button
-            class="c59"
+            class="c58"
             font-size="3"
             height="6"
             type="submit"
