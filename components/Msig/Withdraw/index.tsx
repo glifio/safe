@@ -185,7 +185,7 @@ const Withdrawing = () => {
     }
   }
 
-  const isSubmitBtnDisabled = () => {
+  const isSubmitBtnDisabled = useMemo(() => {
     if (frozen) return true
     if (uncaughtError) return true
     if (attemptingTx) return true
@@ -193,15 +193,25 @@ const Withdrawing = () => {
     if (step === 2 && !isValidAmount(value, balance, valueError)) return true
     if (step === 3 && gasError) return true
     if (step > 4) return true
-  }
+  }, [
+    frozen,
+    uncaughtError,
+    attemptingTx,
+    toAddress,
+    value,
+    balance,
+    valueError,
+    gasError,
+    step
+  ])
 
-  const isBackBtnDisabled = () => {
+  const isBackBtnDisabled = useMemo(() => {
     if (frozen) return true
     if (attemptingTx) return true
     if (fetchingTxDetails) return true
     if (mPoolPushing) return true
     return false
-  }
+  }, [frozen, attemptingTx, fetchingTxDetails, mPoolPushing])
 
   return (
     <>
@@ -396,12 +406,12 @@ const Withdrawing = () => {
                     setStep(step - 1)
                   }
                 }}
-                disabled={isBackBtnDisabled()}
+                disabled={isBackBtnDisabled}
               />
               <Button
                 variant='primary'
                 title='Next'
-                disabled={isSubmitBtnDisabled()}
+                disabled={isSubmitBtnDisabled}
                 type='submit'
               />
             </Box>

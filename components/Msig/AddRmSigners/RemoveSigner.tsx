@@ -176,22 +176,22 @@ const RemoveSigner = ({ signerAddress }) => {
     }
   }
 
-  const isSubmitBtnDisabled = () => {
+  const isSubmitBtnDisabled = useMemo(() => {
     if (frozen) return true
     if (step === 1) return false
     if (step === 2 && gasError) return true
     if (uncaughtError) return false
     if (attemptingTx) return true
     if (step > 2) return true
-  }
+  }, [frozen, step, gasError, uncaughtError, attemptingTx])
 
-  const isBackBtnDisabled = () => {
+  const isBackBtnDisabled = useMemo(() => {
     if (frozen) return true
     if (attemptingTx) return true
     if (fetchingTxDetails) return true
     if (mPoolPushing) return true
     return false
-  }
+  }, [frozen, attemptingTx, fetchingTxDetails, mPoolPushing])
 
   return (
     <Box display='flex' flexDirection='column' width='100%'>
@@ -324,12 +324,12 @@ const RemoveSigner = ({ signerAddress }) => {
                   setStep(step - 1)
                 }
               }}
-              disabled={isBackBtnDisabled()}
+              disabled={isBackBtnDisabled}
             />
             <Button
               variant='primary'
               title='Next'
-              disabled={isSubmitBtnDisabled()}
+              disabled={isSubmitBtnDisabled}
               type='submit'
             />
           </Box>
