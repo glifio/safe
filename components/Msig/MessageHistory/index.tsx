@@ -7,8 +7,10 @@ import {
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
+import { generateRouteWithRequiredUrlParams } from '../../../utils/urlParams'
 import { MsigPageWrapper } from '../Shared'
 import { useMsig } from '../../../MsigProvider'
+import { PAGE } from '../../../constants'
 
 const MessageHistory = () => {
   const { Address } = useMsig()
@@ -27,6 +29,7 @@ const MessageHistory = () => {
           <Box display='flex' flexDirection='row'>
             <MessageDetail
               cid={router.query.cid as string}
+              height={Number(router.query?.height) || null}
               addressHref={(address: string) =>
                 `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
               }
@@ -44,8 +47,12 @@ const MessageHistory = () => {
             addressHref={(address: string) =>
               `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
             }
-            cidHref={(cid: string) =>
-              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/message/?cid=${cid}`
+            cidHref={(cid: string, height?: string) =>
+              generateRouteWithRequiredUrlParams({
+                pageUrl: PAGE.MSIG_HISTORY,
+                newQueryParams: { height, cid },
+                existingQParams: { ...router.query } as Record<string, string>
+              })
             }
           />
         )}
