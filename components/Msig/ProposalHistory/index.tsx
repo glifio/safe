@@ -9,7 +9,6 @@ import {
 import { useWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
-import { MsigPageWrapper } from '../Shared'
 import { useMsig } from '../../../MsigProvider'
 import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
@@ -19,62 +18,60 @@ const ProposalHistory = () => {
   const wallet = useWallet()
   const router = useRouter()
   return (
-    <MsigPageWrapper>
-      <Box>
-        {router.query.id && router.query.address ? (
-          <Box display='flex' flexDirection='row'>
-            <ProposalDetail
-              id={Number(router.query.id)}
-              address={Address}
-              walletAddress={wallet.address}
-              accept={(
-                proposal: MsigTransaction,
-                approvalsUntilExecution: number
-              ) => {
-                const clone = { ...proposal, approvalsUntilExecution }
-                delete clone.__typename
-                navigate(router, {
-                  pageUrl: PAGE.MSIG_APPROVE,
-                  newQueryParams: {
-                    proposal: encodeURI(JSON.stringify(clone))
-                  }
-                })
-              }}
-              cancel={(
-                proposal: MsigTransaction,
-                approvalsUntilExecution: number
-              ) => {
-                const clone = { ...proposal, approvalsUntilExecution }
-                delete clone.__typename
-                navigate(router, {
-                  pageUrl: PAGE.MSIG_CANCEL,
-                  newQueryParams: {
-                    proposal: encodeURI(JSON.stringify(clone))
-                  }
-                })
-              }}
-              addressHref={(address: string) =>
-                `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
-              }
-            />
-            <ButtonClose
-              alignSelf='flex-start'
-              ml={7}
-              pt={4}
-              onClick={router.back}
-            />
-          </Box>
-        ) : (
-          <ProposalHistoryTable
+    <Box>
+      {router.query.id && router.query.address ? (
+        <Box display='flex' flexDirection='row'>
+          <ProposalDetail
+            id={Number(router.query.id)}
             address={Address}
-            idHref={(id: number) =>
-              `${PAGE.MSIG_PROPOSAL}?id=${id}&address=${Address}`
+            walletAddress={wallet.address}
+            accept={(
+              proposal: MsigTransaction,
+              approvalsUntilExecution: number
+            ) => {
+              const clone = { ...proposal, approvalsUntilExecution }
+              delete clone.__typename
+              navigate(router, {
+                pageUrl: PAGE.MSIG_APPROVE,
+                newQueryParams: {
+                  proposal: encodeURI(JSON.stringify(clone))
+                }
+              })
+            }}
+            cancel={(
+              proposal: MsigTransaction,
+              approvalsUntilExecution: number
+            ) => {
+              const clone = { ...proposal, approvalsUntilExecution }
+              delete clone.__typename
+              navigate(router, {
+                pageUrl: PAGE.MSIG_CANCEL,
+                newQueryParams: {
+                  proposal: encodeURI(JSON.stringify(clone))
+                }
+              })
+            }}
+            addressHref={(address: string) =>
+              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
             }
-            walletAddr={wallet.address}
           />
-        )}
-      </Box>
-    </MsigPageWrapper>
+          <ButtonClose
+            alignSelf='flex-start'
+            ml={7}
+            pt={4}
+            onClick={router.back}
+          />
+        </Box>
+      ) : (
+        <ProposalHistoryTable
+          address={Address}
+          idHref={(id: number) =>
+            `${PAGE.MSIG_PROPOSAL}?id=${id}&address=${Address}`
+          }
+          walletAddr={wallet.address}
+        />
+      )}
+    </Box>
   )
 }
 
