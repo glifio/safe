@@ -2,10 +2,10 @@ import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
 import { OneColumnCentered } from '@glif/react-components'
+import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import AddSigner from '../components/Msig/AddRmSigners/AddSigner'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
-import SafePageLoggedIn from '../components/SafePageLoggedIn'
 
 const Add = () => {
   const router = useRouter()

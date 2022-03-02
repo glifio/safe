@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
+import { OneColumnCentered } from '@glif/react-components'
+import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import MsigChangeApprovalThreshold from '../components/Msig/ChangeApprovalThreshold'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
@@ -12,9 +14,13 @@ const ChangeApprovalThreshold = () => {
     [router]
   )
   return (
-    <RequireWallet gatekeep={gatekeep}>
-      <MsigChangeApprovalThreshold />
-    </RequireWallet>
+    <SafePageLoggedIn>
+      <OneColumnCentered>
+        <RequireWallet gatekeep={gatekeep}>
+          <MsigChangeApprovalThreshold />
+        </RequireWallet>
+      </OneColumnCentered>
+    </SafePageLoggedIn>
   )
 }
 

@@ -5,10 +5,10 @@ import {
   useChromeDesktopBrowser
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
+import SafePage from '../../components/SafePage'
 import useReset from '../../utils/useReset'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
-import SafePage from '../../components/SafePage'
 
 export default function ConnectLedger() {
   useChromeDesktopBrowser()

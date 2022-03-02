@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
+import { OneColumnCentered } from '@glif/react-components'
+import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import MsigChangeSigner from '../components/Msig/ChangeSigner'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
@@ -13,9 +15,13 @@ const ChangeSigner = () => {
     [router]
   )
   return (
-    <RequireWallet gatekeep={gatekeep}>
-      <MsigChangeSigner oldSignerAddress={address} />
-    </RequireWallet>
+    <SafePageLoggedIn>
+      <OneColumnCentered>
+        <RequireWallet gatekeep={gatekeep}>
+          <MsigChangeSigner oldSignerAddress={address} />
+        </RequireWallet>
+      </OneColumnCentered>
+    </SafePageLoggedIn>
   )
 }
 

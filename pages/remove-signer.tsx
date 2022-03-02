@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
+import { OneColumnCentered } from '@glif/react-components'
+import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import RemoveSigner from '../components/Msig/AddRmSigners/RemoveSigner'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
@@ -13,9 +15,13 @@ const Remove = () => {
     [router]
   )
   return (
-    <RequireWallet gatekeep={gatekeep}>
-      <RemoveSigner signerAddress={address} />
-    </RequireWallet>
+    <SafePageLoggedIn>
+      <OneColumnCentered>
+        <RequireWallet gatekeep={gatekeep}>
+          <RemoveSigner signerAddress={address} />
+        </RequireWallet>
+      </OneColumnCentered>
+    </SafePageLoggedIn>
   )
 }
 
