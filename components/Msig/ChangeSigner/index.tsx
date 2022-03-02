@@ -8,7 +8,6 @@ import {
   StyledATag,
   Box,
   Button,
-  ButtonClose,
   Label,
   CopyText,
   Warning,
@@ -207,18 +206,6 @@ const ChangeOwner = ({ oldSignerAddress }) => {
 
   return (
     <Box display='flex' flexDirection='column' width='100%'>
-      <ButtonClose
-        role='button'
-        type='button'
-        justifySelf='flex-end'
-        marginLeft='auto'
-        onClick={() => {
-          setAttemptingTx(false)
-          setUncaughtError('')
-          resetWalletError()
-          onClose()
-        }}
-      />
       <Form onSubmit={onSubmit}>
         <Box
           maxWidth={13}

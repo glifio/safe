@@ -6,7 +6,6 @@ import { Address, Message } from '@glif/filecoin-message'
 import {
   Box,
   Button,
-  ButtonClose,
   StepHeader,
   Form,
   Card,
@@ -206,19 +205,6 @@ export default function ApproveReject() {
   return (
     <>
       <Box display='flex' flexDirection='column' width='100%'>
-        <ButtonClose
-          role='button'
-          type='button'
-          justifySelf='flex-end'
-          marginLeft='auto'
-          onClick={() => {
-            setAttemptingTx(false)
-            setUncaughtError('')
-            setGasError('')
-            resetWalletError()
-            onClose()
-          }}
-        />
         <Form onSubmit={onSubmit}>
           <Box
             maxWidth={13}
