@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import {
-  Page,
-  PageProps,
-  SafeIconHeaderFooter
-} from '@glif/react-components'
+import { Page, PageProps, SafeIconHeaderFooter } from '@glif/react-components'
 
-export default function SafePage({ children, showPhishingBanner, ...rest }: SafePageProps) {
+export default function SafePage({
+  children,
+  showPhishingBanner,
+  ...rest
+}: SafePageProps) {
   return (
     <Page
       phishingUrl={showPhishingBanner ? 'https://safe.glif.io' : null}
@@ -24,7 +24,7 @@ export default function SafePage({ children, showPhishingBanner, ...rest }: Safe
 
 type SafePageProps = {
   showPhishingBanner?: boolean
-} & PageProps;
+} & PageProps
 
 SafePage.propTypes = {
   showPhishingBanner: PropTypes.bool,
