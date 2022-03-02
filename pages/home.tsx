@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumn } from '@glif/react-components'
+import { OneColumnCentered } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
 import MsigHome from '../components/Msig/Home'
@@ -16,11 +16,11 @@ const Home = () => {
   )
   return (
     <SafePageLoggedIn>
-      <OneColumn>
+      <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
           <MsigHome />
         </RequireWallet>
-      </OneColumn>
+      </OneColumnCentered>
     </SafePageLoggedIn>
   )
 }
