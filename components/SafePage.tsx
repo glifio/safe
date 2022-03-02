@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
 import {
   Page,
-  AppHeaderLink,
-  APP_HEADER_LINK,
+  PageProps,
   SafeIconHeaderFooter
 } from '@glif/react-components'
 
@@ -28,20 +27,10 @@ export default function SafePage(props: SafePageProps) {
 }
 
 type SafePageProps = {
-  children?: JSX.Element | Array<JSX.Element>
   showPhishingBanner?: boolean
-  logout?: () => void
-  connection?: JSX.Element
-  appHeaderLinks?: Array<AppHeaderLink>
-}
+} & PageProps;
 
 SafePage.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]),
   showPhishingBanner: PropTypes.bool,
-  logout: PropTypes.func,
-  connection: PropTypes.node,
-  appHeaderLinks: PropTypes.arrayOf(APP_HEADER_LINK)
+  ...Page.propTypes
 }
