@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { NetworkConnection } from '@glif/react-components'
+import { useWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import {
@@ -8,12 +9,15 @@ import {
   navigate,
   generateRouteWithRequiredUrlParams
 } from '../utils/urlParams'
+import { useMsig } from '../MsigProvider'
 import { PAGE } from '../constants'
 import SafePage from './SafePage'
 
 export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
   const { children, showPhishingBanner } = props
   const router = useRouter()
+  const wallet = useWallet()
+  const msig = useMsig()
   const getRoute = useCallback(generateRouteWithRequiredUrlParams, [
     router.query
   ])
@@ -33,6 +37,18 @@ export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
           errorCallback={onNodeDisconnect}
         />
       }
+      addresses={[
+        {
+          label: 'Safe Address',
+          address: msig.Address,
+          urlPrefix: `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/`
+        },
+        {
+          label: 'Wallet Address',
+          address: wallet.address,
+          urlPrefix: `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/`
+        }
+      ]}
       appHeaderLinks={[
         {
           title: 'Assets',
