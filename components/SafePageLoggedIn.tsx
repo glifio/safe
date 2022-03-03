@@ -4,11 +4,7 @@ import { NetworkConnection } from '@glif/react-components'
 import { useWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
-import {
-  resetWallet,
-  navigate,
-  generateRouteWithRequiredUrlParams
-} from '../utils/urlParams'
+import { resetWallet, navigate } from '../utils/urlParams'
 import { useMsig } from '../MsigProvider'
 import { PAGE } from '../constants'
 import SafePage from './SafePage'
