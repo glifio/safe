@@ -18,9 +18,6 @@ export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
   const router = useRouter()
   const wallet = useWallet()
   const msig = useMsig()
-  const getRoute = useCallback(generateRouteWithRequiredUrlParams, [
-    router.query
-  ])
   const onNodeDisconnect = useCallback(() => {
     navigate(router, { pageUrl: PAGE.NODE_DISCONNECTED })
   }, [router])
@@ -52,31 +49,19 @@ export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
       appHeaderLinks={[
         {
           title: 'Assets',
-          url: getRoute({
-            existingQParams: router.query as Record<string, string>,
-            pageUrl: PAGE.MSIG_HOME
-          })
+          url: PAGE.MSIG_HOME
         },
         {
           title: 'History',
-          url: getRoute({
-            existingQParams: router.query as Record<string, string>,
-            pageUrl: PAGE.MSIG_HISTORY
-          })
+          url: PAGE.MSIG_HISTORY
         },
         {
           title: 'Proposals',
-          url: getRoute({
-            existingQParams: router.query as Record<string, string>,
-            pageUrl: PAGE.MSIG_PROPOSALS
-          })
+          url: PAGE.MSIG_PROPOSALS
         },
         {
           title: 'Admin',
-          url: getRoute({
-            existingQParams: router.query as Record<string, string>,
-            pageUrl: PAGE.MSIG_ADMIN
-          })
+          url: PAGE.MSIG_ADMIN
         }
       ]}
     >
