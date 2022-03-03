@@ -37,7 +37,7 @@ export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
           errorCallback={onNodeDisconnect}
         />
       }
-      addresses={[
+      addressLinks={[
         {
           label: 'Safe Address',
           address: msig.Address,
