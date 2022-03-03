@@ -9,8 +9,7 @@ import { useMsig } from '../MsigProvider'
 import { PAGE } from '../constants'
 import SafePage from './SafePage'
 
-export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
-  const { children, showPhishingBanner } = props
+export default function SafePageLoggedIn({ children }: SafePageLoggedInProps) {
   const router = useRouter()
   const wallet = useWallet()
   const msig = useMsig()
@@ -20,7 +19,6 @@ export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
 
   return (
     <SafePage
-      showPhishingBanner={showPhishingBanner}
       logout={resetWallet}
       connection={
         <NetworkConnection
@@ -68,13 +66,11 @@ export default function SafePageLoggedIn(props: SafePageLoggedInProps) {
 
 type SafePageLoggedInProps = {
   children?: JSX.Element | Array<JSX.Element>
-  showPhishingBanner?: boolean
 }
 
 SafePageLoggedIn.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-  ]),
-  showPhishingBanner: PropTypes.bool
+  ])
 }
