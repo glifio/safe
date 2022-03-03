@@ -6,6 +6,7 @@ import {
   LandingPageContent,
   space,
   fontSize,
+  Page,
   P,
   isMobileOrTablet,
   theme,
@@ -14,7 +15,6 @@ import {
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import SafePage from '../SafePage'
 import { ConnectBtn, TextBox } from './Helpers'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
@@ -35,7 +35,7 @@ export default function Landing() {
   )
 
   return (
-    <SafePage showPhishingBanner>
+    <Page phishingUrl='https://safe.glif.io' hideAppHeader>
       <LandingPageColumns>
         <AppTile
           title={
@@ -110,6 +110,6 @@ export default function Landing() {
           )}
         </LandingPageContent>
       </LandingPageColumns>
-    </SafePage>
+    </Page>
   )
 }
