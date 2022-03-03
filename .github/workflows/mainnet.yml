@@ -3,8 +3,20 @@
 
 name: deploy - mainnet
 
+env:
+  node_version: 14
+  git_email: jpschwartz2@uwalumni.com
+
 on:
   workflow_dispatch:
+    inputs:
+      newversion:
+        description: 'npm publish {major,minor,patch}'
+        required: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -16,18 +28,39 @@ jobs:
         node: [14]
 
     steps:
-      - uses: actions/checkout@v2.4.0
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2.5.0
+      - uses: actions/checkout@v2.3.4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci --ignore-scripts
-      - run: npm test
-      - run: npm run export
+          # fetch full history so things like auto-changelog work properly
+          fetch-depth: 0
+      - name: Use Node.js ${{ env.node_version }}
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: ${{ env.node_version }}
+
+      - run: git config --global user.email "${{ env.git_email }}"
+      - run: git config --global user.name "${{ github.actor }}"
+
+      - name: Install
+        run: npm ci --ignore-scripts
+
+      - name: Test
+        run: |
+          npm run lint
+          npm test
+
+      # Create a prerelease tag
+      - name: Tag
+        run: npm version ${{ github.event.inputs.newversion }}
+
+      - name: Get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
+
+      - name: Build
+        run: npm run export
         env:
           LOTUS_NODE_JSONRPC: 'https://mainnet.glif.host'
-          GRAPH_API_URL: 'graph.glif.host/query'
+          GRAPH_API_URL: 'graph.glif.link/query'
           COIN_TYPE: 'f'
           HOME_URL: 'https://calibration.glif.link'
           BLOG_URL: 'https://blog.glif.io'
@@ -38,11 +71,36 @@ jobs:
           SENTRY_DSN: 'https://bc9449e8f4fc439f943374373b9a3f7a@o1126745.ingest.sentry.io/6186018'
           SENTRY_ENV: 'mainnet'
           NODE_STATUS_API_KEY: 'm786191525-b3192b91db66217a44f7d4be'
-      - run: npm run publish:mainnet
+
+      - name: Deploy-cloudflare
+        run: |
+          npm i -g @cloudflare/wrangler
+          npm run publish:mainnet
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-      - run: npm run store-ipfs
+
+      - name: Changelog
+        uses: scottbrenner/generate-changelog-action@master
+        id: Changelog
+
+      - name: Filecoin-archive
+        id: ipfs
+        run: npm run store-ipfs
         env:
           WEB3_STORAGE_TOKEN: ${{ secrets.WEB3_STORAGE_TOKEN }}
+
+      - name: Git-push
+        run: |
+          git push origin v${{ steps.package-version.outputs.current-version}}
+          git push origin primary
+
+      - name: Release-to-mainnet
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Mainnet release - v${{ steps.package-version.outputs.current-version }}
+          tag_name: v${{ steps.package-version.outputs.current-version }}
+          body: |
+            Visit at: https://${{ steps.ipfs.outputs.cid }}.ipfs.dweb.link
+            ${{ steps.Changelog.outputs.changelog }}
