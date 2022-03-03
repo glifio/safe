@@ -213,6 +213,7 @@ const Create = () => {
   const isSubmitBtnDisabled = useMemo(() => {
     if (frozen) return true
     if (uncaughtError) return true
+    if (gasError) return true
     if (attemptingTx) return true
     if (mPoolPushing) return true
     if (pageChanging) return true

@@ -1,12 +1,9 @@
 import React from 'react'
-import {
-  Box,
-  MessageHistoryTable,
-  MessageDetail,
-  ButtonClose
-} from '@glif/react-components'
+import { Box, MessageHistoryTable, MessageDetail } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
+import { generateRouteWithRequiredUrlParams } from '../../../utils/urlParams'
+import { PAGE } from '../../../constants'
 import { useMsig } from '../../../MsigProvider'
 
 const MessageHistory = () => {
@@ -22,12 +19,6 @@ const MessageHistory = () => {
               `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
             }
           />
-          <ButtonClose
-            alignSelf='flex-start'
-            ml={7}
-            pt={4}
-            onClick={router.back}
-          />
         </Box>
       ) : (
         <MessageHistoryTable
@@ -35,8 +26,12 @@ const MessageHistory = () => {
           addressHref={(address: string) =>
             `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
           }
-          cidHref={(cid: string) =>
-            `${process.env.NEXT_PUBLIC_EXPLORER_URL}/message/?cid=${cid}`
+          cidHref={(cid: string, height?: string) =>
+            generateRouteWithRequiredUrlParams({
+              pageUrl: PAGE.MSIG_HISTORY,
+              newQueryParams: { height, cid },
+              existingQParams: { ...router.query } as Record<string, string>
+            })
           }
         />
       )}
