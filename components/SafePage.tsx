@@ -9,12 +9,8 @@ export default function SafePage({
   return (
     <Page
       phishingUrl={showPhishingBanner ? 'https://safe.glif.io' : null}
-      appTitle='Safe'
       appIcon={<SafeIconHeaderFooter />}
       appUrl={process.env.NEXT_PUBLIC_SAFE_URL}
-      blogUrl={process.env.NEXT_PUBLIC_BLOG_URL}
-      walletUrl={process.env.NEXT_PUBLIC_WALLET_URL}
-      explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
       {...rest}
     >
       {children}
