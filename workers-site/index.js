@@ -25,7 +25,6 @@ addEventListener('fetch', (event) => {
 })
 
 async function handleEvent(event) {
-  const url = new URL(event.request.url)
   let options = {}
 
   /**
@@ -80,6 +79,7 @@ async function handleEvent(event) {
  * route on a zone, or if you only want your static content
  * to exist at a specific path.
  */
+/* eslint-disable */
 function handlePrefix(prefix) {
   return (request) => {
     // compute the default (e.g. / -> index.html)
@@ -93,3 +93,4 @@ function handlePrefix(prefix) {
     return new Request(url.toString(), defaultAssetKey)
   }
 }
+/* eslint-enable */
