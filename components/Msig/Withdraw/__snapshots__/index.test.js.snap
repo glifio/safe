@@ -14,7 +14,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   flex-direction: column;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   max-width: 560px;
@@ -33,12 +33,12 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: flex-start;
 }
 
-.c5 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c6 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -63,7 +63,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c8 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -79,7 +79,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c10 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -102,13 +102,13 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: center;
 }
 
-.c12 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c14 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -120,7 +120,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   display: flex;
 }
 
-.c16 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -133,7 +133,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c17 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -145,7 +145,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   height: 8px;
 }
 
-.c18 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -157,14 +157,14 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   height: 8px;
 }
 
-.c19 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
   margin-bottom: 24px;
 }
 
-.c20 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -180,14 +180,14 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -199,7 +199,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c25 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -219,7 +219,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -243,7 +243,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: center;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -259,7 +259,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: flex-start;
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -271,7 +271,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   flex-direction: row;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -288,7 +288,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: flex-start;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -297,7 +297,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c33 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -316,7 +316,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c35 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -333,7 +333,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c57 {
+.c55 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -360,7 +360,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: flex-end;
 }
 
-.c37 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -376,7 +376,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c38 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -403,14 +403,14 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: center;
 }
 
-.c39 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c40 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -425,7 +425,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c43 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -452,7 +452,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   font-size: 1.25rem;
 }
 
-.c45 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -463,7 +463,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c46 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   background-color: #EFF3FD;
@@ -484,7 +484,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c47 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -505,7 +505,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   flex-grow: 1;
 }
 
-.c48 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -519,7 +519,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c49 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -530,7 +530,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: left;
 }
 
-.c51 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -548,7 +548,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: flex-end;
 }
 
-.c53 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -575,7 +575,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   font-size: 1.25rem;
 }
 
-.c55 {
+.c53 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -590,13 +590,13 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: left;
 }
 
-.c11 {
+.c9 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c13 {
+.c11 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -604,7 +604,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin: 0;
 }
 
-.c15 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -615,7 +615,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin-bottom: 0;
 }
 
-.c21 {
+.c19 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -623,7 +623,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: center;
 }
 
-.c28 {
+.c26 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -631,7 +631,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin: 0;
 }
 
-.c56 {
+.c54 {
   color: #FC6D6F;
   font-size: 1.125rem;
   font-weight: 400;
@@ -640,7 +640,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c34 {
+.c32 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -649,7 +649,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin: 0;
 }
 
-.c50 {
+.c48 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -657,7 +657,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin: 0;
 }
 
-.c58 {
+.c56 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -675,16 +675,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-radius: 4px;
 }
 
-.c58:hover {
+.c56:hover {
   opacity: 1;
 }
 
-.c2 {
-  width: 24;
-  height: 24;
-}
-
-.c22 {
+.c20 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -695,11 +690,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: auto;
 }
 
-.c22:hover {
+.c20:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c36 {
+.c34 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -724,18 +719,18 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-color: #999999;
 }
 
-.c36:hover {
+.c34:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c36:focus {
+.c34:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c41 {
+.c39 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -764,18 +759,18 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-color: #999999;
 }
 
-.c41:hover {
+.c39:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c41:focus {
+.c39:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c52 {
+.c50 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -801,46 +796,46 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-color: #999999;
 }
 
-.c52:hover {
+.c50:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c52:focus {
+.c50:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c32 {
+.c30 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c54 {
+.c52 {
   text-align: center;
   position: relative;
   background: #d1ddfa;
 }
 
-.c44 {
+.c42 {
   text-align: center;
   position: relative;
   background: #bacbf7;
 }
 
-.c42 {
+.c40 {
   -moz-appearance: textfield;
 }
 
-.c42::-webkit-outer-spin-button,
-.c42::-webkit-inner-spin-button {
+.c40::-webkit-outer-spin-button,
+.c40::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c3 {
+.c1 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -858,7 +853,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c7 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -878,7 +873,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -889,100 +884,61 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 <div>
   <div
     class="c0"
     display="flex"
     width="100%"
   >
-    <button
-      class="c1"
-      display="inline-block"
-      role="button"
-      type="button"
-    >
-      <svg
-        class="c2"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-          fill="#5E26FF"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </button>
     <form
-      class="c3"
+      class="c1"
     >
       <div
-        class="c4"
+        class="c2"
         display="flex"
         width="100%"
       >
         <div
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
             display="flex"
             overflow="hidden"
             width="auto"
           >
             <ul
-              class="c7"
+              class="c5"
               display="flex"
               width="100%"
             >
               <div
-                class="c8"
+                class="c6"
                 display="flex"
               >
                 <li
-                  class="c9"
+                  class="c7"
                   display="flex"
                 >
                   <div
-                    class="c10"
+                    class="c8"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Wd
                     </h3>
                   </div>
                 </li>
                 <div
-                  class="c12"
+                  class="c10"
                   width="2"
                 />
                 <h2
-                  class="c13"
+                  class="c11"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -994,11 +950,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                 class=""
               >
                 <div
-                  class="c14"
+                  class="c12"
                   display="flex"
                 >
                   <p
-                    class="c15"
+                    class="c13"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1008,55 +964,55 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     3
                   </p>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
@@ -1066,14 +1022,14 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
               </li>
             </ul>
             <div
-              class="c19"
+              class="c17"
             >
               <div
-                class="c20"
+                class="c18"
                 display="flex"
               >
                 <p
-                  class="c21"
+                  class="c19"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -1081,7 +1037,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   Please review transaction fee details. Please note, the transaction fee is paid by the Safe owner, not your multisig wallet.
                 </p>
                 <a
-                  class="c22"
+                  class="c20"
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
@@ -1094,39 +1050,39 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
             </div>
           </div>
           <div
-            class="c23"
+            class="c21"
           >
             <div
-              class="c24"
+              class="c22"
               color="core.white"
               width="100%"
             >
               <div
-                class="c25"
+                class="c23"
                 display="flex"
               >
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <div
-                    class="c26"
+                    class="c24"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Sa
                     </h3>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1134,7 +1090,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       From
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1144,15 +1100,15 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   </div>
                 </div>
                 <div
-                  class="c29"
+                  class="c27"
                   display="flex"
                 >
                   <div
-                    class="c30"
+                    class="c28"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1160,7 +1116,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       Ledger Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1170,11 +1126,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     </p>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1182,7 +1138,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       Msig Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1195,22 +1151,22 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
               >
                 <div
-                  class="c16"
+                  class="c14"
                   display="flex"
                 >
                   <div
-                    class="c33"
+                    class="c31"
                     display="flex"
                   >
                     <h4
-                      class="c34"
+                      class="c32"
                       color="core.nearblack"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -1220,11 +1176,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     </h4>
                   </div>
                   <div
-                    class="c35"
+                    class="c33"
                     display="flex"
                   >
                     <input
-                      class="c36"
+                      class="c34"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -1240,22 +1196,22 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
               
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c37"
+                class="c35"
                 display="flex"
                 name="amount"
               >
                 <div
-                  class="c38"
+                  class="c36"
                   color="input.border"
                   display="flex"
                   width="100%"
                 >
                   <h4
-                    class="c34"
+                    class="c32"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1265,18 +1221,18 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   </h4>
                 </div>
                 <div
-                  class="c39"
+                  class="c37"
                   display="inline-block"
                   width="100%"
                 >
                   <div
-                    class="c40"
+                    class="c38"
                     display="flex"
                     height="80px"
                     width="100%"
                   >
                     <input
-                      class="c41 c42"
+                      class="c39 c40"
                       disabled=""
                       display="inline-block"
                       font-size="5"
@@ -1289,7 +1245,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       width="100%"
                     />
                     <div
-                      class="c43 c44"
+                      class="c41 c42"
                       color="core.primary"
                       disabled=""
                       display="flex"
@@ -1303,31 +1259,31 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
               </div>
             </div>
             <div
-              class="c45"
+              class="c43"
               width="100%"
             >
               <div
-                class="c46"
+                class="c44"
                 display="flex"
               >
                 <div
-                  class="c47"
+                  class="c45"
                   display="flex"
                 >
                   <div
-                    class="c32"
+                    class="c30"
                     name="tx-fee"
                   >
                     <div
-                      class="c48"
+                      class="c46"
                       display="flex"
                     >
                       <div
-                        class="c49"
+                        class="c47"
                         display="inline-block"
                       >
                         <h4
-                          class="c50"
+                          class="c48"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -1336,13 +1292,13 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                         </h4>
                       </div>
                       <div
-                        class="c51"
+                        class="c49"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c52 c42"
+                          class="c50 c40"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -1350,7 +1306,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                           width="100%"
                         />
                         <div
-                          class="c53 c54"
+                          class="c51 c52"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -1362,12 +1318,12 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     </div>
                   </div>
                   <div
-                    class="c55"
+                    class="c53"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c56"
+                      class="c54"
                       color="status.fail.background"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -1383,12 +1339,12 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
           </div>
         </div>
         <div
-          class="c57"
+          class="c55"
           display="flex"
           width="100%"
         >
           <button
-            class="c58"
+            class="c56"
             disabled=""
             font-size="3"
             height="6"
@@ -1397,7 +1353,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
             Back
           </button>
           <button
-            class="c58"
+            class="c56"
             disabled=""
             font-size="3"
             height="6"
@@ -1426,7 +1382,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   flex-direction: column;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   max-width: 560px;
@@ -1445,12 +1401,12 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: flex-start;
 }
 
-.c5 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c6 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -1475,7 +1431,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c8 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1491,7 +1447,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c10 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1514,13 +1470,13 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: center;
 }
 
-.c12 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c14 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -1532,7 +1488,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   display: flex;
 }
 
-.c16 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1545,7 +1501,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c17 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -1557,7 +1513,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   height: 8px;
 }
 
-.c18 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -1569,14 +1525,14 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   height: 8px;
 }
 
-.c19 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
   margin-bottom: 24px;
 }
 
-.c20 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1592,14 +1548,14 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1611,7 +1567,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c25 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1631,7 +1587,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1655,7 +1611,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: center;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1671,7 +1627,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: flex-start;
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1683,7 +1639,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   flex-direction: row;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -1700,7 +1656,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: flex-start;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1709,7 +1665,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c33 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -1728,7 +1684,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c35 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1745,7 +1701,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c57 {
+.c55 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -1772,7 +1728,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: flex-end;
 }
 
-.c37 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1788,7 +1744,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c38 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -1815,14 +1771,14 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: center;
 }
 
-.c39 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c40 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1837,7 +1793,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c43 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -1864,7 +1820,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   font-size: 1.25rem;
 }
 
-.c45 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1875,7 +1831,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c46 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   background-color: #EFF3FD;
@@ -1896,7 +1852,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c47 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1917,7 +1873,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   flex-grow: 1;
 }
 
-.c48 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1931,7 +1887,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c49 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -1942,7 +1898,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: left;
 }
 
-.c51 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1960,7 +1916,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: flex-end;
 }
 
-.c53 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -1987,7 +1943,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   font-size: 1.25rem;
 }
 
-.c55 {
+.c53 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2002,13 +1958,13 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: left;
 }
 
-.c11 {
+.c9 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c13 {
+.c11 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2016,7 +1972,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin: 0;
 }
 
-.c15 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2027,7 +1983,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin-bottom: 0;
 }
 
-.c21 {
+.c19 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2035,7 +1991,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: center;
 }
 
-.c28 {
+.c26 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2043,7 +1999,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin: 0;
 }
 
-.c56 {
+.c54 {
   color: #FC6D6F;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2052,7 +2008,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: 100%;
 }
 
-.c34 {
+.c32 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2061,7 +2017,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin: 0;
 }
 
-.c50 {
+.c48 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -2069,7 +2025,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   margin: 0;
 }
 
-.c58 {
+.c56 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -2087,16 +2043,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-radius: 4px;
 }
 
-.c58:hover {
+.c56:hover {
   opacity: 1;
 }
 
-.c2 {
-  width: 24;
-  height: 24;
-}
-
-.c22 {
+.c20 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2107,11 +2058,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   width: auto;
 }
 
-.c22:hover {
+.c20:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c36 {
+.c34 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2136,18 +2087,18 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-color: #999999;
 }
 
-.c36:hover {
+.c34:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c36:focus {
+.c34:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c41 {
+.c39 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2176,18 +2127,18 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-color: #999999;
 }
 
-.c41:hover {
+.c39:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c41:focus {
+.c39:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c52 {
+.c50 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2213,46 +2164,46 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-color: #999999;
 }
 
-.c52:hover {
+.c50:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c52:focus {
+.c50:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c32 {
+.c30 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c54 {
+.c52 {
   text-align: center;
   position: relative;
   background: #d1ddfa;
 }
 
-.c44 {
+.c42 {
   text-align: center;
   position: relative;
   background: #bacbf7;
 }
 
-.c42 {
+.c40 {
   -moz-appearance: textfield;
 }
 
-.c42::-webkit-outer-spin-button,
-.c42::-webkit-inner-spin-button {
+.c40::-webkit-outer-spin-button,
+.c40::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c3 {
+.c1 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2270,7 +2221,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   align-items: center;
 }
 
-.c7 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -2290,7 +2241,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2301,100 +2252,61 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   justify-content: space-between;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 <div>
   <div
     class="c0"
     display="flex"
     width="100%"
   >
-    <button
-      class="c1"
-      display="inline-block"
-      role="button"
-      type="button"
-    >
-      <svg
-        class="c2"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-          fill="#5E26FF"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </button>
     <form
-      class="c3"
+      class="c1"
     >
       <div
-        class="c4"
+        class="c2"
         display="flex"
         width="100%"
       >
         <div
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
             display="flex"
             overflow="hidden"
             width="auto"
           >
             <ul
-              class="c7"
+              class="c5"
               display="flex"
               width="100%"
             >
               <div
-                class="c8"
+                class="c6"
                 display="flex"
               >
                 <li
-                  class="c9"
+                  class="c7"
                   display="flex"
                 >
                   <div
-                    class="c10"
+                    class="c8"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Wd
                     </h3>
                   </div>
                 </li>
                 <div
-                  class="c12"
+                  class="c10"
                   width="2"
                 />
                 <h2
-                  class="c13"
+                  class="c11"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2406,11 +2318,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                 class=""
               >
                 <div
-                  class="c14"
+                  class="c12"
                   display="flex"
                 >
                   <p
-                    class="c15"
+                    class="c13"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2420,55 +2332,55 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     3
                   </p>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
@@ -2478,14 +2390,14 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
               </li>
             </ul>
             <div
-              class="c19"
+              class="c17"
             >
               <div
-                class="c20"
+                class="c18"
                 display="flex"
               >
                 <p
-                  class="c21"
+                  class="c19"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -2493,7 +2405,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   Please review transaction fee details. Please note, the transaction fee is paid by the Safe owner, not your multisig wallet.
                 </p>
                 <a
-                  class="c22"
+                  class="c20"
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
@@ -2506,39 +2418,39 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
             </div>
           </div>
           <div
-            class="c23"
+            class="c21"
           >
             <div
-              class="c24"
+              class="c22"
               color="core.white"
               width="100%"
             >
               <div
-                class="c25"
+                class="c23"
                 display="flex"
               >
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <div
-                    class="c26"
+                    class="c24"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Sa
                     </h3>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2546,7 +2458,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       From
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2556,15 +2468,15 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   </div>
                 </div>
                 <div
-                  class="c29"
+                  class="c27"
                   display="flex"
                 >
                   <div
-                    class="c30"
+                    class="c28"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2572,7 +2484,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       Ledger Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2582,11 +2494,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     </p>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2594,7 +2506,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       Msig Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2607,22 +2519,22 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
               >
                 <div
-                  class="c16"
+                  class="c14"
                   display="flex"
                 >
                   <div
-                    class="c33"
+                    class="c31"
                     display="flex"
                   >
                     <h4
-                      class="c34"
+                      class="c32"
                       color="core.nearblack"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -2632,11 +2544,11 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     </h4>
                   </div>
                   <div
-                    class="c35"
+                    class="c33"
                     display="flex"
                   >
                     <input
-                      class="c36"
+                      class="c34"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -2652,22 +2564,22 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
               
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c37"
+                class="c35"
                 display="flex"
                 name="amount"
               >
                 <div
-                  class="c38"
+                  class="c36"
                   color="input.border"
                   display="flex"
                   width="100%"
                 >
                   <h4
-                    class="c34"
+                    class="c32"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2677,18 +2589,18 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   </h4>
                 </div>
                 <div
-                  class="c39"
+                  class="c37"
                   display="inline-block"
                   width="100%"
                 >
                   <div
-                    class="c40"
+                    class="c38"
                     display="flex"
                     height="80px"
                     width="100%"
                   >
                     <input
-                      class="c41 c42"
+                      class="c39 c40"
                       disabled=""
                       display="inline-block"
                       font-size="5"
@@ -2701,7 +2613,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       width="100%"
                     />
                     <div
-                      class="c43 c44"
+                      class="c41 c42"
                       color="core.primary"
                       disabled=""
                       display="flex"
@@ -2715,31 +2627,31 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
               </div>
             </div>
             <div
-              class="c45"
+              class="c43"
               width="100%"
             >
               <div
-                class="c46"
+                class="c44"
                 display="flex"
               >
                 <div
-                  class="c47"
+                  class="c45"
                   display="flex"
                 >
                   <div
-                    class="c32"
+                    class="c30"
                     name="tx-fee"
                   >
                     <div
-                      class="c48"
+                      class="c46"
                       display="flex"
                     >
                       <div
-                        class="c49"
+                        class="c47"
                         display="inline-block"
                       >
                         <h4
-                          class="c50"
+                          class="c48"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -2748,13 +2660,13 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                         </h4>
                       </div>
                       <div
-                        class="c51"
+                        class="c49"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c52 c42"
+                          class="c50 c40"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -2762,7 +2674,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                           width="100%"
                         />
                         <div
-                          class="c53 c54"
+                          class="c51 c52"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -2774,12 +2686,12 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                     </div>
                   </div>
                   <div
-                    class="c55"
+                    class="c53"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c56"
+                      class="c54"
                       color="status.fail.background"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -2795,12 +2707,12 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
           </div>
         </div>
         <div
-          class="c57"
+          class="c55"
           display="flex"
           width="100%"
         >
           <button
-            class="c58"
+            class="c56"
             disabled=""
             font-size="3"
             height="6"
@@ -2809,7 +2721,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
             Back
           </button>
           <button
-            class="c58"
+            class="c56"
             disabled=""
             font-size="3"
             height="6"
@@ -2838,7 +2750,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   max-width: 560px;
@@ -2857,12 +2769,12 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c5 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c6 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -2887,7 +2799,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2903,7 +2815,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -2926,13 +2838,13 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c14 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -2944,7 +2856,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   display: flex;
 }
 
-.c16 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2957,7 +2869,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -2969,7 +2881,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   height: 8px;
 }
 
-.c18 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -2981,14 +2893,14 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   height: 8px;
 }
 
-.c19 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
   margin-bottom: 24px;
 }
 
-.c20 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3004,14 +2916,14 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -3023,7 +2935,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   width: 100%;
 }
 
-.c25 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3043,7 +2955,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -3067,7 +2979,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3083,7 +2995,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: flex-start;
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3095,7 +3007,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   flex-direction: row;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -3112,7 +3024,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: flex-start;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -3121,7 +3033,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   width: 100%;
 }
 
-.c33 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -3140,7 +3052,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c35 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3157,7 +3069,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c37 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -3184,13 +3096,13 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: flex-end;
 }
 
-.c11 {
+.c9 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c13 {
+.c11 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -3198,7 +3110,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c15 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -3209,7 +3121,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c21 {
+.c19 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -3217,7 +3129,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   text-align: center;
 }
 
-.c28 {
+.c26 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -3225,7 +3137,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c34 {
+.c32 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -3234,7 +3146,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c38 {
+.c36 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -3253,11 +3165,11 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c38:hover {
+.c36:hover {
   opacity: 0.8;
 }
 
-.c39 {
+.c37 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -3275,16 +3187,11 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c39:hover {
+.c37:hover {
   opacity: 1;
 }
 
-.c2 {
-  width: 24;
-  height: 24;
-}
-
-.c22 {
+.c20 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -3295,11 +3202,11 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   width: auto;
 }
 
-.c22:hover {
+.c20:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c36 {
+.c34 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3324,24 +3231,24 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   border-color: #999999;
 }
 
-.c36:hover {
+.c34:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c36:focus {
+.c34:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c32 {
+.c30 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c3 {
+.c1 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3359,7 +3266,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -3379,7 +3286,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3390,100 +3297,61 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 <div>
   <div
     class="c0"
     display="flex"
     width="100%"
   >
-    <button
-      class="c1"
-      display="inline-block"
-      role="button"
-      type="button"
-    >
-      <svg
-        class="c2"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-          fill="#5E26FF"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </button>
     <form
-      class="c3"
+      class="c1"
     >
       <div
-        class="c4"
+        class="c2"
         display="flex"
         width="100%"
       >
         <div
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
             display="flex"
             overflow="hidden"
             width="auto"
           >
             <ul
-              class="c7"
+              class="c5"
               display="flex"
               width="100%"
             >
               <div
-                class="c8"
+                class="c6"
                 display="flex"
               >
                 <li
-                  class="c9"
+                  class="c7"
                   display="flex"
                 >
                   <div
-                    class="c10"
+                    class="c8"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Wd
                     </h3>
                   </div>
                 </li>
                 <div
-                  class="c12"
+                  class="c10"
                   width="2"
                 />
                 <h2
-                  class="c13"
+                  class="c11"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -3495,11 +3363,11 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                 class=""
               >
                 <div
-                  class="c14"
+                  class="c12"
                   display="flex"
                 >
                   <p
-                    class="c15"
+                    class="c13"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -3509,55 +3377,55 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                     1
                   </p>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
@@ -3567,14 +3435,14 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
               </li>
             </ul>
             <div
-              class="c19"
+              class="c17"
             >
               <div
-                class="c20"
+                class="c18"
                 display="flex"
               >
                 <p
-                  class="c21"
+                  class="c19"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -3582,7 +3450,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                   First, please confirm the account you're sending from, and the recipient you want to send to.
                 </p>
                 <a
-                  class="c22"
+                  class="c20"
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
@@ -3595,39 +3463,39 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
             </div>
           </div>
           <div
-            class="c23"
+            class="c21"
           >
             <div
-              class="c24"
+              class="c22"
               color="core.white"
               width="100%"
             >
               <div
-                class="c25"
+                class="c23"
                 display="flex"
               >
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <div
-                    class="c26"
+                    class="c24"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Sa
                     </h3>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -3635,7 +3503,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                       From
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -3645,15 +3513,15 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c29"
+                  class="c27"
                   display="flex"
                 >
                   <div
-                    class="c30"
+                    class="c28"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -3661,7 +3529,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                       Ledger Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -3671,11 +3539,11 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                     </p>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -3683,7 +3551,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                       Msig Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -3696,22 +3564,22 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
               >
                 <div
-                  class="c16"
+                  class="c14"
                   display="flex"
                 >
                   <div
-                    class="c33"
+                    class="c31"
                     display="flex"
                   >
                     <h4
-                      class="c34"
+                      class="c32"
                       color="core.nearblack"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -3721,11 +3589,11 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                     </h4>
                   </div>
                   <div
-                    class="c35"
+                    class="c33"
                     display="flex"
                   >
                     <input
-                      class="c36"
+                      class="c34"
                       display="inline-block"
                       height="6"
                       name=""
@@ -3742,12 +3610,12 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="c37"
+          class="c35"
           display="flex"
           width="100%"
         >
           <button
-            class="c38"
+            class="c36"
             font-size="3"
             height="6"
             type="button"
@@ -3755,7 +3623,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
             Back
           </button>
           <button
-            class="c39"
+            class="c37"
             disabled=""
             font-size="3"
             height="6"
@@ -3784,7 +3652,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   max-width: 560px;
@@ -3803,12 +3671,12 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c5 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c6 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -3833,7 +3701,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3849,7 +3717,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -3872,13 +3740,13 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c14 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -3890,7 +3758,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   display: flex;
 }
 
-.c16 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3903,7 +3771,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -3915,7 +3783,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   height: 8px;
 }
 
-.c18 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -3927,14 +3795,14 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   height: 8px;
 }
 
-.c19 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
   margin-bottom: 24px;
 }
 
-.c20 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3950,14 +3818,14 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -3969,7 +3837,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   width: 100%;
 }
 
-.c25 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3989,7 +3857,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -4013,7 +3881,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   justify-content: center;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -4029,7 +3897,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -4041,7 +3909,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   flex-direction: row;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -4058,7 +3926,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -4067,7 +3935,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   width: 100%;
 }
 
-.c33 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -4086,7 +3954,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c35 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4103,7 +3971,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c45 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -4130,7 +3998,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: flex-end;
 }
 
-.c37 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4146,7 +4014,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c38 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -4173,14 +4041,14 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   text-align: center;
 }
 
-.c39 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c40 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4195,7 +4063,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   width: 100%;
 }
 
-.c43 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -4222,13 +4090,13 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c11 {
+.c9 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c13 {
+.c11 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -4236,7 +4104,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
-.c15 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -4247,7 +4115,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c21 {
+.c19 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -4255,7 +4123,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   text-align: center;
 }
 
-.c28 {
+.c26 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -4263,7 +4131,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
-.c34 {
+.c32 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -4272,7 +4140,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
-.c46 {
+.c44 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -4291,11 +4159,11 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c46:hover {
+.c44:hover {
   opacity: 0.8;
 }
 
-.c47 {
+.c45 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -4313,16 +4181,11 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c47:hover {
+.c45:hover {
   opacity: 1;
 }
 
-.c2 {
-  width: 24;
-  height: 24;
-}
-
-.c22 {
+.c20 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -4333,11 +4196,11 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   width: auto;
 }
 
-.c22:hover {
+.c20:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c36 {
+.c34 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4362,18 +4225,18 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   border-color: #999999;
 }
 
-.c36:hover {
+.c34:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c36:focus {
+.c34:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c41 {
+.c39 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4402,40 +4265,40 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   border-color: #999999;
 }
 
-.c41:hover {
+.c39:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c41:focus {
+.c39:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c32 {
+.c30 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c44 {
+.c42 {
   text-align: center;
   position: relative;
   background: #d1ddfa;
 }
 
-.c42 {
+.c40 {
   -moz-appearance: textfield;
 }
 
-.c42::-webkit-outer-spin-button,
-.c42::-webkit-inner-spin-button {
+.c40::-webkit-outer-spin-button,
+.c40::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c3 {
+.c1 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4453,7 +4316,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -4473,7 +4336,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4484,100 +4347,61 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 <div>
   <div
     class="c0"
     display="flex"
     width="100%"
   >
-    <button
-      class="c1"
-      display="inline-block"
-      role="button"
-      type="button"
-    >
-      <svg
-        class="c2"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-          fill="#5E26FF"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </button>
     <form
-      class="c3"
+      class="c1"
     >
       <div
-        class="c4"
+        class="c2"
         display="flex"
         width="100%"
       >
         <div
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
             display="flex"
             overflow="hidden"
             width="auto"
           >
             <ul
-              class="c7"
+              class="c5"
               display="flex"
               width="100%"
             >
               <div
-                class="c8"
+                class="c6"
                 display="flex"
               >
                 <li
-                  class="c9"
+                  class="c7"
                   display="flex"
                 >
                   <div
-                    class="c10"
+                    class="c8"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Wd
                     </h3>
                   </div>
                 </li>
                 <div
-                  class="c12"
+                  class="c10"
                   width="2"
                 />
                 <h2
-                  class="c13"
+                  class="c11"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -4589,11 +4413,11 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                 class=""
               >
                 <div
-                  class="c14"
+                  class="c12"
                   display="flex"
                 >
                   <p
-                    class="c15"
+                    class="c13"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -4603,55 +4427,55 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                     2
                   </p>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
@@ -4661,14 +4485,14 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
               </li>
             </ul>
             <div
-              class="c19"
+              class="c17"
             >
               <div
-                class="c20"
+                class="c18"
                 display="flex"
               >
                 <p
-                  class="c21"
+                  class="c19"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -4676,7 +4500,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                   Next, please choose an amount of FIL you'd like to withdraw.
                 </p>
                 <a
-                  class="c22"
+                  class="c20"
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
@@ -4689,39 +4513,39 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
             </div>
           </div>
           <div
-            class="c23"
+            class="c21"
           >
             <div
-              class="c24"
+              class="c22"
               color="core.white"
               width="100%"
             >
               <div
-                class="c25"
+                class="c23"
                 display="flex"
               >
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <div
-                    class="c26"
+                    class="c24"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Sa
                     </h3>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4729,7 +4553,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                       From
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4739,15 +4563,15 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c29"
+                  class="c27"
                   display="flex"
                 >
                   <div
-                    class="c30"
+                    class="c28"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4755,7 +4579,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                       Ledger Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4765,11 +4589,11 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                     </p>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4777,7 +4601,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                       Msig Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4790,22 +4614,22 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
               >
                 <div
-                  class="c16"
+                  class="c14"
                   display="flex"
                 >
                   <div
-                    class="c33"
+                    class="c31"
                     display="flex"
                   >
                     <h4
-                      class="c34"
+                      class="c32"
                       color="core.nearblack"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -4815,11 +4639,11 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                     </h4>
                   </div>
                   <div
-                    class="c35"
+                    class="c33"
                     display="flex"
                   >
                     <input
-                      class="c36"
+                      class="c34"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -4835,22 +4659,22 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
               
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c37"
+                class="c35"
                 display="flex"
                 name="amount"
               >
                 <div
-                  class="c38"
+                  class="c36"
                   color="input.border"
                   display="flex"
                   width="100%"
                 >
                   <h4
-                    class="c34"
+                    class="c32"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -4860,18 +4684,18 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                   </h4>
                 </div>
                 <div
-                  class="c39"
+                  class="c37"
                   display="inline-block"
                   width="100%"
                 >
                   <div
-                    class="c40"
+                    class="c38"
                     display="flex"
                     height="80px"
                     width="100%"
                   >
                     <input
-                      class="c41 c42"
+                      class="c39 c40"
                       display="inline-block"
                       font-size="5"
                       height="100%"
@@ -4883,7 +4707,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                       width="100%"
                     />
                     <div
-                      class="c43 c44"
+                      class="c41 c42"
                       color="core.primary"
                       display="flex"
                       font-size="3"
@@ -4898,12 +4722,12 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c45"
+          class="c43"
           display="flex"
           width="100%"
         >
           <button
-            class="c46"
+            class="c44"
             font-size="3"
             height="6"
             type="button"
@@ -4911,7 +4735,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
             Back
           </button>
           <button
-            class="c47"
+            class="c45"
             disabled=""
             font-size="3"
             height="6"
@@ -4940,7 +4764,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   max-width: 560px;
@@ -4959,12 +4783,12 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c5 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c6 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -4989,7 +4813,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5005,7 +4829,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -5028,13 +4852,13 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c14 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -5046,7 +4870,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   display: flex;
 }
 
-.c16 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5059,7 +4883,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -5071,7 +4895,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   height: 8px;
 }
 
-.c18 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -5083,14 +4907,14 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   height: 8px;
 }
 
-.c19 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
   margin-bottom: 24px;
 }
 
-.c20 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5106,14 +4930,14 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -5125,7 +4949,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c25 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5145,7 +4969,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -5169,7 +4993,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   justify-content: center;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5185,7 +5009,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5197,7 +5021,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   flex-direction: row;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -5214,7 +5038,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -5223,7 +5047,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c33 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -5242,7 +5066,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c35 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5259,7 +5083,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c58 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -5286,7 +5110,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: flex-end;
 }
 
-.c37 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5302,7 +5126,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c38 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -5329,14 +5153,14 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   text-align: center;
 }
 
-.c39 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c40 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5351,7 +5175,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c43 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -5378,7 +5202,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c45 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -5389,7 +5213,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c46 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   background-color: #EFF3FD;
@@ -5410,7 +5234,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c47 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5431,7 +5255,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   flex-grow: 1;
 }
 
-.c48 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5445,7 +5269,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c49 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -5456,7 +5280,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   text-align: left;
 }
 
-.c51 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5474,7 +5298,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c53 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -5501,7 +5325,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c55 {
+.c53 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5516,13 +5340,13 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   text-align: left;
 }
 
-.c11 {
+.c9 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c13 {
+.c11 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -5530,7 +5354,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c15 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5541,7 +5365,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c21 {
+.c19 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -5549,7 +5373,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   text-align: center;
 }
 
-.c28 {
+.c26 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -5557,7 +5381,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c56 {
+.c54 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5566,7 +5390,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c34 {
+.c32 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5575,7 +5399,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c50 {
+.c48 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -5583,7 +5407,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c59 {
+.c57 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -5602,11 +5426,11 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c59:hover {
+.c57:hover {
   opacity: 0.8;
 }
 
-.c60 {
+.c58 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -5625,16 +5449,11 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c60:hover {
+.c58:hover {
   opacity: 0.8;
 }
 
-.c2 {
-  width: 24;
-  height: 24;
-}
-
-.c22 {
+.c20 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -5645,11 +5464,11 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   width: auto;
 }
 
-.c22:hover {
+.c20:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c57 {
+.c55 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -5659,11 +5478,11 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.125rem;
 }
 
-.c57:hover {
+.c55:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c36 {
+.c34 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5688,18 +5507,18 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   border-color: #999999;
 }
 
-.c36:hover {
+.c34:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c36:focus {
+.c34:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c41 {
+.c39 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5728,18 +5547,18 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   border-color: #999999;
 }
 
-.c41:hover {
+.c39:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c41:focus {
+.c39:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c52 {
+.c50 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5765,46 +5584,46 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   border-color: #999999;
 }
 
-.c52:hover {
+.c50:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c52:focus {
+.c50:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c32 {
+.c30 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c54 {
+.c52 {
   text-align: center;
   position: relative;
   background: #d1ddfa;
 }
 
-.c44 {
+.c42 {
   text-align: center;
   position: relative;
   background: #bacbf7;
 }
 
-.c42 {
+.c40 {
   -moz-appearance: textfield;
 }
 
-.c42::-webkit-outer-spin-button,
-.c42::-webkit-inner-spin-button {
+.c40::-webkit-outer-spin-button,
+.c40::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c3 {
+.c1 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -5822,7 +5641,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -5842,7 +5661,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5853,100 +5672,61 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 <div>
   <div
     class="c0"
     display="flex"
     width="100%"
   >
-    <button
-      class="c1"
-      display="inline-block"
-      role="button"
-      type="button"
-    >
-      <svg
-        class="c2"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-          fill="#5E26FF"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </button>
     <form
-      class="c3"
+      class="c1"
     >
       <div
-        class="c4"
+        class="c2"
         display="flex"
         width="100%"
       >
         <div
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
             display="flex"
             overflow="hidden"
             width="auto"
           >
             <ul
-              class="c7"
+              class="c5"
               display="flex"
               width="100%"
             >
               <div
-                class="c8"
+                class="c6"
                 display="flex"
               >
                 <li
-                  class="c9"
+                  class="c7"
                   display="flex"
                 >
                   <div
-                    class="c10"
+                    class="c8"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Wd
                     </h3>
                   </div>
                 </li>
                 <div
-                  class="c12"
+                  class="c10"
                   width="2"
                 />
                 <h2
-                  class="c13"
+                  class="c11"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -5958,11 +5738,11 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                 class=""
               >
                 <div
-                  class="c14"
+                  class="c12"
                   display="flex"
                 >
                   <p
-                    class="c15"
+                    class="c13"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -5972,55 +5752,55 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                     3
                   </p>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
@@ -6030,14 +5810,14 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
               </li>
             </ul>
             <div
-              class="c19"
+              class="c17"
             >
               <div
-                class="c20"
+                class="c18"
                 display="flex"
               >
                 <p
-                  class="c21"
+                  class="c19"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -6045,7 +5825,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                   Please review transaction fee details. Please note, the transaction fee is paid by the Safe owner, not your multisig wallet.
                 </p>
                 <a
-                  class="c22"
+                  class="c20"
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
@@ -6058,39 +5838,39 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
             </div>
           </div>
           <div
-            class="c23"
+            class="c21"
           >
             <div
-              class="c24"
+              class="c22"
               color="core.white"
               width="100%"
             >
               <div
-                class="c25"
+                class="c23"
                 display="flex"
               >
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <div
-                    class="c26"
+                    class="c24"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Sa
                     </h3>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -6098,7 +5878,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                       From
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -6108,15 +5888,15 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c29"
+                  class="c27"
                   display="flex"
                 >
                   <div
-                    class="c30"
+                    class="c28"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -6124,7 +5904,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                       Ledger Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -6134,11 +5914,11 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                     </p>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -6146,7 +5926,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                       Msig Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -6159,22 +5939,22 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
               >
                 <div
-                  class="c16"
+                  class="c14"
                   display="flex"
                 >
                   <div
-                    class="c33"
+                    class="c31"
                     display="flex"
                   >
                     <h4
-                      class="c34"
+                      class="c32"
                       color="core.nearblack"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -6184,11 +5964,11 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                     </h4>
                   </div>
                   <div
-                    class="c35"
+                    class="c33"
                     display="flex"
                   >
                     <input
-                      class="c36"
+                      class="c34"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -6204,22 +5984,22 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
               
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c37"
+                class="c35"
                 display="flex"
                 name="amount"
               >
                 <div
-                  class="c38"
+                  class="c36"
                   color="input.border"
                   display="flex"
                   width="100%"
                 >
                   <h4
-                    class="c34"
+                    class="c32"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -6229,18 +6009,18 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                   </h4>
                 </div>
                 <div
-                  class="c39"
+                  class="c37"
                   display="inline-block"
                   width="100%"
                 >
                   <div
-                    class="c40"
+                    class="c38"
                     display="flex"
                     height="80px"
                     width="100%"
                   >
                     <input
-                      class="c41 c42"
+                      class="c39 c40"
                       disabled=""
                       display="inline-block"
                       font-size="5"
@@ -6253,7 +6033,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                       width="100%"
                     />
                     <div
-                      class="c43 c44"
+                      class="c41 c42"
                       color="core.primary"
                       disabled=""
                       display="flex"
@@ -6267,31 +6047,31 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c45"
+              class="c43"
               width="100%"
             >
               <div
-                class="c46"
+                class="c44"
                 display="flex"
               >
                 <div
-                  class="c47"
+                  class="c45"
                   display="flex"
                 >
                   <div
-                    class="c32"
+                    class="c30"
                     name="tx-fee"
                   >
                     <div
-                      class="c48"
+                      class="c46"
                       display="flex"
                     >
                       <div
-                        class="c49"
+                        class="c47"
                         display="inline-block"
                       >
                         <h4
-                          class="c50"
+                          class="c48"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -6300,13 +6080,13 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                         </h4>
                       </div>
                       <div
-                        class="c51"
+                        class="c49"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c52 c42"
+                          class="c50 c40"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -6314,7 +6094,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                           width="100%"
                         />
                         <div
-                          class="c53 c54"
+                          class="c51 c52"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -6326,12 +6106,12 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="c55"
+                    class="c53"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c56"
+                      class="c54"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -6343,7 +6123,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                        FIL for this transaction.
                        
                       <a
-                        class="c57"
+                        class="c55"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -6360,12 +6140,12 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c58"
+          class="c56"
           display="flex"
           width="100%"
         >
           <button
-            class="c59"
+            class="c57"
             font-size="3"
             height="6"
             type="button"
@@ -6373,7 +6153,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
             Back
           </button>
           <button
-            class="c60"
+            class="c58"
             font-size="3"
             height="6"
             type="submit"
@@ -6401,7 +6181,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   max-width: 560px;
@@ -6420,12 +6200,12 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c5 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c6 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -6450,7 +6230,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6466,7 +6246,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -6489,13 +6269,13 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c14 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -6507,7 +6287,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   display: flex;
 }
 
-.c16 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6520,7 +6300,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -6532,7 +6312,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   height: 8px;
 }
 
-.c18 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -6544,14 +6324,14 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   height: 8px;
 }
 
-.c19 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
   margin-bottom: 24px;
 }
 
-.c20 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6567,14 +6347,14 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -6586,7 +6366,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c25 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6606,7 +6386,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -6630,7 +6410,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: center;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6646,7 +6426,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6658,7 +6438,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   flex-direction: row;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -6675,7 +6455,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -6684,7 +6464,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c33 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -6703,7 +6483,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c35 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -6720,7 +6500,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c61 {
+.c59 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -6747,7 +6527,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: flex-end;
 }
 
-.c37 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -6763,7 +6543,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c38 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -6790,14 +6570,14 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   text-align: center;
 }
 
-.c39 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c40 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -6812,7 +6592,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c43 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -6839,7 +6619,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c46 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   background-color: #EFF3FD;
@@ -6860,7 +6640,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c47 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6881,7 +6661,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   flex-grow: 1;
 }
 
-.c48 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -6895,7 +6675,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c49 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -6906,7 +6686,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   text-align: left;
 }
 
-.c51 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -6924,7 +6704,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c53 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -6951,7 +6731,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c54 {
+.c52 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6966,7 +6746,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   text-align: left;
 }
 
-.c45 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -6976,7 +6756,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c57 {
+.c55 {
   min-width: 0;
   box-sizing: border-box;
   border-bottom-left-radius: 8px;
@@ -7003,7 +6783,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c58 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -7017,13 +6797,13 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   text-align: right;
 }
 
-.c11 {
+.c9 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c13 {
+.c11 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -7031,7 +6811,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c59 {
+.c57 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -7040,7 +6820,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c15 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -7051,7 +6831,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c21 {
+.c19 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -7059,7 +6839,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   text-align: center;
 }
 
-.c28 {
+.c26 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -7067,7 +6847,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c55 {
+.c53 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -7076,7 +6856,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c34 {
+.c32 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -7085,7 +6865,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c50 {
+.c48 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -7093,7 +6873,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c62 {
+.c60 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -7112,11 +6892,11 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c62:hover {
+.c60:hover {
   opacity: 0.8;
 }
 
-.c63 {
+.c61 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -7135,16 +6915,11 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c63:hover {
+.c61:hover {
   opacity: 0.8;
 }
 
-.c2 {
-  width: 24;
-  height: 24;
-}
-
-.c22 {
+.c20 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -7155,11 +6930,11 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   width: auto;
 }
 
-.c22:hover {
+.c20:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c56 {
+.c54 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -7169,11 +6944,11 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.125rem;
 }
 
-.c56:hover {
+.c54:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c36 {
+.c34 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -7198,18 +6973,18 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   border-color: #999999;
 }
 
-.c36:hover {
+.c34:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c36:focus {
+.c34:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c41 {
+.c39 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -7238,18 +7013,18 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   border-color: #999999;
 }
 
-.c41:hover {
+.c39:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c41:focus {
+.c39:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c52 {
+.c50 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -7275,40 +7050,40 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   border-color: #999999;
 }
 
-.c52:hover {
+.c50:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c52:focus {
+.c50:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c32 {
+.c30 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c44 {
+.c42 {
   text-align: center;
   position: relative;
   background: #d1ddfa;
 }
 
-.c42 {
+.c40 {
   -moz-appearance: textfield;
 }
 
-.c42::-webkit-outer-spin-button,
-.c42::-webkit-inner-spin-button {
+.c40::-webkit-outer-spin-button,
+.c40::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c3 {
+.c1 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -7326,7 +7101,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -7346,7 +7121,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7357,25 +7132,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c60 {
+.c58 {
   word-wrap: break-word;
 }
 
@@ -7385,76 +7142,55 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
     display="flex"
     width="100%"
   >
-    <button
-      class="c1"
-      display="inline-block"
-      role="button"
-      type="button"
-    >
-      <svg
-        class="c2"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-          fill="#5E26FF"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </button>
     <form
-      class="c3"
+      class="c1"
     >
       <div
-        class="c4"
+        class="c2"
         display="flex"
         width="100%"
       >
         <div
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
             display="flex"
             overflow="hidden"
             width="auto"
           >
             <ul
-              class="c7"
+              class="c5"
               display="flex"
               width="100%"
             >
               <div
-                class="c8"
+                class="c6"
                 display="flex"
               >
                 <li
-                  class="c9"
+                  class="c7"
                   display="flex"
                 >
                   <div
-                    class="c10"
+                    class="c8"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Wd
                     </h3>
                   </div>
                 </li>
                 <div
-                  class="c12"
+                  class="c10"
                   width="2"
                 />
                 <h2
-                  class="c13"
+                  class="c11"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -7466,11 +7202,11 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                 class=""
               >
                 <div
-                  class="c14"
+                  class="c12"
                   display="flex"
                 >
                   <p
-                    class="c15"
+                    class="c13"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -7480,55 +7216,55 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                     4
                   </p>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
@@ -7538,14 +7274,14 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
               </li>
             </ul>
             <div
-              class="c19"
+              class="c17"
             >
               <div
-                class="c20"
+                class="c18"
                 display="flex"
               >
                 <p
-                  class="c21"
+                  class="c19"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -7553,7 +7289,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                   Please review the transaction details.
                 </p>
                 <a
-                  class="c22"
+                  class="c20"
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
@@ -7566,39 +7302,39 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
             </div>
           </div>
           <div
-            class="c23"
+            class="c21"
           >
             <div
-              class="c24"
+              class="c22"
               color="core.white"
               width="100%"
             >
               <div
-                class="c25"
+                class="c23"
                 display="flex"
               >
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <div
-                    class="c26"
+                    class="c24"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Sa
                     </h3>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7606,7 +7342,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                       From
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7616,15 +7352,15 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c29"
+                  class="c27"
                   display="flex"
                 >
                   <div
-                    class="c30"
+                    class="c28"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7632,7 +7368,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                       Ledger Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7642,11 +7378,11 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                     </p>
                   </div>
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7654,7 +7390,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                       Msig Balance
                     </p>
                     <p
-                      class="c28"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7667,22 +7403,22 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
               >
                 <div
-                  class="c16"
+                  class="c14"
                   display="flex"
                 >
                   <div
-                    class="c33"
+                    class="c31"
                     display="flex"
                   >
                     <h4
-                      class="c34"
+                      class="c32"
                       color="core.nearblack"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -7692,11 +7428,11 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                     </h4>
                   </div>
                   <div
-                    class="c35"
+                    class="c33"
                     display="flex"
                   >
                     <input
-                      class="c36"
+                      class="c34"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -7712,22 +7448,22 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
               
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c37"
+                class="c35"
                 display="flex"
                 name="amount"
               >
                 <div
-                  class="c38"
+                  class="c36"
                   color="input.border"
                   display="flex"
                   width="100%"
                 >
                   <h4
-                    class="c34"
+                    class="c32"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -7737,18 +7473,18 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                   </h4>
                 </div>
                 <div
-                  class="c39"
+                  class="c37"
                   display="inline-block"
                   width="100%"
                 >
                   <div
-                    class="c40"
+                    class="c38"
                     display="flex"
                     height="80px"
                     width="100%"
                   >
                     <input
-                      class="c41 c42"
+                      class="c39 c40"
                       display="inline-block"
                       font-size="5"
                       height="100%"
@@ -7760,7 +7496,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                       width="100%"
                     />
                     <div
-                      class="c43 c44"
+                      class="c41 c42"
                       color="core.primary"
                       display="flex"
                       font-size="3"
@@ -7773,31 +7509,31 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c45"
+              class="c43"
               width="100%"
             >
               <div
-                class="c46"
+                class="c44"
                 display="flex"
               >
                 <div
-                  class="c47"
+                  class="c45"
                   display="flex"
                 >
                   <div
-                    class="c32"
+                    class="c30"
                     name="tx-fee"
                   >
                     <div
-                      class="c48"
+                      class="c46"
                       display="flex"
                     >
                       <div
-                        class="c49"
+                        class="c47"
                         display="inline-block"
                       >
                         <h4
-                          class="c50"
+                          class="c48"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -7806,13 +7542,13 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                         </h4>
                       </div>
                       <div
-                        class="c51"
+                        class="c49"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c52 c42"
+                          class="c50 c40"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -7820,7 +7556,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                           width="100%"
                         />
                         <div
-                          class="c53 c44"
+                          class="c51 c42"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -7832,12 +7568,12 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="c54"
+                    class="c52"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c55"
+                      class="c53"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -7849,7 +7585,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                        FIL for this transaction.
                        
                       <a
-                        class="c56"
+                        class="c54"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -7864,11 +7600,11 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c57"
+              class="c55"
               display="flex"
             >
               <h2
-                class="c13"
+                class="c11"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -7876,11 +7612,11 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                 Total
               </h2>
               <div
-                class="c58"
+                class="c56"
                 display="flex"
               >
                 <h2
-                  class="c59 c60"
+                  class="c57 c58"
                   color="core.primary"
                   font-family="RT-Alias-Grotesk"
                   font-size="5"
@@ -7894,12 +7630,12 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c61"
+          class="c59"
           display="flex"
           width="100%"
         >
           <button
-            class="c62"
+            class="c60"
             font-size="3"
             height="6"
             type="button"
@@ -7907,7 +7643,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
             Back
           </button>
           <button
-            class="c63"
+            class="c61"
             font-size="3"
             height="6"
             type="submit"

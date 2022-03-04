@@ -38,10 +38,9 @@ describe('Admin page', () => {
     expect(screen.getByText(/Signer 1/)).toBeInTheDocument()
     // make sure we only render 1 additional signer
     expect(screen.queryAllByText(/Additional Signer/).length).toBe(1)
-    expect(screen.getByText(/Safe Address/)).toBeInTheDocument()
     // signers - "t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi" and f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a from msig provider mocks
     // since the self signer is also listed in the top corner, it should appear twice
-    expect(screen.getAllByText(/6wgi/).length === 2).toBeTruthy()
+    expect(screen.getAllByText(/6wgi/).length === 1).toBeTruthy()
     expect(screen.getByText(/uo3a/)).toBeInTheDocument()
 
     // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved

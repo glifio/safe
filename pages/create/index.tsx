@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
+import { OneColumnCentered } from '@glif/react-components'
 import CreateMsig from '../../components/Msig/Create'
-import { MsigPageWrapper } from '../../components/Msig/Shared'
+import SafePage from '../../components/SafePage'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
@@ -13,11 +14,13 @@ const Create = () => {
     [router]
   )
   return (
-    <RequireWallet gatekeep={gatekeep}>
-      <MsigPageWrapper hideNav>
-        <CreateMsig />
-      </MsigPageWrapper>
-    </RequireWallet>
+    <SafePage>
+      <OneColumnCentered>
+        <RequireWallet gatekeep={gatekeep}>
+          <CreateMsig />
+        </RequireWallet>
+      </OneColumnCentered>
+    </SafePage>
   )
 }
 

@@ -5,7 +5,6 @@ import { validateAddressString } from '@glif/filecoin-address'
 import {
   Box,
   Button,
-  ButtonClose,
   StepHeader,
   Num,
   Title,
@@ -216,19 +215,6 @@ const Withdrawing = () => {
   return (
     <>
       <Box display='flex' flexDirection='column' width='100%'>
-        <ButtonClose
-          role='button'
-          type='button'
-          justifySelf='flex-end'
-          marginLeft='auto'
-          onClick={() => {
-            setAttemptingTx(false)
-            setUncaughtError('')
-            setGasError('')
-            resetWalletError()
-            onClose()
-          }}
-        />
         <Form onSubmit={onSubmit}>
           <Box
             maxWidth={13}

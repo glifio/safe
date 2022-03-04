@@ -1,9 +1,11 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
+import { OneColumn } from '@glif/react-components'
 import MsigHistory from '../components/Msig/MessageHistory'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
+import SafePageLoggedIn from '../components/SafePageLoggedIn'
 
 const History = () => {
   const router = useRouter()
@@ -12,9 +14,13 @@ const History = () => {
     [router]
   )
   return (
-    <RequireWallet gatekeep={gatekeep}>
-      <MsigHistory />
-    </RequireWallet>
+    <SafePageLoggedIn>
+      <OneColumn>
+        <RequireWallet gatekeep={gatekeep}>
+          <MsigHistory />
+        </RequireWallet>
+      </OneColumn>
+    </SafePageLoggedIn>
   )
 }
 

@@ -14,7 +14,7 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   max-width: 560px;
@@ -33,35 +33,12 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c5 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c6 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c7 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -81,7 +58,7 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   align-content: center;
 }
 
-.c8 {
+.c5 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -105,7 +82,7 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c9 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   padding: 16px;
@@ -124,7 +101,7 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   justify-content: space-between;
 }
 
-.c10 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -148,7 +125,7 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   justify-content: center;
 }
 
-.c13 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -157,14 +134,14 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   padding-bottom: 24px;
 }
 
-.c16 {
+.c13 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c17 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -194,13 +171,13 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   align-items: flex-end;
 }
 
-.c11 {
+.c8 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c12 {
+.c9 {
   color: #661800;
   font-size: 1.5rem;
   font-weight: 400;
@@ -209,7 +186,7 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   margin: 0;
 }
 
-.c14 {
+.c11 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -217,7 +194,7 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   margin-top: 0;
 }
 
-.c18 {
+.c15 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -236,11 +213,11 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   border-radius: 4px;
 }
 
-.c18:hover {
+.c15:hover {
   opacity: 0.8;
 }
 
-.c19 {
+.c16 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -259,16 +236,11 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   border-radius: 4px;
 }
 
-.c19:hover {
+.c16:hover {
   opacity: 0.8;
 }
 
-.c2 {
-  width: 24;
-  height: 24;
-}
-
-.c15 {
+.c12 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -278,11 +250,11 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c15:hover {
+.c12:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c3 {
+.c1 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -300,156 +272,111 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   align-items: center;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 <div>
   <div
     class="c0"
     display="flex"
     width="100%"
   >
-    <button
-      class="c1"
-      display="inline-block"
-      role="button"
-      type="button"
-    >
-      <svg
-        class="c2"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-          fill="#5E26FF"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </button>
     <form
-      class="c3"
+      class="c1"
     >
       <div
-        class="c4"
+        class="c2"
         display="flex"
         width="100%"
       >
         <div
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
             display="flex"
             width="100%"
           >
             <div
-              class="c7"
+              class="c5"
               display="flex"
+              overflow="hidden"
               width="100%"
             >
               <div
-                class="c8"
+                class="c6"
                 display="flex"
-                overflow="hidden"
-                width="100%"
               >
                 <div
-                  class="c9"
+                  class="c7"
+                  color="status.warning.foreground"
                   display="flex"
+                  size="6"
                 >
-                  <div
-                    class="c10"
-                    color="status.warning.foreground"
-                    display="flex"
-                    size="6"
+                  <h3
+                    class="c8"
                   >
-                    <h3
-                      class="c11"
-                    >
-                      Wn
-                    </h3>
-                  </div>
-                  <h2
-                    class="c12"
-                    color="status.warning.foreground"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    Warning
-                  </h2>
+                    Wn
+                  </h3>
                 </div>
-                <div
-                  class="c13"
+                <h2
+                  class="c9"
+                  color="status.warning.foreground"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
                 >
-                  <p
-                    class="c14"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="2"
-                    font-weight="400"
-                  >
-                    You're changing a signer of your multisig account to a new Filecoin address.
-                  </p>
-                  <p
-                    class="c14"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="2"
-                    font-weight="400"
-                  >
-                    Make sure you or someone you trust owns the private key to this new Filecoin address.
-                  </p>
-                  <p
-                    class="c14"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="2"
-                    font-weight="400"
-                  >
-                    If you or anyone else does not own this address, you could lose access to your funds permanently. There is no way to resolve this.
-                  </p>
-                  <a
-                    class="c15"
-                    color="core.primary"
-                    font-size="3"
-                    href="https://coinsutra.com/security-risks-bitcoin-wallets/"
-                    rel="noopener"
-                    target="_blank"
-                  >
-                    Why isn't it secure?
-                  </a>
-                </div>
+                  Warning
+                </h2>
+              </div>
+              <div
+                class="c10"
+              >
+                <p
+                  class="c11"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  You're changing a signer of your multisig account to a new Filecoin address.
+                </p>
+                <p
+                  class="c11"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Make sure you or someone you trust owns the private key to this new Filecoin address.
+                </p>
+                <p
+                  class="c11"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  If you or anyone else does not own this address, you could lose access to your funds permanently. There is no way to resolve this.
+                </p>
+                <a
+                  class="c12"
+                  color="core.primary"
+                  font-size="3"
+                  href="https://coinsutra.com/security-risks-bitcoin-wallets/"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  Why isn't it secure?
+                </a>
               </div>
             </div>
           </div>
           <div
-            class="c16"
+            class="c13"
           />
         </div>
         <div
-          class="c17"
+          class="c14"
           display="flex"
           width="100%"
         >
           <button
-            class="c18"
+            class="c15"
             font-size="3"
             height="6"
             type="button"
@@ -457,7 +384,7 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
             Back
           </button>
           <button
-            class="c19"
+            class="c16"
             font-size="3"
             height="6"
             type="submit"
@@ -485,7 +412,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   max-width: 560px;
@@ -504,19 +431,19 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c5 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c20 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c43 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -546,7 +473,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: flex-end;
 }
 
-.c6 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -571,7 +498,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -587,7 +514,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -610,13 +537,13 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c14 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -628,7 +555,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   display: flex;
 }
 
-.c16 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -641,7 +568,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -653,7 +580,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   height: 8px;
 }
 
-.c18 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -665,7 +592,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   height: 8px;
 }
 
-.c21 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -677,7 +604,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   width: 100%;
 }
 
-.c22 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -697,7 +624,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -721,7 +648,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: center;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -737,7 +664,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -749,7 +676,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   flex-direction: row;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -766,7 +693,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c28 {
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -775,7 +702,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   width: 100%;
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -797,7 +724,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   color: #E0D7FE;
@@ -811,13 +738,13 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c37 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 8px;
 }
 
-.c39 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -836,7 +763,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c41 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -853,13 +780,13 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c11 {
+.c9 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c13 {
+.c11 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -867,7 +794,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
-.c15 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -878,7 +805,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c19 {
+.c17 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -886,7 +813,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   text-align: center;
 }
 
-.c25 {
+.c23 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -894,7 +821,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
-.c30 {
+.c28 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -904,7 +831,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   padding-left: 0;
 }
 
-.c40 {
+.c39 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -913,7 +840,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
-.c44 {
+.c43 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -932,11 +859,11 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c44:hover {
+.c43:hover {
   opacity: 0.8;
 }
 
-.c45 {
+.c44 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -955,16 +882,16 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c45:hover {
+.c44:hover {
   opacity: 0.8;
 }
 
-.c2 {
+.c33 {
   width: 24;
   height: 24;
 }
 
-.c34 {
+.c32 {
   height: auto;
   cursor: pointer;
   opacity: 1;
@@ -989,18 +916,18 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   outline: none;
 }
 
-.c36 {
+.c35 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c33:hover .c35 {
+.c31:hover .c34 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c31 {
+.c29 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -1010,11 +937,11 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   font-size: 1.125rem;
 }
 
-.c31:hover {
+.c29:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c42 {
+.c41 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1039,24 +966,24 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   border-color: #999999;
 }
 
-.c42:hover {
+.c41:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c42:focus {
+.c41:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c38 {
+.c37 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c3 {
+.c1 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1074,7 +1001,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1094,7 +1021,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1105,100 +1032,61 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 <div>
   <div
     class="c0"
     display="flex"
     width="100%"
   >
-    <button
-      class="c1"
-      display="inline-block"
-      role="button"
-      type="button"
-    >
-      <svg
-        class="c2"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-          fill="#5E26FF"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </button>
     <form
-      class="c3"
+      class="c1"
     >
       <div
-        class="c4"
+        class="c2"
         display="flex"
         width="100%"
       >
         <div
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
             display="flex"
             overflow="hidden"
             width="auto"
           >
             <ul
-              class="c7"
+              class="c5"
               display="flex"
               width="100%"
             >
               <div
-                class="c8"
+                class="c6"
                 display="flex"
               >
                 <li
-                  class="c9"
+                  class="c7"
                   display="flex"
                 >
                   <div
-                    class="c10"
+                    class="c8"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Ch
                     </h3>
                   </div>
                 </li>
                 <div
-                  class="c12"
+                  class="c10"
                   width="2"
                 />
                 <h2
-                  class="c13"
+                  class="c11"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -1210,11 +1098,11 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                 class=""
               >
                 <div
-                  class="c14"
+                  class="c12"
                   display="flex"
                 >
                   <p
-                    class="c15"
+                    class="c13"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1224,33 +1112,33 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     1
                   </p>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
@@ -1260,7 +1148,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
               </li>
             </ul>
             <p
-              class="c19"
+              class="c17"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1268,7 +1156,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
               Your Signer address pays the transaction fee.
             </p>
             <p
-              class="c19"
+              class="c17"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1277,39 +1165,39 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
             </p>
           </div>
           <div
-            class="c20"
+            class="c18"
           >
             <div
-              class="c21"
+              class="c19"
               color="core.white"
               width="100%"
             >
               <div
-                class="c22"
+                class="c20"
                 display="flex"
               >
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <div
-                    class="c23"
+                    class="c21"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Sa
                     </h3>
                   </div>
                   <div
-                    class="c24"
+                    class="c22"
                     display="flex"
                   >
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1317,7 +1205,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                       From
                     </p>
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1327,15 +1215,15 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c26"
+                  class="c24"
                   display="flex"
                 >
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1343,7 +1231,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                       Ledger Balance
                     </p>
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1353,11 +1241,11 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     </p>
                   </div>
                   <div
-                    class="c24"
+                    class="c22"
                     display="flex"
                   >
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1365,7 +1253,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                       Msig Balance
                     </p>
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1378,15 +1266,15 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c28"
+              class="c26"
               width="100%"
             >
               <div
-                class="c29"
+                class="c27"
                 display="flex"
               >
                 <h4
-                  class="c30"
+                  class="c28"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1395,11 +1283,11 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                   Old signer
                 </h4>
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <a
-                    class="c31"
+                    class="c29"
                     color="core.primary"
                     font-size="2"
                     href="undefined/actor/?address=f1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
@@ -1408,18 +1296,18 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     f1z225 ... 6z6wgi
                   </a>
                   <div
-                    class="c32"
+                    class="c30"
                     color="core.secondary"
                     display="flex"
                   >
                     <button
-                      class="c33 c34"
+                      class="c31 c32"
                       display="flex"
                       role="button"
                       type="button"
                     >
                       <svg
-                        class="c2 c35 c36"
+                        class="c33 c34 c35"
                         fill="none"
                         height="24"
                         viewBox="0 0 24 24"
@@ -1446,21 +1334,21 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                 </div>
               </div>
               <div
-                class="c37"
+                class="c36"
               >
                 <div
-                  class="c38"
+                  class="c37"
                 >
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c39"
+                      class="c38"
                       display="flex"
                     >
                       <h4
-                        class="c40"
+                        class="c39"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1470,11 +1358,11 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                       </h4>
                     </div>
                     <div
-                      class="c41"
+                      class="c40"
                       display="flex"
                     >
                       <input
-                        class="c42"
+                        class="c41"
                         display="inline-block"
                         height="6"
                         name=""
@@ -1492,12 +1380,12 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c43"
+          class="c42"
           display="flex"
           width="100%"
         >
           <button
-            class="c44"
+            class="c43"
             font-size="3"
             height="6"
             type="button"
@@ -1505,7 +1393,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
             Back
           </button>
           <button
-            class="c45"
+            class="c44"
             font-size="3"
             height="6"
             type="submit"
@@ -1533,7 +1421,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   max-width: 560px;
@@ -1552,19 +1440,19 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c5 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c20 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c56 {
+.c55 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -1594,7 +1482,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: flex-end;
 }
 
-.c6 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -1619,7 +1507,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1635,7 +1523,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1658,13 +1546,13 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c14 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -1676,7 +1564,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   display: flex;
 }
 
-.c16 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1689,7 +1577,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -1701,7 +1589,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   height: 8px;
 }
 
-.c18 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -1713,7 +1601,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   height: 8px;
 }
 
-.c21 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1725,7 +1613,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c22 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1745,7 +1633,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1769,7 +1657,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: center;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1785,7 +1673,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1797,7 +1685,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   flex-direction: row;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -1814,7 +1702,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c28 {
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1823,7 +1711,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -1845,7 +1733,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   color: #E0D7FE;
@@ -1859,13 +1747,13 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c37 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 8px;
 }
 
-.c39 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -1884,7 +1772,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c41 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1901,7 +1789,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c43 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1921,7 +1809,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c44 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   background-color: #EFF3FD;
@@ -1942,7 +1830,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c45 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1963,7 +1851,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   flex-grow: 1;
 }
 
-.c46 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1977,7 +1865,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c47 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -1988,7 +1876,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   text-align: left;
 }
 
-.c49 {
+.c48 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2006,7 +1894,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c52 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -2033,7 +1921,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c54 {
+.c53 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2048,13 +1936,13 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   text-align: left;
 }
 
-.c11 {
+.c9 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c13 {
+.c11 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2062,7 +1950,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c15 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2073,7 +1961,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c19 {
+.c17 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2081,7 +1969,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   text-align: center;
 }
 
-.c25 {
+.c23 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2089,7 +1977,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c55 {
+.c54 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2098,7 +1986,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c30 {
+.c28 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2108,7 +1996,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   padding-left: 0;
 }
 
-.c40 {
+.c39 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2117,7 +2005,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c48 {
+.c47 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -2125,7 +2013,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c57 {
+.c56 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2144,11 +2032,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c57:hover {
+.c56:hover {
   opacity: 0.8;
 }
 
-.c58 {
+.c57 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2167,16 +2055,16 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c58:hover {
+.c57:hover {
   opacity: 0.8;
 }
 
-.c2 {
+.c33 {
   width: 24;
   height: 24;
 }
 
-.c34 {
+.c32 {
   height: auto;
   cursor: pointer;
   opacity: 1;
@@ -2201,18 +2089,18 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   outline: none;
 }
 
-.c36 {
+.c35 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c33:hover .c35 {
+.c31:hover .c34 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c31 {
+.c29 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2222,11 +2110,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.125rem;
 }
 
-.c31:hover {
+.c29:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c42 {
+.c41 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2251,18 +2139,18 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-color: #999999;
 }
 
-.c42:hover {
+.c41:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c42:focus {
+.c41:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c50 {
+.c49 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2288,40 +2176,40 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-color: #999999;
 }
 
-.c50:hover {
+.c49:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c50:focus {
+.c49:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c38 {
+.c37 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c53 {
+.c52 {
   text-align: center;
   position: relative;
   background: #d1ddfa;
 }
 
-.c51 {
+.c50 {
   -moz-appearance: textfield;
 }
 
-.c51::-webkit-outer-spin-button,
-.c51::-webkit-inner-spin-button {
+.c50::-webkit-outer-spin-button,
+.c50::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c3 {
+.c1 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2339,7 +2227,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -2359,7 +2247,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2370,100 +2258,61 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 <div>
   <div
     class="c0"
     display="flex"
     width="100%"
   >
-    <button
-      class="c1"
-      display="inline-block"
-      role="button"
-      type="button"
-    >
-      <svg
-        class="c2"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-          fill="#5E26FF"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </button>
     <form
-      class="c3"
+      class="c1"
     >
       <div
-        class="c4"
+        class="c2"
         display="flex"
         width="100%"
       >
         <div
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
             display="flex"
             overflow="hidden"
             width="auto"
           >
             <ul
-              class="c7"
+              class="c5"
               display="flex"
               width="100%"
             >
               <div
-                class="c8"
+                class="c6"
                 display="flex"
               >
                 <li
-                  class="c9"
+                  class="c7"
                   display="flex"
                 >
                   <div
-                    class="c10"
+                    class="c8"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Ch
                     </h3>
                   </div>
                 </li>
                 <div
-                  class="c12"
+                  class="c10"
                   width="2"
                 />
                 <h2
-                  class="c13"
+                  class="c11"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2475,11 +2324,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                 class=""
               >
                 <div
-                  class="c14"
+                  class="c12"
                   display="flex"
                 >
                   <p
-                    class="c15"
+                    class="c13"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2489,33 +2338,33 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     2
                   </p>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c17"
+                      class="c15"
                       display="inline-block"
                       height="2"
                       width="2"
                     />
                   </div>
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c18"
+                      class="c16"
                       display="inline-block"
                       height="2"
                       width="2"
@@ -2525,7 +2374,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
               </li>
             </ul>
             <p
-              class="c19"
+              class="c17"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2533,7 +2382,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
               Your Signer address pays the transaction fee.
             </p>
             <p
-              class="c19"
+              class="c17"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2542,39 +2391,39 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
             </p>
           </div>
           <div
-            class="c20"
+            class="c18"
           >
             <div
-              class="c21"
+              class="c19"
               color="core.white"
               width="100%"
             >
               <div
-                class="c22"
+                class="c20"
                 display="flex"
               >
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <div
-                    class="c23"
+                    class="c21"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c9"
                     >
                       Sa
                     </h3>
                   </div>
                   <div
-                    class="c24"
+                    class="c22"
                     display="flex"
                   >
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2582,7 +2431,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       From
                     </p>
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2592,15 +2441,15 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c26"
+                  class="c24"
                   display="flex"
                 >
                   <div
-                    class="c27"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2608,7 +2457,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       Ledger Balance
                     </p>
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2618,11 +2467,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     </p>
                   </div>
                   <div
-                    class="c24"
+                    class="c22"
                     display="flex"
                   >
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2630,7 +2479,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       Msig Balance
                     </p>
                     <p
-                      class="c25"
+                      class="c23"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2643,15 +2492,15 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c28"
+              class="c26"
               width="100%"
             >
               <div
-                class="c29"
+                class="c27"
                 display="flex"
               >
                 <h4
-                  class="c30"
+                  class="c28"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -2660,11 +2509,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                   Old signer
                 </h4>
                 <div
-                  class="c8"
+                  class="c6"
                   display="flex"
                 >
                   <a
-                    class="c31"
+                    class="c29"
                     color="core.primary"
                     font-size="2"
                     href="undefined/actor/?address=f1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
@@ -2673,18 +2522,18 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     f1z225 ... 6z6wgi
                   </a>
                   <div
-                    class="c32"
+                    class="c30"
                     color="core.secondary"
                     display="flex"
                   >
                     <button
-                      class="c33 c34"
+                      class="c31 c32"
                       display="flex"
                       role="button"
                       type="button"
                     >
                       <svg
-                        class="c2 c35 c36"
+                        class="c33 c34 c35"
                         fill="none"
                         height="24"
                         viewBox="0 0 24 24"
@@ -2711,21 +2560,21 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                 </div>
               </div>
               <div
-                class="c37"
+                class="c36"
               >
                 <div
-                  class="c38"
+                  class="c37"
                 >
                   <div
-                    class="c16"
+                    class="c14"
                     display="flex"
                   >
                     <div
-                      class="c39"
+                      class="c38"
                       display="flex"
                     >
                       <h4
-                        class="c40"
+                        class="c39"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -2735,11 +2584,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       </h4>
                     </div>
                     <div
-                      class="c41"
+                      class="c40"
                       display="flex"
                     >
                       <input
-                        class="c42"
+                        class="c41"
                         disabled=""
                         display="inline-block"
                         height="6"
@@ -2756,32 +2605,32 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c43"
+              class="c42"
               display="flex"
               width="100%"
             >
               <div
-                class="c44"
+                class="c43"
                 display="flex"
               >
                 <div
-                  class="c45"
+                  class="c44"
                   display="flex"
                 >
                   <div
-                    class="c38"
+                    class="c37"
                     name="tx-fee"
                   >
                     <div
-                      class="c46"
+                      class="c45"
                       display="flex"
                     >
                       <div
-                        class="c47"
+                        class="c46"
                         display="inline-block"
                       >
                         <h4
-                          class="c48"
+                          class="c47"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -2790,13 +2639,13 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                         </h4>
                       </div>
                       <div
-                        class="c49"
+                        class="c48"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c50 c51"
+                          class="c49 c50"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -2804,7 +2653,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                           width="100%"
                         />
                         <div
-                          class="c52 c53"
+                          class="c51 c52"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -2816,12 +2665,12 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="c54"
+                    class="c53"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c55"
+                      class="c54"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -2833,7 +2682,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                        FIL for this transaction.
                        
                       <a
-                        class="c31"
+                        class="c29"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -2850,12 +2699,12 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c56"
+          class="c55"
           display="flex"
           width="100%"
         >
           <button
-            class="c57"
+            class="c56"
             font-size="3"
             height="6"
             type="button"
@@ -2863,7 +2712,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
             Back
           </button>
           <button
-            class="c58"
+            class="c57"
             font-size="3"
             height="6"
             type="submit"

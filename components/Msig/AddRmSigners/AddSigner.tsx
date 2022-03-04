@@ -6,7 +6,6 @@ import { useRouter } from 'next/router'
 import {
   Box,
   Button,
-  ButtonClose,
   Form,
   Card,
   useSubmittedMessages,
@@ -201,18 +200,6 @@ const AddSigner = () => {
 
   return (
     <Box display='flex' flexDirection='column' width='100%'>
-      <ButtonClose
-        role='button'
-        type='button'
-        justifySelf='flex-end'
-        marginLeft='auto'
-        onClick={() => {
-          setAttemptingTx(false)
-          setUncaughtError('')
-          resetWalletError()
-          onClose()
-        }}
-      />
       <Form onSubmit={onSubmit}>
         <Box
           maxWidth={13}
@@ -252,7 +239,7 @@ const AddSigner = () => {
                 justifyContent='space-between'
                 border='none'
                 width='auto'
-                my={2}
+                mb={2}
                 backgroundColor='blue.muted700'
               >
                 <AddRmSignerHeader
@@ -318,7 +305,7 @@ const AddSigner = () => {
             width='100%'
             minWidth={11}
             maxHeight={12}
-            py={4}
+            mt={4}
           >
             <Button
               title='Back'

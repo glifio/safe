@@ -65,15 +65,7 @@ TotalBalance.propTypes = {
 const Balances = ({ available, total }) => {
   const router = useRouter()
   return (
-    <Box
-      position='relative'
-      display='flex'
-      flexDirection='column'
-      alignItems='center'
-      justifyContent='center'
-      maxWidth={18}
-      width='100%'
-    >
+    <Box width='100%' display='flex' flexDirection='column'>
       <AvailableBalanceContainer
         display='block'
         textAlign='center'

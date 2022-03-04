@@ -45,7 +45,6 @@ jobs:
         run: |
           npm run lint
           npm test
-
       - name: Tag
         run: npm version prerelease --preid calibration
 
@@ -92,7 +91,6 @@ jobs:
         run: |
           git push origin v${{ steps.package-version.outputs.current-version}}
           git push origin primary
-
       - name: Release-to-calibration
         uses: softprops/action-gh-release@v1
         with:
