@@ -3,7 +3,6 @@ import {
   Box,
   ProposalDetail,
   ProposalHistoryTable,
-  ButtonClose,
   MsigTransaction
 } from '@glif/react-components'
 import { useWallet } from '@glif/wallet-provider-react'
@@ -54,12 +53,6 @@ const ProposalHistory = () => {
             addressHref={(address: string) =>
               `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
             }
-          />
-          <ButtonClose
-            alignSelf='flex-start'
-            ml={7}
-            pt={4}
-            onClick={router.back}
           />
         </Box>
       ) : (
