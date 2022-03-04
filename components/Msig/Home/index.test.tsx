@@ -35,26 +35,10 @@ describe('Msig Home', () => {
     )
 
     expect(screen.getByText('Available Balance')).toBeInTheDocument()
-    expect(screen.getByText('Safe Address')).toBeInTheDocument()
     expect(screen.getByText('Total Vesting')).toBeInTheDocument()
 
     // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved
     // expect(container).toMatchSnapshot()
-  })
-
-  test('it renders the nav menu', async () => {
-    const { Tree } = composeMockAppTree('postOnboard')
-
-    render(
-      <Tree>
-        <Home />
-      </Tree>
-    )
-
-    expect(screen.getByText('Assets')).toBeInTheDocument()
-    expect(screen.getByText('Assets')).toHaveStyle('color: #5E26FF;')
-    expect(screen.getByText('Admin')).toBeInTheDocument()
-    expect(screen.getByText('History')).toBeInTheDocument()
   })
 
   test('clicking withdraw sends the user to the withdraw page', async () => {
