@@ -1,5 +1,6 @@
-import React, { useCallback, useState } from 'react'
-import { Box, Title, ButtonV2, Tooltip } from '@glif/react-components'
+import styled from 'styled-components'
+import { useCallback, useMemo, useState } from 'react'
+import { ButtonV2 } from '@glif/react-components'
 import {
   useWallet,
   useWalletProvider,
@@ -9,28 +10,33 @@ import { useRouter } from 'next/router'
 
 import { PAGE } from '../../../constants'
 import { Address, Signers } from '../Shared'
-import { navigate } from '../../../utils/urlParams'
 import { useMsig } from '../../../MsigProvider'
+import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
+import { navigate } from '../../../utils/urlParams'
 
-const ShowOnDevice = ({ ledgerErr, shouldView, onShowOnLedger }) => {
-  if (ledgerErr)
-    return (
-      <ButtonV2 ml={3} onClick={onShowOnLedger} disabled>
-        Ledger Device Error
-      </ButtonV2>
-    )
-  if (shouldView)
-    return (
-      <ButtonV2 ml={3} onClick={onShowOnLedger} disabled>
-        Check Ledger Device
-      </ButtonV2>
-    )
-  return (
-    <ButtonV2 ml={3} onClick={onShowOnLedger}>
-      View on Device
-    </ButtonV2>
-  )
-}
+const Wrapper = styled.div`
+  max-width: 50rem;
+  margin: 0 auto;
+`
+
+const TitleRow = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 3em;
+  h3 {
+    margin: 0;
+    flex-grow: 1;
+  }
+`
+
+const Title = styled.h2`
+  color: var(--purple-medium);
+`
+
+const Info = styled.p`
+  color: var(--gray-medium);
+  margin-top: 0.25em;
+`
 
 export default function Owners() {
   const router = useRouter()
@@ -49,87 +55,67 @@ export default function Owners() {
     ...ledger
   })
 
+  const additionalSigners = useMemo(
+    () =>
+      signers.filter(
+        (signer) =>
+          converAddrToFPrefix(signer.account) !==
+          converAddrToFPrefix(wallet.address)
+      ),
+    [signers, wallet]
+  )
+
   return (
-    <>
-      <Box
-        display='flex'
-        flexWrap='wrap'
-        my={6}
-        flexDirection='row'
-        alignItems='center'
-      >
-        <Title display='inline-flex' alignItems='center'>
-          Required Approvals:
-        </Title>
-        <Title
-          display='inline-flex'
-          alignItems='center'
-          ml={3}
-          css={`
-            font-weight: 800;
-          `}
-        >
-          {`${NumApprovalsThreshold.toString()}`}
-        </Title>
-        <Box
-          display='flex'
-          flexWrap='wrap'
-          flexDirection='row'
-          alignItems='flex-start'
-        >
+    <div>
+      <Title>Safe Admin</Title>
+      <hr />
+
+      <Wrapper>
+        <TitleRow>
+          <h3>Required Approvals: {NumApprovalsThreshold}</h3>
           <ButtonV2
-            ml={3}
-            onClick={() => {
-              navigate(router, {
-                pageUrl: PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD
-              })
-            }}
+            onClick={() =>
+              navigate(router, { pageUrl: PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD })
+            }
           >
             Edit
           </ButtonV2>
-          <Tooltip content='The number of approvals required for a Safe proposal to execute.' />
-        </Box>
-      </Box>
-      <Box
-        position='relative'
-        display='flex'
-        flexWrap='wrap'
-        alignItems='center'
-      >
-        <Title>Signers</Title>
-        <Box display='flex' flexDirection='row' alignItems='flex-start'>
+        </TitleRow>
+        <Info>
+          The number of approvals required for a Safe proposal to execute.
+        </Info>
+
+        <TitleRow>
+          <h3>Your Address</h3>
+          {loginOption === 'LEDGER' && (
+            <ButtonV2
+              disabled={!!ledgerErr || ledgerBusy}
+              onClick={onShowOnLedger}
+            >
+              {ledgerErr
+                ? 'Ledger Device Error'
+                : ledgerBusy
+                ? 'Check Ledger Device'
+                : 'View on Device'}
+            </ButtonV2>
+          )}
+        </TitleRow>
+        <Address address={wallet.address} />
+
+        <TitleRow>
+          <h3>Additional Signers ({additionalSigners.length})</h3>
           <ButtonV2
-            ml={3}
-            onClick={() => {
-              navigate(router, { pageUrl: PAGE.MSIG_ADD_SIGNER })
-            }}
+            onClick={() => navigate(router, { pageUrl: PAGE.MSIG_ADD_SIGNER })}
           >
             Add Signer
           </ButtonV2>
-          <Tooltip content='These are the Filecoin addresses that can approve and reject proposals from your Safe.' />
-        </Box>
-      </Box>
-      <Box
-        position='relative'
-        display='flex'
-        flexWrap='wrap'
-        mt={3}
-        alignItems='center'
-      >
-        <Address
-          address={wallet.address}
-          glyphAcronym='1'
-          label='Signer 1 - You'
-        />
-        {loginOption === 'LEDGER' && (
-          <ShowOnDevice
-            onClick={onShowOnLedger}
-            shouldView={ledgerBusy}
-            {...ledgerErr}
-          />
-        )}
-      </Box>
-      <Signers signers={signers} walletAddress={wallet.address} />
-    </>
+        </TitleRow>
+        <Info>
+          These are the Filecoin addresses that can approve and reject proposals
+          from your Safe.
+        </Info>
+        <Signers signers={additionalSigners} />
+      </Wrapper>
+    </div>
   )
 }

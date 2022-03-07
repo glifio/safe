@@ -18,6 +18,7 @@ const MessageHistory = () => {
             addressHref={(address: string) =>
               `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
             }
+            height={Number(router?.query?.height) || null}
           />
         </Box>
       ) : (

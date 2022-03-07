@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumnCentered } from '@glif/react-components'
+import { OneColumn } from '@glif/react-components'
 import { useRouter } from 'next/router'
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import MsigAdmin from '../components/Msig/Admin'
@@ -15,11 +15,11 @@ const Owners = () => {
   )
   return (
     <SafePageLoggedIn>
-      <OneColumnCentered>
+      <OneColumn>
         <RequireWallet gatekeep={gatekeep}>
           <MsigAdmin />
         </RequireWallet>
-      </OneColumnCentered>
+      </OneColumn>
     </SafePageLoggedIn>
   )
 }
