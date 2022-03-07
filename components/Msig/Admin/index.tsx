@@ -89,7 +89,7 @@ export default function Owners() {
         <Address address={wallet.address} />
 
         <TitleRow>
-          <h3>Additional Signers ({signers.length})</h3>
+          <h3>Additional Signers ({signers.length - 1})</h3>
           <ButtonV2 onClick={() => router.push(PAGE.MSIG_ADD_SIGNER)}>
             Add Signer
           </ButtonV2>
