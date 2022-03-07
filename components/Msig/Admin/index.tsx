@@ -12,6 +12,7 @@ import { PAGE } from '../../../constants'
 import { Address, Signers } from '../Shared'
 import { useMsig } from '../../../MsigProvider'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
+import { navigate } from '../../../utils/urlParams'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -73,7 +74,9 @@ export default function Owners() {
         <TitleRow>
           <h3>Required Approvals: {NumApprovalsThreshold}</h3>
           <ButtonV2
-            onClick={() => router.push(PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD)}
+            onClick={() =>
+              navigate(router, { pageUrl: PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD })
+            }
           >
             Edit
           </ButtonV2>
@@ -101,7 +104,9 @@ export default function Owners() {
 
         <TitleRow>
           <h3>Additional Signers ({additionalSigners.length})</h3>
-          <ButtonV2 onClick={() => router.push(PAGE.MSIG_ADD_SIGNER)}>
+          <ButtonV2
+            onClick={() => navigate(router, { pageUrl: PAGE.MSIG_ADD_SIGNER })}
+          >
             Add Signer
           </ButtonV2>
         </TitleRow>
