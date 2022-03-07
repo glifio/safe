@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { ButtonV2 } from '@glif/react-components'
 import {
   useWallet,
@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 import { PAGE } from '../../../constants'
 import { Address, Signers } from '../Shared'
 import { useMsig } from '../../../MsigProvider'
+import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -20,10 +21,10 @@ const Wrapper = styled.div`
 const TitleRow = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-top: 3em;
   h3 {
     margin: 0;
+    flex-grow: 1;
   }
 `
 
@@ -52,6 +53,16 @@ export default function Owners() {
   const ledgerErr = reportLedgerConfigError({
     ...ledger
   })
+
+  const additionalSigners = useMemo(
+    () =>
+      signers.filter(
+        (signer) =>
+          converAddrToFPrefix(signer.account) !==
+          converAddrToFPrefix(wallet.address)
+      ),
+    [signers, wallet]
+  )
 
   return (
     <div>
@@ -89,7 +100,7 @@ export default function Owners() {
         <Address address={wallet.address} />
 
         <TitleRow>
-          <h3>Additional Signers ({signers.length - 1})</h3>
+          <h3>Additional Signers ({additionalSigners.length})</h3>
           <ButtonV2 onClick={() => router.push(PAGE.MSIG_ADD_SIGNER)}>
             Add Signer
           </ButtonV2>
@@ -98,7 +109,7 @@ export default function Owners() {
           These are the Filecoin addresses that can approve and reject proposals
           from your Safe.
         </Info>
-        <Signers signers={signers} walletAddress={wallet.address} />
+        <Signers signers={additionalSigners} />
       </Wrapper>
     </div>
   )
