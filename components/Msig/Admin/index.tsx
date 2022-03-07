@@ -59,7 +59,6 @@ export default function Owners() {
       <hr />
 
       <Wrapper>
-
         <TitleRow>
           <h3>Required Approvals: {NumApprovalsThreshold}</h3>
           <ButtonV2
@@ -74,7 +73,7 @@ export default function Owners() {
 
         <TitleRow>
           <h3>Your Address</h3>
-          {true && (
+          {loginOption === 'LEDGER' && (
             <ButtonV2
               disabled={!!ledgerErr || ledgerBusy}
               onClick={onShowOnLedger}
@@ -96,10 +95,10 @@ export default function Owners() {
           </ButtonV2>
         </TitleRow>
         <Info>
-          These are the Filecoin addresses that can approve and reject proposals from your Safe.
+          These are the Filecoin addresses that can approve and reject proposals
+          from your Safe.
         </Info>
         <Signers signers={signers} walletAddress={wallet.address} />
-
       </Wrapper>
     </div>
   )
