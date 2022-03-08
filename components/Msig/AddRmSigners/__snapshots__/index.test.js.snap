@@ -982,19 +982,8 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
                     font-weight="400"
                   >
                     Step 
-                    2
+                    1
                   </p>
-                  <div
-                    class="c14"
-                    display="flex"
-                  >
-                    <div
-                      class="c15"
-                      display="inline-block"
-                      height="2"
-                      width="2"
-                    />
-                  </div>
                   <div
                     class="c14"
                     display="flex"
@@ -2053,19 +2042,8 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                     font-weight="400"
                   >
                     Step 
-                    3
+                    2
                   </p>
-                  <div
-                    class="c14"
-                    display="flex"
-                  >
-                    <div
-                      class="c15"
-                      display="inline-block"
-                      height="2"
-                      width="2"
-                    />
-                  </div>
                   <div
                     class="c14"
                     display="flex"

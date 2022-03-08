@@ -226,8 +226,8 @@ const AddSigner = () => {
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
                 loginOption={loginOption}
-                currentStep={4}
-                totalSteps={4}
+                currentStep={3}
+                totalSteps={3}
                 msig
                 method={MSIG_METHOD.ADD_SIGNER}
               />

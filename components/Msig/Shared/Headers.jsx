@@ -154,8 +154,8 @@ export const AddRmSignerHeader = ({ method, step }) => {
       <>
         <StepHeader
           title='Add Signer'
-          currentStep={step}
-          totalSteps={4}
+          currentStep={step - 1}
+          totalSteps={3}
           glyphAcronym='As'
         />
         <Text textAlign='center'>

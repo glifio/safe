@@ -220,8 +220,8 @@ const RemoveSigner = ({ signerAddress }) => {
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
                 loginOption={loginOption}
-                currentStep={3}
-                totalSteps={3}
+                currentStep={2}
+                totalSteps={2}
                 msig
                 method={MSIG_METHOD.REMOVE_SIGNER}
               />
