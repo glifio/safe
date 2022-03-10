@@ -151,7 +151,9 @@ const Confirm = () => {
       </Box>
       <Box display='flex' justifyContent='center' alignItems='center'>
         <Text mr={2}>With CID: </Text>
-        <StyledATag href={`process.env.NEXT_PUBLIC_EXPLORER_URL/message/?cid=${router.query.cid}`}>
+        <StyledATag
+          href={`${process.env.NEXT_PUBLIC_EXPLORER_URL}/message/?cid=${router.query.cid}`}
+        >
           <span style={{ wordBreak: 'break-all' }}>{router.query.cid}</span>
         </StyledATag>
         <br />
