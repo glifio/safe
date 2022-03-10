@@ -31,13 +31,11 @@ export default function SafePageLoggedIn({ children }: SafePageLoggedInProps) {
       addressLinks={[
         {
           label: 'Safe Address',
-          address: msig.Address,
-          urlPrefix: `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/`
+          address: msig.Address
         },
         {
           label: 'Wallet Address',
-          address: wallet.address,
-          urlPrefix: `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/`
+          address: wallet.address
         }
       ]}
       appHeaderLinks={[
