@@ -102,7 +102,7 @@ const EnterActorAddress = () => {
 
         <br />
         <Box display='flex' flexDirection='row' alignItems='center'>
-          <Text mr={3}>Don&apos;t have a multisig actor ID?</Text>
+          <Text mr={3}>Don&apos;t have a Safe ID?</Text>
           <StyledLink
             href={generateRouteWithRequiredUrlParams({
               pageUrl: PAGE.MSIG_CREATE,

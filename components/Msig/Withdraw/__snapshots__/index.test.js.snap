@@ -1113,7 +1113,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       font-size="2"
                       font-weight="400"
                     >
-                      Ledger Balance
+                      Signer Balance
                     </p>
                     <p
                       class="c26"
@@ -2481,7 +2481,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       font-size="2"
                       font-weight="400"
                     >
-                      Ledger Balance
+                      Signer Balance
                     </p>
                     <p
                       class="c26"
@@ -3526,7 +3526,7 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                       font-size="2"
                       font-weight="400"
                     >
-                      Ledger Balance
+                      Signer Balance
                     </p>
                     <p
                       class="c26"
@@ -4576,7 +4576,7 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                       font-size="2"
                       font-weight="400"
                     >
-                      Ledger Balance
+                      Signer Balance
                     </p>
                     <p
                       class="c26"
@@ -5901,7 +5901,7 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                       font-size="2"
                       font-weight="400"
                     >
-                      Ledger Balance
+                      Signer Balance
                     </p>
                     <p
                       class="c26"
@@ -7365,7 +7365,7 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                       font-size="2"
                       font-weight="400"
                     >
-                      Ledger Balance
+                      Signer Balance
                     </p>
                     <p
                       class="c26"

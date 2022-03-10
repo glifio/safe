@@ -1228,7 +1228,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                       font-size="2"
                       font-weight="400"
                     >
-                      Ledger Balance
+                      Signer Balance
                     </p>
                     <p
                       class="c23"
@@ -2454,7 +2454,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       font-size="2"
                       font-weight="400"
                     >
-                      Ledger Balance
+                      Signer Balance
                     </p>
                     <p
                       class="c23"
