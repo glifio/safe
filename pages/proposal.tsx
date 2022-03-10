@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumnCentered } from '@glif/react-components'
+import { OneColumn } from '@glif/react-components'
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import ProposalHistory from '../components/Msig/ProposalHistory'
 import { navigate } from '../utils/urlParams'
@@ -15,11 +15,11 @@ const Proposals = () => {
   )
   return (
     <SafePageLoggedIn>
-      <OneColumnCentered>
+      <OneColumn>
         <RequireWallet gatekeep={gatekeep}>
           <ProposalHistory />
         </RequireWallet>
-      </OneColumnCentered>
+      </OneColumn>
     </SafePageLoggedIn>
   )
 }
