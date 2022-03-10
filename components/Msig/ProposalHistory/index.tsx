@@ -49,9 +49,6 @@ const ProposalHistory = () => {
               }
             })
           }}
-          addressHref={(address: string) =>
-            `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
-          }
         />
       ) : (
         <ProposalHistoryTable
