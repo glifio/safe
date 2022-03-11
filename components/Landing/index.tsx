@@ -51,8 +51,8 @@ export default function Landing() {
         {isUnsupportedDevice ? (
           <OneColumnLargeText className='primary'>
             <p>
-              We&apos;re sorry, the Glif Safe only supports desktop browsers
-              at the moment. Please come back on your computer!
+              We&apos;re sorry, the Glif Safe only supports desktop browsers at
+              the moment. Please come back on your computer!
             </p>
           </OneColumnLargeText>
         ) : (
@@ -68,10 +68,7 @@ export default function Landing() {
                 }
               `}
             >
-              <ConnectBtn
-                large
-                onClick={() => connect(PAGE.CONNECT_METAMASK)}
-              >
+              <ConnectBtn large onClick={() => connect(PAGE.CONNECT_METAMASK)}>
                 MetaMask
               </ConnectBtn>
               <ConnectBtn large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
