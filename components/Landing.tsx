@@ -14,8 +14,8 @@ import {
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { navigate } from '../../utils/urlParams'
-import { PAGE } from '../../constants'
+import { navigate } from '../utils/urlParams'
+import { PAGE } from '../constants'
 
 export default function Landing() {
   const isUnsupportedDevice = useMemo(() => isMobileOrTablet(), [])
@@ -58,11 +58,7 @@ export default function Landing() {
         ) : (
           <LandingPageContent>
             <h2>Connect</h2>
-            <Box
-              display='flex'
-              flexDirection='column'
-              gridGap={space()}
-            >
+            <Box display='flex' flexDirection='column' gridGap={space()}>
               <ButtonV2 large onClick={() => connect(PAGE.CONNECT_METAMASK)}>
                 MetaMask
               </ButtonV2>
