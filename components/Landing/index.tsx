@@ -4,18 +4,16 @@ import {
   Box,
   LandingPageColumns,
   LandingPageContent,
+  OneColumnLargeText,
   space,
-  fontSize,
   Page,
-  P,
   isMobileOrTablet,
-  theme,
   useNetworkName,
   SmartLink
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { ConnectBtn, TextBox } from './Helpers'
+import { ConnectBtn } from './Helpers'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
@@ -50,65 +48,58 @@ export default function Landing() {
           small={false}
           large
         />
-        <LandingPageContent>
-          {isUnsupportedDevice ? (
-            <TextBox style={{ background: theme.colors.core.primary }}>
-              <P
-                css={`
-                  font-size: ${fontSize('large')};
-                  color: white;
-                `}
+        {isUnsupportedDevice ? (
+          <OneColumnLargeText className='primary'>
+            <p>
+              We&apos;re sorry, the Glif Safe only supports desktop browsers
+              at the moment. Please come back on your computer!
+            </p>
+          </OneColumnLargeText>
+        ) : (
+          <LandingPageContent>
+            <h2>Connect</h2>
+            <Box
+              display='flex'
+              flexDirection='column'
+              width='100%'
+              css={`
+                &:not(:first-child) {
+                  margin-top: ${space()};
+                }
+              `}
+            >
+              <ConnectBtn
+                large
+                onClick={() => connect(PAGE.CONNECT_METAMASK)}
               >
-                We&apos;re sorry, the Glif Safe only supports desktop browsers
-                at the moment. Please come back on your computer!
-              </P>
-            </TextBox>
-          ) : (
-            <>
-              <h2>Connect</h2>
-              <Box
-                display='flex'
-                flexDirection='column'
-                width='100%'
-                css={`
-                  &:not(:first-child) {
-                    margin-top: ${space()};
-                  }
-                `}
-              >
-                <ConnectBtn
-                  large
-                  onClick={() => connect(PAGE.CONNECT_METAMASK)}
-                >
-                  MetaMask
-                </ConnectBtn>
-                <ConnectBtn large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
-                  Ledger Device
-                </ConnectBtn>
-              </Box>
+                MetaMask
+              </ConnectBtn>
+              <ConnectBtn large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
+                Ledger Device
+              </ConnectBtn>
+            </Box>
 
-              <p>
-                Want to load this app directly from IPFS or Filecoin?
-                <br />
-                Check our{' '}
-                <SmartLink href='https://github.com/glifio/safe/releases'>
-                  release page
-                </SmartLink>
-              </p>
+            <p>
+              Want to load this app directly from IPFS or Filecoin?
+              <br />
+              Check our{' '}
+              <SmartLink href='https://github.com/glifio/safe/releases'>
+                release page
+              </SmartLink>
+            </p>
 
-              <p>
-                Need help?
-                <br />
-                Open a{' '}
-                <SmartLink href='https://github.com/glifio/safe/issues/new/choose'>
-                  GitHub issue
-                </SmartLink>{' '}
-                or hit us up on{' '}
-                <SmartLink href='https://twitter.com/glifio'>Twitter</SmartLink>
-              </p>
-            </>
-          )}
-        </LandingPageContent>
+            <p>
+              Need help?
+              <br />
+              Open a{' '}
+              <SmartLink href='https://github.com/glifio/safe/issues/new/choose'>
+                GitHub issue
+              </SmartLink>{' '}
+              or hit us up on{' '}
+              <SmartLink href='https://twitter.com/glifio'>Twitter</SmartLink>
+            </p>
+          </LandingPageContent>
+        )}
       </LandingPageColumns>
     </Page>
   )

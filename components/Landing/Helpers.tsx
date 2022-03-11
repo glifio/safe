@@ -2,9 +2,7 @@ import styled from 'styled-components'
 import {
   Box,
   ButtonV2,
-  devices,
   space,
-  fontSize,
   baseColors
 } from '@glif/react-components'
 
@@ -15,27 +13,6 @@ export const ConnectBtn = styled(ButtonV2)`
 export const BurnerWallet = styled(ConnectBtn)`
   color: ${(props) => props.theme.colors.core.darkgray};
   border-color: ${(props) => props.theme.colors.core.darkgray};
-`
-
-export const TextBox = styled.div`
-  font-size: ${fontSize('large')};
-  border-radius: 8px;
-  margin-top: ${space()};
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  @media (max-width: ${devices.tablet}) {
-    padding: 30px;
-  }
-
-  @media (min-width: ${devices.tablet}) {
-    padding: 80px 40px;
-  }
-
-  p {
-    margin: 0;
-  }
 `
 
 export const Caution = styled(Box)`
