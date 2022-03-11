@@ -2,6 +2,7 @@ import React, { useCallback, useMemo } from 'react'
 import {
   AppTile,
   Box,
+  ButtonV2,
   LandingPageColumns,
   LandingPageContent,
   OneColumnLargeText,
@@ -13,7 +14,6 @@ import {
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { ConnectBtn } from './Helpers'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
@@ -61,19 +61,14 @@ export default function Landing() {
             <Box
               display='flex'
               flexDirection='column'
-              width='100%'
-              css={`
-                &:not(:first-child) {
-                  margin-top: ${space()};
-                }
-              `}
+              gridGap={space()}
             >
-              <ConnectBtn large onClick={() => connect(PAGE.CONNECT_METAMASK)}>
+              <ButtonV2 large onClick={() => connect(PAGE.CONNECT_METAMASK)}>
                 MetaMask
-              </ConnectBtn>
-              <ConnectBtn large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
+              </ButtonV2>
+              <ButtonV2 large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
                 Ledger Device
-              </ConnectBtn>
+              </ButtonV2>
             </Box>
 
             <p>
