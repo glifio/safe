@@ -22,6 +22,9 @@ export const FILFOX = 'https://filfox.info/api'
 export const MAINNET = 'f'
 export const TESTNET = 't'
 
+export const GLIF_DISCORD = 'https://discord.gg/B9ju5Eu4Rq'
+export const GLIF_TWITTER = 'https://twitter.com/glifio'
+
 export const MAINNET_PATH_CODE = 461
 export const TESTNET_PATH_CODE = 1
 

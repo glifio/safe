@@ -15,7 +15,7 @@ import {
 import { useRouter } from 'next/router'
 
 import { navigate } from '../utils/urlParams'
-import { PAGE } from '../constants'
+import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../constants'
 
 export default function Landing() {
   const isUnsupportedDevice = useMemo(() => isMobileOrTablet(), [])
@@ -80,11 +80,11 @@ export default function Landing() {
               Need help?
               <br />
               Open a{' '}
-              <SmartLink href='https://github.com/glifio/safe/issues/new/choose'>
+              <SmartLink href='https://github.com/glifio/wallet/issues/new/choose'>
                 GitHub issue
-              </SmartLink>{' '}
-              or hit us up on{' '}
-              <SmartLink href='https://twitter.com/glifio'>Twitter</SmartLink>
+              </SmartLink>
+              , join our <SmartLink href={GLIF_DISCORD}>Discord</SmartLink>, or
+              or hit us up on <SmartLink href={GLIF_TWITTER}>Twitter</SmartLink>{' '}
             </p>
           </LandingPageContent>
         )}

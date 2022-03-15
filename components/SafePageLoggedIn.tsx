@@ -31,11 +31,19 @@ export default function SafePageLoggedIn({ children }: SafePageLoggedInProps) {
       addressLinks={[
         {
           label: 'Safe Address',
-          address: msig.Address
+          address: msig.Address,
+          disableLink: false,
+          stopPropagation: true,
+          hideCopy: false,
+          hideCopyText: true
         },
         {
           label: 'Wallet Address',
-          address: wallet.address
+          address: wallet.address,
+          disableLink: false,
+          stopPropagation: true,
+          hideCopy: false,
+          hideCopyText: true
         }
       ]}
       appHeaderLinks={[
