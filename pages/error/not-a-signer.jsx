@@ -1,7 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { ErrorView } from '@glif/react-components'
-import { OneColumnCentered } from '@glif/react-components'
+import { ErrorView, OneColumnCentered } from '@glif/react-components'
 import SafePage from '../../components/SafePage'
 
 const NotASigner = () => {

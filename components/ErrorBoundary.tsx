@@ -1,6 +1,7 @@
 import React from 'react'
-import { ErrorView } from '@glif/react-components'
+import { ErrorView, OneColumnCentered } from '@glif/react-components'
 import { logger } from '../logger'
+import SafePage from './SafePage'
 
 interface ErrorState {
   hasError: boolean
@@ -20,19 +21,23 @@ class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     logger.error(
+      'ErrorBoundary',
       error instanceof Error ? error.message : JSON.stringify(error),
-      errorInfo,
-      'ErrorBoundary'
+      errorInfo
     )
   }
 
   render() {
     if ((this.state as ErrorState).hasError) {
       return (
-        <ErrorView
-          title='Glif is currently down'
-          description="We've been notified of the outage and expect to be back up and running again shortly."
-        />
+        <SafePage>
+          <OneColumnCentered>
+            <ErrorView
+              title='Glif is currently down'
+              description="We've been notified of the outage and expect to be back up and running again shortly."
+            />
+          </OneColumnCentered>
+        </SafePage>
       )
     }
     return this.props.children

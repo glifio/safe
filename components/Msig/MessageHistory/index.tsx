@@ -12,21 +12,13 @@ const MessageHistory = () => {
   return (
     <Box>
       {router.query.cid ? (
-        <Box display='flex' flexDirection='row'>
-          <MessageDetail
-            cid={router.query.cid as string}
-            addressHref={(address: string) =>
-              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
-            }
-            height={Number(router?.query?.height) || null}
-          />
-        </Box>
+        <MessageDetail
+          cid={router.query.cid as string}
+          height={Number(router?.query?.height) || null}
+        />
       ) : (
         <MessageHistoryTable
           address={Address}
-          addressHref={(address: string) =>
-            `${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${address}`
-          }
           cidHref={(cid: string, height?: string) =>
             generateRouteWithRequiredUrlParams({
               pageUrl: PAGE.MSIG_HISTORY,

@@ -32,12 +32,18 @@ export default function SafePageLoggedIn({ children }: SafePageLoggedInProps) {
         {
           label: 'Safe Address',
           address: msig.Address,
-          urlPrefix: `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/`
+          disableLink: false,
+          stopPropagation: true,
+          hideCopy: false,
+          hideCopyText: true
         },
         {
           label: 'Wallet Address',
           address: wallet.address,
-          urlPrefix: `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/`
+          disableLink: false,
+          stopPropagation: true,
+          hideCopy: false,
+          hideCopyText: true
         }
       ]}
       appHeaderLinks={[

@@ -7,7 +7,7 @@ import {
   Button,
   OnboardCard,
   StepHeader,
-  StyledLink,
+  SmartLink,
   Text,
   Title,
   IconLedger,
@@ -99,19 +99,17 @@ const EnterActorAddress = () => {
           placeholder='f02'
           error={err}
         />
-
-        <br />
-        <Box display='flex' flexDirection='row' alignItems='center'>
-          <Text mr={3}>Don&apos;t have a Safe ID?</Text>
-          <StyledLink
+        <Text>
+          Don&apos;t have a Safe ID?{' '}
+          <SmartLink
             href={generateRouteWithRequiredUrlParams({
               pageUrl: PAGE.MSIG_CREATE,
               existingQParams: {}
             })}
-            name='Create one'
-            target='_self'
-          />
-        </Box>
+          >
+            Create one
+          </SmartLink>
+        </Text>
       </OnboardCard>
       <Box
         mt={6}

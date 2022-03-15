@@ -19,42 +19,37 @@ const ProposalHistory = () => {
   return (
     <Box>
       {router.query.id && router.query.address ? (
-        <Box display='flex' flexDirection='row'>
-          <ProposalDetail
-            id={Number(router.query.id)}
-            address={Address}
-            walletAddress={wallet.address}
-            accept={(
-              proposal: MsigTransaction,
-              approvalsUntilExecution: number
-            ) => {
-              const clone = { ...proposal, approvalsUntilExecution }
-              delete clone.__typename
-              navigate(router, {
-                pageUrl: PAGE.MSIG_APPROVE,
-                newQueryParams: {
-                  proposal: encodeURI(JSON.stringify(clone))
-                }
-              })
-            }}
-            cancel={(
-              proposal: MsigTransaction,
-              approvalsUntilExecution: number
-            ) => {
-              const clone = { ...proposal, approvalsUntilExecution }
-              delete clone.__typename
-              navigate(router, {
-                pageUrl: PAGE.MSIG_CANCEL,
-                newQueryParams: {
-                  proposal: encodeURI(JSON.stringify(clone))
-                }
-              })
-            }}
-            addressHref={(address: string) =>
-              `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/${address}`
-            }
-          />
-        </Box>
+        <ProposalDetail
+          id={Number(router.query.id)}
+          address={Address}
+          walletAddress={wallet.address}
+          accept={(
+            proposal: MsigTransaction,
+            approvalsUntilExecution: number
+          ) => {
+            const clone = { ...proposal, approvalsUntilExecution }
+            delete clone.__typename
+            navigate(router, {
+              pageUrl: PAGE.MSIG_APPROVE,
+              newQueryParams: {
+                proposal: encodeURI(JSON.stringify(clone))
+              }
+            })
+          }}
+          cancel={(
+            proposal: MsigTransaction,
+            approvalsUntilExecution: number
+          ) => {
+            const clone = { ...proposal, approvalsUntilExecution }
+            delete clone.__typename
+            navigate(router, {
+              pageUrl: PAGE.MSIG_CANCEL,
+              newQueryParams: {
+                proposal: encodeURI(JSON.stringify(clone))
+              }
+            })
+          }}
+        />
       ) : (
         <ProposalHistoryTable
           address={Address}
