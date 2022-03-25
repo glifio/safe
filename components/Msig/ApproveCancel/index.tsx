@@ -305,9 +305,11 @@ export default function ApproveReject() {
                         return (
                           <ProposalLineItem key={key}>
                             <Text m={0}>{key}</Text>
-                            <Badge color='purple'>
-                              {getMethodName('/multisig', value as number)}
-                            </Badge>
+                            <Badge
+                              color='purple'
+                              text={getMethodName('/multisig', value as number)}
+                              uppercase
+                            />
                           </ProposalLineItem>
                         )
                       case 'approved':
