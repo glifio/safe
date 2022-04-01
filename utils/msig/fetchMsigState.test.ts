@@ -59,7 +59,7 @@ describe.skip('fetchMsigState', () => {
     expect(Balance.isGreaterThan(0)).toBe(true)
     expect(AvailableBalance.isGreaterThan(0)).toBe(true)
     expect(Signers.length).toBeGreaterThan(0)
-    expect(converAddrToFPrefix(Signers[0].account)).toBe(
+    expect(converAddrToFPrefix(Signers[0].robust)).toBe(
       MULTISIG_SIGNER_ADDRESS_2
     )
     expect(ActorCode.includes('multisig')).toBe(true)

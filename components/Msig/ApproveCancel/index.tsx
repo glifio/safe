@@ -17,7 +17,7 @@ import {
   Label,
   getMethodName,
   Badge,
-  StyledATag
+  AddressLink
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -32,7 +32,6 @@ import { CardHeader, ApproveCancelHeaderText } from '../Shared'
 import { emptyGasInfo, PAGE } from '../../../constants'
 import { navigate } from '../../../utils/urlParams'
 import { useWasm } from '../../../lib/WasmLoader'
-import truncateAddress from '../../../utils/truncateAddress'
 
 const ProposalLineItem = styled(Box).attrs((props) => {
   return {
@@ -321,33 +320,15 @@ export default function ApproveReject() {
                         )
                       case 'to': {
                         const toAddr = value as Address
-                        let toAddrTxt = ''
-                        let makeLink = false
-                        if (toAddr.id && toAddr.robust) {
-                          toAddrTxt = `${truncateAddress(toAddr.robust)} (${
-                            toAddr.id
-                          })`
-                          makeLink = true
-                        } else {
-                          toAddrTxt = toAddr.robust || toAddr.id
-                        }
                         if (toAddr)
                           return (
                             <ProposalLineItem key={key}>
                               <Text m={0}>{key}</Text>
-                              {makeLink ? (
-                                <StyledATag
-                                  href={`${process.env.NEXT_PUBLIC_EXPLORER_URL}/actor/?address=${toAddr.robust}`}
-                                  css={`
-                                    cursor: pointer;
-                                  `}
-                                  m={0}
-                                >
-                                  {toAddrTxt}
-                                </StyledATag>
-                              ) : (
-                                <Text m={0}>{toAddrTxt}</Text>
-                              )}
+                              <AddressLink
+                                id={toAddr.id}
+                                address={toAddr.robust}
+                                hideCopy
+                              />
                             </ProposalLineItem>
                           )
                       }

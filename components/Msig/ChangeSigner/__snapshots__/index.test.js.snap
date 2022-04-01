@@ -357,12 +357,9 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
                   class="c12"
                   color="core.primary"
                   font-size="3"
-                  href="https://coinsutra.com/security-risks-bitcoin-wallets/"
                   rel="noopener"
                   target="_blank"
-                >
-                  Why isn't it secure?
-                </a>
+                />
               </div>
             </div>
           </div>

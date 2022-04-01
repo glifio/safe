@@ -1,26 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
+import { Address as AddressType } from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Address from './Address'
 import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
-import { Signer } from '../../../MsigProvider/types'
 
-const Signers = ({ signers }: { signers: Signer[] }) => {
+const Signers = ({ signers }: { signers: AddressType[] }) => {
   const router = useRouter()
   return (
     <>
       {signers.map((signer) => {
         return (
           <Address
-            key={signer.account}
-            address={signer.account}
+            key={signer.robust || signer.id}
+            address={signer}
             onRemoveSigner={() => {
               navigate(router, {
                 pageUrl: PAGE.MSIG_REMOVE_SIGNER,
                 newQueryParams: {
-                  address: signer.account
+                  address: signer.robust || signer.id
                 }
               })
             }}
@@ -28,7 +28,7 @@ const Signers = ({ signers }: { signers: Signer[] }) => {
               navigate(router, {
                 pageUrl: PAGE.MSIG_CHANGE_SIGNER,
                 newQueryParams: {
-                  address: signer.account
+                  address: signer.robust || signer.id
                 }
               })
             }}

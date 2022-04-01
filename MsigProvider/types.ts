@@ -1,4 +1,5 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { Address } from '@glif/react-components'
 
 export interface MsigActorErrors {
   notMsigActor: boolean
@@ -22,7 +23,7 @@ export interface MsigActorState {
   NumApprovalsThreshold: number
   StartEpoch: number
   UnlockDuration: number
-  Signers: Signer[]
+  Signers: Address[]
   errors: MsigActorErrors
 }
 

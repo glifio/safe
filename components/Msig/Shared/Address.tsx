@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {
   Box,
-  CopyAddress,
   ButtonClose,
-  ButtonEdit
+  ButtonEdit,
+  AddressLink,
+  Address as AddressType
 } from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
@@ -13,7 +14,7 @@ const Address = ({
   onRemoveSigner,
   onChangeSigner
 }: {
-  address: string
+  address: AddressType
   onRemoveSigner?: () => void
   onChangeSigner?: () => void
 }) => {
@@ -29,7 +30,12 @@ const Address = ({
       borderRadius={2}
     >
       <Box flexGrow='1'>
-        <CopyAddress color='core.nearblack' address={address} />
+        <AddressLink
+          id={address.id}
+          address={address.robust}
+          hideCopyText={false}
+          hideCopy={false}
+        />
       </Box>
       {onChangeSigner && (
         <ButtonEdit
