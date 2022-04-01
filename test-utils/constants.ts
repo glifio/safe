@@ -12,11 +12,11 @@ export const MULTISIG_SIGNER_ADDRESS_2 =
 
 export const signers = [
   {
-    account: MULTISIG_SIGNER_ADDRESS,
+    robust: MULTISIG_SIGNER_ADDRESS,
     id: 't01234'
   },
   {
-    account: MULTISIG_SIGNER_ADDRESS_2,
+    robust: MULTISIG_SIGNER_ADDRESS_2,
     id: 't01235'
   }
 ]

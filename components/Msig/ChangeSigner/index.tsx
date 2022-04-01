@@ -265,8 +265,6 @@ const ChangeOwner = ({ oldSignerAddress }) => {
                   'Make sure you or someone you trust owns the private key to this new Filecoin address.',
                   'If you or anyone else does not own this address, you could lose access to your funds permanently. There is no way to resolve this.'
                 ]}
-                linkDisplay="Why isn't it secure?"
-                linkhref='https://coinsutra.com/security-risks-bitcoin-wallets/'
               />
             )}
             <Box boxShadow={2} borderRadius={4}>

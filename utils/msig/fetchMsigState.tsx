@@ -76,7 +76,7 @@ export default async function fetchMsigState(
         // f0 address
         id,
         // non f0 address
-        account: accountKeys[idx]
+        robust: accountKeys[idx]
       })),
       ActorCode,
       InitialBalance: new FilecoinNumber(State.InitialBalance, 'attofil'),

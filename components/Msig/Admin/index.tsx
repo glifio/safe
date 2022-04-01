@@ -55,15 +55,20 @@ export default function Owners() {
     ...ledger
   })
 
-  const additionalSigners = useMemo(
-    () =>
-      signers.filter(
+  const { additionalSigners, userSigner } = useMemo(() => {
+    return {
+      additionalSigners: signers.filter(
         (signer) =>
-          converAddrToFPrefix(signer.account) !==
+          converAddrToFPrefix(signer.robust) !==
           converAddrToFPrefix(wallet.address)
       ),
-    [signers, wallet]
-  )
+      userSigner: signers.find(
+        (signer) =>
+          converAddrToFPrefix(signer.robust) ===
+          converAddrToFPrefix(wallet.address)
+      )
+    }
+  }, [signers, wallet])
 
   return (
     <div>
@@ -100,7 +105,7 @@ export default function Owners() {
             </ButtonV2>
           )}
         </TitleRow>
-        <Address address={wallet.address} />
+        <Address address={userSigner} />
 
         <TitleRow>
           <h3>Additional Signers ({additionalSigners.length})</h3>
