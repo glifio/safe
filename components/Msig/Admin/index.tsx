@@ -1,18 +1,16 @@
 import styled from 'styled-components'
 import { useCallback, useMemo, useState } from 'react'
-import { ButtonV2 } from '@glif/react-components'
+import { ButtonV2, ButtonV2Link } from '@glif/react-components'
 import {
   useWallet,
   useWalletProvider,
   reportLedgerConfigError
 } from '@glif/wallet-provider-react'
-import { useRouter } from 'next/router'
 
 import { PAGE } from '../../../constants'
 import { Address, Signers } from '../Shared'
 import { useMsig } from '../../../MsigProvider'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
-import { navigate } from '../../../utils/urlParams'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -39,7 +37,6 @@ const Info = styled.p`
 `
 
 export default function Owners() {
-  const router = useRouter()
   const { NumApprovalsThreshold, Signers: signers } = useMsig()
   const wallet = useWallet()
   const { ledger, connectLedger, loginOption } = useWalletProvider()
@@ -78,13 +75,9 @@ export default function Owners() {
       <Wrapper>
         <TitleRow>
           <h3>Required Approvals: {NumApprovalsThreshold}</h3>
-          <ButtonV2
-            onClick={() =>
-              navigate(router, { pageUrl: PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD })
-            }
-          >
+          <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD}>
             Edit
-          </ButtonV2>
+          </ButtonV2Link>
         </TitleRow>
         <Info>
           The number of approvals required for a Safe proposal to execute.
@@ -109,11 +102,7 @@ export default function Owners() {
 
         <TitleRow>
           <h3>Additional Signers ({additionalSigners.length})</h3>
-          <ButtonV2
-            onClick={() => navigate(router, { pageUrl: PAGE.MSIG_ADD_SIGNER })}
-          >
-            Add Signer
-          </ButtonV2>
+          <ButtonV2Link href={PAGE.MSIG_ADD_SIGNER}>Add Signer</ButtonV2Link>
         </TitleRow>
         <Info>
           These are the Filecoin addresses that can approve and reject proposals
