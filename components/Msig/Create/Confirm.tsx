@@ -76,8 +76,8 @@ const Confirm = () => {
         )) as { ExitCode: number; GasUsed: number; Return: string }
 
         if (receipt.ExitCode === 0) {
-          const addr = getAddrFromReceipt(receipt.Return)
-          if (addr) setMsigActor(addr)
+          const { robust } = getAddrFromReceipt(receipt.Return)
+          if (robust) setMsigActor(robust)
           else setMsigError(true)
         } else {
           setMsigError(true)

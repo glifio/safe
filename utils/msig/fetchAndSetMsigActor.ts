@@ -23,7 +23,7 @@ export default async function fetchAndSetMsigActor(
         'There was an error when creating, confirming, or fetching your multisig actor.'
       )
     } else if (receipt.ExitCode === 0) {
-      setMsigActor(getAddressFromReceipt(receipt.Return))
+      setMsigActor(getAddressFromReceipt(receipt.Return).robust)
     } else {
       // this error message is currently not being used anywhere in the UI - its being used moreso as a boolean that an error occured...
       setMsigError(
