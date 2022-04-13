@@ -7,8 +7,13 @@ const bytesToAddress = (payload): string => {
 }
 
 const getAddrFromReceipt = (base64Return: string) => {
-  const [, cborBytes] = cbor.decode(Buffer.from(base64Return, 'base64'))
-  return bytesToAddress(cborBytes)
+  const [cborBytesID, cborBytesRobust] = cbor.decode(
+    Buffer.from(base64Return, 'base64')
+  )
+  return {
+    robust: bytesToAddress(cborBytesRobust),
+    id: bytesToAddress(cborBytesID)
+  }
 }
 
 export default getAddrFromReceipt
