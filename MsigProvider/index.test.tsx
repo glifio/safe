@@ -8,7 +8,7 @@ import WalletProviderWrapper, {
   initialState as _walletProviderInitialState
 } from '@glif/wallet-provider-react'
 
-import { MULTISIG_ACTOR_ADDRESS, WALLET_ADDRESS } from '../test-utils/constants'
+import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
 import { MsigActorState } from './types'
 import { EXEC_ACTOR } from '../constants'
@@ -51,9 +51,6 @@ describe('Multisig provider', () => {
                 }
                 case 'MsigGetAvailableBalance': {
                   return '1000000'
-                }
-                case 'StateAccountKey': {
-                  return WALLET_ADDRESS
                 }
                 case 'StateLookupID': {
                   return 't0123445'

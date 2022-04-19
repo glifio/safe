@@ -24,3 +24,12 @@ export const PendingMessageProvider = ({ children }) => {
 export const useSubmittedMessages = () => {
   return useContext(PendingMsgContext)
 }
+
+async function getAddress(variables) {
+  return {
+    id: variables.address,
+    robust: variables.address
+  }
+}
+
+export const useAddressLazyQuery = () => [getAddress]

@@ -1,6 +1,8 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import { CID } from '@glif/filecoin-wallet-provider'
+import { QueryLazyOptions, LazyQueryResult } from '@apollo/client'
+import { AddressQuery, Exact } from '@glif/react-components'
 
 import isAddressSigner from './isAddressSigner'
 import { decodeActorCID } from '../actorCode'
@@ -8,7 +10,21 @@ import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
 
 export default async function fetchMsigState(
   actorID: string,
-  signerAddress: string
+  signerAddress: string,
+  getAddress: (
+    options?: QueryLazyOptions<
+      Exact<{
+        address: string
+      }>
+    >
+  ) => Promise<
+    LazyQueryResult<
+      AddressQuery,
+      Exact<{
+        address: string
+      }>
+    >
+  >
 ): Promise<MsigActorState> {
   try {
     const lCli = new LotusRPCEngine({
@@ -47,16 +63,24 @@ export default async function fetchMsigState(
       }
     }>('StateReadState', actorID, null)
 
-    const [availableBalance, accountKeys] = await Promise.all([
+    const [availableBalance, signers] = await Promise.all([
       lCli.request<string>('MsigGetAvailableBalance', actorID, null),
       Promise.all(
-        State?.Signers.map((s) =>
-          lCli.request<string>('StateAccountKey', s, null)
-        )
+        State?.Signers.map(async (s) => {
+          const { data, error, loading } = await getAddress({
+            variables: { address: s }
+          })
+
+          if (!error && !loading && !!data?.address) {
+            return data.address
+          }
+
+          return { id: s, robust: '' }
+        })
       )
     ])
 
-    if (!(await isAddressSigner(lCli, signerAddress, State?.Signers))) {
+    if (!(await isAddressSigner(signerAddress, signers))) {
       return {
         ...emptyMsigState,
         errors: {
@@ -72,12 +96,7 @@ export default async function fetchMsigState(
       Address: actorID,
       Balance: new FilecoinNumber(Balance, 'attofil'),
       AvailableBalance: new FilecoinNumber(availableBalance, 'attofil'),
-      Signers: State.Signers.map((id, idx) => ({
-        // f0 address
-        id,
-        // non f0 address
-        robust: accountKeys[idx]
-      })),
+      Signers: signers,
       ActorCode,
       InitialBalance: new FilecoinNumber(State.InitialBalance, 'attofil'),
       NextTxnID: State.NextTxnID,

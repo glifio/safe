@@ -1,4 +1,5 @@
 jest.mock('@glif/filecoin-rpc-client')
+import { FilecoinNumber } from '@glif/filecoin-number'
 
 import converAddrToFPrefix from '../convertAddrToFPrefix'
 import fetchMsigState from './fetchMsigState'
@@ -9,39 +10,139 @@ import {
   MULTISIG_SIGNER_ADDRESS_2
 } from '../../test-utils'
 
-describe.skip('fetchMsigState', () => {
+describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
-    const { errors } = await fetchMsigState('f01', MULTISIG_SIGNER_ADDRESS)
+    jest.spyOn(require('../actorCode'), 'decodeActorCID')
 
-    expect(errors.notMsigActor).toBe(true)
+    const mockActorCode = jest.fn(async () => ({
+      Code: { '/': 'xxxyyyzz' }
+    }))
+    jest
+      .spyOn(require('@glif/filecoin-rpc-client'), 'default')
+      .mockImplementationOnce(() => {
+        return {
+          request: mockActorCode
+        }
+      })
 
-    const { errors: errors2 } = await fetchMsigState(
-      't01441',
-      MULTISIG_SIGNER_ADDRESS
+    const { errors } = await fetchMsigState(
+      'f01',
+      MULTISIG_SIGNER_ADDRESS,
+      // @ts-expect-error
+      () => {
+        return {
+          id: 'f01',
+          robust: 't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpnd'
+        }
+      }
     )
 
-    expect(errors2.notMsigActor).toBe(true)
+    expect(errors.notMsigActor).toBe(true)
   }, 10000)
 
   test('it returns a connected wallet not signer error if the wallet isnt a signer on the multisig', async () => {
+    jest
+      .spyOn(require('../actorCode'), 'decodeActorCID')
+      .mockImplementationOnce(() => '/multisig')
+
+    jest
+      .spyOn(require('@glif/filecoin-rpc-client'), 'default')
+      .mockImplementationOnce(() => {
+        return {
+          request: (method) => {
+            switch (method) {
+              case 'StateReadState': {
+                return {
+                  Balance: '0',
+                  State: {
+                    Signers: ['f010114']
+                  }
+                }
+              }
+              case 'StateGetActor': {
+                return { Code: { '/': 'xxxyyyzz' } }
+              }
+            }
+          }
+        }
+      })
+
     const { errors } = await fetchMsigState(
       't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpny',
-      MULTISIG_SIGNER_ADDRESS
+      MULTISIG_SIGNER_ADDRESS,
+      // @ts-expect-error
+      () => {
+        return {
+          id: 'f01',
+          robust: 't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpnd'
+        }
+      }
     )
 
     expect(errors.connectedWalletNotMsigSigner).toBe(true)
   }, 10000)
 
   test('it returns an actor not found error if the actor isnt found', async () => {
+    jest
+      .spyOn(require('@glif/filecoin-rpc-client'), 'default')
+      .mockImplementationOnce(() => {
+        return {
+          request: () => {
+            return Promise.reject(new Error('actor not found'))
+          }
+        }
+      })
+
     const { errors } = await fetchMsigState(
       't012914328591053',
-      MULTISIG_SIGNER_ADDRESS
+      MULTISIG_SIGNER_ADDRESS,
+      // @ts-ignore
+      () => {
+        return {
+          data: {
+            address: {
+              id: 'f01',
+              robust: 't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpnd'
+            }
+          }
+        }
+      }
     )
 
     expect(errors.actorNotFound).toBe(true)
   }, 10000)
 
   test('it returns the full multisig actor', async () => {
+    jest
+      .spyOn(require('@glif/filecoin-rpc-client'), 'default')
+      .mockImplementationOnce(() => {
+        return {
+          request: (method) => {
+            switch (method) {
+              case 'StateReadState': {
+                return {
+                  Balance: new FilecoinNumber('1', 'fil'),
+                  State: {
+                    Signers: [MULTISIG_SIGNER_ADDRESS_2],
+                    InitialBalance: '10000',
+                    NextTxnID: 1,
+                    NumApprovalsThreshold: 1,
+                    StartEpoch: 1,
+                    UnlockDuration: 1
+                  }
+                }
+              }
+              case 'StateGetActor': {
+                return { Code: { '/': 'bafkqadtgnfwc6nzpnv2wy5djonuwo' } }
+              }
+              case 'MsigGetAvailableBalance': {
+                return '1'
+              }
+            }
+          }
+        }
+      })
+
     const {
       Address,
       Balance,
@@ -53,7 +154,21 @@ describe.skip('fetchMsigState', () => {
       NumApprovalsThreshold,
       StartEpoch,
       UnlockDuration
-    } = await fetchMsigState(MULTISIG_ACTOR_ADDRESS, MULTISIG_SIGNER_ADDRESS_2)
+    } = await fetchMsigState(
+      MULTISIG_ACTOR_ADDRESS,
+      MULTISIG_SIGNER_ADDRESS_2,
+      // @ts-ignore
+      () => {
+        return {
+          data: {
+            address: {
+              robust: MULTISIG_SIGNER_ADDRESS_2,
+              id: ''
+            }
+          }
+        }
+      }
+    )
 
     expect(Address).toBe(converAddrToFPrefix(MULTISIG_ACTOR_ADDRESS))
     expect(Balance.isGreaterThan(0)).toBe(true)
