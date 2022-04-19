@@ -60,7 +60,10 @@ const Address = ({
 }
 
 Address.propTypes = {
-  address: ADDRESS_PROPTYPE,
+  address: PropTypes.shape({
+    id: ADDRESS_PROPTYPE,
+    robust: ADDRESS_PROPTYPE
+  }),
   onRemoveSigner: PropTypes.func,
   onChangeSigner: PropTypes.func
 }
