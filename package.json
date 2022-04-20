@@ -1,6 +1,6 @@
 {
   "name": "safe",
-  "version": "0.0.4-calibration.0",
+  "version": "0.0.6-calibration.2",
   "engines": {
     "node": ">=16.0.0"
   },
@@ -25,12 +25,12 @@
     "@glif/filecoin-address": "^2.0.0-beta.3",
     "@glif/filecoin-message": "^2.0.0-alpha.18",
     "@glif/filecoin-message-confirmer": "latest",
-    "@glif/filecoin-number": "latest",
-    "@glif/filecoin-rpc-client": "latest",
-    "@glif/filecoin-wallet-provider": "latest",
+    "@glif/filecoin-number": "^2.0.0-beta.0",
+    "@glif/filecoin-rpc-client": "^2.0.0-beta.8",
+    "@glif/filecoin-wallet-provider": "^2.0.0-beta.10",
     "@glif/logger": "^2.0.0-alpha.16",
-    "@glif/react-components": "^2.0.0-alpha.62",
-    "@glif/wallet-provider-react": "^0.0.0-alpha.20",
+    "@glif/react-components": "^2.0.0-alpha.67",
+    "@glif/wallet-provider-react": "^0.0.0-alpha.22",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.20.0",
     "@zondax/ledger-filecoin": "0.11.2",
@@ -59,6 +59,7 @@
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
     "@types/jest": "^27.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.10.2",
     "babel-jest": "^27.1.1",
     "babel-plugin-styled-components": "1.12.0",

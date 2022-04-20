@@ -7,7 +7,7 @@ import WalletProviderWrapper, {
   initialState as _walletProviderInitialState
 } from '@glif/wallet-provider-react'
 
-import { MULTISIG_ACTOR_ADDRESS, WALLET_ADDRESS } from '../test-utils/constants'
+import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
 import { MsigActorState } from './types'
 import { composeWalletProviderState } from '../test-utils/composeMockAppTree/composeState'
@@ -49,9 +49,6 @@ describe('Not a signer error handling', () => {
               }
               case 'MsigGetAvailableBalance': {
                 return '1000000'
-              }
-              case 'StateAccountKey': {
-                return WALLET_ADDRESS
               }
               case 'StateLookupID': {
                 return 't0123445'

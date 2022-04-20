@@ -1,4 +1,5 @@
 import { useState, createContext, ReactNode, useContext, Dispatch } from 'react'
+import { useAddressLazyQuery } from '@glif/react-components'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import useSWR from 'swr'
 import { useWallet } from '@glif/wallet-provider-react'
@@ -28,8 +29,9 @@ export const MsigProviderWrapper = ({
 }) => {
   const wallet = useWallet()
   const [msigActor, setMsigActor] = useState(null)
+  const [getAddress] = useAddressLazyQuery()
   const { data: actor, error: msigActorStateError } = useSWR(
-    msigActor ? [msigActor, wallet.address] : null,
+    msigActor ? [msigActor, wallet.address, getAddress] : null,
     fetchMsigState
   )
 

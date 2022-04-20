@@ -1,22 +1,8 @@
-import LotusRpcEngine from '@glif/filecoin-rpc-client'
-import convertAddrToFPrefix from '../convertAddrToFPrefix'
+import { Address, isAddrEqual } from '@glif/react-components'
 
-export default async function (
-  lotus: LotusRpcEngine,
+export default async function isAddressSigner(
   walletAddress: string,
-  signers: string[]
+  signers: Address[]
 ): Promise<boolean> {
-  let idAddress = ''
-
-  try {
-    idAddress = await lotus.request('StateLookupID', walletAddress, null)
-  } catch (_) {
-    // noop
-  }
-
-  return signers.some((signer) => {
-    if (signer[1] === '0')
-      return convertAddrToFPrefix(signer) === convertAddrToFPrefix(idAddress)
-    return convertAddrToFPrefix(signer) === convertAddrToFPrefix(walletAddress)
-  })
+  return signers.some((signer) => isAddrEqual(signer, walletAddress))
 }
