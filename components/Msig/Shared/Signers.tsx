@@ -42,7 +42,7 @@ const Signers = ({ signers }: { signers: AddressType[] }) => {
 Signers.propTypes = {
   signers: PropTypes.arrayOf(
     PropTypes.shape({
-      account: ADDRESS_PROPTYPE,
+      robust: ADDRESS_PROPTYPE,
       id: ADDRESS_PROPTYPE
     })
   ).isRequired
