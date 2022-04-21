@@ -15,6 +15,9 @@ const webpack = (config) => {
     '@glif/react-components': path.resolve(
       './node_modules/@glif/react-components'
     ),
+    '@zondax/filecoin-signing-tools': path.resolve(
+      './node_modules/@zondax/filecoin-signing-tools'
+    ),
     react: path.resolve('./node_modules/react'),
     'react-dom': path.resolve('./node_modules/react-dom'),
     next: path.resolve('./node_modules/next'),

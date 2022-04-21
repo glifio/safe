@@ -8,6 +8,7 @@ import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
 
 const Signers = ({ signers }: { signers: AddressType[] }) => {
+  console.log(signers)
   const router = useRouter()
   return (
     <>
@@ -42,7 +43,7 @@ const Signers = ({ signers }: { signers: AddressType[] }) => {
 Signers.propTypes = {
   signers: PropTypes.arrayOf(
     PropTypes.shape({
-      account: ADDRESS_PROPTYPE,
+      robust: ADDRESS_PROPTYPE,
       id: ADDRESS_PROPTYPE
     })
   ).isRequired

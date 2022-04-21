@@ -83,10 +83,10 @@ const ChangeApprovalThreshold = () => {
       ).toString('base64')
 
       const outerParams = {
-        to: address,
-        value: '0',
-        method: MSIG_METHOD.CHANGE_NUM_APPROVALS_THRESHOLD,
-        params: serializedInnerParams
+        To: address,
+        Value: '0',
+        Method: MSIG_METHOD.CHANGE_NUM_APPROVALS_THRESHOLD,
+        Params: serializedInnerParams
       }
 
       const serializedOuterParams = Buffer.from(

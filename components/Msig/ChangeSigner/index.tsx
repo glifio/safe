@@ -75,8 +75,8 @@ const ChangeOwner = ({ oldSignerAddress }) => {
 
   const constructMsg = (nonce = 0) => {
     const innerParams = {
-      to: newSignerAddress,
-      from: oldSignerAddress
+      To: newSignerAddress,
+      From: oldSignerAddress
     }
 
     const serializedInnerParams = Buffer.from(
@@ -85,10 +85,10 @@ const ChangeOwner = ({ oldSignerAddress }) => {
     ).toString('base64')
 
     const outerParams = {
-      to: address,
-      value: '0',
-      method: MSIG_METHOD.SWAP_SIGNER,
-      params: serializedInnerParams
+      To: address,
+      Value: '0',
+      Method: MSIG_METHOD.SWAP_SIGNER,
+      Params: serializedInnerParams
     }
 
     const serializedOuterParams = Buffer.from(

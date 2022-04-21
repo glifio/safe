@@ -79,10 +79,10 @@ const Withdrawing = () => {
 
   const constructMsg = (nonce = 0) => {
     const params = {
-      to: toAddress,
-      value: value.toAttoFil(),
-      method: 0,
-      params: ''
+      To: toAddress,
+      Value: value.toAttoFil(),
+      Method: 0,
+      Params: ''
     }
 
     const serializedParams = Buffer.from(serializeParams(params), 'hex')

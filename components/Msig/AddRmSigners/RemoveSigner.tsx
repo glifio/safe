@@ -66,8 +66,8 @@ const RemoveSigner = ({ signerAddress }) => {
 
   const constructMsg = (nonce = 0) => {
     const innerParams = {
-      signer: signerAddress,
-      decrease: false
+      Signer: signerAddress,
+      Decrease: false
     }
 
     const serializedInnerParams = Buffer.from(
@@ -76,10 +76,10 @@ const RemoveSigner = ({ signerAddress }) => {
     ).toString('base64')
 
     const outerParams = {
-      to: address,
-      value: '0',
-      method: MSIG_METHOD.REMOVE_SIGNER,
-      params: serializedInnerParams
+      To: address,
+      Value: '0',
+      Method: MSIG_METHOD.REMOVE_SIGNER,
+      Params: serializedInnerParams
     }
 
     const serializedOuterParams = Buffer.from(

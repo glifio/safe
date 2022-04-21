@@ -69,8 +69,8 @@ const AddSigner = () => {
 
   const constructMsg = (nonce = 0) => {
     const innerParams = {
-      signer: signerAddress,
-      increase: false
+      Signer: signerAddress,
+      Increase: false
     }
 
     const serializedInnerParams = Buffer.from(
@@ -79,10 +79,10 @@ const AddSigner = () => {
     ).toString('base64')
 
     const outerParams = {
-      to: address,
-      value: '0',
-      method: MSIG_METHOD.ADD_SIGNER,
-      params: serializedInnerParams
+      To: address,
+      Value: '0',
+      Method: MSIG_METHOD.ADD_SIGNER,
+      Params: serializedInnerParams
     }
 
     const serializedOuterParams = Buffer.from(

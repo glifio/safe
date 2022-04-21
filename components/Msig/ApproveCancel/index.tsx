@@ -93,9 +93,10 @@ export default function ApproveReject() {
   }, [uncaughtError, walletError])
 
   const constructMsg = (nonce = 0) => {
+    console.log(proposal.id, proposal.proposalHash)
     const params = {
-      TxnID: proposal.id,
-      ProposalHashData: proposal.proposalHash
+      Id: proposal.id,
+      Proposal_hash: proposal.proposalHash
     }
 
     const serializedParams = Buffer.from(serializeParams(params), 'hex')
@@ -104,7 +105,7 @@ export default function ApproveReject() {
         to: address,
         from: wallet.address,
         value: '0',
-        method,
+        method: 0,
         nonce,
         params: serializedParams.toString('base64'),
         gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
