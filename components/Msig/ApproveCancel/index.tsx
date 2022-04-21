@@ -105,7 +105,7 @@ export default function ApproveReject() {
         to: address,
         from: wallet.address,
         value: '0',
-        method: 0,
+        method,
         nonce,
         params: serializedParams.toString('base64'),
         gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
