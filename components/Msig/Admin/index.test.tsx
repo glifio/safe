@@ -45,7 +45,7 @@ describe('Admin page', () => {
     // expect(container).toMatchSnapshot()
   })
 
-  test('it sends you to the add signer page when the user clicks the add signer button', () => {
+  test('it renders a link to the add signer page', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
     act(() => {
@@ -54,10 +54,27 @@ describe('Admin page', () => {
           <Admin />
         </Tree>
       )
-      fireEvent.click(screen.getByText('Add Signer'))
+      expect(screen.getByText('Add Signer').closest('a')).toHaveAttribute(
+        'href',
+        PAGE.MSIG_ADD_SIGNER
+      )
     })
+  })
 
-    expect(routerPushMock).toHaveBeenCalledWith(PAGE.MSIG_ADD_SIGNER)
+  test('it renders a link to the edit req num approvals page', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+
+    act(() => {
+      render(
+        <Tree>
+          <Admin />
+        </Tree>
+      )
+      expect(screen.getByText('Edit').closest('a')).toHaveAttribute(
+        'href',
+        PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD
+      )
+    })
   })
 
   test('it sends you to the change signer page with the right query params when the user clicks the edit signer button', () => {
