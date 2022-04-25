@@ -1,8 +1,8 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import {
   AppTile,
   Box,
-  ButtonV2,
+  ButtonV2Link,
   LandingPageColumns,
   LandingPageContent,
   OneColumnLargeText,
@@ -12,22 +12,11 @@ import {
   useNetworkName,
   SmartLink
 } from '@glif/react-components'
-import { useRouter } from 'next/router'
 
-import { navigate } from '../utils/urlParams'
 import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../constants'
 
 export default function Landing() {
   const isUnsupportedDevice = useMemo(() => isMobileOrTablet(), [])
-  const router = useRouter()
-
-  const connect = useCallback(
-    (pageUrl: PAGE) => {
-      navigate(router, { pageUrl })
-    },
-    [router]
-  )
-
   const { networkName } = useNetworkName(
     process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
   )
@@ -59,12 +48,12 @@ export default function Landing() {
           <LandingPageContent>
             <h2>Connect</h2>
             <Box display='flex' flexDirection='column' gridGap={space()}>
-              <ButtonV2 large onClick={() => connect(PAGE.CONNECT_METAMASK)}>
+              <ButtonV2Link large href={PAGE.CONNECT_METAMASK}>
                 MetaMask
-              </ButtonV2>
-              <ButtonV2 large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
+              </ButtonV2Link>
+              <ButtonV2Link large href={PAGE.CONNECT_LEDGER}>
                 Ledger Device
-              </ButtonV2>
+              </ButtonV2Link>
             </Box>
 
             <p>
