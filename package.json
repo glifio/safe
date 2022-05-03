@@ -44,7 +44,7 @@
     "jspdf": "^2.3.1",
     "lodash.clonedeep": "4.5.0",
     "lodash.isequal": "4.5.0",
-    "next": "^12.0.7",
+    "next": "^12.1.6",
     "object-path": ">=0.11.6",
     "prop-types": "15.8.1",
     "react": "^17.0.2",
