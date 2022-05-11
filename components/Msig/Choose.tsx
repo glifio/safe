@@ -66,7 +66,7 @@ export const Choose = () => {
             centered={true}
             autofocus={true}
             truncate={false}
-            msig={true}
+            actor={true}
             value={safeID}
             onChange={setSafeID}
             setIsValid={setIsSafeIDValid}
