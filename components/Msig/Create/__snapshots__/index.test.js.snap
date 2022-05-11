@@ -6776,20 +6776,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   opacity: 0.8;
 }
 
-.c53 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c53:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 .c31 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -7017,6 +7003,20 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c53 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c53:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 <div>

@@ -679,21 +679,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   opacity: 1;
 }
 
-.c20 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  width: auto;
-}
-
-.c20:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 .c34 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -882,6 +867,21 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c20 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+  width: auto;
+}
+
+.c20:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 <div>
@@ -2047,21 +2047,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   opacity: 1;
 }
 
-.c20 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  width: auto;
-}
-
-.c20:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 .c34 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -2250,6 +2235,21 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c20 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+  width: auto;
+}
+
+.c20:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 <div>
@@ -3191,21 +3191,6 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   opacity: 1;
 }
 
-.c20 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  width: auto;
-}
-
-.c20:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 .c34 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -3295,6 +3280,21 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c20 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+  width: auto;
+}
+
+.c20:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 <div>
@@ -4185,21 +4185,6 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   opacity: 1;
 }
 
-.c20 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  width: auto;
-}
-
-.c20:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 .c34 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -4345,6 +4330,21 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c20 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+  width: auto;
+}
+
+.c20:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 <div>
@@ -5453,35 +5453,6 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   opacity: 0.8;
 }
 
-.c20 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  width: auto;
-}
-
-.c20:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c55 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c55:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 .c34 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -5670,6 +5641,35 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c20 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+  width: auto;
+}
+
+.c20:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c55 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c55:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 <div>
@@ -6919,35 +6919,6 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   opacity: 0.8;
 }
 
-.c20 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  width: auto;
-}
-
-.c20:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c54 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c54:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 .c34 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -7130,6 +7101,35 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c20 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+  width: auto;
+}
+
+.c20:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c54 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c54:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 .c58 {
