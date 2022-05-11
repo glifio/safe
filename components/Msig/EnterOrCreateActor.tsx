@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
   ButtonRowSpaced,
@@ -9,6 +9,7 @@ import {
   ShadowBox,
   SmartLink
 } from '@glif/react-components'
+
 import { useMsig } from '../../MsigProvider'
 import {
   generateRouteWithRequiredUrlParams,
@@ -40,14 +41,16 @@ const EnterActorAddress = () => {
     errors.unhandledError
   ])
 
-  // once the actor address gets populated in context
-  // we push the user to the msig home
-  useEffect(() => {
-    // as long as there is an ActorCode, we know we successfully retrieved the multisig
-    if (!errorMessage && !!ActorCode && submittedForm) {
-      navigate(router, { pageUrl: PAGE.MSIG_HOME })
-    }
-  }, [submittedForm, errorMessage, router, ActorCode])
+  // When there is an ActorCode we successfully retrieved
+  // the multisig and we push the user to the msig home
+  useEffect(
+    () =>
+      submittedForm &&
+      !errorMessage &&
+      !!ActorCode &&
+      navigate(router, { pageUrl: PAGE.MSIG_HOME }),
+    [submittedForm, errorMessage, ActorCode, router]
+  )
 
   return (
     <Dialog>
