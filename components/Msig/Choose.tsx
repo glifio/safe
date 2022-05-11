@@ -17,7 +17,7 @@ import {
 } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
-const EnterActorAddress = () => {
+export const Choose = () => {
   const router = useRouter()
   const { setMsigActor, errors, ActorCode } = useMsig()
 
@@ -103,5 +103,3 @@ const EnterActorAddress = () => {
     </Dialog>
   )
 }
-
-export default EnterActorAddress
