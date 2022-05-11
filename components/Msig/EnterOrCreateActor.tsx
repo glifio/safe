@@ -60,11 +60,13 @@ const EnterActorAddress = () => {
         <hr />
         <form>
           <InputV2.Address
+            name='safe-id'
             label='Please enter your Safe ID below to continue'
-            msig={true}
             vertical={true}
             centered={true}
             autofocus={true}
+            truncate={false}
+            msig={true}
             value={safeID}
             onChange={setSafeID}
             setIsValid={setIsSafeIDValid}
