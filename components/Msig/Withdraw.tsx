@@ -74,19 +74,23 @@ export const Withdraw = () => {
   }
 
   // Placeholder message for getting gas params
-  const message = useMemo(
+  const message = useMemo<Message | null>(
     () =>
-      new Message({
-        to: Address,
-        from: wallet.address,
-        nonce: 0,
-        value: 0,
-        method: 2,
-        params: Buffer.from(serializeParams(params), 'hex').toString('base64'),
-        gasPremium: '0',
-        gasFeeCap: '0',
-        gasLimit: 0
-      }),
+      params
+        ? new Message({
+            to: Address,
+            from: wallet.address,
+            nonce: 0,
+            value: '0',
+            method: 2,
+            params: Buffer.from(serializeParams(params), 'hex').toString(
+              'base64'
+            ),
+            gasPremium: 0,
+            gasFeeCap: 0,
+            gasLimit: 0
+          })
+        : null,
     [params, Address, wallet.address, serializeParams]
   )
 
