@@ -186,7 +186,7 @@ export const Withdraw = () => {
           />
           <InputV2.Filecoin
             label='Amount'
-            max={wallet.balance}
+            max={AvailableBalance}
             value={value}
             denom='fil'
             onBlur={setParamsIfChanged}
