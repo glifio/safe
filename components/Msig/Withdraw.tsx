@@ -15,6 +15,7 @@ import {
   Transaction,
   LoginOption,
   MessagePending,
+  MsigMethod,
   TxState
 } from '@glif/react-components'
 
@@ -150,9 +151,11 @@ export const Send = () => {
     <Dialog>
       <Transaction.Header
         txState={txState}
-        title='Send Filecoin'
+        title='Withdraw Filecoin'
         description='Please enter the message details below'
         loginOption={loginOption as LoginOption}
+        msig={true}
+        method={MsigMethod.WITHDRAW}
         errorMessage={
           gasParamsError?.message || txError?.message || walletError() || ''
         }
