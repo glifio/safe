@@ -4,9 +4,7 @@ import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
-  getMaxAffordableFee,
   getMaxGasFee,
-  getTotalAmount,
   useGetGasParams,
   useSubmittedMessages,
   InputV2,
