@@ -18,6 +18,7 @@ import {
   TxState
 } from '@glif/react-components'
 
+import { useMsig } from '../../MsigProvider'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
@@ -25,6 +26,7 @@ import { logger } from '../../logger'
 export const Send = () => {
   const router = useRouter()
   const wallet = useWallet()
+  const { Address, AvailableBalance } = useMsig()
   const { pushPendingMessage } = useSubmittedMessages()
   const { loginOption, walletProvider, walletError, getProvider } =
     useWalletProvider()
@@ -157,8 +159,9 @@ export const Send = () => {
       />
       <ShadowBox>
         <Transaction.Balance
-          address={wallet.address}
+          address={Address}
           balance={wallet.balance}
+          msigBalance={AvailableBalance}
         />
         <form>
           <InputV2.Address
