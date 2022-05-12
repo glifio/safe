@@ -196,11 +196,15 @@ export const Withdraw = () => {
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
           />
         </form>
-        {(gasParamsLoading || calculatedFee) && <Transaction.Total total={value} />}
+        {(gasParamsLoading || calculatedFee) && (
+          <Transaction.Total total={value} />
+        )}
       </ShadowBox>
       <Transaction.Buttons
         cancelDisabled={txState !== TxState.FillingForm}
-        sendDisabled={txState !== TxState.FillingForm || gasParamsLoading || !calculatedFee}
+        sendDisabled={
+          txState !== TxState.FillingForm || gasParamsLoading || !calculatedFee
+        }
         onClickSend={onSend}
       />
     </Dialog>
