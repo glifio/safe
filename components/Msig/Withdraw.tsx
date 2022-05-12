@@ -35,14 +35,8 @@ export const Send = () => {
   // Input states
   const [toAddress, setToAddress] = useState<string>('')
   const [value, setValue] = useState<FilecoinNumber | null>(null)
-  const [params, setParams] = useState<string>('')
   const [isToAddressValid, setIsToAddressValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
-  const [isParamsValid, setIsParamsValid] = useState<boolean>(
-    // we set params to be valid when login is LEDGER
-    // (since ledger device signing b64 params not supported)
-    loginOption === LoginOption.LEDGER
-  )
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
@@ -54,15 +48,14 @@ export const Send = () => {
   // Prevent redundant updates to message so that we don't
   // invoke the useGetGasParams hook more than necessary
   const setMessageIfChanged = () => {
-    if (!isToAddressValid || !isValueValid || !isParamsValid) {
+    if (!isToAddressValid || !isValueValid) {
       setMessage(null)
       return
     }
     if (
       !message ||
       message.to !== toAddress ||
-      message.value.toString() !== value.toAttoFil() ||
-      message.params !== params
+      message.value.toString() !== value.toAttoFil()
     )
       setMessage(
         new Message({
@@ -71,7 +64,7 @@ export const Send = () => {
           nonce: 0,
           value: value.toAttoFil(),
           method: 0,
-          params: params,
+          params: '',
           gasPremium: '0',
           gasFeeCap: '0',
           gasLimit: 0
@@ -186,16 +179,6 @@ export const Send = () => {
             setIsValid={setIsValueValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
           />
-          {loginOption !== LoginOption.LEDGER && (
-            <InputV2.Params
-              label='Params'
-              value={params}
-              onBlur={setMessageIfChanged}
-              onChange={setParams}
-              setIsValid={setIsParamsValid}
-              disabled={gasParamsLoading || txState !== TxState.FillingForm}
-            />
-          )}
           <Transaction.Fee
             maxFee={maxFee}
             setMaxFee={setMaxFee}
