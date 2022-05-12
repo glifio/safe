@@ -103,11 +103,6 @@ export const Withdraw = () => {
     error: gasParamsError
   } = useGetGasParams(walletProvider, message, maxFee)
 
-  // Calculate max affordable fee (balance minus value)
-  const affordableFee = useMemo<FilecoinNumber | null>(() => {
-    return value ? getMaxAffordableFee(wallet.balance, value) : null
-  }, [value, wallet.balance])
-
   // Calculate maximum transaction fee (fee cap times limit)
   const calculatedFee = useMemo<FilecoinNumber | null>(() => {
     return gasParams
@@ -202,7 +197,7 @@ export const Withdraw = () => {
           <Transaction.Fee
             maxFee={maxFee}
             setMaxFee={setMaxFee}
-            affordableFee={affordableFee}
+            affordableFee={wallet.balance}
             calculatedFee={calculatedFee}
             gasLoading={gasParamsLoading}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
