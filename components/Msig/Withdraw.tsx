@@ -110,11 +110,6 @@ export const Withdraw = () => {
       : null
   }, [gasParams])
 
-  // Calculate total amount (value plus max fee)
-  const total = useMemo<FilecoinNumber | null>(() => {
-    return value && calculatedFee ? getTotalAmount(value, calculatedFee) : null
-  }, [value, calculatedFee])
-
   // Attempt sending message
   const onSend = async () => {
     setTxState(TxState.LoadingTxDetails)
@@ -203,11 +198,11 @@ export const Withdraw = () => {
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
           />
         </form>
-        {total && <Transaction.Total total={total} />}
+        {(gasParamsLoading || calculatedFee) && <Transaction.Total total={value} />}
       </ShadowBox>
       <Transaction.Buttons
         cancelDisabled={txState !== TxState.FillingForm}
-        sendDisabled={txState !== TxState.FillingForm || !total}
+        sendDisabled={txState !== TxState.FillingForm || gasParamsLoading || !calculatedFee}
         onClickSend={onSend}
       />
     </Dialog>
