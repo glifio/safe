@@ -24,7 +24,7 @@ import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
 
-export const Send = () => {
+export const Withdraw = () => {
   const router = useRouter()
   const wallet = useWallet()
   const { Address, AvailableBalance } = useMsig()
