@@ -139,7 +139,7 @@ export const Send = () => {
       pushPendingMessage(
         newMessage.toPendingMessage(msgCid['/']) as MessagePending
       )
-      navigate(router, { pageUrl: PAGE.WALLET_HOME })
+      navigate(router, { pageUrl: PAGE.MSIG_HISTORY })
     } catch (e: any) {
       logger.error(e)
       setTxState(TxState.FillingForm)
