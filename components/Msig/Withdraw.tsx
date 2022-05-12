@@ -20,13 +20,23 @@ import {
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
+import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
 
+interface WithdrawParams {
+  to: string
+  value: string
+  method: MsigMethod
+  params: string
+}
+
 export const Withdraw = () => {
   const router = useRouter()
   const wallet = useWallet()
+  // @ts-expect-error
+  const { serializeParams } = useWasm()
   const { Address, AvailableBalance } = useMsig()
   const { pushPendingMessage } = useSubmittedMessages()
   const { loginOption, walletProvider, walletError, getProvider } =
@@ -42,35 +52,45 @@ export const Withdraw = () => {
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txError, setTxError] = useState<Error | null>(null)
 
-  // Placeholder message for getting gas params
-  const [message, setMessage] = useState<Message | null>(null)
+  // Params to pass with the withdraw message
+  const [params, setParams] = useState<WithdrawParams | null>(null)
 
-  // Prevent redundant updates to message so that we don't
+  // Prevent redundant updates to params so that we don't
   // invoke the useGetGasParams hook more than necessary
-  const setMessageIfChanged = () => {
+  const setParamsIfChanged = () => {
     if (!isToAddressValid || !isValueValid) {
-      setMessage(null)
+      setParams(null)
       return
     }
     if (
-      !message ||
-      message.to !== toAddress ||
-      message.value.toString() !== value.toAttoFil()
+      !params ||
+      params.to !== toAddress ||
+      params.value !== value.toAttoFil()
     )
-      setMessage(
-        new Message({
-          to: toAddress,
-          from: wallet.address,
-          nonce: 0,
-          value: value.toAttoFil(),
-          method: 0,
-          params: '',
-          gasPremium: '0',
-          gasFeeCap: '0',
-          gasLimit: 0
-        })
-      )
+      setParams({
+        to: toAddress,
+        value: value.toAttoFil(),
+        method: MsigMethod.WITHDRAW,
+        params: ''
+      })
   }
+
+  // Placeholder message for getting gas params
+  const message = useMemo(
+    () =>
+      new Message({
+        to: Address,
+        from: wallet.address,
+        nonce: 0,
+        value: 0,
+        method: 2,
+        params: Buffer.from(serializeParams(params), 'hex').toString('base64'),
+        gasPremium: '0',
+        gasFeeCap: '0',
+        gasLimit: 0
+      }),
+    [params, Address, wallet.address]
+  )
 
   // Max transaction fee used for getting gas params. Will be
   // null until the user manually changes the transaction fee.
@@ -164,7 +184,7 @@ export const Withdraw = () => {
             label='Recipient'
             autofocus={true}
             value={toAddress}
-            onBlur={setMessageIfChanged}
+            onBlur={setParamsIfChanged}
             onChange={setToAddress}
             setIsValid={setIsToAddressValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
@@ -174,7 +194,7 @@ export const Withdraw = () => {
             max={wallet.balance}
             value={value}
             denom='fil'
-            onBlur={setMessageIfChanged}
+            onBlur={setParamsIfChanged}
             onChange={setValue}
             setIsValid={setIsValueValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
