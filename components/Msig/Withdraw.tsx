@@ -89,7 +89,7 @@ export const Withdraw = () => {
         gasFeeCap: '0',
         gasLimit: 0
       }),
-    [params, Address, wallet.address]
+    [params, Address, wallet.address, serializeParams]
   )
 
   // Max transaction fee used for getting gas params. Will be
