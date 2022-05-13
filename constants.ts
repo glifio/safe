@@ -72,9 +72,6 @@ export const PL_SIGNERS = new Set([
   't1ovvm6oilbdsvbw27jhil3pcywrjuwiv5uzagq6i'
 ])
 
-/* STYLE CONSTANTS */
-export const SCREEN_MAX_WIDTH = 1440
-
 /* PAGES */
 /* eslint-disable no-unused-vars */
 export enum PAGE {
@@ -113,6 +110,3 @@ export enum MSIG_METHOD {
   LOCK_BALANCE
 }
 /* eslint-enable */
-
-// todo #responsiveDesign: decide how to do responsive design
-export const RESPONSIVE_BREAKPOINT = 1024
