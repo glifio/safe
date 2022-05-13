@@ -177,6 +177,7 @@ export const Withdraw = () => {
             autofocus={true}
             value={toAddress}
             onBlur={setParamsIfChanged}
+            onEnter={setParamsIfChanged}
             onChange={setToAddress}
             setIsValid={setIsToAddressValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
@@ -187,6 +188,7 @@ export const Withdraw = () => {
             value={value}
             denom='fil'
             onBlur={setParamsIfChanged}
+            onEnter={setParamsIfChanged}
             onChange={setValue}
             setIsValid={setIsValueValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
