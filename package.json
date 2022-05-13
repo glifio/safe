@@ -32,7 +32,7 @@
     "@glif/react-components": "^2.0.0-alpha.80",
     "@glif/wallet-provider-react": "^0.0.0-alpha.27",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
-    "@zondax/filecoin-signing-tools": "^1.0.0-rc2",
+    "@zondax/filecoin-signing-tools": "^1.0.0-rc1",
     "@zondax/ledger-filecoin": "0.11.2",
     "axios": "0.24.0",
     "base32-decode": "^1.0.0",
