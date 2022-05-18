@@ -19,6 +19,26 @@ describe('Choose', () => {
   beforeEach(jest.clearAllMocks)
   afterEach(cleanup)
 
+  test('it renders the initial state correctly', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let result: RenderResult | null = null
+
+    await act(async () => {
+      result = render(
+        <Tree>
+          <Choose />
+        </Tree>
+      )
+    })
+
+    // Check whether the submit button is disabled
+    const submit = getByText(result.container, 'Submit')
+    expect(submit).toBeDisabled()
+
+    // Check snapshot
+    expect(result.container.firstChild).toMatchSnapshot()
+  })
+
   test('it renders correctly after entering a valid safe id', async () => {
     const { Tree } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
@@ -68,26 +88,6 @@ describe('Choose', () => {
     // Check whether the safe id input has an error
     const safeId = getByRole(result.container, 'textbox')
     expect(safeId).toHaveClass('error')
-
-    // Check whether the submit button is disabled
-    const submit = getByText(result.container, 'Submit')
-    expect(submit).toBeDisabled()
-
-    // Check snapshot
-    expect(result.container.firstChild).toMatchSnapshot()
-  })
-
-  test('it renders the initial state correctly', async () => {
-    const { Tree } = composeMockAppTree('postOnboard')
-    let result: RenderResult | null = null
-
-    await act(async () => {
-      result = render(
-        <Tree>
-          <Choose />
-        </Tree>
-      )
-    })
 
     // Check whether the submit button is disabled
     const submit = getByText(result.container, 'Submit')
