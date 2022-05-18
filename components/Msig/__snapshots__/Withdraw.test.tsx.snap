@@ -1,0 +1,1486 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
+.c13 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c13 svg path {
+  stroke: var(--black);
+}
+
+.c13:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c13:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c13:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c13:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c13 svg path {
+  stroke: var(--white);
+}
+
+.c13:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c13:hover svg path {
+  stroke: var(--green-medium);
+}
+
+.c13 svg path {
+  stroke: var(--gray-medium);
+}
+
+.c12 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c12 svg path {
+  stroke: var(--black);
+}
+
+.c12:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c12:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c12:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c12:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c12 svg path {
+  stroke: var(--gray-medium);
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  text-align: left;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+
+.c7 span.info,
+.c7 span.error {
+  font-size: 0.875rem;
+}
+
+.c7 span.error {
+  color: var(--red-medium);
+}
+
+.c7 .text-input-wrapper {
+  position: relative;
+}
+
+.c7 .text-input-wrapper input {
+  width: 100%;
+}
+
+.c7 .text-input-wrapper .unit {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: var(--purple-medium);
+  color: var(--gray-dark) !important;
+}
+
+.c8 .toggle-wrapper {
+  position: relative;
+  padding: 0.5em 0;
+}
+
+.c8 input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.c8 .toggle {
+  display: inline-block;
+  position: relative;
+  width: 2.25em;
+  height: 1.5em;
+  border-radius: 0.75em;
+  border: 2px solid var(--blue-medium);
+  background-color: var(--blue-medium);
+  border-color: var(--gray-light) !important;
+  background-color: var(--gray-light) !important;
+}
+
+.c8 .toggle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(1.5em - 4px);
+  height: calc(1.5em - 4px);
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.c8 input:checked ~ .toggle {
+  border-color: var(--blue-dark);
+  background-color: var(--blue-dark);
+}
+
+.c8 input:checked ~ .toggle::after {
+  left: auto;
+  right: 0;
+}
+
+.c3 {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  text-align: left;
+  background-color: var(--purple-medium);
+}
+
+.c4 {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-color: var(--purple-dark);
+  -webkit-animation-name: bvGDKI;
+  animation-name: bvGDKI;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.c1 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c1 > *:first-child {
+  margin-top: 0;
+}
+
+.c1 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c1 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c1 > h2:first-child {
+  margin: 0;
+}
+
+.c1 > header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c2 {
+  background-color: var(--blue-gray);
+}
+
+.c2 hr {
+  border-color: var(--gray-medium);
+}
+
+.c5 {
+  background-color: var(--white);
+  box-shadow: 0 0 0.5em var(--gray-light);
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 1.5em 0;
+}
+
+.c11 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 35em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.c6 > * {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c6 > *:first-child {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 span {
+  color: var(--purple-medium);
+  font-size: 1.75rem;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <h2>
+      Withdraw Filecoin
+    </h2>
+    <hr />
+    <p>
+      Sending your transaction...
+    </p>
+    <span
+      class="c3"
+    >
+      <span
+        class="c4"
+      />
+    </span>
+  </div>
+  
+  <div
+    class="c1 c5"
+  >
+    <header
+      class="c6"
+    >
+      <div>
+        <span>
+          From
+        </span>
+        <span>
+          f2m4f2 ... sha5za
+        </span>
+      </div>
+      <div>
+        <span>
+          Signer 
+          Balance
+        </span>
+        <span>
+          1
+           FIL
+        </span>
+      </div>
+      <div>
+        <span>
+          Safe Balance
+        </span>
+        <span>
+          1
+           FIL
+        </span>
+      </div>
+    </header>
+    <form>
+      <label
+        class="c7"
+        disabled=""
+      >
+        <div>
+          <span>
+            Recipient
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            disabled=""
+            max=""
+            min=""
+            name=""
+            placeholder="f1..."
+            step=""
+            style="padding-right: 1em;"
+            type="text"
+            value="t1iury ... xaucza"
+          />
+          
+        </div>
+      </label>
+      <label
+        class="c7"
+        disabled=""
+      >
+        <div>
+          <span>
+            Amount
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            disabled=""
+            max="1"
+            min="0"
+            name=""
+            placeholder=""
+            step=""
+            style="padding-right: 3.25em;"
+            type="number"
+            value="0.01"
+          />
+          <span
+            class="unit"
+          >
+            FIL
+          </span>
+        </div>
+      </label>
+      <label
+        class="c7 c8"
+        disabled=""
+      >
+        <div>
+          <span>
+            Expert Mode
+          </span>
+          
+        </div>
+        <span
+          class="toggle-wrapper"
+        >
+          <input
+            disabled=""
+            type="checkbox"
+          />
+          <span
+            class="toggle"
+          />
+        </span>
+      </label>
+      <p>
+        You will not pay more than 
+        0.00000000001
+         FIL for this transaction.
+         
+        <a
+          href="https://filfox.info/en/stats/gas"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          More information on average gas fee statistics.
+        </a>
+      </p>
+    </form>
+    <footer>
+      <hr />
+      <div
+        class="c9"
+      >
+        <span>
+          Total
+        </span>
+        <span>
+          0.01
+           FIL
+        </span>
+      </div>
+    </footer>
+  </div>
+  <div
+    class="c10 c11"
+  >
+    <button
+      class="c12"
+      disabled=""
+    >
+      Cancel
+    </button>
+    <button
+      class="c13"
+      disabled=""
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Withdraw snapshots it renders correctly after entering the recipient 1`] = `
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+}
+
+.c8 svg path {
+  stroke: var(--black);
+}
+
+.c8:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c8:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c8:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c8:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c9 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c9 svg path {
+  stroke: var(--black);
+}
+
+.c9:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c9:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c9:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c9:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c9 svg path {
+  stroke: var(--white);
+}
+
+.c9:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c9:hover svg path {
+  stroke: var(--green-medium);
+}
+
+.c9 svg path {
+  stroke: var(--gray-medium);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  text-align: left;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+
+.c5 span.info,
+.c5 span.error {
+  font-size: 0.875rem;
+}
+
+.c5 span.error {
+  color: var(--red-medium);
+}
+
+.c5 .text-input-wrapper {
+  position: relative;
+}
+
+.c5 .text-input-wrapper input {
+  width: 100%;
+}
+
+.c5 .text-input-wrapper .unit {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: var(--purple-medium);
+}
+
+.c1 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c1 > *:first-child {
+  margin-top: 0;
+}
+
+.c1 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c1 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c1 > h2:first-child {
+  margin: 0;
+}
+
+.c1 > header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c2 {
+  background-color: var(--blue-gray);
+}
+
+.c2 hr {
+  border-color: var(--gray-medium);
+}
+
+.c3 {
+  background-color: var(--white);
+  box-shadow: 0 0 0.5em var(--gray-light);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 1.5em 0;
+}
+
+.c7 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 35em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.c4 > * {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 > *:first-child {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <h2>
+      Withdraw Filecoin
+    </h2>
+    <hr />
+    <p>
+      Please enter the message details below
+    </p>
+  </div>
+  
+  <div
+    class="c1 c3"
+  >
+    <header
+      class="c4"
+    >
+      <div>
+        <span>
+          From
+        </span>
+        <span>
+          f2m4f2 ... sha5za
+        </span>
+      </div>
+      <div>
+        <span>
+          Signer 
+          Balance
+        </span>
+        <span>
+          1
+           FIL
+        </span>
+      </div>
+      <div>
+        <span>
+          Safe Balance
+        </span>
+        <span>
+          1
+           FIL
+        </span>
+      </div>
+    </header>
+    <form>
+      <label
+        class="c5"
+      >
+        <div>
+          <span>
+            Recipient
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            max=""
+            min=""
+            name=""
+            placeholder="f1..."
+            step=""
+            style="padding-right: 1em;"
+            type="text"
+            value="t1iury ... xaucza"
+          />
+          
+        </div>
+      </label>
+      <label
+        class="c5"
+      >
+        <div>
+          <span>
+            Amount
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            max="1"
+            min="0"
+            name=""
+            placeholder=""
+            step=""
+            style="padding-right: 3.25em;"
+            type="number"
+            value=""
+          />
+          <span
+            class="unit"
+          >
+            FIL
+          </span>
+        </div>
+      </label>
+    </form>
+  </div>
+  <div
+    class="c6 c7"
+  >
+    <button
+      class="c8"
+    >
+      Cancel
+    </button>
+    <button
+      class="c9"
+      disabled=""
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Withdraw snapshots it renders the initial state correctly 1`] = `
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+}
+
+.c8 svg path {
+  stroke: var(--black);
+}
+
+.c8:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c8:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c8:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c8:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c9 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c9 svg path {
+  stroke: var(--black);
+}
+
+.c9:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c9:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c9:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c9:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c9 svg path {
+  stroke: var(--white);
+}
+
+.c9:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c9:hover svg path {
+  stroke: var(--green-medium);
+}
+
+.c9 svg path {
+  stroke: var(--gray-medium);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  text-align: left;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+
+.c5 span.info,
+.c5 span.error {
+  font-size: 0.875rem;
+}
+
+.c5 span.error {
+  color: var(--red-medium);
+}
+
+.c5 .text-input-wrapper {
+  position: relative;
+}
+
+.c5 .text-input-wrapper input {
+  width: 100%;
+}
+
+.c5 .text-input-wrapper .unit {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: var(--purple-medium);
+}
+
+.c1 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c1 > *:first-child {
+  margin-top: 0;
+}
+
+.c1 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c1 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c1 > h2:first-child {
+  margin: 0;
+}
+
+.c1 > header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c2 {
+  background-color: var(--blue-gray);
+}
+
+.c2 hr {
+  border-color: var(--gray-medium);
+}
+
+.c3 {
+  background-color: var(--white);
+  box-shadow: 0 0 0.5em var(--gray-light);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 1.5em 0;
+}
+
+.c7 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 35em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.c4 > * {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 > *:first-child {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <h2>
+      Withdraw Filecoin
+    </h2>
+    <hr />
+    <p>
+      Please enter the message details below
+    </p>
+  </div>
+  
+  <div
+    class="c1 c3"
+  >
+    <header
+      class="c4"
+    >
+      <div>
+        <span>
+          From
+        </span>
+        <span>
+          f2m4f2 ... sha5za
+        </span>
+      </div>
+      <div>
+        <span>
+          Signer 
+          Balance
+        </span>
+        <span>
+          1
+           FIL
+        </span>
+      </div>
+      <div>
+        <span>
+          Safe Balance
+        </span>
+        <span>
+          1
+           FIL
+        </span>
+      </div>
+    </header>
+    <form>
+      <label
+        class="c5"
+      >
+        <div>
+          <span>
+            Recipient
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            max=""
+            min=""
+            name=""
+            placeholder="f1..."
+            step=""
+            style="padding-right: 1em;"
+            type="text"
+            value=""
+          />
+          
+        </div>
+      </label>
+      <label
+        class="c5"
+      >
+        <div>
+          <span>
+            Amount
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            max="1"
+            min="0"
+            name=""
+            placeholder=""
+            step=""
+            style="padding-right: 3.25em;"
+            type="number"
+            value=""
+          />
+          <span
+            class="unit"
+          >
+            FIL
+          </span>
+        </div>
+      </label>
+    </form>
+  </div>
+  <div
+    class="c6 c7"
+  >
+    <button
+      class="c8"
+    >
+      Cancel
+    </button>
+    <button
+      class="c9"
+      disabled=""
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
