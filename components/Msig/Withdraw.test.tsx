@@ -14,7 +14,11 @@ import { Message } from '@glif/filecoin-message'
 
 import { pushPendingMessageSpy } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { flushPromises, WALLET_ADDRESS, MULTISIG_ACTOR_ADDRESS } from '../../test-utils'
+import {
+  flushPromises,
+  WALLET_ADDRESS,
+  MULTISIG_ACTOR_ADDRESS
+} from '../../test-utils'
 import { Withdraw } from './Withdraw'
 
 const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
@@ -75,7 +79,7 @@ describe('Withdraw', () => {
       // Send should enable after getting tx fee
       await flushPromises()
       await waitFor(() => expect(send).toBeEnabled())
-      
+
       // Max fee and total should be shown
       const maxFeeRegex =
         /You will not pay more than [0-9.]+ FIL for this transaction/i
@@ -136,7 +140,6 @@ describe('Withdraw', () => {
   })
 
   describe('snapshots', () => {
-
     test('it renders the initial state correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       let result: RenderResult | null = null
