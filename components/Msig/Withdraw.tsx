@@ -81,7 +81,7 @@ export const Withdraw = () => {
             to: Address,
             from: wallet.address,
             nonce: 0,
-            value: '0',
+            value: 0,
             method: 2,
             params: Buffer.from(serializeParams(params), 'hex').toString(
               'base64'
