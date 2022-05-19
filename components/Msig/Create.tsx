@@ -11,6 +11,14 @@ import {
   TxState
 } from '@glif/react-components'
 
+interface CreateParams {
+  vest: number
+  epoch: number
+  value: string
+  signers: Array<string>
+  approvals: number
+}
+
 import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
