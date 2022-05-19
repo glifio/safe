@@ -8,6 +8,7 @@ import {
   useGetGasParams,
   useWallet,
   useWalletProvider,
+  InputV2,
   Dialog,
   ShadowBox,
   Transaction,
