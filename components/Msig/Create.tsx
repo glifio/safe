@@ -156,6 +156,9 @@ export const Create = () => {
         loginOption={loginOption as LoginOption}
         msig={true}
         method={MsigMethod.CONSTRUCTOR}
+        errorMessage={
+          gasParamsError?.message || txError?.message || walletError() || ''
+        }
       />
       <ShadowBox>
         <Transaction.Balance
