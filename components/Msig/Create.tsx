@@ -36,6 +36,12 @@ export const Create = () => {
         method={MsigMethod.CONSTRUCTOR}
       />
       <ShadowBox>
+        <Transaction.Balance
+          address={wallet.address}
+          balance={wallet.balance}
+        />
+        <form>
+        </form>
       </ShadowBox>
     </Dialog>
   )
