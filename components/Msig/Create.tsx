@@ -236,6 +236,18 @@ export const Create = () => {
             setIsValid={setIsVestValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
           />
+          {vest > 0 && (
+            <InputV2.Number
+              label='Start Epoch (block #)'
+              min={0}
+              value={epoch}
+              onBlur={setParamsIfChanged}
+              onEnter={setParamsIfChanged}
+              onChange={setEpoch}
+              setIsValid={setIsEpochValid}
+              disabled={gasParamsLoading || txState !== TxState.FillingForm}
+            />
+          )}
         </form>
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
