@@ -21,6 +21,18 @@ export const Create = () => {
   const { loginOption, walletProvider, walletError, getProvider } =
     useWalletProvider()
 
+  // Input states
+  const [vest, setVest] = useState<number>(0)
+  const [epoch, setEpoch] = useState<number>(0)
+  const [value, setValue] = useState<FilecoinNumber | null>(null)
+  const [signers, setSigners] = useState<Array<string>>([wallet.address])
+  const [approvals, setApprovals] = useState<number>(1)
+  const [isVestValid, setIsVestValid] = useState<boolean>(false)
+  const [isEpochValid, setIsEpochValid] = useState<boolean>(false)
+  const [isValueValid, setIsValueValid] = useState<boolean>(false)
+  const [isSignersValid, setIsSignersValid] = useState<boolean>(false)
+  const [isApprovalsValid, setIsApprovalsValid] = useState<boolean>(false)
+
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txError, setTxError] = useState<Error | null>(null)
