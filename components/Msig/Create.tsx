@@ -215,7 +215,7 @@ export const Create = () => {
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
           />
           <InputV2.Filecoin
-            label='Amount'
+            label='Deposit Amount'
             max={wallet.balance}
             value={value}
             denom='fil'
