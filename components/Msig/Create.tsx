@@ -203,6 +203,17 @@ export const Create = () => {
           balance={wallet.balance}
         />
         <form>
+          <InputV2.Number
+            label='Required Approvals'
+            min={1}
+            max={signers.length}
+            value={approvals}
+            onBlur={setParamsIfChanged}
+            onEnter={setParamsIfChanged}
+            onChange={setApprovals}
+            setIsValid={setIsApprovalsValid}
+            disabled={gasParamsLoading || txState !== TxState.FillingForm}
+          />
         </form>
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
