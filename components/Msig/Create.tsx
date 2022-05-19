@@ -54,7 +54,13 @@ export const Create = () => {
   // Prevent redundant updates to params so that we don't
   // invoke the useGetGasParams hook more than necessary
   const setParamsIfChanged = () => {
-    if (!isVestValid || !isEpochValid || !isValueValid || !isSignersValid || !isApprovalsValid) {
+    if (
+      !isVestValid ||
+      !isEpochValid ||
+      !isValueValid ||
+      !isSignersValid ||
+      !isApprovalsValid
+    ) {
       setParams(null)
       return
     }
