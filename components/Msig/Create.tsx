@@ -94,7 +94,7 @@ export const Create = () => {
     )
       setParams({
         vest: vest,
-        epoch: epoch,
+        epoch: vest > 0 ? epoch : 0,
         value: value.toAttoFil(),
         signers: [...signers],
         approvals: approvals
