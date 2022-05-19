@@ -12,6 +12,9 @@ import {
 } from '@glif/react-components'
 
 import { useWasm } from '../../lib/WasmLoader'
+import { navigate } from '../../utils/urlParams'
+import { PAGE } from '../../constants'
+import { logger } from '../../logger'
 
 export const Create = () => {
   const router = useRouter()
