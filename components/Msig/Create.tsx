@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import {
+  getMaxAffordableFee,
   getMaxGasFee,
   getTotalAmount,
   useGetGasParams,
@@ -132,6 +133,11 @@ export const Create = () => {
     error: gasParamsError
   } = useGetGasParams(walletProvider, message, maxFee)
 
+  // Calculate max affordable fee (balance minus value)
+  const affordableFee = useMemo<FilecoinNumber | null>(() => {
+    return value ? getMaxAffordableFee(wallet.balance, value) : null
+  }, [value, wallet.balance])
+
   // Calculate maximum transaction fee (fee cap times limit)
   const calculatedFee = useMemo<FilecoinNumber | null>(() => {
     return gasParams
@@ -248,6 +254,14 @@ export const Create = () => {
               disabled={gasParamsLoading || txState !== TxState.FillingForm}
             />
           )}
+          <Transaction.Fee
+            maxFee={maxFee}
+            setMaxFee={setMaxFee}
+            affordableFee={affordableFee}
+            calculatedFee={calculatedFee}
+            gasLoading={gasParamsLoading}
+            disabled={gasParamsLoading || txState !== TxState.FillingForm}
+          />
         </form>
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
