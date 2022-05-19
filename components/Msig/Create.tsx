@@ -4,6 +4,7 @@ import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import {
   getMaxGasFee,
+  getTotalAmount,
   useGetGasParams,
   useWallet,
   useWalletProvider,
@@ -137,6 +138,15 @@ export const Create = () => {
       : null
   }, [gasParams])
 
+  // Calculate total amount (value plus max fee)
+  const total = useMemo<FilecoinNumber | null>(() => {
+    return value && calculatedFee ? getTotalAmount(value, calculatedFee) : null
+  }, [value, calculatedFee])
+
+  // Attempt sending message
+  const onSend = async () => {
+  }
+
   return (
     <Dialog>
       <Transaction.Header
@@ -154,7 +164,13 @@ export const Create = () => {
         />
         <form>
         </form>
+        {total && <Transaction.Total total={total} />}
       </ShadowBox>
+      <Transaction.Buttons
+        cancelDisabled={txState !== TxState.FillingForm}
+        sendDisabled={txState !== TxState.FillingForm || !total}
+        onClickSend={onSend}
+      />
     </Dialog>
   )
 }
