@@ -1,6 +1,10 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { useRouter } from 'next/router'
+import { Message } from '@glif/filecoin-message'
+import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import {
+  getMaxGasFee,
+  useGetGasParams,
   useWallet,
   useWalletProvider,
   Dialog,
@@ -21,7 +25,7 @@ interface CreateParams {
 
 import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
-import { PAGE } from '../../constants'
+import { PAGE, EXEC_ACTOR } from '../../constants'
 import { logger } from '../../logger'
 
 export const Create = () => {
@@ -50,6 +54,21 @@ export const Create = () => {
 
   // Params to pass with the create message
   const [params, setParams] = useState<CreateParams | null>(null)
+
+  // Serialize params with the given address and nonce
+  const serializeParams = useCallback(
+    (params: CreateParams, address: string, nonce: number): string =>
+      createMultisig(
+        address,
+        [...params.signers],
+        params.value,
+        params.approvals,
+        nonce,
+        params.vest.toString(),
+        params.epoch.toString()
+      ),
+    [createMultisig]
+  )
 
   // Prevent redundant updates to params so that we don't
   // invoke the useGetGasParams hook more than necessary
@@ -80,6 +99,43 @@ export const Create = () => {
         approvals: approvals
       })
   }
+
+  // Placeholder message for getting gas params
+  const message = useMemo<Message | null>(
+    () =>
+      params
+        ? new Message({
+            to: EXEC_ACTOR,
+            from: wallet.address,
+            nonce: 0,
+            value: params.value,
+            method: 2,
+            params: serializeParams(params, wallet.address, 0),
+            gasPremium: 0,
+            gasFeeCap: 0,
+            gasLimit: 0
+          })
+        : null,
+    [params, wallet.address, serializeParams]
+  )
+
+  // Max transaction fee used for getting gas params. Will be
+  // null until the user manually changes the transaction fee.
+  const [maxFee, setMaxFee] = useState<FilecoinNumber | null>(null)
+
+  // Load gas parameters when message or max fee changes
+  const {
+    gasParams,
+    loading: gasParamsLoading,
+    error: gasParamsError
+  } = useGetGasParams(walletProvider, message, maxFee)
+
+  // Calculate maximum transaction fee (fee cap times limit)
+  const calculatedFee = useMemo<FilecoinNumber | null>(() => {
+    return gasParams
+      ? getMaxGasFee(gasParams.gasFeeCap, gasParams.gasLimit)
+      : null
+  }, [gasParams])
 
   return (
     <Dialog>
