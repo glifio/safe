@@ -48,6 +48,33 @@ export const Create = () => {
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txError, setTxError] = useState<Error | null>(null)
 
+  // Params to pass with the create message
+  const [params, setParams] = useState<CreateParams | null>(null)
+
+  // Prevent redundant updates to params so that we don't
+  // invoke the useGetGasParams hook more than necessary
+  const setParamsIfChanged = () => {
+    if (!isVestValid || !isEpochValid || !isValueValid || !isSignersValid || !isApprovalsValid) {
+      setParams(null)
+      return
+    }
+    if (
+      !params ||
+      params.vest !== vest ||
+      params.epoch !== epoch ||
+      params.value !== value.toAttoFil() ||
+      JSON.stringify(params.signers) !== JSON.stringify(signers) ||
+      params.approvals !== approvals
+    )
+      setParams({
+        vest: vest,
+        epoch: epoch,
+        value: value.toAttoFil(),
+        signers: [...signers],
+        approvals: approvals
+      })
+  }
+
   return (
     <Dialog>
       <Transaction.Header
