@@ -214,6 +214,17 @@ export const Create = () => {
             setIsValid={setIsApprovalsValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
           />
+          <InputV2.Filecoin
+            label='Amount'
+            max={wallet.balance}
+            value={value}
+            denom='fil'
+            onBlur={setParamsIfChanged}
+            onEnter={setParamsIfChanged}
+            onChange={setValue}
+            setIsValid={setIsValueValid}
+            disabled={gasParamsLoading || txState !== TxState.FillingForm}
+          />
         </form>
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
