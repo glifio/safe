@@ -225,6 +225,16 @@ export const Create = () => {
             setIsValid={setIsValueValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
           />
+          <InputV2.Number
+            label='Vest (# blocks)'
+            min={0}
+            value={vest}
+            onBlur={setParamsIfChanged}
+            onEnter={setParamsIfChanged}
+            onChange={setVest}
+            setIsValid={setIsVestValid}
+            disabled={gasParamsLoading || txState !== TxState.FillingForm}
+          />
         </form>
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
