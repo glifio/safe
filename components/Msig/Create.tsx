@@ -37,12 +37,25 @@ export const Create = ({
   const [isVestValid, setIsVestValid] = useState<boolean>(false)
   const [isEpochValid, setIsEpochValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
-  const [isSignersValid, setIsSignersValid] = useState<boolean>(false)
+  const [areSignersValid, setAreSignersValid] = useState<Array<boolean>>([false])
   const [isApprovalsValid, setIsApprovalsValid] = useState<boolean>(false)
+  const areAllSignersValid = useMemo<boolean>(() => !areSignersValid.includes(false), [areSignersValid])
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
+
+  const onSignerChange = (index: number, value: string) => {
+
+  }
+
+  const setIsSignerValid = (index: number, valid: boolean) => {
+    
+  }
+
+  const onSignerDelete = (index: number) => {
+    
+  }
 
   // Placeholder message for getting gas params
   const message = useMemo<Message | null>(
@@ -50,8 +63,8 @@ export const Create = ({
       isVestValid &&
       isEpochValid &&
       isValueValid &&
-      isSignersValid &&
       isApprovalsValid &&
+      areAllSignersValid &&
       value
         ? new Message({
             to: EXEC_ACTOR,
@@ -77,8 +90,8 @@ export const Create = ({
       isVestValid,
       isEpochValid,
       isValueValid,
-      isSignersValid,
       isApprovalsValid,
+      areAllSignersValid,
       vest,
       epoch,
       value,
@@ -122,8 +135,21 @@ export const Create = ({
       pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance address={wallet.address} balance={wallet.balance} />
+      {signers.map((signer, index) => (
+        <InputV2.Address
+          key={index}
+          label={`Signer #${index}${index === 0 ? ' (you)' : ''}`}
+          value={signer}
+          onChange={value => onSignerChange(index, value)}
+          setIsValid={valid => setIsSignerValid(index, valid)}
+          disabled={index === 0 || txState !== TxState.FillingForm}
+          deletable={index !== 0}
+          onDelete={() => onSignerDelete(index)}
+        />
+      ))}
       <InputV2.Number
         label='Required Approvals'
+        autofocus
         min={1}
         max={signers.length}
         value={approvals}
