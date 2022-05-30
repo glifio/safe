@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react'
+import PropTypes from 'prop-types'
+import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
@@ -23,14 +24,10 @@ import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
 
-interface WithdrawParams {
-  to: string
-  value: string
-  method: MsigMethod
-  params: string
-}
-
-export const Withdraw = () => {
+export const Withdraw = ({
+  walletProviderOpts,
+  pendingMsgContext
+}: WithdrawProps) => {
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -193,4 +190,14 @@ export const Withdraw = () => {
       />
     </Transaction.Form>
   )
+}
+
+interface WithdrawProps {
+  walletProviderOpts?: WalletProviderOpts
+  pendingMsgContext?: Context<PendingMsgContextType>
+}
+
+Withdraw.propTypes = {
+  walletProviderOpts: PropTypes.object,
+  pendingMsgContext: PropTypes.object
 }
