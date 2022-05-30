@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
-import { ConnectLedger as ConnectLedgerComponent } from '@glif/wallet-provider-react'
 import {
+  ConnectWallet,
   OneColumnCentered,
   useChromeDesktopBrowser
 } from '@glif/react-components'
@@ -26,7 +26,7 @@ export default function ConnectLedger() {
   return (
     <SafePage>
       <OneColumnCentered>
-        <ConnectLedgerComponent back={back} next={next} />
+        <ConnectWallet.Ledger back={back} next={next} />
       </OneColumnCentered>
     </SafePage>
   )

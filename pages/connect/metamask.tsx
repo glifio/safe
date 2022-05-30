@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
-import { OneColumnCentered, useDesktopBrowser } from '@glif/react-components'
-import { ConnectMM } from '@glif/wallet-provider-react'
+import { ConnectWallet, OneColumnCentered, useDesktopBrowser } from '@glif/react-components'
 import { useRouter } from 'next/router'
 import SafePage from '../../components/SafePage'
 import useReset from '../../utils/useReset'
@@ -22,7 +21,7 @@ export default function ConnectMetaMask() {
   return (
     <SafePage>
       <OneColumnCentered>
-        <ConnectMM next={next} back={back} />
+        <ConnectWallet.MetaMask next={next} back={back} />
       </OneColumnCentered>
     </SafePage>
   )
