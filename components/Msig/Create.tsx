@@ -32,29 +32,37 @@ export const Create = ({
   const [vest, setVest] = useState<number>(0)
   const [epoch, setEpoch] = useState<number>(0)
   const [value, setValue] = useState<FilecoinNumber | null>(null)
-  const [signers, setSigners] = useState<Array<string>>([wallet.address])
+  const [signers, setSigners] = useState<string[]>([wallet.address])
   const [approvals, setApprovals] = useState<number>(1)
   const [isVestValid, setIsVestValid] = useState<boolean>(false)
   const [isEpochValid, setIsEpochValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
-  const [areSignersValid, setAreSignersValid] = useState<Array<boolean>>([false])
+  const [areSignersValid, setAreSignersValid] = useState<boolean[]>([false])
   const [isApprovalsValid, setIsApprovalsValid] = useState<boolean>(false)
-  const areAllSignersValid = useMemo<boolean>(() => !areSignersValid.includes(false), [areSignersValid])
+  const areAllSignersValid = useMemo<boolean>(
+    () => !areSignersValid.includes(false),
+    [areSignersValid]
+  )
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
   const onSignerChange = (index: number, value: string) => {
-
+    signers[index] = value
+    setSigners([...signers])
   }
 
   const setIsSignerValid = (index: number, valid: boolean) => {
-    
+    areSignersValid[index] = valid
+    setAreSignersValid([...areSignersValid])
   }
 
   const onSignerDelete = (index: number) => {
-    
+    signers.splice(index, 1)
+    setSigners([...signers])
+    areSignersValid.splice(index, 1)
+    setAreSignersValid([...areSignersValid])
   }
 
   // Placeholder message for getting gas params
@@ -140,8 +148,8 @@ export const Create = ({
           key={index}
           label={`Signer #${index}${index === 0 ? ' (you)' : ''}`}
           value={signer}
-          onChange={value => onSignerChange(index, value)}
-          setIsValid={valid => setIsSignerValid(index, valid)}
+          onChange={(value) => onSignerChange(index, value)}
+          setIsValid={(valid) => setIsSignerValid(index, valid)}
           disabled={index === 0 || txState !== TxState.FillingForm}
           deletable={index !== 0}
           onDelete={() => onSignerDelete(index)}
