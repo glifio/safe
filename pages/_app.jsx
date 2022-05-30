@@ -5,14 +5,12 @@ import React from 'react'
 import {
   theme,
   ThemeProvider,
-  PendingMessageProvider
+  PendingMessageProvider,
+  WalletProviderWrapper,
+  BalancePoller
 } from '@glif/react-components'
 import Script from 'next/script'
 
-import {
-  WalletProviderWrapper,
-  BalancePoller
-} from '@glif/wallet-provider-react'
 import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
 import { MsigProviderWrapper } from '../MsigProvider'

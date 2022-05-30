@@ -143,15 +143,53 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   color: var(--red-medium);
 }
 
-.c3 .text-input-wrapper {
+.c3 .button-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.c3 .button-wrapper > *:first-child {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c3 .button-wrapper > *:not(:first-child) {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+}
+
+.c3 .button-wrapper > *:not(:first-child):hover:not(:active) {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.c3 .button-wrapper > *:not(:first-child):active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c3 .unit-wrapper {
   position: relative;
 }
 
-.c3 .text-input-wrapper input {
+.c3 .unit-wrapper input {
   width: 100%;
 }
 
-.c3 .text-input-wrapper .unit {
+.c3 .unit-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -186,7 +224,7 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   margin: 0;
 }
 
-.c1 > header:first-child {
+.c1 header:first-child {
   margin: -1.5em -1.5em 1.5em -1.5em;
   padding: 1.5em;
   background-color: var(--purple-medium);
@@ -257,20 +295,24 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
         </span>
         
         <div
-          class="text-input-wrapper"
+          class="button-wrapper"
         >
-          <input
-            class=""
-            max=""
-            min=""
-            name="safe-id"
-            placeholder="f2..."
-            step=""
-            style="padding-right: 1em;"
-            type="text"
-            value="f2yrhsjwuwypy4gsv2lcikphizkusqe2gp3pp4w5q"
-          />
-          
+          <div
+            class="unit-wrapper"
+          >
+            <input
+              class=""
+              max=""
+              min=""
+              name="safe-id"
+              placeholder="f2..."
+              step=""
+              style="padding-right: 1em;"
+              type="text"
+              value="f2yrhsjwuwypy4gsv2lcikphizkusqe2gp3pp4w5q"
+            />
+            
+          </div>
         </div>
         
       </label>
@@ -453,15 +495,53 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   color: var(--red-medium);
 }
 
-.c3 .text-input-wrapper {
+.c3 .button-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.c3 .button-wrapper > *:first-child {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c3 .button-wrapper > *:not(:first-child) {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+}
+
+.c3 .button-wrapper > *:not(:first-child):hover:not(:active) {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.c3 .button-wrapper > *:not(:first-child):active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c3 .unit-wrapper {
   position: relative;
 }
 
-.c3 .text-input-wrapper input {
+.c3 .unit-wrapper input {
   width: 100%;
 }
 
-.c3 .text-input-wrapper .unit {
+.c3 .unit-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -497,7 +577,7 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   margin: 0;
 }
 
-.c1 > header:first-child {
+.c1 header:first-child {
   margin: -1.5em -1.5em 1.5em -1.5em;
   padding: 1.5em;
   background-color: var(--purple-medium);
@@ -568,20 +648,24 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
         </span>
         
         <div
-          class="text-input-wrapper"
+          class="button-wrapper"
         >
-          <input
-            class="error"
-            max=""
-            min=""
-            name="safe-id"
-            placeholder="f2..."
-            step=""
-            style="padding-right: 1em;"
-            type="text"
-            value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
-          />
-          
+          <div
+            class="unit-wrapper"
+          >
+            <input
+              class="error"
+              max=""
+              min=""
+              name="safe-id"
+              placeholder="f2..."
+              step=""
+              style="padding-right: 1em;"
+              type="text"
+              value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
+            />
+            
+          </div>
         </div>
         <span
           class="error"
@@ -769,15 +853,53 @@ exports[`Choose it renders the initial state correctly 1`] = `
   color: var(--red-medium);
 }
 
-.c3 .text-input-wrapper {
+.c3 .button-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.c3 .button-wrapper > *:first-child {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c3 .button-wrapper > *:not(:first-child) {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+}
+
+.c3 .button-wrapper > *:not(:first-child):hover:not(:active) {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.c3 .button-wrapper > *:not(:first-child):active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c3 .unit-wrapper {
   position: relative;
 }
 
-.c3 .text-input-wrapper input {
+.c3 .unit-wrapper input {
   width: 100%;
 }
 
-.c3 .text-input-wrapper .unit {
+.c3 .unit-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -812,7 +934,7 @@ exports[`Choose it renders the initial state correctly 1`] = `
   margin: 0;
 }
 
-.c1 > header:first-child {
+.c1 header:first-child {
   margin: -1.5em -1.5em 1.5em -1.5em;
   padding: 1.5em;
   background-color: var(--purple-medium);
@@ -883,20 +1005,24 @@ exports[`Choose it renders the initial state correctly 1`] = `
         </span>
         
         <div
-          class="text-input-wrapper"
+          class="button-wrapper"
         >
-          <input
-            class=""
-            max=""
-            min=""
-            name="safe-id"
-            placeholder="f2..."
-            step=""
-            style="padding-right: 1em;"
-            type="text"
-            value=""
-          />
-          
+          <div
+            class="unit-wrapper"
+          >
+            <input
+              class=""
+              max=""
+              min=""
+              name="safe-id"
+              placeholder="f2..."
+              step=""
+              style="padding-right: 1em;"
+              type="text"
+              value=""
+            />
+            
+          </div>
         </div>
         
       </label>

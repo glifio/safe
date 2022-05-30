@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumnCentered } from '@glif/react-components'
+import { OneColumnCentered, RequireWallet } from '@glif/react-components'
 
 import SafePage from '../../components/SafePage'
 import { Create } from '../../components/Msig/Create'

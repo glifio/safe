@@ -3,6 +3,8 @@ import { BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import {
+  useWalletProvider,
+  useWallet,
   Form,
   Card,
   StyledATag,
@@ -17,12 +19,7 @@ import {
   ErrorCard,
   MessagePending as MessagePendingGQL
 } from '@glif/react-components'
-import {
-  useWalletProvider,
-  useWallet,
-  ConfirmationCard,
-  CustomizeFee
-} from '@glif/wallet-provider-react'
+import { ConfirmationCard, CustomizeFee } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import truncateAddress from '../../../utils/truncateAddress'

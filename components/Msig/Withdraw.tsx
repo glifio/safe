@@ -1,44 +1,32 @@
-import { useState, useMemo } from 'react'
+import PropTypes from 'prop-types'
+import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
-import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
-import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import {
-  getMaxGasFee,
-  useGetGasParams,
-  useSubmittedMessages,
+  useWallet,
   InputV2,
-  Dialog,
-  ShadowBox,
   Transaction,
-  LoginOption,
-  MessagePending,
   MsigMethod,
-  TxState
+  TxState,
+  WalletProviderOpts,
+  PendingMsgContextType
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
-import { logger } from '../../logger'
 
-interface WithdrawParams {
-  to: string
-  value: string
-  method: MsigMethod
-  params: string
-}
-
-export const Withdraw = () => {
+export const Withdraw = ({
+  walletProviderOpts,
+  pendingMsgContext
+}: WithdrawProps) => {
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
   const { Address, AvailableBalance } = useMsig()
-  const { pushPendingMessage } = useSubmittedMessages()
-  const { loginOption, walletProvider, walletError, getProvider } =
-    useWalletProvider()
 
   // Input states
   const [toAddress, setToAddress] = useState<string>('')
@@ -48,171 +36,92 @@ export const Withdraw = () => {
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
-  const [txError, setTxError] = useState<Error | null>(null)
+  const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  // Params to pass with the withdraw message
-  const [params, setParams] = useState<WithdrawParams | null>(null)
-
-  // Prevent redundant updates to params so that we don't
-  // invoke the useGetGasParams hook more than necessary
-  const setParamsIfChanged = () => {
-    if (!isToAddressValid || !isValueValid) {
-      setParams(null)
-      return
-    }
-    if (
-      !params ||
-      params.to !== toAddress ||
-      params.value !== value.toAttoFil()
-    )
-      setParams({
-        to: toAddress,
-        value: value.toAttoFil(),
-        method: MsigMethod.WITHDRAW,
-        params: ''
-      })
-  }
-
-  // Placeholder message for getting gas params
+  // Create message from input
   const message = useMemo<Message | null>(
     () =>
-      params
+      isToAddressValid && isValueValid && value
         ? new Message({
             to: Address,
             from: wallet.address,
             nonce: 0,
             value: 0,
             method: 2,
-            params: Buffer.from(serializeParams(params), 'hex').toString(
-              'base64'
-            ),
+            params: Buffer.from(
+              serializeParams({
+                to: toAddress,
+                value: value.toAttoFil(),
+                method: MsigMethod.WITHDRAW,
+                params: ''
+              }),
+              'hex'
+            ).toString('base64'),
             gasPremium: 0,
             gasFeeCap: 0,
             gasLimit: 0
           })
         : null,
-    [params, Address, wallet.address, serializeParams]
+    [
+      isToAddressValid,
+      isValueValid,
+      toAddress,
+      Address,
+      wallet.address,
+      value,
+      serializeParams
+    ]
   )
-
-  // Max transaction fee used for getting gas params. Will be
-  // null until the user manually changes the transaction fee.
-  const [maxFee, setMaxFee] = useState<FilecoinNumber | null>(null)
-
-  // Load gas parameters when message or max fee changes
-  const {
-    gasParams,
-    loading: gasParamsLoading,
-    error: gasParamsError
-  } = useGetGasParams(walletProvider, message, maxFee)
-
-  // Calculate maximum transaction fee (fee cap times limit)
-  const calculatedFee = useMemo<FilecoinNumber | null>(() => {
-    return gasParams
-      ? getMaxGasFee(gasParams.gasFeeCap, gasParams.gasLimit)
-      : null
-  }, [gasParams])
-
-  // Attempt sending message
-  const onSend = async () => {
-    setTxState(TxState.LoadingTxDetails)
-    setTxError(null)
-    const provider = await getProvider()
-    const newMessage = new Message({
-      to: message.to,
-      from: message.from,
-      nonce: await provider.getNonce(wallet.address),
-      value: message.value,
-      method: message.method,
-      params: message.params,
-      gasPremium: gasParams.gasPremium.toAttoFil(),
-      gasFeeCap: gasParams.gasFeeCap.toAttoFil(),
-      gasLimit: new BigNumber(gasParams.gasLimit.toAttoFil()).toNumber()
-    })
-    try {
-      setTxState(TxState.AwaitingConfirmation)
-      const lotusMessage = newMessage.toLotusType()
-      const signedMessage = await provider.wallet.sign(
-        wallet.address,
-        lotusMessage
-      )
-      setTxState(TxState.MPoolPushing)
-      const msgValid = await provider.simulateMessage(lotusMessage)
-      if (!msgValid) {
-        throw new Error('Filecoin message invalid. No gas or fees were spent.')
-      }
-      const msgCid = await provider.sendMessage(signedMessage)
-      pushPendingMessage(
-        newMessage.toPendingMessage(msgCid['/']) as MessagePending
-      )
-      navigate(router, { pageUrl: PAGE.MSIG_HISTORY })
-    } catch (e: any) {
-      logger.error(e)
-      setTxState(TxState.FillingForm)
-      setTxError(e)
-    }
-  }
 
   return (
-    <Dialog>
-      <Transaction.Header
-        txState={txState}
-        title='Withdraw Filecoin'
-        description='Please enter the message details below'
-        loginOption={loginOption as LoginOption}
-        msig
-        method={MsigMethod.WITHDRAW}
-        errorMessage={
-          gasParamsError?.message || txError?.message || walletError() || ''
-        }
+    <Transaction.Form
+      title='Withdraw Filecoin'
+      description='Please enter the message details below'
+      msig={true}
+      method={MsigMethod.WITHDRAW}
+      message={message}
+      total={value}
+      txState={txState}
+      setTxState={setTxState}
+      maxFee={wallet.balance}
+      txFee={txFee}
+      setTxFee={setTxFee}
+      onComplete={() => navigate(router, { pageUrl: PAGE.MSIG_HISTORY })}
+      walletProviderOpts={walletProviderOpts}
+      pendingMsgContext={pendingMsgContext}
+    >
+      <Transaction.Balance
+        address={Address}
+        balance={wallet.balance}
+        msigBalance={AvailableBalance}
       />
-      <ShadowBox>
-        <Transaction.Balance
-          address={Address}
-          balance={wallet.balance}
-          msigBalance={AvailableBalance}
-        />
-        <form>
-          <InputV2.Address
-            label='Recipient'
-            autofocus
-            value={toAddress}
-            onBlur={setParamsIfChanged}
-            onEnter={setParamsIfChanged}
-            onChange={setToAddress}
-            setIsValid={setIsToAddressValid}
-            disabled={gasParamsLoading || txState !== TxState.FillingForm}
-          />
-          <InputV2.Filecoin
-            label='Amount'
-            max={AvailableBalance}
-            value={value}
-            denom='fil'
-            onBlur={setParamsIfChanged}
-            onEnter={setParamsIfChanged}
-            onChange={setValue}
-            setIsValid={setIsValueValid}
-            disabled={gasParamsLoading || txState !== TxState.FillingForm}
-          />
-          <Transaction.Fee
-            maxFee={maxFee}
-            setMaxFee={setMaxFee}
-            affordableFee={wallet.balance}
-            calculatedFee={calculatedFee}
-            gasLoading={gasParamsLoading}
-            disabled={gasParamsLoading || txState !== TxState.FillingForm}
-          />
-        </form>
-        {(gasParamsLoading || calculatedFee) && (
-          <Transaction.Total total={value} />
-        )}
-      </ShadowBox>
-      <Transaction.Buttons
-        cancelDisabled={txState !== TxState.FillingForm}
-        sendDisabled={
-          txState !== TxState.FillingForm || gasParamsLoading || !calculatedFee
-        }
-        onClickSend={onSend}
+      <InputV2.Address
+        label='Recipient'
+        autofocus={true}
+        value={toAddress}
+        onChange={setToAddress}
+        setIsValid={setIsToAddressValid}
+        disabled={txState !== TxState.FillingForm}
       />
-    </Dialog>
+      <InputV2.Filecoin
+        label='Amount'
+        max={AvailableBalance}
+        value={value}
+        denom='fil'
+        onChange={setValue}
+        setIsValid={setIsValueValid}
+        disabled={txState !== TxState.FillingForm}
+      />
+    </Transaction.Form>
   )
+}
+
+interface WithdrawProps {
+  walletProviderOpts?: WalletProviderOpts
+  pendingMsgContext?: Context<PendingMsgContextType>
+}
+
+Withdraw.propTypes = {
+  walletProviderOpts: PropTypes.object,
+  pendingMsgContext: PropTypes.object
 }
