@@ -44,7 +44,7 @@ export const WalletProviderContext = createContext({
   ...walletProviderInitialState
 })
 
-const WalletProviderWrapper = ({
+export const WalletProviderWrapper = ({
   children,
   options,
   initialState,
