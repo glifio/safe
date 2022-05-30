@@ -49,27 +49,33 @@ export const Create = ({
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
   const onChangeSigner = (index: number, value: string) => {
-    signers[index] = value
-    setSigners([...signers])
+    const newSigners = [...signers]
+    newSigners[index] = value
+    setSigners(newSigners)
   }
 
   const setIsSignerValid = (index: number, valid: boolean) => {
-    areSignersValid[index] = valid
-    setAreSignersValid([...areSignersValid])
+    const newAreSignersValid = [...areSignersValid]
+    newAreSignersValid[index] = valid
+    setAreSignersValid(newAreSignersValid)
   }
 
   const onDeleteSigner = (index: number) => {
-    signers.splice(index, 1)
-    setSigners([...signers])
-    areSignersValid.splice(index, 1)
-    setAreSignersValid([...areSignersValid])
+    const newSigners = [...signers]
+    const newAreSignersValid = [...areSignersValid]
+    newSigners.splice(index, 1)
+    newAreSignersValid.splice(index, 1)
+    setSigners(newSigners)
+    setAreSignersValid(newAreSignersValid)
   }
 
   const onAddSigner = () => {
-    signers.push('')
-    setSigners([...signers])
-    areSignersValid.push(false)
-    setAreSignersValid([...areSignersValid])
+    const newSigners = [...signers]
+    const newAreSignersValid = [...areSignersValid]
+    newSigners.push('')
+    newAreSignersValid.push(false)
+    setSigners(newSigners)
+    setAreSignersValid(newAreSignersValid)
   }
 
   // Placeholder message for getting gas params
