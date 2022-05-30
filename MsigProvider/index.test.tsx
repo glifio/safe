@@ -4,9 +4,10 @@ import { SWRConfig } from 'swr'
 import { act, renderHook } from '@testing-library/react-hooks'
 import { cleanup } from '@testing-library/react'
 import { ReactNode } from 'react'
-import WalletProviderWrapper, {
+import {
+  WalletProviderWrapper,
   initialState as _walletProviderInitialState
-} from '../node_modules/@glif/react-components/dist/services/WalletProvider/state'
+} from '@glif/react-components'
 
 import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'

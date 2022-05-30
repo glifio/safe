@@ -1,8 +1,9 @@
 import { renderHook, act } from '@testing-library/react-hooks'
 import useReset from '.'
-import WalletProviderWrapper, {
+import {
+  WalletProviderWrapper,
   initialState as _walletProviderInitialState
-} from '../../node_modules/@glif/react-components/dist/services/WalletProvider/state'
+} from '@glif/react-components'
 
 import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
 

@@ -1,12 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import WalletProviderWrapper, {
-  initialState as walletProviderInitialState
-} from '../../node_modules/@glif/react-components/dist/services/WalletProvider/state'
 import {
   theme,
   ThemeProvider,
-  PendingMessageProvider
+  PendingMessageProvider,
+  WalletProviderWrapper,
+  initialState as walletProviderInitialState
 } from '@glif/react-components'
 import { MockedProvider } from '@apollo/client/testing'
 import { WasmContext } from '../../lib/WasmLoader'
