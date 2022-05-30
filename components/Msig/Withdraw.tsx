@@ -159,7 +159,7 @@ export const Withdraw = () => {
         title='Withdraw Filecoin'
         description='Please enter the message details below'
         loginOption={loginOption as LoginOption}
-        msig={true}
+        msig
         method={MsigMethod.WITHDRAW}
         errorMessage={
           gasParamsError?.message || txError?.message || walletError() || ''
@@ -174,7 +174,7 @@ export const Withdraw = () => {
         <form>
           <InputV2.Address
             label='Recipient'
-            autofocus={true}
+            autofocus
             value={toAddress}
             onBlur={setParamsIfChanged}
             onEnter={setParamsIfChanged}

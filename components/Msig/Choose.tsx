@@ -62,11 +62,11 @@ export const Choose = () => {
           <InputV2.Address
             name='safe-id'
             label='Please enter your Safe ID below to continue'
-            vertical={true}
-            centered={true}
-            autofocus={true}
+            vertical
+            centered
+            autofocus
             truncate={false}
-            actor={true}
+            actor
             value={safeID}
             onChange={setSafeID}
             setIsValid={setIsSafeIDValid}

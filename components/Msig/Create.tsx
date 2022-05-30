@@ -198,7 +198,7 @@ export const Create = () => {
         title='Create Safe'
         description='Please enter the details for your new Safe below'
         loginOption={loginOption as LoginOption}
-        msig={true}
+        msig
         method={MsigMethod.CONSTRUCTOR}
         errorMessage={
           gasParamsError?.message || txError?.message || walletError() || ''
