@@ -48,7 +48,7 @@ export const Create = ({
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  const onSignerChange = (index: number, value: string) => {
+  const onChangeSigner = (index: number, value: string) => {
     signers[index] = value
     setSigners([...signers])
   }
@@ -58,10 +58,17 @@ export const Create = ({
     setAreSignersValid([...areSignersValid])
   }
 
-  const onSignerDelete = (index: number) => {
+  const onDeleteSigner = (index: number) => {
     signers.splice(index, 1)
     setSigners([...signers])
     areSignersValid.splice(index, 1)
+    setAreSignersValid([...areSignersValid])
+  }
+
+  const onAddSigner = () => {
+    signers.push('')
+    setSigners([...signers])
+    areSignersValid.push(false)
     setAreSignersValid([...areSignersValid])
   }
 
@@ -148,16 +155,20 @@ export const Create = ({
           key={index}
           label={`Signer #${index}${index === 0 ? ' (you)' : ''}`}
           value={signer}
-          onChange={(value) => onSignerChange(index, value)}
+          onChange={(value) => onChangeSigner(index, value)}
           setIsValid={(valid) => setIsSignerValid(index, valid)}
           disabled={index === 0 || txState !== TxState.FillingForm}
           deletable={index !== 0}
-          onDelete={() => onSignerDelete(index)}
+          onDelete={() => onDeleteSigner(index)}
         />
       ))}
+      <InputV2.Button
+        value='Add Signer'
+        onClick={onAddSigner}
+        disabled={txState !== TxState.FillingForm}
+      />
       <InputV2.Number
         label='Required Approvals'
-        autofocus
         min={1}
         max={signers.length}
         value={approvals}
@@ -167,6 +178,7 @@ export const Create = ({
       />
       <InputV2.Filecoin
         label='Deposit Amount'
+        autofocus
         max={wallet.balance}
         value={value}
         denom='fil'
