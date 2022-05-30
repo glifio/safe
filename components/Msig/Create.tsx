@@ -1,4 +1,5 @@
-import { useState, useMemo, useCallback } from 'react'
+import PropTypes from 'prop-types'
+import { useState, useMemo, useCallback, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
@@ -15,7 +16,9 @@ import {
   Transaction,
   LoginOption,
   MsigMethod,
-  TxState
+  TxState,
+  WalletProviderOpts,
+  PendingMsgContextType
 } from '@glif/react-components'
 
 interface CreateParams {
@@ -31,7 +34,7 @@ import { navigate } from '../../utils/urlParams'
 import { PAGE, EXEC_ACTOR } from '../../constants'
 import { logger } from '../../logger'
 
-export const Create = () => {
+export const Create = ({ walletProviderOpts, pendingMsgContext }: CreateProps) => {
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -272,4 +275,14 @@ export const Create = () => {
       />
     </Dialog>
   )
+}
+
+interface CreateProps {
+  walletProviderOpts?: WalletProviderOpts
+  pendingMsgContext?: Context<PendingMsgContextType>
+}
+
+Create.propTypes = {
+  walletProviderOpts: PropTypes.object,
+  pendingMsgContext: PropTypes.object
 }
