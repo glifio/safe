@@ -153,7 +153,7 @@ export const Create = ({
       {signers.map((signer, index) => (
         <InputV2.Address
           key={index}
-          label={`Signer #${index}${index === 0 ? ' (you)' : ''}`}
+          label={`Signer ${index + 1}${index === 0 ? ' (you)' : ''}`}
           value={signer}
           onChange={(value) => onChangeSigner(index, value)}
           setIsValid={(valid) => setIsSignerValid(index, valid)}
