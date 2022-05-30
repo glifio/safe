@@ -153,66 +153,44 @@ export const Withdraw = () => {
   }
 
   return (
-    <Dialog>
-      <Transaction.Header
-        txState={txState}
-        title='Withdraw Filecoin'
-        description='Please enter the message details below'
-        loginOption={loginOption as LoginOption}
-        msig={true}
-        method={MsigMethod.WITHDRAW}
-        errorMessage={
-          gasParamsError?.message || txError?.message || walletError() || ''
-        }
+    <Transaction.Form
+      title='Withdraw Filecoin'
+      description='Please enter the message details below'
+      msig={true}
+      method={MsigMethod.WITHDRAW}
+      message={message}
+      total={value}
+      txState={txState}
+      setTxState={setTxState}
+      maxFee={wallet.balance}
+      txFee={txFee}
+      setTxFee={setTxFee}
+      onComplete={() => navigate(router, { pageUrl: PAGE.MSIG_HISTORY })}
+      walletProviderOpts={walletProviderOpts}
+      pendingMsgContext={pendingMsgContext}
+    >
+      <Transaction.Balance
+        address={Address}
+        balance={wallet.balance}
+        msigBalance={AvailableBalance}
       />
-      <ShadowBox>
-        <Transaction.Balance
-          address={Address}
-          balance={wallet.balance}
-          msigBalance={AvailableBalance}
-        />
-        <form>
-          <InputV2.Address
-            label='Recipient'
-            autofocus={true}
-            value={toAddress}
-            onBlur={setParamsIfChanged}
-            onEnter={setParamsIfChanged}
-            onChange={setToAddress}
-            setIsValid={setIsToAddressValid}
-            disabled={gasParamsLoading || txState !== TxState.FillingForm}
-          />
-          <InputV2.Filecoin
-            label='Amount'
-            max={AvailableBalance}
-            value={value}
-            denom='fil'
-            onBlur={setParamsIfChanged}
-            onEnter={setParamsIfChanged}
-            onChange={setValue}
-            setIsValid={setIsValueValid}
-            disabled={gasParamsLoading || txState !== TxState.FillingForm}
-          />
-          <Transaction.Fee
-            maxFee={maxFee}
-            setMaxFee={setMaxFee}
-            affordableFee={wallet.balance}
-            calculatedFee={calculatedFee}
-            gasLoading={gasParamsLoading}
-            disabled={gasParamsLoading || txState !== TxState.FillingForm}
-          />
-        </form>
-        {(gasParamsLoading || calculatedFee) && (
-          <Transaction.Total total={value} />
-        )}
-      </ShadowBox>
-      <Transaction.Buttons
-        cancelDisabled={txState !== TxState.FillingForm}
-        sendDisabled={
-          txState !== TxState.FillingForm || gasParamsLoading || !calculatedFee
-        }
-        onClickSend={onSend}
+      <InputV2.Address
+        label='Recipient'
+        autofocus={true}
+        value={toAddress}
+        onChange={setToAddress}
+        setIsValid={setIsToAddressValid}
+        disabled={txState !== TxState.FillingForm}
       />
-    </Dialog>
+      <InputV2.Filecoin
+        label='Amount'
+        max={AvailableBalance}
+        value={value}
+        denom='fil'
+        onChange={setValue}
+        setIsValid={setIsValueValid}
+        disabled={txState !== TxState.FillingForm}
+      />
+    </Transaction.Form>
   )
 }
