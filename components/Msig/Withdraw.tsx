@@ -77,7 +77,7 @@ export const Withdraw = ({
     <Transaction.Form
       title='Withdraw Filecoin'
       description='Please enter the message details below'
-      msig={true}
+      msig
       method={MsigMethod.WITHDRAW}
       message={message}
       total={value}
@@ -97,7 +97,7 @@ export const Withdraw = ({
       />
       <InputV2.Address
         label='Recipient'
-        autofocus={true}
+        autofocus
         value={toAddress}
         onChange={setToAddress}
         setIsValid={setIsToAddressValid}
