@@ -1,5 +1,9 @@
 import { useCallback } from 'react'
-import { ConnectWallet, OneColumnCentered, useDesktopBrowser } from '@glif/react-components'
+import {
+  ConnectWallet,
+  OneColumnCentered,
+  useDesktopBrowser
+} from '@glif/react-components'
 import { useRouter } from 'next/router'
 import SafePage from '../../components/SafePage'
 import useReset from '../../utils/useReset'

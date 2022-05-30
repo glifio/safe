@@ -1,7 +1,12 @@
 import { useCallback } from 'react'
 import { CoinType } from '@glif/filecoin-address'
 import { useRouter } from 'next/router'
-import { OneColumn, AccountSelector, RequireWallet, useDesktopBrowser } from '@glif/react-components'
+import {
+  OneColumn,
+  AccountSelector,
+  RequireWallet,
+  useDesktopBrowser
+} from '@glif/react-components'
 import { PAGE } from '../constants'
 import { navigate } from '../utils/urlParams'
 import SafePage from '../components/SafePage'

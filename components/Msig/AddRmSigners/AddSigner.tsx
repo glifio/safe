@@ -4,6 +4,8 @@ import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
 import {
+  useWalletProvider,
+  useWallet,
   Box,
   Button,
   Form,
@@ -12,12 +14,7 @@ import {
   MessagePending as MessagePendingGQL,
   ErrorCard
 } from '@glif/react-components'
-import {
-  useWalletProvider,
-  useWallet,
-  ConfirmationCard,
-  CustomizeFee
-} from '@glif/wallet-provider-react'
+import { ConfirmationCard, CustomizeFee } from '@glif/wallet-provider-react'
 
 import { logger } from '../../../logger'
 import { useMsig } from '../../../MsigProvider'

@@ -5,6 +5,8 @@ import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import {
+  useWalletProvider,
+  useWallet,
   Box,
   Button,
   ButtonClose,
@@ -16,12 +18,7 @@ import {
   ErrorCard,
   Label
 } from '@glif/react-components'
-import {
-  useWalletProvider,
-  useWallet,
-  ConfirmationCard,
-  CustomizeFee
-} from '@glif/wallet-provider-react'
+import { ConfirmationCard, CustomizeFee } from '@glif/wallet-provider-react'
 
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'

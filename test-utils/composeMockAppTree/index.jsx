@@ -2,7 +2,7 @@
 import React from 'react'
 import WalletProviderWrapper, {
   initialState as walletProviderInitialState
-} from '@glif/wallet-provider-react'
+} from '../../node_modules/@glif/react-components/dist/services/WalletProvider/state'
 import {
   theme,
   ThemeProvider,

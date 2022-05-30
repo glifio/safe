@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import { Address, Message } from '@glif/filecoin-message'
 import {
+  useWalletProvider,
+  useWallet,
   Box,
   Button,
   StepHeader,
@@ -19,12 +21,7 @@ import {
   Badge,
   AddressLink
 } from '@glif/react-components'
-import {
-  useWalletProvider,
-  useWallet,
-  ConfirmationCard,
-  CustomizeFee
-} from '@glif/wallet-provider-react'
+import { ConfirmationCard, CustomizeFee } from '@glif/wallet-provider-react'
 
 import { logger } from '../../../logger'
 import { useMsig } from '../../../MsigProvider'

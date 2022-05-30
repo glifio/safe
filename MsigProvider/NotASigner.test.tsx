@@ -5,7 +5,7 @@ import { cleanup } from '@testing-library/react'
 import { ReactNode } from 'react'
 import WalletProviderWrapper, {
   initialState as _walletProviderInitialState
-} from '@glif/wallet-provider-react'
+} from '../node_modules/@glif/react-components/dist/services/WalletProvider/state'
 
 import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'

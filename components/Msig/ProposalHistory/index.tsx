@@ -3,9 +3,9 @@ import {
   Box,
   ProposalDetail,
   ProposalHistoryTable,
-  MsigTransaction
+  MsigTransaction,
+  useWallet
 } from '@glif/react-components'
-import { useWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import { useMsig } from '../../../MsigProvider'

@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import { useCallback, useMemo, useState } from 'react'
-import { ButtonV2, ButtonV2Link } from '@glif/react-components'
 import {
+  ButtonV2,
+  ButtonV2Link,
   useWallet,
   useWalletProvider,
   reportLedgerConfigError
-} from '@glif/wallet-provider-react'
+} from '@glif/react-components'
 
 import { PAGE } from '../../../constants'
 import { Address, Signers } from '../Shared'
