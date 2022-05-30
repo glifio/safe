@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
-import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumnCentered } from '@glif/react-components'
+import { OneColumnCentered, RequireWallet } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
 import MsigHome from '../components/Msig/Home'

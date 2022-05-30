@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumn } from '@glif/react-components'
+import { OneColumn, RequireWallet } from '@glif/react-components'
 import MsigHistory from '../components/Msig/MessageHistory'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
