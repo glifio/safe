@@ -64,7 +64,7 @@ export const Choose = () => {
             label='Please enter your Safe ID below to continue'
             vertical
             centered
-            autofocus
+            autoFocus
             truncate={false}
             actor
             value={safeID}

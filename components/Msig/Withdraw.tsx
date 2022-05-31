@@ -97,7 +97,7 @@ export const Withdraw = ({
       />
       <InputV2.Address
         label='Recipient'
-        autofocus
+        autoFocus
         value={toAddress}
         onChange={setToAddress}
         setIsValid={setIsToAddressValid}

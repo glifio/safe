@@ -184,7 +184,7 @@ export const Create = ({
       />
       <InputV2.Filecoin
         label='Deposit Amount'
-        autofocus
+        autoFocus
         max={wallet.balance}
         value={value}
         denom='fil'
