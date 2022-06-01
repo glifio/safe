@@ -22,22 +22,22 @@ export const CreateConfirm = () => {
   const [confirming, setConfirming] = useState(false)
   const { setMsigActor, Address } = useMsig()
   const router = useRouter()
+  const { cid } = router.query
+  const {
+    NEXT_PUBLIC_EXPLORER_URL: explorerUrl,
+    NEXT_PUBLIC_LOTUS_NODE_JSONRPC: apiAddress
+  } = process.env
 
   useEffect(() => {
     const confirm = async () => {
-      const confirmed = await confirmMessage(router.query.cid as string, {
-        apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
-      })
-
+      const confirmed = await confirmMessage(cid as string, { apiAddress })
       if (confirmed) {
-        const lCli = new LotusRPCEngine({
-          apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
-        })
-        const receipt = (await lCli.request(
-          'StateGetReceipt',
-          { '/': router.query.cid },
-          null
-        )) as { ExitCode: number; GasUsed: number; Return: string }
+        const lCli = new LotusRPCEngine({ apiAddress })
+        const receipt = await lCli.request<{
+          ExitCode: number
+          GasUsed: number
+          Return: string
+        }>('StateGetReceipt', { '/': cid }, null)
 
         if (receipt.ExitCode === 0) {
           const { robust } = getAddrFromReceipt(receipt.Return)
@@ -49,14 +49,11 @@ export const CreateConfirm = () => {
       }
     }
 
-    if (!Address && !confirming && router.query.cid) {
+    if (!Address && !confirming && cid) {
       setConfirming(true)
       confirm()
     }
-  }, [router.query.cid, Address, setMsigActor, confirming, setConfirming])
-
-  const { cid } = router.query
-  const { NEXT_PUBLIC_EXPLORER_URL: explorerUrl } = process.env
+  }, [cid, apiAddress, Address, setMsigActor, confirming, setConfirming])
 
   // CID was not provided in query parameters
   if (!cid) {
@@ -82,8 +79,8 @@ export const CreateConfirm = () => {
         </ShadowBox>
         <ErrorBox>
           <p>
-            An error occurred while creating your safe. Click on the CID
-            below to view the transaction in the Glif Explorer:
+            An error occurred while creating your safe. Click on the CID below
+            to view the transaction in the Glif Explorer:
           </p>
           <p>
             <SmartLink href={`${explorerUrl}/message/?cid=${cid}`}>
