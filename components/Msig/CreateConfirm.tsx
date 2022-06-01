@@ -1,17 +1,9 @@
-import { SyntheticEvent, useEffect, useState } from 'react'
-import { func, string } from 'prop-types'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import confirmMessage from '@glif/filecoin-message-confirmer'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import {
-  Card,
-  Box,
   IconPending,
-  StyledATag,
-  Button,
-  Text,
-  Glyph,
-  Title,
   Dialog,
   ShadowBox,
   ButtonRowCenter,
@@ -24,40 +16,6 @@ import { useMsig } from '../../MsigProvider'
 import { PAGE } from '../../constants'
 import { navigate } from '../../utils/urlParams'
 import getAddrFromReceipt from '../../utils/getAddrFromReceipt'
-
-const NextOption = ({
-  text,
-  onClick
-}: {
-  text: string
-  onClick: (_: SyntheticEvent) => void
-}) => {
-  return (
-    <Button
-      title={text}
-      display='flex'
-      flexWrap='wrap'
-      alignItems='center'
-      mr={2}
-      my={3}
-      bg='core.transparent'
-      borderColor='core.primary'
-      color='core.primary'
-      opacity='1'
-      onClick={onClick}
-      css={`
-        &:hover {
-          cursor: pointer;
-        }
-      `}
-    />
-  )
-}
-
-NextOption.propTypes = {
-  text: string.isRequired,
-  onClick: func.isRequired
-}
 
 export const CreateConfirm = () => {
   const [msigError, setMsigError] = useState(false)
