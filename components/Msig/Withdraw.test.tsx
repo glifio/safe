@@ -58,7 +58,7 @@ describe('Withdraw', () => {
           />
         </Tree>
       )
-      
+
       await flushPromises()
 
       // Get HTML elements
