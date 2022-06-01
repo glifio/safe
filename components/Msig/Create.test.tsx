@@ -20,11 +20,7 @@ import {
   PendingMsgContext
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import {
-  flushPromises,
-  WALLET_ADDRESS,
-  MULTISIG_ACTOR_ADDRESS
-} from '../../test-utils'
+import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
 import truncateAddress from '../../utils/truncateAddress'
 import { Create } from './Create'
 
