@@ -80,7 +80,10 @@ export const Create = ({
       isEpochValid &&
       isValueValid &&
       isApprovalsValid &&
+      // Manually check signer validity to prevent passing invalid addresses to createMultisig.
+      // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
       !signers.some((signer) => !validateAddressString(signer)) &&
+      // For the same reason, check whether value is a FileCoinNumber and not null
       value
         ? new Message({
             to: EXEC_ACTOR,
