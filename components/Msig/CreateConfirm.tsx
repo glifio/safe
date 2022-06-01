@@ -58,6 +58,7 @@ export const CreateConfirm = () => {
   const { cid } = router.query
   const { NEXT_PUBLIC_EXPLORER_URL: explorerUrl } = process.env
 
+  // CID was not provided in query parameters
   if (!cid) {
     return (
       <Dialog>
@@ -70,6 +71,7 @@ export const CreateConfirm = () => {
     )
   }
 
+  // Something went wrong while creating the safe
   if (msigError) {
     return (
       <Dialog>
@@ -93,6 +95,7 @@ export const CreateConfirm = () => {
     )
   }
 
+  // The safe has been successfully created
   if (Address) {
     return (
       <Dialog>
@@ -119,6 +122,7 @@ export const CreateConfirm = () => {
     )
   }
 
+  // The safe creation is in progress
   return (
     <Dialog>
       <ShadowBox>
