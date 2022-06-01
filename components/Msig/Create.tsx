@@ -3,6 +3,7 @@ import { useState, useMemo, Context, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { validateAddressString } from '@glif/filecoin-address'
 import {
   useWallet,
   getMaxAffordableFee,
@@ -19,11 +20,6 @@ import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE, EXEC_ACTOR } from '../../constants'
 
-interface Signer {
-  address: string
-  isValid: boolean
-}
-
 export const Create = ({
   walletProviderOpts,
   pendingMsgContext
@@ -37,18 +33,11 @@ export const Create = ({
   const [vest, setVest] = useState<number>(0)
   const [epoch, setEpoch] = useState<number>(0)
   const [value, setValue] = useState<FilecoinNumber | null>(null)
-  const [signers, setSigners] = useState<Array<Signer>>([
-    {
-      // The first signer will be the safe creator
-      address: wallet.address,
-      isValid: false
-    }
-  ])
+  const [signers, setSigners] = useState<Array<string>>([wallet.address])
   const [approvals, setApprovals] = useState<number>(1)
   const [isVestValid, setIsVestValid] = useState<boolean>(false)
   const [isEpochValid, setIsEpochValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
-  const [areSignersValid, setAreSignersValid] = useState<boolean>(false)
   const [isApprovalsValid, setIsApprovalsValid] = useState<boolean>(false)
 
   // Transaction states
@@ -63,26 +52,24 @@ export const Create = ({
     }
   }, [vest, setEpoch, setIsEpochValid])
 
+  // Update a signer address
   const onChangeSigner = (index: number, value: string) => {
     const newSigners = [...signers]
-    newSigners[index].address = value
+    newSigners[index] = value
     setSigners(newSigners)
   }
 
-  const setIsSignerValid = (index: number, valid: boolean) => {
-    signers[index].isValid = valid
-    setAreSignersValid(!signers.find((signer) => !signer.isValid))
-  }
-
+  // Delete a signer
   const onDeleteSigner = (index: number) => {
     const newSigners = [...signers]
     newSigners.splice(index, 1)
     setSigners(newSigners)
   }
 
+  // Add a signer
   const onAddSigner = () => {
     const newSigners = [...signers]
-    newSigners.push({ address: '', isValid: false })
+    newSigners.push('')
     setSigners(newSigners)
   }
 
@@ -93,7 +80,7 @@ export const Create = ({
       isEpochValid &&
       isValueValid &&
       isApprovalsValid &&
-      areSignersValid &&
+      !signers.some((signer) => !validateAddressString(signer)) &&
       value
         ? new Message({
             to: EXEC_ACTOR,
@@ -103,7 +90,7 @@ export const Create = ({
             method: 2,
             params: createMultisig(
               wallet.address,
-              signers.map((signer) => signer.address),
+              [...signers],
               value.toAttoFil(),
               approvals,
               0,
@@ -120,7 +107,6 @@ export const Create = ({
       isEpochValid,
       isValueValid,
       isApprovalsValid,
-      areSignersValid,
       vest,
       epoch,
       value,
@@ -168,9 +154,8 @@ export const Create = ({
         <InputV2.Address
           key={index}
           label={`Signer ${index + 1}${index === 0 ? ' (you)' : ''}`}
-          value={signer.address}
+          value={signer}
           onChange={(value) => onChangeSigner(index, value)}
-          setIsValid={(valid) => setIsSignerValid(index, valid)}
           disabled={index === 0 || txState !== TxState.FillingForm}
           deletable={index !== 0}
           onDelete={() => onDeleteSigner(index)}
