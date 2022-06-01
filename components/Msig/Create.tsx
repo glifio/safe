@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState, useMemo, Context } from 'react'
+import { useState, useMemo, Context, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
@@ -77,6 +77,14 @@ export const Create = ({
     newSigners.push({ address: '', isValid: false })
     setSigners(newSigners)
   }
+
+  // Reset epoch when vest is "0"
+  useEffect(() => {
+    if (vest === 0) {
+      setEpoch(0)
+      setIsEpochValid(true)
+    }
+  }, [vest, setEpoch, setIsEpochValid])
 
   // Placeholder message for getting gas params
   const message = useMemo<Message | null>(
