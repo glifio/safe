@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import confirmMessage from '@glif/filecoin-message-confirmer'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
@@ -26,8 +26,8 @@ export const CreateConfirm = () => {
   const { NEXT_PUBLIC_EXPLORER_URL: explorerUrl } = process.env
   const { NEXT_PUBLIC_LOTUS_NODE_JSONRPC: apiAddress } = process.env
 
-  useEffect(() => {
-    const confirm = async () => {
+  const confirm = useCallback(async () => {
+    try {
       const confirmed = await confirmMessage(cid as string, { apiAddress })
       if (confirmed) {
         const lCli = new LotusRPCEngine({ apiAddress })
@@ -53,13 +53,17 @@ export const CreateConfirm = () => {
         // Set safe address
         setMsigActor(robust)
       }
+    } catch(e) {
+      setMsigError(true)
     }
+  }, [cid, apiAddress, setMsigActor])
 
+  useEffect(() => {
     if (!Address && !confirming && cid) {
       setConfirming(true)
       confirm()
     }
-  }, [cid, apiAddress, Address, setMsigActor, confirming, setConfirming])
+  }, [cid, Address, confirming, setConfirming, confirm])
 
   // CID was not provided in query parameters
   if (!cid) {
