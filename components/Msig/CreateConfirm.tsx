@@ -23,10 +23,8 @@ export const CreateConfirm = () => {
   const { setMsigActor, Address } = useMsig()
   const router = useRouter()
   const { cid } = router.query
-  const {
-    NEXT_PUBLIC_EXPLORER_URL: explorerUrl,
-    NEXT_PUBLIC_LOTUS_NODE_JSONRPC: apiAddress
-  } = process.env
+  const { NEXT_PUBLIC_EXPLORER_URL: explorerUrl } = process.env
+  const { NEXT_PUBLIC_LOTUS_NODE_JSONRPC: apiAddress } = process.env
 
   useEffect(() => {
     const confirm = async () => {
