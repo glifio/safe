@@ -60,14 +60,17 @@ describe('Create', () => {
           />
         </Tree>
       )
-      
+
       await flushPromises()
 
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const signer1 = getByRole(result.container, 'textbox')
       const addSigner = getByText(result.container, 'Add Signer')
-      const [approvals, amount, vest] = getAllByRole(result.container, 'spinbutton')
+      const [approvals, amount, vest] = getAllByRole(
+        result.container,
+        'spinbutton'
+      )
       const cancel = getByText(result.container, 'Cancel')
       const review = getByText(result.container, 'Review')
 
@@ -91,7 +94,7 @@ describe('Create', () => {
       expect(signer2).toBeEnabled()
       expect(signer2).toHaveDisplayValue('')
       expect(review).toBeDisabled()
-      
+
       // Enter second signer address
       signer2.focus()
       fireEvent.change(signer2, { target: { value: validAddress } })
@@ -100,7 +103,7 @@ describe('Create', () => {
       // Review should not be enabled yet
       await flushPromises()
       expect(review).toBeDisabled()
-      
+
       // Increment required approvals
       approvals.focus()
       fireEvent.change(approvals, { target: { value: '2' } })
