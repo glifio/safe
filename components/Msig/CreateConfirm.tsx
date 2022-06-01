@@ -100,7 +100,19 @@ export const CreateConfirm = () => {
   const { cid } = router.query
   const { NEXT_PUBLIC_EXPLORER_URL: explorerUrl } = process.env
 
-  if (msigError || !cid) {
+  if (!cid) {
+    return (
+      <Dialog>
+        <ShadowBox>
+          <h2>Safe creation status unknown</h2>
+          <hr />
+          <p>Missing CID for monitoring safe creation</p>
+        </ShadowBox>
+      </Dialog>
+    )
+  }
+
+  if (msigError) {
     return (
       <Dialog>
         <ShadowBox>
@@ -109,21 +121,15 @@ export const CreateConfirm = () => {
           <p>Something went wrong</p>
         </ShadowBox>
         <ErrorBox>
-          {cid ? (
-            <>
-              <p>
-                An error occurred while creating your safe. Click on the CID
-                below to view the transaction in the Glif Explorer:
-              </p>
-              <p>
-                <SmartLink href={`${explorerUrl}/message/?cid=${cid}`}>
-                  {cid}
-                </SmartLink>
-              </p>
-            </>
-          ) : (
-            'Missing CID for monitoring safe creation'
-          )}
+          <p>
+            An error occurred while creating your safe. Click on the CID
+            below to view the transaction in the Glif Explorer:
+          </p>
+          <p>
+            <SmartLink href={`${explorerUrl}/message/?cid=${cid}`}>
+              {cid}
+            </SmartLink>
+          </p>
         </ErrorBox>
       </Dialog>
     )
