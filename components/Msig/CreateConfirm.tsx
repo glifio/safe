@@ -53,7 +53,7 @@ export const CreateConfirm = () => {
         // Set safe address
         setMsigActor(robust)
       }
-    } catch(e) {
+    } catch (e) {
       setMsigError(true)
     }
   }, [cid, apiAddress, setMsigActor])
