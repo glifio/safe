@@ -55,6 +55,14 @@ export const Create = ({
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
+  // Reset epoch when vest is "0"
+  useEffect(() => {
+    if (vest === 0) {
+      setEpoch(0)
+      setIsEpochValid(true)
+    }
+  }, [vest, setEpoch, setIsEpochValid])
+
   const onChangeSigner = (index: number, value: string) => {
     const newSigners = [...signers]
     newSigners[index].address = value
@@ -77,14 +85,6 @@ export const Create = ({
     newSigners.push({ address: '', isValid: false })
     setSigners(newSigners)
   }
-
-  // Reset epoch when vest is "0"
-  useEffect(() => {
-    if (vest === 0) {
-      setEpoch(0)
-      setIsEpochValid(true)
-    }
-  }, [vest, setEpoch, setIsEpochValid])
 
   // Placeholder message for getting gas params
   const message = useMemo<Message | null>(
