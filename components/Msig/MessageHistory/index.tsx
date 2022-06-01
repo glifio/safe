@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, MessageHistoryTable, MessageDetail } from '@glif/react-components'
 import { useRouter } from 'next/router'
 

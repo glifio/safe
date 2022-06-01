@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, Button, BigTitle, Title, IconGlif } from '@glif/react-components'
 
 const CantLoadWasm = () => (

@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useMemo } from 'react'
+import { useCallback, useState, useMemo } from 'react'
 import { Message } from '@glif/filecoin-message'
 import { BigNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'

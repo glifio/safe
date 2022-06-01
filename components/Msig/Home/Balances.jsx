@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { Box, Button, Num, Title } from '@glif/react-components'

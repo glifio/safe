@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { OneColumnCentered, RequireWallet } from '@glif/react-components'
 

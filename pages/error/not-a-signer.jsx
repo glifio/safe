@@ -1,4 +1,3 @@
-import React from 'react'
 import { useRouter } from 'next/router'
 import { ErrorView, OneColumnCentered } from '@glif/react-components'
 import SafePage from '../../components/SafePage'

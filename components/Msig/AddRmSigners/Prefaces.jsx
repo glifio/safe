@@ -1,4 +1,3 @@
-import React from 'react'
 import { oneOf } from 'prop-types'
 import { Warning } from '@glif/react-components'
 

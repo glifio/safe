@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { OneColumn, RequireWallet } from '@glif/react-components'
 import { useRouter } from 'next/router'
 import SafePageLoggedIn from '../components/SafePageLoggedIn'

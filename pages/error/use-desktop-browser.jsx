@@ -1,4 +1,3 @@
-import React from 'react'
 import { IconGlif, Box, BigTitle, Title, Button } from '@glif/react-components'
 import { OneColumnCentered } from '@glif/react-components'
 import SafePage from '../../components/SafePage'
