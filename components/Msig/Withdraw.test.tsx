@@ -58,6 +58,8 @@ describe('Withdraw', () => {
           />
         </Tree>
       )
+      
+      await flushPromises()
 
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
