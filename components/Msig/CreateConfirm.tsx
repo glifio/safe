@@ -37,13 +37,21 @@ export const CreateConfirm = () => {
           Return: string
         }>('StateGetReceipt', { '/': cid }, null)
 
-        if (receipt.ExitCode === 0) {
-          const { robust } = getAddrFromReceipt(receipt.Return)
-          if (robust) setMsigActor(robust)
-          else setMsigError(true)
-        } else {
+        // Verify exit code
+        if (receipt.ExitCode !== 0) {
           setMsigError(true)
+          return
         }
+
+        // Verify address
+        const { robust } = getAddrFromReceipt(receipt.Return)
+        if (!robust) {
+          setMsigError(true)
+          return
+        }
+
+        // Set safe address
+        setMsigActor(robust)
       }
     }
 
