@@ -1,14 +1,15 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { OneColumnCentered, RequireWallet } from '@glif/react-components'
+
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import MsigChangeSigner from '../components/Msig/ChangeSigner'
+import { ChangeSigner } from '../components/Msig/ChangeSigner'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
-const ChangeSigner = () => {
+const ChangeSignerPage = () => {
   const router = useRouter()
-  const address = router.query?.address || ''
+  const address = router.query.address || ''
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
     [router]
@@ -17,11 +18,11 @@ const ChangeSigner = () => {
     <SafePageLoggedIn>
       <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
-          <MsigChangeSigner oldSignerAddress={address} />
+          <ChangeSigner oldSignerAddress={address as string} />
         </RequireWallet>
       </OneColumnCentered>
     </SafePageLoggedIn>
   )
 }
 
-export default ChangeSigner
+export default ChangeSignerPage
