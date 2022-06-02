@@ -101,7 +101,7 @@ export const RemoveSigner = ({
       pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance
-        address={Address}
+        address={wallet.address}
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />
