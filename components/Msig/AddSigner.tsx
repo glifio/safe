@@ -16,7 +16,7 @@ import {
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
-import { MSIG_METHOD, PAGE } from '../../constants'
+import { PAGE } from '../../constants'
 
 export const AddSigner = ({
   walletProviderOpts,
@@ -46,12 +46,12 @@ export const AddSigner = ({
             from: wallet.address,
             nonce: 0,
             value: 0,
-            method: 2,
+            method: MsigMethod.PROPOSE,
             params: Buffer.from(
               serializeParams({
                 to: Address,
                 value: '0',
-                method: MSIG_METHOD.ADD_SIGNER,
+                method: MsigMethod.ADD_SIGNER,
                 params: Buffer.from(
                   serializeParams({
                     signer,
