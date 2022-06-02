@@ -88,10 +88,7 @@ export const ApproveCancel = ({
   )
 
   // Get actor data from transaction
-  const {
-    data: actorData,
-    error: actorError
-  } = useActorQuery({
+  const { data: actorData, error: actorError } = useActorQuery({
     variables: { address: convertAddrToPrefix(transaction?.to.robust) },
     skip: !transaction?.to.robust
   })
@@ -104,7 +101,7 @@ export const ApproveCancel = ({
 
   // Set TxState.FillingForm when actor name has loaded
   useEffect(() => actorName && setTxState(TxState.FillingForm), [actorName])
-  
+
   // Set TxState.LoadingFailed when actor name failed to load
   useEffect(() => actorError && setTxState(TxState.LoadingFailed), [actorError])
 
