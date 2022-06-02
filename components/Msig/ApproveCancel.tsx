@@ -9,6 +9,7 @@ import {
   useActorQuery,
   useWallet,
   Transaction,
+  Parameters,
   MsigMethod,
   TxState,
   WalletProviderOpts,
@@ -129,6 +130,9 @@ export const ApproveCancel = ({
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />
+      {transaction && actorName && (
+        <Parameters params={transaction} depth={0} actorName={actorName} />
+      )}
     </Transaction.Form>
   )
 }
