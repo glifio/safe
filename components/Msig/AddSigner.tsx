@@ -67,14 +67,7 @@ export const AddSigner = ({
             gasLimit: 0
           })
         : null,
-    [
-      isSignerValid,
-      signer,
-      increase,
-      Address,
-      wallet.address,
-      serializeParams
-    ]
+    [isSignerValid, signer, increase, Address, wallet.address, serializeParams]
   )
 
   return (

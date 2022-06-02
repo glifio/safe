@@ -1,5 +1,3 @@
-import { FilecoinNumber } from '@glif/filecoin-number'
-
 /* WALLET TYPES */
 export const HD_WALLET = 'HD_WALLET'
 export const SINGLE_KEY = 'SINGLE_KEY'

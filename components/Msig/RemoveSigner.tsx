@@ -27,11 +27,14 @@ export const RemoveSigner = ({
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
-  const { Address, AvailableBalance, Signers, NumApprovalsThreshold } = useMsig()
+  const { Address, AvailableBalance, Signers, NumApprovalsThreshold } =
+    useMsig()
 
   // Input states
   const [signer, setSigner] = useState<string>(signerAddress)
-  const [decrease, setDecrease] = useState<boolean>(Signers.length === NumApprovalsThreshold)
+  const [decrease, setDecrease] = useState<boolean>(
+    Signers.length === NumApprovalsThreshold
+  )
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
@@ -48,38 +51,33 @@ export const RemoveSigner = ({
 
   // Create message from input
   const message = useMemo<Message | null>(
-    () => new Message({
+    () =>
+      new Message({
+        to: Address,
+        from: wallet.address,
+        nonce: 0,
+        value: 0,
+        method: MsigMethod.PROPOSE,
+        params: Buffer.from(
+          serializeParams({
             to: Address,
-            from: wallet.address,
-            nonce: 0,
-            value: 0,
-            method: MsigMethod.PROPOSE,
+            value: '0',
+            method: MsigMethod.REMOVE_SIGNER,
             params: Buffer.from(
               serializeParams({
-                to: Address,
-                value: '0',
-                method: MsigMethod.REMOVE_SIGNER,
-                params: Buffer.from(
-                  serializeParams({
-                    signer,
-                    decrease
-                  }),
-                  'hex'
-                ).toString('base64')
+                signer,
+                decrease
               }),
               'hex'
-            ).toString('base64'),
-            gasPremium: 0,
-            gasFeeCap: 0,
-            gasLimit: 0
+            ).toString('base64')
           }),
-    [
-      signer,
-      decrease,
-      Address,
-      wallet.address,
-      serializeParams
-    ]
+          'hex'
+        ).toString('base64'),
+        gasPremium: 0,
+        gasFeeCap: 0,
+        gasLimit: 0
+      }),
+    [signer, decrease, Address, wallet.address, serializeParams]
   )
 
   return (
@@ -119,7 +117,10 @@ export const RemoveSigner = ({
         info={`From ${NumApprovalsThreshold} to ${NumApprovalsThreshold - 1}`}
         checked={decrease}
         onChange={setDecrease}
-        disabled={txState !== TxState.FillingForm || Signers.length === NumApprovalsThreshold}
+        disabled={
+          txState !== TxState.FillingForm ||
+          Signers.length === NumApprovalsThreshold
+        }
       />
     </Transaction.Form>
   )

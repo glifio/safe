@@ -26,7 +26,8 @@ export const ChangeApprovals = ({
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
-  const { Address, AvailableBalance, Signers, NumApprovalsThreshold } = useMsig()
+  const { Address, AvailableBalance, Signers, NumApprovalsThreshold } =
+    useMsig()
 
   // Input states
   const [approvals, setApprovals] = useState<number>(NumApprovalsThreshold)
@@ -65,13 +66,7 @@ export const ChangeApprovals = ({
             gasLimit: 0
           })
         : null,
-    [
-      isApprovalsValid,
-      approvals,
-      Address,
-      wallet.address,
-      serializeParams
-    ]
+    [isApprovalsValid, approvals, Address, wallet.address, serializeParams]
   )
 
   return (

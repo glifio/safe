@@ -76,9 +76,7 @@ export default function Owners() {
       <Wrapper>
         <TitleRow>
           <h3>Required Approvals: {NumApprovalsThreshold}</h3>
-          <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>
-            Edit
-          </ButtonV2Link>
+          <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>Edit</ButtonV2Link>
         </TitleRow>
         <Info>
           The number of approvals required for a Safe proposal to execute.
