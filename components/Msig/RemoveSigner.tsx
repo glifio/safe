@@ -88,7 +88,7 @@ export const RemoveSigner = ({
       description='Please select the signer address to remove below'
       warning="You're about to remove an owner from your Safe."
       msig
-      method={MsigMethod.WITHDRAW}
+      method={MsigMethod.REMOVE_SIGNER}
       message={message}
       total={txFee}
       txState={txState}
