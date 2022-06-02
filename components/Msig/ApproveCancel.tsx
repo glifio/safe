@@ -66,23 +66,25 @@ export const ApproveCancel = ({
   // Create message from input
   const message = useMemo<Message | null>(
     () =>
-      new Message({
-        to: Address,
-        from: wallet.address,
-        nonce: 0,
-        value: 0,
-        method,
-        params: Buffer.from(
-          serializeParams({
-            TxnID: transaction.id,
-            ProposalHashData: transaction.proposalHash
-          }),
-          'hex'
-        ).toString('base64'),
-        gasPremium: 0,
-        gasFeeCap: 0,
-        gasLimit: 0
-      }),
+      transaction
+        ? new Message({
+            to: Address,
+            from: wallet.address,
+            nonce: 0,
+            value: 0,
+            method,
+            params: Buffer.from(
+              serializeParams({
+                TxnID: transaction.id,
+                ProposalHashData: transaction.proposalHash
+              }),
+              'hex'
+            ).toString('base64'),
+            gasPremium: 0,
+            gasFeeCap: 0,
+            gasLimit: 0
+          })
+        : null,
     [Address, wallet.address, method, transaction, serializeParams]
   )
 
