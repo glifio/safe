@@ -112,6 +112,7 @@ export const ChangeSigner = ({
       />
       <InputV2.Select
         label='Old Signer'
+        address
         options={signers}
         value={oldSigner}
         onChange={setOldSigner}
