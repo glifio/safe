@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
-import { ADDRESS_PROPTYPE, Address as AddressType } from '@glif/react-components'
+import {
+  ADDRESS_PROPTYPE,
+  Address as AddressType
+} from '@glif/react-components'
 import Address from './Address'
 import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'

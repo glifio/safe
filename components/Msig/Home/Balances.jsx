@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { Box, Button, Num, Title, FILECOIN_NUMBER_PROPTYPE } from '@glif/react-components'
+import {
+  Box,
+  Button,
+  Num,
+  Title,
+  FILECOIN_NUMBER_PROPTYPE
+} from '@glif/react-components'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import { PAGE } from '../../../constants'
 import { navigate } from '../../../utils/urlParams'

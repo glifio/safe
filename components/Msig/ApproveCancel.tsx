@@ -29,26 +29,26 @@ export const ApproveCancel = ({
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
-  const { Address, AvailableBalance } =
-    useMsig()
+  const { Address, AvailableBalance } = useMsig()
 
   // Get transaction info from url
   const { proposal } = router.query
   const transaction = useMemo<MsigTxWithApprovals>(
     () => JSON.parse(decodeURI(proposal as string)),
-    [router]
+    [proposal]
   )
 
   // Get propperties from mode
-  const method = mode === ApproveCancelMode.APPROVE
-    ? MsigMethod.APPROVE
-    : MsigMethod.CANCEL
-  const title = mode === ApproveCancelMode.APPROVE
-    ? 'Approve Safe Proposal'
-    : 'Cancel Safe Proposal'
-  const description = mode === ApproveCancelMode.APPROVE
-    ? 'Please review the transaction to approve below'
-    : 'Please review the transaction to cancel below'
+  const method =
+    mode === ApproveCancelMode.APPROVE ? MsigMethod.APPROVE : MsigMethod.CANCEL
+  const title =
+    mode === ApproveCancelMode.APPROVE
+      ? 'Approve Safe Proposal'
+      : 'Cancel Safe Proposal'
+  const description =
+    mode === ApproveCancelMode.APPROVE
+      ? 'Please review the transaction to approve below'
+      : 'Please review the transaction to cancel below'
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
@@ -56,24 +56,25 @@ export const ApproveCancel = ({
 
   // Create message from input
   const message = useMemo<Message | null>(
-    () => new Message({
-      to: Address,
-      from: wallet.address,
-      nonce: 0,
-      value: 0,
-      method,
-      params: Buffer.from(
-        serializeParams({
-          TxnID: transaction.id,
-          ProposalHashData: transaction.proposalHash
-        }),
-        'hex'
-      ).toString('base64'),
-      gasPremium: 0,
-      gasFeeCap: 0,
-      gasLimit: 0
-    }),
-    [Address, wallet.address, method, serializeParams]
+    () =>
+      new Message({
+        to: Address,
+        from: wallet.address,
+        nonce: 0,
+        value: 0,
+        method,
+        params: Buffer.from(
+          serializeParams({
+            TxnID: transaction.id,
+            ProposalHashData: transaction.proposalHash
+          }),
+          'hex'
+        ).toString('base64'),
+        gasPremium: 0,
+        gasFeeCap: 0,
+        gasLimit: 0
+      }),
+    [Address, wallet.address, method, transaction, serializeParams]
   )
 
   return (

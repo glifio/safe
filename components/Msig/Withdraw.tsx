@@ -41,7 +41,7 @@ export const Withdraw = ({
   // Create message from input
   const message = useMemo<Message | null>(
     () =>
-      isValueValid && 
+      isValueValid &&
       // Manually check address validity to prevent passing invalid addresses to serializeParams.
       // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
       validateAddressString(toAddress) &&
@@ -67,14 +67,7 @@ export const Withdraw = ({
             gasLimit: 0
           })
         : null,
-    [
-      isValueValid,
-      toAddress,
-      Address,
-      wallet.address,
-      value,
-      serializeParams
-    ]
+    [isValueValid, toAddress, Address, wallet.address, value, serializeParams]
   )
 
   return (

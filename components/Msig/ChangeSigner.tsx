@@ -79,13 +79,7 @@ export const ChangeSigner = ({
             gasLimit: 0
           })
         : null,
-    [
-      oldSigner,
-      newSigner,
-      Address,
-      wallet.address,
-      serializeParams
-    ]
+    [oldSigner, newSigner, Address, wallet.address, serializeParams]
   )
 
   return (
