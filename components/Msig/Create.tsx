@@ -90,7 +90,7 @@ export const Create = ({
             from: wallet.address,
             nonce: 0,
             value: value.toAttoFil(),
-            method: 2,
+            method: MsigMethod.PROPOSE,
             params: createMultisig(
               wallet.address,
               [...signers],
