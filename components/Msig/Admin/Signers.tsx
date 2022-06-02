@@ -4,11 +4,11 @@ import {
   ADDRESS_PROPTYPE,
   Address as AddressType
 } from '@glif/react-components'
-import Address from './Address'
+import { Address } from './Address'
 import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
 
-const Signers = ({ signers }: { signers: AddressType[] }) => {
+export const Signers = ({ signers }: { signers: AddressType[] }) => {
   const router = useRouter()
   return (
     <>
@@ -48,5 +48,3 @@ Signers.propTypes = {
     })
   ).isRequired
 }
-
-export default Signers

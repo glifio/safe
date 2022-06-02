@@ -8,7 +8,7 @@ import {
   ADDRESS_PROPTYPE
 } from '@glif/react-components'
 
-const Address = ({
+export const Address = ({
   address,
   onRemoveSigner,
   onChangeSigner
@@ -66,5 +66,3 @@ Address.propTypes = {
   onRemoveSigner: PropTypes.func,
   onChangeSigner: PropTypes.func
 }
-
-export default Address

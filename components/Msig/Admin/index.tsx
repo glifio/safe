@@ -9,7 +9,8 @@ import {
 } from '@glif/react-components'
 
 import { PAGE } from '../../../constants'
-import { Address, Signers } from '../Shared'
+import { Address } from './Address'
+import { Signers } from './Signers'
 import { useMsig } from '../../../MsigProvider'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 
