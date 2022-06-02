@@ -4,6 +4,9 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import {
+  convertAddrToPrefix,
+  decodeActorCID,
+  useActorQuery,
   useWallet,
   Transaction,
   MsigMethod,
@@ -81,6 +84,21 @@ export const ApproveCancel = ({
           })
         : null,
     [Address, wallet.address, method, transaction, serializeParams]
+  )
+
+  // Get actor data from transaction
+  const {
+    data: actorData,
+    error: actorError
+  } = useActorQuery({
+    variables: { address: convertAddrToPrefix(transaction?.to.robust) },
+    skip: !transaction?.to.robust
+  })
+
+  // Get actor name from actor data
+  const actorName = useMemo<string>(
+    () => (actorData ? decodeActorCID(actorData.actor.Code) : ''),
+    [actorData]
   )
 
   return (
