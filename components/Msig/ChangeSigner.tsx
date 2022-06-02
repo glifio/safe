@@ -27,7 +27,7 @@ export const ChangeSigner = ({
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
-  const { Address, AvailableBalance } = useMsig()
+  const { Address, AvailableBalance, Signers } = useMsig()
 
   // Input states
   const [oldSigner, setOldSigner] = useState<string>(oldSignerAddress)
@@ -37,6 +37,15 @@ export const ChangeSigner = ({
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
+
+  // Get signer addresses without current wallet owner
+  const signers = useMemo<Array<string>>(
+    () =>
+      Signers.map((signer) => signer.robust).filter(
+        (signer) => signer !== wallet.address
+      ),
+    [Signers, wallet.address]
+  )
 
   // Create message from input
   const message = useMemo<Message | null>(
@@ -54,12 +63,12 @@ export const ChangeSigner = ({
                 value: '0',
                 method: MSIG_METHOD.SWAP_SIGNER,
                 params: Buffer.from(
-                    serializeParams({
-                      to: newSigner,
-                      from: oldSigner
-                    }),
-                    'hex'
-                  ).toString('base64')
+                  serializeParams({
+                    to: newSigner,
+                    from: oldSigner
+                  }),
+                  'hex'
+                ).toString('base64')
               }),
               'hex'
             ).toString('base64'),
@@ -103,6 +112,7 @@ export const ChangeSigner = ({
       />
       <InputV2.Select
         label='Old Signer'
+        options={signers}
         value={oldSigner}
         onChange={setOldSigner}
         disabled={txState !== TxState.FillingForm}
@@ -126,7 +136,7 @@ interface ChangeSignerProps {
 }
 
 ChangeSigner.propTypes = {
-  oldSignerAddress: PropTypes.string,
+  oldSignerAddress: PropTypes.string.isRequired,
   walletProviderOpts: PropTypes.object,
   pendingMsgContext: PropTypes.object
 }
