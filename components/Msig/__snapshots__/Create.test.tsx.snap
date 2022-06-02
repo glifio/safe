@@ -345,6 +345,31 @@ exports[`Create it allows a user to create a safe 1`] = `
   color: var(--gray-dark) !important;
 }
 
+.c7 .select-wrapper {
+  position: relative;
+}
+
+.c7 .select-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c7 .select-wrapper .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
+}
+
 .c9 .toggle-wrapper {
   position: relative;
   padding: 0.5em 0;
@@ -1104,6 +1129,31 @@ exports[`Create snapshots it renders the initial state correctly 1`] = `
   color: var(--gray-dark) !important;
 }
 
+.c5 .select-wrapper {
+  position: relative;
+}
+
+.c5 .select-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c5 .select-wrapper .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
+}
+
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1200,6 +1250,31 @@ exports[`Create snapshots it renders the initial state correctly 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: var(--purple-medium);
+}
+
+.c6 .select-wrapper {
+  position: relative;
+}
+
+.c6 .select-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c6 .select-wrapper .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
 }
 
 .c4 {

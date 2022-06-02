@@ -276,6 +276,31 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   color: var(--purple-medium);
 }
 
+.c3 .select-wrapper {
+  position: relative;
+}
+
+.c3 .select-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c3 .select-wrapper .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
+}
+
 <div
   class="c0"
 >
@@ -628,6 +653,31 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   transform: translateY(-50%);
   color: var(--purple-medium);
   color: var(--red-dark) !important;
+}
+
+.c3 .select-wrapper {
+  position: relative;
+}
+
+.c3 .select-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c3 .select-wrapper .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
 }
 
 <div
@@ -986,6 +1036,31 @@ exports[`Choose it renders the initial state correctly 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: var(--purple-medium);
+}
+
+.c3 .select-wrapper {
+  position: relative;
+}
+
+.c3 .select-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c3 .select-wrapper .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
 }
 
 <div
