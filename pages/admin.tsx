@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
-import { OneColumn, RequireWallet } from '@glif/react-components'
 import { useRouter } from 'next/router'
+import { OneColumn, RequireWallet } from '@glif/react-components'
+
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import MsigAdmin from '../components/Msig/Admin'
 import { navigate } from '../utils/urlParams'
