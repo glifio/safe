@@ -79,7 +79,7 @@ export const AddSigner = ({
 
   return (
     <Transaction.Form
-      title='Add a signer address'
+      title='Add a signer'
       description='Please enter the new signer address below'
       warning="You're about to add another signer to your Safe. Please make sure you know and trust the new owner as they will be able to withdraw funds from your Safe."
       msig

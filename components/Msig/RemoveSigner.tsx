@@ -84,8 +84,8 @@ export const RemoveSigner = ({
 
   return (
     <Transaction.Form
-      title='Add a signer address'
-      description='Please enter the new signer address below'
+      title='Remove a signer'
+      description='Please select the signer address to remove below'
       warning="You're about to remove an owner from your Safe."
       msig
       method={MsigMethod.WITHDRAW}
@@ -107,6 +107,7 @@ export const RemoveSigner = ({
       />
       <InputV2.Select
         label='Signer'
+        autoFocus
         address
         options={signers}
         value={signer}
