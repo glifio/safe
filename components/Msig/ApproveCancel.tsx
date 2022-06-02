@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState, useMemo, Context } from 'react'
+import { useState, useMemo, Context, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
@@ -100,6 +100,12 @@ export const ApproveCancel = ({
     () => (actorData ? decodeActorCID(actorData.actor.Code) : ''),
     [actorData]
   )
+
+  // Set TxState.FillingForm when actor name has loaded
+  useEffect(() => actorName && setTxState(TxState.FillingForm), [actorName])
+  
+  // Set TxState.LoadingFailed when actor name failed to load
+  useEffect(() => actorError && setTxState(TxState.LoadingFailed), [actorError])
 
   return (
     <Transaction.Form
