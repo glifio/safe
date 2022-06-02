@@ -31,13 +31,6 @@ export const ApproveCancel = ({
   const { serializeParams } = useWasm()
   const { Address, AvailableBalance } = useMsig()
 
-  // Get transaction info from url
-  const { proposal } = router.query
-  const transaction = useMemo<MsigTxWithApprovals>(
-    () => JSON.parse(decodeURI(proposal as string)),
-    [proposal]
-  )
-
   // Get propperties from mode
   const method =
     mode === ApproveCancelMode.APPROVE ? MsigMethod.APPROVE : MsigMethod.CANCEL
@@ -49,6 +42,13 @@ export const ApproveCancel = ({
     mode === ApproveCancelMode.APPROVE
       ? 'Please review the transaction to approve below'
       : 'Please review the transaction to cancel below'
+
+  // Get transaction info from url
+  const { proposal } = router.query
+  const transaction = useMemo<MsigTxWithApprovals>(
+    () => JSON.parse(decodeURI(proposal as string)),
+    [proposal]
+  )
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
