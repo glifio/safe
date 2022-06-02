@@ -47,7 +47,7 @@ export const Withdraw = ({
             from: wallet.address,
             nonce: 0,
             value: 0,
-            method: 2,
+            method: MsigMethod.PROPOSE,
             params: Buffer.from(
               serializeParams({
                 to: toAddress,
