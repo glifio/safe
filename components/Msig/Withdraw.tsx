@@ -41,9 +41,12 @@ export const Withdraw = ({
   // Create message from input
   const message = useMemo<Message | null>(
     () =>
+      isValueValid && 
       // Manually check address validity to prevent passing invalid addresses to serializeParams.
       // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
-      validateAddressString(toAddress) && isValueValid && value
+      validateAddressString(toAddress) &&
+      // For the same reason, check whether value is a FileCoinNumber and not null
+      value
         ? new Message({
             to: Address,
             from: wallet.address,
