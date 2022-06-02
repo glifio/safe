@@ -90,7 +90,7 @@ export const ChangeSigner = ({
   return (
     <Transaction.Form
       title='Change a signer address'
-      description='Please enter the message details below'
+      description='Please enter the new signer address below'
       warning="You're changing a signer of your multisig account to a new Filecoin address. Make sure you or someone you trust owns the private key to this new Filecoin address. If you or anyone else does not own this address, you could lose access to your funds permanently. There is no way to resolve this."
       msig
       method={MsigMethod.WITHDRAW}
