@@ -43,16 +43,25 @@ export const ApproveCancel = ({
       ? 'Please review the transaction to approve below'
       : 'Please review the transaction to cancel below'
 
+  // Transaction states
+  const [txLoadError, setTxLoadError] = useState<string>('')
+  const [txState, setTxState] = useState<TxState>(TxState.LoadingMessage)
+  const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
+
   // Get transaction info from url
   const { proposal } = router.query
-  const transaction = useMemo<MsigTxWithApprovals>(
-    () => JSON.parse(decodeURI(proposal as string)),
-    [proposal]
-  )
-
-  // Transaction states
-  const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
-  const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
+  const transaction = useMemo<MsigTxWithApprovals | null>(() => {
+    if (!proposal) {
+      setTxLoadError('Proposal data not found')
+      return null
+    }
+    try {
+      return JSON.parse(decodeURI(proposal as string))
+    } catch (e) {
+      setTxLoadError('Proposal data invalid')
+      return null
+    }
+  }, [proposal])
 
   // Create message from input
   const message = useMemo<Message | null>(
