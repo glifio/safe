@@ -3,11 +3,11 @@ import { useRouter } from 'next/router'
 import { OneColumnCentered, RequireWallet } from '@glif/react-components'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import { ChangeApprovalThreshold } from '../components/Msig/ChangeApprovalThreshold'
+import { ChangeApprovals } from '../components/Msig/ChangeApprovals'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
-const ChangeApprovalThresholdPage = () => {
+const ChangeApprovalsPage = () => {
   const router = useRouter()
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
@@ -17,11 +17,11 @@ const ChangeApprovalThresholdPage = () => {
     <SafePageLoggedIn>
       <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
-          <ChangeApprovalThreshold />
+          <ChangeApprovals />
         </RequireWallet>
       </OneColumnCentered>
     </SafePageLoggedIn>
   )
 }
 
-export default ChangeApprovalThresholdPage
+export default ChangeApprovalsPage

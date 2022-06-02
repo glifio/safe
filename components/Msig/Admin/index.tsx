@@ -76,7 +76,7 @@ export default function Owners() {
       <Wrapper>
         <TitleRow>
           <h3>Required Approvals: {NumApprovalsThreshold}</h3>
-          <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD}>
+          <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>
             Edit
           </ButtonV2Link>
         </TitleRow>
