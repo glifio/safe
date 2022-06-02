@@ -3,6 +3,7 @@ import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { validateAddressString } from '@glif/filecoin-address'
 import {
   useWallet,
   InputV2,
@@ -31,7 +32,6 @@ export const AddSigner = ({
   // Input states
   const [signer, setSigner] = useState<string>('')
   const [increase, setIncrease] = useState<boolean>(false)
-  const [isSignerValid, setIsSignerValid] = useState<boolean>(false)
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
@@ -40,7 +40,9 @@ export const AddSigner = ({
   // Create message from input
   const message = useMemo<Message | null>(
     () =>
-      isSignerValid
+      // Manually check signer validity to prevent passing invalid addresses to serializeParams.
+      // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
+      validateAddressString(signer)
         ? new Message({
             to: Address,
             from: wallet.address,
@@ -67,7 +69,7 @@ export const AddSigner = ({
             gasLimit: 0
           })
         : null,
-    [isSignerValid, signer, increase, Address, wallet.address, serializeParams]
+    [signer, increase, Address, wallet.address, serializeParams]
   )
 
   return (
@@ -98,7 +100,6 @@ export const AddSigner = ({
         autoFocus
         value={signer}
         onChange={setSigner}
-        setIsValid={setIsSignerValid}
         disabled={txState !== TxState.FillingForm}
       />
       <InputV2.Toggle

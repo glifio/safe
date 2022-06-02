@@ -3,6 +3,7 @@ import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { validateAddressString } from '@glif/filecoin-address'
 import {
   useWallet,
   InputV2,
@@ -31,7 +32,6 @@ export const Withdraw = ({
   // Input states
   const [toAddress, setToAddress] = useState<string>('')
   const [value, setValue] = useState<FilecoinNumber | null>(null)
-  const [isToAddressValid, setIsToAddressValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
 
   // Transaction states
@@ -41,7 +41,9 @@ export const Withdraw = ({
   // Create message from input
   const message = useMemo<Message | null>(
     () =>
-      isToAddressValid && isValueValid && value
+      // Manually check address validity to prevent passing invalid addresses to serializeParams.
+      // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
+      validateAddressString(toAddress) && isValueValid && value
         ? new Message({
             to: Address,
             from: wallet.address,
@@ -63,7 +65,6 @@ export const Withdraw = ({
           })
         : null,
     [
-      isToAddressValid,
       isValueValid,
       toAddress,
       Address,
@@ -100,7 +101,6 @@ export const Withdraw = ({
         autoFocus
         value={toAddress}
         onChange={setToAddress}
-        setIsValid={setIsToAddressValid}
         disabled={txState !== TxState.FillingForm}
       />
       <InputV2.Filecoin
