@@ -50,10 +50,6 @@ export const ApproveCancel = ({
   // Get transaction info from url
   const { proposal } = router.query
   const transaction = useMemo<MsigTxWithApprovals | null>(() => {
-    if (!proposal) {
-      setTxState(TxState.LoadingFailed)
-      return null
-    }
     try {
       return JSON.parse(decodeURI(proposal as string))
     } catch (e) {
