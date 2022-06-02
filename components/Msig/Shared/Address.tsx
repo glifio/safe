@@ -4,9 +4,9 @@ import {
   ButtonClose,
   ButtonEdit,
   AddressLink,
-  Address as AddressType
+  Address as AddressType,
+  ADDRESS_PROPTYPE
 } from '@glif/react-components'
-import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
 const Address = ({
   address,

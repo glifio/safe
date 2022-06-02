@@ -5,12 +5,10 @@ import {
   Text,
   Glyph,
   StepHeader,
-  StyledATag
-} from '@glif/react-components'
-import {
+  StyledATag,
   ADDRESS_PROPTYPE,
-  FILECOIN_NUMBER_PROP
-} from '../../../customPropTypes'
+  FILECOIN_NUMBER_PROPTYPE
+} from '@glif/react-components'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import truncateAddress from '../../../utils/truncateAddress'
 
@@ -69,8 +67,8 @@ export const CardHeader = ({ address, msigBalance, signerBalance, msig }) => {
 
 CardHeader.propTypes = {
   address: ADDRESS_PROPTYPE,
-  signerBalance: FILECOIN_NUMBER_PROP,
-  msigBalance: FILECOIN_NUMBER_PROP,
+  signerBalance: FILECOIN_NUMBER_PROPTYPE,
+  msigBalance: FILECOIN_NUMBER_PROPTYPE,
   msig: PropTypes.bool
 }
 
