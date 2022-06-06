@@ -25,7 +25,7 @@ import { PAGE } from '../../constants'
 type MsigTxWithApprovals = MsigTransaction & { approvalsUntilExecution: number }
 
 export const ApproveCancel = ({
-  mode,
+  method,
   walletProviderOpts,
   pendingMsgContext
 }: ApproveCancelProps) => {
@@ -34,18 +34,6 @@ export const ApproveCancel = ({
   // @ts-expect-error
   const { serializeParams } = useWasm()
   const { Address, AvailableBalance } = useMsig()
-
-  // Get propperties from mode
-  const method =
-    mode === ApproveCancelMode.APPROVE ? MsigMethod.APPROVE : MsigMethod.CANCEL
-  const title =
-    mode === ApproveCancelMode.APPROVE
-      ? 'Approve Safe Proposal'
-      : 'Cancel Safe Proposal'
-  const description =
-    mode === ApproveCancelMode.APPROVE
-      ? 'Please review the transaction to approve below'
-      : 'Please review the transaction to cancel below'
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.LoadingMessage)
@@ -107,8 +95,16 @@ export const ApproveCancel = ({
 
   return (
     <Transaction.Form
-      title={title}
-      description={description}
+      title={
+        method === MsigMethod.APPROVE
+          ? 'Approve Safe Proposal'
+          : 'Cancel Safe Proposal'
+      }
+      description={
+        MsigMethod.APPROVE
+          ? 'Please review the transaction to approve below'
+          : 'Please review the transaction to cancel below'
+      }
       msig
       method={method}
       message={message}
@@ -134,23 +130,14 @@ export const ApproveCancel = ({
   )
 }
 
-export enum ApproveCancelMode {
-  APPROVE = 'APPROVE',
-  CANCEL = 'CANCEL'
-}
-
-const APPROVE_CANCEL_MODE_PROPTYPE = PropTypes.oneOf(
-  Object.values(ApproveCancelMode) as Array<ApproveCancelMode>
-)
-
 interface ApproveCancelProps {
-  mode: ApproveCancelMode
+  method: MsigMethod.APPROVE | MsigMethod.CANCEL
   walletProviderOpts?: WalletProviderOpts
   pendingMsgContext?: Context<PendingMsgContextType>
 }
 
 ApproveCancel.propTypes = {
-  mode: APPROVE_CANCEL_MODE_PROPTYPE.isRequired,
+  method: PropTypes.oneOf([MsigMethod.APPROVE, MsigMethod.CANCEL]),
   walletProviderOpts: PropTypes.object,
   pendingMsgContext: PropTypes.object
 }
