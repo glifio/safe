@@ -5,9 +5,9 @@ import {
   Button,
   Num,
   Title,
+  makeFriendlyBalance,
   FILECOIN_NUMBER_PROPTYPE
 } from '@glif/react-components'
-import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import { PAGE } from '../../../constants'
 import { navigate } from '../../../utils/urlParams'
 
