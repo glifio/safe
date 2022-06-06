@@ -5,6 +5,7 @@ import {
   ButtonV2Link,
   useWallet,
   useWalletProvider,
+  convertAddrToPrefix,
   reportLedgerConfigError
 } from '@glif/react-components'
 
@@ -12,7 +13,6 @@ import { PAGE } from '../../../constants'
 import { Address } from './Address'
 import { Signers } from './Signers'
 import { useMsig } from '../../../MsigProvider'
-import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -58,13 +58,13 @@ export default function Owners() {
     return {
       additionalSigners: signers.filter(
         (signer) =>
-          converAddrToFPrefix(signer.robust) !==
-          converAddrToFPrefix(wallet.address)
+          convertAddrToPrefix(signer.robust) !==
+          convertAddrToPrefix(wallet.address)
       ),
       userSigner: signers.find(
         (signer) =>
-          converAddrToFPrefix(signer.robust) ===
-          converAddrToFPrefix(wallet.address)
+          convertAddrToPrefix(signer.robust) ===
+          convertAddrToPrefix(wallet.address)
       )
     }
   }, [signers, wallet])

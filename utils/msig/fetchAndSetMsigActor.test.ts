@@ -1,6 +1,7 @@
 jest.mock('@glif/filecoin-rpc-client')
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
-import converAddrToFPrefix from '../convertAddrToFPrefix'
+import { convertAddrToPrefix } from '@glif/react-components'
+
 import fetchAndSetMsigActor from './fetchAndSetMsigActor'
 import { MULTISIG_ACTOR_ADDRESS } from '../../test-utils'
 
@@ -28,7 +29,7 @@ describe('fetchMsigState', () => {
       errorSpy
     )
 
-    expect(converAddrToFPrefix(successSpy.mock.calls[0][0])).toBe(
+    expect(convertAddrToPrefix(successSpy.mock.calls[0][0])).toBe(
       MULTISIG_ACTOR_ADDRESS
     )
   }, 12500)
