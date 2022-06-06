@@ -31,7 +31,6 @@ export const ChangeApprovals = ({
 
   // Input states
   const [approvals, setApprovals] = useState<number>(NumApprovalsThreshold)
-  const [isApprovalsValid, setIsApprovalsValid] = useState<boolean>(false)
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
@@ -40,33 +39,31 @@ export const ChangeApprovals = ({
   // Create message from input
   const message = useMemo<Message | null>(
     () =>
-      isApprovalsValid
-        ? new Message({
+      new Message({
+        to: Address,
+        from: wallet.address,
+        nonce: 0,
+        value: 0,
+        method: MsigMethod.PROPOSE,
+        params: Buffer.from(
+          serializeParams({
             to: Address,
-            from: wallet.address,
-            nonce: 0,
-            value: 0,
-            method: MsigMethod.PROPOSE,
+            value: '0',
+            method: MsigMethod.CHANGE_NUM_APPROVALS_THRESHOLD,
             params: Buffer.from(
               serializeParams({
-                to: Address,
-                value: '0',
-                method: MsigMethod.CHANGE_NUM_APPROVALS_THRESHOLD,
-                params: Buffer.from(
-                  serializeParams({
-                    NewTreshold: approvals
-                  }),
-                  'hex'
-                ).toString('base64')
+                NewTreshold: approvals
               }),
               'hex'
-            ).toString('base64'),
-            gasPremium: 0,
-            gasFeeCap: 0,
-            gasLimit: 0
-          })
-        : null,
-    [isApprovalsValid, approvals, Address, wallet.address, serializeParams]
+            ).toString('base64')
+          }),
+          'hex'
+        ).toString('base64'),
+        gasPremium: 0,
+        gasFeeCap: 0,
+        gasLimit: 0
+      }),
+    [approvals, Address, wallet.address, serializeParams]
   )
 
   return (
@@ -91,7 +88,7 @@ export const ChangeApprovals = ({
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />
-      <InputV2.Number
+      <InputV2.SelectRange
         label='Required approvals'
         info={`The Safe currently has ${Signers.length} owners`}
         autoFocus
@@ -99,7 +96,6 @@ export const ChangeApprovals = ({
         max={Signers.length}
         value={approvals}
         onChange={setApprovals}
-        setIsValid={setIsApprovalsValid}
         disabled={txState !== TxState.FillingForm}
       />
     </Transaction.Form>
