@@ -12,7 +12,7 @@ import {
 import { Context } from 'react'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import { WalletProviderContextType } from '@glif/react-components'
+import { truncateAddress, WalletProviderContextType } from '@glif/react-components'
 
 import {
   pushPendingMessageSpy,
@@ -21,7 +21,6 @@ import {
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
-import truncateAddress from '../../utils/truncateAddress'
 import { Create } from './Create'
 
 const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
