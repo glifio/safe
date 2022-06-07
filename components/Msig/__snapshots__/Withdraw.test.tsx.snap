@@ -365,6 +365,10 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
   transform: translateY(-0.35em) rotate(45deg);
 }
 
+.c7 .info-wrapper {
+  padding: 0.7em 1em;
+}
+
 .c8 .toggle-wrapper {
   position: relative;
   padding: 0.5em 0;
@@ -1008,6 +1012,10 @@ exports[`Withdraw snapshots it renders correctly after entering the recipient 1`
   transform: translateY(-0.35em) rotate(45deg);
 }
 
+.c5 .info-wrapper {
+  padding: 0.7em 1em;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1521,6 +1529,10 @@ exports[`Withdraw snapshots it renders the initial state correctly 1`] = `
   -webkit-transform: translateY(-0.35em) rotate(45deg);
   -ms-transform: translateY(-0.35em) rotate(45deg);
   transform: translateY(-0.35em) rotate(45deg);
+}
+
+.c5 .info-wrapper {
+  padding: 0.7em 1em;
 }
 
 .c4 {

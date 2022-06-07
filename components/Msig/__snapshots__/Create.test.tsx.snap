@@ -1154,6 +1154,10 @@ exports[`Create snapshots it renders the initial state correctly 1`] = `
   transform: translateY(-0.35em) rotate(45deg);
 }
 
+.c5 .info-wrapper {
+  padding: 0.7em 1em;
+}
+
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1275,6 +1279,10 @@ exports[`Create snapshots it renders the initial state correctly 1`] = `
   -webkit-transform: translateY(-0.35em) rotate(45deg);
   -ms-transform: translateY(-0.35em) rotate(45deg);
   transform: translateY(-0.35em) rotate(45deg);
+}
+
+.c6 .info-wrapper {
+  padding: 0.7em 1em;
 }
 
 .c4 {
@@ -1431,29 +1439,26 @@ exports[`Create snapshots it renders the initial state correctly 1`] = `
           <span>
             Required Approvals
           </span>
-          
-          
+          <span
+            class="info"
+          >
+            The Safe will have 1 owners
+          </span>
         </div>
         <div
-          class="button-wrapper"
+          class="select-wrapper"
         >
-          <div
-            class="unit-wrapper"
-          >
-            <input
-              autocomplete="on"
-              class=""
-              max="1"
-              min="1"
-              name=""
-              placeholder=""
-              step=""
-              style="padding-right: 1em;"
-              type="number"
-              value="1"
-            />
+          <select>
             
-          </div>
+            <option
+              value="1"
+            >
+              1
+            </option>
+          </select>
+          <div
+            class="select-arrow"
+          />
         </div>
       </label>
       <label
