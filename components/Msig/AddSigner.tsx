@@ -27,7 +27,8 @@ export const AddSigner = ({
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
-  const { Address, AvailableBalance, NumApprovalsThreshold } = useMsig()
+  const { Address, AvailableBalance, Signers, NumApprovalsThreshold } =
+    useMsig()
 
   // Input states
   const [signer, setSigner] = useState<string>('')
@@ -102,13 +103,21 @@ export const AddSigner = ({
         onChange={setSigner}
         disabled={txState !== TxState.FillingForm}
       />
-      <InputV2.Toggle
-        label='Increase required approvals'
-        info={`From ${NumApprovalsThreshold} to ${NumApprovalsThreshold + 1}`}
-        checked={increase}
-        onChange={setIncrease}
-        disabled={txState !== TxState.FillingForm}
-      />
+      {txState > TxState.FillingForm ? (
+        <InputV2.Info
+          label='Required approvals'
+          info={`The Safe will have ${Signers.length + 1} owners`}
+          value={increase ? NumApprovalsThreshold + 1 : NumApprovalsThreshold}
+        />
+      ) : (
+        <InputV2.Toggle
+          label='Increase required approvals'
+          info={`From ${NumApprovalsThreshold} to ${NumApprovalsThreshold + 1}`}
+          checked={increase}
+          onChange={setIncrease}
+          disabled={txState !== TxState.FillingForm}
+        />
+      )}
     </Transaction.Form>
   )
 }
