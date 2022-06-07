@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import confirmMessage from '@glif/filecoin-message-confirmer'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import {
   IconPending,
@@ -9,61 +8,73 @@ import {
   ButtonRowCenter,
   ButtonV2,
   SmartLink,
-  ErrorBox
+  ErrorBox,
+  navigate,
+  useMessageQuery
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { PAGE } from '../../constants'
-import { navigate } from '../../utils/urlParams'
 import getAddrFromReceipt from '../../utils/getAddrFromReceipt'
 
+interface Receipt {
+  ExitCode: number
+  GasUsed: number
+  Return: string
+}
+
 export const CreateConfirm = () => {
-  const [msigError, setMsigError] = useState(false)
-  const [confirming, setConfirming] = useState(false)
-  const { setMsigActor, Address } = useMsig()
   const router = useRouter()
   const { cid } = router.query
+  const { setMsigActor, Address } = useMsig()
+
+  // Confirmation state
+  const [receipt, setReceipt] = useState<Receipt | null>(null)
+  const [receiptError, setReceiptError] = useState<boolean>(false)
+  const [creationError, setCreationError] = useState<boolean>(false)
+
+  // Get environment variables
   const { NEXT_PUBLIC_EXPLORER_URL: explorerUrl } = process.env
   const { NEXT_PUBLIC_LOTUS_NODE_JSONRPC: apiAddress } = process.env
 
-  const confirm = useCallback(async () => {
-    try {
-      const confirmed = await confirmMessage(cid as string, { apiAddress })
-      if (confirmed) {
-        const lCli = new LotusRPCEngine({ apiAddress })
-        const receipt = await lCli.request<{
-          ExitCode: number
-          GasUsed: number
-          Return: string
-        }>('StateGetReceipt', { '/': cid }, null)
+  // Get the message by cid
+  const { data: messageData, error: messageError } = useMessageQuery({
+    variables: { cid: cid as string },
+    pollInterval: 500,
+    skip: !cid
+  })
 
-        // Verify exit code
-        if (receipt.ExitCode !== 0) {
-          setMsigError(true)
-          return
-        }
-
-        // Verify address
-        const { robust } = getAddrFromReceipt(receipt.Return)
-        if (!robust) {
-          setMsigError(true)
-          return
-        }
-
-        // Set safe address
-        setMsigActor(robust)
-      }
-    } catch (e) {
-      setMsigError(true)
-    }
-  }, [cid, apiAddress, setMsigActor])
-
+  // Get the receipt after receiving the message
   useEffect(() => {
-    if (!Address && !confirming && cid) {
-      setConfirming(true)
-      confirm()
+    if (messageData?.message) {
+      setTimeout(() => {
+        const lCli = new LotusRPCEngine({ apiAddress })
+        lCli
+          .request<Receipt>('StateGetReceipt', { '/': cid }, null)
+          .then((receipt) => setReceipt(receipt))
+          .catch(() => setReceiptError(true))
+      }, 10000)
     }
-  }, [cid, Address, confirming, setConfirming, confirm])
+  }, [messageData?.message, apiAddress, cid])
+
+  // Get the safe address after receiving the receipt
+  useEffect(() => {
+    if (receipt) {
+      try {
+        // Verify the exit code
+        if (receipt.ExitCode !== 0) throw new Error('Safe creation failed')
+
+        // Verify the safe address
+        const { robust } = getAddrFromReceipt(receipt.Return)
+        if (!robust) throw new Error('Failed to get address from receipt')
+
+        // Set the safe address
+        setMsigActor(robust)
+      } catch (e) {
+        setCreationError(true)
+      }
+    }
+  }, [receipt, setMsigActor])
 
   // CID was not provided in query parameters
   if (!cid) {
@@ -78,8 +89,27 @@ export const CreateConfirm = () => {
     )
   }
 
+  // Something went wrong while retrieving the message or receipt
+  if (messageError || receiptError) {
+    return (
+      <Dialog>
+        <ShadowBox>
+          <h2>Safe creation status unknown</h2>
+          <hr />
+          <p>Something went wrong</p>
+        </ShadowBox>
+        <ErrorBox>
+          <p>
+            An error occurred while retrieving the status of your safe creation,
+            please refresh the page.
+          </p>
+        </ErrorBox>
+      </Dialog>
+    )
+  }
+
   // Something went wrong while creating the safe
-  if (msigError) {
+  if (creationError) {
     return (
       <Dialog>
         <ShadowBox>
