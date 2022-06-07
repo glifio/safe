@@ -40,15 +40,11 @@ export const Create = ({
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
 
   // Ignore trailing signer inputs that are empty
-  const acceptedSigners = useMemo<Array<string>>(
-    () => {
-      const accepted = [...signers]
-      while (accepted[accepted.length - 1] === '')
-        accepted.pop()
-      return accepted
-    },
-    [signers]
-  )
+  const acceptedSigners = useMemo<Array<string>>(() => {
+    const accepted = [...signers]
+    while (accepted[accepted.length - 1] === '') accepted.pop()
+    return accepted
+  }, [signers])
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
