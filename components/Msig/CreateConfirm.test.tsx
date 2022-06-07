@@ -7,17 +7,23 @@ import {
   render,
   RenderResult
 } from '@testing-library/react'
+import { useMessageQuery } from '@glif/react-components'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { PAGE } from '../../constants'
-
 import { CreateConfirm } from './CreateConfirm'
+import { PAGE } from '../../constants'
+import { flushPromises } from '../../test-utils'
 
 jest.mock('../../MsigProvider')
-const mockMessageConfirmation = jest.fn(async () => true)
-jest
-  .spyOn(require('@glif/filecoin-message-confirmer'), 'default')
-  .mockImplementation(mockMessageConfirmation)
+jest.mock('@glif/react-components', () => {
+  const original = jest.requireActual('@glif/react-components')
+  return {
+    ...original,
+    useMessageQuery: jest.fn(({ variables }) => ({
+      data: { message: { cid: variables.cid } }
+    }))
+  }
+})
 
 const mockStateGetMessageReceipt = jest.fn(async () => ({
   ExitCode: 0,
@@ -44,6 +50,7 @@ describe('confirmation of newly created multisig', () => {
   afterEach(cleanup)
   beforeEach(() => {
     jest.clearAllMocks()
+    jest.useFakeTimers()
   })
 
   test('it renders message pending UI while the transaction is pending', async () => {
@@ -81,7 +88,7 @@ describe('confirmation of newly created multisig', () => {
       )
     })
 
-    expect(mockMessageConfirmation).toHaveBeenCalled()
+    expect(useMessageQuery).toHaveBeenCalled()
   })
 
   test('it displays the multisig address after the message is confirmed', async () => {
@@ -94,11 +101,13 @@ describe('confirmation of newly created multisig', () => {
           <CreateConfirm />
         </Tree>
       )
+      jest.runOnlyPendingTimers()
     })
 
     const header = getByRole(result.container, 'heading')
     expect(header).toHaveTextContent('Safe creation completed')
-    expect(mockMessageConfirmation).toHaveBeenCalled()
+    expect(useMessageQuery).toHaveBeenCalled()
+    expect(mockStateGetMessageReceipt).toHaveBeenCalled()
     expect(result.container.firstChild).toMatchSnapshot()
   })
 })
