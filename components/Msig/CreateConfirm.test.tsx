@@ -12,7 +12,6 @@ import { useMessageQuery } from '@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { CreateConfirm } from './CreateConfirm'
 import { PAGE } from '../../constants'
-import { flushPromises } from '../../test-utils'
 
 jest.mock('../../MsigProvider')
 jest.mock('@glif/react-components', () => {
