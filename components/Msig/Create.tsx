@@ -38,7 +38,6 @@ export const Create = ({
   const [isVestValid, setIsVestValid] = useState<boolean>(false)
   const [isEpochValid, setIsEpochValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
-  const [isApprovalsValid, setIsApprovalsValid] = useState<boolean>(false)
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
@@ -79,7 +78,6 @@ export const Create = ({
       isVestValid &&
       isEpochValid &&
       isValueValid &&
-      isApprovalsValid &&
       // Manually check signer validity to prevent passing invalid addresses to createMultisig.
       // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
       !signers.some((signer) => !validateAddressString(signer)) &&
@@ -109,7 +107,6 @@ export const Create = ({
       isVestValid,
       isEpochValid,
       isValueValid,
-      isApprovalsValid,
       vest,
       epoch,
       value,
@@ -175,7 +172,6 @@ export const Create = ({
         max={signers.length}
         value={approvals}
         onChange={setApprovals}
-        setIsValid={setIsApprovalsValid}
         disabled={txState !== TxState.FillingForm}
       />
       <InputV2.Filecoin
