@@ -170,12 +170,14 @@ describe('fetchMsigState', () => {
       }
     )
 
-    expect(Address).toBe(convertAddrToPrefix(MULTISIG_ACTOR_ADDRESS))
+    expect(convertAddrToPrefix(Address)).toBe(
+      convertAddrToPrefix(MULTISIG_ACTOR_ADDRESS)
+    )
     expect(Balance.isGreaterThan(0)).toBe(true)
     expect(AvailableBalance.isGreaterThan(0)).toBe(true)
     expect(Signers.length).toBeGreaterThan(0)
     expect(convertAddrToPrefix(Signers[0].robust)).toBe(
-      MULTISIG_SIGNER_ADDRESS_2
+      convertAddrToPrefix(MULTISIG_SIGNER_ADDRESS_2)
     )
     expect(ActorCode.includes('multisig')).toBe(true)
     expect(InitialBalance.isGreaterThan(0)).toBe(true)
