@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import {
+  navigate,
   Box,
   Button,
   Num,
@@ -9,7 +10,6 @@ import {
   FILECOIN_NUMBER_PROPTYPE
 } from '@glif/react-components'
 import { PAGE } from '../../../constants'
-import { navigate } from '../../../utils/urlParams'
 
 const AvailableBalanceContainer = styled(Box)`
   background: linear-gradient(

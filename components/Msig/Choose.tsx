@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
+  navigate,
+  generateRouteWithRequiredUrlParams,
   ButtonRowSpaced,
   ButtonV2,
   InputV2,
@@ -11,10 +13,6 @@ import {
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
-import {
-  generateRouteWithRequiredUrlParams,
-  navigate
-} from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 export const Choose = () => {

@@ -1,13 +1,14 @@
 import { useCallback } from 'react'
 import {
+  navigate,
   ConnectWallet,
   OneColumnCentered,
   useChromeDesktopBrowser,
   useWalletProvider
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
+
 import SafePage from '../../components/SafePage'
-import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 export default function ConnectLedger() {

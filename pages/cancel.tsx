@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import {
+  navigate,
   MsigMethod,
   OneColumnCentered,
   RequireWallet
@@ -8,7 +9,6 @@ import {
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import { ApproveCancel } from '../components/Msig/ApproveCancel'
-import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
 const CancelPage = () => {

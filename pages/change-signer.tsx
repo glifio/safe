@@ -1,10 +1,13 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { OneColumnCentered, RequireWallet } from '@glif/react-components'
+import {
+  navigate,
+  OneColumnCentered,
+  RequireWallet
+} from '@glif/react-components'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import { ChangeSigner } from '../components/Msig/ChangeSigner'
-import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
 const ChangeSignerPage = () => {

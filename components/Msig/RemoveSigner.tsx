@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import {
+  navigate,
   useWallet,
   InputV2,
   Transaction,
@@ -15,7 +16,6 @@ import {
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
-import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
 

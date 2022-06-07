@@ -1,4 +1,5 @@
 import {
+  navigate,
   Box,
   ProposalDetail,
   ProposalHistoryTable,
@@ -8,7 +9,6 @@ import {
 import { useRouter } from 'next/router'
 
 import { useMsig } from '../../../MsigProvider'
-import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
 
 const ProposalHistory = () => {

@@ -1,7 +1,11 @@
-import { Box, MessageHistoryTable, MessageDetail } from '@glif/react-components'
+import {
+  Box,
+  MessageHistoryTable,
+  MessageDetail,
+  generateRouteWithRequiredUrlParams
+} from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { generateRouteWithRequiredUrlParams } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
 import { useMsig } from '../../../MsigProvider'
 

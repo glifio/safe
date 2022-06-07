@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import {
+  navigate,
   ADDRESS_PROPTYPE,
   Address as AddressType
 } from '@glif/react-components'
 import { Address } from './Address'
-import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
 
 export const Signers = ({ signers }: { signers: AddressType[] }) => {

@@ -5,6 +5,7 @@ import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { validateAddressString } from '@glif/filecoin-address'
 import {
+  navigate,
   useWallet,
   getMaxAffordableFee,
   getTotalAmount,
@@ -17,7 +18,6 @@ import {
 } from '@glif/react-components'
 
 import { useWasm } from '../../lib/WasmLoader'
-import { navigate } from '../../utils/urlParams'
 import { PAGE, EXEC_ACTOR } from '../../constants'
 import { logger } from '../../logger'
 

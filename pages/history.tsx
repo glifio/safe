@@ -1,10 +1,10 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { OneColumn, RequireWallet } from '@glif/react-components'
-import MsigHistory from '../components/Msig/MessageHistory'
-import { navigate } from '../utils/urlParams'
-import { PAGE } from '../constants'
+import { navigate, OneColumn, RequireWallet } from '@glif/react-components'
+
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
+import MsigHistory from '../components/Msig/MessageHistory'
+import { PAGE } from '../constants'
 
 const History = () => {
   const router = useRouter()

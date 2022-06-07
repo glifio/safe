@@ -2,14 +2,15 @@ import { useCallback } from 'react'
 import { CoinType } from '@glif/filecoin-address'
 import { useRouter } from 'next/router'
 import {
+  navigate,
   OneColumn,
   AccountSelector,
   RequireWallet,
   useDesktopBrowser
 } from '@glif/react-components'
-import { PAGE } from '../constants'
-import { navigate } from '../utils/urlParams'
+
 import SafePage from '../components/SafePage'
+import { PAGE } from '../constants'
 
 const COIN_TYPE = process.env.NEXT_PUBLIC_COIN_TYPE! as CoinType
 const IS_PROD = process.env.NEXT_PUBLIC_IS_PROD
