@@ -19,6 +19,7 @@ import {
 import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE, EXEC_ACTOR } from '../../constants'
+import { logger } from '../../logger'
 
 export const Create = ({
   walletProviderOpts,
@@ -80,16 +81,16 @@ export const Create = ({
   }
 
   // Placeholder message for getting gas params
-  const message = useMemo<Message | null>(
-    () =>
-      isVestValid &&
-      isEpochValid &&
-      isValueValid &&
-      // Manually check signer validity to prevent passing invalid addresses to createMultisig.
-      // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
-      !acceptedSigners.some((signer) => !validateAddressString(signer)) &&
-      // For the same reason, check whether value is a FileCoinNumber and not null
-      value
+  const message = useMemo<Message | null>(() => {
+    try {
+      return isVestValid &&
+        isEpochValid &&
+        isValueValid &&
+        // Manually check signer validity to prevent passing invalid addresses to createMultisig.
+        // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
+        !acceptedSigners.some((signer) => !validateAddressString(signer)) &&
+        // For the same reason, check whether value is a FileCoinNumber and not null
+        value
         ? new Message({
             to: EXEC_ACTOR,
             from: wallet.address,
@@ -109,20 +110,23 @@ export const Create = ({
             gasFeeCap: 0,
             gasLimit: 0
           })
-        : null,
-    [
-      isVestValid,
-      isEpochValid,
-      isValueValid,
-      vest,
-      epoch,
-      value,
-      approvals,
-      acceptedSigners,
-      wallet.address,
-      createMultisig
-    ]
-  )
+        : null
+    } catch (e) {
+      logger.error(e)
+      return null
+    }
+  }, [
+    isVestValid,
+    isEpochValid,
+    isValueValid,
+    vest,
+    epoch,
+    value,
+    approvals,
+    acceptedSigners,
+    wallet.address,
+    createMultisig
+  ])
 
   // Calculate max affordable fee (balance minus value)
   const maxFee = useMemo<FilecoinNumber | null>(() => {
