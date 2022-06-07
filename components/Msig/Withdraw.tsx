@@ -18,6 +18,7 @@ import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
+import { logger } from '../../logger'
 
 export const Withdraw = ({
   walletProviderOpts,
@@ -39,14 +40,14 @@ export const Withdraw = ({
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
   // Create message from input
-  const message = useMemo<Message | null>(
-    () =>
-      isValueValid &&
-      // Manually check address validity to prevent passing invalid addresses to serializeParams.
-      // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
-      validateAddressString(toAddress) &&
-      // For the same reason, check whether value is a FileCoinNumber and not null
-      value
+  const message = useMemo<Message | null>(() => {
+    try {
+      return isValueValid &&
+        // Manually check address validity to prevent passing invalid addresses to serializeParams.
+        // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
+        validateAddressString(toAddress) &&
+        // For the same reason, check whether value is a FileCoinNumber and not null
+        value
         ? new Message({
             to: Address,
             from: wallet.address,
@@ -66,9 +67,12 @@ export const Withdraw = ({
             gasFeeCap: 0,
             gasLimit: 0
           })
-        : null,
-    [isValueValid, toAddress, Address, wallet.address, value, serializeParams]
-  )
+        : null
+    } catch (e) {
+      logger.error(e)
+      return null
+    }
+  }, [isValueValid, toAddress, Address, wallet.address, value, serializeParams])
 
   return (
     <Transaction.Form

@@ -17,6 +17,7 @@ import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
+import { logger } from '../../logger'
 
 export const ChangeApprovals = ({
   walletProviderOpts,
@@ -37,9 +38,9 @@ export const ChangeApprovals = ({
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
   // Create message from input
-  const message = useMemo<Message | null>(
-    () =>
-      new Message({
+  const message = useMemo<Message | null>(() => {
+    try {
+      return new Message({
         to: Address,
         from: wallet.address,
         nonce: 0,
@@ -62,9 +63,12 @@ export const ChangeApprovals = ({
         gasPremium: 0,
         gasFeeCap: 0,
         gasLimit: 0
-      }),
-    [approvals, Address, wallet.address, serializeParams]
-  )
+      })
+    } catch (e) {
+      logger.error(e)
+      return null
+    }
+  }, [approvals, Address, wallet.address, serializeParams])
 
   return (
     <Transaction.Form

@@ -17,6 +17,7 @@ import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
+import { logger } from '../../logger'
 
 export const RemoveSigner = ({
   signerAddress,
@@ -50,9 +51,9 @@ export const RemoveSigner = ({
   )
 
   // Create message from input
-  const message = useMemo<Message | null>(
-    () =>
-      new Message({
+  const message = useMemo<Message | null>(() => {
+    try {
+      return new Message({
         to: Address,
         from: wallet.address,
         nonce: 0,
@@ -76,9 +77,12 @@ export const RemoveSigner = ({
         gasPremium: 0,
         gasFeeCap: 0,
         gasLimit: 0
-      }),
-    [signer, decrease, Address, wallet.address, serializeParams]
-  )
+      })
+    } catch (e) {
+      logger.error(e)
+      return null
+    }
+  }, [signer, decrease, Address, wallet.address, serializeParams])
 
   return (
     <Transaction.Form

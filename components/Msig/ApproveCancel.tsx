@@ -21,6 +21,7 @@ import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
+import { logger } from '../../logger'
 
 type MsigTxWithApprovals = MsigTransaction & { approvalsUntilExecution: number }
 
@@ -51,9 +52,9 @@ export const ApproveCancel = ({
   }, [proposal])
 
   // Create message from input
-  const message = useMemo<Message | null>(
-    () =>
-      transaction
+  const message = useMemo<Message | null>(() => {
+    try {
+      return transaction
         ? new Message({
             to: Address,
             from: wallet.address,
@@ -71,9 +72,12 @@ export const ApproveCancel = ({
             gasFeeCap: 0,
             gasLimit: 0
           })
-        : null,
-    [Address, wallet.address, method, transaction, serializeParams]
-  )
+        : null
+    } catch (e) {
+      logger.error(e)
+      return null
+    }
+  }, [Address, wallet.address, method, transaction, serializeParams])
 
   // Get actor data from transaction
   const { data: actorData, error: actorError } = useActorQuery({
