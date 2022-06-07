@@ -30,7 +30,7 @@ describe('fetchMsigState', () => {
     )
 
     expect(convertAddrToPrefix(successSpy.mock.calls[0][0])).toBe(
-      MULTISIG_ACTOR_ADDRESS
+      convertAddrToPrefix(MULTISIG_ACTOR_ADDRESS)
     )
   }, 12500)
 
