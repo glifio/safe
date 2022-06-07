@@ -9,7 +9,9 @@ import {
   ButtonV2,
   SmartLink,
   ErrorBox,
+  WarningBox,
   navigate,
+  useWallet,
   useMessageQuery
 } from '@glif/react-components'
 
@@ -27,6 +29,7 @@ export const CreateConfirm = () => {
   const router = useRouter()
   const { cid } = router.query
   const { setMsigActor, Address } = useMsig()
+  const wallet = useWallet()
 
   // Confirmation state
   const [receipt, setReceipt] = useState<Receipt | null>(null)
@@ -146,14 +149,28 @@ export const CreateConfirm = () => {
             </SmartLink>
           </p>
         </ShadowBox>
+        <WarningBox>
+          Please make sure to store your Safe address before continuing to
+          prevent losing access to your Safe.
+        </WarningBox>
         <ButtonRowCenter>
-          <ButtonV2
-            large
-            green
-            onClick={() => navigate(router, { pageUrl: PAGE.MSIG_HOME })}
-          >
-            Go to Safe dashboard
-          </ButtonV2>
+          {wallet.address ? (
+            <ButtonV2
+              large
+              green
+              onClick={() => navigate(router, { pageUrl: PAGE.MSIG_HOME })}
+            >
+              Go to the Safe dashboard
+            </ButtonV2>
+          ) : (
+            <ButtonV2
+              large
+              green
+              onClick={() => navigate(router, { pageUrl: PAGE.LANDING })}
+            >
+              Connect your wallet to open the Safe
+            </ButtonV2>
+          )}
         </ButtonRowCenter>
       </Dialog>
     )
