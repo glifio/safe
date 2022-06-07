@@ -39,6 +39,17 @@ export const Create = ({
   const [isEpochValid, setIsEpochValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
 
+  // Ignore trailing signer inputs that are empty
+  const acceptedSigners = useMemo<Array<string>>(
+    () => {
+      const accepted = [...signers]
+      while (accepted[accepted.length - 1] === '')
+        accepted.pop()
+      return accepted
+    },
+    [signers]
+  )
+
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
@@ -80,7 +91,7 @@ export const Create = ({
       isValueValid &&
       // Manually check signer validity to prevent passing invalid addresses to createMultisig.
       // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
-      !signers.some((signer) => !validateAddressString(signer)) &&
+      !acceptedSigners.some((signer) => !validateAddressString(signer)) &&
       // For the same reason, check whether value is a FileCoinNumber and not null
       value
         ? new Message({
@@ -91,7 +102,7 @@ export const Create = ({
             method: MsigMethod.PROPOSE,
             params: createMultisig(
               wallet.address,
-              [...signers],
+              [...acceptedSigners],
               value.toAttoFil(),
               approvals,
               0,
@@ -110,8 +121,8 @@ export const Create = ({
       vest,
       epoch,
       value,
-      signers,
       approvals,
+      acceptedSigners,
       wallet.address,
       createMultisig
     ]
@@ -166,10 +177,11 @@ export const Create = ({
         onClick={onAddSigner}
         disabled={txState !== TxState.FillingForm}
       />
-      <InputV2.Number
+      <InputV2.SelectRange
         label='Required Approvals'
+        info={`The Safe will have ${acceptedSigners.length} owners`}
         min={1}
-        max={signers.length}
+        max={acceptedSigners.length}
         value={approvals}
         onChange={setApprovals}
         disabled={txState !== TxState.FillingForm}
