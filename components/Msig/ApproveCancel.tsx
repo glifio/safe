@@ -55,13 +55,8 @@ export const ApproveCancel = ({
   // Get parameters object to pass to Parameters component
   const parameters = useMemo<Record<string, any> | null>(() => {
     if (!transaction) return null
-    const {
-      id,
-      approved,
-      approvalsUntilExecution,
-      proposalHash,
-      ...params
-    } = transaction
+    const { id, approved, approvalsUntilExecution, proposalHash, ...params } =
+      transaction
     return { params }
   }, [transaction])
 
