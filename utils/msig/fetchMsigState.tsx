@@ -6,7 +6,7 @@ import { AddressDocument, AddressQuery } from '@glif/react-components'
 import isAddressSigner from './isAddressSigner'
 import { decodeActorCID } from '../actorCode'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
-import { apolloClient } from '../../apolloClient'
+import { createApolloClient } from '../../apolloClient'
 
 export default async function fetchMsigState(
   actorID: string,
@@ -49,6 +49,7 @@ export default async function fetchMsigState(
       }
     }>('StateReadState', actorID, null)
 
+    const apolloClient = createApolloClient()
     const [availableBalance, signers] = await Promise.all([
       lCli.request<string>('MsigGetAvailableBalance', actorID, null),
       Promise.all(

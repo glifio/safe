@@ -60,6 +60,22 @@ describe('Multisig provider', () => {
           }
         })
 
+      jest
+        .spyOn(require('../apolloClient'), 'createApolloClient')
+        .mockImplementation(() => {
+          return {
+            query: ({ variables }) =>
+              Promise.resolve({
+                data: {
+                  address: {
+                    id: variables.address,
+                    robust: variables.address
+                  }
+                }
+              })
+          }
+        })
+
       const statePreset = 'postOnboard'
       const walletProviderInitialState = composeWalletProviderState(
         _walletProviderInitialState,

@@ -10,20 +10,21 @@ import {
   MULTISIG_SIGNER_ADDRESS_2
 } from '../../test-utils'
 
-jest.mock('../../apolloClient', () => ({
-  apolloClient: {
-    query: ({ variables }) =>
-      Promise.resolve({
-        data: {
-          address: {
-            id: variables.address,
-            robust: variables.address
+jest
+  .spyOn(require('../../apolloClient'), 'createApolloClient')
+  .mockImplementation(() => {
+    return {
+      query: ({ variables }) =>
+        Promise.resolve({
+          data: {
+            address: {
+              id: variables.address,
+              robust: variables.address
+            }
           }
-        }
-      })
-  }
-}))
-
+        })
+    }
+  })
 describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
     jest.spyOn(require('../actorCode'), 'decodeActorCID')
