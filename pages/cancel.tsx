@@ -1,28 +1,31 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumnCentered } from '@glif/react-components'
+import {
+  navigate,
+  MsigMethod,
+  OneColumnCentered,
+  RequireWallet
+} from '@glif/react-components'
+
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import ApproveCancel from '../components/Msig/ApproveCancel'
-import { navigate } from '../utils/urlParams'
+import { ApproveCancel } from '../components/Msig/ApproveCancel'
 import { PAGE } from '../constants'
 
-const Cancel = () => {
+const CancelPage = () => {
   const router = useRouter()
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
     [router]
   )
-
   return (
     <SafePageLoggedIn>
       <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
-          <ApproveCancel />
+          <ApproveCancel method={MsigMethod.CANCEL} />
         </RequireWallet>
       </OneColumnCentered>
     </SafePageLoggedIn>
   )
 }
 
-export default Cancel
+export default CancelPage

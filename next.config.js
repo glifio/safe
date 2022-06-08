@@ -13,13 +13,14 @@ const webpack = (config) => {
 
   adjustedConf.resolve.alias = {
     ...config.resolve.alias,
-    '@glif/react-components': path.resolve(
-      './node_modules/@glif/react-components'
-    ),
     react: path.resolve('./node_modules/react'),
     'react-dom': path.resolve('./node_modules/react-dom'),
     next: path.resolve('./node_modules/next'),
-    'styled-components': path.resolve('./node_modules/styled-components')
+    'styled-components': path.resolve('./node_modules/styled-components'),
+    '@glif/base-css': path.resolve('./node_modules/@glif/base-css'),
+    '@glif/react-components': path.resolve(
+      './node_modules/@glif/react-components'
+    )
   }
 
   return adjustedConf

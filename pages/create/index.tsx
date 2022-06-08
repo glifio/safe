@@ -1,13 +1,16 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumnCentered } from '@glif/react-components'
-import CreateMsig from '../../components/Msig/Create'
+import {
+  navigate,
+  OneColumnCentered,
+  RequireWallet
+} from '@glif/react-components'
+
 import SafePage from '../../components/SafePage'
-import { navigate } from '../../utils/urlParams'
+import { Create } from '../../components/Msig/Create'
 import { PAGE } from '../../constants'
 
-const Create = () => {
+const CreatePage = () => {
   const router = useRouter()
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
@@ -17,11 +20,11 @@ const Create = () => {
     <SafePage>
       <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
-          <CreateMsig />
+          <Create />
         </RequireWallet>
       </OneColumnCentered>
     </SafePage>
   )
 }
 
-export default Create
+export default CreatePage

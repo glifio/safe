@@ -1,6 +1,6 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { createPath } from '@glif/react-components'
 import { TESTNET_PATH_CODE } from '../../constants'
-import createPath from '../../utils/createPath'
 
 import {
   setLoginOption,
@@ -9,7 +9,7 @@ import {
   resetState,
   walletList,
   updateBalance
-} from '@glif/wallet-provider-react'
+} from '@glif/react-components'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 
 export const mockFetchDefaultWallet = jest.fn().mockImplementation(() => ({

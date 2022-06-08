@@ -1,10 +1,13 @@
 import { useCallback } from 'react'
 import PropTypes from 'prop-types'
-import { NetworkConnection } from '@glif/react-components'
-import { useWallet } from '@glif/wallet-provider-react'
+import {
+  NetworkConnection,
+  useWallet,
+  resetWallet,
+  navigate
+} from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { resetWallet, navigate } from '../utils/urlParams'
 import { useMsig } from '../MsigProvider'
 import { PAGE } from '../constants'
 import SafePage from './SafePage'

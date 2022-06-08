@@ -1,4 +1,4 @@
-import React, { useContext, createContext } from 'react'
+import { useContext, createContext } from 'react'
 import dynamic from 'next/dynamic'
 import { node } from 'prop-types'
 import { logger } from '../../logger'

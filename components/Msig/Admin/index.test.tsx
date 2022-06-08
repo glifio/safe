@@ -72,7 +72,7 @@ describe('Admin page', () => {
       )
       expect(screen.getByText('Edit').closest('a')).toHaveAttribute(
         'href',
-        PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD
+        PAGE.MSIG_CHANGE_APPROVALS
       )
     })
   })

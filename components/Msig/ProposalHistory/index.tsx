@@ -1,15 +1,14 @@
-import React from 'react'
 import {
+  navigate,
   Box,
   ProposalDetail,
   ProposalHistoryTable,
-  MsigTransaction
+  MsigTransaction,
+  useWallet
 } from '@glif/react-components'
-import { useWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import { useMsig } from '../../../MsigProvider'
-import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
 
 const ProposalHistory = () => {

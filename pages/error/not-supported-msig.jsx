@@ -1,4 +1,3 @@
-import React from 'react'
 import { ErrorView, OneColumnCentered } from '@glif/react-components'
 import SafePage from '../../components/SafePage'
 

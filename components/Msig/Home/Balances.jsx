@@ -1,11 +1,15 @@
-import React from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { Box, Button, Num, Title } from '@glif/react-components'
-import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
-import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import {
+  navigate,
+  Box,
+  Button,
+  Num,
+  Title,
+  makeFriendlyBalance,
+  FILECOIN_NUMBER_PROPTYPE
+} from '@glif/react-components'
 import { PAGE } from '../../../constants'
-import { navigate } from '../../../utils/urlParams'
 
 const AvailableBalanceContainer = styled(Box)`
   background: linear-gradient(
@@ -35,7 +39,7 @@ const AvailableBalance = ({ available }) => {
 }
 
 AvailableBalance.propTypes = {
-  available: FILECOIN_NUMBER_PROP
+  available: FILECOIN_NUMBER_PROPTYPE
 }
 
 const WithdrawButton = styled(Button)`
@@ -59,7 +63,7 @@ const TotalBalance = ({ total }) => (
 )
 
 TotalBalance.propTypes = {
-  total: FILECOIN_NUMBER_PROP
+  total: FILECOIN_NUMBER_PROPTYPE
 }
 
 const Balances = ({ available, total }) => {
@@ -109,8 +113,8 @@ const Balances = ({ available, total }) => {
 }
 
 Balances.propTypes = {
-  available: FILECOIN_NUMBER_PROP,
-  total: FILECOIN_NUMBER_PROP
+  available: FILECOIN_NUMBER_PROPTYPE,
+  total: FILECOIN_NUMBER_PROPTYPE
 }
 
 export default Balances

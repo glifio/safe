@@ -1,16 +1,18 @@
 import styled from 'styled-components'
 import { useCallback, useMemo, useState } from 'react'
-import { ButtonV2, ButtonV2Link } from '@glif/react-components'
 import {
+  ButtonV2,
+  ButtonV2Link,
   useWallet,
   useWalletProvider,
+  convertAddrToPrefix,
   reportLedgerConfigError
-} from '@glif/wallet-provider-react'
+} from '@glif/react-components'
 
 import { PAGE } from '../../../constants'
-import { Address, Signers } from '../Shared'
+import { Address } from './Address'
+import { Signers } from './Signers'
 import { useMsig } from '../../../MsigProvider'
-import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -56,13 +58,13 @@ export default function Owners() {
     return {
       additionalSigners: signers.filter(
         (signer) =>
-          converAddrToFPrefix(signer.robust) !==
-          converAddrToFPrefix(wallet.address)
+          convertAddrToPrefix(signer.robust) !==
+          convertAddrToPrefix(wallet.address)
       ),
       userSigner: signers.find(
         (signer) =>
-          converAddrToFPrefix(signer.robust) ===
-          converAddrToFPrefix(wallet.address)
+          convertAddrToPrefix(signer.robust) ===
+          convertAddrToPrefix(wallet.address)
       )
     }
   }, [signers, wallet])
@@ -75,9 +77,7 @@ export default function Owners() {
       <Wrapper>
         <TitleRow>
           <h3>Required Approvals: {NumApprovalsThreshold}</h3>
-          <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVAL_THRESHOLD}>
-            Edit
-          </ButtonV2Link>
+          <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>Edit</ButtonV2Link>
         </TitleRow>
         <Info>
           The number of approvals required for a Safe proposal to execute.

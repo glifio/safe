@@ -1,14 +1,16 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumnCentered } from '@glif/react-components'
+import {
+  navigate,
+  OneColumnCentered,
+  RequireWallet
+} from '@glif/react-components'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import MsigWithdraw from '../components/Msig/Withdraw'
-import { navigate } from '../utils/urlParams'
+import { Withdraw } from '../components/Msig/Withdraw'
 import { PAGE } from '../constants'
 
-const Withdraw = () => {
+const WithdrawPage = () => {
   const router = useRouter()
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
@@ -18,11 +20,11 @@ const Withdraw = () => {
     <SafePageLoggedIn>
       <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
-          <MsigWithdraw />
+          <Withdraw />
         </RequireWallet>
       </OneColumnCentered>
     </SafePageLoggedIn>
   )
 }
 
-export default Withdraw
+export default WithdrawPage

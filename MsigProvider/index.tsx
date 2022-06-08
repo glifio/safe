@@ -1,8 +1,7 @@
 import { useState, createContext, ReactNode, useContext, Dispatch } from 'react'
-import { useAddressLazyQuery } from '@glif/react-components'
+import { useAddressLazyQuery, useWallet } from '@glif/react-components'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import useSWR from 'swr'
-import { useWallet } from '@glif/wallet-provider-react'
 import { fetchMsigState } from '../utils/msig'
 import { MsigActorState, emptyMsigState } from './types'
 

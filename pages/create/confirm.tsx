@@ -1,13 +1,13 @@
 import { OneColumnCentered } from '@glif/react-components'
-import ConfirmMsgCreate from '../../components/Msig/Create/Confirm'
+import { CreateConfirm } from '../../components/Msig/CreateConfirm'
 import SafePage from '../../components/SafePage'
 
-const Confirm = () => (
+const CreateConfirmPage = () => (
   <SafePage>
     <OneColumnCentered>
-      <ConfirmMsgCreate />
+      <CreateConfirm />
     </OneColumnCentered>
   </SafePage>
 )
 
-export default Confirm
+export default CreateConfirmPage

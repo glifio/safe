@@ -1,5 +1,3 @@
-import { FilecoinNumber } from '@glif/filecoin-number'
-
 /* WALLET TYPES */
 export const HD_WALLET = 'HD_WALLET'
 export const SINGLE_KEY = 'SINGLE_KEY'
@@ -30,22 +28,10 @@ export const TESTNET_PATH_CODE = 1
 
 export const EXEC_ACTOR = 'f01'
 
-/* TX METHOD TYPES */
-export const SEND = 'SEND'
-export const PROPOSE = 'PROPOSE'
-export const EXEC = 'EXEC'
 /* FILECOIN APP VERSION MIN */
 export const LEDGER_VERSION_MAJOR = 0
 export const LEDGER_VERSION_MINOR = 18
 export const LEDGER_VERSION_PATCH = 2
-
-/* GAS CONSTANTS */
-export const emptyGasInfo = {
-  estimatedTransactionFee: new FilecoinNumber('0', 'attofil'),
-  gasPremium: new FilecoinNumber('0', 'attofil'),
-  gasFeeCap: new FilecoinNumber('0', 'attofil'),
-  gasLimit: new FilecoinNumber('0', 'attofil')
-}
 
 /* MSIG PL SIGNERS */
 export const PL_SIGNERS = new Set([
@@ -87,7 +73,7 @@ export enum PAGE {
   MSIG_CHANGE_SIGNER = '/change-signer',
   MSIG_REMOVE_SIGNER = '/remove-signer',
   MSIG_ADD_SIGNER = '/add-signer',
-  MSIG_CHANGE_APPROVAL_THRESHOLD = '/change-approval-threshold',
+  MSIG_CHANGE_APPROVALS = '/change-approvals',
   MSIG_CREATE_CONFIRM = '/create/confirm',
   MSIG_CREATE = '/create',
   MSIG_CHOOSE = '/choose',
@@ -96,17 +82,5 @@ export enum PAGE {
   CONNECT_METAMASK = '/connect/metamask',
   NODE_DISCONNECTED = '/error/node-disconnected',
   LANDING = '/'
-}
-
-export enum MSIG_METHOD {
-  CONSTRUCTOR = 1,
-  PROPOSE,
-  APPROVE,
-  CANCEL,
-  ADD_SIGNER,
-  REMOVE_SIGNER,
-  SWAP_SIGNER,
-  CHANGE_NUM_APPROVALS_THRESHOLD,
-  LOCK_BALANCE
 }
 /* eslint-enable */
