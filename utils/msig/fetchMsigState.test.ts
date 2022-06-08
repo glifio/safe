@@ -12,14 +12,15 @@ import {
 
 jest.mock('../../apolloClient', () => ({
   apolloClient: {
-    query: ({ variables }) => Promise.resolve({
-      data: {
-        address: {
-          id: variables.address,
-          robust: variables.address
+    query: ({ variables }) =>
+      Promise.resolve({
+        data: {
+          address: {
+            id: variables.address,
+            robust: variables.address
+          }
         }
-      }
-    })
+      })
   }
 }))
 
