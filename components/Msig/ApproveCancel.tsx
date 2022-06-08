@@ -81,8 +81,10 @@ export const ApproveCancel = ({
 
   // Get actor data from transaction
   const { data: actorData, error: actorError } = useActorQuery({
-    variables: { address: convertAddrToPrefix(transaction?.to.robust) },
-    skip: !transaction?.to.robust
+    variables: {
+      address: convertAddrToPrefix(transaction?.to.robust || transaction?.to.id)
+    },
+    skip: !(transaction?.to.robust || transaction?.to.id)
   })
 
   // Get actor name from actor data

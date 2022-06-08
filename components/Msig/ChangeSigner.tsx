@@ -90,7 +90,7 @@ export const ChangeSigner = ({
     <Transaction.Form
       title='Change a signer'
       description='Please update the signer address below'
-      warning="You're about to change a signer address of your Safe. Please make sure you know and trust the new owner as they will be able to withdraw funds from your Safe."
+      warning="You're about to change a signer address of your Safe. Please make sure you know and trust the new signer."
       msig
       method={MsigMethod.SWAP_SIGNER}
       message={message}

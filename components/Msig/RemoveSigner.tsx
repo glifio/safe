@@ -88,7 +88,7 @@ export const RemoveSigner = ({
     <Transaction.Form
       title='Remove a signer'
       description='Please select the signer address to remove below'
-      warning="You're about to remove an owner from your Safe."
+      warning="You're about to remove a signer from your Safe."
       msig
       method={MsigMethod.REMOVE_SIGNER}
       message={message}
