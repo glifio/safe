@@ -9,3 +9,5 @@ import 'whatwg-fetch'
 process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC =
   'https://calibration.node.glif.io/rpc/v0'
 process.env.NEXT_PUBLIC_COIN_TYPE = 't'
+process.env.NEXT_PUBLIC_GRAPH_API_URL =
+  'https://graph-calibration.glif.link/query'

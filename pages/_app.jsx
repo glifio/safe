@@ -18,8 +18,6 @@ import { createApolloClient } from '../apolloClient'
 import ErrorBoundary from '../components/ErrorBoundary'
 import JSONLD from '../JSONLD'
 
-const client = createApolloClient()
-
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
@@ -71,7 +69,7 @@ class MyApp extends App {
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
         />
-        <ApolloProvider client={client}>
+        <ApolloProvider client={createApolloClient()}>
           <SWRConfig value={{ refreshInterval: 10000 }}>
             <ThemeProvider theme={theme}>
               <WasmLoader>
