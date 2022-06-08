@@ -12,30 +12,28 @@ export const Signers = ({ signers }: { signers: AddressType[] }) => {
   const router = useRouter()
   return (
     <>
-      {signers.map((signer) => {
-        return (
-          <Address
-            key={signer.robust || signer.id}
-            address={signer}
-            onRemoveSigner={() => {
-              navigate(router, {
-                pageUrl: PAGE.MSIG_REMOVE_SIGNER,
-                newQueryParams: {
-                  address: signer.robust || signer.id
-                }
-              })
-            }}
-            onChangeSigner={() => {
-              navigate(router, {
-                pageUrl: PAGE.MSIG_CHANGE_SIGNER,
-                newQueryParams: {
-                  address: signer.robust || signer.id
-                }
-              })
-            }}
-          />
-        )
-      })}
+      {signers.map((signer) => (
+        <Address
+          key={signer.robust || signer.id}
+          address={signer}
+          onRemoveSigner={() => {
+            navigate(router, {
+              pageUrl: PAGE.MSIG_REMOVE_SIGNER,
+              newQueryParams: {
+                address: signer.robust || signer.id
+              }
+            })
+          }}
+          onChangeSigner={() => {
+            navigate(router, {
+              pageUrl: PAGE.MSIG_CHANGE_SIGNER,
+              newQueryParams: {
+                address: signer.robust || signer.id
+              }
+            })
+          }}
+        />
+      ))}
     </>
   )
 }
