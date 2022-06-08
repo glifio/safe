@@ -10,6 +10,7 @@ import {
   useActorQuery,
   useWallet,
   Transaction,
+  Line,
   Parameters,
   MsigMethod,
   TxState,
@@ -50,6 +51,23 @@ export const ApproveCancel = ({
       return null
     }
   }, [proposal])
+
+  const parameters = useMemo<Record<string, any> | null>(() => {
+    if (!transaction) return null
+    const {
+      id,
+      approved,
+      approvalsUntilExecution,
+      proposalHash,
+      ...restParams
+    } = transaction
+    return { params: restParams }
+  }, [transaction])
+
+  const approved = useMemo<Record<string, any> | null>(() => {
+    if (!transaction) return null
+    return { approved: transaction.approved }
+  }, [transaction])
 
   // Create message from input
   const message = useMemo<Message | null>(() => {
@@ -130,7 +148,16 @@ export const ApproveCancel = ({
         msigBalance={AvailableBalance}
       />
       {transaction && actorName && (
-        <Parameters params={transaction} depth={0} actorName={actorName} />
+        <>
+          <Line label='Proposal ID'>{transaction.id}</Line>
+          <Line label='Approvals until execution'>
+            {transaction.approvalsUntilExecution}
+          </Line>
+          <hr />
+          <Parameters params={approved} depth={0} actorName={actorName} />
+          <hr />
+          <Parameters params={parameters} depth={0} actorName={actorName} />
+        </>
       )}
     </Transaction.Form>
   )
