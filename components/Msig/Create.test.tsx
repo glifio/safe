@@ -66,10 +66,7 @@ describe('Create', () => {
       const signer1 = getByRole(result.container, 'textbox')
       const addSigner = getByText(result.container, 'Add Signer')
       const approvals = getByRole(result.container, 'combobox')
-      const [amount, vest] = getAllByRole(
-        result.container,
-        'spinbutton'
-      )
+      const [amount, vest] = getAllByRole(result.container, 'spinbutton')
       const cancel = getByText(result.container, 'Cancel')
       const review = getByText(result.container, 'Review')
 
