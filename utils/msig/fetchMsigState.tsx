@@ -1,30 +1,16 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import { CID } from '@glif/filecoin-wallet-provider'
-import { QueryLazyOptions, LazyQueryResult } from '@apollo/client'
-import { AddressQuery, Exact } from '@glif/react-components'
+import { AddressDocument, AddressQuery } from '@glif/react-components'
 
 import isAddressSigner from './isAddressSigner'
 import { decodeActorCID } from '../actorCode'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
+import { apolloClient } from '../../apolloClient'
 
 export default async function fetchMsigState(
   actorID: string,
-  signerAddress: string,
-  getAddress: (
-    options?: QueryLazyOptions<
-      Exact<{
-        address: string
-      }>
-    >
-  ) => Promise<
-    LazyQueryResult<
-      AddressQuery,
-      Exact<{
-        address: string
-      }>
-    >
-  >
+  signerAddress: string
 ): Promise<MsigActorState> {
   try {
     const lCli = new LotusRPCEngine({
@@ -66,16 +52,19 @@ export default async function fetchMsigState(
     const [availableBalance, signers] = await Promise.all([
       lCli.request<string>('MsigGetAvailableBalance', actorID, null),
       Promise.all(
-        State?.Signers.map(async (s) => {
-          const { data, error, loading } = await getAddress({
-            variables: { address: s }
-          })
-
-          if (!error && !loading && !!data?.address) {
+        State?.Signers.map(async (signer) => {
+          try {
+            const { data } = await apolloClient.query<AddressQuery>({
+              query: AddressDocument,
+              variables: {
+                address: signer
+              }
+            })
+            if (!data.address) throw new Error('Missing address')
             return data.address
+          } catch (e) {
+            return { id: signer, robust: '' }
           }
-
-          return { id: s, robust: '' }
         })
       )
     ])
