@@ -25,6 +25,27 @@ interface Receipt {
   Return: string
 }
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+const recursivelyGetReceipt = async (
+  apiAddress: string,
+  cid: string,
+  waitTime: number = 5000
+): Promise<Receipt> => {
+  await sleep(waitTime)
+  const lCli = new LotusRPCEngine({ apiAddress })
+  const receipt = await lCli.request<Receipt>(
+    'StateGetReceipt',
+    { '/': cid },
+    null
+  )
+
+  if (receipt) return receipt
+
+  // recursively, linearly ease off
+  return recursivelyGetReceipt(apiAddress, cid, waitTime + 1000)
+}
+
 export const CreateConfirm = () => {
   const router = useRouter()
   const { cid } = router.query
@@ -32,7 +53,7 @@ export const CreateConfirm = () => {
   const wallet = useWallet()
 
   // Confirmation state
-  const [receipt, setReceipt] = useState<Receipt | null>(null)
+  const [fetchingReceipt, setFetchingReceipt] = useState<boolean>(false)
   const [receiptError, setReceiptError] = useState<boolean>(false)
   const [creationError, setCreationError] = useState<boolean>(false)
 
@@ -43,41 +64,45 @@ export const CreateConfirm = () => {
   // Get the message by cid
   const { data: messageData, error: messageError } = useMessageQuery({
     variables: { cid: cid as string },
-    pollInterval: 500,
+    pollInterval: 5000,
     skip: !cid
   })
 
-  // Get the receipt after receiving the message
+  // Decode the receipt after receiving the message
   useEffect(() => {
-    if (messageData?.message) {
-      setTimeout(() => {
-        const lCli = new LotusRPCEngine({ apiAddress })
-        lCli
-          .request<Receipt>('StateGetReceipt', { '/': cid }, null)
-          .then((receipt) => setReceipt(receipt))
-          .catch(() => setReceiptError(true))
-      }, 10000)
+    if (messageData?.message && !fetchingReceipt) {
+      setFetchingReceipt(true)
+      recursivelyGetReceipt(apiAddress, cid as string)
+        .then((receipt) => {
+          if (receipt) {
+            try {
+              // Verify the exit code
+              if (receipt.ExitCode !== 0)
+                throw new Error('Safe creation failed')
+
+              // Verify the safe address
+              const { robust } = getAddrFromReceipt(receipt.Return)
+              if (!robust) throw new Error('Failed to get address from receipt')
+
+              // Set the safe address
+              setMsigActor(robust)
+            } catch (e) {
+              setCreationError(true)
+            } finally {
+              setFetchingReceipt(false)
+            }
+          }
+        })
+        .catch(() => setReceiptError(true))
     }
-  }, [messageData?.message, apiAddress, cid])
-
-  // Get the safe address after receiving the receipt
-  useEffect(() => {
-    if (receipt) {
-      try {
-        // Verify the exit code
-        if (receipt.ExitCode !== 0) throw new Error('Safe creation failed')
-
-        // Verify the safe address
-        const { robust } = getAddrFromReceipt(receipt.Return)
-        if (!robust) throw new Error('Failed to get address from receipt')
-
-        // Set the safe address
-        setMsigActor(robust)
-      } catch (e) {
-        setCreationError(true)
-      }
-    }
-  }, [receipt, setMsigActor])
+  }, [
+    messageData?.message,
+    apiAddress,
+    cid,
+    setMsigActor,
+    fetchingReceipt,
+    setFetchingReceipt
+  ])
 
   // CID was not provided in query parameters
   if (!cid) {

@@ -179,7 +179,9 @@ export const Create = ({
       />
       <InputV2.SelectRange
         label='Required Approvals'
-        info={`The Safe will have ${acceptedSigners.length} owners`}
+        info={`The Safe will have ${acceptedSigners.length} owner${
+          acceptedSigners.length > 1 ? 's' : ''
+        }`}
         min={1}
         max={acceptedSigners.length}
         value={approvals}
