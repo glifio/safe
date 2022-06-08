@@ -54,7 +54,13 @@ export const ApproveCancel = ({
 
   const parameters = useMemo<Record<string, any> | null>(() => {
     if (!transaction) return null
-    const { id, approved, approvalsUntilExecution, proposalHash, ...restParams } = transaction
+    const {
+      id,
+      approved,
+      approvalsUntilExecution,
+      proposalHash,
+      ...restParams
+    } = transaction
     return { params: restParams }
   }, [transaction])
 
@@ -144,7 +150,9 @@ export const ApproveCancel = ({
       {transaction && actorName && (
         <>
           <Line label='Proposal ID'>{transaction.id}</Line>
-          <Line label='Approvals until execution'>{transaction.approvalsUntilExecution}</Line>
+          <Line label='Approvals until execution'>
+            {transaction.approvalsUntilExecution}
+          </Line>
           <hr />
           <Parameters params={approved} depth={0} actorName={actorName} />
           <hr />
