@@ -370,6 +370,10 @@ exports[`Create it allows a user to create a safe 1`] = `
   transform: translateY(-0.35em) rotate(45deg);
 }
 
+.c7 .info-wrapper {
+  padding: 0.7em 1em;
+}
+
 .c9 .toggle-wrapper {
   position: relative;
   padding: 0.5em 0;
@@ -650,30 +654,33 @@ exports[`Create it allows a user to create a safe 1`] = `
           <span>
             Required Approvals
           </span>
-          
-          
+          <span
+            class="info"
+          >
+            The Safe will have 2 owners
+          </span>
         </div>
         <div
-          class="button-wrapper"
+          class="select-wrapper"
         >
-          <div
-            class="unit-wrapper"
+          <select
+            disabled=""
           >
-            <input
-              autocomplete="on"
-              class=""
-              disabled=""
-              max="2"
-              min="1"
-              name=""
-              placeholder=""
-              step=""
-              style="padding-right: 1em;"
-              type="number"
-              value="2"
-            />
             
-          </div>
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+          </select>
+          <div
+            class="select-arrow"
+          />
         </div>
       </label>
       <label
