@@ -10,6 +10,19 @@ import {
   MULTISIG_SIGNER_ADDRESS_2
 } from '../../test-utils'
 
+jest.mock('../../apolloClient', () => ({
+  apolloClient: {
+    query: ({ variables }) => Promise.resolve({
+      data: {
+        address: {
+          id: variables.address,
+          robust: variables.address
+        }
+      }
+    })
+  }
+}))
+
 describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
     jest.spyOn(require('../actorCode'), 'decodeActorCID')
@@ -25,17 +38,7 @@ describe('fetchMsigState', () => {
         }
       })
 
-    const { errors } = await fetchMsigState(
-      'f01',
-      MULTISIG_SIGNER_ADDRESS,
-      // @ts-expect-error
-      () => {
-        return {
-          id: 'f01',
-          robust: 't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpnd'
-        }
-      }
-    )
+    const { errors } = await fetchMsigState('f01', MULTISIG_SIGNER_ADDRESS)
 
     expect(errors.notMsigActor).toBe(true)
   }, 10000)
@@ -69,14 +72,7 @@ describe('fetchMsigState', () => {
 
     const { errors } = await fetchMsigState(
       't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpny',
-      MULTISIG_SIGNER_ADDRESS,
-      // @ts-expect-error
-      () => {
-        return {
-          id: 'f01',
-          robust: 't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpnd'
-        }
-      }
+      MULTISIG_SIGNER_ADDRESS
     )
 
     expect(errors.connectedWalletNotMsigSigner).toBe(true)
@@ -95,18 +91,7 @@ describe('fetchMsigState', () => {
 
     const { errors } = await fetchMsigState(
       't012914328591053',
-      MULTISIG_SIGNER_ADDRESS,
-      // @ts-ignore
-      () => {
-        return {
-          data: {
-            address: {
-              id: 'f01',
-              robust: 't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpnd'
-            }
-          }
-        }
-      }
+      MULTISIG_SIGNER_ADDRESS
     )
 
     expect(errors.actorNotFound).toBe(true)
@@ -154,21 +139,7 @@ describe('fetchMsigState', () => {
       NumApprovalsThreshold,
       StartEpoch,
       UnlockDuration
-    } = await fetchMsigState(
-      MULTISIG_ACTOR_ADDRESS,
-      MULTISIG_SIGNER_ADDRESS_2,
-      // @ts-ignore
-      () => {
-        return {
-          data: {
-            address: {
-              robust: MULTISIG_SIGNER_ADDRESS_2,
-              id: ''
-            }
-          }
-        }
-      }
-    )
+    } = await fetchMsigState(MULTISIG_ACTOR_ADDRESS, MULTISIG_SIGNER_ADDRESS_2)
 
     expect(convertAddrToPrefix(Address)).toBe(
       convertAddrToPrefix(MULTISIG_ACTOR_ADDRESS)
