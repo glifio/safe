@@ -14,11 +14,9 @@ import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
 import { MsigProviderWrapper } from '../MsigProvider'
 import { WasmLoader } from '../lib/WasmLoader'
-import { createApolloClient } from '../apolloClient'
+import { apolloClient } from '../apolloClient'
 import ErrorBoundary from '../components/ErrorBoundary'
 import JSONLD from '../JSONLD'
-
-const client = createApolloClient()
 
 class MyApp extends App {
   render() {
@@ -71,7 +69,7 @@ class MyApp extends App {
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
         />
-        <ApolloProvider client={client}>
+        <ApolloProvider client={apolloClient}>
           <SWRConfig value={{ refreshInterval: 10000 }}>
             <ThemeProvider theme={theme}>
               <WasmLoader>
