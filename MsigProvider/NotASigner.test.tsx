@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect'
 import { act, renderHook } from '@testing-library/react-hooks'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { cleanup } from '@testing-library/react'

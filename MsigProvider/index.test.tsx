@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { SWRConfig } from 'swr'
 import { act, renderHook } from '@testing-library/react-hooks'
