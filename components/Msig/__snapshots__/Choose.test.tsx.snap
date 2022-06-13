@@ -305,17 +305,17 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   padding: 0.7em 1em;
 }
 
-<div
-  class="c0"
->
+<form>
   <div
-    class="c1 c2"
+    class="c0"
   >
-    <h2>
-      Safe ID
-    </h2>
-    <hr />
-    <form>
+    <div
+      class="c1 c2"
+    >
+      <h2>
+        Safe ID
+      </h2>
+      <hr />
       <label
         class="c3"
       >
@@ -346,32 +346,34 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
         </div>
         
       </label>
-    </form>
-    <p>
-      Don't have a Safe ID?
-       
-      <a
-        href="/create"
+      <p>
+        Don't have a Safe ID?
+         
+        <a
+          href="/create"
+        >
+          Create one
+        </a>
+      </p>
+    </div>
+    <div
+      class="c4 c5"
+    >
+      <button
+        class="c6"
+        type="button"
       >
-        Create one
-      </a>
-    </p>
+        Back
+      </button>
+      <button
+        class="c7"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
   </div>
-  <div
-    class="c4 c5"
-  >
-    <button
-      class="c6"
-    >
-      Back
-    </button>
-    <button
-      class="c7"
-    >
-      Submit
-    </button>
-  </div>
-</div>
+</form>
 `;
 
 exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
@@ -688,17 +690,17 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   padding: 0.7em 1em;
 }
 
-<div
-  class="c0"
->
+<form>
   <div
-    class="c1 c2"
+    class="c0"
   >
-    <h2>
-      Safe ID
-    </h2>
-    <hr />
-    <form>
+    <div
+      class="c1 c2"
+    >
+      <h2>
+        Safe ID
+      </h2>
+      <hr />
       <label
         class="c3"
       >
@@ -733,33 +735,35 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
           Second character must be 0 or 2
         </span>
       </label>
-    </form>
-    <p>
-      Don't have a Safe ID?
-       
-      <a
-        href="/create"
+      <p>
+        Don't have a Safe ID?
+         
+        <a
+          href="/create"
+        >
+          Create one
+        </a>
+      </p>
+    </div>
+    <div
+      class="c4 c5"
+    >
+      <button
+        class="c6"
+        type="button"
       >
-        Create one
-      </a>
-    </p>
+        Back
+      </button>
+      <button
+        class="c7"
+        disabled=""
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
   </div>
-  <div
-    class="c4 c5"
-  >
-    <button
-      class="c6"
-    >
-      Back
-    </button>
-    <button
-      class="c7"
-      disabled=""
-    >
-      Submit
-    </button>
-  </div>
-</div>
+</form>
 `;
 
 exports[`Choose it renders the initial state correctly 1`] = `
@@ -1075,17 +1079,17 @@ exports[`Choose it renders the initial state correctly 1`] = `
   padding: 0.7em 1em;
 }
 
-<div
-  class="c0"
->
+<form>
   <div
-    class="c1 c2"
+    class="c0"
   >
-    <h2>
-      Safe ID
-    </h2>
-    <hr />
-    <form>
+    <div
+      class="c1 c2"
+    >
+      <h2>
+        Safe ID
+      </h2>
+      <hr />
       <label
         class="c3"
       >
@@ -1116,31 +1120,33 @@ exports[`Choose it renders the initial state correctly 1`] = `
         </div>
         
       </label>
-    </form>
-    <p>
-      Don't have a Safe ID?
-       
-      <a
-        href="/create"
+      <p>
+        Don't have a Safe ID?
+         
+        <a
+          href="/create"
+        >
+          Create one
+        </a>
+      </p>
+    </div>
+    <div
+      class="c4 c5"
+    >
+      <button
+        class="c6"
+        type="button"
       >
-        Create one
-      </a>
-    </p>
+        Back
+      </button>
+      <button
+        class="c7"
+        disabled=""
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
   </div>
-  <div
-    class="c4 c5"
-  >
-    <button
-      class="c6"
-    >
-      Back
-    </button>
-    <button
-      class="c7"
-      disabled=""
-    >
-      Submit
-    </button>
-  </div>
-</div>
+</form>
 `;
