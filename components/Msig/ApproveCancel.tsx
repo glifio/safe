@@ -130,7 +130,15 @@ export const ApproveCancel = ({
         msigBalance={AvailableBalance}
       />
       {transaction && actorName && (
-        <Parameters params={transaction} depth={0} actorName={actorName} />
+        <>
+          <Line label='Proposal ID'>{transaction.id}</Line>
+          <Line label='Approvals until execution'>
+            {transaction.approvalsUntilExecution}
+          </Line>
+          <Parameters params={approved} depth={0} actorName={actorName} />
+          <hr />
+          <Parameters params={parameters} depth={0} actorName={actorName} />
+        </>
       )}
     </Transaction.Form>
   )
