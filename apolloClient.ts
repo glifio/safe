@@ -19,6 +19,10 @@ const wsLink = process.browser
     })
   : null
 
+export const cache = new InMemoryCache({
+  ...defaultMessageHistoryClientCacheConfig
+})
+
 export function createApolloClient() {
   // The split function takes three parameters:
   //
@@ -41,6 +45,6 @@ export function createApolloClient() {
 
   return new ApolloClient({
     link,
-    cache: new InMemoryCache({ ...defaultMessageHistoryClientCacheConfig })
+    cache
   })
 }
