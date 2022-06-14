@@ -15,6 +15,7 @@ export default function ConnectMetaMask() {
   useDesktopBrowser()
   const router = useRouter()
   const { resetState } = useWalletProvider()
+
   const back = useCallback(() => {
     router.replace('/')
     resetState()
@@ -23,6 +24,7 @@ export default function ConnectMetaMask() {
   const next = useCallback(() => {
     navigate(router, { pageUrl: PAGE.MSIG_CHOOSE_ACCOUNTS })
   }, [router])
+
   return (
     <SafePage>
       <OneColumnCentered>
