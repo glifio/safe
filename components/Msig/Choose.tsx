@@ -51,14 +51,14 @@ export const Choose = () => {
   )
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        setSubmittedForm(true)
-        setMsigActor(safeID)
-      }}
-    >
-      <Dialog>
+    <Dialog>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          setSubmittedForm(true)
+          setMsigActor(safeID)
+        }}
+      >
         {submittedForm && errorMessage && <ErrorBox>{errorMessage}</ErrorBox>}
         <ShadowBox>
           <h2>Safe ID</h2>
@@ -95,7 +95,7 @@ export const Choose = () => {
             Submit
           </ButtonV2>
         </ButtonRowSpaced>
-      </Dialog>
-    </form>
+      </form>
+    </Dialog>
   )
 }
