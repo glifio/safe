@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Choose it renders correctly after entering a valid safe id 1`] = `
-.c6 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -28,30 +28,30 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   font-size: 1.25em;
 }
 
-.c6 svg path {
+.c7 svg path {
   stroke: var(--black);
 }
 
-.c6:hover {
+.c7:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c6:hover svg path {
+.c7:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c6:active {
+.c7:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c6:active svg path {
+.c7:active svg path {
   stroke: var(--white) !important;
 }
 
-.c7 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -81,40 +81,40 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   background: var(--green-medium);
 }
 
-.c7 svg path {
+.c8 svg path {
   stroke: var(--black);
 }
 
-.c7:hover {
+.c8:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c7:hover svg path {
+.c8:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c7:active {
+.c8:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c7:active svg path {
+.c8:active svg path {
   stroke: var(--white) !important;
 }
 
-.c7 svg path {
+.c8 svg path {
   stroke: var(--white);
 }
 
-.c7:hover {
+.c8:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c7:hover svg path {
+.c8:hover svg path {
   stroke: var(--green-medium);
 }
 
@@ -155,7 +155,7 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -164,7 +164,7 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   margin: 1.5em 0;
 }
 
-.c5 {
+.c6 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -220,7 +220,7 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   color: var(--red-medium);
 }
 
-.c3 .button-wrapper {
+.c4 .button-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -232,13 +232,13 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   gap: 10px;
 }
 
-.c3 .button-wrapper > *:first-child {
+.c4 .button-wrapper > *:first-child {
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
-.c3 .button-wrapper > *:not(:first-child) {
+.c4 .button-wrapper > *:not(:first-child) {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -247,26 +247,26 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   transition: transform 0.1s ease-out;
 }
 
-.c3 .button-wrapper > *:not(:first-child):hover:not(:active) {
+.c4 .button-wrapper > *:not(:first-child):hover:not(:active) {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
 
-.c3 .button-wrapper > *:not(:first-child):active {
+.c4 .button-wrapper > *:not(:first-child):active {
   -webkit-transition: none;
   transition: none;
 }
 
-.c3 .unit-wrapper {
+.c4 .unit-wrapper {
   position: relative;
 }
 
-.c3 .unit-wrapper input {
+.c4 .unit-wrapper input {
   width: 100%;
 }
 
-.c3 .unit-wrapper .unit {
+.c4 .unit-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -276,39 +276,10 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   color: var(--purple-medium);
 }
 
-.c3 .select-wrapper {
-  position: relative;
-}
-
-.c3 .select-wrapper select {
-  width: 100%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.c3 .select-wrapper .select-arrow {
-  position: absolute;
-  pointer-events: none;
-  top: 50%;
-  right: 1.2em;
-  width: 0.6em;
-  height: 0.6em;
-  border-right: 1.5px solid var(--black);
-  border-bottom: 1.5px solid var(--black);
-  -webkit-transform: translateY(-0.35em) rotate(45deg);
-  -ms-transform: translateY(-0.35em) rotate(45deg);
-  transform: translateY(-0.35em) rotate(45deg);
-}
-
-.c3 .info-wrapper {
-  padding: 0.7em 1em;
-}
-
-<form>
-  <div
-    class="c0"
-  >
+<div
+  class="c0"
+>
+  <form>
     <div
       class="c1 c2"
     >
@@ -317,7 +288,7 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
       </h2>
       <hr />
       <label
-        class="c3"
+        class="c3 c4"
       >
         <span>
           Please enter your Safe ID below to continue
@@ -336,7 +307,7 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
               min=""
               name="safe-id"
               placeholder="f2..."
-              step=""
+              step="any"
               style="padding-right: 1em;"
               type="text"
               value="f2yrhsjwuwypy4gsv2lcikphizkusqe2gp3pp4w5q"
@@ -357,27 +328,27 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
       </p>
     </div>
     <div
-      class="c4 c5"
+      class="c5 c6"
     >
       <button
-        class="c6"
+        class="c7"
         type="button"
       >
         Back
       </button>
       <button
-        class="c7"
+        class="c8"
         type="submit"
       >
         Submit
       </button>
     </div>
-  </div>
-</form>
+  </form>
+</div>
 `;
 
 exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
-.c6 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -404,30 +375,30 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   font-size: 1.25em;
 }
 
-.c6 svg path {
+.c7 svg path {
   stroke: var(--black);
 }
 
-.c6:hover {
+.c7:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c6:hover svg path {
+.c7:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c6:active {
+.c7:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c6:active svg path {
+.c7:active svg path {
   stroke: var(--white) !important;
 }
 
-.c7 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -461,44 +432,44 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   background: transparent;
 }
 
-.c7 svg path {
+.c8 svg path {
   stroke: var(--black);
 }
 
-.c7:hover {
+.c8:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c7:hover svg path {
+.c8:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c7:active {
+.c8:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c7:active svg path {
+.c8:active svg path {
   stroke: var(--white) !important;
 }
 
-.c7 svg path {
+.c8 svg path {
   stroke: var(--white);
 }
 
-.c7:hover {
+.c8:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c7:hover svg path {
+.c8:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c7 svg path {
+.c8 svg path {
   stroke: var(--gray-medium);
 }
 
@@ -539,7 +510,7 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -548,7 +519,7 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   margin: 1.5em 0;
 }
 
-.c5 {
+.c6 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -604,7 +575,7 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   color: var(--red-medium);
 }
 
-.c3 .button-wrapper {
+.c4 .button-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -616,13 +587,13 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   gap: 10px;
 }
 
-.c3 .button-wrapper > *:first-child {
+.c4 .button-wrapper > *:first-child {
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
-.c3 .button-wrapper > *:not(:first-child) {
+.c4 .button-wrapper > *:not(:first-child) {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -631,26 +602,26 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   transition: transform 0.1s ease-out;
 }
 
-.c3 .button-wrapper > *:not(:first-child):hover:not(:active) {
+.c4 .button-wrapper > *:not(:first-child):hover:not(:active) {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
 
-.c3 .button-wrapper > *:not(:first-child):active {
+.c4 .button-wrapper > *:not(:first-child):active {
   -webkit-transition: none;
   transition: none;
 }
 
-.c3 .unit-wrapper {
+.c4 .unit-wrapper {
   position: relative;
 }
 
-.c3 .unit-wrapper input {
+.c4 .unit-wrapper input {
   width: 100%;
 }
 
-.c3 .unit-wrapper .unit {
+.c4 .unit-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -661,39 +632,10 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   color: var(--red-dark) !important;
 }
 
-.c3 .select-wrapper {
-  position: relative;
-}
-
-.c3 .select-wrapper select {
-  width: 100%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.c3 .select-wrapper .select-arrow {
-  position: absolute;
-  pointer-events: none;
-  top: 50%;
-  right: 1.2em;
-  width: 0.6em;
-  height: 0.6em;
-  border-right: 1.5px solid var(--black);
-  border-bottom: 1.5px solid var(--black);
-  -webkit-transform: translateY(-0.35em) rotate(45deg);
-  -ms-transform: translateY(-0.35em) rotate(45deg);
-  transform: translateY(-0.35em) rotate(45deg);
-}
-
-.c3 .info-wrapper {
-  padding: 0.7em 1em;
-}
-
-<form>
-  <div
-    class="c0"
-  >
+<div
+  class="c0"
+>
+  <form>
     <div
       class="c1 c2"
     >
@@ -702,7 +644,7 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
       </h2>
       <hr />
       <label
-        class="c3"
+        class="c3 c4"
       >
         <span>
           Please enter your Safe ID below to continue
@@ -721,7 +663,7 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
               min=""
               name="safe-id"
               placeholder="f2..."
-              step=""
+              step="any"
               style="padding-right: 1em;"
               type="text"
               value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
@@ -746,28 +688,28 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
       </p>
     </div>
     <div
-      class="c4 c5"
+      class="c5 c6"
     >
       <button
-        class="c6"
+        class="c7"
         type="button"
       >
         Back
       </button>
       <button
-        class="c7"
+        class="c8"
         disabled=""
         type="submit"
       >
         Submit
       </button>
     </div>
-  </div>
-</form>
+  </form>
+</div>
 `;
 
 exports[`Choose it renders the initial state correctly 1`] = `
-.c6 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -794,30 +736,30 @@ exports[`Choose it renders the initial state correctly 1`] = `
   font-size: 1.25em;
 }
 
-.c6 svg path {
+.c7 svg path {
   stroke: var(--black);
 }
 
-.c6:hover {
+.c7:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c6:hover svg path {
+.c7:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c6:active {
+.c7:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c6:active svg path {
+.c7:active svg path {
   stroke: var(--white) !important;
 }
 
-.c7 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -851,44 +793,44 @@ exports[`Choose it renders the initial state correctly 1`] = `
   background: transparent;
 }
 
-.c7 svg path {
+.c8 svg path {
   stroke: var(--black);
 }
 
-.c7:hover {
+.c8:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c7:hover svg path {
+.c8:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c7:active {
+.c8:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c7:active svg path {
+.c8:active svg path {
   stroke: var(--white) !important;
 }
 
-.c7 svg path {
+.c8 svg path {
   stroke: var(--white);
 }
 
-.c7:hover {
+.c8:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c7:hover svg path {
+.c8:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c7 svg path {
+.c8 svg path {
   stroke: var(--gray-medium);
 }
 
@@ -929,7 +871,7 @@ exports[`Choose it renders the initial state correctly 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -938,7 +880,7 @@ exports[`Choose it renders the initial state correctly 1`] = `
   margin: 1.5em 0;
 }
 
-.c5 {
+.c6 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -994,7 +936,7 @@ exports[`Choose it renders the initial state correctly 1`] = `
   color: var(--red-medium);
 }
 
-.c3 .button-wrapper {
+.c4 .button-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1006,13 +948,13 @@ exports[`Choose it renders the initial state correctly 1`] = `
   gap: 10px;
 }
 
-.c3 .button-wrapper > *:first-child {
+.c4 .button-wrapper > *:first-child {
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
-.c3 .button-wrapper > *:not(:first-child) {
+.c4 .button-wrapper > *:not(:first-child) {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1021,26 +963,26 @@ exports[`Choose it renders the initial state correctly 1`] = `
   transition: transform 0.1s ease-out;
 }
 
-.c3 .button-wrapper > *:not(:first-child):hover:not(:active) {
+.c4 .button-wrapper > *:not(:first-child):hover:not(:active) {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
 
-.c3 .button-wrapper > *:not(:first-child):active {
+.c4 .button-wrapper > *:not(:first-child):active {
   -webkit-transition: none;
   transition: none;
 }
 
-.c3 .unit-wrapper {
+.c4 .unit-wrapper {
   position: relative;
 }
 
-.c3 .unit-wrapper input {
+.c4 .unit-wrapper input {
   width: 100%;
 }
 
-.c3 .unit-wrapper .unit {
+.c4 .unit-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -1050,39 +992,10 @@ exports[`Choose it renders the initial state correctly 1`] = `
   color: var(--purple-medium);
 }
 
-.c3 .select-wrapper {
-  position: relative;
-}
-
-.c3 .select-wrapper select {
-  width: 100%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.c3 .select-wrapper .select-arrow {
-  position: absolute;
-  pointer-events: none;
-  top: 50%;
-  right: 1.2em;
-  width: 0.6em;
-  height: 0.6em;
-  border-right: 1.5px solid var(--black);
-  border-bottom: 1.5px solid var(--black);
-  -webkit-transform: translateY(-0.35em) rotate(45deg);
-  -ms-transform: translateY(-0.35em) rotate(45deg);
-  transform: translateY(-0.35em) rotate(45deg);
-}
-
-.c3 .info-wrapper {
-  padding: 0.7em 1em;
-}
-
-<form>
-  <div
-    class="c0"
-  >
+<div
+  class="c0"
+>
+  <form>
     <div
       class="c1 c2"
     >
@@ -1091,7 +1004,7 @@ exports[`Choose it renders the initial state correctly 1`] = `
       </h2>
       <hr />
       <label
-        class="c3"
+        class="c3 c4"
       >
         <span>
           Please enter your Safe ID below to continue
@@ -1110,7 +1023,7 @@ exports[`Choose it renders the initial state correctly 1`] = `
               min=""
               name="safe-id"
               placeholder="f2..."
-              step=""
+              step="any"
               style="padding-right: 1em;"
               type="text"
               value=""
@@ -1131,22 +1044,22 @@ exports[`Choose it renders the initial state correctly 1`] = `
       </p>
     </div>
     <div
-      class="c4 c5"
+      class="c5 c6"
     >
       <button
-        class="c6"
+        class="c7"
         type="button"
       >
         Back
       </button>
       <button
-        class="c7"
+        class="c8"
         disabled=""
         type="submit"
       >
         Submit
       </button>
     </div>
-  </div>
-</form>
+  </form>
+</div>
 `;
