@@ -11,7 +11,11 @@ import {
 import { Context } from 'react'
 import { BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import { MsigMethod, truncateAddress, WalletProviderContextType } from '@glif/react-components'
+import {
+  MsigMethod,
+  truncateAddress,
+  WalletProviderContextType
+} from '@glif/react-components'
 
 import {
   pushPendingMessageSpy,
@@ -71,7 +75,9 @@ describe('ChangeSigner', () => {
 
       // Check initial state
       expect(header).toHaveTextContent('Change a signer')
-      expect(oldSigner).toHaveDisplayValue(truncateAddress(MULTISIG_SIGNER_ADDRESS_2))
+      expect(oldSigner).toHaveDisplayValue(
+        truncateAddress(MULTISIG_SIGNER_ADDRESS_2)
+      )
       expect(newSigner).toHaveFocus()
       expect(newSigner).toHaveDisplayValue('')
       expect(cancel).toBeEnabled()
