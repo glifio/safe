@@ -32,7 +32,7 @@ jest.mock('@glif/react-components', () => {
   const original = jest.requireActual('@glif/react-components')
   return {
     ...original,
-    useActorQuery: jest.fn(({ variables }) => ({
+    useActorQuery: jest.fn(() => ({
       data: { actor: { Code: 'bafkqadtgnfwc6nzpnv2wy5djonuwo' } }
     }))
   }
