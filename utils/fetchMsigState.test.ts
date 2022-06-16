@@ -11,7 +11,7 @@ import {
 } from '../test-utils'
 
 jest
-  .spyOn(require('../../apolloClient'), 'createApolloClient')
+  .spyOn(require('../apolloClient'), 'createApolloClient')
   .mockImplementation(() => {
     return {
       query: ({ variables }) =>
