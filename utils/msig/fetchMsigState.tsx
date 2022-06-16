@@ -1,7 +1,11 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import { CID } from '@glif/filecoin-wallet-provider'
-import { AddressDocument, AddressQuery, decodeActorCID } from '@glif/react-components'
+import {
+  AddressDocument,
+  AddressQuery,
+  decodeActorCID
+} from '@glif/react-components'
 
 import isAddressSigner from './isAddressSigner'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
@@ -69,7 +73,7 @@ export default async function fetchMsigState(
       )
     ])
 
-    if (!(isAddressSigner(signerAddress, signers))) {
+    if (!isAddressSigner(signerAddress, signers)) {
       return {
         ...emptyMsigState,
         errors: {
