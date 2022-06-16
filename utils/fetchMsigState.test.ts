@@ -40,7 +40,6 @@ describe('fetchMsigState', () => {
       })
 
     const { errors } = await fetchMsigState('f01', MULTISIG_SIGNER_ADDRESS)
-
     expect(errors.notMsigActor).toBe(true)
   }, 10000)
 
