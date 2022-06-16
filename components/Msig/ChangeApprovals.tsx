@@ -40,35 +40,43 @@ export const ChangeApprovals = ({
   // Create message from input
   const message = useMemo<Message | null>(() => {
     try {
-      return new Message({
-        to: Address,
-        from: wallet.address,
-        nonce: 0,
-        value: 0,
-        method: MsigMethod.PROPOSE,
-        params: Buffer.from(
-          serializeParams({
+      return approvals !== NumApprovalsThreshold
+        ? new Message({
             to: Address,
-            value: '0',
-            method: MsigMethod.CHANGE_NUM_APPROVALS_THRESHOLD,
+            from: wallet.address,
+            nonce: 0,
+            value: 0,
+            method: MsigMethod.PROPOSE,
             params: Buffer.from(
               serializeParams({
-                NewTreshold: approvals
+                to: Address,
+                value: '0',
+                method: MsigMethod.CHANGE_NUM_APPROVALS_THRESHOLD,
+                params: Buffer.from(
+                  serializeParams({
+                    NewTreshold: approvals
+                  }),
+                  'hex'
+                ).toString('base64')
               }),
               'hex'
-            ).toString('base64')
-          }),
-          'hex'
-        ).toString('base64'),
-        gasPremium: 0,
-        gasFeeCap: 0,
-        gasLimit: 0
-      })
+            ).toString('base64'),
+            gasPremium: 0,
+            gasFeeCap: 0,
+            gasLimit: 0
+          })
+        : null
     } catch (e) {
       logger.error(e)
       return null
     }
-  }, [approvals, Address, wallet.address, serializeParams])
+  }, [
+    approvals,
+    NumApprovalsThreshold,
+    Address,
+    wallet.address,
+    serializeParams
+  ])
 
   return (
     <Transaction.Form
