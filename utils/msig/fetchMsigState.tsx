@@ -1,10 +1,9 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import { CID } from '@glif/filecoin-wallet-provider'
-import { AddressDocument, AddressQuery } from '@glif/react-components'
+import { AddressDocument, AddressQuery, decodeActorCID } from '@glif/react-components'
 
 import isAddressSigner from './isAddressSigner'
-import { decodeActorCID } from '../actorCode'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
 import { createApolloClient } from '../../apolloClient'
 
