@@ -11,7 +11,7 @@ import {
 import { Context } from 'react'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import { WalletProviderContextType } from '@glif/react-components'
+import { MsigMethod, WalletProviderContextType } from '@glif/react-components'
 
 import {
   pushPendingMessageSpy,
@@ -137,7 +137,7 @@ describe('Withdraw', () => {
     expect(message.nonce).toBeGreaterThanOrEqual(0)
     expect(message.value).toBeInstanceOf(BigNumber)
     expect(message.value.isEqualTo(0)).toBe(true)
-    expect(message.method).toBe(2)
+    expect(message.method).toBe(MsigMethod.PROPOSE)
     expect(typeof message.params).toBe('string')
     expect(message.params).toBeTruthy()
     expect(message.gasPremium).toBeInstanceOf(BigNumber)
@@ -156,7 +156,7 @@ describe('Withdraw', () => {
     expect(typeof pendingMsg.params).toBe('string')
     expect(pendingMsg.params).toBeTruthy()
     expect(Number(pendingMsg.nonce)).toBeGreaterThanOrEqual(0)
-    expect(Number(pendingMsg.method)).toBe(2)
+    expect(Number(pendingMsg.method)).toBe(MsigMethod.PROPOSE)
     expect(Number(pendingMsg.value)).toBe(0)
     expect(Number(pendingMsg.gasFeeCap)).toBeGreaterThan(0)
     expect(Number(pendingMsg.gasLimit)).toBeGreaterThan(0)
