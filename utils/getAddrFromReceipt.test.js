@@ -1,4 +1,4 @@
-import getAddrFromReceipt from '.'
+import { getAddrFromReceipt } from '.'
 
 describe('decodeTxReceipt', () => {
   test('it decodes a receipt', () => {
