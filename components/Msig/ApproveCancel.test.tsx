@@ -79,7 +79,7 @@ describe('ApproveCancel', () => {
           />
         </Tree>
       )
-      
+
       await flushPromises()
 
       // Get HTML elements
@@ -89,7 +89,10 @@ describe('ApproveCancel', () => {
 
       // Wait for the message information to load
       await waitFor(
-        () => expect(getByText(result.container, 'Proposal ID')).toBeInTheDocument(),
+        () =>
+          expect(
+            getByText(result.container, 'Proposal ID')
+          ).toBeInTheDocument(),
         { timeout: 10000 }
       )
 
@@ -197,7 +200,7 @@ describe('ApproveCancel', () => {
           />
         </Tree>
       )
-      
+
       await flushPromises()
 
       // Get HTML elements
@@ -207,7 +210,10 @@ describe('ApproveCancel', () => {
 
       // Wait for the message information to load
       await waitFor(
-        () => expect(getByText(result.container, 'Proposal ID')).toBeInTheDocument(),
+        () =>
+          expect(
+            getByText(result.container, 'Proposal ID')
+          ).toBeInTheDocument(),
         { timeout: 10000 }
       )
 
@@ -290,7 +296,6 @@ describe('ApproveCancel', () => {
   })
 
   describe('snapshots', () => {
-
     test('it renders the initial approve state correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       let result: RenderResult | null = null
@@ -310,7 +315,7 @@ describe('ApproveCancel', () => {
     test('it renders the initial cancel state correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       let result: RenderResult | null = null
-  
+
       await act(async () => {
         result = render(
           <Tree>
@@ -318,7 +323,7 @@ describe('ApproveCancel', () => {
           </Tree>
         )
       })
-  
+
       // Check snapshot
       expect(result.container.firstChild).toMatchSnapshot()
     })
