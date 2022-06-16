@@ -93,3 +93,7 @@ export function useWallet() {
   if (!wallets[selectedWalletIdx]) return noWallet
   return wallets[selectedWalletIdx]
 }
+
+export const useActorQuery = () => {
+  return { data: { actor: { Code: 'bafkqadtgnfwc6nzpnv2wy5djonuwo' } } }
+}
