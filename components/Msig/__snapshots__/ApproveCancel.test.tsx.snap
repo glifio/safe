@@ -125,81 +125,6 @@ exports[`ApproveCancel snapshots it renders the initial approve state correctly 
   text-decoration: underline;
 }
 
-.c23 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  color: var(--white);
-  border-color: var(--green-medium);
-  background: var(--green-medium);
-  pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
-}
-
-.c23 svg path {
-  stroke: var(--black);
-}
-
-.c23:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c23:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c23:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c23:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c23 svg path {
-  stroke: var(--white);
-}
-
-.c23:hover {
-  color: var(--green-medium);
-  border-color: var(--green-medium);
-  background: var(--white);
-}
-
-.c23:hover svg path {
-  stroke: var(--green-medium);
-}
-
-.c23 svg path {
-  stroke: var(--gray-medium);
-}
-
 .c22 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -248,6 +173,73 @@ exports[`ApproveCancel snapshots it renders the initial approve state correctly 
 
 .c22:active svg path {
   stroke: var(--white) !important;
+}
+
+.c23 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+}
+
+.c23 svg path {
+  stroke: var(--black);
+}
+
+.c23:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c23:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c23:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c23:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c23 svg path {
+  stroke: var(--white);
+}
+
+.c23:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c23:hover svg path {
+  stroke: var(--green-medium);
 }
 
 .c1 {
@@ -505,7 +497,9 @@ exports[`ApproveCancel snapshots it renders the initial approve state correctly 
             <span>
               From
             </span>
-            <span />
+            <span>
+              t1z225 ... 6z6wgi
+            </span>
           </div>
           <div>
             <span>
@@ -513,7 +507,7 @@ exports[`ApproveCancel snapshots it renders the initial approve state correctly 
               Balance
             </span>
             <span>
-              0
+              1
                FIL
             </span>
           </div>
@@ -756,7 +750,6 @@ exports[`ApproveCancel snapshots it renders the initial approve state correctly 
       </button>
       <button
         class="c23"
-        disabled=""
         type="submit"
       >
         Review
@@ -891,81 +884,6 @@ exports[`ApproveCancel snapshots it renders the initial cancel state correctly 1
   text-decoration: underline;
 }
 
-.c23 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  color: var(--white);
-  border-color: var(--green-medium);
-  background: var(--green-medium);
-  pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
-}
-
-.c23 svg path {
-  stroke: var(--black);
-}
-
-.c23:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c23:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c23:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c23:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c23 svg path {
-  stroke: var(--white);
-}
-
-.c23:hover {
-  color: var(--green-medium);
-  border-color: var(--green-medium);
-  background: var(--white);
-}
-
-.c23:hover svg path {
-  stroke: var(--green-medium);
-}
-
-.c23 svg path {
-  stroke: var(--gray-medium);
-}
-
 .c22 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1014,6 +932,73 @@ exports[`ApproveCancel snapshots it renders the initial cancel state correctly 1
 
 .c22:active svg path {
   stroke: var(--white) !important;
+}
+
+.c23 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+}
+
+.c23 svg path {
+  stroke: var(--black);
+}
+
+.c23:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c23:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c23:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c23:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c23 svg path {
+  stroke: var(--white);
+}
+
+.c23:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c23:hover svg path {
+  stroke: var(--green-medium);
 }
 
 .c1 {
@@ -1271,7 +1256,9 @@ exports[`ApproveCancel snapshots it renders the initial cancel state correctly 1
             <span>
               From
             </span>
-            <span />
+            <span>
+              t1z225 ... 6z6wgi
+            </span>
           </div>
           <div>
             <span>
@@ -1279,7 +1266,7 @@ exports[`ApproveCancel snapshots it renders the initial cancel state correctly 1
               Balance
             </span>
             <span>
-              0
+              1
                FIL
             </span>
           </div>
@@ -1522,7 +1509,6 @@ exports[`ApproveCancel snapshots it renders the initial cancel state correctly 1
       </button>
       <button
         class="c23"
-        disabled=""
         type="submit"
       >
         Review
