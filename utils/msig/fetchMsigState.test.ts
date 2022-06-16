@@ -28,7 +28,6 @@ jest
 
 describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
-
     const mockActorCode = jest.fn(async () => ({
       Code: { '/': 'xxxyyyzz' }
     }))
@@ -46,7 +45,6 @@ describe('fetchMsigState', () => {
   }, 10000)
 
   test('it returns a connected wallet not signer error if the wallet isnt a signer on the multisig', async () => {
-
     jest
       .spyOn(require('@glif/filecoin-rpc-client'), 'default')
       .mockImplementationOnce(() => {
