@@ -115,7 +115,7 @@ describe('Multisig provider', () => {
 
     test('setting the msig actor fetches the state from lotus and populates the context', async () => {
       jest
-        .spyOn(require('../utils/msig/isAddressSigner'), 'default')
+        .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
         .mockImplementation(() => true)
 
       let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
