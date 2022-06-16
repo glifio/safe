@@ -104,7 +104,15 @@ export const ApproveCancel = ({
 
   // Get actor name from actor data
   const actorName = useMemo<string>(
-    () => (actorData ? decodeActorCID(actorData.actor.Code) : ''),
+    () => {
+      if (!actorData) return ''
+      try {
+        return decodeActorCID(actorData.actor.Code)
+      } catch (e) {
+        logger.error(e)
+        return ''
+      }
+    },
     [actorData]
   )
 
