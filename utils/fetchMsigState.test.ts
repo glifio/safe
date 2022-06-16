@@ -2,7 +2,7 @@ jest.mock('@glif/filecoin-rpc-client')
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { convertAddrToPrefix } from '@glif/react-components'
 
-import { fetchMsigState } from './fetchMsigState'
+import { fetchMsigState } from '.'
 
 import {
   MULTISIG_ACTOR_ADDRESS,
