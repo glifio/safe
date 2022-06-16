@@ -28,15 +28,6 @@ import { ApproveCancel } from './ApproveCancel'
 import { PAGE } from '../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
-jest.mock('@glif/react-components', () => {
-  const original = jest.requireActual('@glif/react-components')
-  return {
-    ...original,
-    useActorQuery: jest.fn(() => ({
-      data: { actor: { Code: 'bafkqadtgnfwc6nzpnv2wy5djonuwo' } }
-    }))
-  }
-})
 
 const routerMock = jest.spyOn(require('next/router'), 'useRouter')
 const encodedProposalURI =
@@ -145,7 +136,7 @@ describe('ApproveCancel', () => {
     expect(message.nonce).toBeGreaterThanOrEqual(0)
     expect(message.value).toBeInstanceOf(BigNumber)
     expect(message.value.isEqualTo(0)).toBe(true)
-    expect(message.method).toBe(MsigMethod.PROPOSE)
+    expect(message.method).toBe(MsigMethod.APPROVE)
     expect(typeof message.params).toBe('string')
     expect(message.params).toBeTruthy()
     expect(message.gasPremium).toBeInstanceOf(BigNumber)
@@ -164,7 +155,7 @@ describe('ApproveCancel', () => {
     expect(typeof pendingMsg.params).toBe('string')
     expect(pendingMsg.params).toBeTruthy()
     expect(Number(pendingMsg.nonce)).toBeGreaterThanOrEqual(0)
-    expect(Number(pendingMsg.method)).toBe(MsigMethod.PROPOSE)
+    expect(Number(pendingMsg.method)).toBe(MsigMethod.APPROVE)
     expect(Number(pendingMsg.value)).toBe(0)
     expect(Number(pendingMsg.gasFeeCap)).toBeGreaterThan(0)
     expect(Number(pendingMsg.gasLimit)).toBeGreaterThan(0)
@@ -266,7 +257,7 @@ describe('ApproveCancel', () => {
     expect(message.nonce).toBeGreaterThanOrEqual(0)
     expect(message.value).toBeInstanceOf(BigNumber)
     expect(message.value.isEqualTo(0)).toBe(true)
-    expect(message.method).toBe(MsigMethod.PROPOSE)
+    expect(message.method).toBe(MsigMethod.CANCEL)
     expect(typeof message.params).toBe('string')
     expect(message.params).toBeTruthy()
     expect(message.gasPremium).toBeInstanceOf(BigNumber)
@@ -285,7 +276,7 @@ describe('ApproveCancel', () => {
     expect(typeof pendingMsg.params).toBe('string')
     expect(pendingMsg.params).toBeTruthy()
     expect(Number(pendingMsg.nonce)).toBeGreaterThanOrEqual(0)
-    expect(Number(pendingMsg.method)).toBe(MsigMethod.PROPOSE)
+    expect(Number(pendingMsg.method)).toBe(MsigMethod.CANCEL)
     expect(Number(pendingMsg.value)).toBe(0)
     expect(Number(pendingMsg.gasFeeCap)).toBeGreaterThan(0)
     expect(Number(pendingMsg.gasLimit)).toBeGreaterThan(0)
