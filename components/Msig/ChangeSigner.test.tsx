@@ -9,7 +9,7 @@ import {
   RenderResult
 } from '@testing-library/react'
 import { Context } from 'react'
-import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
+import { BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 import { MsigMethod, truncateAddress, WalletProviderContextType } from '@glif/react-components'
 
@@ -23,7 +23,6 @@ import {
   flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS,
-  MULTISIG_SIGNER_ADDRESS,
   MULTISIG_SIGNER_ADDRESS_2
 } from '../../test-utils'
 import { ChangeSigner } from './ChangeSigner'
