@@ -7,14 +7,14 @@ import {
   decodeActorCID
 } from '@glif/react-components'
 
-import isAddressSigner from './isAddressSigner'
-import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
-import { createApolloClient } from '../../apolloClient'
+import { isAddressSigner } from './isAddressSigner'
+import { MsigActorState, emptyMsigState } from '../MsigProvider/types'
+import { createApolloClient } from '../apolloClient'
 
-export default async function fetchMsigState(
+export const fetchMsigState = async (
   actorID: string,
   signerAddress: string
-): Promise<MsigActorState> {
+): Promise<MsigActorState> => {
   try {
     const lCli = new LotusRPCEngine({
       apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
