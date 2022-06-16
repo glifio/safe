@@ -27,7 +27,6 @@ jest
   })
 describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
-    jest.spyOn(require('../actorCode'), 'decodeActorCID')
 
     const mockActorCode = jest.fn(async () => ({
       Code: { '/': 'xxxyyyzz' }
