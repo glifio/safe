@@ -103,18 +103,15 @@ export const ApproveCancel = ({
   })
 
   // Get actor name from actor data
-  const actorName = useMemo<string>(
-    () => {
-      if (!actorData) return ''
-      try {
-        return decodeActorCID(actorData.actor.Code)
-      } catch (e) {
-        logger.error(e)
-        return ''
-      }
-    },
-    [actorData]
-  )
+  const actorName = useMemo<string>(() => {
+    if (!actorData) return ''
+    try {
+      return decodeActorCID(actorData.actor.Code)
+    } catch (e) {
+      logger.error(e)
+      return ''
+    }
+  }, [actorData])
 
   // Set TxState.FillingForm when actor name has loaded
   useEffect(() => actorName && setTxState(TxState.FillingForm), [actorName])
