@@ -69,7 +69,7 @@ export default async function fetchMsigState(
       )
     ])
 
-    if (!(await isAddressSigner(signerAddress, signers))) {
+    if (!(isAddressSigner(signerAddress, signers))) {
       return {
         ...emptyMsigState,
         errors: {

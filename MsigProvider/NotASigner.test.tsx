@@ -93,7 +93,7 @@ describe('Not a signer error handling', () => {
   test('if wallet address is not a signer, the address not a signer error populates', async () => {
     jest
       .spyOn(require('../utils/msig/isAddressSigner'), 'default')
-      .mockImplementation(async () => false)
+      .mockImplementation(() => false)
 
     let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
       wrapper: Tree

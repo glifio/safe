@@ -1,8 +1,8 @@
 import { Address, isAddrEqual } from '@glif/react-components'
 
-export default async function isAddressSigner(
+export default function isAddressSigner(
   walletAddress: string,
   signers: Address[]
-): Promise<boolean> {
+): boolean {
   return signers.some((signer) => isAddrEqual(signer, walletAddress))
 }
