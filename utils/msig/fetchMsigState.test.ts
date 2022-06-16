@@ -25,6 +25,7 @@ jest
         })
     }
   })
+
 describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
 
@@ -45,9 +46,6 @@ describe('fetchMsigState', () => {
   }, 10000)
 
   test('it returns a connected wallet not signer error if the wallet isnt a signer on the multisig', async () => {
-    jest
-      .spyOn(require('../actorCode'), 'decodeActorCID')
-      .mockImplementationOnce(() => '/multisig')
 
     jest
       .spyOn(require('@glif/filecoin-rpc-client'), 'default')
@@ -64,7 +62,7 @@ describe('fetchMsigState', () => {
                 }
               }
               case 'StateGetActor': {
-                return { Code: { '/': 'xxxyyyzz' } }
+                return { Code: { '/': 'bafkqadtgnfwc6nzpnv2wy5djonuwo' } }
               }
             }
           }
@@ -72,7 +70,7 @@ describe('fetchMsigState', () => {
       })
 
     const { errors } = await fetchMsigState(
-      't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpny',
+      MULTISIG_ACTOR_ADDRESS,
       MULTISIG_SIGNER_ADDRESS
     )
 
