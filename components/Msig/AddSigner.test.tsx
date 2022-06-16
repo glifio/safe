@@ -11,7 +11,7 @@ import {
 import { Context } from 'react'
 import { BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import { MsigMethod, truncateAddress, WalletProviderContextType } from '@glif/react-components'
+import { MsigMethod, WalletProviderContextType } from '@glif/react-components'
 
 import {
   pushPendingMessageSpy,
