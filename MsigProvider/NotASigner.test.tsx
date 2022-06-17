@@ -91,17 +91,14 @@ describe('Not a signer error handling', () => {
       .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
       .mockImplementation(() => false)
 
-    let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
+    let { result } = renderHook(() => useMsig(), {
       wrapper: Tree
     })
-    act(() => {
+    await act(async () => {
       result.current.setMsigActor(MULTISIG_ACTOR_ADDRESS)
     })
-    await waitForNextUpdate({ timeout: false })
 
     const msigState: MsigActorState = result.current
-
     expect(msigState.errors.connectedWalletNotMsigSigner).toBeTruthy()
-    unmount()
   }, 10000)
 })
