@@ -29,9 +29,8 @@ export const fetchMsigState = async (
     let ActorCode = ''
     try {
       ActorCode = decodeActorCID(Code['/'])
-      if (!ActorCode?.includes('multisig'))
-        throw new Error('Not an Msig actor')
-    } catch(e) {
+      if (!ActorCode?.includes('multisig')) throw new Error('Not an Msig actor')
+    } catch (e) {
       return {
         ...emptyMsigState,
         errors: {
