@@ -71,7 +71,7 @@ describe('Multisig provider', () => {
               })
           }
         })
-        
+
       jest
         .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
         .mockImplementation(() => true)
