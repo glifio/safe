@@ -39,9 +39,7 @@ describe('ApproveCancel', () => {
     jest.clearAllMocks()
   })
 
-  afterEach(() => {
-    cleanup()
-  })
+  afterEach(cleanup)
 
   test('it allows a user to approve a proposal', async () => {
     // moving this outside each individual test breaks the mocks
