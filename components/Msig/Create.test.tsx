@@ -185,21 +185,19 @@ describe('Create', () => {
     expect(result.container.firstChild).toMatchSnapshot()
   })
 
-  describe('snapshots', () => {
-    test('it renders the initial state correctly', async () => {
-      const { Tree } = composeMockAppTree('postOnboard')
-      let result: RenderResult | null = null
+  test('it renders the initial state correctly', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let result: RenderResult | null = null
 
-      await act(async () => {
-        result = render(
-          <Tree>
-            <Create />
-          </Tree>
-        )
-      })
-
-      // Check snapshot
-      expect(result.container.firstChild).toMatchSnapshot()
+    await act(async () => {
+      result = render(
+        <Tree>
+          <Create />
+        </Tree>
+      )
     })
+
+    // Check snapshot
+    expect(result.container.firstChild).toMatchSnapshot()
   })
 })

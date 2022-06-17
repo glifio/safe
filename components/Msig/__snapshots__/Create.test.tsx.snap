@@ -846,7 +846,7 @@ exports[`Create it allows a user to create a safe 1`] = `
 </div>
 `;
 
-exports[`Create snapshots it renders the initial state correctly 1`] = `
+exports[`Create it renders the initial state correctly 1`] = `
 .c13 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

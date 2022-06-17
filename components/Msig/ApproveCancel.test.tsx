@@ -280,37 +280,35 @@ describe('ApproveCancel', () => {
     expect(result.container.firstChild).toMatchSnapshot()
   })
 
-  describe('snapshots', () => {
-    test('it renders the initial approve state correctly', async () => {
-      const { Tree } = composeMockAppTree('postOnboard')
-      let result: RenderResult | null = null
+  test('it renders the initial approve state correctly', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let result: RenderResult | null = null
 
-      await act(async () => {
-        result = render(
-          <Tree>
-            <ApproveCancel method={MsigMethod.APPROVE} />
-          </Tree>
-        )
-      })
-
-      // Check snapshot
-      expect(result.container.firstChild).toMatchSnapshot()
+    await act(async () => {
+      result = render(
+        <Tree>
+          <ApproveCancel method={MsigMethod.APPROVE} />
+        </Tree>
+      )
     })
 
-    test('it renders the initial cancel state correctly', async () => {
-      const { Tree } = composeMockAppTree('postOnboard')
-      let result: RenderResult | null = null
+    // Check snapshot
+    expect(result.container.firstChild).toMatchSnapshot()
+  })
 
-      await act(async () => {
-        result = render(
-          <Tree>
-            <ApproveCancel method={MsigMethod.CANCEL} />
-          </Tree>
-        )
-      })
+  test('it renders the initial cancel state correctly', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let result: RenderResult | null = null
 
-      // Check snapshot
-      expect(result.container.firstChild).toMatchSnapshot()
+    await act(async () => {
+      result = render(
+        <Tree>
+          <ApproveCancel method={MsigMethod.CANCEL} />
+        </Tree>
+      )
     })
+
+    // Check snapshot
+    expect(result.container.firstChild).toMatchSnapshot()
   })
 })

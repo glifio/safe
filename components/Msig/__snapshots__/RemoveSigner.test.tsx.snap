@@ -664,7 +664,7 @@ exports[`RemoveSigner it allows a user to remove a signer address 1`] = `
 </div>
 `;
 
-exports[`RemoveSigner snapshots it renders the initial state correctly 1`] = `
+exports[`RemoveSigner it renders the initial state correctly 1`] = `
 .c11 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

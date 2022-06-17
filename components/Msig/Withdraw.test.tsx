@@ -160,44 +160,42 @@ describe('Withdraw', () => {
     expect(result.container.firstChild).toMatchSnapshot()
   })
 
-  describe('snapshots', () => {
-    test('it renders the initial state correctly', async () => {
-      const { Tree } = composeMockAppTree('postOnboard')
-      let result: RenderResult | null = null
+  test('it renders the initial state correctly', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let result: RenderResult | null = null
 
-      await act(async () => {
-        result = render(
-          <Tree>
-            <Withdraw />
-          </Tree>
-        )
-      })
-
-      // Check snapshot
-      expect(result.container.firstChild).toMatchSnapshot()
+    await act(async () => {
+      result = render(
+        <Tree>
+          <Withdraw />
+        </Tree>
+      )
     })
 
-    test('it renders correctly after entering the recipient', async () => {
-      const { Tree } = composeMockAppTree('postOnboard')
-      let result: RenderResult | null = null
+    // Check snapshot
+    expect(result.container.firstChild).toMatchSnapshot()
+  })
 
-      await act(async () => {
-        result = render(
-          <Tree>
-            <Withdraw />
-          </Tree>
-        )
+  test('it renders correctly after entering the recipient', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let result: RenderResult | null = null
 
-        // Enter recipient
-        const recipient = getByRole(result.container, 'textbox')
-        fireEvent.change(recipient, { target: { value: validAddress } })
-        recipient.blur()
+    await act(async () => {
+      result = render(
+        <Tree>
+          <Withdraw />
+        </Tree>
+      )
 
-        await flushPromises()
-      })
+      // Enter recipient
+      const recipient = getByRole(result.container, 'textbox')
+      fireEvent.change(recipient, { target: { value: validAddress } })
+      recipient.blur()
 
-      // Check snapshot
-      expect(result.container.firstChild).toMatchSnapshot()
+      await flushPromises()
     })
+
+    // Check snapshot
+    expect(result.container.firstChild).toMatchSnapshot()
   })
 })

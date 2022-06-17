@@ -673,7 +673,7 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
 </div>
 `;
 
-exports[`Withdraw snapshots it renders correctly after entering the recipient 1`] = `
+exports[`Withdraw it renders correctly after entering the recipient 1`] = `
 .c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1189,7 +1189,7 @@ exports[`Withdraw snapshots it renders correctly after entering the recipient 1`
 </div>
 `;
 
-exports[`Withdraw snapshots it renders the initial state correctly 1`] = `
+exports[`Withdraw it renders the initial state correctly 1`] = `
 .c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

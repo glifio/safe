@@ -607,7 +607,7 @@ exports[`ChangeApprovals it allows a user to change the approvals threshold 1`] 
 </div>
 `;
 
-exports[`ChangeApprovals snapshots it renders the initial state correctly 1`] = `
+exports[`ChangeApprovals it renders the initial state correctly 1`] = `
 .c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

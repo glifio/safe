@@ -701,7 +701,7 @@ exports[`AddSigner it allows a user to add a signer address 1`] = `
 </div>
 `;
 
-exports[`AddSigner snapshots it renders the initial state correctly 1`] = `
+exports[`AddSigner it renders the initial state correctly 1`] = `
 .c11 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

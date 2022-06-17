@@ -689,7 +689,7 @@ exports[`ChangeSigner it allows a user to change a signer address 1`] = `
 </div>
 `;
 
-exports[`ChangeSigner snapshots it renders the initial state correctly 1`] = `
+exports[`ChangeSigner it renders the initial state correctly 1`] = `
 .c11 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
