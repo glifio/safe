@@ -35,7 +35,6 @@ jest.mock('@glif/filecoin-wallet-provider')
 describe('RemoveSigner', () => {
   beforeEach(() => {
     jest.useFakeTimers()
-    jest.clearAllMocks()
   })
 
   test('it allows a user to remove a signer address', async () => {

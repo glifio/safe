@@ -17,8 +17,6 @@ describe('Multisig provider', () => {
   describe('Fetching state', () => {
     let Tree = ({ children }) => <>{children}</>
     beforeEach(() => {
-      jest.clearAllMocks()
-
       jest
         .spyOn(require('@glif/filecoin-rpc-client'), 'default')
         .mockImplementation(() => {
@@ -140,8 +138,6 @@ describe('Multisig provider', () => {
     // @ts-ignore
     let Tree = ({ children }) => <>{children}</>
     beforeEach(() => {
-      jest.clearAllMocks()
-
       const statePreset = 'postOnboard'
       const walletProviderInitialState = composeWalletProviderState(
         _walletProviderInitialState,

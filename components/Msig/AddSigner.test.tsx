@@ -32,7 +32,6 @@ jest.mock('@glif/filecoin-wallet-provider')
 describe('AddSigner', () => {
   beforeEach(() => {
     jest.useFakeTimers()
-    jest.clearAllMocks()
   })
 
   test('it allows a user to add a signer address', async () => {

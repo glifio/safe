@@ -18,8 +18,6 @@ describe('Not a signer error handling', () => {
   // @ts-ignore
   let Tree = ({ children }) => <>{children}</>
   beforeEach(() => {
-    jest.clearAllMocks()
-
     jest
       .spyOn(require('@glif/filecoin-rpc-client'), 'default')
       .mockImplementation(() => {

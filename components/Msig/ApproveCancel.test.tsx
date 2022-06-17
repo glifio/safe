@@ -35,7 +35,6 @@ const encodedProposalURI =
 describe('ApproveCancel', () => {
   beforeEach(() => {
     jest.useFakeTimers()
-    jest.clearAllMocks()
   })
 
   test('it allows a user to approve a proposal', async () => {

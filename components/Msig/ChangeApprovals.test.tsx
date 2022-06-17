@@ -30,7 +30,6 @@ jest.mock('@glif/filecoin-wallet-provider')
 describe('ChangeApprovals', () => {
   beforeEach(() => {
     jest.useFakeTimers()
-    jest.clearAllMocks()
   })
 
   test('it allows a user to change the approvals threshold', async () => {

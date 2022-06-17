@@ -16,9 +16,6 @@ jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
 jest.mock('../../../MsigProvider')
 
 describe('Msig Home', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
-  })
 
   test('it renders the vesting balance, available balance, and msig address', async () => {
     const { Tree } = composeMockAppTree('postOnboard')

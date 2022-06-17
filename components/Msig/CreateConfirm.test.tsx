@@ -45,7 +45,6 @@ jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
 
 describe('confirmation of newly created multisig', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
     jest.useFakeTimers()
   })
 

@@ -33,7 +33,6 @@ jest.mock('@glif/filecoin-wallet-provider')
 describe('Create', () => {
   beforeEach(() => {
     jest.useFakeTimers()
-    jest.clearAllMocks()
   })
 
   test('it allows a user to create a safe', async () => {
