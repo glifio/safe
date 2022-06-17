@@ -71,6 +71,10 @@ describe('Multisig provider', () => {
               })
           }
         })
+        
+      jest
+        .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
+        .mockImplementation(() => true)
 
       const statePreset = 'postOnboard'
       const walletProviderInitialState = composeWalletProviderState(
@@ -110,10 +114,6 @@ describe('Multisig provider', () => {
     })
 
     test('setting the msig actor fetches the state from lotus and populates the context', async () => {
-      jest
-        .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
-        .mockImplementation(() => true)
-
       const { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
