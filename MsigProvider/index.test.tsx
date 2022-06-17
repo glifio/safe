@@ -114,7 +114,7 @@ describe('Multisig provider', () => {
         .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
         .mockImplementation(() => true)
 
-      let { result } = renderHook(() => useMsig(), {
+      const { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
 
@@ -168,7 +168,7 @@ describe('Multisig provider', () => {
           }
         })
 
-      let { result } = renderHook(() => useMsig(), {
+      const { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
 
@@ -191,7 +191,7 @@ describe('Multisig provider', () => {
           }
         })
 
-      let { result } = renderHook(() => useMsig(), {
+      const { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
 
