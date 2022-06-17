@@ -129,7 +129,7 @@ describe('Multisig provider', () => {
       expect(msigState.Balance.gt(0)).toBeTruthy()
       expect(msigState.NumApprovalsThreshold).toBeTruthy()
       expect(msigState.Signers.length).toBeGreaterThan(0)
-    }, 10000)
+    })
   })
 
   describe('Error handling', () => {
