@@ -40,7 +40,6 @@ describe('ApproveCancel', () => {
   })
 
   afterEach(() => {
-    jest.clearAllTimers()
     cleanup()
   })
 
