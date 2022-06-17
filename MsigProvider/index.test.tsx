@@ -105,7 +105,7 @@ describe('Multisig provider', () => {
       await act(async () => {
         result.current.setMsigActor(MULTISIG_ACTOR_ADDRESS)
       })
-      
+
       expect(result.current.Address).toBe(MULTISIG_ACTOR_ADDRESS)
     })
 
@@ -190,7 +190,7 @@ describe('Multisig provider', () => {
             })
           }
         })
-      
+
       let { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })

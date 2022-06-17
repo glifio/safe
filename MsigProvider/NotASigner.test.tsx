@@ -94,6 +94,7 @@ describe('Not a signer error handling', () => {
     let { result } = renderHook(() => useMsig(), {
       wrapper: Tree
     })
+
     await act(async () => {
       result.current.setMsigActor(MULTISIG_ACTOR_ADDRESS)
     })
