@@ -91,22 +91,22 @@ describe('Multisig provider', () => {
     })
 
     test('useMsig hook exposes a method to set multisig address', () => {
-      const { result, unmount } = renderHook(() => useMsig(), {
+      const { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
       expect(result.current.setMsigActor).not.toBeUndefined()
-      unmount()
     })
 
     test('setting the msig actor sets the state in context', async () => {
-      const { result, unmount } = renderHook(() => useMsig(), {
+      const { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
-      act(() => {
+
+      await act(async () => {
         result.current.setMsigActor(MULTISIG_ACTOR_ADDRESS)
       })
+      
       expect(result.current.Address).toBe(MULTISIG_ACTOR_ADDRESS)
-      unmount()
     })
 
     test('setting the msig actor fetches the state from lotus and populates the context', async () => {
@@ -114,23 +114,21 @@ describe('Multisig provider', () => {
         .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
         .mockImplementation(() => true)
 
-      let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
+      let { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
-      act(() => {
+
+      await act(async () => {
         result.current.setMsigActor(MULTISIG_ACTOR_ADDRESS)
       })
-      await waitForNextUpdate({ timeout: false })
 
       const msigState: MsigActorState = result.current
-
       expect(msigState.Address).toBe(MULTISIG_ACTOR_ADDRESS)
       expect(msigState.ActorCode.includes('multisig')).toBeTruthy()
       expect(msigState.AvailableBalance.gt(0)).toBeTruthy()
       expect(msigState.Balance.gt(0)).toBeTruthy()
       expect(msigState.NumApprovalsThreshold).toBeTruthy()
       expect(msigState.Signers.length).toBeGreaterThan(0)
-      unmount()
     }, 10000)
   })
 
@@ -169,17 +167,17 @@ describe('Multisig provider', () => {
             })
           }
         })
-      let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
+
+      let { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
-      act(() => {
+
+      await act(async () => {
         result.current.setMsigActor(EXEC_ACTOR)
       })
-      await waitForNextUpdate()
 
       const msigState: MsigActorState = result.current
       expect(msigState.errors.notMsigActor).toBeTruthy()
-      unmount()
     })
 
     test('if address is not an actor, the actor not found error should get thrown', async () => {
@@ -192,20 +190,19 @@ describe('Multisig provider', () => {
             })
           }
         })
-      let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
+      
+      let { result } = renderHook(() => useMsig(), {
         wrapper: Tree
       })
-      act(() => {
+
+      await act(async () => {
         result.current.setMsigActor(
           'f3vob5jvvypwlb2sqz6oeztzbsf5c4hjtqxs2xb2mhaneyiu3wmyd4fkigmiv2rgsm4aztmgvxwuybiwusoxea'
         )
       })
-      await waitForNextUpdate()
 
       const msigState: MsigActorState = result.current
-
       expect(msigState.errors.actorNotFound).toBeTruthy()
-      unmount()
     })
   })
 })
