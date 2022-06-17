@@ -12,8 +12,11 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy'
   },
-  clearMocks: true,
   setupFilesAfterEnv: ['./jest.setup.js'],
   testEnvironment: 'jsdom',
-  modulePathIgnorePatterns: ['<rootDir>/.*/__mocks__']
+  modulePathIgnorePatterns: ['<rootDir>/.*/__mocks__'],
+  clearMocks: true,
+  fakeTimers: {
+    enableGlobally: true
+  }
 }

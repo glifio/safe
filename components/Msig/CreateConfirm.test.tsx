@@ -44,10 +44,6 @@ jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
 })
 
 describe('confirmation of newly created multisig', () => {
-  beforeEach(() => {
-    jest.useFakeTimers()
-  })
-
   test('it renders message pending UI while the transaction is pending', async () => {
     const { Tree } = composeMockAppTree('pendingMsigCreate')
     let result: RenderResult | null = null

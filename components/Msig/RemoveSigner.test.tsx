@@ -33,10 +33,6 @@ import { RemoveSigner } from './RemoveSigner'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('RemoveSigner', () => {
-  beforeEach(() => {
-    jest.useFakeTimers()
-  })
-
   test('it allows a user to remove a signer address', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null

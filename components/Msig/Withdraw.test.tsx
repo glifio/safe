@@ -31,10 +31,6 @@ const validAmount = new FilecoinNumber(0.01, 'fil')
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('Withdraw', () => {
-  beforeEach(() => {
-    jest.useFakeTimers()
-  })
-
   test('it allows a user to withdraw filecoin', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null

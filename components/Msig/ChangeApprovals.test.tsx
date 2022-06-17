@@ -28,10 +28,6 @@ import { ChangeApprovals } from './ChangeApprovals'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('ChangeApprovals', () => {
-  beforeEach(() => {
-    jest.useFakeTimers()
-  })
-
   test('it allows a user to change the approvals threshold', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null

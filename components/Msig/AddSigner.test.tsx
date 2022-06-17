@@ -30,10 +30,6 @@ const newAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('AddSigner', () => {
-  beforeEach(() => {
-    jest.useFakeTimers()
-  })
-
   test('it allows a user to add a signer address', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
