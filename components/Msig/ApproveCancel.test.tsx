@@ -1,5 +1,4 @@
 import {
-  cleanup,
   render,
   act,
   waitFor,
@@ -38,8 +37,6 @@ describe('ApproveCancel', () => {
     jest.useFakeTimers()
     jest.clearAllMocks()
   })
-
-  afterEach(cleanup)
 
   test('it allows a user to approve a proposal', async () => {
     // moving this outside each individual test breaks the mocks

@@ -1,6 +1,5 @@
 import {
   act,
-  cleanup,
   getByRole,
   getByText,
   render,
@@ -45,7 +44,6 @@ jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
 })
 
 describe('confirmation of newly created multisig', () => {
-  afterEach(cleanup)
   beforeEach(() => {
     jest.clearAllMocks()
     jest.useFakeTimers()

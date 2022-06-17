@@ -1,5 +1,4 @@
 import {
-  cleanup,
   render,
   act,
   waitFor,
@@ -37,11 +36,6 @@ describe('RemoveSigner', () => {
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-  })
-
-  afterEach(() => {
-    jest.clearAllTimers()
-    cleanup()
   })
 
   test('it allows a user to remove a signer address', async () => {

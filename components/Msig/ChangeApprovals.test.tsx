@@ -1,5 +1,4 @@
 import {
-  cleanup,
   render,
   act,
   waitFor,
@@ -32,11 +31,6 @@ describe('ChangeApprovals', () => {
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-  })
-
-  afterEach(() => {
-    jest.clearAllTimers()
-    cleanup()
   })
 
   test('it allows a user to change the approvals threshold', async () => {

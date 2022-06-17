@@ -1,5 +1,4 @@
 import {
-  cleanup,
   render,
   act,
   fireEvent,
@@ -17,7 +16,6 @@ const inValidSafeID = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
 
 describe('Choose', () => {
   beforeEach(jest.clearAllMocks)
-  afterEach(cleanup)
 
   test('it renders the initial state correctly', async () => {
     const { Tree } = composeMockAppTree('postOnboard')

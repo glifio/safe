@@ -1,5 +1,4 @@
 import {
-  cleanup,
   render,
   act,
   waitFor,
@@ -35,11 +34,6 @@ describe('Withdraw', () => {
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-  })
-
-  afterEach(() => {
-    jest.clearAllTimers()
-    cleanup()
   })
 
   test('it allows a user to withdraw filecoin', async () => {

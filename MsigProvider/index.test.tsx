@@ -1,7 +1,6 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { SWRConfig } from 'swr'
 import { act, renderHook } from '@testing-library/react-hooks'
-import { cleanup } from '@testing-library/react'
 import { ReactNode } from 'react'
 import {
   WalletProviderWrapper,
@@ -16,7 +15,6 @@ import { composeWalletProviderState } from '../test-utils/composeMockAppTree/com
 
 describe('Multisig provider', () => {
   describe('Fetching state', () => {
-    afterEach(cleanup)
     let Tree = ({ children }) => <>{children}</>
     beforeEach(() => {
       jest.clearAllMocks()
@@ -139,7 +137,6 @@ describe('Multisig provider', () => {
   })
 
   describe('Error handling', () => {
-    afterEach(cleanup)
     // @ts-ignore
     let Tree = ({ children }) => <>{children}</>
     beforeEach(() => {

@@ -1,4 +1,4 @@
-import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
+import { render, screen, act, fireEvent } from '@testing-library/react'
 
 import UseDesktopBrowser from '../../pages/error/use-desktop-browser.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
@@ -7,7 +7,6 @@ import { flushPromises } from '../../test-utils/index.js'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('UseDesktopBrowser', () => {
-  afterEach(cleanup)
   test('it renders the error page', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const { container } = render(

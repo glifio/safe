@@ -1,5 +1,4 @@
 import {
-  cleanup,
   render,
   act,
   waitFor,
@@ -35,11 +34,6 @@ describe('Create', () => {
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-  })
-
-  afterEach(() => {
-    jest.clearAllTimers()
-    cleanup()
   })
 
   test('it allows a user to create a safe', async () => {

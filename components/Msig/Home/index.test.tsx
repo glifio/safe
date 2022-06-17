@@ -1,4 +1,4 @@
-import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
+import { render, screen, act, fireEvent } from '@testing-library/react'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 
 import Home from '.'
@@ -18,10 +18,6 @@ jest.mock('../../../MsigProvider')
 describe('Msig Home', () => {
   beforeEach(() => {
     jest.clearAllMocks()
-  })
-
-  afterEach(() => {
-    cleanup()
   })
 
   test('it renders the vesting balance, available balance, and msig address', async () => {

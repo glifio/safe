@@ -1,6 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { cleanup } from '@testing-library/react'
 import { ReactNode } from 'react'
 import {
   WalletProviderWrapper,
@@ -16,7 +15,6 @@ import { composeWalletProviderState } from '../test-utils/composeMockAppTree/com
 // so this file tests 1 function that depends on a different implementation of a mock
 
 describe('Not a signer error handling', () => {
-  afterEach(cleanup)
   // @ts-ignore
   let Tree = ({ children }) => <>{children}</>
   beforeEach(() => {
