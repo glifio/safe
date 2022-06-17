@@ -15,7 +15,6 @@ jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
 })
 
 describe('Admin page', () => {
-
   test('it renders the required approvals and the signers', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
