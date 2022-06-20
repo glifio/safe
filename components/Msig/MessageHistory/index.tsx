@@ -1,5 +1,4 @@
 import {
-  Box,
   MessageHistoryTable,
   MessageDetail,
   generateRouteWithRequiredUrlParams
@@ -12,26 +11,22 @@ import { useMsig } from '../../../MsigProvider'
 const MessageHistory = () => {
   const { Address } = useMsig()
   const router = useRouter()
-  return (
-    <Box>
-      {router.query.cid ? (
-        <MessageDetail
-          cid={router.query.cid as string}
-          height={Number(router?.query?.height) || null}
-        />
-      ) : (
-        <MessageHistoryTable
-          address={Address}
-          cidHref={(cid: string, height?: string) =>
-            generateRouteWithRequiredUrlParams({
-              pageUrl: PAGE.MSIG_HISTORY,
-              newQueryParams: { height, cid },
-              existingQParams: { ...router.query } as Record<string, string>
-            })
-          }
-        />
-      )}
-    </Box>
+  return router.query.cid ? (
+    <MessageDetail
+      cid={router.query.cid as string}
+      height={Number(router?.query?.height) || null}
+    />
+  ) : (
+    <MessageHistoryTable
+      address={Address}
+      cidHref={(cid: string, height?: string) =>
+        generateRouteWithRequiredUrlParams({
+          pageUrl: PAGE.MSIG_HISTORY,
+          newQueryParams: { height, cid },
+          existingQParams: { ...router.query } as Record<string, string>
+        })
+      }
+    />
   )
 }
 
