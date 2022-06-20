@@ -10,6 +10,14 @@ import { useRouter } from 'next/router'
 import { useMsig } from '../../../MsigProvider'
 import { PAGE } from '../../../constants'
 
+const getProposalParam = (proposal: MsigTransaction): string => {
+  const clone = { ...proposal }
+  delete clone.__typename
+  delete clone.to.__typename
+  clone.approved.forEach(a => delete a.__typename)
+  return encodeURI(JSON.stringify(clone))
+}
+
 const ProposalHistory = () => {
   const { Address } = useMsig()
   const wallet = useWallet()
@@ -20,23 +28,19 @@ const ProposalHistory = () => {
       address={Address}
       walletAddress={wallet.address}
       accept={(proposal: MsigTransaction, approvalsLeft: number) => {
-        const clone = { ...proposal }
-        delete clone.__typename
         navigate(router, {
           pageUrl: PAGE.MSIG_APPROVE,
           newQueryParams: {
-            proposal: encodeURI(JSON.stringify(clone)),
+            proposal: getProposalParam(proposal),
             approvalsLeft
           }
         })
       }}
       cancel={(proposal: MsigTransaction, approvalsLeft: number) => {
-        const clone = { ...proposal }
-        delete clone.__typename
         navigate(router, {
           pageUrl: PAGE.MSIG_CANCEL,
           newQueryParams: {
-            proposal: encodeURI(JSON.stringify(clone)),
+            proposal: getProposalParam(proposal),
             approvalsLeft
           }
         })
