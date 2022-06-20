@@ -1,4 +1,4 @@
-import { render, screen, act, fireEvent } from '@testing-library/react'
+import { act, getByText, render, RenderResult } from '@testing-library/react'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 
 import Home from '.'
@@ -18,34 +18,19 @@ jest.mock('../../../MsigProvider')
 describe('Msig Home', () => {
   test('it renders the vesting balance, available balance, and msig address', async () => {
     const { Tree } = composeMockAppTree('postOnboard')
+    let result: RenderResult | null = null
 
-    // const container =
-    render(
-      <Tree>
-        <Home />
-      </Tree>
-    )
-
-    expect(screen.getByText('Available Balance')).toBeInTheDocument()
-    expect(screen.getByText('Total Vesting')).toBeInTheDocument()
-
-    // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved
-    // expect(container).toMatchSnapshot()
-  })
-
-  test('clicking withdraw sends the user to the withdraw page', async () => {
-    const { Tree } = composeMockAppTree('postOnboard')
-
-    act(() => {
-      render(
+    await act(async () => {
+      result = render(
         <Tree>
           <Home />
         </Tree>
       )
-
-      fireEvent.click(screen.getByText('Withdraw'))
     })
 
-    expect(routerPushMock).toHaveBeenCalledWith(PAGE.MSIG_WITHDRAW)
+    // Check snapshot
+    expect(getByText(result.container, 'Available Balance')).toBeInTheDocument()
+    expect(getByText(result.container, 'Total Vesting')).toBeInTheDocument()
+    expect(result.container.firstChild).toMatchSnapshot()
   })
 })
