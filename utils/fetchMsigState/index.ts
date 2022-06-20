@@ -7,9 +7,9 @@ import {
   decodeActorCID
 } from '@glif/react-components'
 
-import { isAddressSigner } from './isAddressSigner'
-import { MsigActorState, emptyMsigState } from '../MsigProvider/types'
-import { createApolloClient } from '../apolloClient'
+import { isAddressSigner } from '../isAddressSigner'
+import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
+import { createApolloClient } from '../../apolloClient'
 
 export const fetchMsigState = async (
   actorID: string,
