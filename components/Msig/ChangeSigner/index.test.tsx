@@ -10,32 +10,40 @@ import {
 import { Context } from 'react'
 import { BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import { MsigMethod, WalletProviderContextType } from '@glif/react-components'
+import {
+  MsigMethod,
+  truncateAddress,
+  WalletProviderContextType
+} from '@glif/react-components'
 
 import {
   pushPendingMessageSpy,
   WalletProviderContext,
   PendingMsgContext
-} from '../../__mocks__/@glif/react-components'
-import composeMockAppTree from '../../test-utils/composeMockAppTree'
+} from '../../../__mocks__/@glif/react-components'
+import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import {
   flushPromises,
   WALLET_ADDRESS,
-  MULTISIG_ACTOR_ADDRESS
-} from '../../test-utils'
-import { ChangeApprovals } from './ChangeApprovals'
+  MULTISIG_ACTOR_ADDRESS,
+  MULTISIG_SIGNER_ADDRESS_2
+} from '../../../test-utils'
+import { ChangeSigner } from '.'
+
+const newAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
 
 jest.mock('@glif/filecoin-wallet-provider')
 
-describe('ChangeApprovals', () => {
-  test('it allows a user to change the approvals threshold', async () => {
+describe('ChangeSigner', () => {
+  test('it allows a user to change a signer address', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
 
     await act(async () => {
       result = render(
         <Tree>
-          <ChangeApprovals
+          <ChangeSigner
+            oldSignerAddress={MULTISIG_SIGNER_ADDRESS_2}
             walletProviderOpts={{
               context:
                 WalletProviderContext as unknown as Context<WalletProviderContextType>
@@ -49,20 +57,24 @@ describe('ChangeApprovals', () => {
 
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
-      const approvals = getByRole(result.container, 'combobox')
+      const oldSigner = getByRole(result.container, 'combobox')
+      const newSigner = getByRole(result.container, 'textbox')
       const cancel = getByText(result.container, 'Cancel')
       const review = getByText(result.container, 'Review')
 
       // Check initial state
-      expect(header).toHaveTextContent('Change required approvals')
-      expect(approvals).toHaveFocus()
-      expect(approvals).toHaveDisplayValue('1')
+      expect(header).toHaveTextContent('Change a signer')
+      expect(oldSigner).toHaveDisplayValue(
+        truncateAddress(MULTISIG_SIGNER_ADDRESS_2)
+      )
+      expect(newSigner).toHaveFocus()
+      expect(newSigner).toHaveDisplayValue('')
       expect(cancel).toBeEnabled()
       expect(review).toBeDisabled()
 
-      // Enter a new threshold
-      fireEvent.change(approvals, { target: { value: '2' } })
-      approvals.blur()
+      // Enter new address
+      fireEvent.change(newSigner, { target: { value: newAddress } })
+      newSigner.blur()
 
       // Review should now be enabled
       await flushPromises()
@@ -148,7 +160,7 @@ describe('ChangeApprovals', () => {
     await act(async () => {
       result = render(
         <Tree>
-          <ChangeApprovals />
+          <ChangeSigner oldSignerAddress={MULTISIG_SIGNER_ADDRESS_2} />
         </Tree>
       )
     })

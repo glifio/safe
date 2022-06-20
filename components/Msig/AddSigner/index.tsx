@@ -3,6 +3,7 @@ import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { validateAddressString } from '@glif/filecoin-address'
 import {
   navigate,
   useWallet,
@@ -14,16 +15,15 @@ import {
   PendingMsgContextType
 } from '@glif/react-components'
 
-import { useMsig } from '../../MsigProvider'
-import { useWasm } from '../../lib/WasmLoader'
-import { PAGE } from '../../constants'
-import { logger } from '../../logger'
+import { useMsig } from '../../../MsigProvider'
+import { useWasm } from '../../../lib/WasmLoader'
+import { PAGE } from '../../../constants'
+import { logger } from '../../../logger'
 
-export const RemoveSigner = ({
-  signerAddress,
+export const AddSigner = ({
   walletProviderOpts,
   pendingMsgContext
-}: RemoveSignerProps) => {
+}: AddSignerProps) => {
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -32,65 +32,58 @@ export const RemoveSigner = ({
     useMsig()
 
   // Input states
-  const [signer, setSigner] = useState<string>(signerAddress)
-  const [decrease, setDecrease] = useState<boolean>(
-    Signers.length === NumApprovalsThreshold
-  )
+  const [signer, setSigner] = useState<string>('')
+  const [increase, setIncrease] = useState<boolean>(false)
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  // Get signer addresses without current wallet owner
-  const signers = useMemo<Array<string>>(
-    () =>
-      Signers.map((signer) => signer.robust).filter(
-        (signer) => signer !== wallet.address
-      ),
-    [Signers, wallet.address]
-  )
-
   // Create message from input
   const message = useMemo<Message | null>(() => {
     try {
-      return new Message({
-        to: Address,
-        from: wallet.address,
-        nonce: 0,
-        value: 0,
-        method: MsigMethod.PROPOSE,
-        params: Buffer.from(
-          serializeParams({
+      // Manually check signer validity to prevent passing invalid addresses to serializeParams.
+      // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
+      return validateAddressString(signer)
+        ? new Message({
             to: Address,
-            value: '0',
-            method: MsigMethod.REMOVE_SIGNER,
+            from: wallet.address,
+            nonce: 0,
+            value: 0,
+            method: MsigMethod.PROPOSE,
             params: Buffer.from(
               serializeParams({
-                signer,
-                decrease
+                To: Address,
+                Value: '0',
+                Method: MsigMethod.ADD_SIGNER,
+                Params: Buffer.from(
+                  serializeParams({
+                    Signer: signer,
+                    Increase: increase
+                  }),
+                  'hex'
+                ).toString('base64')
               }),
               'hex'
-            ).toString('base64')
-          }),
-          'hex'
-        ).toString('base64'),
-        gasPremium: 0,
-        gasFeeCap: 0,
-        gasLimit: 0
-      })
+            ).toString('base64'),
+            gasPremium: 0,
+            gasFeeCap: 0,
+            gasLimit: 0
+          })
+        : null
     } catch (e) {
       logger.error(e)
       return null
     }
-  }, [signer, decrease, Address, wallet.address, serializeParams])
+  }, [signer, increase, Address, wallet.address, serializeParams])
 
   return (
     <Transaction.Form
-      title='Remove a signer'
-      description='Please select the signer address to remove below'
-      warning="You're about to remove a signer from your Safe."
+      title='Add a signer'
+      description='Please enter the new signer address below'
+      warning="You're about to add another signer to your Safe. Please make sure you know and trust the new signer."
       msig
-      method={MsigMethod.REMOVE_SIGNER}
+      method={MsigMethod.ADD_SIGNER}
       message={message}
       total={txFee}
       txState={txState}
@@ -107,11 +100,9 @@ export const RemoveSigner = ({
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />
-      <InputV2.Select
-        label='Signer'
+      <InputV2.Address
+        label='New Signer'
         autoFocus
-        address
-        options={signers}
         value={signer}
         onChange={setSigner}
         disabled={txState !== TxState.FillingForm}
@@ -119,33 +110,28 @@ export const RemoveSigner = ({
       {txState > TxState.FillingForm ? (
         <InputV2.Info
           label='Required approvals'
-          info={`The Safe will have ${Signers.length - 1} owners`}
-          value={decrease ? NumApprovalsThreshold - 1 : NumApprovalsThreshold}
+          info={`The Safe will have ${Signers.length + 1} owners`}
+          value={increase ? NumApprovalsThreshold + 1 : NumApprovalsThreshold}
         />
       ) : (
         <InputV2.Toggle
-          label='Decrease required approvals'
-          info={`From ${NumApprovalsThreshold} to ${NumApprovalsThreshold - 1}`}
-          checked={decrease}
-          onChange={setDecrease}
-          disabled={
-            txState !== TxState.FillingForm ||
-            Signers.length === NumApprovalsThreshold
-          }
+          label='Increase required approvals'
+          info={`From ${NumApprovalsThreshold} to ${NumApprovalsThreshold + 1}`}
+          checked={increase}
+          onChange={setIncrease}
+          disabled={txState !== TxState.FillingForm}
         />
       )}
     </Transaction.Form>
   )
 }
 
-interface RemoveSignerProps {
-  signerAddress: string
+interface AddSignerProps {
   walletProviderOpts?: WalletProviderOpts
   pendingMsgContext?: Context<PendingMsgContextType>
 }
 
-RemoveSigner.propTypes = {
-  signerAddress: PropTypes.string.isRequired,
+AddSigner.propTypes = {
   walletProviderOpts: PropTypes.object,
   pendingMsgContext: PropTypes.object
 }

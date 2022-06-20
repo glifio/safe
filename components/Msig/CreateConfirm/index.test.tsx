@@ -7,11 +7,11 @@ import {
 } from '@testing-library/react'
 import { useMessageQuery } from '@glif/react-components'
 
-import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { CreateConfirm } from './CreateConfirm'
-import { PAGE } from '../../constants'
+import composeMockAppTree from '../../../test-utils/composeMockAppTree'
+import { CreateConfirm } from '.'
+import { PAGE } from '../../../constants'
 
-jest.mock('../../MsigProvider')
+jest.mock('../../../MsigProvider')
 jest.mock('@glif/react-components', () => {
   const original = jest.requireActual('@glif/react-components')
   return {

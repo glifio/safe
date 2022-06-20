@@ -10,34 +10,38 @@ import {
 import { Context } from 'react'
 import { BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import { MsigMethod, WalletProviderContextType } from '@glif/react-components'
+import {
+  MsigMethod,
+  truncateAddress,
+  WalletProviderContextType
+} from '@glif/react-components'
 
 import {
   pushPendingMessageSpy,
   WalletProviderContext,
   PendingMsgContext
-} from '../../__mocks__/@glif/react-components'
-import composeMockAppTree from '../../test-utils/composeMockAppTree'
+} from '../../../__mocks__/@glif/react-components'
+import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import {
   flushPromises,
   WALLET_ADDRESS,
-  MULTISIG_ACTOR_ADDRESS
-} from '../../test-utils'
-import { AddSigner } from './AddSigner'
-
-const newAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
+  MULTISIG_ACTOR_ADDRESS,
+  MULTISIG_SIGNER_ADDRESS_2
+} from '../../../test-utils'
+import { RemoveSigner } from '.'
 
 jest.mock('@glif/filecoin-wallet-provider')
 
-describe('AddSigner', () => {
-  test('it allows a user to add a signer address', async () => {
+describe('RemoveSigner', () => {
+  test('it allows a user to remove a signer address', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
 
     await act(async () => {
       result = render(
         <Tree>
-          <AddSigner
+          <RemoveSigner
+            signerAddress={MULTISIG_SIGNER_ADDRESS_2}
             walletProviderOpts={{
               context:
                 WalletProviderContext as unknown as Context<WalletProviderContextType>
@@ -51,23 +55,16 @@ describe('AddSigner', () => {
 
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
-      const newSigner = getByRole(result.container, 'textbox')
+      const oldSigner = getByRole(result.container, 'combobox')
       const cancel = getByText(result.container, 'Cancel')
       const review = getByText(result.container, 'Review')
 
       // Check initial state
-      expect(header).toHaveTextContent('Add a signer')
-      expect(newSigner).toHaveFocus()
-      expect(newSigner).toHaveDisplayValue('')
+      expect(header).toHaveTextContent('Remove a signer')
+      expect(oldSigner).toHaveDisplayValue(
+        truncateAddress(MULTISIG_SIGNER_ADDRESS_2)
+      )
       expect(cancel).toBeEnabled()
-      expect(review).toBeDisabled()
-
-      // Enter new address
-      fireEvent.change(newSigner, { target: { value: newAddress } })
-      newSigner.blur()
-
-      // Review should now be enabled
-      await flushPromises()
       expect(review).toBeEnabled()
 
       // Click review
@@ -150,7 +147,7 @@ describe('AddSigner', () => {
     await act(async () => {
       result = render(
         <Tree>
-          <AddSigner />
+          <RemoveSigner signerAddress={MULTISIG_SIGNER_ADDRESS_2} />
         </Tree>
       )
     })

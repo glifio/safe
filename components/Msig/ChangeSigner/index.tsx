@@ -15,39 +15,45 @@ import {
   PendingMsgContextType
 } from '@glif/react-components'
 
-import { useMsig } from '../../MsigProvider'
-import { useWasm } from '../../lib/WasmLoader'
-import { PAGE } from '../../constants'
-import { logger } from '../../logger'
+import { useMsig } from '../../../MsigProvider'
+import { useWasm } from '../../../lib/WasmLoader'
+import { PAGE } from '../../../constants'
+import { logger } from '../../../logger'
 
-export const Withdraw = ({
+export const ChangeSigner = ({
+  oldSignerAddress,
   walletProviderOpts,
   pendingMsgContext
-}: WithdrawProps) => {
+}: ChangeSignerProps) => {
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
-  const { Address, AvailableBalance } = useMsig()
+  const { Address, AvailableBalance, Signers } = useMsig()
 
   // Input states
-  const [toAddress, setToAddress] = useState<string>('')
-  const [value, setValue] = useState<FilecoinNumber | null>(null)
-  const [isValueValid, setIsValueValid] = useState<boolean>(false)
+  const [oldSigner, setOldSigner] = useState<string>(oldSignerAddress)
+  const [newSigner, setNewSigner] = useState<string>('')
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
+  // Get signer addresses without current wallet owner
+  const signers = useMemo<Array<string>>(
+    () =>
+      Signers.map((signer) => signer.robust).filter(
+        (signer) => signer !== wallet.address
+      ),
+    [Signers, wallet.address]
+  )
+
   // Create message from input
   const message = useMemo<Message | null>(() => {
     try {
-      return isValueValid &&
-        // Manually check address validity to prevent passing invalid addresses to serializeParams.
-        // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
-        validateAddressString(toAddress) &&
-        // For the same reason, check whether value is a FileCoinNumber and not null
-        value
+      // Manually check signer validity to prevent passing invalid addresses to serializeParams.
+      // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
+      return validateAddressString(newSigner)
         ? new Message({
             to: Address,
             from: wallet.address,
@@ -56,10 +62,16 @@ export const Withdraw = ({
             method: MsigMethod.PROPOSE,
             params: Buffer.from(
               serializeParams({
-                to: toAddress,
-                value: value.toAttoFil(),
-                method: MsigMethod.WITHDRAW,
-                params: ''
+                To: Address,
+                Value: '0',
+                Method: MsigMethod.SWAP_SIGNER,
+                Params: Buffer.from(
+                  serializeParams({
+                    To: newSigner,
+                    From: oldSigner
+                  }),
+                  'hex'
+                ).toString('base64')
               }),
               'hex'
             ).toString('base64'),
@@ -72,16 +84,17 @@ export const Withdraw = ({
       logger.error(e)
       return null
     }
-  }, [isValueValid, toAddress, Address, wallet.address, value, serializeParams])
+  }, [oldSigner, newSigner, Address, wallet.address, serializeParams])
 
   return (
     <Transaction.Form
-      title='Withdraw Filecoin'
-      description='Please enter the message details below'
+      title='Change a signer'
+      description='Please update the signer address below'
+      warning="You're about to change a signer address of your Safe. Please make sure you know and trust the new signer."
       msig
-      method={MsigMethod.WITHDRAW}
+      method={MsigMethod.SWAP_SIGNER}
       message={message}
-      total={value}
+      total={txFee}
       txState={txState}
       setTxState={setTxState}
       maxFee={wallet.balance}
@@ -92,36 +105,37 @@ export const Withdraw = ({
       pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance
-        address={Address}
+        address={wallet.address}
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />
-      <InputV2.Address
-        label='Recipient'
-        autoFocus
-        value={toAddress}
-        onChange={setToAddress}
+      <InputV2.Select
+        label='Old Signer'
+        address
+        options={signers}
+        value={oldSigner}
+        onChange={setOldSigner}
         disabled={txState !== TxState.FillingForm}
       />
-      <InputV2.Filecoin
-        label='Amount'
-        max={AvailableBalance}
-        value={value}
-        denom='fil'
-        onChange={setValue}
-        setIsValid={setIsValueValid}
+      <InputV2.Address
+        label='New Signer'
+        autoFocus
+        value={newSigner}
+        onChange={setNewSigner}
         disabled={txState !== TxState.FillingForm}
       />
     </Transaction.Form>
   )
 }
 
-interface WithdrawProps {
+interface ChangeSignerProps {
+  oldSignerAddress: string
   walletProviderOpts?: WalletProviderOpts
   pendingMsgContext?: Context<PendingMsgContextType>
 }
 
-Withdraw.propTypes = {
+ChangeSigner.propTypes = {
+  oldSignerAddress: PropTypes.string.isRequired,
   walletProviderOpts: PropTypes.object,
   pendingMsgContext: PropTypes.object
 }

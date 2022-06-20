@@ -16,14 +16,14 @@ import {
   pushPendingMessageSpy,
   WalletProviderContext,
   PendingMsgContext
-} from '../../__mocks__/@glif/react-components'
-import composeMockAppTree from '../../test-utils/composeMockAppTree'
+} from '../../../__mocks__/@glif/react-components'
+import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import {
   flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS
-} from '../../test-utils'
-import { Withdraw } from './Withdraw'
+} from '../../../test-utils'
+import { Withdraw } from '.'
 
 const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
 const validAmount = new FilecoinNumber(0.01, 'fil')

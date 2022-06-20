@@ -7,9 +7,9 @@ import {
   RenderResult
 } from '@testing-library/react'
 
-import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { flushPromises } from '../../test-utils'
-import { Choose } from './Choose'
+import composeMockAppTree from '../../../test-utils/composeMockAppTree'
+import { flushPromises } from '../../../test-utils'
+import { Choose } from '.'
 
 const validSafeID = 'f2yrhsjwuwypy4gsv2lcikphizkusqe2gp3pp4w5q'
 const inValidSafeID = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'

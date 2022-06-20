@@ -15,9 +15,9 @@ import {
   useMessageQuery
 } from '@glif/react-components'
 
-import { useMsig } from '../../MsigProvider'
-import { PAGE } from '../../constants'
-import { getAddrFromReceipt } from '../../utils/getAddrFromReceipt'
+import { useMsig } from '../../../MsigProvider'
+import { PAGE } from '../../../constants'
+import { getAddrFromReceipt } from '../../../utils/getAddrFromReceipt'
 
 interface Receipt {
   ExitCode: number

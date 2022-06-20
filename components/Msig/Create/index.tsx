@@ -17,9 +17,9 @@ import {
   PendingMsgContextType
 } from '@glif/react-components'
 
-import { useWasm } from '../../lib/WasmLoader'
-import { PAGE, EXEC_ACTOR } from '../../constants'
-import { logger } from '../../logger'
+import { useWasm } from '../../../lib/WasmLoader'
+import { PAGE, EXEC_ACTOR } from '../../../constants'
+import { logger } from '../../../logger'
 
 export const Create = ({
   walletProviderOpts,

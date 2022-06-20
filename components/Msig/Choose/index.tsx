@@ -12,8 +12,8 @@ import {
   SmartLink
 } from '@glif/react-components'
 
-import { useMsig } from '../../MsigProvider'
-import { PAGE } from '../../constants'
+import { useMsig } from '../../../MsigProvider'
+import { PAGE } from '../../../constants'
 
 export const Choose = () => {
   const router = useRouter()

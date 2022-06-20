@@ -3,7 +3,6 @@ import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { validateAddressString } from '@glif/filecoin-address'
 import {
   navigate,
   useWallet,
@@ -15,45 +14,33 @@ import {
   PendingMsgContextType
 } from '@glif/react-components'
 
-import { useMsig } from '../../MsigProvider'
-import { useWasm } from '../../lib/WasmLoader'
-import { PAGE } from '../../constants'
-import { logger } from '../../logger'
+import { useMsig } from '../../../MsigProvider'
+import { useWasm } from '../../../lib/WasmLoader'
+import { PAGE } from '../../../constants'
+import { logger } from '../../../logger'
 
-export const ChangeSigner = ({
-  oldSignerAddress,
+export const ChangeApprovals = ({
   walletProviderOpts,
   pendingMsgContext
-}: ChangeSignerProps) => {
+}: ChangeApprovalsProps) => {
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
-  const { Address, AvailableBalance, Signers } = useMsig()
+  const { Address, AvailableBalance, Signers, NumApprovalsThreshold } =
+    useMsig()
 
   // Input states
-  const [oldSigner, setOldSigner] = useState<string>(oldSignerAddress)
-  const [newSigner, setNewSigner] = useState<string>('')
+  const [approvals, setApprovals] = useState<number>(NumApprovalsThreshold)
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  // Get signer addresses without current wallet owner
-  const signers = useMemo<Array<string>>(
-    () =>
-      Signers.map((signer) => signer.robust).filter(
-        (signer) => signer !== wallet.address
-      ),
-    [Signers, wallet.address]
-  )
-
   // Create message from input
   const message = useMemo<Message | null>(() => {
     try {
-      // Manually check signer validity to prevent passing invalid addresses to serializeParams.
-      // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
-      return validateAddressString(newSigner)
+      return approvals !== NumApprovalsThreshold
         ? new Message({
             to: Address,
             from: wallet.address,
@@ -62,13 +49,12 @@ export const ChangeSigner = ({
             method: MsigMethod.PROPOSE,
             params: Buffer.from(
               serializeParams({
-                to: Address,
-                value: '0',
-                method: MsigMethod.SWAP_SIGNER,
-                params: Buffer.from(
+                To: Address,
+                Value: '0',
+                Method: MsigMethod.CHANGE_NUM_APPROVALS_THRESHOLD,
+                Params: Buffer.from(
                   serializeParams({
-                    to: newSigner,
-                    from: oldSigner
+                    NewTreshold: approvals
                   }),
                   'hex'
                 ).toString('base64')
@@ -84,15 +70,20 @@ export const ChangeSigner = ({
       logger.error(e)
       return null
     }
-  }, [oldSigner, newSigner, Address, wallet.address, serializeParams])
+  }, [
+    approvals,
+    NumApprovalsThreshold,
+    Address,
+    wallet.address,
+    serializeParams
+  ])
 
   return (
     <Transaction.Form
-      title='Change a signer'
-      description='Please update the signer address below'
-      warning="You're about to change a signer address of your Safe. Please make sure you know and trust the new signer."
+      title='Change required approvals'
+      description='Please update the number of required approvals below'
       msig
-      method={MsigMethod.SWAP_SIGNER}
+      method={MsigMethod.CHANGE_NUM_APPROVALS_THRESHOLD}
       message={message}
       total={txFee}
       txState={txState}
@@ -109,33 +100,26 @@ export const ChangeSigner = ({
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />
-      <InputV2.Select
-        label='Old Signer'
-        address
-        options={signers}
-        value={oldSigner}
-        onChange={setOldSigner}
-        disabled={txState !== TxState.FillingForm}
-      />
-      <InputV2.Address
-        label='New Signer'
+      <InputV2.SelectRange
+        label='Required approvals'
+        info={`The Safe currently has ${Signers.length} owners`}
         autoFocus
-        value={newSigner}
-        onChange={setNewSigner}
+        min={1}
+        max={Signers.length}
+        value={approvals}
+        onChange={setApprovals}
         disabled={txState !== TxState.FillingForm}
       />
     </Transaction.Form>
   )
 }
 
-interface ChangeSignerProps {
-  oldSignerAddress: string
+interface ChangeApprovalsProps {
   walletProviderOpts?: WalletProviderOpts
   pendingMsgContext?: Context<PendingMsgContextType>
 }
 
-ChangeSigner.propTypes = {
-  oldSignerAddress: PropTypes.string.isRequired,
+ChangeApprovals.propTypes = {
   walletProviderOpts: PropTypes.object,
   pendingMsgContext: PropTypes.object
 }

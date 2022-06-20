@@ -16,15 +16,15 @@ import {
   pushPendingMessageSpy,
   WalletProviderContext,
   PendingMsgContext
-} from '../../__mocks__/@glif/react-components'
-import composeMockAppTree from '../../test-utils/composeMockAppTree'
+} from '../../../__mocks__/@glif/react-components'
+import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import {
   flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS
-} from '../../test-utils'
-import { ApproveCancel } from './ApproveCancel'
-import { PAGE } from '../../constants'
+} from '../../../test-utils'
+import { ApproveCancel } from '.'
+import { PAGE } from '../../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
 

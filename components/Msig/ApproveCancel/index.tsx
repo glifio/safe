@@ -19,10 +19,10 @@ import {
   MsigTransaction
 } from '@glif/react-components'
 
-import { useMsig } from '../../MsigProvider'
-import { useWasm } from '../../lib/WasmLoader'
-import { PAGE } from '../../constants'
-import { logger } from '../../logger'
+import { useMsig } from '../../../MsigProvider'
+import { useWasm } from '../../../lib/WasmLoader'
+import { PAGE } from '../../../constants'
+import { logger } from '../../../logger'
 
 export const ApproveCancel = ({
   method,

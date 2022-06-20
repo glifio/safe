@@ -20,10 +20,10 @@ import {
   pushPendingMessageSpy,
   WalletProviderContext,
   PendingMsgContext
-} from '../../__mocks__/@glif/react-components'
-import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
-import { Create } from './Create'
+} from '../../../__mocks__/@glif/react-components'
+import composeMockAppTree from '../../../test-utils/composeMockAppTree'
+import { flushPromises, WALLET_ADDRESS } from '../../../test-utils'
+import { Create } from '.'
 
 const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
 const validAmount = new FilecoinNumber(0.01, 'fil')

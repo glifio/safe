@@ -3,6 +3,7 @@ import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { validateAddressString } from '@glif/filecoin-address'
 import {
   navigate,
   useWallet,
@@ -14,24 +15,25 @@ import {
   PendingMsgContextType
 } from '@glif/react-components'
 
-import { useMsig } from '../../MsigProvider'
-import { useWasm } from '../../lib/WasmLoader'
-import { PAGE } from '../../constants'
-import { logger } from '../../logger'
+import { useMsig } from '../../../MsigProvider'
+import { useWasm } from '../../../lib/WasmLoader'
+import { PAGE } from '../../../constants'
+import { logger } from '../../../logger'
 
-export const ChangeApprovals = ({
+export const Withdraw = ({
   walletProviderOpts,
   pendingMsgContext
-}: ChangeApprovalsProps) => {
+}: WithdrawProps) => {
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
-  const { Address, AvailableBalance, Signers, NumApprovalsThreshold } =
-    useMsig()
+  const { Address, AvailableBalance } = useMsig()
 
   // Input states
-  const [approvals, setApprovals] = useState<number>(NumApprovalsThreshold)
+  const [toAddress, setToAddress] = useState<string>('')
+  const [value, setValue] = useState<FilecoinNumber | null>(null)
+  const [isValueValid, setIsValueValid] = useState<boolean>(false)
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
@@ -40,7 +42,12 @@ export const ChangeApprovals = ({
   // Create message from input
   const message = useMemo<Message | null>(() => {
     try {
-      return approvals !== NumApprovalsThreshold
+      return isValueValid &&
+        // Manually check address validity to prevent passing invalid addresses to serializeParams.
+        // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
+        validateAddressString(toAddress) &&
+        // For the same reason, check whether value is a FileCoinNumber and not null
+        value
         ? new Message({
             to: Address,
             from: wallet.address,
@@ -49,15 +56,10 @@ export const ChangeApprovals = ({
             method: MsigMethod.PROPOSE,
             params: Buffer.from(
               serializeParams({
-                to: Address,
-                value: '0',
-                method: MsigMethod.CHANGE_NUM_APPROVALS_THRESHOLD,
-                params: Buffer.from(
-                  serializeParams({
-                    NewTreshold: approvals
-                  }),
-                  'hex'
-                ).toString('base64')
+                To: toAddress,
+                Value: value.toAttoFil(),
+                Method: MsigMethod.WITHDRAW,
+                Params: ''
               }),
               'hex'
             ).toString('base64'),
@@ -70,22 +72,16 @@ export const ChangeApprovals = ({
       logger.error(e)
       return null
     }
-  }, [
-    approvals,
-    NumApprovalsThreshold,
-    Address,
-    wallet.address,
-    serializeParams
-  ])
+  }, [isValueValid, toAddress, Address, wallet.address, value, serializeParams])
 
   return (
     <Transaction.Form
-      title='Change required approvals'
-      description='Please update the number of required approvals below'
+      title='Withdraw Filecoin'
+      description='Please enter the message details below'
       msig
-      method={MsigMethod.CHANGE_NUM_APPROVALS_THRESHOLD}
+      method={MsigMethod.WITHDRAW}
       message={message}
-      total={txFee}
+      total={value}
       txState={txState}
       setTxState={setTxState}
       maxFee={wallet.balance}
@@ -96,30 +92,36 @@ export const ChangeApprovals = ({
       pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance
-        address={wallet.address}
+        address={Address}
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />
-      <InputV2.SelectRange
-        label='Required approvals'
-        info={`The Safe currently has ${Signers.length} owners`}
+      <InputV2.Address
+        label='Recipient'
         autoFocus
-        min={1}
-        max={Signers.length}
-        value={approvals}
-        onChange={setApprovals}
+        value={toAddress}
+        onChange={setToAddress}
+        disabled={txState !== TxState.FillingForm}
+      />
+      <InputV2.Filecoin
+        label='Amount'
+        max={AvailableBalance}
+        value={value}
+        denom='fil'
+        onChange={setValue}
+        setIsValid={setIsValueValid}
         disabled={txState !== TxState.FillingForm}
       />
     </Transaction.Form>
   )
 }
 
-interface ChangeApprovalsProps {
+interface WithdrawProps {
   walletProviderOpts?: WalletProviderOpts
   pendingMsgContext?: Context<PendingMsgContextType>
 }
 
-ChangeApprovals.propTypes = {
+Withdraw.propTypes = {
   walletProviderOpts: PropTypes.object,
   pendingMsgContext: PropTypes.object
 }
