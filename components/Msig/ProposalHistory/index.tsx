@@ -14,7 +14,7 @@ const getProposalParam = (proposal: MsigTransaction): string => {
   const clone = { ...proposal }
   delete clone.__typename
   delete clone.to.__typename
-  clone.approved.forEach(a => delete a.__typename)
+  clone.approved.forEach((a) => delete a.__typename)
   return encodeURI(JSON.stringify(clone))
 }
 
