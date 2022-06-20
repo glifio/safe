@@ -1,4 +1,4 @@
-import { isAddressSigner } from './'
+import { isAddressSigner } from './isAddressSigner'
 
 describe('isAddressSigner', () => {
   test('it confirms non ID address signers', async () => {

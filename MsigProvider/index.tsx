@@ -3,7 +3,7 @@ import { useWallet } from '@glif/react-components'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import useSWR from 'swr'
 
-import { fetchMsigState } from '../utils'
+import { fetchMsigState } from '../utils/fetchMsigState'
 import { MsigActorState, emptyMsigState } from './types'
 
 const MsigProviderContext = createContext<
