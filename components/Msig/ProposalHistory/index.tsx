@@ -19,23 +19,25 @@ const ProposalHistory = () => {
       id={Number(router.query.id)}
       address={Address}
       walletAddress={wallet.address}
-      accept={(proposal: MsigTransaction, approvalsUntilExecution: number) => {
-        const clone = { ...proposal, approvalsUntilExecution }
+      accept={(proposal: MsigTransaction, approvalsLeft: number) => {
+        const clone = { ...proposal }
         delete clone.__typename
         navigate(router, {
           pageUrl: PAGE.MSIG_APPROVE,
           newQueryParams: {
-            proposal: encodeURI(JSON.stringify(clone))
+            proposal: encodeURI(JSON.stringify(clone)),
+            approvalsLeft
           }
         })
       }}
-      cancel={(proposal: MsigTransaction, approvalsUntilExecution: number) => {
-        const clone = { ...proposal, approvalsUntilExecution }
+      cancel={(proposal: MsigTransaction, approvalsLeft: number) => {
+        const clone = { ...proposal }
         delete clone.__typename
         navigate(router, {
           pageUrl: PAGE.MSIG_CANCEL,
           newQueryParams: {
-            proposal: encodeURI(JSON.stringify(clone))
+            proposal: encodeURI(JSON.stringify(clone)),
+            approvalsLeft
           }
         })
       }}

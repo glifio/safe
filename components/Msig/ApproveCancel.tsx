@@ -24,8 +24,6 @@ import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
 
-type MsigTxWithApprovals = MsigTransaction & { approvalsUntilExecution: number }
-
 export const ApproveCancel = ({
   method,
   walletProviderOpts,
@@ -42,10 +40,11 @@ export const ApproveCancel = ({
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
   // Get transaction info from url
-  const { proposal } = router.query
-  const transaction = useMemo<MsigTxWithApprovals | null>(() => {
+  const proposal = router.query.proposal as string
+  const approvalsLeft = Number(router.query.approvalsLeft)
+  const transaction = useMemo<MsigTransaction | null>(() => {
     try {
-      return JSON.parse(decodeURI(proposal as string))
+      return JSON.parse(decodeURI(proposal))
     } catch (e) {
       setTxState(TxState.LoadingFailed)
       return null
@@ -55,8 +54,7 @@ export const ApproveCancel = ({
   // Get parameters object to pass to Parameters component
   const parameters = useMemo<Record<string, any> | null>(() => {
     if (!transaction) return null
-    const { id, approved, approvalsUntilExecution, proposalHash, ...params } =
-      transaction
+    const { id, approved, proposalHash, ...params } = transaction
     return { params }
   }, [transaction])
 
@@ -133,6 +131,7 @@ export const ApproveCancel = ({
       }
       msig
       method={method}
+      approvalsLeft={approvalsLeft}
       message={message}
       total={txFee}
       txState={txState}
@@ -152,9 +151,7 @@ export const ApproveCancel = ({
       {transaction && actorName && (
         <>
           <Line label='Proposal ID'>{transaction.id}</Line>
-          <Line label='Approvals until execution'>
-            {transaction.approvalsUntilExecution}
-          </Line>
+          <Line label='Approvals until execution'>{approvalsLeft}</Line>
           <Parameters params={approved} depth={0} actorName={actorName} />
           <hr />
           <Parameters params={parameters} depth={0} actorName={actorName} />
