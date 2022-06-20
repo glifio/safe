@@ -1,4 +1,5 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { CID } from '@glif/filecoin-wallet-provider'
 import { Address } from '@glif/react-components'
 
 export interface MsigActorErrors {
@@ -13,16 +14,26 @@ export interface Signer {
   account: string
 }
 
-export interface MsigActorState {
+export interface LotusMsigActorState {
+  InitialBalance: string
+  NextTxnID: number
+  NumApprovalsThreshold: number
+  PendingTxns: CID
+  Signers: string[]
+  StartEpoch: number
+  UnlockDuration: number
+}
+
+export interface MsigActorState
+  extends Pick<
+    LotusMsigActorState,
+    'NextTxnID' | 'StartEpoch' | 'UnlockDuration' | 'NumApprovalsThreshold'
+  > {
   Address: string | null
   ActorCode: string
   Balance: FilecoinNumber
   AvailableBalance: FilecoinNumber
   InitialBalance: FilecoinNumber
-  NextTxnID: number
-  NumApprovalsThreshold: number
-  StartEpoch: number
-  UnlockDuration: number
   Signers: Address[]
   errors: MsigActorErrors
 }

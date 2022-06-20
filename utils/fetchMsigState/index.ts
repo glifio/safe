@@ -1,15 +1,29 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import { CID } from '@glif/filecoin-wallet-provider'
-import {
-  AddressDocument,
-  AddressQuery,
-  decodeActorCID
-} from '@glif/react-components'
+import { AddressDocument, AddressQuery } from '@glif/react-components'
 
 import { isAddressSigner } from '../isAddressSigner'
-import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
+import {
+  MsigActorState,
+  emptyMsigState,
+  LotusMsigActorState
+} from '../../MsigProvider/types'
 import { createApolloClient } from '../../apolloClient'
+
+const isPresent = (value: any) => value !== null && value !== 'undefined'
+
+const actorIsMultisig = (state: LotusMsigActorState): boolean => {
+  return (
+    isPresent(state.InitialBalance) &&
+    isPresent(state.NextTxnID) &&
+    isPresent(state.NumApprovalsThreshold) &&
+    isPresent(state.PendingTxns) &&
+    isPresent(state.StartEpoch) &&
+    isPresent(state.UnlockDuration) &&
+    state?.Signers.length > 0
+  )
+}
 
 export const fetchMsigState = async (
   actorID: string,
@@ -20,17 +34,13 @@ export const fetchMsigState = async (
       apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
     })
 
-    const { Code } = await lCli.request<{ Code: CID }>(
-      'StateGetActor',
-      actorID,
-      null
-    )
+    const { Balance, Code, State } = await lCli.request<{
+      Balance: FilecoinNumber
+      Code: CID
+      State: LotusMsigActorState
+    }>('StateReadState', actorID, null)
 
-    let ActorCode = ''
-    try {
-      ActorCode = decodeActorCID(Code['/'])
-      if (!ActorCode?.includes('multisig')) throw new Error('Not an Msig actor')
-    } catch (e) {
+    if (!actorIsMultisig(State)) {
       return {
         ...emptyMsigState,
         errors: {
@@ -41,18 +51,6 @@ export const fetchMsigState = async (
         }
       }
     }
-
-    const { Balance, State } = await lCli.request<{
-      Balance: FilecoinNumber
-      State: {
-        InitialBalance: string
-        NextTxnID: number
-        NumApprovalsThreshold: number
-        Signers: string[]
-        StartEpoch: number
-        UnlockDuration: number
-      }
-    }>('StateReadState', actorID, null)
 
     const apolloClient = createApolloClient()
     const [availableBalance, signers] = await Promise.all([
@@ -92,7 +90,7 @@ export const fetchMsigState = async (
       Balance: new FilecoinNumber(Balance, 'attofil'),
       AvailableBalance: new FilecoinNumber(availableBalance, 'attofil'),
       Signers: signers,
-      ActorCode,
+      ActorCode: Code['/'],
       InitialBalance: new FilecoinNumber(State.InitialBalance, 'attofil'),
       NextTxnID: State.NextTxnID,
       NumApprovalsThreshold: State.NumApprovalsThreshold,
