@@ -6,7 +6,7 @@ const bytesToAddress = (payload): string => {
   return address.encode(process.env.NEXT_PUBLIC_COIN_TYPE, addr)
 }
 
-const getAddrFromReceipt = (base64Return: string) => {
+export const getAddrFromReceipt = (base64Return: string) => {
   const [cborBytesID, cborBytesRobust] = cbor.decode(
     Buffer.from(base64Return, 'base64')
   )
@@ -15,5 +15,3 @@ const getAddrFromReceipt = (base64Return: string) => {
     id: bytesToAddress(cborBytesID)
   }
 }
-
-export default getAddrFromReceipt

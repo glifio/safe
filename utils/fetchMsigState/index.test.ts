@@ -2,7 +2,7 @@ jest.mock('@glif/filecoin-rpc-client')
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { convertAddrToPrefix } from '@glif/react-components'
 
-import fetchMsigState from './fetchMsigState'
+import { fetchMsigState } from '.'
 
 import {
   MULTISIG_ACTOR_ADDRESS,
@@ -25,10 +25,9 @@ jest
         })
     }
   })
+
 describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
-    jest.spyOn(require('../actorCode'), 'decodeActorCID')
-
     const mockActorCode = jest.fn(async () => ({
       Code: { '/': 'xxxyyyzz' }
     }))
@@ -41,15 +40,10 @@ describe('fetchMsigState', () => {
       })
 
     const { errors } = await fetchMsigState('f01', MULTISIG_SIGNER_ADDRESS)
-
     expect(errors.notMsigActor).toBe(true)
   }, 10000)
 
   test('it returns a connected wallet not signer error if the wallet isnt a signer on the multisig', async () => {
-    jest
-      .spyOn(require('../actorCode'), 'decodeActorCID')
-      .mockImplementationOnce(() => '/multisig')
-
     jest
       .spyOn(require('@glif/filecoin-rpc-client'), 'default')
       .mockImplementationOnce(() => {
@@ -65,7 +59,7 @@ describe('fetchMsigState', () => {
                 }
               }
               case 'StateGetActor': {
-                return { Code: { '/': 'xxxyyyzz' } }
+                return { Code: { '/': 'bafkqadtgnfwc6nzpnv2wy5djonuwo' } }
               }
             }
           }
@@ -73,7 +67,7 @@ describe('fetchMsigState', () => {
       })
 
     const { errors } = await fetchMsigState(
-      't26gmvesj3ercqmprmgvkcwxkaqir2crdosmbtpny',
+      MULTISIG_ACTOR_ADDRESS,
       MULTISIG_SIGNER_ADDRESS
     )
 

@@ -1,4 +1,4 @@
-import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
+import { render, screen, act, fireEvent } from '@testing-library/react'
 import { MULTISIG_SIGNER_ADDRESS_2 } from '../../../test-utils'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 
@@ -15,14 +15,6 @@ jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
 })
 
 describe('Admin page', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
-  })
-
-  afterEach(() => {
-    cleanup()
-  })
-
   test('it renders the required approvals and the signers', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 

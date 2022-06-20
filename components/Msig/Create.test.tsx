@@ -1,5 +1,4 @@
 import {
-  cleanup,
   render,
   act,
   waitFor,
@@ -32,16 +31,6 @@ const validAmount = new FilecoinNumber(0.01, 'fil')
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('Create', () => {
-  beforeEach(() => {
-    jest.useFakeTimers()
-    jest.clearAllMocks()
-  })
-
-  afterEach(() => {
-    jest.clearAllTimers()
-    cleanup()
-  })
-
   test('it allows a user to create a safe', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
@@ -191,21 +180,19 @@ describe('Create', () => {
     expect(result.container.firstChild).toMatchSnapshot()
   })
 
-  describe('snapshots', () => {
-    test('it renders the initial state correctly', async () => {
-      const { Tree } = composeMockAppTree('postOnboard')
-      let result: RenderResult | null = null
+  test('it renders the initial state correctly', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let result: RenderResult | null = null
 
-      await act(async () => {
-        result = render(
-          <Tree>
-            <Create />
-          </Tree>
-        )
-      })
-
-      // Check snapshot
-      expect(result.container.firstChild).toMatchSnapshot()
+    await act(async () => {
+      result = render(
+        <Tree>
+          <Create />
+        </Tree>
+      )
     })
+
+    // Check snapshot
+    expect(result.container.firstChild).toMatchSnapshot()
   })
 })

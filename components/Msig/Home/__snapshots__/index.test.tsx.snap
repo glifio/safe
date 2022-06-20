@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Msig Home it renders the vesting balance, available balance, and msig address 1`] = `
+.c5 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+}
+
+.c5 svg path {
+  stroke: var(--black);
+}
+
+.c5:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c5:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c5:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c5:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c5 svg path {
+  stroke: var(--white);
+}
+
+.c5:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c5:hover svg path {
+  stroke: var(--green-medium);
+}
+
+.c0 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c0 > *:first-child {
+  margin-top: 0;
+}
+
+.c0 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c0 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c0 > h2:first-child {
+  margin: 0;
+}
+
+.c0 header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c1 {
+  background-color: var(--blue-gray);
+}
+
+.c1 hr {
+  border-color: var(--gray-medium);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 1.5em 0;
+}
+
+.c4 {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c2 {
+  width: 100%;
+  padding: 4em;
+  background: linear-gradient( 169deg,hsl(224deg 48% 94%) 5.19%,hsl(224deg 48% 93% / 5%) 116.24% );
+}
+
+.c2 .value {
+  color: var(--purple-medium);
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+<div
+  class="c0 c1 c2"
+>
+  <h3>
+    Available Balance
+  </h3>
+  <span
+    class="value"
+  >
+    1
+  </span>
+  <div
+    class="c3 c4"
+  >
+    <a
+      class="c5"
+      href="/withdraw"
+    >
+      Withdraw
+    </a>
+  </div>
+</div>
+`;

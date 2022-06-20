@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
+exports[`ChangeApprovals it allows a user to change the approvals threshold 1`] = `
 .c15 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -303,61 +303,30 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
   color: var(--red-medium);
 }
 
-.c9 .button-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.c9 .button-wrapper > *:first-child {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c9 .button-wrapper > *:not(:first-child) {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-transition: -webkit-transform 0.1s ease-out;
-  -webkit-transition: transform 0.1s ease-out;
-  transition: transform 0.1s ease-out;
-}
-
-.c9 .button-wrapper > *:not(:first-child):hover:not(:active) {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
-.c9 .button-wrapper > *:not(:first-child):active {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.c9 .unit-wrapper {
+.c9 .select-wrapper {
   position: relative;
 }
 
-.c9 .unit-wrapper input {
+.c9 .select-wrapper select {
   width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.c9 .unit-wrapper .unit {
+.c9 .select-wrapper .select-arrow {
   position: absolute;
+  pointer-events: none;
   top: 50%;
-  right: 1em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: var(--purple-medium);
-  color: var(--gray-dark) !important;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
+  border-color: var(--gray-dark);
 }
 
 .c10 .toggle-wrapper {
@@ -477,7 +446,7 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
       class="c1 c2"
     >
       <h2>
-        Withdraw Filecoin
+        Change required approvals
       </h2>
       <hr />
       <p>
@@ -506,7 +475,7 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
               From
             </span>
             <span>
-              f2m4f2 ... sha5za
+              t1z225 ... 6z6wgi
             </span>
           </div>
           <div>
@@ -535,70 +504,35 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
         >
           <div>
             <span>
-              Recipient
+              Required approvals
             </span>
-            
-            
+            <span
+              class="info"
+            >
+              The Safe currently has 2 owners
+            </span>
           </div>
           <div
-            class="button-wrapper"
+            class="select-wrapper"
           >
-            <div
-              class="unit-wrapper"
+            <select
+              disabled=""
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value="t1iury ... xaucza"
-              />
               
-            </div>
-          </div>
-        </label>
-        <label
-          class="c8 c9"
-          disabled=""
-        >
-          <div>
-            <span>
-              Amount
-            </span>
-            
-            
-          </div>
-          <div
-            class="button-wrapper"
-          >
-            <div
-              class="unit-wrapper"
-            >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max="1"
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 3.25em;"
-                type="number"
-                value="0.01"
-              />
-              <span
-                class="unit"
+              <option
+                value="1"
               >
-                FIL
-              </span>
-            </div>
+                1
+              </option>
+              <option
+                value="2"
+              >
+                2
+              </option>
+            </select>
+            <div
+              class="select-arrow"
+            />
           </div>
         </label>
         <hr />
@@ -645,7 +579,7 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
             Total
           </span>
           <span>
-            0.01
+            0.00000000001
              FIL
           </span>
         </div>
@@ -673,7 +607,7 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
 </div>
 `;
 
-exports[`Withdraw it renders correctly after entering the recipient 1`] = `
+exports[`ChangeApprovals it renders the initial state correctly 1`] = `
 .c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -946,576 +880,29 @@ exports[`Withdraw it renders correctly after entering the recipient 1`] = `
   color: var(--red-medium);
 }
 
-.c7 .button-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.c7 .button-wrapper > *:first-child {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c7 .button-wrapper > *:not(:first-child) {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-transition: -webkit-transform 0.1s ease-out;
-  -webkit-transition: transform 0.1s ease-out;
-  transition: transform 0.1s ease-out;
-}
-
-.c7 .button-wrapper > *:not(:first-child):hover:not(:active) {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
-.c7 .button-wrapper > *:not(:first-child):active {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.c7 .unit-wrapper {
+.c7 .select-wrapper {
   position: relative;
 }
 
-.c7 .unit-wrapper input {
+.c7 .select-wrapper select {
   width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.c7 .unit-wrapper .unit {
+.c7 .select-wrapper .select-arrow {
   position: absolute;
-  top: 50%;
-  right: 1em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: var(--purple-medium);
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.c5 > * {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 > *:first-child {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-<div
-  class="c0"
->
-  <form>
-    <div
-      class="c1 c2"
-    >
-      <h2>
-        Withdraw Filecoin
-      </h2>
-      <hr />
-      <p>
-        Please enter the message details below
-      </p>
-    </div>
-    
-    <div
-      class="c1 c3"
-    >
-      <div
-        class="c4"
-      >
-        <header
-          class="c5"
-        >
-          <div>
-            <span>
-              From
-            </span>
-            <span>
-              f2m4f2 ... sha5za
-            </span>
-          </div>
-          <div>
-            <span>
-              Signer 
-              Balance
-            </span>
-            <span>
-              1
-               FIL
-            </span>
-          </div>
-          <div>
-            <span>
-              Safe Balance
-            </span>
-            <span>
-              1
-               FIL
-            </span>
-          </div>
-        </header>
-        <label
-          class="c6 c7"
-        >
-          <div>
-            <span>
-              Recipient
-            </span>
-            
-            
-          </div>
-          <div
-            class="button-wrapper"
-          >
-            <div
-              class="unit-wrapper"
-            >
-              <input
-                autocomplete="on"
-                class=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value="t1iury ... xaucza"
-              />
-              
-            </div>
-          </div>
-        </label>
-        <label
-          class="c6 c7"
-        >
-          <div>
-            <span>
-              Amount
-            </span>
-            
-            
-          </div>
-          <div
-            class="button-wrapper"
-          >
-            <div
-              class="unit-wrapper"
-            >
-              <input
-                autocomplete="on"
-                class=""
-                max="1"
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 3.25em;"
-                type="number"
-                value=""
-              />
-              <span
-                class="unit"
-              >
-                FIL
-              </span>
-            </div>
-          </div>
-        </label>
-      </div>
-    </div>
-    <div
-      class="c8 c9"
-    >
-      <button
-        class="c10"
-        type="button"
-      >
-        Cancel
-      </button>
-      <button
-        class="c11"
-        disabled=""
-        type="submit"
-      >
-        Review
-      </button>
-    </div>
-  </form>
-</div>
-`;
-
-exports[`Withdraw it renders the initial state correctly 1`] = `
-.c10 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-}
-
-.c10 svg path {
-  stroke: var(--black);
-}
-
-.c10:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c10:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c10:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c10:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c11 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  color: var(--white);
-  border-color: var(--green-medium);
-  background: var(--green-medium);
   pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
-}
-
-.c11 svg path {
-  stroke: var(--black);
-}
-
-.c11:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c11:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c11:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c11:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c11 svg path {
-  stroke: var(--white);
-}
-
-.c11:hover {
-  color: var(--green-medium);
-  border-color: var(--green-medium);
-  background: var(--white);
-}
-
-.c11:hover svg path {
-  stroke: var(--green-medium);
-}
-
-.c11 svg path {
-  stroke: var(--gray-medium);
-}
-
-.c1 {
-  padding: 1.5em;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  word-break: break-word;
-}
-
-.c1 > *:first-child {
-  margin-top: 0;
-}
-
-.c1 > *:last-child {
-  margin-bottom: 0;
-}
-
-.c1 > svg:first-child {
-  display: block;
-  margin: 0 auto 1em;
-}
-
-.c1 > h2:first-child {
-  margin: 0;
-}
-
-.c1 header:first-child {
-  margin: -1.5em -1.5em 1.5em -1.5em;
-  padding: 1.5em;
-  background-color: var(--purple-medium);
-  color: var(--white);
-}
-
-.c2 {
-  background-color: var(--blue-gray);
-}
-
-.c2 hr {
-  border-color: var(--gray-medium);
-}
-
-.c3 {
-  background-color: var(--white);
-  box-shadow: 0 0 0.5em var(--gray-light);
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  margin: 1.5em 0;
-}
-
-.c9 {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 35em;
-}
-
-.c0 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.c4 > p,
-.c4 > hr {
-  margin: 0.5em 0;
-}
-
-.c4 > p[role='button'] {
-  margin: 0;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  text-align: left;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c6 > *:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-}
-
-.c6 span.info,
-.c6 span.error {
-  font-size: 0.875rem;
-}
-
-.c6 span.error {
-  color: var(--red-medium);
-}
-
-.c7 .button-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.c7 .button-wrapper > *:first-child {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c7 .button-wrapper > *:not(:first-child) {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-transition: -webkit-transform 0.1s ease-out;
-  -webkit-transition: transform 0.1s ease-out;
-  transition: transform 0.1s ease-out;
-}
-
-.c7 .button-wrapper > *:not(:first-child):hover:not(:active) {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
-.c7 .button-wrapper > *:not(:first-child):active {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.c7 .unit-wrapper {
-  position: relative;
-}
-
-.c7 .unit-wrapper input {
-  width: 100%;
-}
-
-.c7 .unit-wrapper .unit {
-  position: absolute;
   top: 50%;
-  right: 1em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: var(--purple-medium);
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
 }
 
 .c5 {
@@ -1569,11 +956,11 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
       class="c1 c2"
     >
       <h2>
-        Withdraw Filecoin
+        Change required approvals
       </h2>
       <hr />
       <p>
-        Please enter the message details below
+        Please update the number of required approvals below
       </p>
     </div>
     
@@ -1591,7 +978,7 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
               From
             </span>
             <span>
-              f2m4f2 ... sha5za
+              t1z225 ... 6z6wgi
             </span>
           </div>
           <div>
@@ -1619,67 +1006,33 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
         >
           <div>
             <span>
-              Recipient
+              Required approvals
             </span>
-            
-            
+            <span
+              class="info"
+            >
+              The Safe currently has 2 owners
+            </span>
           </div>
           <div
-            class="button-wrapper"
+            class="select-wrapper"
           >
-            <div
-              class="unit-wrapper"
-            >
-              <input
-                autocomplete="on"
-                class=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value=""
-              />
+            <select>
               
-            </div>
-          </div>
-        </label>
-        <label
-          class="c6 c7"
-        >
-          <div>
-            <span>
-              Amount
-            </span>
-            
-            
-          </div>
-          <div
-            class="button-wrapper"
-          >
-            <div
-              class="unit-wrapper"
-            >
-              <input
-                autocomplete="on"
-                class=""
-                max="1"
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 3.25em;"
-                type="number"
-                value=""
-              />
-              <span
-                class="unit"
+              <option
+                value="1"
               >
-                FIL
-              </span>
-            </div>
+                1
+              </option>
+              <option
+                value="2"
+              >
+                2
+              </option>
+            </select>
+            <div
+              class="select-arrow"
+            />
           </div>
         </label>
       </div>

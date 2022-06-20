@@ -1,17 +1,20 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import { CID } from '@glif/filecoin-wallet-provider'
-import { AddressDocument, AddressQuery } from '@glif/react-components'
+import {
+  AddressDocument,
+  AddressQuery,
+  decodeActorCID
+} from '@glif/react-components'
 
-import isAddressSigner from './isAddressSigner'
-import { decodeActorCID } from '../actorCode'
+import { isAddressSigner } from '../isAddressSigner'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
 import { createApolloClient } from '../../apolloClient'
 
-export default async function fetchMsigState(
+export const fetchMsigState = async (
   actorID: string,
   signerAddress: string
-): Promise<MsigActorState> {
+): Promise<MsigActorState> => {
   try {
     const lCli = new LotusRPCEngine({
       apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
@@ -23,9 +26,11 @@ export default async function fetchMsigState(
       null
     )
 
-    const ActorCode = decodeActorCID(Code['/'])
-
-    if (!ActorCode?.includes('multisig')) {
+    let ActorCode = ''
+    try {
+      ActorCode = decodeActorCID(Code['/'])
+      if (!ActorCode?.includes('multisig')) throw new Error('Not an Msig actor')
+    } catch (e) {
       return {
         ...emptyMsigState,
         errors: {
@@ -70,7 +75,7 @@ export default async function fetchMsigState(
       )
     ])
 
-    if (!(await isAddressSigner(signerAddress, signers))) {
+    if (!isAddressSigner(signerAddress, signers)) {
       return {
         ...emptyMsigState,
         errors: {

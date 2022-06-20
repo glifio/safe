@@ -17,7 +17,7 @@ import {
 
 import { useMsig } from '../../MsigProvider'
 import { PAGE } from '../../constants'
-import getAddrFromReceipt from '../../utils/getAddrFromReceipt'
+import { getAddrFromReceipt } from '../../utils/getAddrFromReceipt'
 
 interface Receipt {
   ExitCode: number

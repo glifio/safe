@@ -8,7 +8,7 @@ import {
   RenderResult
 } from '@testing-library/react'
 import { Context } from 'react'
-import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
+import { BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 import { MsigMethod, WalletProviderContextType } from '@glif/react-components'
 
@@ -23,22 +23,21 @@ import {
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS
 } from '../../test-utils'
-import { Withdraw } from './Withdraw'
+import { AddSigner } from './AddSigner'
 
-const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
-const validAmount = new FilecoinNumber(0.01, 'fil')
+const newAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
 
 jest.mock('@glif/filecoin-wallet-provider')
 
-describe('Withdraw', () => {
-  test('it allows a user to withdraw filecoin', async () => {
+describe('AddSigner', () => {
+  test('it allows a user to add a signer address', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
 
     await act(async () => {
       result = render(
         <Tree>
-          <Withdraw
+          <AddSigner
             walletProviderOpts={{
               context:
                 WalletProviderContext as unknown as Context<WalletProviderContextType>
@@ -52,31 +51,20 @@ describe('Withdraw', () => {
 
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
-      const recipient = getByRole(result.container, 'textbox')
-      const amount = getByRole(result.container, 'spinbutton')
+      const newSigner = getByRole(result.container, 'textbox')
       const cancel = getByText(result.container, 'Cancel')
       const review = getByText(result.container, 'Review')
 
       // Check initial state
-      expect(header).toHaveTextContent('Withdraw Filecoin')
-      expect(recipient).toHaveFocus()
-      expect(recipient).toHaveDisplayValue('')
-      expect(amount).toHaveDisplayValue('')
+      expect(header).toHaveTextContent('Add a signer')
+      expect(newSigner).toHaveFocus()
+      expect(newSigner).toHaveDisplayValue('')
       expect(cancel).toBeEnabled()
       expect(review).toBeDisabled()
 
-      // Enter recipient
-      fireEvent.change(recipient, { target: { value: validAddress } })
-      recipient.blur()
-
-      // Review should not be enabled yet
-      await flushPromises()
-      expect(review).toBeDisabled()
-
-      // Enter amount
-      amount.focus()
-      fireEvent.change(amount, { target: { value: validAmount.toFil() } })
-      amount.blur()
+      // Enter new address
+      fireEvent.change(newSigner, { target: { value: newAddress } })
+      newSigner.blur()
 
       // Review should now be enabled
       await flushPromises()
@@ -162,32 +150,9 @@ describe('Withdraw', () => {
     await act(async () => {
       result = render(
         <Tree>
-          <Withdraw />
+          <AddSigner />
         </Tree>
       )
-    })
-
-    // Check snapshot
-    expect(result.container.firstChild).toMatchSnapshot()
-  })
-
-  test('it renders correctly after entering the recipient', async () => {
-    const { Tree } = composeMockAppTree('postOnboard')
-    let result: RenderResult | null = null
-
-    await act(async () => {
-      result = render(
-        <Tree>
-          <Withdraw />
-        </Tree>
-      )
-
-      // Enter recipient
-      const recipient = getByRole(result.container, 'textbox')
-      fireEvent.change(recipient, { target: { value: validAddress } })
-      recipient.blur()
-
-      await flushPromises()
     })
 
     // Check snapshot

@@ -52,11 +52,17 @@ export const Choose = () => {
 
   return (
     <Dialog>
-      {submittedForm && errorMessage && <ErrorBox>{errorMessage}</ErrorBox>}
-      <ShadowBox>
-        <h2>Safe ID</h2>
-        <hr />
-        <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          setSubmittedForm(true)
+          setMsigActor(safeID)
+        }}
+      >
+        {submittedForm && errorMessage && <ErrorBox>{errorMessage}</ErrorBox>}
+        <ShadowBox>
+          <h2>Safe ID</h2>
+          <hr />
           <InputV2.Address
             name='safe-id'
             label='Please enter your Safe ID below to continue'
@@ -69,35 +75,27 @@ export const Choose = () => {
             onChange={setSafeID}
             setIsValid={setIsSafeIDValid}
           />
-        </form>
-        <p>
-          Don&apos;t have a Safe ID?{' '}
-          <SmartLink
-            href={generateRouteWithRequiredUrlParams({
-              pageUrl: PAGE.MSIG_CREATE,
-              existingQParams: {}
-            })}
-          >
-            Create one
-          </SmartLink>
-        </p>
-      </ShadowBox>
-      <ButtonRowSpaced>
-        <ButtonV2 large onClick={() => router.back()}>
-          Back
-        </ButtonV2>
-        <ButtonV2
-          large
-          green
-          disabled={!isSafeIDValid}
-          onClick={() => {
-            setSubmittedForm(true)
-            setMsigActor(safeID)
-          }}
-        >
-          Submit
-        </ButtonV2>
-      </ButtonRowSpaced>
+          <p>
+            Don&apos;t have a Safe ID?{' '}
+            <SmartLink
+              href={generateRouteWithRequiredUrlParams({
+                pageUrl: PAGE.MSIG_CREATE,
+                existingQParams: {}
+              })}
+            >
+              Create one
+            </SmartLink>
+          </p>
+        </ShadowBox>
+        <ButtonRowSpaced>
+          <ButtonV2 large type='button' onClick={() => router.back()}>
+            Back
+          </ButtonV2>
+          <ButtonV2 large green type='submit' disabled={!isSafeIDValid}>
+            Submit
+          </ButtonV2>
+        </ButtonRowSpaced>
+      </form>
     </Dialog>
   )
 }

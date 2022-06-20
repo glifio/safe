@@ -1,6 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { cleanup } from '@testing-library/react'
 import { ReactNode } from 'react'
 import {
   WalletProviderWrapper,
@@ -16,12 +15,9 @@ import { composeWalletProviderState } from '../test-utils/composeMockAppTree/com
 // so this file tests 1 function that depends on a different implementation of a mock
 
 describe('Not a signer error handling', () => {
-  afterEach(cleanup)
   // @ts-ignore
   let Tree = ({ children }) => <>{children}</>
   beforeEach(() => {
-    jest.clearAllMocks()
-
     jest
       .spyOn(require('@glif/filecoin-rpc-client'), 'default')
       .mockImplementation(() => {
@@ -92,20 +88,18 @@ describe('Not a signer error handling', () => {
 
   test('if wallet address is not a signer, the address not a signer error populates', async () => {
     jest
-      .spyOn(require('../utils/msig/isAddressSigner'), 'default')
-      .mockImplementation(async () => false)
+      .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
+      .mockImplementation(() => false)
 
-    let { waitForNextUpdate, result, unmount } = renderHook(() => useMsig(), {
+    let { result } = renderHook(() => useMsig(), {
       wrapper: Tree
     })
-    act(() => {
+
+    await act(async () => {
       result.current.setMsigActor(MULTISIG_ACTOR_ADDRESS)
     })
-    await waitForNextUpdate({ timeout: false })
 
     const msigState: MsigActorState = result.current
-
     expect(msigState.errors.connectedWalletNotMsigSigner).toBeTruthy()
-    unmount()
   }, 10000)
 })
