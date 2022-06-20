@@ -9,7 +9,7 @@ import {
 
 import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
-import { MsigActorState } from './types'
+import { LotusMsigActorState, MsigActorState } from './types'
 import { EXEC_ACTOR } from '../constants'
 import { composeWalletProviderState } from '../test-utils/composeMockAppTree/composeState'
 
@@ -25,12 +25,17 @@ describe('Multisig provider', () => {
               switch (method) {
                 case 'StateGetActor': {
                   return {
-                    Code: { '/': 'bafkqadtgnfwc6nrpnv2wy5djonuwo' },
+                    Code: {
+                      '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                    },
                     Balance: '80000000000'
                   }
                 }
                 case 'StateReadState': {
                   return {
+                    Code: {
+                      '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                    },
                     Balance: new FilecoinNumber('1', 'fil').toAttoFil(),
                     State: {
                       InitialBalance: new FilecoinNumber(
@@ -41,8 +46,9 @@ describe('Multisig provider', () => {
                       NumApprovalsThreshold: 1,
                       Signers: ['f01234'],
                       StartEpoch: 1000,
-                      UnlockDuration: 0
-                    }
+                      UnlockDuration: 0,
+                      PendingTxns: { '/': 'xxx' }
+                    } as LotusMsigActorState
                   }
                 }
                 case 'MsigGetAvailableBalance': {
@@ -124,7 +130,7 @@ describe('Multisig provider', () => {
 
       const msigState: MsigActorState = result.current
       expect(msigState.Address).toBe(MULTISIG_ACTOR_ADDRESS)
-      expect(msigState.ActorCode.includes('multisig')).toBeTruthy()
+      expect(msigState.ActorCode.includes('bafk')).toBeTruthy()
       expect(msigState.AvailableBalance.gt(0)).toBeTruthy()
       expect(msigState.Balance.gt(0)).toBeTruthy()
       expect(msigState.NumApprovalsThreshold).toBeTruthy()
@@ -162,7 +168,8 @@ describe('Multisig provider', () => {
             request: jest.fn(async () => {
               return {
                 Balance: '0',
-                Code: { '/': 'xyz' }
+                Code: { '/': 'xyz' },
+                State: {}
               }
             })
           }

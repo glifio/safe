@@ -3,6 +3,7 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { convertAddrToPrefix } from '@glif/react-components'
 
 import { fetchMsigState } from '.'
+import { LotusMsigActorState } from '../../MsigProvider/types'
 
 import {
   MULTISIG_ACTOR_ADDRESS,
@@ -29,7 +30,8 @@ jest
 describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
     const mockActorCode = jest.fn(async () => ({
-      Code: { '/': 'xxxyyyzz' }
+      Code: { '/': 'xxxyyyzz' },
+      State: {}
     }))
     jest
       .spyOn(require('@glif/filecoin-rpc-client'), 'default')
@@ -102,6 +104,9 @@ describe('fetchMsigState', () => {
             switch (method) {
               case 'StateReadState': {
                 return {
+                  Code: {
+                    '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                  },
                   Balance: new FilecoinNumber('1', 'fil'),
                   State: {
                     Signers: [MULTISIG_SIGNER_ADDRESS_2],
@@ -109,8 +114,9 @@ describe('fetchMsigState', () => {
                     NextTxnID: 1,
                     NumApprovalsThreshold: 1,
                     StartEpoch: 1,
-                    UnlockDuration: 1
-                  }
+                    UnlockDuration: 1,
+                    PendingTxns: { '/': 'bafkafhduos' }
+                  } as LotusMsigActorState
                 }
               }
               case 'StateGetActor': {
@@ -146,7 +152,7 @@ describe('fetchMsigState', () => {
     expect(convertAddrToPrefix(Signers[0].robust)).toBe(
       convertAddrToPrefix(MULTISIG_SIGNER_ADDRESS_2)
     )
-    expect(ActorCode.includes('multisig')).toBe(true)
+    expect(ActorCode.includes('bafk')).toBe(true)
     expect(InitialBalance.isGreaterThan(0)).toBe(true)
     expect(NumApprovalsThreshold).toBeGreaterThan(0)
     expect(StartEpoch).toBeGreaterThan(0)

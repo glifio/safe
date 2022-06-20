@@ -21,7 +21,7 @@ const actorIsMultisig = (state: LotusMsigActorState): boolean => {
     isPresent(state.PendingTxns) &&
     isPresent(state.StartEpoch) &&
     isPresent(state.UnlockDuration) &&
-    state?.Signers.length > 0
+    state?.Signers?.length > 0
   )
 }
 
