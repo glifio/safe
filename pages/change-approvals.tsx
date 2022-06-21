@@ -7,7 +7,7 @@ import {
 } from '@glif/react-components'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import { ChangeApprovals } from '../components/Msig/ChangeApprovals'
+import { ChangeApprovals } from '../components/ChangeApprovals'
 import { PAGE } from '../constants'
 
 const ChangeApprovalsPage = () => {

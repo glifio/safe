@@ -7,7 +7,7 @@ import {
 } from '@glif/react-components'
 
 import SafePage from '../../components/SafePage'
-import { Create } from '../../components/Msig/Create'
+import { Create } from '../../components/Create'
 import { PAGE } from '../../constants'
 
 const CreatePage = () => {

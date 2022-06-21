@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { navigate, OneColumn, RequireWallet } from '@glif/react-components'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import MsigAdmin from '../components/Msig/Admin'
+import MsigAdmin from '../components/Admin'
 import { PAGE } from '../constants'
 
 const Owners = () => {
