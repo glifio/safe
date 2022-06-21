@@ -59,7 +59,11 @@ describe('fetchMsigState', () => {
                 }
               }
               case 'StateGetActor': {
-                return { Code: { '/': 'bafkqadtgnfwc6nzpnv2wy5djonuwo' } }
+                return {
+                  Code: {
+                    '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                  }
+                }
               }
             }
           }
@@ -114,7 +118,11 @@ describe('fetchMsigState', () => {
                 }
               }
               case 'StateGetActor': {
-                return { Code: { '/': 'bafkqadtgnfwc6nzpnv2wy5djonuwo' } }
+                return {
+                  Code: {
+                    '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                  }
+                }
               }
               case 'MsigGetAvailableBalance': {
                 return '1'

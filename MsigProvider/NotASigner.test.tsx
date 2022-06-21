@@ -26,7 +26,9 @@ describe('Not a signer error handling', () => {
             switch (method) {
               case 'StateGetActor': {
                 return {
-                  Code: { '/': 'bafkqadtgnfwc6nrpnv2wy5djonuwo' },
+                  Code: {
+                    '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                  },
                   Balance: '80000000000'
                 }
               }
