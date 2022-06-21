@@ -1,5 +1,5 @@
 import { OneColumnCentered } from '@glif/react-components'
-import { CreateConfirm } from '../../components/Msig/CreateConfirm'
+import { CreateConfirm } from '../../components/CreateConfirm'
 import SafePage from '../../components/SafePage'
 
 const CreateConfirmPage = () => (

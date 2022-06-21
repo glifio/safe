@@ -8,7 +8,7 @@ import {
 } from '@glif/react-components'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import { ApproveCancel } from '../components/Msig/ApproveCancel'
+import { ApproveCancel } from '../components/ApproveCancel'
 import { PAGE } from '../constants'
 
 const CancelPage = () => {

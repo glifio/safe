@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { navigate, OneColumn, RequireWallet } from '@glif/react-components'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import ProposalHistory from '../components/Msig/ProposalHistory'
+import ProposalHistory from '../components/ProposalHistory'
 import { PAGE } from '../constants'
 
 const Proposals = () => {

@@ -7,7 +7,7 @@ import {
 import { useRouter } from 'next/router'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import MsigHome from '../components/Msig/Home'
+import MsigHome from '../components/Home'
 import { PAGE } from '../constants'
 
 const Home = () => {

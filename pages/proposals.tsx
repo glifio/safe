@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { navigate, OneColumn, RequireWallet } from '@glif/react-components'
-import ProposalHistory from '../components/Msig/ProposalHistory'
+import ProposalHistory from '../components/ProposalHistory'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
 import { PAGE } from '../constants'

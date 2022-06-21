@@ -7,7 +7,7 @@ import {
 } from '@glif/react-components'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import { Withdraw } from '../components/Msig/Withdraw'
+import { Withdraw } from '../components/Withdraw'
 import { PAGE } from '../constants'
 
 const WithdrawPage = () => {

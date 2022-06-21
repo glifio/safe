@@ -7,7 +7,7 @@ import {
 } from '@glif/react-components'
 
 import SafePage from '../components/SafePage'
-import { Choose } from '../components/Msig/Choose'
+import { Choose } from '../components/Choose'
 import { PAGE } from '../constants'
 
 const ChoosePage = () => {
