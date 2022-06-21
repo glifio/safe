@@ -4,8 +4,10 @@ import { act, renderHook } from '@testing-library/react-hooks'
 import { ReactNode } from 'react'
 import {
   WalletProviderWrapper,
-  initialState as _walletProviderInitialState
+  initialState as _walletProviderInitialState,
+  actorCodesToNames
 } from '@glif/react-components'
+import { Network } from '@glif/filecoin-address'
 
 import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
@@ -26,7 +28,7 @@ describe('Multisig provider', () => {
                 case 'StateGetActor': {
                   return {
                     Code: {
-                      '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                      '/': actorCodesToNames[Network.TEST]['multisig']
                     },
                     Balance: '80000000000'
                   }

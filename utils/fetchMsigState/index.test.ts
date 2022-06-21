@@ -1,6 +1,7 @@
 jest.mock('@glif/filecoin-rpc-client')
+import { Network } from '@glif/filecoin-address'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { convertAddrToPrefix } from '@glif/react-components'
+import { convertAddrToPrefix, actorCodesToNames } from '@glif/react-components'
 
 import { fetchMsigState } from '.'
 
@@ -61,7 +62,7 @@ describe('fetchMsigState', () => {
               case 'StateGetActor': {
                 return {
                   Code: {
-                    '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                    '/': actorCodesToNames[Network.TEST]['multisig']
                   }
                 }
               }
@@ -120,7 +121,7 @@ describe('fetchMsigState', () => {
               case 'StateGetActor': {
                 return {
                   Code: {
-                    '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                    '/': actorCodesToNames[Network.TEST]['multisig']
                   }
                 }
               }
