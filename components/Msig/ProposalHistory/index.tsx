@@ -3,7 +3,8 @@ import {
   ProposalDetail,
   ProposalHistoryTable,
   MsigTransaction,
-  useWallet
+  useWallet,
+  Address
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
@@ -11,11 +12,23 @@ import { useMsig } from '../../../MsigProvider'
 import { PAGE } from '../../../constants'
 
 const getProposalParam = (proposal: MsigTransaction): string => {
-  const clone = { ...proposal }
-  delete clone.__typename
-  delete clone.to.__typename
-  clone.approved.forEach((a) => delete a.__typename)
-  return encodeURI(JSON.stringify(clone))
+  const enncodingJson: Omit<MsigTransaction, '__typename'> = {
+    id: proposal.id,
+    method: proposal.method,
+    to: {
+      id: proposal.to.id,
+      robust: proposal.to.robust
+    } as Omit<Address, '__typename'>,
+    value: proposal.value,
+    proposalHash: proposal.proposalHash
+  }
+  if (proposal.approved) {
+    enncodingJson.approved = proposal.approved
+  }
+  if (proposal.params) {
+    enncodingJson.params = proposal.params
+  }
+  return encodeURI(JSON.stringify(enncodingJson))
 }
 
 const ProposalHistory = () => {
