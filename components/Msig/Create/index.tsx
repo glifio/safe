@@ -21,6 +21,8 @@ import { useWasm } from '../../../lib/WasmLoader'
 import { PAGE, EXEC_ACTOR } from '../../../constants'
 import { logger } from '../../../logger'
 
+const IS_PROD = process.env.NEXT_PUBLIC_IS_PROD
+
 export const Create = ({
   walletProviderOpts,
   pendingMsgContext
@@ -104,8 +106,9 @@ export const Create = ({
               approvals,
               0,
               vest.toString(),
-              epoch.toString()
-            ).params,
+              epoch.toString(),
+              !!IS_PROD ? 'mainnet' : 'calibrationnet'
+            ).Params,
             gasPremium: 0,
             gasFeeCap: 0,
             gasLimit: 0
