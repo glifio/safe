@@ -7,7 +7,7 @@ import {
 } from '@glif/react-components'
 
 import SafePageLoggedIn from '../components/SafePageLoggedIn'
-import { AddSigner } from '../components/Msig/AddSigner'
+import { AddSigner } from '../components/AddSigner'
 import { PAGE } from '../constants'
 
 const AddSignerPage = () => {

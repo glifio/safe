@@ -37,9 +37,9 @@ const createMultisig = jest.fn().mockImplementation(
   (walletAddress, signerAddresses, value, numSigners, nonce, vest, epoch) => {
     // normally this returns the whole message but we just use the params
     return {
-      from: walletAddress,
-      to: 't01',
-      params: 'xxyyzzz'
+      From: walletAddress,
+      To: 't01',
+      Params: 'xxyyzzz'
     }
   }
 )
