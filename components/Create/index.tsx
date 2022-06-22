@@ -8,7 +8,6 @@ import {
   navigate,
   useWallet,
   getMaxAffordableFee,
-  getTotalAmount,
   InputV2,
   Transaction,
   MsigMethod,
@@ -138,7 +137,7 @@ export const Create = ({
 
   // Calculate total amount (value plus tx fee)
   const total = useMemo<FilecoinNumber | null>(() => {
-    return value && txFee ? getTotalAmount(value, txFee) : null
+    return value && txFee ? value.plus(txFee) : null
   }, [value, txFee])
 
   return (
