@@ -1,7 +1,7 @@
 import {
   MessageHistoryTable,
   MessageDetail,
-  generateRouteWithRequiredUrlParams
+  appendQueryParams
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
@@ -20,11 +20,7 @@ const MessageHistory = () => {
     <MessageHistoryTable
       address={Address}
       cidHref={(cid: string, height?: string) =>
-        generateRouteWithRequiredUrlParams({
-          pageUrl: PAGE.MSIG_HISTORY,
-          newQueryParams: { height, cid },
-          existingQParams: { ...router.query } as Record<string, string>
-        })
+        appendQueryParams(PAGE.MSIG_HISTORY, { height, cid })
       }
     />
   )

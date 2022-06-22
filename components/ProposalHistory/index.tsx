@@ -1,5 +1,6 @@
 import {
   navigate,
+  appendQueryParams,
   ProposalDetail,
   ProposalHistoryTable,
   MsigTransaction,
@@ -51,7 +52,7 @@ const ProposalHistory = () => {
     <ProposalHistoryTable
       address={Address}
       idHref={(id: number) =>
-        `${PAGE.MSIG_PROPOSAL}?id=${id}&address=${Address}`
+        appendQueryParams(PAGE.MSIG_PROPOSAL, { id, address: Address })
       }
       walletAddr={wallet.address}
     />
