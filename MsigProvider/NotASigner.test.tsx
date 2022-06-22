@@ -3,13 +3,15 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { ReactNode } from 'react'
 import {
   WalletProviderWrapper,
-  initialState as _walletProviderInitialState
+  initialState as _walletProviderInitialState,
+  actorCodesToNames
 } from '@glif/react-components'
 
 import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
 import { MsigActorState } from './types'
 import { composeWalletProviderState } from '../test-utils/composeMockAppTree/composeState'
+import { Network } from '@glif/filecoin-address'
 
 // trying to mock a module with two differet functions and the react hooks test renderer does not work
 // so this file tests 1 function that depends on a different implementation of a mock
@@ -27,7 +29,7 @@ describe('Not a signer error handling', () => {
               case 'StateGetActor': {
                 return {
                   Code: {
-                    '/': 'bafk2bzacec66wmb4kohuzvuxsulhcgiwju7sqkldwfpmmgw7dbbwgm5l2574q'
+                    '/': actorCodesToNames[Network.TEST]['multisig']
                   },
                   Balance: '80000000000'
                 }

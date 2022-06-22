@@ -76,8 +76,8 @@ export const ApproveCancel = ({
             method,
             params: Buffer.from(
               serializeParams({
-                TxnID: transaction.id,
-                ProposalHashData: transaction.proposalHash
+                ID: transaction.id,
+                ProposalHash: transaction.proposalHash
               }),
               'hex'
             ).toString('base64'),
