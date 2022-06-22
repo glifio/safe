@@ -31,7 +31,7 @@ const ProposalHistory = () => {
       accept={(proposal: MsigTransaction, approvalsLeft: number) => {
         navigate(router, {
           pageUrl: PAGE.MSIG_APPROVE,
-          newQueryParams: {
+          params: {
             proposal: getProposalParam(proposal),
             approvalsLeft
           }
@@ -40,7 +40,7 @@ const ProposalHistory = () => {
       cancel={(proposal: MsigTransaction, approvalsLeft: number) => {
         navigate(router, {
           pageUrl: PAGE.MSIG_CANCEL,
-          newQueryParams: {
+          params: {
             proposal: getProposalParam(proposal),
             approvalsLeft
           }

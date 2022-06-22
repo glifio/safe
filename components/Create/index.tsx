@@ -155,7 +155,7 @@ export const Create = ({
       onComplete={(cid) =>
         navigate(router, {
           pageUrl: PAGE.MSIG_CREATE_CONFIRM,
-          newQueryParams: { cid }
+          params: { cid }
         })
       }
       walletProviderOpts={walletProviderOpts}

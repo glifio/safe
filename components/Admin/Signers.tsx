@@ -19,7 +19,7 @@ export const Signers = ({ signers }: { signers: AddressType[] }) => {
           onRemoveSigner={() => {
             navigate(router, {
               pageUrl: PAGE.MSIG_REMOVE_SIGNER,
-              newQueryParams: {
+              params: {
                 address: signer.robust || signer.id
               }
             })
@@ -27,7 +27,7 @@ export const Signers = ({ signers }: { signers: AddressType[] }) => {
           onChangeSigner={() => {
             navigate(router, {
               pageUrl: PAGE.MSIG_CHANGE_SIGNER,
-              newQueryParams: {
+              params: {
                 address: signer.robust || signer.id
               }
             })
