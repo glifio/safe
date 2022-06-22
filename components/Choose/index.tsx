@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
   navigate,
-  generateRouteWithRequiredUrlParams,
   ButtonRowSpaced,
   ButtonV2,
   InputV2,
@@ -77,14 +76,7 @@ export const Choose = () => {
           />
           <p>
             Don&apos;t have a Safe ID?{' '}
-            <SmartLink
-              href={generateRouteWithRequiredUrlParams({
-                pageUrl: PAGE.MSIG_CREATE,
-                existingQParams: {}
-              })}
-            >
-              Create one
-            </SmartLink>
+            <SmartLink href={PAGE.MSIG_CREATE}>Create one</SmartLink>
           </p>
         </ShadowBox>
         <ButtonRowSpaced>
