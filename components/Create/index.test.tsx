@@ -22,7 +22,7 @@ import {
   PendingMsgContext
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
+import { WALLET_ADDRESS } from '../../test-utils/constants'
 import { Create } from '.'
 
 const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
@@ -48,8 +48,6 @@ describe('Create', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const signer1 = getByRole(result.container, 'textbox')
@@ -72,44 +70,38 @@ describe('Create', () => {
 
       // Add a signer
       fireEvent.click(addSigner)
+      jest.runAllTimers()
 
       // There should be a second signer and review should not be enabled yet
-      await flushPromises()
       const signer2 = getAllByRole(result.container, 'textbox')[1]
       expect(signer2).toBeEnabled()
       expect(signer2).toHaveDisplayValue('')
       expect(review).toBeDisabled()
 
       // Enter second signer address
-      signer2.focus()
       fireEvent.change(signer2, { target: { value: validAddress } })
-      signer2.blur()
+      jest.runAllTimers()
 
       // Review should not be enabled yet
-      await flushPromises()
       expect(review).toBeDisabled()
 
       // Increment required approvals
-      approvals.focus()
       fireEvent.change(approvals, { target: { value: '2' } })
-      approvals.blur()
+      jest.runAllTimers()
 
       // Review should not be enabled yet
-      await flushPromises()
       expect(review).toBeDisabled()
 
       // Enter amount
-      amount.focus()
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
-      amount.blur()
+      jest.runAllTimers()
 
       // Review should now be enabled
-      await flushPromises()
       expect(review).toBeEnabled()
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -134,7 +126,7 @@ describe('Create', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls

@@ -4,12 +4,11 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { convertAddrToPrefix, actorCodesToNames } from '@glif/react-components'
 
 import { fetchMsigState } from '.'
-
 import {
   MULTISIG_ACTOR_ADDRESS,
   MULTISIG_SIGNER_ADDRESS,
   MULTISIG_SIGNER_ADDRESS_2
-} from '../../test-utils'
+} from '../../test-utils/constants'
 
 jest
   .spyOn(require('../../apolloClient'), 'createApolloClient')

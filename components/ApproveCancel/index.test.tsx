@@ -19,10 +19,9 @@ import {
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import {
-  flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS
-} from '../../test-utils'
+} from '../../test-utils/constants'
 import { ApproveCancel } from '.'
 import { PAGE } from '../../constants'
 
@@ -60,8 +59,6 @@ describe('ApproveCancel', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const cancel = getByText(result.container, 'Cancel')
@@ -83,7 +80,7 @@ describe('ApproveCancel', () => {
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -108,7 +105,7 @@ describe('ApproveCancel', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
@@ -181,8 +178,6 @@ describe('ApproveCancel', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const cancel = getByText(result.container, 'Cancel')
@@ -204,7 +199,7 @@ describe('ApproveCancel', () => {
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -229,7 +224,7 @@ describe('ApproveCancel', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls

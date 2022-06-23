@@ -2,7 +2,6 @@ import { render, screen, act, fireEvent } from '@testing-library/react'
 
 import UseDesktopBrowser from '../../pages/error/use-desktop-browser.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { flushPromises } from '../../test-utils/index.js'
 
 jest.mock('@glif/filecoin-wallet-provider')
 
@@ -47,7 +46,7 @@ describe('UseDesktopBrowser', () => {
         </Tree>
       )
       fireEvent.click(screen.getByText('Home'))
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     expect(window.location.href).toBe('https://www.glif.io')

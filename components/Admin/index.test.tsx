@@ -1,5 +1,5 @@
 import { render, screen, act, fireEvent } from '@testing-library/react'
-import { MULTISIG_SIGNER_ADDRESS_2 } from '../../test-utils'
+import { MULTISIG_SIGNER_ADDRESS_2 } from '../../test-utils/constants'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { PAGE } from '../../constants'
 import Admin from '.'

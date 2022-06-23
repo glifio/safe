@@ -23,11 +23,10 @@ import {
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import {
-  flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS,
   MULTISIG_SIGNER_ADDRESS_2
-} from '../../test-utils'
+} from '../../test-utils/constants'
 import { ChangeSigner } from '.'
 
 const newAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
@@ -53,8 +52,6 @@ describe('ChangeSigner', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const oldSigner = getByRole(result.container, 'combobox')
@@ -74,15 +71,14 @@ describe('ChangeSigner', () => {
 
       // Enter new address
       fireEvent.change(newSigner, { target: { value: newAddress } })
-      newSigner.blur()
+      jest.runAllTimers()
 
       // Review should now be enabled
-      await flushPromises()
       expect(review).toBeEnabled()
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -107,7 +103,7 @@ describe('ChangeSigner', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls

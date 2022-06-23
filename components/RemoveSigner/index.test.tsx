@@ -23,11 +23,10 @@ import {
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import {
-  flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS,
   MULTISIG_SIGNER_ADDRESS_2
-} from '../../test-utils'
+} from '../../test-utils/constants'
 import { RemoveSigner } from '.'
 
 jest.mock('@glif/filecoin-wallet-provider')
@@ -51,8 +50,6 @@ describe('RemoveSigner', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const oldSigner = getByRole(result.container, 'combobox')
@@ -69,7 +66,7 @@ describe('RemoveSigner', () => {
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -94,7 +91,7 @@ describe('RemoveSigner', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
