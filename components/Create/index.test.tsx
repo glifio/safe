@@ -48,6 +48,8 @@ describe('Create', () => {
         </Tree>
       )
 
+      jest.runAllTimers()
+
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const signer1 = getByRole(result.container, 'textbox')
