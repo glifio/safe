@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import {
+  getQueryParam,
   navigate,
   convertAddrToPrefix,
   decodeActorCID,
@@ -40,8 +41,8 @@ export const ApproveCancel = ({
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
   // Get transaction info from url
-  const proposal = router.query.proposal as string
-  const approvalsLeft = Number(router.query.approvalsLeft)
+  const proposal = getQueryParam.string(router, 'proposal')
+  const approvalsLeft = getQueryParam.number(router, 'approvalsLeft')
   const transaction = useMemo<MsigTransaction | null>(() => {
     try {
       return JSON.parse(decodeURI(proposal))
