@@ -169,7 +169,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
     </p>
     <p>
       <a
-        href="undefined/actor/?address=t2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za"
+        href="https://explorer-calibration.glif.link/actor/?address=t2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za"
         rel="noreferrer noopener"
         target="_blank"
       >
@@ -335,7 +335,7 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
     </p>
     <p>
       <a
-        href="undefined/message/?cid=QmZ"
+        href="https://explorer-calibration.glif.link/message/?cid=QmZ"
         rel="noreferrer noopener"
         target="_blank"
       >
