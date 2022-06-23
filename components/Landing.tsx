@@ -48,10 +48,10 @@ export default function Landing() {
           <LandingPageContent>
             <h2>Connect</h2>
             <Box display='flex' flexDirection='column' gridGap={space()}>
-              <ButtonV2Link large href={PAGE.CONNECT_METAMASK}>
+              <ButtonV2Link large retainParams href={PAGE.CONNECT_METAMASK}>
                 MetaMask
               </ButtonV2Link>
-              <ButtonV2Link large href={PAGE.CONNECT_LEDGER}>
+              <ButtonV2Link large retainParams href={PAGE.CONNECT_LEDGER}>
                 Ledger Device
               </ButtonV2Link>
             </Box>
