@@ -1,4 +1,5 @@
 import {
+  getQueryParam,
   navigate,
   appendQueryParams,
   ProposalDetail,
@@ -24,9 +25,10 @@ const ProposalHistory = () => {
   const { Address } = useMsig()
   const wallet = useWallet()
   const router = useRouter()
-  return router.query.id && router.query.address ? (
+  const id = getQueryParam.number(router, 'id')
+  return id ? (
     <ProposalDetail
-      id={Number(router.query.id)}
+      id={id}
       address={Address}
       walletAddress={wallet.address}
       accept={(proposal: MsigTransaction, approvalsLeft: number) => {
@@ -51,9 +53,7 @@ const ProposalHistory = () => {
   ) : (
     <ProposalHistoryTable
       address={Address}
-      idHref={(id: number) =>
-        appendQueryParams(PAGE.MSIG_PROPOSAL, { id, address: Address })
-      }
+      idHref={(id: number) => appendQueryParams(PAGE.MSIG_PROPOSAL, { id })}
       walletAddr={wallet.address}
     />
   )
