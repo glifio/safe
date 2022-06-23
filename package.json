@@ -28,7 +28,7 @@
     "@glif/filecoin-rpc-client": "^2.0.0-beta.8",
     "@glif/filecoin-wallet-provider": "^2.0.0-beta.15",
     "@glif/logger": "^2.0.0-beta.7",
-    "@glif/react-components": "^2.0.0-alpha.112",
+    "@glif/react-components": "^2.0.0-alpha.114",
     "@zondax/filecoin-signing-tools": "^1.0.1",
     "cbor": "^8.1.0",
     "lodash.clonedeep": "^4.5.0",
