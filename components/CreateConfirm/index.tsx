@@ -6,17 +6,16 @@ import {
   Dialog,
   ShadowBox,
   ButtonRowCenter,
-  ButtonV2,
+  ButtonV2Link,
   SmartLink,
   ErrorBox,
   WarningBox,
-  navigate,
   useWallet,
   useMessageQuery
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
-import { PAGE } from '../../constants'
+import { PAGE, QPARAM } from '../../constants'
 import { getAddrFromReceipt } from '../../utils/getAddrFromReceipt'
 
 interface Receipt {
@@ -180,21 +179,20 @@ export const CreateConfirm = () => {
         </WarningBox>
         <ButtonRowCenter>
           {wallet.address ? (
-            <ButtonV2
-              large
-              green
-              onClick={() => navigate(router, { pageUrl: PAGE.MSIG_HOME })}
-            >
+            <ButtonV2Link large green href={PAGE.MSIG_HOME}>
               Go to the Safe dashboard
-            </ButtonV2>
+            </ButtonV2Link>
           ) : (
-            <ButtonV2
+            <ButtonV2Link
               large
               green
-              onClick={() => navigate(router, { pageUrl: PAGE.LANDING })}
+              href={PAGE.LANDING}
+              params={{
+                [QPARAM.MSIG_ADDRESS]: Address
+              }}
             >
               Connect your wallet to open the Safe
-            </ButtonV2>
+            </ButtonV2Link>
           )}
         </ButtonRowCenter>
       </Dialog>
