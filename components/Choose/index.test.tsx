@@ -73,6 +73,7 @@ describe('Choose', () => {
       // Enter a valid Safe ID
       const safeId = getByRole(result.container, 'textbox')
       fireEvent.change(safeId, { target: { value: inValidSafeID } })
+      safeId.blur()
       jest.runAllTimers()
     })
 
