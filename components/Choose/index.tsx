@@ -24,7 +24,7 @@ export const Choose = () => {
   const [submittedForm, setSubmittedForm] = useState<boolean>(false)
 
   // Get error message from MSIG provider
-  const errorMessage = useMemo(() => {
+  const errorMessage = useMemo<string>(() => {
     if (errors.actorNotFound) return 'Safe not found'
     if (errors.connectedWalletNotMsigSigner)
       return 'Your wallet is not an owner of this Safe. Please go back and choose a wallet address that is an owner of this Safe.'
