@@ -20,7 +20,7 @@ const Accounts = () => {
   useDesktopBrowser()
   const router = useRouter()
   const onSelectAccount = useCallback(
-    () => navigate(router, { pageUrl: PAGE.MSIG_CHOOSE }),
+    () => navigate(router, { pageUrl: PAGE.MSIG_CHOOSE, retainParams: true }),
     [router]
   )
   const gatekeep = useCallback(
