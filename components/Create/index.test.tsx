@@ -81,21 +81,27 @@ describe('Create', () => {
       expect(review).toBeDisabled()
 
       // Enter second signer address
+      signer2.focus()
       fireEvent.change(signer2, { target: { value: validAddress } })
+      signer2.blur()
       jest.runAllTimers()
 
       // Review should not be enabled yet
       expect(review).toBeDisabled()
 
       // Increment required approvals
+      approvals.focus()
       fireEvent.change(approvals, { target: { value: '2' } })
+      approvals.blur()
       jest.runAllTimers()
 
       // Review should not be enabled yet
       expect(review).toBeDisabled()
 
       // Enter amount
+      amount.focus()
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
+      amount.blur()
       jest.runAllTimers()
 
       // Review should now be enabled

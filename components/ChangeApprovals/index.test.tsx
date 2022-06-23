@@ -58,7 +58,9 @@ describe('ChangeApprovals', () => {
       expect(review).toBeDisabled()
 
       // Enter a new threshold
+      approvals.focus()
       fireEvent.change(approvals, { target: { value: '2' } })
+      approvals.blur()
       jest.runAllTimers()
 
       // Review should now be enabled

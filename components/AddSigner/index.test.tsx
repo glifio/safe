@@ -60,7 +60,9 @@ describe('AddSigner', () => {
       expect(review).toBeDisabled()
 
       // Enter new address
+      newSigner.focus()
       fireEvent.change(newSigner, { target: { value: newAddress } })
+      newSigner.blur()
       jest.runAllTimers()
 
       // Review should now be enabled

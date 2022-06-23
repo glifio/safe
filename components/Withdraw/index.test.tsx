@@ -63,14 +63,18 @@ describe('Withdraw', () => {
       expect(review).toBeDisabled()
 
       // Enter recipient
+      recipient.focus()
       fireEvent.change(recipient, { target: { value: validAddress } })
+      recipient.blur()
       jest.runAllTimers()
 
       // Review should not be enabled yet
       expect(review).toBeDisabled()
 
       // Enter amount
+      amount.focus()
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
+      amount.blur()
       jest.runAllTimers()
 
       // Review should now be enabled
@@ -178,7 +182,9 @@ describe('Withdraw', () => {
 
       // Enter recipient
       const recipient = getByRole(result.container, 'textbox')
+      recipient.focus()
       fireEvent.change(recipient, { target: { value: validAddress } })
+      recipient.blur()
       jest.runAllTimers()
     })
 
