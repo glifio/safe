@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
+  getQueryParam,
   navigate,
   ButtonRowSpaced,
   ButtonV2,
@@ -12,14 +13,15 @@ import {
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
-import { PAGE } from '../../constants'
+import { PAGE, QPARAM } from '../../constants'
 
 export const Choose = () => {
   const router = useRouter()
+  const msigAddressParam = getQueryParam.string(router, QPARAM.MSIG_ADDRESS)
   const { setMsigActor, errors, ActorCode } = useMsig()
 
   // Input states
-  const [safeID, setSafeID] = useState<string>('')
+  const [safeID, setSafeID] = useState<string>(msigAddressParam)
   const [isSafeIDValid, setIsSafeIDValid] = useState<boolean>(false)
   const [submittedForm, setSubmittedForm] = useState<boolean>(false)
 
@@ -38,6 +40,18 @@ export const Choose = () => {
     errors.unhandledError
   ])
 
+  const submitForm = useCallback(() => {
+    setSubmittedForm(true)
+    setMsigActor(safeID)
+  }, [setSubmittedForm, setMsigActor, safeID])
+
+  // Automatically submit the form if there is
+  // a valid MSIG address in the query params
+  useEffect(
+    () => msigAddressParam && isSafeIDValid && !submittedForm && submitForm(),
+    [msigAddressParam, isSafeIDValid, submittedForm, submitForm]
+  )
+
   // When there is an ActorCode we successfully retrieved
   // the multisig and we push the user to the msig home
   useEffect(
@@ -54,8 +68,7 @@ export const Choose = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          setSubmittedForm(true)
-          setMsigActor(safeID)
+          submitForm()
         }}
       >
         {submittedForm && errorMessage && <ErrorBox>{errorMessage}</ErrorBox>}
