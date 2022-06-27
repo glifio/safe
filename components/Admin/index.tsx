@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 import { useCallback, useMemo, useState } from 'react'
+import { useRouter } from 'next/router'
 import {
   ButtonV2,
   ButtonV2Link,
   useWallet,
   useWalletProvider,
   convertAddrToPrefix,
-  reportLedgerConfigError
+  reportLedgerConfigError,
+  Lines,
+  navigate
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
 import { Signer } from './Signer'
-import { Signers } from './Signers'
 import { useMsig } from '../../MsigProvider'
 
 const Wrapper = styled.div`
@@ -41,6 +43,7 @@ const Info = styled.p`
 export default function Owners() {
   const { NumApprovalsThreshold, Signers: signers } = useMsig()
   const wallet = useWallet()
+  const router = useRouter()
   const { ledger, connectLedger, loginOption } = useWalletProvider()
   const [ledgerBusy, setLedgerBusy] = useState(false)
   const onShowOnLedger = useCallback(async () => {
@@ -108,7 +111,30 @@ export default function Owners() {
           These are the Filecoin addresses that can approve and reject proposals
           from your Safe.
         </Info>
-        <Signers signers={additionalSigners} />
+        <Lines>
+          {additionalSigners.map((signer) => (
+            <Signer
+              key={signer.robust || signer.id}
+              address={signer}
+              onRemove={() => {
+                navigate(router, {
+                  pageUrl: PAGE.MSIG_REMOVE_SIGNER,
+                  params: {
+                    address: signer.robust || signer.id
+                  }
+                })
+              }}
+              onChange={() => {
+                navigate(router, {
+                  pageUrl: PAGE.MSIG_CHANGE_SIGNER,
+                  params: {
+                    address: signer.robust || signer.id
+                  }
+                })
+              }}
+            />
+          ))}
+        </Lines>
       </Wrapper>
     </div>
   )
