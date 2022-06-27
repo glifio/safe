@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import {
+  getQueryParam,
   IconPending,
   Dialog,
   ShadowBox,
