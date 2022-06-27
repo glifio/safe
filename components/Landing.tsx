@@ -1,16 +1,15 @@
 import { useMemo } from 'react'
 import {
   AppTile,
-  Box,
   ButtonV2Link,
   LandingPageColumns,
   LandingPageContent,
   OneColumnLargeText,
-  space,
   Page,
   isMobileOrTablet,
   useNetworkName,
-  SmartLink
+  SmartLink,
+  FullWidthButtons
 } from '@glif/react-components'
 
 import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../constants'
@@ -47,14 +46,15 @@ export default function Landing() {
         ) : (
           <LandingPageContent>
             <h2>Connect</h2>
-            <Box display='flex' flexDirection='column' gridGap={space()}>
+
+            <FullWidthButtons>
               <ButtonV2Link large retainParams href={PAGE.CONNECT_METAMASK}>
                 MetaMask
               </ButtonV2Link>
               <ButtonV2Link large retainParams href={PAGE.CONNECT_LEDGER}>
                 Ledger Device
               </ButtonV2Link>
-            </Box>
+            </FullWidthButtons>
 
             <p>
               Want to load this app directly from IPFS or Filecoin?
