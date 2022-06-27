@@ -204,7 +204,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   >
     <a
       class="c6"
-      href="/?msig-address=t2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za"
+      href="/?safe-id=t2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za"
     >
       Connect your wallet to open the Safe
     </a>
