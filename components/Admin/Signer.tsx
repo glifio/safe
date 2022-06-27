@@ -1,28 +1,43 @@
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import {
   Box,
-  ButtonClose,
-  ButtonEdit,
+  IconEdit,
+  IconClose,
   AddressLink,
   Address,
   GRAPHQL_ADDRESS_PROP_TYPE
 } from '@glif/react-components'
 
-export const Signer = ({
-  address,
-  onRemove,
-  onChange
-}: SignerProps) => (
-  <Box
-    display='flex'
-    alignItems='center'
-    color='core.darkgray'
-    bg='background.messageHistory'
-    height={6}
-    px={3}
-    my={2}
-    borderRadius={2}
-  >
+const SignerEl = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75em 1em 0.75em 0.75em;
+  color: var(--gray-dark);
+  background-color: var(--blue-gray);
+  border-radius: 4px;
+
+  div:last-child {
+    display: flex;
+    align-items: center;
+
+    > span {
+      display: block;
+      cursor: pointer;
+      line-height: 0;
+      margin-left: 0.5em;
+      transition: transform 0.1s ease-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+`
+
+export const Signer = ({ address, onRemove, onChange }: SignerProps) => (
+  <SignerEl>
     <Box flexGrow='1'>
       <AddressLink
         id={address.id}
@@ -31,25 +46,19 @@ export const Signer = ({
         hideCopy={false}
       />
     </Box>
-    {onChange && (
-      <ButtonEdit
-        role='button'
-        type='button'
-        onClick={onChange}
-        stroke='core.darkgray'
-        aria-label='edit-signer'
-      />
-    )}
-    {onRemove && (
-      <ButtonClose
-        fill='core.darkgray'
-        role='button'
-        type='button'
-        onClick={onRemove}
-        aria-label='remove-signer'
-      />
-    )}
-  </Box>
+    <div>
+      {onChange && (
+        <span role='button' aria-label='edit-signer' onClick={onChange}>
+          <IconEdit stroke='var(--gray-dark)' />
+        </span>
+      )}
+      {onRemove && (
+        <span role='button' aria-label='remove-signer' onClick={onRemove}>
+          <IconClose fill='var(--gray-dark)' />
+        </span>
+      )}
+    </div>
+  </SignerEl>
 )
 
 interface SignerProps {
