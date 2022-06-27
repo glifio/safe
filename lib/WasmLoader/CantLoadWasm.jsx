@@ -1,7 +1,4 @@
-import {
-  ErrorView,
-  OneColumnCentered
-} from '@glif/react-components'
+import { ErrorView, OneColumnCentered } from '@glif/react-components'
 import SafePage from '../../components/SafePage'
 
 export const CantLoadWasm = () => (
