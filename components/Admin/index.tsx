@@ -26,7 +26,7 @@ const TitleRow = styled.div`
   align-items: center;
   margin-top: 3em;
   h3 {
-    margin: 0;
+    margin-top: 0;
     flex-grow: 1;
   }
 `
@@ -37,7 +37,7 @@ const Title = styled.h2`
 
 const Info = styled.p`
   color: var(--gray-medium);
-  margin-top: 0.25em;
+  margin-top: 0;
 `
 
 export default function Owners() {
