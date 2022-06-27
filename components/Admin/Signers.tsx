@@ -5,7 +5,7 @@ import {
   ADDRESS_PROPTYPE,
   Address as AddressType
 } from '@glif/react-components'
-import { Address } from './Address'
+import { Signer } from './Signer'
 import { PAGE } from '../../constants'
 
 export const Signers = ({ signers }: { signers: AddressType[] }) => {
@@ -13,7 +13,7 @@ export const Signers = ({ signers }: { signers: AddressType[] }) => {
   return (
     <>
       {signers.map((signer) => (
-        <Address
+        <Signer
           key={signer.robust || signer.id}
           address={signer}
           onRemoveSigner={() => {

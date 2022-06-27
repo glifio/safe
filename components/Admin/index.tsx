@@ -10,7 +10,7 @@ import {
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
-import { Address } from './Address'
+import { Signer } from './Signer'
 import { Signers } from './Signers'
 import { useMsig } from '../../MsigProvider'
 
@@ -98,7 +98,7 @@ export default function Owners() {
             </ButtonV2>
           )}
         </TitleRow>
-        <Address address={userSigner} />
+        <Signer address={userSigner} />
 
         <TitleRow>
           <h3>Additional Signers ({additionalSigners.length})</h3>
