@@ -2,7 +2,7 @@ import { useContext, createContext } from 'react'
 import dynamic from 'next/dynamic'
 import { node } from 'prop-types'
 import { logger } from '../../logger'
-import CantLoadWasm from './CantLoadWasm'
+import { CantLoadWasm } from './CantLoadWasm'
 
 export const WasmContext = createContext({ loaded: false })
 
