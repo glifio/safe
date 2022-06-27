@@ -19,7 +19,7 @@ const MessageHistory = () => {
   ) : (
     <MessageHistoryTable
       address={Address}
-      cidHref={(cid: string, height?: string) =>
+      cidHref={(cid: string, height?: number) =>
         appendQueryParams(PAGE.MSIG_HISTORY, { height, cid })
       }
     />
