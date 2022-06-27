@@ -48,7 +48,7 @@ const recursivelyGetReceipt = async (
 
 export const CreateConfirm = () => {
   const router = useRouter()
-  const { cid } = router.query
+  const cid = getQueryParam.string(router, 'cid')
   const { setMsigActor, Address } = useMsig()
   const wallet = useWallet()
 
@@ -63,7 +63,7 @@ export const CreateConfirm = () => {
 
   // Get the message by cid
   const { data: messageData, error: messageError } = useMessageQuery({
-    variables: { cid: cid as string },
+    variables: { cid },
     pollInterval: 5000,
     skip: !cid
   })
@@ -72,7 +72,7 @@ export const CreateConfirm = () => {
   useEffect(() => {
     if (messageData?.message && !fetchingReceipt) {
       setFetchingReceipt(true)
-      recursivelyGetReceipt(apiAddress, cid as string)
+      recursivelyGetReceipt(apiAddress, cid)
         .then((receipt) => {
           if (receipt) {
             try {
@@ -151,7 +151,7 @@ export const CreateConfirm = () => {
             to view the transaction in the Glif Explorer:
           </p>
           <p>
-            <SmartLink href={`${explorerUrl}/message/?cid=${cid}`}>
+            <SmartLink href={`${explorerUrl}/message`} params={{ cid }}>
               {cid}
             </SmartLink>
           </p>
@@ -212,7 +212,7 @@ export const CreateConfirm = () => {
           transaction CID below to follow its progress in the Glif Explorer:
         </p>
         <p>
-          <SmartLink href={`${explorerUrl}/message/?cid=${cid}`}>
+          <SmartLink href={`${explorerUrl}/message`} params={{ cid }}>
             {cid}
           </SmartLink>
         </p>
