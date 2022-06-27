@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import {
-  Box,
   IconEdit,
   IconClose,
   AddressLink,
@@ -38,14 +37,12 @@ const SignerEl = styled.div`
 
 export const Signer = ({ address, onRemove, onChange }: SignerProps) => (
   <SignerEl>
-    <Box flexGrow='1'>
-      <AddressLink
-        id={address.id}
-        address={address.robust}
-        hideCopyText={false}
-        hideCopy={false}
-      />
-    </Box>
+    <AddressLink
+      id={address.id}
+      address={address.robust}
+      hideCopyText={false}
+      hideCopy={false}
+    />
     <div>
       {onChange && (
         <span role='button' aria-label='edit-signer' onClick={onChange}>
