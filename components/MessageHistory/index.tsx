@@ -1,4 +1,5 @@
 import {
+  getQueryParam,
   MessageHistoryTable,
   MessageDetail,
   appendQueryParams
@@ -11,11 +12,10 @@ import { useMsig } from '../../MsigProvider'
 const MessageHistory = () => {
   const { Address } = useMsig()
   const router = useRouter()
-  return router.query.cid ? (
-    <MessageDetail
-      cid={router.query.cid as string}
-      height={Number(router?.query?.height) || null}
-    />
+  const cid = getQueryParam.string(router, 'cid')
+  const height = getQueryParam.number(router, 'height')
+  return cid ? (
+    <MessageDetail cid={cid} height={height} />
   ) : (
     <MessageHistoryTable
       address={Address}
