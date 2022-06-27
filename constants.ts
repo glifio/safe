@@ -35,7 +35,7 @@ export const LEDGER_VERSION_PATCH = 2
 
 /* QUERY PARAMS */
 export enum QPARAM {
-  MSIG_ADDRESS = 'msig-address'
+  MSIG_ADDRESS = 'safe-id'
 }
 
 /* PAGES */
