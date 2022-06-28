@@ -9,7 +9,8 @@ import {
   Dialog,
   ErrorBox,
   ShadowBox,
-  SmartLink
+  SmartLink,
+  LoadingScreen
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
@@ -65,7 +66,9 @@ export const Choose = () => {
     [submittedForm, errorMessage, ActorCode, router]
   )
 
-  return (
+  return msigAddressParam ? (
+    <LoadingScreen />
+  ) : (
     <Dialog>
       <form
         onSubmit={(e) => {
