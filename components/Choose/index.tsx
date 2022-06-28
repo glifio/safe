@@ -18,7 +18,7 @@ import { PAGE, QPARAM } from '../../constants'
 export const Choose = () => {
   const router = useRouter()
   const msigAddressParam = getQueryParam.string(router, QPARAM.MSIG_ADDRESS)
-  const { setMsigActor, errors, ActorCode } = useMsig()
+  const { setMsigActor, loading, errors, ActorCode } = useMsig()
 
   // Input states
   const [safeID, setSafeID] = useState<string>(msigAddressParam)
@@ -86,6 +86,7 @@ export const Choose = () => {
             value={safeID}
             onChange={setSafeID}
             setIsValid={setIsSafeIDValid}
+            disabled={loading}
           />
           <p>
             Don&apos;t have a Safe ID?{' '}
@@ -96,7 +97,12 @@ export const Choose = () => {
           <ButtonV2 large type='button' onClick={() => router.back()}>
             Back
           </ButtonV2>
-          <ButtonV2 large green type='submit' disabled={!isSafeIDValid}>
+          <ButtonV2
+            large
+            green
+            type='submit'
+            disabled={!isSafeIDValid || loading}
+          >
             Submit
           </ButtonV2>
         </ButtonRowSpaced>
