@@ -55,6 +55,17 @@ export const Choose = () => {
     [msigAddressParam, submittedForm, submitForm]
   )
 
+  // Clear the MSIG address retrieved from the query params
+  // if it failed to load, which removes the loading screen
+  useEffect(
+    () =>
+      submittedForm &&
+      errorMessage &&
+      msigAddressParam &&
+      setMsigAddressParam(''),
+    [submittedForm && errorMessage, msigAddressParam, setMsigAddressParam]
+  )
+
   // When there is an ActorCode we successfully retrieved
   // the multisig and we push the user to the msig home
   useEffect(
