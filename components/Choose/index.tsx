@@ -17,8 +17,10 @@ import { PAGE, QPARAM } from '../../constants'
 
 export const Choose = () => {
   const router = useRouter()
-  const msigAddressParam = getQueryParam.string(router, QPARAM.MSIG_ADDRESS)
   const { setMsigActor, loading, errors, ActorCode } = useMsig()
+  const [msigAddressParam, setMsigAddressParam] = useState<string>(
+    getQueryParam.string(router, QPARAM.MSIG_ADDRESS)
+  )
 
   // Input states
   const [safeID, setSafeID] = useState<string>(msigAddressParam)
