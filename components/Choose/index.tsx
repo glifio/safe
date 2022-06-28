@@ -51,8 +51,8 @@ export const Choose = () => {
   // Automatically submit the form if there is
   // a valid MSIG address in the query params
   useEffect(
-    () => msigAddressParam && isSafeIDValid && !submittedForm && submitForm(),
-    [msigAddressParam, isSafeIDValid, submittedForm, submitForm]
+    () => msigAddressParam && !submittedForm && submitForm(),
+    [msigAddressParam, submittedForm, submitForm]
   )
 
   // When there is an ActorCode we successfully retrieved
