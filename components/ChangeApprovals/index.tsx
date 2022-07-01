@@ -43,7 +43,7 @@ export const ChangeApprovals = ({
       return approvals !== NumApprovalsThreshold
         ? new Message({
             to: Address,
-            from: wallet.address,
+            from: wallet.robust,
             nonce: 0,
             value: 0,
             method: MsigMethod.PROPOSE,
@@ -74,7 +74,7 @@ export const ChangeApprovals = ({
     approvals,
     NumApprovalsThreshold,
     Address,
-    wallet.address,
+    wallet.robust,
     serializeParams
   ])
 
@@ -96,7 +96,7 @@ export const ChangeApprovals = ({
       pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance
-        address={wallet.address}
+        address={wallet.robust}
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />

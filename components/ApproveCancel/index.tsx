@@ -71,7 +71,7 @@ export const ApproveCancel = ({
       return transaction
         ? new Message({
             to: Address,
-            from: wallet.address,
+            from: wallet.robust,
             nonce: 0,
             value: 0,
             method,
@@ -91,7 +91,7 @@ export const ApproveCancel = ({
       logger.error(e)
       return null
     }
-  }, [Address, wallet.address, method, transaction, serializeParams])
+  }, [Address, wallet.robust, method, transaction, serializeParams])
 
   // Get actor data from transaction
   const { data: actorData, error: actorError } = useActorQuery({
@@ -145,7 +145,7 @@ export const ApproveCancel = ({
       pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance
-        address={wallet.address}
+        address={wallet.robust}
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />

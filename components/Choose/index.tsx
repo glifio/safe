@@ -63,7 +63,7 @@ export const Choose = () => {
       errorMessage &&
       msigAddressParam &&
       setMsigAddressParam(''),
-    [submittedForm && errorMessage, msigAddressParam, setMsigAddressParam]
+    [submittedForm, errorMessage, msigAddressParam, setMsigAddressParam]
   )
 
   // When there is an ActorCode we successfully retrieved

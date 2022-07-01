@@ -6,10 +6,10 @@ import {
   ButtonV2Link,
   useWallet,
   useWalletProvider,
-  convertAddrToPrefix,
   reportLedgerConfigError,
   Lines,
-  navigate
+  navigate,
+  isAddrEqual
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
@@ -57,20 +57,14 @@ export default function Owners() {
     ...ledger
   })
 
-  const { additionalSigners, userSigner } = useMemo(() => {
-    return {
-      additionalSigners: signers.filter(
+  const additionalSigners = useMemo(
+    () =>
+      signers.filter(
         (signer) =>
-          convertAddrToPrefix(signer.robust) !==
-          convertAddrToPrefix(wallet.address)
+          !isAddrEqual(signer, { id: wallet.id, robust: wallet.robust })
       ),
-      userSigner: signers.find(
-        (signer) =>
-          convertAddrToPrefix(signer.robust) ===
-          convertAddrToPrefix(wallet.address)
-      )
-    }
-  }, [signers, wallet])
+    [signers, wallet.id, wallet.robust]
+  )
 
   return (
     <div>
@@ -101,7 +95,7 @@ export default function Owners() {
             </ButtonV2>
           )}
         </TitleRow>
-        <Signer address={userSigner} />
+        <Signer address={wallet} />
 
         <TitleRow>
           <h3>Additional Signers ({additionalSigners.length})</h3>

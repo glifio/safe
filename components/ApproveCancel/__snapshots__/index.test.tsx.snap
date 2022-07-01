@@ -1,26 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
 .c10 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  line-height: 1.5;
-  grid-gap: 0.25em;
-}
-
-.c12 {
   min-width: 0;
   box-sizing: border-box;
   color: var(--purple-medium);
@@ -34,7 +15,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   align-items: center;
 }
 
-.c21 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 1em;
@@ -56,12 +37,12 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   grid-gap: 0.75em;
 }
 
-.c15 {
+.c13 {
   width: 24;
   height: 24;
 }
 
-.c14 {
+.c12 {
   height: auto;
   cursor: pointer;
   opacity: 1;
@@ -86,18 +67,18 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   outline: none;
 }
 
-.c17 {
+.c15 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c13:hover .c16 {
+.c11:hover .c14 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c19 {
+.c17 {
   -webkit-transition: 0.18s ease-in;
   transition: 0.18s ease-in;
   opacity: 0;
@@ -109,23 +90,37 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   margin-left: 4px;
 }
 
-.c13:hover .c18 {
+.c11:hover .c16 {
   opacity: 1;
 }
 
-.c11 {
+.c9 h4 {
+  margin: 0;
+  color: var(--gray-dark);
+}
+
+.c9 .address {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 0.25em;
+  line-height: 1.5;
+}
+
+.c9 .address a {
   color: var(--purple-medium);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c11:hover {
+.c9 .address a:hover {
   color: var(--purple-medium);
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c27 {
+.c25 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -156,34 +151,34 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background: transparent;
 }
 
-.c27 svg path {
+.c25 svg path {
   stroke: var(--black);
 }
 
-.c27:hover {
+.c25:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c27:hover svg path {
+.c25:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c27:active {
+.c25:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c27:active svg path {
+.c25:active svg path {
   stroke: var(--white) !important;
 }
 
-.c27 svg path {
+.c25 svg path {
   stroke: var(--gray-medium);
 }
 
-.c28 {
+.c26 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -217,44 +212,44 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background: transparent;
 }
 
-.c28 svg path {
+.c26 svg path {
   stroke: var(--black);
 }
 
-.c28:hover {
+.c26:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c28:hover svg path {
+.c26:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c28:active {
+.c26:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c28:active svg path {
+.c26:active svg path {
   stroke: var(--white) !important;
 }
 
-.c28 svg path {
+.c26 svg path {
   stroke: var(--white);
 }
 
-.c28:hover {
+.c26:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c28:hover svg path {
+.c26:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c28 svg path {
+.c26 svg path {
   stroke: var(--gray-medium);
 }
 
@@ -324,7 +319,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c25 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -333,7 +328,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   margin: 1.5em 0;
 }
 
-.c26 {
+.c24 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -423,7 +418,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   word-break: break-word;
 }
 
-.c20 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -438,14 +433,14 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   padding-left: 1.5em;
 }
 
-.c20 > div:first-child {
+.c18 > div:first-child {
   -webkit-flex: 0 1 25%;
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
 }
 
-.c20 > div:last-child {
+.c18 > div:last-child {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -462,7 +457,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   word-break: break-word;
 }
 
-.c22 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -480,7 +475,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c22 > *:first-child {
+.c20 > *:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -490,26 +485,26 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   flex-direction: column;
 }
 
-.c22 > *:last-child:not(.toggle-wrapper) {
+.c20 > *:last-child:not(.toggle-wrapper) {
   -webkit-flex: 0 0 50%;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
 }
 
-.c22 span.info,
-.c22 span.error {
+.c20 span.info,
+.c20 span.error {
   font-size: 0.875rem;
 }
 
-.c22 span.error {
+.c20 span.error {
   color: var(--red-medium);
 }
 
-.c23 .toggle-wrapper {
+.c21 .toggle-wrapper {
   position: relative;
 }
 
-.c23 input {
+.c21 input {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -518,7 +513,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   opacity: 0;
 }
 
-.c23 .toggle {
+.c21 .toggle {
   display: inline-block;
   position: relative;
   width: 2.25em;
@@ -530,7 +525,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background-color: var(--gray-light) !important;
 }
 
-.c23 .toggle::after {
+.c21 .toggle::after {
   content: '';
   position: absolute;
   top: 0;
@@ -541,12 +536,12 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background-color: var(--white);
 }
 
-.c23 input:checked ~ .toggle {
+.c21 input:checked ~ .toggle {
   border-color: var(--blue-dark);
   background-color: var(--blue-dark);
 }
 
-.c23 input:checked ~ .toggle::after {
+.c21 input:checked ~ .toggle::after {
   left: auto;
   right: 0;
 }
@@ -594,7 +589,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   flex: 1 0 auto;
 }
 
-.c24 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -609,7 +604,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c24 span {
+.c22 span {
   color: var(--purple-medium);
   font-size: 1.75rem;
 }
@@ -678,7 +673,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
           class="c8"
         >
           <div>
-            Proposal ID
+            Proposal id
           </div>
           <div>
             2
@@ -703,35 +698,31 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
           <div>
             <div
               class="c9"
+              color="var(--purple-medium)"
             >
               <div
-                class="c10"
-                display="flex"
+                class="address"
               >
-                <span>
-                  t13koa ... 4twb4i
-                </span>
                 <a
-                  class="c11"
-                  href="https://explorer-calibration.glif.link/actor/?address=t029519"
+                  href="https://explorer-calibration.glif.link/actor/?address=t13koa6kz5otquokcgwusvtsxcdymuq7lqe4twb4i"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
-                  (t029519)
+                  t13koa ... 4twb4i
                 </a>
                 <div
-                  class="c12"
+                  class="c10"
                   color="var(--purple-medium)"
                   display="flex"
                 >
                   <button
-                    class="c13 c14"
+                    class="c11 c12"
                     display="flex"
                     role="button"
                     type="button"
                   >
                     <svg
-                      class="c15 c16 c17"
+                      class="c13 c14 c15"
                       fill="none"
                       height="24"
                       viewBox="0 0 24 24"
@@ -754,7 +745,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                       />
                     </svg>
                     <span
-                      class="c18 c19"
+                      class="c16 c17"
                       color="var(--purple-medium)"
                     >
                       Copy
@@ -778,43 +769,39 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
             <div />
           </div>
           <div
-            class="c20"
+            class="c18"
           >
             <div>
-              to
+              To
             </div>
             <div>
               <div
                 class="c9"
+                color="var(--purple-medium)"
               >
                 <div
-                  class="c10"
-                  display="flex"
+                  class="address"
                 >
-                  <span>
-                    t2i43o ... z2btmy
-                  </span>
                   <a
-                    class="c11"
-                    href="https://explorer-calibration.glif.link/actor/?address=t030429"
+                    href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
                     rel="noreferrer noopener"
                     target="_blank"
                   >
-                    (t030429)
+                    t2i43o ... z2btmy
                   </a>
                   <div
-                    class="c12"
+                    class="c10"
                     color="var(--purple-medium)"
                     display="flex"
                   >
                     <button
-                      class="c13 c14"
+                      class="c11 c12"
                       display="flex"
                       role="button"
                       type="button"
                     >
                       <svg
-                        class="c15 c16 c17"
+                        class="c13 c14 c15"
                         fill="none"
                         height="24"
                         viewBox="0 0 24 24"
@@ -837,7 +824,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                         />
                       </svg>
                       <span
-                        class="c18 c19"
+                        class="c16 c17"
                         color="var(--purple-medium)"
                       >
                         Copy
@@ -849,10 +836,10 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
             </div>
           </div>
           <div
-            class="c20"
+            class="c18"
           >
             <div>
-              value
+              Value
             </div>
             <div>
               0.4
@@ -860,14 +847,14 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
             </div>
           </div>
           <div
-            class="c20"
+            class="c18"
           >
             <div>
-              method
+              Method
             </div>
             <div>
               <div
-                class="c21"
+                class="c19"
                 color="purple.medium"
                 display="inline-flex"
                 height="2em"
@@ -880,10 +867,10 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
             </div>
           </div>
           <div
-            class="c20"
+            class="c18"
           >
             <div>
-              params
+              Params
             </div>
             <div>
               false
@@ -892,7 +879,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
         </div>
         <hr />
         <label
-          class="c22 c23"
+          class="c20 c21"
           disabled=""
         >
           <div>
@@ -928,7 +915,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
         </p>
         <hr />
         <div
-          class="c24"
+          class="c22"
         >
           <span>
             Total
@@ -941,17 +928,17 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
       </div>
     </div>
     <div
-      class="c25 c26"
+      class="c23 c24"
     >
       <button
-        class="c27"
+        class="c25"
         disabled=""
         type="button"
       >
         Back
       </button>
       <button
-        class="c28"
+        class="c26"
         disabled=""
         type="submit"
       >
@@ -963,987 +950,6 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
 `;
 
 exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.c10 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  line-height: 1.5;
-  grid-gap: 0.25em;
-}
-
-.c12 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: var(--purple-medium);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  background-color: #E0D7FE;
-  color: #5E26FF;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: 2em;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  line-height: 2em;
-  text-align: center;
-  grid-gap: 0.75em;
-}
-
-.c15 {
-  width: 24;
-  height: 24;
-}
-
-.c14 {
-  height: auto;
-  cursor: pointer;
-  opacity: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
-}
-
-.c17 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-}
-
-.c13:hover .c16 {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c19 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-  text-align: left;
-  color: var(--purple-medium);
-  margin-top: 0;
-  margin-left: 4px;
-  margin-top: 0;
-  margin-left: 4px;
-}
-
-.c13:hover .c18 {
-  opacity: 1;
-}
-
-.c11 {
-  color: var(--purple-medium);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c11:hover {
-  color: var(--purple-medium);
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c27 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
-}
-
-.c27 svg path {
-  stroke: var(--black);
-}
-
-.c27:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c27:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c27:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c27:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c27 svg path {
-  stroke: var(--gray-medium);
-}
-
-.c28 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  color: var(--white);
-  border-color: var(--green-medium);
-  background: var(--green-medium);
-  pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
-}
-
-.c28 svg path {
-  stroke: var(--black);
-}
-
-.c28:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c28:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c28:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c28:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c28 svg path {
-  stroke: var(--white);
-}
-
-.c28:hover {
-  color: var(--green-medium);
-  border-color: var(--green-medium);
-  background: var(--white);
-}
-
-.c28:hover svg path {
-  stroke: var(--green-medium);
-}
-
-.c28 svg path {
-  stroke: var(--gray-medium);
-}
-
-.c3 {
-  display: inline-block;
-  height: 48px;
-  width: 48px;
-  text-align: left;
-  background-color: var(--purple-medium);
-}
-
-.c4 {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-  background-color: var(--purple-dark);
-  -webkit-animation-name: bvGDKI;
-  animation-name: bvGDKI;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.c1 {
-  padding: 1.5em;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  word-break: break-word;
-}
-
-.c1 > *:first-child {
-  margin-top: 0;
-}
-
-.c1 > *:last-child {
-  margin-bottom: 0;
-}
-
-.c1 > svg:first-child {
-  display: block;
-  margin: 0 auto 1em;
-}
-
-.c1 > h2:first-child {
-  margin: 0;
-}
-
-.c1 header:first-child {
-  margin: -1.5em -1.5em 1.5em -1.5em;
-  padding: 1.5em;
-  background-color: var(--purple-medium);
-  color: var(--white);
-}
-
-.c2 {
-  background-color: var(--blue-gray);
-}
-
-.c2 hr {
-  border-color: var(--gray-medium);
-}
-
-.c5 {
-  background-color: var(--white);
-  box-shadow: 0 0 0.5em var(--gray-light);
-}
-
-.c25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  margin: 1.5em 0;
-}
-
-.c26 {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 35em;
-}
-
-.c0 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.c6 > p,
-.c6 > hr {
-  margin: 0.5em 0;
-}
-
-.c6 > p[role='button'] {
-  margin: 0;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1em;
-  line-height: 2.5em;
-  text-align: left;
-  padding-left: 0em;
-}
-
-.c8 > div:first-child {
-  -webkit-flex: 0 1 25%;
-  -ms-flex: 0 1 25%;
-  flex: 0 1 25%;
-  min-width: 200px;
-}
-
-.c8 > div:last-child {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 0.75em;
-  word-break: break-word;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1em;
-  line-height: 2.5em;
-  text-align: left;
-  padding-left: 1.5em;
-}
-
-.c20 > div:first-child {
-  -webkit-flex: 0 1 25%;
-  -ms-flex: 0 1 25%;
-  flex: 0 1 25%;
-  min-width: 200px;
-}
-
-.c20 > div:last-child {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 0.75em;
-  word-break: break-word;
-}
-
-.c22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  text-align: left;
-  pointer-events: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c22 > *:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c22 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-}
-
-.c22 span.info,
-.c22 span.error {
-  font-size: 0.875rem;
-}
-
-.c22 span.error {
-  color: var(--red-medium);
-}
-
-.c23 .toggle-wrapper {
-  position: relative;
-}
-
-.c23 input {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  opacity: 0;
-}
-
-.c23 .toggle {
-  display: inline-block;
-  position: relative;
-  width: 2.25em;
-  height: 1.5em;
-  border-radius: 0.75em;
-  border: 2px solid var(--blue-medium);
-  background-color: var(--blue-medium);
-  border-color: var(--gray-light) !important;
-  background-color: var(--gray-light) !important;
-}
-
-.c23 .toggle::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(1.5em - 4px);
-  height: calc(1.5em - 4px);
-  border-radius: 50%;
-  background-color: var(--white);
-}
-
-.c23 input:checked ~ .toggle {
-  border-color: var(--blue-dark);
-  background-color: var(--blue-dark);
-}
-
-.c23 input:checked ~ .toggle::after {
-  left: auto;
-  right: 0;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.c7 > * {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c7 > *:first-child {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c24 span {
-  color: var(--purple-medium);
-  font-size: 1.75rem;
-}
-
-<div
-  class="c0"
->
-  <form>
-    <div
-      class="c1 c2"
-    >
-      <h2>
-        Cancel Safe Proposal
-      </h2>
-      <hr />
-      <p>
-        Sending your transaction...
-      </p>
-      <span
-        class="c3"
-      >
-        <span
-          class="c4"
-        />
-      </span>
-    </div>
-    
-    <div
-      class="c1 c5"
-    >
-      <div
-        class="c6"
-      >
-        <header
-          class="c7"
-        >
-          <div>
-            <span>
-              From
-            </span>
-            <span>
-              t1z225 ... 6z6wgi
-            </span>
-          </div>
-          <div>
-            <span>
-              Signer 
-              Balance
-            </span>
-            <span>
-              1
-               FIL
-            </span>
-          </div>
-          <div>
-            <span>
-              Safe Balance
-            </span>
-            <span>
-              1
-               FIL
-            </span>
-          </div>
-        </header>
-        <div
-          class="c8"
-        >
-          <div>
-            Proposal ID
-          </div>
-          <div>
-            2
-          </div>
-        </div>
-        <div
-          class="c8"
-        >
-          <div>
-            Approvals until execution
-          </div>
-          <div>
-            1
-          </div>
-        </div>
-        <div
-          class="c8"
-        >
-          <div>
-            Approved by
-          </div>
-          <div>
-            <div
-              class="c9"
-            >
-              <div
-                class="c10"
-                display="flex"
-              >
-                <span>
-                  t13koa ... 4twb4i
-                </span>
-                <a
-                  class="c11"
-                  href="https://explorer-calibration.glif.link/actor/?address=t029519"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  (t029519)
-                </a>
-                <div
-                  class="c12"
-                  color="var(--purple-medium)"
-                  display="flex"
-                >
-                  <button
-                    class="c13 c14"
-                    display="flex"
-                    role="button"
-                    type="button"
-                  >
-                    <svg
-                      class="c15 c16 c17"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c18 c19"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div
-          class="c6"
-        >
-          <div
-            class="c8"
-          >
-            <div>
-              Parameters
-            </div>
-            <div />
-          </div>
-          <div
-            class="c20"
-          >
-            <div>
-              to
-            </div>
-            <div>
-              <div
-                class="c9"
-              >
-                <div
-                  class="c10"
-                  display="flex"
-                >
-                  <span>
-                    t2i43o ... z2btmy
-                  </span>
-                  <a
-                    class="c11"
-                    href="https://explorer-calibration.glif.link/actor/?address=t030429"
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    (t030429)
-                  </a>
-                  <div
-                    class="c12"
-                    color="var(--purple-medium)"
-                    display="flex"
-                  >
-                    <button
-                      class="c13 c14"
-                      display="flex"
-                      role="button"
-                      type="button"
-                    >
-                      <svg
-                        class="c15 c16 c17"
-                        fill="none"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          fill="#1A0066"
-                          height="12"
-                          width="12"
-                          x="8"
-                          y="4"
-                        />
-                        <rect
-                          fill="#E0D7FE"
-                          height="12"
-                          width="12"
-                          x="4"
-                          y="8"
-                        />
-                      </svg>
-                      <span
-                        class="c18 c19"
-                        color="var(--purple-medium)"
-                      >
-                        Copy
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c20"
-          >
-            <div>
-              value
-            </div>
-            <div>
-              0.4
-               FIL
-            </div>
-          </div>
-          <div
-            class="c20"
-          >
-            <div>
-              method
-            </div>
-            <div>
-              <div
-                class="c21"
-                color="purple.medium"
-                display="inline-flex"
-                height="2em"
-                style="white-space: nowrap;"
-              >
-                <span>
-                  SEND
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c20"
-          >
-            <div>
-              params
-            </div>
-            <div>
-              false
-            </div>
-          </div>
-        </div>
-        <hr />
-        <label
-          class="c22 c23"
-          disabled=""
-        >
-          <div>
-            <span>
-              Expert Mode
-            </span>
-            
-          </div>
-          <div
-            class="toggle-wrapper"
-          >
-            <input
-              disabled=""
-              type="checkbox"
-            />
-            <span
-              class="toggle"
-            />
-          </div>
-        </label>
-        <p>
-          You will not pay more than 
-          0.00000000001
-           FIL for this transaction.
-           
-          <a
-            href="https://filfox.info/en/stats/gas"
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            More information on average gas fee statistics.
-          </a>
-        </p>
-        <hr />
-        <div
-          class="c24"
-        >
-          <span>
-            Total
-          </span>
-          <span>
-            0.00000000001
-             FIL
-          </span>
-        </div>
-      </div>
-    </div>
-    <div
-      class="c25 c26"
-    >
-      <button
-        class="c27"
-        disabled=""
-        type="button"
-      >
-        Back
-      </button>
-      <button
-        class="c28"
-        disabled=""
-        type="submit"
-      >
-        Send
-      </button>
-    </div>
-  </form>
-</div>
-`;
-
-exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
-.c7 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.c8 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  line-height: 1.5;
-  grid-gap: 0.25em;
-}
-
 .c10 {
   min-width: 0;
   box-sizing: border-box;
@@ -2037,19 +1043,982 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   opacity: 1;
 }
 
-.c9 {
+.c9 h4 {
+  margin: 0;
+  color: var(--gray-dark);
+}
+
+.c9 .address {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 0.25em;
+  line-height: 1.5;
+}
+
+.c9 .address a {
   color: var(--purple-medium);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c9:hover {
+.c9 .address a:hover {
   color: var(--purple-medium);
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
+.c25 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c25 svg path {
+  stroke: var(--black);
+}
+
+.c25:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c25:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c25:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c25:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c25 svg path {
+  stroke: var(--gray-medium);
+}
+
+.c26 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c26 svg path {
+  stroke: var(--black);
+}
+
+.c26:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c26:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c26:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c26:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c26 svg path {
+  stroke: var(--white);
+}
+
+.c26:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c26:hover svg path {
+  stroke: var(--green-medium);
+}
+
+.c26 svg path {
+  stroke: var(--gray-medium);
+}
+
+.c3 {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  text-align: left;
+  background-color: var(--purple-medium);
+}
+
+.c4 {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-color: var(--purple-dark);
+  -webkit-animation-name: bvGDKI;
+  animation-name: bvGDKI;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.c1 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c1 > *:first-child {
+  margin-top: 0;
+}
+
+.c1 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c1 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c1 > h2:first-child {
+  margin: 0;
+}
+
+.c1 header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c2 {
+  background-color: var(--blue-gray);
+}
+
+.c2 hr {
+  border-color: var(--gray-medium);
+}
+
+.c5 {
+  background-color: var(--white);
+  box-shadow: 0 0 0.5em var(--gray-light);
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 1.5em 0;
+}
+
+.c24 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 35em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.c6 > p,
+.c6 > hr {
+  margin: 0.5em 0;
+}
+
+.c6 > p[role='button'] {
+  margin: 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1em;
+  line-height: 2.5em;
+  text-align: left;
+  padding-left: 0em;
+}
+
+.c8 > div:first-child {
+  -webkit-flex: 0 1 25%;
+  -ms-flex: 0 1 25%;
+  flex: 0 1 25%;
+  min-width: 200px;
+}
+
+.c8 > div:last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.75em;
+  word-break: break-word;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1em;
+  line-height: 2.5em;
+  text-align: left;
+  padding-left: 1.5em;
+}
+
+.c18 > div:first-child {
+  -webkit-flex: 0 1 25%;
+  -ms-flex: 0 1 25%;
+  flex: 0 1 25%;
+  min-width: 200px;
+}
+
+.c18 > div:last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.75em;
+  word-break: break-word;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  text-align: left;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c20 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c20 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+
+.c20 span.info,
+.c20 span.error {
+  font-size: 0.875rem;
+}
+
+.c20 span.error {
+  color: var(--red-medium);
+}
+
+.c21 .toggle-wrapper {
+  position: relative;
+}
+
+.c21 input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.c21 .toggle {
+  display: inline-block;
+  position: relative;
+  width: 2.25em;
+  height: 1.5em;
+  border-radius: 0.75em;
+  border: 2px solid var(--blue-medium);
+  background-color: var(--blue-medium);
+  border-color: var(--gray-light) !important;
+  background-color: var(--gray-light) !important;
+}
+
+.c21 .toggle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(1.5em - 4px);
+  height: calc(1.5em - 4px);
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.c21 input:checked ~ .toggle {
+  border-color: var(--blue-dark);
+  background-color: var(--blue-dark);
+}
+
+.c21 input:checked ~ .toggle::after {
+  left: auto;
+  right: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.c7 > * {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7 > *:first-child {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
 .c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 span {
+  color: var(--purple-medium);
+  font-size: 1.75rem;
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 c2"
+    >
+      <h2>
+        Cancel Safe Proposal
+      </h2>
+      <hr />
+      <p>
+        Sending your transaction...
+      </p>
+      <span
+        class="c3"
+      >
+        <span
+          class="c4"
+        />
+      </span>
+    </div>
+    
+    <div
+      class="c1 c5"
+    >
+      <div
+        class="c6"
+      >
+        <header
+          class="c7"
+        >
+          <div>
+            <span>
+              From
+            </span>
+            <span>
+              t1z225 ... 6z6wgi
+            </span>
+          </div>
+          <div>
+            <span>
+              Signer 
+              Balance
+            </span>
+            <span>
+              1
+               FIL
+            </span>
+          </div>
+          <div>
+            <span>
+              Safe Balance
+            </span>
+            <span>
+              1
+               FIL
+            </span>
+          </div>
+        </header>
+        <div
+          class="c8"
+        >
+          <div>
+            Proposal id
+          </div>
+          <div>
+            2
+          </div>
+        </div>
+        <div
+          class="c8"
+        >
+          <div>
+            Approvals until execution
+          </div>
+          <div>
+            1
+          </div>
+        </div>
+        <div
+          class="c8"
+        >
+          <div>
+            Approved by
+          </div>
+          <div>
+            <div
+              class="c9"
+              color="var(--purple-medium)"
+            >
+              <div
+                class="address"
+              >
+                <a
+                  href="https://explorer-calibration.glif.link/actor/?address=t13koa6kz5otquokcgwusvtsxcdymuq7lqe4twb4i"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  t13koa ... 4twb4i
+                </a>
+                <div
+                  class="c10"
+                  color="var(--purple-medium)"
+                  display="flex"
+                >
+                  <button
+                    class="c11 c12"
+                    display="flex"
+                    role="button"
+                    type="button"
+                  >
+                    <svg
+                      class="c13 c14 c15"
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        fill="#1A0066"
+                        height="12"
+                        width="12"
+                        x="8"
+                        y="4"
+                      />
+                      <rect
+                        fill="#E0D7FE"
+                        height="12"
+                        width="12"
+                        x="4"
+                        y="8"
+                      />
+                    </svg>
+                    <span
+                      class="c16 c17"
+                      color="var(--purple-medium)"
+                    >
+                      Copy
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div
+          class="c6"
+        >
+          <div
+            class="c8"
+          >
+            <div>
+              Parameters
+            </div>
+            <div />
+          </div>
+          <div
+            class="c18"
+          >
+            <div>
+              To
+            </div>
+            <div>
+              <div
+                class="c9"
+                color="var(--purple-medium)"
+              >
+                <div
+                  class="address"
+                >
+                  <a
+                    href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
+                    t2i43o ... z2btmy
+                  </a>
+                  <div
+                    class="c10"
+                    color="var(--purple-medium)"
+                    display="flex"
+                  >
+                    <button
+                      class="c11 c12"
+                      display="flex"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c13 c14 c15"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                      <span
+                        class="c16 c17"
+                        color="var(--purple-medium)"
+                      >
+                        Copy
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="c18"
+          >
+            <div>
+              Value
+            </div>
+            <div>
+              0.4
+               FIL
+            </div>
+          </div>
+          <div
+            class="c18"
+          >
+            <div>
+              Method
+            </div>
+            <div>
+              <div
+                class="c19"
+                color="purple.medium"
+                display="inline-flex"
+                height="2em"
+                style="white-space: nowrap;"
+              >
+                <span>
+                  SEND
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="c18"
+          >
+            <div>
+              Params
+            </div>
+            <div>
+              false
+            </div>
+          </div>
+        </div>
+        <hr />
+        <label
+          class="c20 c21"
+          disabled=""
+        >
+          <div>
+            <span>
+              Expert Mode
+            </span>
+            
+          </div>
+          <div
+            class="toggle-wrapper"
+          >
+            <input
+              disabled=""
+              type="checkbox"
+            />
+            <span
+              class="toggle"
+            />
+          </div>
+        </label>
+        <p>
+          You will not pay more than 
+          0.00000000001
+           FIL for this transaction.
+           
+          <a
+            href="https://filfox.info/en/stats/gas"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            More information on average gas fee statistics.
+          </a>
+        </p>
+        <hr />
+        <div
+          class="c22"
+        >
+          <span>
+            Total
+          </span>
+          <span>
+            0.00000000001
+             FIL
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c23 c24"
+    >
+      <button
+        class="c25"
+        disabled=""
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c26"
+        disabled=""
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: var(--purple-medium);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: #E0D7FE;
+  color: #5E26FF;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 2em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 2em;
+  text-align: center;
+  grid-gap: 0.75em;
+}
+
+.c11 {
+  width: 24;
+  height: 24;
+}
+
+.c10 {
+  height: auto;
+  cursor: pointer;
+  opacity: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
+}
+
+.c13 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c9:hover .c12 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c15 {
+  -webkit-transition: 0.18s ease-in;
+  transition: 0.18s ease-in;
+  opacity: 0;
+  text-align: left;
+  color: var(--purple-medium);
+  margin-top: 0;
+  margin-left: 4px;
+  margin-top: 0;
+  margin-left: 4px;
+}
+
+.c9:hover .c14 {
+  opacity: 1;
+}
+
+.c7 h4 {
+  margin: 0;
+  color: var(--gray-dark);
+}
+
+.c7 .address {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 0.25em;
+  line-height: 1.5;
+}
+
+.c7 .address a {
+  color: var(--purple-medium);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c7 .address a:hover {
+  color: var(--purple-medium);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c20 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2076,30 +2045,30 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   font-size: 1.25em;
 }
 
-.c22 svg path {
+.c20 svg path {
   stroke: var(--black);
 }
 
-.c22:hover {
+.c20:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c22:hover svg path {
+.c20:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c22:active {
+.c20:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c22:active svg path {
+.c20:active svg path {
   stroke: var(--white) !important;
 }
 
-.c23 {
+.c21 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2129,40 +2098,40 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   background: var(--green-medium);
 }
 
-.c23 svg path {
+.c21 svg path {
   stroke: var(--black);
 }
 
-.c23:hover {
+.c21:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c23:hover svg path {
+.c21:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c23:active {
+.c21:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c23:active svg path {
+.c21:active svg path {
   stroke: var(--white) !important;
 }
 
-.c23 svg path {
+.c21 svg path {
   stroke: var(--white);
 }
 
-.c23:hover {
+.c21:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c23:hover svg path {
+.c21:hover svg path {
   stroke: var(--green-medium);
 }
 
@@ -2211,7 +2180,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c20 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2220,7 +2189,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   margin: 1.5em 0;
 }
 
-.c21 {
+.c19 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2310,7 +2279,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   word-break: break-word;
 }
 
-.c18 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2325,14 +2294,14 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   padding-left: 1.5em;
 }
 
-.c18 > div:first-child {
+.c16 > div:first-child {
   -webkit-flex: 0 1 25%;
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
 }
 
-.c18 > div:last-child {
+.c16 > div:last-child {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -2449,7 +2418,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
           class="c6"
         >
           <div>
-            Proposal ID
+            Proposal id
           </div>
           <div>
             2
@@ -2474,35 +2443,31 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
           <div>
             <div
               class="c7"
+              color="var(--purple-medium)"
             >
               <div
-                class="c8"
-                display="flex"
+                class="address"
               >
-                <span>
-                  t13koa ... 4twb4i
-                </span>
                 <a
-                  class="c9"
-                  href="https://explorer-calibration.glif.link/actor/?address=t029519"
+                  href="https://explorer-calibration.glif.link/actor/?address=t13koa6kz5otquokcgwusvtsxcdymuq7lqe4twb4i"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
-                  (t029519)
+                  t13koa ... 4twb4i
                 </a>
                 <div
-                  class="c10"
+                  class="c8"
                   color="var(--purple-medium)"
                   display="flex"
                 >
                   <button
-                    class="c11 c12"
+                    class="c9 c10"
                     display="flex"
                     role="button"
                     type="button"
                   >
                     <svg
-                      class="c13 c14 c15"
+                      class="c11 c12 c13"
                       fill="none"
                       height="24"
                       viewBox="0 0 24 24"
@@ -2525,7 +2490,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                       />
                     </svg>
                     <span
-                      class="c16 c17"
+                      class="c14 c15"
                       color="var(--purple-medium)"
                     >
                       Copy
@@ -2549,43 +2514,39 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
             <div />
           </div>
           <div
-            class="c18"
+            class="c16"
           >
             <div>
-              to
+              To
             </div>
             <div>
               <div
                 class="c7"
+                color="var(--purple-medium)"
               >
                 <div
-                  class="c8"
-                  display="flex"
+                  class="address"
                 >
-                  <span>
-                    t2i43o ... z2btmy
-                  </span>
                   <a
-                    class="c9"
-                    href="https://explorer-calibration.glif.link/actor/?address=t030429"
+                    href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
                     rel="noreferrer noopener"
                     target="_blank"
                   >
-                    (t030429)
+                    t2i43o ... z2btmy
                   </a>
                   <div
-                    class="c10"
+                    class="c8"
                     color="var(--purple-medium)"
                     display="flex"
                   >
                     <button
-                      class="c11 c12"
+                      class="c9 c10"
                       display="flex"
                       role="button"
                       type="button"
                     >
                       <svg
-                        class="c13 c14 c15"
+                        class="c11 c12 c13"
                         fill="none"
                         height="24"
                         viewBox="0 0 24 24"
@@ -2608,7 +2569,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                         />
                       </svg>
                       <span
-                        class="c16 c17"
+                        class="c14 c15"
                         color="var(--purple-medium)"
                       >
                         Copy
@@ -2620,10 +2581,10 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
             </div>
           </div>
           <div
-            class="c18"
+            class="c16"
           >
             <div>
-              value
+              Value
             </div>
             <div>
               0.4
@@ -2631,14 +2592,14 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
             </div>
           </div>
           <div
-            class="c18"
+            class="c16"
           >
             <div>
-              method
+              Method
             </div>
             <div>
               <div
-                class="c19"
+                class="c17"
                 color="purple.medium"
                 display="inline-flex"
                 height="2em"
@@ -2651,10 +2612,10 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
             </div>
           </div>
           <div
-            class="c18"
+            class="c16"
           >
             <div>
-              params
+              Params
             </div>
             <div>
               false
@@ -2664,16 +2625,16 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c20 c21"
+      class="c18 c19"
     >
       <button
-        class="c22"
+        class="c20"
         type="button"
       >
         Cancel
       </button>
       <button
-        class="c23"
+        class="c21"
         type="submit"
       >
         Review
@@ -2684,26 +2645,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
 `;
 
 exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
-.c7 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
 .c8 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  line-height: 1.5;
-  grid-gap: 0.25em;
-}
-
-.c10 {
   min-width: 0;
   box-sizing: border-box;
   color: var(--purple-medium);
@@ -2717,7 +2659,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   align-items: center;
 }
 
-.c19 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 1em;
@@ -2739,12 +2681,12 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   grid-gap: 0.75em;
 }
 
-.c13 {
+.c11 {
   width: 24;
   height: 24;
 }
 
-.c12 {
+.c10 {
   height: auto;
   cursor: pointer;
   opacity: 1;
@@ -2769,18 +2711,18 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   outline: none;
 }
 
-.c15 {
+.c13 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c11:hover .c14 {
+.c9:hover .c12 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c17 {
+.c15 {
   -webkit-transition: 0.18s ease-in;
   transition: 0.18s ease-in;
   opacity: 0;
@@ -2792,23 +2734,37 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   margin-left: 4px;
 }
 
-.c11:hover .c16 {
+.c9:hover .c14 {
   opacity: 1;
 }
 
-.c9 {
+.c7 h4 {
+  margin: 0;
+  color: var(--gray-dark);
+}
+
+.c7 .address {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 0.25em;
+  line-height: 1.5;
+}
+
+.c7 .address a {
   color: var(--purple-medium);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c9:hover {
+.c7 .address a:hover {
   color: var(--purple-medium);
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c22 {
+.c20 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2835,30 +2791,30 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   font-size: 1.25em;
 }
 
-.c22 svg path {
+.c20 svg path {
   stroke: var(--black);
 }
 
-.c22:hover {
+.c20:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c22:hover svg path {
+.c20:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c22:active {
+.c20:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c22:active svg path {
+.c20:active svg path {
   stroke: var(--white) !important;
 }
 
-.c23 {
+.c21 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2888,40 +2844,40 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   background: var(--green-medium);
 }
 
-.c23 svg path {
+.c21 svg path {
   stroke: var(--black);
 }
 
-.c23:hover {
+.c21:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c23:hover svg path {
+.c21:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c23:active {
+.c21:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c23:active svg path {
+.c21:active svg path {
   stroke: var(--white) !important;
 }
 
-.c23 svg path {
+.c21 svg path {
   stroke: var(--white);
 }
 
-.c23:hover {
+.c21:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c23:hover svg path {
+.c21:hover svg path {
   stroke: var(--green-medium);
 }
 
@@ -2970,7 +2926,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c20 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2979,7 +2935,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   margin: 1.5em 0;
 }
 
-.c21 {
+.c19 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -3069,7 +3025,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   word-break: break-word;
 }
 
-.c18 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3084,14 +3040,14 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   padding-left: 1.5em;
 }
 
-.c18 > div:first-child {
+.c16 > div:first-child {
   -webkit-flex: 0 1 25%;
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
 }
 
-.c18 > div:last-child {
+.c16 > div:last-child {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -3208,7 +3164,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
           class="c6"
         >
           <div>
-            Proposal ID
+            Proposal id
           </div>
           <div>
             2
@@ -3233,35 +3189,31 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
           <div>
             <div
               class="c7"
+              color="var(--purple-medium)"
             >
               <div
-                class="c8"
-                display="flex"
+                class="address"
               >
-                <span>
-                  t13koa ... 4twb4i
-                </span>
                 <a
-                  class="c9"
-                  href="https://explorer-calibration.glif.link/actor/?address=t029519"
+                  href="https://explorer-calibration.glif.link/actor/?address=t13koa6kz5otquokcgwusvtsxcdymuq7lqe4twb4i"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
-                  (t029519)
+                  t13koa ... 4twb4i
                 </a>
                 <div
-                  class="c10"
+                  class="c8"
                   color="var(--purple-medium)"
                   display="flex"
                 >
                   <button
-                    class="c11 c12"
+                    class="c9 c10"
                     display="flex"
                     role="button"
                     type="button"
                   >
                     <svg
-                      class="c13 c14 c15"
+                      class="c11 c12 c13"
                       fill="none"
                       height="24"
                       viewBox="0 0 24 24"
@@ -3284,7 +3236,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                       />
                     </svg>
                     <span
-                      class="c16 c17"
+                      class="c14 c15"
                       color="var(--purple-medium)"
                     >
                       Copy
@@ -3308,43 +3260,39 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
             <div />
           </div>
           <div
-            class="c18"
+            class="c16"
           >
             <div>
-              to
+              To
             </div>
             <div>
               <div
                 class="c7"
+                color="var(--purple-medium)"
               >
                 <div
-                  class="c8"
-                  display="flex"
+                  class="address"
                 >
-                  <span>
-                    t2i43o ... z2btmy
-                  </span>
                   <a
-                    class="c9"
-                    href="https://explorer-calibration.glif.link/actor/?address=t030429"
+                    href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
                     rel="noreferrer noopener"
                     target="_blank"
                   >
-                    (t030429)
+                    t2i43o ... z2btmy
                   </a>
                   <div
-                    class="c10"
+                    class="c8"
                     color="var(--purple-medium)"
                     display="flex"
                   >
                     <button
-                      class="c11 c12"
+                      class="c9 c10"
                       display="flex"
                       role="button"
                       type="button"
                     >
                       <svg
-                        class="c13 c14 c15"
+                        class="c11 c12 c13"
                         fill="none"
                         height="24"
                         viewBox="0 0 24 24"
@@ -3367,7 +3315,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                         />
                       </svg>
                       <span
-                        class="c16 c17"
+                        class="c14 c15"
                         color="var(--purple-medium)"
                       >
                         Copy
@@ -3379,10 +3327,10 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
             </div>
           </div>
           <div
-            class="c18"
+            class="c16"
           >
             <div>
-              value
+              Value
             </div>
             <div>
               0.4
@@ -3390,14 +3338,14 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
             </div>
           </div>
           <div
-            class="c18"
+            class="c16"
           >
             <div>
-              method
+              Method
             </div>
             <div>
               <div
-                class="c19"
+                class="c17"
                 color="purple.medium"
                 display="inline-flex"
                 height="2em"
@@ -3410,10 +3358,10 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
             </div>
           </div>
           <div
-            class="c18"
+            class="c16"
           >
             <div>
-              params
+              Params
             </div>
             <div>
               false
@@ -3423,16 +3371,16 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c20 c21"
+      class="c18 c19"
     >
       <button
-        class="c22"
+        class="c20"
         type="button"
       >
         Cancel
       </button>
       <button
-        class="c23"
+        class="c21"
         type="submit"
       >
         Review

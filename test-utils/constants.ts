@@ -1,23 +1,67 @@
-import { convertAddrToPrefix } from '@glif/react-components'
+import { Network } from '@glif/filecoin-address'
+import { FilecoinNumber } from '@glif/filecoin-number'
+// this breaks when import from regular react components
+import { actorCodesToNames } from '../node_modules/@glif/react-components/dist/generated/actorCodes'
 
 export const WALLET_ADDRESS = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+export const WALLET_ID = 't0101'
+export const WALLET_ADDRESS_2 = 't1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq'
+export const WALLET_ID_2 = 't0102'
 
 // this is a premade multisig vesting actor
 // if calibration net resets, these tests will fail
 export const MULTISIG_ACTOR_ADDRESS =
   'f2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za'
-export const MULTISIG_SIGNER_ADDRESS = convertAddrToPrefix(WALLET_ADDRESS)
-export const MULTISIG_SIGNER_ADDRESS_2 = convertAddrToPrefix(
-  'f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a'
-)
+export const MULTISIG_ACTOR_ID = 't0201'
+
+export const MULTISIG_SIGNER_ADDRESS = WALLET_ADDRESS
+export const MULTISIG_SIGNER_ID = WALLET_ID
+export const MULTISIG_SIGNER_ADDRESS_2 = WALLET_ADDRESS_2
+export const MULTISIG_SIGNER_ID_2 = WALLET_ID_2
 
 export const signers = [
   {
-    robust: MULTISIG_SIGNER_ADDRESS,
-    id: 't01234'
+    // the current state of signers w backend is no robust
+    robust: '',
+    id: MULTISIG_SIGNER_ID
   },
   {
-    robust: MULTISIG_SIGNER_ADDRESS_2,
-    id: 't01235'
+    robust: '',
+    id: MULTISIG_SIGNER_ID_2
   }
 ]
+
+export const mockStateGetActorRes = {
+  Code: {
+    '/': actorCodesToNames[Network.TEST]['multisig']
+  },
+  Balance: '80000000000'
+}
+
+const stateReadStateBaseRes = {
+  Balance: new FilecoinNumber('1', 'fil').toAttoFil(),
+  State: {
+    InitialBalance: new FilecoinNumber('1', 'fil').toAttoFil(),
+    NextTxnID: 2,
+    NumApprovalsThreshold: 1,
+    Signers: [],
+    StartEpoch: 1000,
+    UnlockDuration: 0
+  }
+}
+
+export const mockStateReadStateSingleSignerRes = {
+  ...stateReadStateBaseRes,
+  State: {
+    ...stateReadStateBaseRes.State,
+    Signers: [MULTISIG_SIGNER_ID]
+  }
+}
+
+export const mockStateReadStateDoubleSignerRes = {
+  ...stateReadStateBaseRes,
+  State: {
+    ...stateReadStateBaseRes.State,
+    Signers: [MULTISIG_SIGNER_ID, MULTISIG_SIGNER_ID_2]
+  }
+}

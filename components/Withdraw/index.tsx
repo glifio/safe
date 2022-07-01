@@ -50,7 +50,7 @@ export const Withdraw = ({
         value
         ? new Message({
             to: Address,
-            from: wallet.address,
+            from: wallet.robust,
             nonce: 0,
             value: 0,
             method: MsigMethod.PROPOSE,
@@ -72,7 +72,7 @@ export const Withdraw = ({
       logger.error(e)
       return null
     }
-  }, [isValueValid, toAddress, Address, wallet.address, value, serializeParams])
+  }, [isValueValid, toAddress, Address, wallet.robust, value, serializeParams])
 
   return (
     <Transaction.Form

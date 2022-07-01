@@ -17,7 +17,6 @@ import {
 } from '@glif/react-components'
 
 import {
-  pushPendingMessageSpy,
   WalletProviderContext,
   PendingMsgContext
 } from '../../__mocks__/@glif/react-components'
@@ -159,22 +158,6 @@ describe('Create', () => {
     expect(BigNumber.isBigNumber(message.gasFeeCap)).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
-
-    // Check if pending message was properly pushed
-    const pendingMsg = pushPendingMessageSpy.mock.calls[0][0]
-    expect(typeof pendingMsg.cid).toBe('string')
-    expect(pendingMsg.cid).toBeTruthy()
-    expect(pendingMsg.from.robust).toBe(WALLET_ADDRESS)
-    expect(pendingMsg.to.id).toBe('f01')
-    expect(pendingMsg.height).toBe('')
-    expect(typeof pendingMsg.params).toBe('string')
-    expect(pendingMsg.params).toBeTruthy()
-    expect(Number(pendingMsg.nonce)).toBeGreaterThanOrEqual(0)
-    expect(Number(pendingMsg.method)).toBe(2)
-    expect(Number(pendingMsg.value)).toBeGreaterThan(0)
-    expect(Number(pendingMsg.gasFeeCap)).toBeGreaterThan(0)
-    expect(Number(pendingMsg.gasLimit)).toBeGreaterThan(0)
-    expect(Number(pendingMsg.gasPremium)).toBeGreaterThan(0)
 
     // Check snapshot
     expect(result.container.firstChild).toMatchSnapshot()

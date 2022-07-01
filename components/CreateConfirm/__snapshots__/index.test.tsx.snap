@@ -171,11 +171,11 @@ exports[`confirmation of newly created multisig it displays the multisig address
     </p>
     <p>
       <a
-        href="https://explorer-calibration.glif.link/actor/?address=t2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za"
+        href="https://explorer-calibration.glif.link/actor/?address=t26kvyvsi5uyf2hykt4l5aigxwcmwgfsr47zul2ri"
         rel="noreferrer noopener"
         target="_blank"
       >
-        t2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za
+        t26kvyvsi5uyf2hykt4l5aigxwcmwgfsr47zul2ri
       </a>
     </p>
   </div>
@@ -204,7 +204,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   >
     <a
       class="c6"
-      href="/?safe-id=t2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za"
+      href="/?safe-id=t26kvyvsi5uyf2hykt4l5aigxwcmwgfsr47zul2ri"
     >
       Connect your wallet to open the Safe
     </a>

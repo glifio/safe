@@ -13,6 +13,7 @@ import * as wasmMethods from '../../__mocks__/@zondax/filecoin-signing-tools'
 import { MsigProviderWrapper } from '../../MsigProvider'
 
 import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
+import { addressMocks } from '../apolloMocks'
 
 jest.mock('../../MsigProvider')
 
@@ -34,7 +35,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
 
   const Tree = ({ children }) => {
     return (
-      <MockedProvider mocks={[]} addTypeName={false}>
+      <MockedProvider mocks={addressMocks} addTypeName={false}>
         <WasmContext.Provider value={wasmMethods}>
           <PendingMessageProvider>
             <WalletProviderWrapper

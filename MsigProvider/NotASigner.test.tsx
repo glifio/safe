@@ -1,17 +1,21 @@
-import { act, renderHook } from '@testing-library/react-hooks'
-import { FilecoinNumber } from '@glif/filecoin-number'
 import { ReactNode } from 'react'
+import { act, renderHook } from '@testing-library/react-hooks'
 import {
   WalletProviderWrapper,
-  initialState as _walletProviderInitialState,
-  actorCodesToNames
+  initialState as _walletProviderInitialState
 } from '@glif/react-components'
+import { MockedProvider } from '@apollo/client/testing'
+import { waitFor } from '@testing-library/react'
 
-import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
+import {
+  mockStateGetActorRes,
+  mockStateReadStateSingleSignerRes,
+  MULTISIG_ACTOR_ADDRESS
+} from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
 import { MsigActorState } from './types'
 import { composeWalletProviderState } from '../test-utils/composeMockAppTree/composeState'
-import { Network } from '@glif/filecoin-address'
+import { addressMocks } from '../test-utils/apolloMocks'
 
 // trying to mock a module with two differet functions and the react hooks test renderer does not work
 // so this file tests 1 function that depends on a different implementation of a mock
@@ -27,74 +31,39 @@ describe('Not a signer error handling', () => {
           request: jest.fn(async (method) => {
             switch (method) {
               case 'StateGetActor': {
-                return {
-                  Code: {
-                    '/': actorCodesToNames[Network.TEST]['multisig']
-                  },
-                  Balance: '80000000000'
-                }
+                return mockStateGetActorRes
               }
               case 'StateReadState': {
-                return {
-                  Balance: new FilecoinNumber('1', 'fil').toAttoFil(),
-                  State: {
-                    InitialBalance: new FilecoinNumber('1', 'fil').toAttoFil(),
-                    NextTxnID: 2,
-                    NumApprovalsThreshold: 1,
-                    Signers: ['f01234'],
-                    StartEpoch: 1000,
-                    UnlockDuration: 0
-                  }
-                }
+                return mockStateReadStateSingleSignerRes
               }
               case 'MsigGetAvailableBalance': {
                 return '1000000'
-              }
-              case 'StateLookupID': {
-                return 't0123445'
               }
             }
           })
         }
       })
 
-    jest
-      .spyOn(require('../apolloClient'), 'createApolloClient')
-      .mockImplementation(() => {
-        return {
-          query: ({ variables }) =>
-            Promise.resolve({
-              data: {
-                address: {
-                  id: variables.address,
-                  robust: variables.address
-                }
-              }
-            })
-        }
-      })
-
-    const statePreset = 'postOnboard'
+    const statePreset = 'selectedOtherWallet'
     const walletProviderInitialState = composeWalletProviderState(
       _walletProviderInitialState,
       statePreset
     )
     Tree = ({ children }: { children: ReactNode }) => (
-      <WalletProviderWrapper
-        getState={() => {}}
-        statePreset={statePreset}
-        initialState={walletProviderInitialState}
-      >
-        <MsigProviderWrapper test>{children}</MsigProviderWrapper>
-      </WalletProviderWrapper>
+      <MockedProvider mocks={addressMocks}>
+        <WalletProviderWrapper
+          // @ts-ignore
+          getState={() => {}}
+          statePreset={statePreset}
+          initialState={walletProviderInitialState}
+        >
+          <MsigProviderWrapper test>{children}</MsigProviderWrapper>
+        </WalletProviderWrapper>
+      </MockedProvider>
     )
   })
 
   test('if wallet address is not a signer, the address not a signer error populates', async () => {
-    jest
-      .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
-      .mockImplementation(() => false)
-
     let { result } = renderHook(() => useMsig(), {
       wrapper: Tree
     })
@@ -103,7 +72,9 @@ describe('Not a signer error handling', () => {
       result.current.setMsigActor(MULTISIG_ACTOR_ADDRESS)
     })
 
-    const msigState: MsigActorState = result.current
-    expect(msigState.errors.connectedWalletNotMsigSigner).toBeTruthy()
+    await waitFor(() => {
+      const msigState: MsigActorState = result.current
+      expect(msigState.errors.connectedWalletNotMsigSigner).toBeTruthy()
+    })
   }, 10000)
 })

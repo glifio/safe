@@ -1,28 +1,65 @@
 jest.mock('@glif/filecoin-rpc-client')
-import { Network } from '@glif/filecoin-address'
-import { FilecoinNumber } from '@glif/filecoin-number'
-import { convertAddrToPrefix, actorCodesToNames } from '@glif/react-components'
+import { convertAddrToPrefix } from '@glif/react-components'
 
 import { fetchMsigState } from '.'
 import {
+  mockStateGetActorRes,
+  mockStateReadStateSingleSignerRes,
   MULTISIG_ACTOR_ADDRESS,
   MULTISIG_SIGNER_ADDRESS,
-  MULTISIG_SIGNER_ADDRESS_2
+  MULTISIG_SIGNER_ADDRESS_2,
+  MULTISIG_SIGNER_ID,
+  WALLET_ADDRESS,
+  WALLET_ADDRESS_2,
+  WALLET_ID,
+  WALLET_ID_2
 } from '../../test-utils/constants'
 
+// this is not inside a react components
+// so i figured mocking the apollo client like this was the easiest way, even with duplicate mocks
 jest
   .spyOn(require('../../apolloClient'), 'createApolloClient')
   .mockImplementation(() => {
     return {
-      query: ({ variables }) =>
-        Promise.resolve({
+      query: ({ variables }) => {
+        if (variables.address === WALLET_ADDRESS) {
+          return Promise.resolve({
+            data: {
+              address: {
+                id: WALLET_ID,
+                robust: variables.address
+              }
+            }
+          })
+        } else if (variables.address === WALLET_ADDRESS_2) {
+          return Promise.resolve({
+            data: {
+              address: {
+                id: WALLET_ID_2,
+                robust: variables.address
+              }
+            }
+          })
+        } else if (variables.address[1] === '0') {
+          return Promise.resolve({
+            data: {
+              address: {
+                id: variables.address,
+                robust: ''
+              }
+            }
+          })
+        }
+
+        return Promise.resolve({
           data: {
             address: {
-              id: variables.address,
+              id: '',
               robust: variables.address
             }
           }
         })
+      }
     }
   })
 
@@ -51,19 +88,10 @@ describe('fetchMsigState', () => {
           request: (method) => {
             switch (method) {
               case 'StateReadState': {
-                return {
-                  Balance: '0',
-                  State: {
-                    Signers: ['f010114']
-                  }
-                }
+                return mockStateReadStateSingleSignerRes
               }
               case 'StateGetActor': {
-                return {
-                  Code: {
-                    '/': actorCodesToNames[Network.TEST]['multisig']
-                  }
-                }
+                return mockStateGetActorRes
               }
             }
           }
@@ -72,7 +100,7 @@ describe('fetchMsigState', () => {
 
     const { errors } = await fetchMsigState(
       MULTISIG_ACTOR_ADDRESS,
-      MULTISIG_SIGNER_ADDRESS
+      MULTISIG_SIGNER_ADDRESS_2
     )
 
     expect(errors.connectedWalletNotMsigSigner).toBe(true)
@@ -105,24 +133,10 @@ describe('fetchMsigState', () => {
           request: (method) => {
             switch (method) {
               case 'StateReadState': {
-                return {
-                  Balance: new FilecoinNumber('1', 'fil'),
-                  State: {
-                    Signers: [MULTISIG_SIGNER_ADDRESS_2],
-                    InitialBalance: '10000',
-                    NextTxnID: 1,
-                    NumApprovalsThreshold: 1,
-                    StartEpoch: 1,
-                    UnlockDuration: 1
-                  }
-                }
+                return mockStateReadStateSingleSignerRes
               }
               case 'StateGetActor': {
-                return {
-                  Code: {
-                    '/': actorCodesToNames[Network.TEST]['multisig']
-                  }
-                }
+                return mockStateGetActorRes
               }
               case 'MsigGetAvailableBalance': {
                 return '1'
@@ -143,7 +157,7 @@ describe('fetchMsigState', () => {
       NumApprovalsThreshold,
       StartEpoch,
       UnlockDuration
-    } = await fetchMsigState(MULTISIG_ACTOR_ADDRESS, MULTISIG_SIGNER_ADDRESS_2)
+    } = await fetchMsigState(MULTISIG_ACTOR_ADDRESS, MULTISIG_SIGNER_ADDRESS)
 
     expect(convertAddrToPrefix(Address)).toBe(
       convertAddrToPrefix(MULTISIG_ACTOR_ADDRESS)
@@ -151,8 +165,8 @@ describe('fetchMsigState', () => {
     expect(Balance.isGreaterThan(0)).toBe(true)
     expect(AvailableBalance.isGreaterThan(0)).toBe(true)
     expect(Signers.length).toBeGreaterThan(0)
-    expect(convertAddrToPrefix(Signers[0].robust)).toBe(
-      convertAddrToPrefix(MULTISIG_SIGNER_ADDRESS_2)
+    expect(convertAddrToPrefix(Signers[0].id)).toBe(
+      convertAddrToPrefix(MULTISIG_SIGNER_ID)
     )
     expect(ActorCode.includes('multisig')).toBe(true)
     expect(InitialBalance.isGreaterThan(0)).toBe(true)

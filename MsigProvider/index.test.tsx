@@ -1,19 +1,23 @@
-import { FilecoinNumber } from '@glif/filecoin-number'
 import { SWRConfig } from 'swr'
 import { act, renderHook } from '@testing-library/react-hooks'
 import { ReactNode } from 'react'
+import { waitFor } from '@testing-library/react'
+import { MockedProvider } from '@apollo/client/testing'
 import {
   WalletProviderWrapper,
-  initialState as _walletProviderInitialState,
-  actorCodesToNames
+  initialState as _walletProviderInitialState
 } from '@glif/react-components'
-import { Network } from '@glif/filecoin-address'
 
-import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
+import {
+  mockStateGetActorRes,
+  mockStateReadStateDoubleSignerRes,
+  MULTISIG_ACTOR_ADDRESS
+} from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
 import { MsigActorState } from './types'
 import { EXEC_ACTOR } from '../constants'
 import { composeWalletProviderState } from '../test-utils/composeMockAppTree/composeState'
+import { addressMocks } from '../test-utils/apolloMocks'
 
 describe('Multisig provider', () => {
   describe('Fetching state', () => {
@@ -26,59 +30,18 @@ describe('Multisig provider', () => {
             request: jest.fn(async (method) => {
               switch (method) {
                 case 'StateGetActor': {
-                  return {
-                    Code: {
-                      '/': actorCodesToNames[Network.TEST]['multisig']
-                    },
-                    Balance: '80000000000'
-                  }
+                  return mockStateGetActorRes
                 }
                 case 'StateReadState': {
-                  return {
-                    Balance: new FilecoinNumber('1', 'fil').toAttoFil(),
-                    State: {
-                      InitialBalance: new FilecoinNumber(
-                        '1',
-                        'fil'
-                      ).toAttoFil(),
-                      NextTxnID: 2,
-                      NumApprovalsThreshold: 1,
-                      Signers: ['f01234'],
-                      StartEpoch: 1000,
-                      UnlockDuration: 0
-                    }
-                  }
+                  return mockStateReadStateDoubleSignerRes
                 }
                 case 'MsigGetAvailableBalance': {
                   return '1000000'
-                }
-                case 'StateLookupID': {
-                  return 't0123445'
                 }
               }
             })
           }
         })
-
-      jest
-        .spyOn(require('../apolloClient'), 'createApolloClient')
-        .mockImplementation(() => {
-          return {
-            query: ({ variables }) =>
-              Promise.resolve({
-                data: {
-                  address: {
-                    id: variables.address,
-                    robust: variables.address
-                  }
-                }
-              })
-          }
-        })
-
-      jest
-        .spyOn(require('../utils/isAddressSigner'), 'isAddressSigner')
-        .mockImplementation(() => true)
 
       const statePreset = 'postOnboard'
       const walletProviderInitialState = composeWalletProviderState(
@@ -86,15 +49,18 @@ describe('Multisig provider', () => {
         statePreset
       )
       Tree = ({ children }: { children: ReactNode }) => (
-        <SWRConfig value={{ dedupingInterval: 0 }}>
-          <WalletProviderWrapper
-            getState={() => {}}
-            statePreset={statePreset}
-            initialState={walletProviderInitialState}
-          >
-            <MsigProviderWrapper test>{children}</MsigProviderWrapper>
-          </WalletProviderWrapper>
-        </SWRConfig>
+        <MockedProvider mocks={addressMocks}>
+          <SWRConfig value={{ dedupingInterval: 0 }}>
+            <WalletProviderWrapper
+              // @ts-ignore
+              getState={() => {}}
+              statePreset={statePreset}
+              initialState={walletProviderInitialState}
+            >
+              <MsigProviderWrapper test>{children}</MsigProviderWrapper>
+            </WalletProviderWrapper>
+          </SWRConfig>
+        </MockedProvider>
       )
     })
 
@@ -126,13 +92,15 @@ describe('Multisig provider', () => {
         result.current.setMsigActor(MULTISIG_ACTOR_ADDRESS)
       })
 
-      const msigState: MsigActorState = result.current
-      expect(msigState.Address).toBe(MULTISIG_ACTOR_ADDRESS)
-      expect(msigState.ActorCode.includes('multisig')).toBeTruthy()
-      expect(msigState.AvailableBalance.gt(0)).toBeTruthy()
-      expect(msigState.Balance.gt(0)).toBeTruthy()
-      expect(msigState.NumApprovalsThreshold).toBeTruthy()
-      expect(msigState.Signers.length).toBeGreaterThan(0)
+      await waitFor(() => {
+        const msigState: MsigActorState = result.current
+        expect(msigState.Address).toBe(MULTISIG_ACTOR_ADDRESS)
+        expect(msigState.ActorCode.includes('multisig')).toBeTruthy()
+        expect(msigState.AvailableBalance.gt(0)).toBeTruthy()
+        expect(msigState.Balance.gt(0)).toBeTruthy()
+        expect(msigState.NumApprovalsThreshold).toBeTruthy()
+        expect(msigState.Signers.length).toBeGreaterThan(0)
+      })
     })
   })
 
@@ -146,15 +114,18 @@ describe('Multisig provider', () => {
         statePreset
       )
       Tree = ({ children }: { children: ReactNode }) => (
-        <SWRConfig value={{ dedupingInterval: 0 }}>
-          <WalletProviderWrapper
-            getState={() => {}}
-            statePreset={statePreset}
-            initialState={walletProviderInitialState}
-          >
-            <MsigProviderWrapper test>{children}</MsigProviderWrapper>
-          </WalletProviderWrapper>
-        </SWRConfig>
+        <MockedProvider mocks={addressMocks}>
+          <SWRConfig value={{ dedupingInterval: 0 }}>
+            <WalletProviderWrapper
+              // @ts-ignore
+              getState={() => {}}
+              statePreset={statePreset}
+              initialState={walletProviderInitialState}
+            >
+              <MsigProviderWrapper test>{children}</MsigProviderWrapper>
+            </WalletProviderWrapper>
+          </SWRConfig>
+        </MockedProvider>
       )
     })
 

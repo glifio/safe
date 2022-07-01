@@ -13,15 +13,12 @@ const MessageHistory = () => {
   const { Address } = useMsig()
   const router = useRouter()
   const cid = getQueryParam.string(router, 'cid')
-  const height = getQueryParam.number(router, 'height')
   return cid ? (
-    <MessageDetail cid={cid} height={height} />
+    <MessageDetail cid={cid} />
   ) : (
     <MessageHistoryTable
       address={Address}
-      cidHref={(cid: string, height?: number) =>
-        appendQueryParams(PAGE.MSIG_HISTORY, { height, cid })
-      }
+      cidHref={(cid: string) => appendQueryParams(PAGE.MSIG_HISTORY, { cid })}
     />
   )
 }

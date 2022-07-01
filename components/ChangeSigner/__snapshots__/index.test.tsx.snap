@@ -573,9 +573,9 @@ exports[`ChangeSigner it allows a user to change a signer address 1`] = `
             >
               
               <option
-                value="t1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a"
+                value="t0102"
               >
-                t1nq5k ... btuo3a
+                t0102
               </option>
             </select>
             <div
@@ -1154,9 +1154,9 @@ exports[`ChangeSigner it renders the initial state correctly 1`] = `
             <select>
               
               <option
-                value="t1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a"
+                value="t0102"
               >
-                t1nq5k ... btuo3a
+                t0102
               </option>
             </select>
             <div

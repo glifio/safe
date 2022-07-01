@@ -68,7 +68,7 @@ describe('ApproveCancel', () => {
       await waitFor(
         () =>
           expect(
-            getByText(result.container, 'Proposal ID')
+            getByText(result.container, 'Proposal id')
           ).toBeInTheDocument(),
         { timeout: 10000 }
       )
@@ -187,7 +187,7 @@ describe('ApproveCancel', () => {
       await waitFor(
         () =>
           expect(
-            getByText(result.container, 'Proposal ID')
+            getByText(result.container, 'Proposal id')
           ).toBeInTheDocument(),
         { timeout: 10000 }
       )

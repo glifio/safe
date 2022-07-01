@@ -12,7 +12,8 @@ import {
   MsigMethod,
   TxState,
   WalletProviderOpts,
-  PendingMsgContextType
+  PendingMsgContextType,
+  isAddrEqual
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
@@ -40,12 +41,13 @@ export const ChangeSigner = ({
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
   // Get signer addresses without current wallet owner
-  const signers = useMemo<Array<string>>(
+  const signers = useMemo(
     () =>
-      Signers.map((signer) => signer.robust).filter(
-        (signer) => signer !== wallet.address
-      ),
-    [Signers, wallet.address]
+      Signers.filter(
+        (signer) =>
+          !isAddrEqual({ id: wallet.id, robust: wallet.robust }, signer)
+      ).map((signer) => signer.robust || signer.id),
+    [Signers, wallet.id, wallet.robust]
   )
 
   // Create message from input
@@ -56,7 +58,7 @@ export const ChangeSigner = ({
       return validateAddressString(newSigner)
         ? new Message({
             to: Address,
-            from: wallet.address,
+            from: wallet.robust,
             nonce: 0,
             value: 0,
             method: MsigMethod.PROPOSE,
@@ -84,7 +86,7 @@ export const ChangeSigner = ({
       logger.error(e)
       return null
     }
-  }, [oldSigner, newSigner, Address, wallet.address, serializeParams])
+  }, [oldSigner, newSigner, Address, wallet.robust, serializeParams])
 
   return (
     <Transaction.Form
@@ -105,7 +107,7 @@ export const ChangeSigner = ({
       pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance
-        address={wallet.address}
+        address={wallet.robust}
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />

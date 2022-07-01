@@ -6,11 +6,12 @@ import {
   ReactNode,
   Dispatch
 } from 'react'
+import { useApolloClient } from '@apollo/client'
 import { useWallet } from '@glif/react-components'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import useSWR from 'swr'
 
-import { fetchMsigState } from '../utils/fetchMsigState'
+import { fetchMsigState } from './fetchMsigState'
 import { MsigActorState, emptyMsigState } from './types'
 
 const MsigProviderContext = createContext<
@@ -38,8 +39,9 @@ export const MsigProviderWrapper = ({
   const wallet = useWallet()
   const [loading, setLoading] = useState<boolean>(false)
   const [msigActor, setMsigActor] = useState(null)
+  const apolloClient = useApolloClient()
   const { data: actor, error: msigActorStateError } = useSWR(
-    msigActor ? [msigActor, wallet.address] : null,
+    msigActor ? [msigActor, wallet.robust, apolloClient] : null,
     fetchMsigState
   )
 

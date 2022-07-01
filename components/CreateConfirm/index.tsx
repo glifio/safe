@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
-import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import {
   getQueryParam,
   IconPending,
@@ -12,39 +11,12 @@ import {
   ErrorBox,
   WarningBox,
   useWallet,
-  useMessageQuery
+  useMessageQuery,
+  getAddrFromReceipt
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { PAGE, QPARAM } from '../../constants'
-import { getAddrFromReceipt } from '../../utils/getAddrFromReceipt'
-
-interface Receipt {
-  ExitCode: number
-  GasUsed: number
-  Return: string
-}
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-
-const recursivelyGetReceipt = async (
-  apiAddress: string,
-  cid: string,
-  waitTime: number = 5000
-): Promise<Receipt> => {
-  await sleep(waitTime)
-  const lCli = new LotusRPCEngine({ apiAddress })
-  const receipt = await lCli.request<Receipt>(
-    'StateGetReceipt',
-    { '/': cid },
-    null
-  )
-
-  if (receipt) return receipt
-
-  // recursively, linearly ease off
-  return recursivelyGetReceipt(apiAddress, cid, waitTime + 1000)
-}
 
 export const CreateConfirm = () => {
   const router = useRouter()
@@ -53,8 +25,6 @@ export const CreateConfirm = () => {
   const wallet = useWallet()
 
   // Confirmation state
-  const [fetchingReceipt, setFetchingReceipt] = useState<boolean>(false)
-  const [receiptError, setReceiptError] = useState<boolean>(false)
   const [creationError, setCreationError] = useState<boolean>(false)
 
   // Get environment variables
@@ -62,46 +32,48 @@ export const CreateConfirm = () => {
   const { NEXT_PUBLIC_LOTUS_NODE_JSONRPC: apiAddress } = process.env
 
   // Get the message by cid
-  const { data: messageData, error: messageError } = useMessageQuery({
+  const {
+    data: messageData,
+    error: messageError,
+    loading: messageLoading
+  } = useMessageQuery({
     variables: { cid },
     pollInterval: 5000,
-    skip: !cid
+    // stop polling if we have a safe address
+    skip: !!Address
   })
+
+  const error = useMemo(() => {
+    if (!!messageError && messageError.message.includes('key not  found'))
+      return messageError
+  }, [messageError])
 
   // Decode the receipt after receiving the message
   useEffect(() => {
-    if (messageData?.message && !fetchingReceipt) {
-      setFetchingReceipt(true)
-      recursivelyGetReceipt(apiAddress, cid)
-        .then((receipt) => {
-          if (receipt) {
-            try {
-              // Verify the exit code
-              if (receipt.ExitCode !== 0)
-                throw new Error('Safe creation failed')
+    const receipt = messageData?.message?.receipt
+    if (!error && !!receipt?.return) {
+      try {
+        // Verify the exit code
+        if (receipt.exitCode !== 0) throw new Error('Safe creation failed')
 
-              // Verify the safe address
-              const { robust } = getAddrFromReceipt(receipt.Return)
-              if (!robust) throw new Error('Failed to get address from receipt')
+        // Verify the safe address
+        const { robust } = getAddrFromReceipt(receipt.return)
+        if (!robust) throw new Error('Failed to get address from receipt')
 
-              // Set the safe address
-              setMsigActor(robust)
-            } catch (e) {
-              setCreationError(true)
-            } finally {
-              setFetchingReceipt(false)
-            }
-          }
-        })
-        .catch(() => setReceiptError(true))
+        // Set the safe address
+        setMsigActor(robust)
+      } catch (e) {
+        setCreationError(true)
+      }
     }
   }, [
     messageData?.message,
     apiAddress,
     cid,
     setMsigActor,
-    fetchingReceipt,
-    setFetchingReceipt
+    messageData,
+    messageLoading,
+    error
   ])
 
   // CID was not provided in query parameters
@@ -118,7 +90,7 @@ export const CreateConfirm = () => {
   }
 
   // Something went wrong while retrieving the message or receipt
-  if (messageError || receiptError) {
+  if (error) {
     return (
       <Dialog>
         <ShadowBox>
@@ -179,7 +151,7 @@ export const CreateConfirm = () => {
           prevent losing access to your Safe.
         </WarningBox>
         <ButtonRowCenter>
-          {wallet.address ? (
+          {wallet.robust || wallet.id ? (
             <ButtonV2Link large green href={PAGE.MSIG_HOME}>
               Go to the Safe dashboard
             </ButtonV2Link>

@@ -4,16 +4,19 @@ import { CID } from '@glif/filecoin-wallet-provider'
 import {
   AddressDocument,
   AddressQuery,
-  decodeActorCID
+  decodeActorCID,
+  isAddressSigner
 } from '@glif/react-components'
+import type { ApolloClient } from '@apollo/client'
 
-import { isAddressSigner } from '../isAddressSigner'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
 import { createApolloClient } from '../../apolloClient'
 
 export const fetchMsigState = async (
   actorID: string,
-  signerAddress: string
+  signerAddress: string,
+  // we give this a default value for tests
+  apolloClient: ApolloClient<object> = createApolloClient()
 ): Promise<MsigActorState> => {
   try {
     const lCli = new LotusRPCEngine({
@@ -53,8 +56,6 @@ export const fetchMsigState = async (
         UnlockDuration: number
       }
     }>('StateReadState', actorID, null)
-
-    const apolloClient = createApolloClient()
     const [availableBalance, signers] = await Promise.all([
       lCli.request<string>('MsigGetAvailableBalance', actorID, null),
       Promise.all(
@@ -75,7 +76,20 @@ export const fetchMsigState = async (
       )
     ])
 
-    if (!isAddressSigner(signerAddress, signers)) {
+    const { data } = await apolloClient.query<AddressQuery>({
+      query: AddressDocument,
+      variables: {
+        address: signerAddress
+      }
+    })
+
+    if (
+      !isAddressSigner(
+        // here we always return the signerAddr as the robust addr in case it doesnt come back from the server for whatever reason
+        { id: data?.address?.id, robust: signerAddress },
+        signers
+      )
+    ) {
       return {
         ...emptyMsigState,
         errors: {
