@@ -7,8 +7,6 @@ import { validateAddressString } from '@glif/filecoin-address'
 import {
   navigate,
   useWallet,
-  getMaxAffordableFee,
-  getTotalAmount,
   InputV2,
   Transaction,
   MsigMethod,
@@ -36,7 +34,7 @@ export const Create = ({
   const [vest, setVest] = useState<number>(0)
   const [epoch, setEpoch] = useState<number>(0)
   const [value, setValue] = useState<FilecoinNumber | null>(null)
-  const [signers, setSigners] = useState<Array<string>>([wallet.address])
+  const [signers, setSigners] = useState<Array<string>>([wallet.robust])
   const [approvals, setApprovals] = useState<number>(1)
   const [isVestValid, setIsVestValid] = useState<boolean>(false)
   const [isEpochValid, setIsEpochValid] = useState<boolean>(false)
@@ -95,12 +93,12 @@ export const Create = ({
         value
         ? new Message({
             to: EXEC_ACTOR,
-            from: wallet.address,
+            from: wallet.robust,
             nonce: 0,
             value: value.toAttoFil(),
             method: 2,
             params: createMultisig(
-              wallet.address,
+              wallet.robust,
               [...acceptedSigners],
               value.toAttoFil(),
               approvals,
@@ -127,18 +125,18 @@ export const Create = ({
     value,
     approvals,
     acceptedSigners,
-    wallet.address,
+    wallet.robust,
     createMultisig
   ])
 
   // Calculate max affordable fee (balance minus value)
   const maxFee = useMemo<FilecoinNumber | null>(() => {
-    return value ? getMaxAffordableFee(wallet.balance, value) : null
+    return value ? wallet.balance.minus(value) : null
   }, [value, wallet.balance])
 
   // Calculate total amount (value plus tx fee)
   const total = useMemo<FilecoinNumber | null>(() => {
-    return value && txFee ? getTotalAmount(value, txFee) : null
+    return value && txFee ? value.plus(txFee) : null
   }, [value, txFee])
 
   return (
@@ -157,13 +155,14 @@ export const Create = ({
       onComplete={(cid) =>
         navigate(router, {
           pageUrl: PAGE.MSIG_CREATE_CONFIRM,
-          newQueryParams: { cid }
+          params: { cid }
         })
       }
       walletProviderOpts={walletProviderOpts}
       pendingMsgContext={pendingMsgContext}
+      pushPending={false}
     >
-      <Transaction.Balance address={wallet.address} balance={wallet.balance} />
+      <Transaction.Balance address={wallet.robust} balance={wallet.balance} />
       {signers.map((signer, index) => (
         <InputV2.Address
           key={index}

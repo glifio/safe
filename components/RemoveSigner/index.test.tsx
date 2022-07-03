@@ -23,11 +23,11 @@ import {
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import {
-  flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS,
-  MULTISIG_SIGNER_ADDRESS_2
-} from '../../test-utils'
+  MULTISIG_SIGNER_ADDRESS_2,
+  MULTISIG_SIGNER_ID_2
+} from '../../test-utils/constants'
 import { RemoveSigner } from '.'
 
 jest.mock('@glif/filecoin-wallet-provider')
@@ -51,8 +51,6 @@ describe('RemoveSigner', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const oldSigner = getByRole(result.container, 'combobox')
@@ -62,14 +60,14 @@ describe('RemoveSigner', () => {
       // Check initial state
       expect(header).toHaveTextContent('Remove a signer')
       expect(oldSigner).toHaveDisplayValue(
-        truncateAddress(MULTISIG_SIGNER_ADDRESS_2)
+        truncateAddress(MULTISIG_SIGNER_ID_2)
       )
       expect(cancel).toBeEnabled()
       expect(review).toBeEnabled()
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -94,7 +92,7 @@ describe('RemoveSigner', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
@@ -109,14 +107,14 @@ describe('RemoveSigner', () => {
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
     expect(message.nonce).toBeGreaterThanOrEqual(0)
-    expect(message.value).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.value)).toBe(true)
     expect(message.value.isEqualTo(0)).toBe(true)
     expect(message.method).toBe(MsigMethod.PROPOSE)
     expect(typeof message.params).toBe('string')
     expect(message.params).toBeTruthy()
-    expect(message.gasPremium).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasPremium)).toBe(true)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
-    expect(message.gasFeeCap).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasFeeCap)).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
 

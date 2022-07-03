@@ -17,12 +17,11 @@ import {
 } from '@glif/react-components'
 
 import {
-  pushPendingMessageSpy,
   WalletProviderContext,
   PendingMsgContext
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
+import { WALLET_ADDRESS } from '../../test-utils/constants'
 import { Create } from '.'
 
 const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
@@ -48,7 +47,7 @@ describe('Create', () => {
         </Tree>
       )
 
-      await flushPromises()
+      jest.runAllTimers()
 
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
@@ -72,9 +71,9 @@ describe('Create', () => {
 
       // Add a signer
       fireEvent.click(addSigner)
+      jest.runAllTimers()
 
       // There should be a second signer and review should not be enabled yet
-      await flushPromises()
       const signer2 = getAllByRole(result.container, 'textbox')[1]
       expect(signer2).toBeEnabled()
       expect(signer2).toHaveDisplayValue('')
@@ -84,32 +83,32 @@ describe('Create', () => {
       signer2.focus()
       fireEvent.change(signer2, { target: { value: validAddress } })
       signer2.blur()
+      jest.runAllTimers()
 
       // Review should not be enabled yet
-      await flushPromises()
       expect(review).toBeDisabled()
 
       // Increment required approvals
       approvals.focus()
       fireEvent.change(approvals, { target: { value: '2' } })
       approvals.blur()
+      jest.runAllTimers()
 
       // Review should not be enabled yet
-      await flushPromises()
       expect(review).toBeDisabled()
 
       // Enter amount
       amount.focus()
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
       amount.blur()
+      jest.runAllTimers()
 
       // Review should now be enabled
-      await flushPromises()
       expect(review).toBeEnabled()
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -134,7 +133,7 @@ describe('Create', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
@@ -149,32 +148,16 @@ describe('Create', () => {
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe('f01')
     expect(message.nonce).toBeGreaterThanOrEqual(0)
-    expect(message.value).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.value)).toBe(true)
     expect(message.value.isEqualTo(validAmount.toAttoFil())).toBe(true)
     expect(message.method).toBe(2)
     expect(typeof message.params).toBe('string')
     expect(message.params).toBeTruthy()
-    expect(message.gasPremium).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasPremium)).toBe(true)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
-    expect(message.gasFeeCap).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasFeeCap)).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
-
-    // Check if pending message was properly pushed
-    const pendingMsg = pushPendingMessageSpy.mock.calls[0][0]
-    expect(typeof pendingMsg.cid).toBe('string')
-    expect(pendingMsg.cid).toBeTruthy()
-    expect(pendingMsg.from.robust).toBe(WALLET_ADDRESS)
-    expect(pendingMsg.to.id).toBe('f01')
-    expect(pendingMsg.height).toBe('')
-    expect(typeof pendingMsg.params).toBe('string')
-    expect(pendingMsg.params).toBeTruthy()
-    expect(Number(pendingMsg.nonce)).toBeGreaterThanOrEqual(0)
-    expect(Number(pendingMsg.method)).toBe(2)
-    expect(Number(pendingMsg.value)).toBeGreaterThan(0)
-    expect(Number(pendingMsg.gasFeeCap)).toBeGreaterThan(0)
-    expect(Number(pendingMsg.gasLimit)).toBeGreaterThan(0)
-    expect(Number(pendingMsg.gasPremium)).toBeGreaterThan(0)
 
     // Check snapshot
     expect(result.container.firstChild).toMatchSnapshot()

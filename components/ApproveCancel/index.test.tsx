@@ -19,10 +19,9 @@ import {
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import {
-  flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS
-} from '../../test-utils'
+} from '../../test-utils/constants'
 import { ApproveCancel } from '.'
 import { PAGE } from '../../constants'
 
@@ -60,8 +59,6 @@ describe('ApproveCancel', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const cancel = getByText(result.container, 'Cancel')
@@ -71,7 +68,7 @@ describe('ApproveCancel', () => {
       await waitFor(
         () =>
           expect(
-            getByText(result.container, 'Proposal ID')
+            getByText(result.container, 'Proposal id')
           ).toBeInTheDocument(),
         { timeout: 10000 }
       )
@@ -83,7 +80,7 @@ describe('ApproveCancel', () => {
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -108,7 +105,7 @@ describe('ApproveCancel', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
@@ -123,14 +120,14 @@ describe('ApproveCancel', () => {
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
     expect(message.nonce).toBeGreaterThanOrEqual(0)
-    expect(message.value).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.value)).toBe(true)
     expect(message.value.isEqualTo(0)).toBe(true)
     expect(message.method).toBe(MsigMethod.APPROVE)
     expect(typeof message.params).toBe('string')
     expect(message.params).toBeTruthy()
-    expect(message.gasPremium).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasPremium)).toBe(true)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
-    expect(message.gasFeeCap).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasFeeCap)).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
 
@@ -181,8 +178,6 @@ describe('ApproveCancel', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const cancel = getByText(result.container, 'Cancel')
@@ -192,7 +187,7 @@ describe('ApproveCancel', () => {
       await waitFor(
         () =>
           expect(
-            getByText(result.container, 'Proposal ID')
+            getByText(result.container, 'Proposal id')
           ).toBeInTheDocument(),
         { timeout: 10000 }
       )
@@ -204,7 +199,7 @@ describe('ApproveCancel', () => {
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -229,7 +224,7 @@ describe('ApproveCancel', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
@@ -244,14 +239,14 @@ describe('ApproveCancel', () => {
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
     expect(message.nonce).toBeGreaterThanOrEqual(0)
-    expect(message.value).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.value)).toBe(true)
     expect(message.value.isEqualTo(0)).toBe(true)
     expect(message.method).toBe(MsigMethod.CANCEL)
     expect(typeof message.params).toBe('string')
     expect(message.params).toBeTruthy()
-    expect(message.gasPremium).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasPremium)).toBe(true)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
-    expect(message.gasFeeCap).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasFeeCap)).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
 

@@ -4,7 +4,14 @@ import { createPath, WalletProviderState } from '@glif/react-components'
 import { IMPORT_MNEMONIC, IMPORT_SINGLE_KEY } from '../../constants'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 import { emptyMsigState } from '../../MsigProvider/types'
-import { WALLET_ADDRESS, MULTISIG_ACTOR_ADDRESS, signers } from '../constants'
+import {
+  WALLET_ADDRESS,
+  MULTISIG_ACTOR_ADDRESS,
+  signers,
+  WALLET_ID,
+  WALLET_ADDRESS_2,
+  WALLET_ID_2
+} from '../constants'
 
 export type Preset =
   | 'preOnboard'
@@ -26,7 +33,8 @@ export const composeWalletProviderState = (
         walletProvider: mockWalletProviderInstance,
         wallets: [
           {
-            address: WALLET_ADDRESS,
+            robust: WALLET_ADDRESS,
+            id: WALLET_ID,
             balance: new FilecoinNumber('1', 'fil'),
             path: createPath(1, 0)
           }
@@ -42,7 +50,8 @@ export const composeWalletProviderState = (
         walletProvider: mockWalletProviderInstance,
         wallets: [
           {
-            address: WALLET_ADDRESS,
+            robust: WALLET_ADDRESS,
+            id: WALLET_ID,
             balance: new FilecoinNumber('.000001', 'fil'),
             path: createPath(1, 0)
           }
@@ -57,7 +66,8 @@ export const composeWalletProviderState = (
         walletProvider: mockWalletProviderInstance,
         wallets: [
           {
-            address: WALLET_ADDRESS,
+            robust: WALLET_ADDRESS,
+            id: WALLET_ID,
             balance: new FilecoinNumber('1', 'fil'),
             path: createPath(1, 0)
           }
@@ -72,12 +82,14 @@ export const composeWalletProviderState = (
         walletProvider: mockWalletProviderInstance,
         wallets: [
           {
-            address: WALLET_ADDRESS,
+            robust: WALLET_ADDRESS,
+            id: WALLET_ID,
             balance: new FilecoinNumber('1', 'fil'),
             path: createPath(1, 0)
           },
           {
-            address: 't1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a',
+            robust: WALLET_ADDRESS_2,
+            id: WALLET_ID_2,
             balance: new FilecoinNumber('5', 'fil'),
             path: createPath(1, 1)
           }

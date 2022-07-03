@@ -19,10 +19,9 @@ import {
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import {
-  flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS
-} from '../../test-utils'
+} from '../../test-utils/constants'
 import { Withdraw } from '.'
 
 const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
@@ -48,8 +47,6 @@ describe('Withdraw', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const recipient = getByRole(result.container, 'textbox')
@@ -66,25 +63,26 @@ describe('Withdraw', () => {
       expect(review).toBeDisabled()
 
       // Enter recipient
+      recipient.focus()
       fireEvent.change(recipient, { target: { value: validAddress } })
       recipient.blur()
+      jest.runAllTimers()
 
       // Review should not be enabled yet
-      await flushPromises()
       expect(review).toBeDisabled()
 
       // Enter amount
       amount.focus()
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
       amount.blur()
+      jest.runAllTimers()
 
       // Review should now be enabled
-      await flushPromises()
       expect(review).toBeEnabled()
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -109,7 +107,7 @@ describe('Withdraw', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
@@ -124,14 +122,14 @@ describe('Withdraw', () => {
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
     expect(message.nonce).toBeGreaterThanOrEqual(0)
-    expect(message.value).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.value)).toBe(true)
     expect(message.value.isEqualTo(0)).toBe(true)
     expect(message.method).toBe(MsigMethod.PROPOSE)
     expect(typeof message.params).toBe('string')
     expect(message.params).toBeTruthy()
-    expect(message.gasPremium).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasPremium)).toBe(true)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
-    expect(message.gasFeeCap).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasFeeCap)).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
 
@@ -184,10 +182,10 @@ describe('Withdraw', () => {
 
       // Enter recipient
       const recipient = getByRole(result.container, 'textbox')
+      recipient.focus()
       fireEvent.change(recipient, { target: { value: validAddress } })
       recipient.blur()
-
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check snapshot

@@ -3,13 +3,24 @@ import {
   getByRole,
   getByText,
   render,
-  RenderResult
+  RenderResult,
+  screen
 } from '@testing-library/react'
-import { useMessageQuery } from '@glif/react-components'
+import {
+  useMessageQuery,
+  MessageReceipt,
+  getAddrFromReceipt
+} from '@glif/react-components'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { CreateConfirm } from '.'
 import { PAGE } from '../../constants'
+
+const mockReceipt = {
+  exitCode: 0,
+  return: 'gkMA1xJVAvKriskdpguj4VPi+gQa9hMsYso8',
+  gasUsed: 8555837
+} as MessageReceipt
 
 jest.mock('../../MsigProvider')
 jest.mock('@glif/react-components', () => {
@@ -17,23 +28,15 @@ jest.mock('@glif/react-components', () => {
   return {
     ...original,
     useMessageQuery: jest.fn(({ variables }) => ({
-      data: { message: { cid: variables.cid } }
+      data: {
+        message: {
+          cid: variables.cid,
+          receipt: mockReceipt
+        }
+      }
     }))
   }
 })
-
-const mockStateGetMessageReceipt = jest.fn(async () => ({
-  ExitCode: 0,
-  Return: 'gkQAyogBVQJnC6HX7N9krE3QzLET9tDO1XuUqw==',
-  GasUsed: 8555837
-}))
-jest
-  .spyOn(require('@glif/filecoin-rpc-client'), 'default')
-  .mockImplementation(() => {
-    return {
-      request: mockStateGetMessageReceipt
-    }
-  })
 
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
   return {
@@ -98,7 +101,8 @@ describe('confirmation of newly created multisig', () => {
     const header = getByRole(result.container, 'heading')
     expect(header).toHaveTextContent('Safe creation completed')
     expect(useMessageQuery).toHaveBeenCalled()
-    expect(mockStateGetMessageReceipt).toHaveBeenCalled()
+    const { robust } = getAddrFromReceipt(mockReceipt.return)
+    expect(screen.getByText(robust)).toBeInTheDocument()
     expect(result.container.firstChild).toMatchSnapshot()
   })
 })

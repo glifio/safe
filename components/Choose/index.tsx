@@ -1,31 +1,35 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
+  getQueryParam,
   navigate,
-  generateRouteWithRequiredUrlParams,
   ButtonRowSpaced,
   ButtonV2,
   InputV2,
   Dialog,
   ErrorBox,
   ShadowBox,
-  SmartLink
+  SmartLink,
+  LoadingScreen
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
-import { PAGE } from '../../constants'
+import { PAGE, QPARAM } from '../../constants'
 
 export const Choose = () => {
   const router = useRouter()
-  const { setMsigActor, errors, ActorCode } = useMsig()
+  const { setMsigActor, loading, errors, ActorCode } = useMsig()
+  const [msigAddressParam, setMsigAddressParam] = useState<string>(
+    getQueryParam.string(router, QPARAM.MSIG_ADDRESS)
+  )
 
   // Input states
-  const [safeID, setSafeID] = useState<string>('')
+  const [safeID, setSafeID] = useState<string>(msigAddressParam)
   const [isSafeIDValid, setIsSafeIDValid] = useState<boolean>(false)
   const [submittedForm, setSubmittedForm] = useState<boolean>(false)
 
   // Get error message from MSIG provider
-  const errorMessage = useMemo(() => {
+  const errorMessage = useMemo<string>(() => {
     if (errors.actorNotFound) return 'Safe not found'
     if (errors.connectedWalletNotMsigSigner)
       return 'Your wallet is not an owner of this Safe. Please go back and choose a wallet address that is an owner of this Safe.'
@@ -39,6 +43,29 @@ export const Choose = () => {
     errors.unhandledError
   ])
 
+  const submitForm = useCallback(() => {
+    setSubmittedForm(true)
+    setMsigActor(safeID)
+  }, [setSubmittedForm, setMsigActor, safeID])
+
+  // Automatically submit the form if there is
+  // a valid MSIG address in the query params
+  useEffect(
+    () => msigAddressParam && !submittedForm && submitForm(),
+    [msigAddressParam, submittedForm, submitForm]
+  )
+
+  // Clear the MSIG address retrieved from the query params
+  // if it failed to load, which removes the loading screen
+  useEffect(
+    () =>
+      submittedForm &&
+      errorMessage &&
+      msigAddressParam &&
+      setMsigAddressParam(''),
+    [submittedForm, errorMessage, msigAddressParam, setMsigAddressParam]
+  )
+
   // When there is an ActorCode we successfully retrieved
   // the multisig and we push the user to the msig home
   useEffect(
@@ -50,13 +77,14 @@ export const Choose = () => {
     [submittedForm, errorMessage, ActorCode, router]
   )
 
-  return (
+  return msigAddressParam ? (
+    <LoadingScreen />
+  ) : (
     <Dialog>
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          setSubmittedForm(true)
-          setMsigActor(safeID)
+          submitForm()
         }}
       >
         {submittedForm && errorMessage && <ErrorBox>{errorMessage}</ErrorBox>}
@@ -74,24 +102,23 @@ export const Choose = () => {
             value={safeID}
             onChange={setSafeID}
             setIsValid={setIsSafeIDValid}
+            disabled={loading}
           />
           <p>
             Don&apos;t have a Safe ID?{' '}
-            <SmartLink
-              href={generateRouteWithRequiredUrlParams({
-                pageUrl: PAGE.MSIG_CREATE,
-                existingQParams: {}
-              })}
-            >
-              Create one
-            </SmartLink>
+            <SmartLink href={PAGE.MSIG_CREATE}>Create one</SmartLink>
           </p>
         </ShadowBox>
         <ButtonRowSpaced>
           <ButtonV2 large type='button' onClick={() => router.back()}>
             Back
           </ButtonV2>
-          <ButtonV2 large green type='submit' disabled={!isSafeIDValid}>
+          <ButtonV2
+            large
+            green
+            type='submit'
+            disabled={!isSafeIDValid || loading}
+          >
             Submit
           </ButtonV2>
         </ButtonRowSpaced>

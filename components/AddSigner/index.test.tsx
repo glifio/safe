@@ -19,10 +19,9 @@ import {
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import {
-  flushPromises,
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS
-} from '../../test-utils'
+} from '../../test-utils/constants'
 import { AddSigner } from '.'
 
 const newAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
@@ -47,8 +46,6 @@ describe('AddSigner', () => {
         </Tree>
       )
 
-      await flushPromises()
-
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const newSigner = getByRole(result.container, 'textbox')
@@ -63,16 +60,17 @@ describe('AddSigner', () => {
       expect(review).toBeDisabled()
 
       // Enter new address
+      newSigner.focus()
       fireEvent.change(newSigner, { target: { value: newAddress } })
       newSigner.blur()
+      jest.runAllTimers()
 
       // Review should now be enabled
-      await flushPromises()
       expect(review).toBeEnabled()
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -97,7 +95,7 @@ describe('AddSigner', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
@@ -112,14 +110,14 @@ describe('AddSigner', () => {
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
     expect(message.nonce).toBeGreaterThanOrEqual(0)
-    expect(message.value).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.value)).toBe(true)
     expect(message.value.isEqualTo(0)).toBe(true)
     expect(message.method).toBe(MsigMethod.PROPOSE)
     expect(typeof message.params).toBe('string')
     expect(message.params).toBeTruthy()
-    expect(message.gasPremium).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasPremium)).toBe(true)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
-    expect(message.gasFeeCap).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasFeeCap)).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
 

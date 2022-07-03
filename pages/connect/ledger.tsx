@@ -21,7 +21,7 @@ export default function ConnectLedger() {
   }, [router, resetState])
 
   const next = useCallback(() => {
-    navigate(router, { pageUrl: PAGE.MSIG_CHOOSE_ACCOUNTS })
+    navigate(router, { pageUrl: PAGE.MSIG_CHOOSE_ACCOUNTS, retainParams: true })
   }, [router])
 
   return (

@@ -33,6 +33,11 @@ export const LEDGER_VERSION_MAJOR = 0
 export const LEDGER_VERSION_MINOR = 18
 export const LEDGER_VERSION_PATCH = 2
 
+/* QUERY PARAMS */
+export enum QPARAM {
+  MSIG_ADDRESS = 'safe-id'
+}
+
 /* PAGES */
 /* eslint-disable no-unused-vars */
 export enum PAGE {

@@ -42,7 +42,7 @@ export default function SafePageLoggedIn({ children }: SafePageLoggedInProps) {
         },
         {
           label: 'Wallet Address',
-          address: wallet.address,
+          address: wallet.robust,
           disableLink: false,
           stopPropagation: true,
           hideCopy: false,

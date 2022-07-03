@@ -1,7 +1,8 @@
 import {
+  getQueryParam,
   MessageHistoryTable,
   MessageDetail,
-  generateRouteWithRequiredUrlParams
+  appendQueryParams
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
@@ -11,21 +12,13 @@ import { useMsig } from '../../MsigProvider'
 const MessageHistory = () => {
   const { Address } = useMsig()
   const router = useRouter()
-  return router.query.cid ? (
-    <MessageDetail
-      cid={router.query.cid as string}
-      height={Number(router?.query?.height) || null}
-    />
+  const cid = getQueryParam.string(router, 'cid')
+  return cid ? (
+    <MessageDetail cid={cid} />
   ) : (
     <MessageHistoryTable
       address={Address}
-      cidHref={(cid: string, height?: string) =>
-        generateRouteWithRequiredUrlParams({
-          pageUrl: PAGE.MSIG_HISTORY,
-          newQueryParams: { height, cid },
-          existingQParams: { ...router.query } as Record<string, string>
-        })
-      }
+      cidHref={(cid: string) => appendQueryParams(PAGE.MSIG_HISTORY, { cid })}
     />
   )
 }

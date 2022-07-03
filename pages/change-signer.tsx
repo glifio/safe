@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import {
+  getQueryParam,
   navigate,
   OneColumnCentered,
   RequireWallet
@@ -12,7 +13,7 @@ import { PAGE } from '../constants'
 
 const ChangeSignerPage = () => {
   const router = useRouter()
-  const address = router.query.address || ''
+  const address = getQueryParam.string(router, 'address')
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
     [router]
@@ -21,7 +22,7 @@ const ChangeSignerPage = () => {
     <SafePageLoggedIn>
       <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
-          <ChangeSigner oldSignerAddress={address as string} />
+          <ChangeSigner oldSignerAddress={address} />
         </RequireWallet>
       </OneColumnCentered>
     </SafePageLoggedIn>

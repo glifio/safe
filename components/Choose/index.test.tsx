@@ -8,7 +8,6 @@ import {
 } from '@testing-library/react'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { flushPromises } from '../../test-utils'
 import { Choose } from '.'
 
 const validSafeID = 'f2yrhsjwuwypy4gsv2lcikphizkusqe2gp3pp4w5q'
@@ -48,10 +47,10 @@ describe('Choose', () => {
 
       // Enter a valid Safe ID
       const safeId = getByRole(result.container, 'textbox')
+      safeId.focus()
       fireEvent.change(safeId, { target: { value: validSafeID } })
       safeId.blur()
-
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check whether the submit button is enabled
@@ -75,10 +74,10 @@ describe('Choose', () => {
 
       // Enter a valid Safe ID
       const safeId = getByRole(result.container, 'textbox')
+      safeId.focus()
       fireEvent.change(safeId, { target: { value: inValidSafeID } })
       safeId.blur()
-
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check whether the safe id input has an error

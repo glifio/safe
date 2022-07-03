@@ -47,7 +47,7 @@ export const AddSigner = ({
       return validateAddressString(signer)
         ? new Message({
             to: Address,
-            from: wallet.address,
+            from: wallet.robust,
             nonce: 0,
             value: 0,
             method: MsigMethod.PROPOSE,
@@ -75,7 +75,7 @@ export const AddSigner = ({
       logger.error(e)
       return null
     }
-  }, [signer, increase, Address, wallet.address, serializeParams])
+  }, [signer, increase, Address, wallet.robust, serializeParams])
 
   return (
     <Transaction.Form
@@ -96,7 +96,7 @@ export const AddSigner = ({
       pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance
-        address={wallet.address}
+        address={wallet.robust}
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />

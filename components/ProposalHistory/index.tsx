@@ -1,5 +1,7 @@
 import {
+  getQueryParam,
   navigate,
+  appendQueryParams,
   ProposalDetail,
   ProposalHistoryTable,
   MsigTransaction,
@@ -23,15 +25,16 @@ const ProposalHistory = () => {
   const { Address } = useMsig()
   const wallet = useWallet()
   const router = useRouter()
-  return router.query.id && router.query.address ? (
+  const id = getQueryParam.number(router, 'id')
+  return !isNaN(id) && id >= 0 ? (
     <ProposalDetail
-      id={Number(router.query.id)}
+      id={id}
       address={Address}
-      walletAddress={wallet.address}
+      walletAddress={wallet}
       accept={(proposal: MsigTransaction, approvalsLeft: number) => {
         navigate(router, {
           pageUrl: PAGE.MSIG_APPROVE,
-          newQueryParams: {
+          params: {
             proposal: getProposalParam(proposal),
             approvalsLeft
           }
@@ -40,7 +43,7 @@ const ProposalHistory = () => {
       cancel={(proposal: MsigTransaction, approvalsLeft: number) => {
         navigate(router, {
           pageUrl: PAGE.MSIG_CANCEL,
-          newQueryParams: {
+          params: {
             proposal: getProposalParam(proposal),
             approvalsLeft
           }
@@ -50,10 +53,8 @@ const ProposalHistory = () => {
   ) : (
     <ProposalHistoryTable
       address={Address}
-      idHref={(id: number) =>
-        `${PAGE.MSIG_PROPOSAL}?id=${id}&address=${Address}`
-      }
-      walletAddr={wallet.address}
+      idHref={(id: number) => appendQueryParams(PAGE.MSIG_PROPOSAL, { id })}
+      walletAddr={wallet}
     />
   )
 }

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import {
+  getQueryParam,
   navigate,
   convertAddrToPrefix,
   decodeActorCID,
@@ -40,8 +41,8 @@ export const ApproveCancel = ({
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
   // Get transaction info from url
-  const proposal = router.query.proposal as string
-  const approvalsLeft = Number(router.query.approvalsLeft)
+  const proposal = getQueryParam.string(router, 'proposal')
+  const approvalsLeft = getQueryParam.number(router, 'approvalsLeft')
   const transaction = useMemo<MsigTransaction | null>(() => {
     try {
       return JSON.parse(decodeURI(proposal))
@@ -70,7 +71,7 @@ export const ApproveCancel = ({
       return transaction
         ? new Message({
             to: Address,
-            from: wallet.address,
+            from: wallet.robust,
             nonce: 0,
             value: 0,
             method,
@@ -90,7 +91,7 @@ export const ApproveCancel = ({
       logger.error(e)
       return null
     }
-  }, [Address, wallet.address, method, transaction, serializeParams])
+  }, [Address, wallet.robust, method, transaction, serializeParams])
 
   // Get actor data from transaction
   const { data: actorData, error: actorError } = useActorQuery({
@@ -144,7 +145,7 @@ export const ApproveCancel = ({
       pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance
-        address={wallet.address}
+        address={wallet.robust}
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />

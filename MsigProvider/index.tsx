@@ -1,15 +1,24 @@
-import { useState, createContext, ReactNode, useContext, Dispatch } from 'react'
+import {
+  useState,
+  useEffect,
+  useContext,
+  createContext,
+  ReactNode,
+  Dispatch
+} from 'react'
+import { useApolloClient } from '@apollo/client'
 import { useWallet } from '@glif/react-components'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import useSWR from 'swr'
 
-import { fetchMsigState } from '../utils/fetchMsigState'
+import { fetchMsigState } from './fetchMsigState'
 import { MsigActorState, emptyMsigState } from './types'
 
 const MsigProviderContext = createContext<
   MsigActorState & {
+    loading: boolean
     setMsigActor: null | Dispatch<string | null>
-  } & { loading: boolean }
+  }
 >({
   ...emptyMsigState,
   loading: true,
@@ -28,11 +37,19 @@ export const MsigProviderWrapper = ({
   test: boolean
 }) => {
   const wallet = useWallet()
+  const [loading, setLoading] = useState<boolean>(false)
   const [msigActor, setMsigActor] = useState(null)
+  const apolloClient = useApolloClient()
   const { data: actor, error: msigActorStateError } = useSWR(
-    msigActor ? [msigActor, wallet.address] : null,
+    msigActor ? [msigActor, wallet.robust, apolloClient] : null,
     fetchMsigState
   )
+
+  // Set loading to true when changing the msigActor
+  useEffect(() => msigActor && setLoading(true), [msigActor])
+
+  // Set loading to false after fetching new data
+  useEffect(() => actor && setLoading(false), [actor])
 
   return (
     <MsigProviderContext.Provider
@@ -42,7 +59,6 @@ export const MsigProviderWrapper = ({
         Balance: actor?.Balance || new FilecoinNumber('0', 'fil'),
         AvailableBalance:
           actor?.AvailableBalance || new FilecoinNumber('0', 'fil'),
-        loading: !actor,
         Signers: actor?.Signers || [],
         NextTxnID: actor?.NextTxnID || 0,
         NumApprovalsThreshold: actor?.NumApprovalsThreshold || 0,
@@ -55,6 +71,7 @@ export const MsigProviderWrapper = ({
           actorNotFound: false,
           unhandledError: msigActorStateError ? msigActorStateError : ''
         },
+        loading,
         setMsigActor
       }}
     >

@@ -1,5 +1,10 @@
+import { truncateAddress } from '@glif/react-components'
 import { render, screen, act, fireEvent } from '@testing-library/react'
-import { MULTISIG_SIGNER_ADDRESS_2 } from '../../test-utils'
+import {
+  MULTISIG_SIGNER_ID_2,
+  WALLET_ADDRESS,
+  WALLET_ID_2
+} from '../../test-utils/constants'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { PAGE } from '../../constants'
 import Admin from '.'
@@ -17,7 +22,6 @@ describe('Admin page', () => {
   test('it renders the required approvals and the signers', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
-    // const container =
     render(
       <Tree>
         <Admin />
@@ -29,8 +33,10 @@ describe('Admin page', () => {
     expect(screen.getByText(/Additional Signers/)).toBeInTheDocument()
     // signers - "t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi" and f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a from msig provider mocks
     // since the self signer is also listed in the top corner, it should appear twice
-    expect(screen.getAllByText(/6wgi/).length === 1).toBeTruthy()
-    expect(screen.getByText(/uo3a/)).toBeInTheDocument()
+    expect(
+      screen.getAllByText(truncateAddress(WALLET_ADDRESS)).length === 1
+    ).toBeTruthy()
+    expect(screen.getByText(WALLET_ID_2)).toBeInTheDocument()
 
     // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved
     // expect(container).toMatchSnapshot()
@@ -81,7 +87,7 @@ describe('Admin page', () => {
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(
-      `${PAGE.MSIG_CHANGE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS_2}`
+      `${PAGE.MSIG_CHANGE_SIGNER}?address=${MULTISIG_SIGNER_ID_2}`
     )
   })
 
@@ -98,7 +104,7 @@ describe('Admin page', () => {
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(
-      `${PAGE.MSIG_REMOVE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS_2}`
+      `${PAGE.MSIG_REMOVE_SIGNER}?address=${MULTISIG_SIGNER_ID_2}`
     )
   })
 })
