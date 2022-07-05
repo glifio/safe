@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
   getQueryParam,
@@ -29,29 +29,19 @@ export const CreateConfirm = () => {
 
   // Get environment variables
   const { NEXT_PUBLIC_EXPLORER_URL: explorerUrl } = process.env
-  const { NEXT_PUBLIC_LOTUS_NODE_JSONRPC: apiAddress } = process.env
 
   // Get the message by cid
-  const {
-    data: messageData,
-    error: messageError,
-    loading: messageLoading
-  } = useMessageQuery({
+  const { data: messageData, error: messageError } = useMessageQuery({
     variables: { cid },
     pollInterval: 5000,
     // stop polling if we have a safe address
     skip: !!Address
   })
 
-  const error = useMemo(() => {
-    if (!!messageError && messageError.message.includes('key not  found'))
-      return messageError
-  }, [messageError])
-
   // Decode the receipt after receiving the message
   useEffect(() => {
     const receipt = messageData?.message?.receipt
-    if (!error && !!receipt?.return) {
+    if (!!receipt?.return) {
       try {
         // Verify the exit code
         if (receipt.exitCode !== 0) throw new Error('Safe creation failed')
@@ -66,15 +56,7 @@ export const CreateConfirm = () => {
         setCreationError(true)
       }
     }
-  }, [
-    messageData?.message,
-    apiAddress,
-    cid,
-    setMsigActor,
-    messageData,
-    messageLoading,
-    error
-  ])
+  }, [messageData?.message?.receipt, setMsigActor])
 
   // CID was not provided in query parameters
   if (!cid) {
@@ -89,8 +71,8 @@ export const CreateConfirm = () => {
     )
   }
 
-  // Something went wrong while retrieving the message or receipt
-  if (error) {
+  // Something went wrong while retrieving the message
+  if (messageError) {
     return (
       <Dialog>
         <ShadowBox>
