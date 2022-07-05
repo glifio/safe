@@ -79,11 +79,7 @@ describe('confirmation of newly created multisig', () => {
               },
               result: {
                 data: {
-                  receipt: {
-                    exitCode: 0,
-                    return: '',
-                    gasUsed: 100
-                  }
+                  receipt: mockReceipt
                 }
               }
             }
