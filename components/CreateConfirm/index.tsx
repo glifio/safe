@@ -11,8 +11,8 @@ import {
   ErrorBox,
   WarningBox,
   useWallet,
-  useMessageQuery,
-  getAddrFromReceipt
+  getAddrFromReceipt,
+  useMessageReceiptQuery
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
@@ -30,17 +30,15 @@ export const CreateConfirm = () => {
   // Get environment variables
   const { NEXT_PUBLIC_EXPLORER_URL: explorerUrl } = process.env
 
-  // Get the message by cid
-  const { data: messageData, error: messageError } = useMessageQuery({
-    variables: { cid },
-    pollInterval: 5000,
-    // stop polling if we have a safe address
-    skip: !!Address
-  })
+  // Get the message receipt
+  const { data: messageReceiptQuery, error: messageReceiptError } =
+    useMessageReceiptQuery({
+      variables: { cid }
+    })
 
   // Decode the receipt after receiving the message
   useEffect(() => {
-    const receipt = messageData?.message?.receipt
+    const receipt = messageReceiptQuery?.receipt
     if (!!receipt?.return) {
       try {
         // Verify the exit code
@@ -56,7 +54,7 @@ export const CreateConfirm = () => {
         setCreationError(true)
       }
     }
-  }, [messageData?.message?.receipt, setMsigActor])
+  }, [messageReceiptQuery?.receipt, setMsigActor])
 
   // CID was not provided in query parameters
   if (!cid) {
@@ -72,7 +70,7 @@ export const CreateConfirm = () => {
   }
 
   // Something went wrong while retrieving the message
-  if (messageError) {
+  if (messageReceiptError) {
     return (
       <Dialog>
         <ShadowBox>

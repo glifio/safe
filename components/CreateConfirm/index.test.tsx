@@ -9,8 +9,10 @@ import {
 import {
   useMessageQuery,
   MessageReceipt,
-  getAddrFromReceipt
+  getAddrFromReceipt,
+  MessageReceiptDocument
 } from '@glif/react-components'
+import { MockedProvider } from '@apollo/client/testing'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { CreateConfirm } from '.'
@@ -22,25 +24,12 @@ const mockReceipt = {
   gasUsed: 8555837
 } as MessageReceipt
 
-jest.mock('../../MsigProvider')
-jest.mock('@glif/react-components', () => {
-  const original = jest.requireActual('@glif/react-components')
-  return {
-    ...original,
-    useMessageQuery: jest.fn(({ variables }) => ({
-      data: {
-        message: {
-          cid: variables.cid,
-          receipt: mockReceipt
-        }
-      }
-    }))
-  }
-})
+const cid = 'bafy2bzaced3ub5g4v35tj7n74zsog3dmcum4tk4qmchbhjx7q747jghal3l4g'
 
+jest.mock('../../MsigProvider')
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
   return {
-    query: { cid: 'QmZ' },
+    query: { cid },
     pathname: PAGE.MSIG_CREATE_CONFIRM,
     push: jest.fn()
   }
@@ -53,9 +42,11 @@ describe('confirmation of newly created multisig', () => {
 
     await act(async () => {
       result = render(
-        <Tree>
-          <CreateConfirm />
-        </Tree>
+        <MockedProvider>
+          <Tree>
+            <CreateConfirm />
+          </Tree>
+        </MockedProvider>
       )
 
       // we perform these tests inside act(), so we don't test things after they update
@@ -71,29 +62,37 @@ describe('confirmation of newly created multisig', () => {
     })
   })
 
-  test('it attempts to confirm the pending msig create message', async () => {
-    const { Tree } = composeMockAppTree('pendingMsigCreate')
-
-    await act(async () => {
-      render(
-        <Tree>
-          <CreateConfirm />
-        </Tree>
-      )
-    })
-
-    expect(useMessageQuery).toHaveBeenCalled()
-  })
-
   test('it displays the multisig address after the message is confirmed', async () => {
     const { Tree } = composeMockAppTree('pendingMsigCreate')
     let result: RenderResult | null = null
 
     await act(async () => {
       result = render(
-        <Tree>
-          <CreateConfirm />
-        </Tree>
+        <MockedProvider
+          mocks={[
+            {
+              request: {
+                query: MessageReceiptDocument,
+                variables: {
+                  cid
+                }
+              },
+              result: {
+                data: {
+                  receipt: {
+                    exitCode: 0,
+                    return: '',
+                    gasUsed: 100
+                  }
+                }
+              }
+            }
+          ]}
+        >
+          <Tree>
+            <CreateConfirm />
+          </Tree>
+        </MockedProvider>
       )
       jest.runOnlyPendingTimers()
     })
