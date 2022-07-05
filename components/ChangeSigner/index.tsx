@@ -43,11 +43,10 @@ export const ChangeSigner = ({
   // Get signer addresses without current wallet owner
   const signers = useMemo(
     () =>
-      Signers.filter(
-        (signer) =>
-          !isAddrEqual({ id: wallet.id, robust: wallet.robust }, signer)
-      ).map((signer) => signer.robust || signer.id),
-    [Signers, wallet.id, wallet.robust]
+      Signers.filter((signer) => !isAddrEqual(wallet, signer)).map(
+        (signer) => signer.robust || signer.id
+      ),
+    [Signers, wallet]
   )
 
   // Create message from input

@@ -58,12 +58,8 @@ export default function Owners() {
   })
 
   const additionalSigners = useMemo(
-    () =>
-      signers.filter(
-        (signer) =>
-          !isAddrEqual(signer, { id: wallet.id, robust: wallet.robust })
-      ),
-    [signers, wallet.id, wallet.robust]
+    () => signers.filter((signer) => !isAddrEqual(wallet, signer)),
+    [signers, wallet]
   )
 
   return (
