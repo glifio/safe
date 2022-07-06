@@ -9,8 +9,9 @@ import {
   Dialog,
   ErrorBox,
   ShadowBox,
-  SmartLink,
-  LoadingScreen
+  // SmartLink,
+  LoadingScreen,
+  WarningBox
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
@@ -80,49 +81,58 @@ export const Choose = () => {
   return msigAddressParam ? (
     <LoadingScreen />
   ) : (
-    <Dialog>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          submitForm()
-        }}
-      >
-        {submittedForm && errorMessage && <ErrorBox>{errorMessage}</ErrorBox>}
-        <ShadowBox>
-          <h2>Safe ID</h2>
-          <hr />
-          <InputV2.Address
-            name='safe-id'
-            label='Please enter your Safe ID below to continue'
-            vertical
-            centered
-            autoFocus
-            truncate={false}
-            actor
-            value={safeID}
-            onChange={setSafeID}
-            setIsValid={setIsSafeIDValid}
-            disabled={loading}
-          />
-          <p>
+    <>
+      <WarningBox>
+        <p>
+          Safe creation is temporarily disabled while the Filecoin network is
+          upgrading.
+        </p>
+      </WarningBox>
+      <br />
+      <Dialog>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            submitForm()
+          }}
+        >
+          {submittedForm && errorMessage && <ErrorBox>{errorMessage}</ErrorBox>}
+          <ShadowBox>
+            <h2>Safe ID</h2>
+            <hr />
+            <InputV2.Address
+              name='safe-id'
+              label='Please enter your Safe ID below to continue'
+              vertical
+              centered
+              autoFocus
+              truncate={false}
+              actor
+              value={safeID}
+              onChange={setSafeID}
+              setIsValid={setIsSafeIDValid}
+              disabled={loading}
+            />
+            {/* <p>
             Don&apos;t have a Safe ID?{' '}
             <SmartLink href={PAGE.MSIG_CREATE}>Create one</SmartLink>
-          </p>
-        </ShadowBox>
-        <ButtonRowSpaced>
-          <ButtonV2 large type='button' onClick={() => router.back()}>
-            Back
-          </ButtonV2>
-          <ButtonV2
-            large
-            green
-            type='submit'
-            disabled={!isSafeIDValid || loading}
-          >
-            Submit
-          </ButtonV2>
-        </ButtonRowSpaced>
-      </form>
-    </Dialog>
+          </p> */}
+          </ShadowBox>
+          <ButtonRowSpaced>
+            <ButtonV2 large type='button' onClick={() => router.back()}>
+              Back
+            </ButtonV2>
+            <ButtonV2
+              large
+              green
+              type='submit'
+              disabled={!isSafeIDValid || loading}
+            >
+              Submit
+            </ButtonV2>
+          </ButtonRowSpaced>
+        </form>
+      </Dialog>
+    </>
   )
 }
