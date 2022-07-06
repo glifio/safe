@@ -13,7 +13,7 @@ import { Choose } from '.'
 const validSafeID = 'f2yrhsjwuwypy4gsv2lcikphizkusqe2gp3pp4w5q'
 const inValidSafeID = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
 
-describe.skip('Choose', () => {
+describe('Choose', () => {
   test('it renders the initial state correctly', async () => {
     const { Tree } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
