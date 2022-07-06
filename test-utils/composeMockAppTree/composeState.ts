@@ -26,6 +26,7 @@ export const composeWalletProviderState = (
   preset: Preset
 ) => {
   switch (preset) {
+    case 'pendingMsigCreate':
     case 'postOnboard': {
       return Object.freeze({
         ...initialWalletProviderState,

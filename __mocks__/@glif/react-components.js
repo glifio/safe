@@ -2,7 +2,8 @@ import { useContext, createContext, useReducer } from 'react'
 import {
   walletProviderReducer,
   initialState as walletProviderInitialState,
-  actorCodesToNames
+  actorCodesToNames,
+  noWallet
 } from '@glif/react-components'
 import createMockWalletProviderContextFuncs from '../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
 import { Network } from '@glif/filecoin-address'
