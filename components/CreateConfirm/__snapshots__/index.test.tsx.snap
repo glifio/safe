@@ -204,9 +204,9 @@ exports[`confirmation of newly created multisig it displays the multisig address
   >
     <a
       class="c6"
-      href="/?safe-id=t26kvyvsi5uyf2hykt4l5aigxwcmwgfsr47zul2ri"
+      href="/home"
     >
-      Connect your wallet to open the Safe
+      Go to the Safe dashboard
     </a>
   </div>
 </div>
@@ -338,11 +338,11 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
     </p>
     <p>
       <a
-        href="https://explorer-calibration.glif.link/message?cid=QmZ"
+        href="https://explorer-calibration.glif.link/message?cid=bafy2bzaced3ub5g4v35tj7n74zsog3dmcum4tk4qmchbhjx7q747jghal3l4g"
         rel="noreferrer noopener"
         target="_blank"
       >
-        QmZ
+        bafy2bzaced3ub5g4v35tj7n74zsog3dmcum4tk4qmchbhjx7q747jghal3l4g
       </a>
     </p>
     <p>

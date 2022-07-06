@@ -399,6 +399,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
+  text-transform: capitalize;
 }
 
 .c8 > div:last-child {
@@ -438,6 +439,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
+  text-transform: capitalize;
 }
 
 .c18 > div:last-child {
@@ -673,7 +675,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
           class="c8"
         >
           <div>
-            Proposal id
+            Proposal ID
           </div>
           <div>
             2
@@ -772,7 +774,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
             class="c18"
           >
             <div>
-              To
+              to
             </div>
             <div>
               <div
@@ -839,7 +841,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
             class="c18"
           >
             <div>
-              Value
+              value
             </div>
             <div>
               0.4
@@ -850,7 +852,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
             class="c18"
           >
             <div>
-              Method
+              method
             </div>
             <div>
               <div
@@ -870,10 +872,10 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
             class="c18"
           >
             <div>
-              Params
+              Parameters
             </div>
             <div>
-              false
+              —
             </div>
           </div>
         </div>
@@ -1348,6 +1350,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
+  text-transform: capitalize;
 }
 
 .c8 > div:last-child {
@@ -1387,6 +1390,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
+  text-transform: capitalize;
 }
 
 .c18 > div:last-child {
@@ -1622,7 +1626,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
           class="c8"
         >
           <div>
-            Proposal id
+            Proposal ID
           </div>
           <div>
             2
@@ -1721,7 +1725,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
             class="c18"
           >
             <div>
-              To
+              to
             </div>
             <div>
               <div
@@ -1788,7 +1792,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
             class="c18"
           >
             <div>
-              Value
+              value
             </div>
             <div>
               0.4
@@ -1799,7 +1803,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
             class="c18"
           >
             <div>
-              Method
+              method
             </div>
             <div>
               <div
@@ -1819,10 +1823,10 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
             class="c18"
           >
             <div>
-              Params
+              Parameters
             </div>
             <div>
-              false
+              —
             </div>
           </div>
         </div>
@@ -2260,6 +2264,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
+  text-transform: capitalize;
 }
 
 .c6 > div:last-child {
@@ -2299,6 +2304,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
+  text-transform: capitalize;
 }
 
 .c16 > div:last-child {
@@ -2418,7 +2424,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
           class="c6"
         >
           <div>
-            Proposal id
+            Proposal ID
           </div>
           <div>
             2
@@ -2517,7 +2523,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
             class="c16"
           >
             <div>
-              To
+              to
             </div>
             <div>
               <div
@@ -2584,7 +2590,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
             class="c16"
           >
             <div>
-              Value
+              value
             </div>
             <div>
               0.4
@@ -2595,7 +2601,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
             class="c16"
           >
             <div>
-              Method
+              method
             </div>
             <div>
               <div
@@ -2615,10 +2621,10 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
             class="c16"
           >
             <div>
-              Params
+              Parameters
             </div>
             <div>
-              false
+              —
             </div>
           </div>
         </div>
@@ -3006,6 +3012,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
+  text-transform: capitalize;
 }
 
 .c6 > div:last-child {
@@ -3045,6 +3052,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
   min-width: 200px;
+  text-transform: capitalize;
 }
 
 .c16 > div:last-child {
@@ -3164,7 +3172,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
           class="c6"
         >
           <div>
-            Proposal id
+            Proposal ID
           </div>
           <div>
             2
@@ -3263,7 +3271,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
             class="c16"
           >
             <div>
-              To
+              to
             </div>
             <div>
               <div
@@ -3330,7 +3338,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
             class="c16"
           >
             <div>
-              Value
+              value
             </div>
             <div>
               0.4
@@ -3341,7 +3349,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
             class="c16"
           >
             <div>
-              Method
+              method
             </div>
             <div>
               <div
@@ -3361,10 +3369,10 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
             class="c16"
           >
             <div>
-              Params
+              Parameters
             </div>
             <div>
-              false
+              —
             </div>
           </div>
         </div>

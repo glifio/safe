@@ -33,7 +33,8 @@ export const CreateConfirm = () => {
   // Get the message receipt
   const { data: messageReceiptQuery, error: messageReceiptError } =
     useMessageReceiptQuery({
-      variables: { cid }
+      variables: { cid },
+      pollInterval: 5000
     })
 
   // Decode the receipt after receiving the message
