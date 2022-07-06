@@ -19,6 +19,7 @@ const MessageHistory = () => {
     <MessageHistoryTable
       address={Address}
       cidHref={(cid: string) => appendQueryParams(PAGE.MSIG_HISTORY, { cid })}
+      warnMissingData
     />
   )
 }
