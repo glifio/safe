@@ -124,16 +124,22 @@ export const RemoveSigner = ({
           value={decrease ? NumApprovalsThreshold - 1 : NumApprovalsThreshold}
         />
       ) : (
-        <InputV2.Toggle
-          label='Decrease required approvals'
-          info={`From ${NumApprovalsThreshold} to ${NumApprovalsThreshold - 1}`}
-          checked={decrease}
-          onChange={setDecrease}
-          disabled={
-            txState !== TxState.FillingForm ||
-            Signers.length === NumApprovalsThreshold
-          }
-        />
+        <>
+          {NumApprovalsThreshold > 1 && (
+            <InputV2.Toggle
+              label='Decrease required approvals'
+              info={`From ${NumApprovalsThreshold} to ${
+                NumApprovalsThreshold - 1
+              }`}
+              checked={decrease}
+              onChange={setDecrease}
+              disabled={
+                txState !== TxState.FillingForm ||
+                Signers.length === NumApprovalsThreshold
+              }
+            />
+          )}
+        </>
       )}
     </Transaction.Form>
   )
