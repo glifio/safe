@@ -665,7 +665,7 @@ exports[`RemoveSigner it allows a user to remove a signer address 1`] = `
 `;
 
 exports[`RemoveSigner it renders the initial state correctly 1`] = `
-.c11 {
+.c12 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -692,30 +692,30 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   font-size: 1.25em;
 }
 
-.c11 svg path {
+.c12 svg path {
   stroke: var(--black);
 }
 
-.c11:hover {
+.c12:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c11:hover svg path {
+.c12:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c11:active {
+.c12:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c11:active svg path {
+.c12:active svg path {
   stroke: var(--white) !important;
 }
 
-.c12 {
+.c13 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -745,40 +745,40 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   background: var(--green-medium);
 }
 
-.c12 svg path {
+.c13 svg path {
   stroke: var(--black);
 }
 
-.c12:hover {
+.c13:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c12:hover svg path {
+.c13:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c12:active {
+.c13:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c12:active svg path {
+.c13:active svg path {
   stroke: var(--white) !important;
 }
 
-.c12 svg path {
+.c13 svg path {
   stroke: var(--white);
 }
 
-.c12:hover {
+.c13:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c12:hover svg path {
+.c13:hover svg path {
   stroke: var(--green-medium);
 }
 
@@ -827,7 +827,7 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -836,7 +836,7 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   margin: 1.5em 0;
 }
 
-.c10 {
+.c11 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -929,6 +929,49 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   color: var(--red-medium);
 }
 
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  text-align: left;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+
+.c8 span.info,
+.c8 span.error {
+  font-size: 0.875rem;
+}
+
+.c8 span.error {
+  color: var(--red-medium);
+}
+
 .c7 .select-wrapper {
   position: relative;
 }
@@ -954,11 +997,11 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   transform: translateY(-0.35em) rotate(45deg);
 }
 
-.c8 .toggle-wrapper {
+.c9 .toggle-wrapper {
   position: relative;
 }
 
-.c8 input {
+.c9 input {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -967,7 +1010,7 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   opacity: 0;
 }
 
-.c8 .toggle {
+.c9 .toggle {
   display: inline-block;
   position: relative;
   width: 2.25em;
@@ -975,9 +1018,11 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   border-radius: 0.75em;
   border: 2px solid var(--blue-medium);
   background-color: var(--blue-medium);
+  border-color: var(--gray-light) !important;
+  background-color: var(--gray-light) !important;
 }
 
-.c8 .toggle::after {
+.c9 .toggle::after {
   content: '';
   position: absolute;
   top: 0;
@@ -988,12 +1033,12 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   background-color: var(--white);
 }
 
-.c8 input:checked ~ .toggle {
+.c9 input:checked ~ .toggle {
   border-color: var(--blue-dark);
   background-color: var(--blue-dark);
 }
 
-.c8 input:checked ~ .toggle::after {
+.c9 input:checked ~ .toggle::after {
   left: auto;
   right: 0;
 }
@@ -1120,7 +1165,8 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
           </div>
         </label>
         <label
-          class="c6 c8"
+          class="c8 c9"
+          disabled=""
         >
           <div>
             <span>
@@ -1129,13 +1175,15 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
             <span
               class="info"
             >
-              From 1 to 0
+              From 2 to 1
             </span>
           </div>
           <div
             class="toggle-wrapper"
           >
             <input
+              checked=""
+              disabled=""
               type="checkbox"
             />
             <span
@@ -1146,16 +1194,16 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c9 c10"
+      class="c10 c11"
     >
       <button
-        class="c11"
+        class="c12"
         type="button"
       >
         Cancel
       </button>
       <button
-        class="c12"
+        class="c13"
         type="submit"
       >
         Review

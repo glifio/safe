@@ -626,7 +626,7 @@ exports[`AddSigner it allows a user to add a signer address 1`] = `
           <div
             class="info-wrapper"
           >
-            1
+            2
           </div>
         </label>
         <hr />
@@ -1212,7 +1212,7 @@ exports[`AddSigner it renders the initial state correctly 1`] = `
             <span
               class="info"
             >
-              From 1 to 2
+              From 2 to 3
             </span>
           </div>
           <div

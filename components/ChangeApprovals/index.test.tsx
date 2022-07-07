@@ -27,7 +27,7 @@ import { ChangeApprovals } from '.'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('ChangeApprovals', () => {
-  test('it allows a user to change the approvals threshold', async () => {
+  test.only('it allows a user to change the approvals threshold', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
 
@@ -53,13 +53,13 @@ describe('ChangeApprovals', () => {
       // Check initial state
       expect(header).toHaveTextContent('Change required approvals')
       expect(approvals).toHaveFocus()
-      expect(approvals).toHaveDisplayValue('1')
+      expect(approvals).toHaveDisplayValue(['2'])
       expect(cancel).toBeEnabled()
       expect(review).toBeDisabled()
 
       // Enter a new threshold
       approvals.focus()
-      fireEvent.change(approvals, { target: { value: '2' } })
+      fireEvent.change(approvals, { target: { value: '1' } })
       approvals.blur()
       jest.runAllTimers()
 
