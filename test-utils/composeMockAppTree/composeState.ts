@@ -112,7 +112,7 @@ export const mockMsigProviderContext = {
   Signers: signers,
   InitialBalance: new FilecoinNumber('1', 'fil'),
   NextTxnID: 0,
-  NumApprovalsThreshold: 1,
+  NumApprovalsThreshold: 2,
   StartEpoch: 0,
   UnlockDuration: 0,
   errors: {
