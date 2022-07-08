@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState, useMemo, Context } from 'react'
+import { useState, useMemo, Context, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
@@ -34,9 +34,18 @@ export const RemoveSigner = ({
 
   // Input states
   const [signer, setSigner] = useState<string>(signerAddress)
-  const [decrease, setDecrease] = useState<boolean>(
-    Signers.length === NumApprovalsThreshold
-  )
+  const [decrease, setDecrease] = useState<boolean>(false)
+
+  // force a decrease if necessary
+  useEffect(() => {
+    if (
+      Signers.length > 1 &&
+      Signers.length === NumApprovalsThreshold &&
+      !decrease
+    ) {
+      setDecrease(true)
+    }
+  }, [Signers.length, NumApprovalsThreshold, decrease])
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)

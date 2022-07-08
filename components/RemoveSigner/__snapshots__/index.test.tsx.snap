@@ -1182,7 +1182,6 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
             class="toggle-wrapper"
           >
             <input
-              checked=""
               disabled=""
               type="checkbox"
             />
