@@ -3,6 +3,7 @@ import { useState, useMemo, Context, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { validateAddressString } from '@glif/filecoin-address'
 import {
   navigate,
   useWallet,
@@ -63,31 +64,35 @@ export const RemoveSigner = ({
   // Create message from input
   const message = useMemo<Message | null>(() => {
     try {
-      return new Message({
-        to: Address,
-        from: wallet.robust,
-        nonce: 0,
-        value: 0,
-        method: MsigMethod.PROPOSE,
-        params: Buffer.from(
-          serializeParams({
-            To: Address,
-            Value: '0',
-            Method: MsigMethod.REMOVE_SIGNER,
-            Params: Buffer.from(
+      // Manually check signer validity to prevent passing invalid addresses to serializeParams.
+      // This can happen due to InputV2.Select resetting the value when it's not in the options.
+      return validateAddressString(signer)
+        ? new Message({
+            to: Address,
+            from: wallet.robust,
+            nonce: 0,
+            value: 0,
+            method: MsigMethod.PROPOSE,
+            params: Buffer.from(
               serializeParams({
-                Signer: signer,
-                Decrease: decrease
+                To: Address,
+                Value: '0',
+                Method: MsigMethod.REMOVE_SIGNER,
+                Params: Buffer.from(
+                  serializeParams({
+                    Signer: signer,
+                    Decrease: decrease
+                  }),
+                  'hex'
+                ).toString('base64')
               }),
               'hex'
-            ).toString('base64')
-          }),
-          'hex'
-        ).toString('base64'),
-        gasPremium: 0,
-        gasFeeCap: 0,
-        gasLimit: 0
-      })
+            ).toString('base64'),
+            gasPremium: 0,
+            gasFeeCap: 0,
+            gasLimit: 0
+          })
+        : null
     } catch (e) {
       logger.error(e)
       return null
