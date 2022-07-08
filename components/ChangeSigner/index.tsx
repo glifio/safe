@@ -54,8 +54,7 @@ export const ChangeSigner = ({
     try {
       // Manually check signer validity to prevent passing invalid addresses to serializeParams.
       // This can happen due to multiple rerenders when using setIsValid from InputV2.Address or InputV2.Select.
-      return validateAddressString(oldSigner) &&
-        validateAddressString(newSigner)
+      return signers.includes(oldSigner) && validateAddressString(newSigner)
         ? new Message({
             to: Address,
             from: wallet.robust,
@@ -86,7 +85,7 @@ export const ChangeSigner = ({
       logger.error(e)
       return null
     }
-  }, [oldSigner, newSigner, Address, wallet.robust, serializeParams])
+  }, [signers, oldSigner, newSigner, Address, wallet.robust, serializeParams])
 
   return (
     <Transaction.Form

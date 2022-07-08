@@ -3,7 +3,6 @@ import { useState, useMemo, Context, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { validateAddressString } from '@glif/filecoin-address'
 import {
   navigate,
   useWallet,
@@ -66,7 +65,7 @@ export const RemoveSigner = ({
     try {
       // Manually check signer validity to prevent passing invalid addresses to serializeParams.
       // This can happen due to multiple rerenders when using setIsValid from InputV2.Select.
-      return validateAddressString(signer)
+      return signers.includes(signer)
         ? new Message({
             to: Address,
             from: wallet.robust,
@@ -97,7 +96,7 @@ export const RemoveSigner = ({
       logger.error(e)
       return null
     }
-  }, [signer, decrease, Address, wallet.robust, serializeParams])
+  }, [signers, signer, decrease, Address, wallet.robust, serializeParams])
 
   return (
     <Transaction.Form
