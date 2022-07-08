@@ -50,7 +50,7 @@ describe('RemoveSigner', () => {
           />
         </Tree>
       )
-      
+
       jest.runAllTimers()
 
       // Get HTML elements
