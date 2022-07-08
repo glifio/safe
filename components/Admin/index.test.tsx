@@ -1,9 +1,9 @@
 import { truncateAddress } from '@glif/react-components'
 import { render, screen, act, fireEvent } from '@testing-library/react'
 import {
-  MULTISIG_SIGNER_ID_2,
+  MULTISIG_SIGNER_ADDRESS_2,
   WALLET_ADDRESS,
-  WALLET_ID_2
+  WALLET_ADDRESS_2
 } from '../../test-utils/constants'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { PAGE } from '../../constants'
@@ -36,7 +36,9 @@ describe('Admin page', () => {
     expect(
       screen.getAllByText(truncateAddress(WALLET_ADDRESS)).length === 1
     ).toBeTruthy()
-    expect(screen.getByText(WALLET_ID_2)).toBeInTheDocument()
+    expect(
+      screen.getByText(truncateAddress(WALLET_ADDRESS_2))
+    ).toBeInTheDocument()
 
     // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved
     // expect(container).toMatchSnapshot()
@@ -87,7 +89,7 @@ describe('Admin page', () => {
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(
-      `${PAGE.MSIG_CHANGE_SIGNER}?address=${MULTISIG_SIGNER_ID_2}`
+      `${PAGE.MSIG_CHANGE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS_2}`
     )
   })
 
@@ -104,7 +106,7 @@ describe('Admin page', () => {
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(
-      `${PAGE.MSIG_REMOVE_SIGNER}?address=${MULTISIG_SIGNER_ID_2}`
+      `${PAGE.MSIG_REMOVE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS_2}`
     )
   })
 })

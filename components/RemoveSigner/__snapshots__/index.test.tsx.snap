@@ -1,6 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RemoveSigner it allows a user to remove a signer address 1`] = `
+.c16 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c16 svg path {
+  stroke: var(--black);
+}
+
+.c16:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c16:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c16:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c16:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c16 svg path {
+  stroke: var(--gray-medium);
+}
+
 .c17 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -73,64 +131,6 @@ exports[`RemoveSigner it allows a user to remove a signer address 1`] = `
 }
 
 .c17 svg path {
-  stroke: var(--gray-medium);
-}
-
-.c16 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
-}
-
-.c16 svg path {
-  stroke: var(--black);
-}
-
-.c16:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c16:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c16:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c16:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c16 svg path {
   stroke: var(--gray-medium);
 }
 
@@ -563,9 +563,9 @@ exports[`RemoveSigner it allows a user to remove a signer address 1`] = `
             >
               
               <option
-                value="t0102"
+                value="t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
               >
-                t0102
+                t1mbk7 ... icb2uq
               </option>
             </select>
             <div
@@ -1154,9 +1154,9 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
             <select>
               
               <option
-                value="t0102"
+                value="t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
               >
-                t0102
+                t1mbk7 ... icb2uq
               </option>
             </select>
             <div

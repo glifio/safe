@@ -25,8 +25,7 @@ import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import {
   WALLET_ADDRESS,
   MULTISIG_ACTOR_ADDRESS,
-  MULTISIG_SIGNER_ADDRESS_2,
-  MULTISIG_SIGNER_ID_2
+  MULTISIG_SIGNER_ADDRESS_2
 } from '../../test-utils/constants'
 import { RemoveSigner } from '.'
 
@@ -62,7 +61,7 @@ describe('RemoveSigner', () => {
       // Check initial state
       expect(header).toHaveTextContent('Remove a signer')
       expect(oldSigner).toHaveDisplayValue(
-        truncateAddress(MULTISIG_SIGNER_ID_2)
+        truncateAddress(MULTISIG_SIGNER_ADDRESS_2)
       )
       expect(cancel).toBeEnabled()
       expect(review).toBeEnabled()
