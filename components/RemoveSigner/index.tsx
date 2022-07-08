@@ -65,7 +65,7 @@ export const RemoveSigner = ({
   const message = useMemo<Message | null>(() => {
     try {
       // Manually check signer validity to prevent passing invalid addresses to serializeParams.
-      // This can happen due to InputV2.Select resetting the value when it's not in the options.
+      // This can happen due to multiple rerenders when using setIsValid from InputV2.Select.
       return validateAddressString(signer)
         ? new Message({
             to: Address,
