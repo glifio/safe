@@ -50,6 +50,8 @@ describe('RemoveSigner', () => {
           />
         </Tree>
       )
+      
+      jest.runAllTimers()
 
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
