@@ -36,16 +36,14 @@ export const RemoveSigner = ({
   const [signer, setSigner] = useState<string>(signerAddress)
   const [decrease, setDecrease] = useState<boolean>(false)
 
-  // force a decrease if necessary
-  useEffect(() => {
-    if (
+  // Force a decrease if necessary
+  useEffect(
+    () =>
       Signers.length > 1 &&
       Signers.length === NumApprovalsThreshold &&
-      !decrease
-    ) {
-      setDecrease(true)
-    }
-  }, [Signers.length, NumApprovalsThreshold, decrease])
+      setDecrease(true),
+    [Signers.length, NumApprovalsThreshold]
+  )
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
@@ -63,36 +61,40 @@ export const RemoveSigner = ({
   // Create message from input
   const message = useMemo<Message | null>(() => {
     try {
-      return new Message({
-        to: Address,
-        from: wallet.robust,
-        nonce: 0,
-        value: 0,
-        method: MsigMethod.PROPOSE,
-        params: Buffer.from(
-          serializeParams({
-            To: Address,
-            Value: '0',
-            Method: MsigMethod.REMOVE_SIGNER,
-            Params: Buffer.from(
+      // Manually check signer validity to prevent passing invalid addresses to serializeParams.
+      // This can happen due to multiple rerenders when using setIsValid from InputV2.Select.
+      return signers.includes(signer)
+        ? new Message({
+            to: Address,
+            from: wallet.robust,
+            nonce: 0,
+            value: 0,
+            method: MsigMethod.PROPOSE,
+            params: Buffer.from(
               serializeParams({
-                Signer: signer,
-                Decrease: decrease
+                To: Address,
+                Value: '0',
+                Method: MsigMethod.REMOVE_SIGNER,
+                Params: Buffer.from(
+                  serializeParams({
+                    Signer: signer,
+                    Decrease: decrease
+                  }),
+                  'hex'
+                ).toString('base64')
               }),
               'hex'
-            ).toString('base64')
-          }),
-          'hex'
-        ).toString('base64'),
-        gasPremium: 0,
-        gasFeeCap: 0,
-        gasLimit: 0
-      })
+            ).toString('base64'),
+            gasPremium: 0,
+            gasFeeCap: 0,
+            gasLimit: 0
+          })
+        : null
     } catch (e) {
       logger.error(e)
       return null
     }
-  }, [signer, decrease, Address, wallet.robust, serializeParams])
+  }, [signers, signer, decrease, Address, wallet.robust, serializeParams])
 
   return (
     <Transaction.Form

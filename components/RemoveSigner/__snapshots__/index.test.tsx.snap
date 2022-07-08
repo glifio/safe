@@ -563,9 +563,9 @@ exports[`RemoveSigner it allows a user to remove a signer address 1`] = `
             >
               
               <option
-                value="t0102"
+                value="t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
               >
-                t0102
+                t1mbk7 ... icb2uq
               </option>
             </select>
             <div
@@ -1154,9 +1154,9 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
             <select>
               
               <option
-                value="t0102"
+                value="t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
               >
-                t0102
+                t1mbk7 ... icb2uq
               </option>
             </select>
             <div

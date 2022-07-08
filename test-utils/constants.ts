@@ -21,12 +21,11 @@ export const MULTISIG_SIGNER_ID_2 = WALLET_ID_2
 
 export const signers = [
   {
-    // the current state of signers w backend is no robust
-    robust: '',
+    robust: MULTISIG_SIGNER_ADDRESS,
     id: MULTISIG_SIGNER_ID
   },
   {
-    robust: '',
+    robust: MULTISIG_SIGNER_ADDRESS_2,
     id: MULTISIG_SIGNER_ID_2
   }
 ]
