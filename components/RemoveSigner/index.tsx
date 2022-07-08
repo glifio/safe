@@ -36,16 +36,14 @@ export const RemoveSigner = ({
   const [signer, setSigner] = useState<string>(signerAddress)
   const [decrease, setDecrease] = useState<boolean>(false)
 
-  // force a decrease if necessary
-  useEffect(() => {
-    if (
+  // Force a decrease if necessary
+  useEffect(
+    () =>
       Signers.length > 1 &&
       Signers.length === NumApprovalsThreshold &&
-      !decrease
-    ) {
-      setDecrease(true)
-    }
-  }, [Signers.length, NumApprovalsThreshold, decrease])
+      setDecrease(true),
+    [Signers.length, NumApprovalsThreshold]
+  )
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
