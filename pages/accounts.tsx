@@ -33,12 +33,10 @@ const Accounts = () => {
         <RequireWallet gatekeep={gatekeep}>
           <AccountSelector
             title='Select Account'
-            helperText={`Your connected wallet creates hundreds of individual accounts. We're showing you the first ${nWalletsToShow}.`}
+            helperText='Your connected wallet creates hundreds of individual accounts. Each account can be used to send and receive $FIL.'
             onSelectAccount={onSelectAccount}
-            nWalletsToLoad={nWalletsToShow}
             coinType={COIN_TYPE}
             showSelectedAccount
-            isProd={!!IS_PROD}
           />
         </RequireWallet>
       </OneColumn>
