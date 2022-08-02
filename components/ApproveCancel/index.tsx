@@ -50,8 +50,10 @@ export const ApproveCancel = ({
       return null
     }
   }, [proposalString])
-  const approvalsLeft =
-    NumApprovalsThreshold - (proposal?.approved?.length ?? 0)
+  const approvalsLeft = useMemo<number | null>(() => {
+    if (!NumApprovalsThreshold || !proposal?.approved) return null
+    return NumApprovalsThreshold - proposal.approved.length
+  }, [NumApprovalsThreshold, proposal?.approved])
 
   // Get parameters object to pass to Parameters component
   const parameters = useMemo<Record<string, any> | null>(() => {
