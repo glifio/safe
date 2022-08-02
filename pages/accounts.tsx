@@ -13,8 +13,6 @@ import SafePage from '../components/SafePage'
 import { PAGE } from '../constants'
 
 const COIN_TYPE = process.env.NEXT_PUBLIC_COIN_TYPE! as CoinType
-const IS_PROD = process.env.NEXT_PUBLIC_IS_PROD
-const nWalletsToShow = 5
 
 const Accounts = () => {
   useDesktopBrowser()
