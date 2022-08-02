@@ -26,7 +26,7 @@ const ProposalHistory = () => {
   const wallet = useWallet()
   const router = useRouter()
   const id = getQueryParam.number(router, 'id')
-  
+
   const approve = (proposal: MsigTransaction) => {
     navigate(router, {
       pageUrl: PAGE.MSIG_APPROVE,
@@ -44,7 +44,7 @@ const ProposalHistory = () => {
       }
     })
   }
-  
+
   return !isNaN(id) && id >= 0 ? (
     <ProposalDetail
       id={id}
