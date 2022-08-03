@@ -11,10 +11,7 @@ import {
 import { Context } from 'react'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import {
-  truncateAddress,
-  WalletProviderContextType
-} from '@glif/react-components'
+import { WalletProviderContextType } from '@glif/react-components'
 
 import {
   WalletProviderContext,
@@ -61,7 +58,7 @@ describe('Create', () => {
       // Check initial state
       expect(header).toHaveTextContent('Create Safe')
       expect(signer1).toBeDisabled()
-      expect(signer1).toHaveDisplayValue(truncateAddress(WALLET_ADDRESS))
+      expect(signer1).toHaveDisplayValue(WALLET_ADDRESS)
       expect(approvals).toHaveDisplayValue('1')
       expect(amount).toHaveFocus()
       expect(amount).toHaveDisplayValue('')

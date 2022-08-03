@@ -102,6 +102,7 @@ export const Withdraw = ({
         value={toAddress}
         onChange={setToAddress}
         disabled={txState !== TxState.FillingForm}
+        truncate={false}
       />
       <InputV2.Filecoin
         label='Amount'

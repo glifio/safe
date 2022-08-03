@@ -172,6 +172,7 @@ export const Create = ({
           disabled={index === 0 || txState !== TxState.FillingForm}
           deletable={index !== 0}
           onDelete={() => onDeleteSigner(index)}
+          truncate={false}
         />
       ))}
       <InputV2.Button
