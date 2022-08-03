@@ -13,8 +13,6 @@ import SafePage from '../components/SafePage'
 import { PAGE } from '../constants'
 
 const COIN_TYPE = process.env.NEXT_PUBLIC_COIN_TYPE! as CoinType
-const IS_PROD = process.env.NEXT_PUBLIC_IS_PROD
-const nWalletsToShow = 5
 
 const Accounts = () => {
   useDesktopBrowser()
@@ -33,12 +31,10 @@ const Accounts = () => {
         <RequireWallet gatekeep={gatekeep}>
           <AccountSelector
             title='Select Account'
-            helperText={`Your connected wallet creates hundreds of individual accounts. We're showing you the first ${nWalletsToShow}.`}
+            helperText='Your connected wallet creates hundreds of individual accounts. Each account can be an owner of a Safe, and send and receive $FIL.'
             onSelectAccount={onSelectAccount}
-            nWalletsToLoad={nWalletsToShow}
             coinType={COIN_TYPE}
             showSelectedAccount
-            isProd={!!IS_PROD}
           />
         </RequireWallet>
       </OneColumn>

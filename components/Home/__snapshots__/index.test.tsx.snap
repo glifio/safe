@@ -115,7 +115,7 @@ exports[`Msig Home it renders the vesting balance, available balance, and msig a
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   margin: 1.5em 0;
 }
 

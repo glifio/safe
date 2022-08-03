@@ -121,7 +121,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   margin: 1.5em 0;
 }
 
@@ -140,8 +140,9 @@ exports[`confirmation of newly created multisig it displays the multisig address
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
   width: 100%;
+  margin: 0 auto;
   max-width: 35em;
 }
 
@@ -153,7 +154,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 <div
@@ -271,8 +272,9 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
   width: 100%;
+  margin: 0 auto;
   max-width: 35em;
 }
 
@@ -284,7 +286,7 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 <div

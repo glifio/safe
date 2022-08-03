@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Create it allows a user to create a safe 1`] = `
-.c10 {
+.c9 {
   width: 24;
   height: 24;
 }
 
-.c17 {
+.c16 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -40,48 +40,48 @@ exports[`Create it allows a user to create a safe 1`] = `
   background: transparent;
 }
 
-.c17 svg path {
+.c16 svg path {
   stroke: var(--black);
 }
 
-.c17:hover {
+.c16:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c17:hover svg path {
+.c16:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c17:active {
+.c16:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c17:active svg path {
+.c16:active svg path {
   stroke: var(--white) !important;
 }
 
-.c17 svg path {
+.c16 svg path {
   stroke: var(--white);
 }
 
-.c17:hover {
+.c16:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c17:hover svg path {
+.c16:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c17 svg path {
+.c16 svg path {
   stroke: var(--gray-medium);
 }
 
-.c16 {
+.c15 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -112,52 +112,57 @@ exports[`Create it allows a user to create a safe 1`] = `
   background: transparent;
 }
 
-.c16 svg path {
+.c15 svg path {
   stroke: var(--black);
 }
 
-.c16:hover {
+.c15:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c16:hover svg path {
+.c15:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c16:active {
+.c15:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c16:active svg path {
+.c15:active svg path {
   stroke: var(--white) !important;
 }
 
-.c16 svg path {
+.c15 svg path {
   stroke: var(--gray-medium);
 }
 
 .c3 {
+  position: relative;
   display: inline-block;
-  height: 48px;
-  width: 48px;
-  text-align: left;
   background-color: var(--purple-medium);
+  width: 3em;
+  height: 3em;
+  margin: 0;
 }
 
-.c4 {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
+.c3:after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
   background-color: var(--purple-dark);
-  -webkit-animation-name: bvGDKI;
-  animation-name: bvGDKI;
+  -webkit-animation-name: gxoozo;
+  animation-name: gxoozo;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  width: calc(3em * 0.5);
+  height: calc(3em * 0.5);
 }
 
 .c1 {
@@ -200,21 +205,21 @@ exports[`Create it allows a user to create a safe 1`] = `
   border-color: var(--gray-medium);
 }
 
-.c5 {
+.c4 {
   background-color: var(--white);
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   margin: 1.5em 0;
 }
 
-.c15 {
+.c14 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -229,8 +234,9 @@ exports[`Create it allows a user to create a safe 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
   width: 100%;
+  margin: 0 auto;
   max-width: 35em;
 }
 
@@ -242,10 +248,10 @@ exports[`Create it allows a user to create a safe 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -253,24 +259,24 @@ exports[`Create it allows a user to create a safe 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
-.c6 > p,
-.c6 > hr {
+.c5 > p,
+.c5 > hr {
   margin: 0.5em 0;
 }
 
-.c6 > p[role='button'] {
+.c5 > p[role='button'] {
   margin: 0;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   text-align: left;
   pointer-events: none;
   -webkit-align-items: center;
@@ -283,7 +289,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   justify-content: space-between;
 }
 
-.c8 > *:first-child {
+.c7 > *:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -293,22 +299,22 @@ exports[`Create it allows a user to create a safe 1`] = `
   flex-direction: column;
 }
 
-.c8 > *:last-child:not(.toggle-wrapper) {
+.c7 > *:last-child:not(.toggle-wrapper) {
   -webkit-flex: 0 0 50%;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
 }
 
-.c8 span.info,
-.c8 span.error {
+.c7 span.info,
+.c7 span.error {
   font-size: 0.875rem;
 }
 
-.c8 span.error {
+.c7 span.error {
   color: var(--red-medium);
 }
 
-.c9 .button-wrapper {
+.c8 .button-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -317,16 +323,16 @@ exports[`Create it allows a user to create a safe 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
-.c9 .button-wrapper > *:first-child {
+.c8 .button-wrapper > *:first-child {
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
-.c9 .button-wrapper > *:not(:first-child) {
+.c8 .button-wrapper > *:not(:first-child) {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -335,26 +341,26 @@ exports[`Create it allows a user to create a safe 1`] = `
   transition: transform 0.1s ease-out;
 }
 
-.c9 .button-wrapper > *:not(:first-child):hover:not(:active) {
+.c8 .button-wrapper > *:not(:first-child):hover:not(:active) {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
 
-.c9 .button-wrapper > *:not(:first-child):active {
+.c8 .button-wrapper > *:not(:first-child):active {
   -webkit-transition: none;
   transition: none;
 }
 
-.c9 .unit-wrapper {
+.c8 .unit-wrapper {
   position: relative;
 }
 
-.c9 .unit-wrapper input {
+.c8 .unit-wrapper input {
   width: 100%;
 }
 
-.c9 .unit-wrapper .unit {
+.c8 .unit-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -365,18 +371,18 @@ exports[`Create it allows a user to create a safe 1`] = `
   color: var(--gray-dark) !important;
 }
 
-.c11 .select-wrapper {
+.c10 .select-wrapper {
   position: relative;
 }
 
-.c11 .select-wrapper select {
+.c10 .select-wrapper select {
   width: 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-.c11 .select-wrapper .select-arrow {
+.c10 .select-wrapper .select-arrow {
   position: absolute;
   pointer-events: none;
   top: 50%;
@@ -391,11 +397,11 @@ exports[`Create it allows a user to create a safe 1`] = `
   border-color: var(--gray-dark);
 }
 
-.c12 .toggle-wrapper {
+.c11 .toggle-wrapper {
   position: relative;
 }
 
-.c12 input {
+.c11 input {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -404,7 +410,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   opacity: 0;
 }
 
-.c12 .toggle {
+.c11 .toggle {
   display: inline-block;
   position: relative;
   width: 2.25em;
@@ -416,7 +422,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   background-color: var(--gray-light) !important;
 }
 
-.c12 .toggle::after {
+.c11 .toggle::after {
   content: '';
   position: absolute;
   top: 0;
@@ -427,17 +433,17 @@ exports[`Create it allows a user to create a safe 1`] = `
   background-color: var(--white);
 }
 
-.c12 input:checked ~ .toggle {
+.c11 input:checked ~ .toggle {
   border-color: var(--blue-dark);
   background-color: var(--blue-dark);
 }
 
-.c12 input:checked ~ .toggle::after {
+.c11 input:checked ~ .toggle::after {
   left: auto;
   right: 0;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -450,10 +456,10 @@ exports[`Create it allows a user to create a safe 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--space-l);
 }
 
-.c7 > * {
+.c6 > * {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -470,7 +476,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 > *:first-child {
+.c6 > *:first-child {
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -480,7 +486,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   flex: 1 0 auto;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -495,7 +501,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   justify-content: space-between;
 }
 
-.c13 span {
+.c12 span {
   color: var(--purple-medium);
   font-size: 1.75rem;
 }
@@ -516,21 +522,17 @@ exports[`Create it allows a user to create a safe 1`] = `
       </p>
       <span
         class="c3"
-      >
-        <span
-          class="c4"
-        />
-      </span>
+      />
     </div>
     
     <div
-      class="c1 c5"
+      class="c1 c4"
     >
       <div
-        class="c6"
+        class="c5"
       >
         <header
-          class="c7"
+          class="c6"
         >
           <div>
             <span>
@@ -551,7 +553,7 @@ exports[`Create it allows a user to create a safe 1`] = `
           </div>
         </header>
         <label
-          class="c8 c9"
+          class="c7 c8"
           disabled=""
         >
           <div>
@@ -585,7 +587,7 @@ exports[`Create it allows a user to create a safe 1`] = `
           </div>
         </label>
         <label
-          class="c8 c9"
+          class="c7 c8"
           disabled=""
         >
           <div>
@@ -617,7 +619,7 @@ exports[`Create it allows a user to create a safe 1`] = `
               
             </div>
             <svg
-              class="c10"
+              class="c9"
               fill="none"
               height="24"
               viewBox="0 0 24 24"
@@ -634,7 +636,7 @@ exports[`Create it allows a user to create a safe 1`] = `
           </div>
         </label>
         <label
-          class="c8 c9"
+          class="c7 c8"
           disabled=""
         >
           <div>
@@ -666,7 +668,7 @@ exports[`Create it allows a user to create a safe 1`] = `
           </div>
         </label>
         <label
-          class="c8 c11"
+          class="c7 c10"
           disabled=""
         >
           <div>
@@ -703,7 +705,7 @@ exports[`Create it allows a user to create a safe 1`] = `
           </div>
         </label>
         <label
-          class="c8 c9"
+          class="c7 c8"
           disabled=""
         >
           <div>
@@ -741,7 +743,7 @@ exports[`Create it allows a user to create a safe 1`] = `
           </div>
         </label>
         <label
-          class="c8 c9"
+          class="c7 c8"
           disabled=""
         >
           <div>
@@ -776,7 +778,7 @@ exports[`Create it allows a user to create a safe 1`] = `
         </label>
         <hr />
         <label
-          class="c8 c12"
+          class="c7 c11"
           disabled=""
         >
           <div>
@@ -812,7 +814,7 @@ exports[`Create it allows a user to create a safe 1`] = `
         </p>
         <hr />
         <div
-          class="c13"
+          class="c12"
         >
           <span>
             Total
@@ -825,17 +827,17 @@ exports[`Create it allows a user to create a safe 1`] = `
       </div>
     </div>
     <div
-      class="c14 c15"
+      class="c13 c14"
     >
       <button
-        class="c16"
+        class="c15"
         disabled=""
         type="button"
       >
         Back
       </button>
       <button
-        class="c17"
+        class="c16"
         disabled=""
         type="submit"
       >
@@ -1022,7 +1024,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   margin: 1.5em 0;
 }
 
@@ -1041,8 +1043,9 @@ exports[`Create it renders the initial state correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
   width: 100%;
+  margin: 0 auto;
   max-width: 35em;
 }
 
@@ -1054,7 +1057,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c4 {
@@ -1065,7 +1068,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c4 > p,
@@ -1082,7 +1085,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   text-align: left;
   pointer-events: none;
   -webkit-align-items: center;
@@ -1125,7 +1128,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   text-align: left;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1171,7 +1174,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c7 .button-wrapper > *:first-child {
@@ -1228,7 +1231,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c9 .button-wrapper > *:first-child {
@@ -1313,7 +1316,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--space-l);
 }
 
 .c5 > * {

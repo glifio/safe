@@ -36,7 +36,6 @@ export default function SafePageLoggedIn({ children }: SafePageLoggedInProps) {
           label: 'Safe Address',
           address: msig.Address,
           disableLink: false,
-          stopPropagation: true,
           hideCopy: false,
           hideCopyText: true
         },
@@ -44,7 +43,6 @@ export default function SafePageLoggedIn({ children }: SafePageLoggedInProps) {
           label: 'Wallet Address',
           address: wallet.robust,
           disableLink: false,
-          stopPropagation: true,
           hideCopy: false,
           hideCopyText: true
         }

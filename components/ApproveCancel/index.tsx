@@ -34,41 +34,44 @@ export const ApproveCancel = ({
   const wallet = useWallet()
   // @ts-expect-error
   const { serializeParams } = useWasm()
-  const { Address, AvailableBalance } = useMsig()
+  const { Address, AvailableBalance, NumApprovalsThreshold } = useMsig()
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.LoadingMessage)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  // Get transaction info from url
-  const proposal = getQueryParam.string(router, 'proposal')
-  const approvalsLeft = getQueryParam.number(router, 'approvalsLeft')
-  const transaction = useMemo<MsigTransaction | null>(() => {
+  // Get proposal info from url
+  const proposalString = getQueryParam.string(router, 'proposal')
+  const proposal = useMemo<MsigTransaction | null>(() => {
     try {
-      return JSON.parse(decodeURI(proposal))
+      return JSON.parse(decodeURI(proposalString))
     } catch (e) {
       setTxState(TxState.LoadingFailed)
       return null
     }
-  }, [proposal])
+  }, [proposalString])
+  const approvalsLeft = useMemo<number | null>(() => {
+    if (!NumApprovalsThreshold || !proposal?.approved) return null
+    return NumApprovalsThreshold - proposal.approved.length
+  }, [NumApprovalsThreshold, proposal?.approved])
 
   // Get parameters object to pass to Parameters component
   const parameters = useMemo<Record<string, any> | null>(() => {
-    if (!transaction) return null
-    const { id, approved, proposalHash, ...params } = transaction
+    if (!proposal) return null
+    const { id, approved, proposalHash, ...params } = proposal
     return { params }
-  }, [transaction])
+  }, [proposal])
 
   // Get approved object to pass to Parameters component
   const approved = useMemo<Record<string, any> | null>(() => {
-    if (!transaction) return null
-    return { approved: transaction.approved }
-  }, [transaction])
+    if (!proposal) return null
+    return { approved: proposal.approved }
+  }, [proposal])
 
   // Create message from input
   const message = useMemo<Message | null>(() => {
     try {
-      return transaction
+      return proposal
         ? new Message({
             to: Address,
             from: wallet.robust,
@@ -77,8 +80,8 @@ export const ApproveCancel = ({
             method,
             params: Buffer.from(
               serializeParams({
-                ID: transaction.id,
-                ProposalHash: transaction.proposalHash
+                ID: proposal.id,
+                ProposalHash: proposal.proposalHash
               }),
               'hex'
             ).toString('base64'),
@@ -91,14 +94,14 @@ export const ApproveCancel = ({
       logger.error(e)
       return null
     }
-  }, [Address, wallet.robust, method, transaction, serializeParams])
+  }, [Address, wallet.robust, method, proposal, serializeParams])
 
-  // Get actor data from transaction
+  // Get actor data from proposal
   const { data: actorData, error: actorError } = useActorQuery({
     variables: {
-      address: convertAddrToPrefix(transaction?.to.robust || transaction?.to.id)
+      address: convertAddrToPrefix(proposal?.to.robust || proposal?.to.id)
     },
-    skip: !(transaction?.to.robust || transaction?.to.id)
+    skip: !(proposal?.to.robust || proposal?.to.id)
   })
 
   // Get actor name from actor data
@@ -149,9 +152,9 @@ export const ApproveCancel = ({
         balance={wallet.balance}
         msigBalance={AvailableBalance}
       />
-      {transaction && actorName && (
+      {proposal && actorName && (
         <>
-          <Line label='Proposal ID'>{transaction.id}</Line>
+          <Line label='Proposal ID'>{proposal.id}</Line>
           <Line label='Approvals until execution'>{approvalsLeft}</Line>
           <Parameters params={approved} depth={0} actorName={actorName} />
           <hr />

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import {
   ButtonV2,
   ButtonV2Link,
+  PageTitle,
   useWallet,
   useWalletProvider,
   reportLedgerConfigError,
@@ -29,10 +30,6 @@ const TitleRow = styled.div`
     margin-top: 0;
     flex-grow: 1;
   }
-`
-
-const Title = styled.h2`
-  color: var(--purple-medium);
 `
 
 const Info = styled.p`
@@ -64,7 +61,7 @@ export default function Owners() {
 
   return (
     <div>
-      <Title>Safe Admin</Title>
+      <PageTitle>Safe Admin</PageTitle>
       <hr />
 
       <Wrapper>

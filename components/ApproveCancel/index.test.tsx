@@ -37,7 +37,7 @@ describe('ApproveCancel', () => {
     // in the future, approve / cancel could just go in separate test files...
     routerMock.mockImplementation(() => {
       return {
-        query: { proposal: encodedProposalURI, approvalsLeft: 1 },
+        query: { proposal: encodedProposalURI },
         pathname: PAGE.MSIG_APPROVE,
         push: jest.fn()
       }
@@ -156,7 +156,7 @@ describe('ApproveCancel', () => {
     // in the future, approve / cancel could just go in separate test files...
     routerMock.mockImplementation(() => {
       return {
-        query: { proposal: encodedProposalURI, approvalsLeft: 1 },
+        query: { proposal: encodedProposalURI },
         pathname: PAGE.MSIG_CANCEL,
         push: jest.fn()
       }
