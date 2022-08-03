@@ -124,6 +124,7 @@ export const ChangeSigner = ({
         value={newSigner}
         onChange={setNewSigner}
         disabled={txState !== TxState.FillingForm}
+        truncate={false}
       />
     </Transaction.Form>
   )

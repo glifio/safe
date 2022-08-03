@@ -61,7 +61,7 @@ describe('Create', () => {
       // Check initial state
       expect(header).toHaveTextContent('Create Safe')
       expect(signer1).toBeDisabled()
-      expect(signer1).toHaveDisplayValue(truncateAddress(WALLET_ADDRESS))
+      expect(signer1).toHaveDisplayValue(WALLET_ADDRESS)
       expect(approvals).toHaveDisplayValue('1')
       expect(amount).toHaveFocus()
       expect(amount).toHaveDisplayValue('')

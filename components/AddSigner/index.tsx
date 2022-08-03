@@ -106,6 +106,7 @@ export const AddSigner = ({
         value={signer}
         onChange={setSigner}
         disabled={txState !== TxState.FillingForm}
+        truncate={false}
       />
       {txState > TxState.FillingForm ? (
         <InputV2.Info
