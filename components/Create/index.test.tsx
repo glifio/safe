@@ -11,10 +11,7 @@ import {
 import { Context } from 'react'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import {
-  truncateAddress,
-  WalletProviderContextType
-} from '@glif/react-components'
+import { WalletProviderContextType } from '@glif/react-components'
 
 import {
   WalletProviderContext,
