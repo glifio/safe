@@ -70,7 +70,7 @@ class MyApp extends App {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
         />
         <ApolloProvider client={createApolloClient()}>
-          <SWRConfig value={{ refreshInterval: 10000 }}>
+          <SWRConfig value={{ refreshInterval: 20000 }}>
             <ThemeProvider theme={theme}>
               <WasmLoader>
                 <WalletProviderWrapper

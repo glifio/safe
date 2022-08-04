@@ -41,7 +41,7 @@ export const MsigProviderWrapper = ({
   const [msigActor, setMsigActor] = useState(null)
   const apolloClient = useApolloClient()
   const { data: actor, error: msigActorStateError } = useSWR(
-    msigActor ? [msigActor, wallet.robust, apolloClient] : null,
+    msigActor ? [msigActor, wallet.robust, apolloClient, setLoading] : null,
     fetchMsigState
   )
 
