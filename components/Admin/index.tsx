@@ -1,21 +1,15 @@
 import styled from 'styled-components'
-import { useCallback, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
-  ButtonV2,
   ButtonV2Link,
   PageTitle,
   useWallet,
-  useWalletProvider,
-  reportLedgerConfigError,
-  Lines,
-  navigate,
-  isAddrEqual
+  navigate
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
-import { Signer } from './Signer'
 import { useMsig } from '../../MsigProvider'
+import { SignersTable } from './table'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -41,23 +35,6 @@ export default function Owners() {
   const { NumApprovalsThreshold, Signers: signers } = useMsig()
   const wallet = useWallet()
   const router = useRouter()
-  const { ledger, connectLedger, loginOption } = useWalletProvider()
-  const [ledgerBusy, setLedgerBusy] = useState(false)
-  const onShowOnLedger = useCallback(async () => {
-    setLedgerBusy(true)
-    const provider = await connectLedger()
-    if (provider) await provider.wallet.showAddressAndPubKey(wallet.path)
-    setLedgerBusy(false)
-  }, [setLedgerBusy, connectLedger, wallet.path])
-
-  const ledgerErr = reportLedgerConfigError({
-    ...ledger
-  })
-
-  const additionalSigners = useMemo(
-    () => signers.filter((signer) => !isAddrEqual(wallet, signer)),
-    [signers, wallet]
-  )
 
   return (
     <div>
@@ -74,54 +51,9 @@ export default function Owners() {
         </Info>
 
         <TitleRow>
-          <h3>Your Address</h3>
-          {loginOption === 'LEDGER' && (
-            <ButtonV2
-              disabled={!!ledgerErr || ledgerBusy}
-              onClick={onShowOnLedger}
-            >
-              {ledgerErr
-                ? 'Ledger Device Error'
-                : ledgerBusy
-                ? 'Check Ledger Device'
-                : 'View on Device'}
-            </ButtonV2>
-          )}
+          <h3>Signers</h3>
         </TitleRow>
-        <Signer address={wallet} />
-
-        <TitleRow>
-          <h3>Additional Signers ({additionalSigners.length})</h3>
-          <ButtonV2Link href={PAGE.MSIG_ADD_SIGNER}>Add Signer</ButtonV2Link>
-        </TitleRow>
-        <Info>
-          These are the Filecoin addresses that can approve and reject proposals
-          from your Safe.
-        </Info>
-        <Lines>
-          {additionalSigners.map((signer) => (
-            <Signer
-              key={signer.robust || signer.id}
-              address={signer}
-              onRemove={() => {
-                navigate(router, {
-                  pageUrl: PAGE.MSIG_REMOVE_SIGNER,
-                  params: {
-                    address: signer.robust || signer.id
-                  }
-                })
-              }}
-              onChange={() => {
-                navigate(router, {
-                  pageUrl: PAGE.MSIG_CHANGE_SIGNER,
-                  params: {
-                    address: signer.robust || signer.id
-                  }
-                })
-              }}
-            />
-          ))}
-        </Lines>
+        <SignersTable signers={signers} wallet={wallet} loading={false} />
       </Wrapper>
     </div>
   )
