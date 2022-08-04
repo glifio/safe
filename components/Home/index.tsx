@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import {
   ButtonRowCenter,
   ButtonV2Link,
+  LoadingIcon,
   makeFriendlyBalance,
   StandardBox
 } from '@glif/react-components'
@@ -34,14 +35,18 @@ const VestingBox = styled(BalanceBox)`
 `
 
 const MsigHome = () => {
-  const { AvailableBalance, Balance } = useMsig()
+  const { AvailableBalance, Balance, loading } = useMsig()
   return (
     <>
       <BalanceBox>
         <h3>Available Balance</h3>
-        <span className='value'>
-          {makeFriendlyBalance(AvailableBalance, 6, true)}
-        </span>
+        {loading ? (
+          <LoadingIcon />
+        ) : (
+          <span className='value'>
+            {makeFriendlyBalance(AvailableBalance, 6, true)}
+          </span>
+        )}
         <ButtonRowCenter>
           <ButtonV2Link large green href={PAGE.MSIG_WITHDRAW}>
             Withdraw
