@@ -41,7 +41,7 @@ const MsigHome = () => {
       <BalanceBox>
         <h3>Available Balance</h3>
         {loading ? (
-          <LoadingIcon size='48px' />
+          <LoadingIcon />
         ) : (
           <span className='value'>
             {makeFriendlyBalance(AvailableBalance, 6, true)}
