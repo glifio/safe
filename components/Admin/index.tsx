@@ -5,7 +5,9 @@ import {
   PageTitle,
   useWallet,
   navigate,
-  LoadingIcon
+  LoadingIcon,
+  ButtonV2,
+  ButtonRowCenter
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
@@ -90,6 +92,17 @@ export default function Owners() {
                 })
               }}
             />
+            <ButtonRowCenter>
+              <ButtonV2
+                onClick={() =>
+                  navigate(router, {
+                    pageUrl: PAGE.MSIG_ADD_SIGNER
+                  })
+                }
+              >
+                Add signer
+              </ButtonV2>
+            </ButtonRowCenter>
           </>
         )}
       </Wrapper>

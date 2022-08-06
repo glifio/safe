@@ -1,6 +1,7 @@
 import {
   Address,
   AddressLink,
+  GRAPHQL_ADDRESS_PROP_TYPE,
   IconClose,
   IconEdit,
   isAddrEqual,
@@ -12,7 +13,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { SIGNER_PROPTYPE } from '../../MsigProvider/types'
 
-const IconsWrapper = styled.td`
+const IconsWrapper = styled.div`
   display: flex;
   align-items: center;
 
@@ -76,7 +77,7 @@ type SignerRowProps = {
 }
 
 SignerRow.propTypes = {
-  signer: SIGNER_PROPTYPE,
+  signer: GRAPHQL_ADDRESS_PROP_TYPE,
   userIsSigner: PropTypes.bool.isRequired,
   onRemove: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired
