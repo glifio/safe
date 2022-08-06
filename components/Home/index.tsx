@@ -34,29 +34,43 @@ const VestingBox = styled(BalanceBox)`
   }
 `
 
+const LoadingBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-l);
+`
+
 const MsigHome = () => {
-  const { AvailableBalance, Balance, loading } = useMsig()
+  const { AvailableBalance, Balance, NumApprovalsThreshold } = useMsig()
   return (
     <>
-      <BalanceBox>
-        <h3>Available Balance</h3>
-        {loading ? (
-          <LoadingIcon />
-        ) : (
-          <span className='value'>
-            {makeFriendlyBalance(AvailableBalance, 6, true)}
-          </span>
-        )}
-        <ButtonRowCenter>
-          <ButtonV2Link large green href={PAGE.MSIG_WITHDRAW}>
-            Withdraw
-          </ButtonV2Link>
-        </ButtonRowCenter>
-      </BalanceBox>
-      <VestingBox>
-        <h3>Total Vesting</h3>
-        <span className='value'>{makeFriendlyBalance(Balance, 6, true)}</span>
-      </VestingBox>
+      {NumApprovalsThreshold === 0 ? (
+        <LoadingBox>
+          <LoadingIcon size='2em' />
+          <span>Loading ...</span>
+        </LoadingBox>
+      ) : (
+        <>
+          <BalanceBox>
+            <h3>Available Balance</h3>
+            <span className='value'>
+              {makeFriendlyBalance(AvailableBalance, 6, true)}
+            </span>
+            <ButtonRowCenter>
+              <ButtonV2Link large green href={PAGE.MSIG_WITHDRAW}>
+                Withdraw
+              </ButtonV2Link>
+            </ButtonRowCenter>
+          </BalanceBox>
+          <VestingBox>
+            <h3>Total Vesting</h3>
+            <span className='value'>
+              {makeFriendlyBalance(Balance, 6, true)}
+            </span>
+          </VestingBox>
+        </>
+      )}
     </>
   )
 }
