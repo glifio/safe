@@ -2,6 +2,7 @@ jest.mock('@glif/filecoin-rpc-client')
 import { convertAddrToPrefix } from '@glif/react-components'
 
 import { fetchMsigState } from '.'
+import { createApolloClient } from '../../apolloClient'
 import {
   mockStateGetActorRes,
   mockStateReadStateSingleSignerRes,
@@ -14,6 +15,8 @@ import {
   WALLET_ID,
   WALLET_ID_2
 } from '../../test-utils/constants'
+
+const mockSetLoading = jest.fn()
 
 // this is not inside a react components
 // so i figured mocking the apollo client like this was the easiest way, even with duplicate mocks
@@ -63,6 +66,8 @@ jest
     }
   })
 
+const client = createApolloClient()
+
 describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
     const mockActorCode = jest.fn(async () => ({
@@ -76,7 +81,12 @@ describe('fetchMsigState', () => {
         }
       })
 
-    const { errors } = await fetchMsigState('f01', MULTISIG_SIGNER_ADDRESS)
+    const { errors } = await fetchMsigState(
+      'f01',
+      MULTISIG_SIGNER_ADDRESS,
+      client,
+      mockSetLoading
+    )
     expect(errors.notMsigActor).toBe(true)
   }, 10000)
 
@@ -100,7 +110,9 @@ describe('fetchMsigState', () => {
 
     const { errors } = await fetchMsigState(
       MULTISIG_ACTOR_ADDRESS,
-      MULTISIG_SIGNER_ADDRESS_2
+      MULTISIG_SIGNER_ADDRESS_2,
+      client,
+      mockSetLoading
     )
 
     expect(errors.connectedWalletNotMsigSigner).toBe(true)
@@ -119,7 +131,9 @@ describe('fetchMsigState', () => {
 
     const { errors } = await fetchMsigState(
       't012914328591053',
-      MULTISIG_SIGNER_ADDRESS
+      MULTISIG_SIGNER_ADDRESS,
+      client,
+      mockSetLoading
     )
 
     expect(errors.actorNotFound).toBe(true)
@@ -157,7 +171,12 @@ describe('fetchMsigState', () => {
       NumApprovalsThreshold,
       StartEpoch,
       UnlockDuration
-    } = await fetchMsigState(MULTISIG_ACTOR_ADDRESS, MULTISIG_SIGNER_ADDRESS)
+    } = await fetchMsigState(
+      MULTISIG_ACTOR_ADDRESS,
+      MULTISIG_SIGNER_ADDRESS,
+      client,
+      mockSetLoading
+    )
 
     expect(convertAddrToPrefix(Address)).toBe(
       convertAddrToPrefix(MULTISIG_ACTOR_ADDRESS)
