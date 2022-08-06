@@ -10,11 +10,20 @@ import {
   ErrorBox,
   ShadowBox,
   SmartLink,
-  LoadingScreen
+  LoadingScreen,
+  LoadingIcon
 } from '@glif/react-components'
+import styled from 'styled-components'
 
 import { useMsig } from '../../MsigProvider'
 import { PAGE, QPARAM } from '../../constants'
+
+const LoadingBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-l);
+`
 
 export const Choose = () => {
   const router = useRouter()
@@ -88,40 +97,49 @@ export const Choose = () => {
         }}
       >
         {submittedForm && errorMessage && <ErrorBox>{errorMessage}</ErrorBox>}
-        <ShadowBox>
-          <h2>Safe ID</h2>
-          <hr />
-          <InputV2.Address
-            name='safe-id'
-            label='Please enter your Safe ID below to continue'
-            vertical
-            centered
-            autoFocus
-            truncate={false}
-            actor
-            value={safeID}
-            onChange={setSafeID}
-            setIsValid={setIsSafeIDValid}
-            disabled={loading}
-          />
-          <p>
-            Don&apos;t have a Safe ID?{' '}
-            <SmartLink href={PAGE.MSIG_CREATE}>Create one</SmartLink>
-          </p>
-        </ShadowBox>
-        <ButtonRowSpaced>
-          <ButtonV2 large type='button' onClick={() => router.back()}>
-            Back
-          </ButtonV2>
-          <ButtonV2
-            large
-            green
-            type='submit'
-            disabled={!isSafeIDValid || loading}
-          >
-            Submit
-          </ButtonV2>
-        </ButtonRowSpaced>
+        {loading ? (
+          <LoadingBox>
+            <LoadingIcon />
+            <span>Loading ...</span>
+          </LoadingBox>
+        ) : (
+          <>
+            <ShadowBox>
+              <h2>Safe ID</h2>
+              <hr />
+              <InputV2.Address
+                name='safe-id'
+                label='Please enter your Safe ID below to continue'
+                vertical
+                centered
+                autoFocus
+                truncate={false}
+                actor
+                value={safeID}
+                onChange={setSafeID}
+                setIsValid={setIsSafeIDValid}
+                disabled={loading}
+              />
+              <p>
+                Don&apos;t have a Safe ID?{' '}
+                <SmartLink href={PAGE.MSIG_CREATE}>Create one</SmartLink>
+              </p>
+            </ShadowBox>
+            <ButtonRowSpaced>
+              <ButtonV2 large type='button' onClick={() => router.back()}>
+                Back
+              </ButtonV2>
+              <ButtonV2
+                large
+                green
+                type='submit'
+                disabled={!isSafeIDValid || loading}
+              >
+                Submit
+              </ButtonV2>
+            </ButtonRowSpaced>
+          </>
+        )}
       </form>
     </Dialog>
   )
