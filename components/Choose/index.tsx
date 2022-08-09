@@ -27,6 +27,7 @@ export const Choose = () => {
   const [safeID, setSafeID] = useState<string>(msigAddressParam)
   const [isSafeIDValid, setIsSafeIDValid] = useState<boolean>(false)
   const [submittedForm, setSubmittedForm] = useState<boolean>(false)
+  const [navigating, setNavigating] = useState<boolean>(false)
 
   // Get error message from MSIG provider
   const errorMessage = useMemo<string>(() => {
@@ -68,16 +69,14 @@ export const Choose = () => {
 
   // When there is an ActorCode we successfully retrieved
   // the multisig and we push the user to the msig home
-  useEffect(
-    () =>
-      submittedForm &&
-      !errorMessage &&
-      !!ActorCode &&
-      navigate(router, { pageUrl: PAGE.MSIG_HOME }),
-    [submittedForm, errorMessage, ActorCode, router]
-  )
+  useEffect(() => {
+    if (submittedForm && !errorMessage && !!ActorCode) {
+      setNavigating(true)
+      navigate(router, { pageUrl: PAGE.MSIG_HOME })
+    }
+  }, [submittedForm, errorMessage, ActorCode, router])
 
-  return msigAddressParam || loading ? (
+  return msigAddressParam || loading || navigating ? (
     <LoadingScreen />
   ) : (
     <Dialog>
