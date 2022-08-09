@@ -1,6 +1,5 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { Address, GRAPHQL_ADDRESS_PROP_TYPE } from '@glif/react-components'
-import { arrayOf } from 'prop-types'
+import { Address } from '@glif/react-components'
 
 export interface MsigActorErrors {
   notMsigActor: boolean
@@ -13,8 +12,6 @@ export interface Signer {
   id: string
   account: string
 }
-
-export const SIGNER_PROPTYPE = arrayOf(GRAPHQL_ADDRESS_PROP_TYPE)
 
 export interface MsigActorState {
   Address: string | null

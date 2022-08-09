@@ -11,7 +11,6 @@ import {
 } from '@glif/react-components'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { SIGNER_PROPTYPE } from '../../MsigProvider/types'
 
 const IconsWrapper = styled.div`
   display: flex;
@@ -123,7 +122,7 @@ type SignersTableProps = {
 }
 
 SignersTable.propTypes = {
-  signers: SIGNER_PROPTYPE.isRequired,
+  signers: PropTypes.arrayOf(GRAPHQL_ADDRESS_PROP_TYPE).isRequired,
   wallet: WALLET_PROPTYPE.isRequired,
   onRemove: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired
