@@ -10,8 +10,7 @@ import {
   ErrorBox,
   ShadowBox,
   SmartLink,
-  LoadingScreen,
-  LoadingIcon
+  LoadingScreen
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
