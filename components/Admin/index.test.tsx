@@ -78,9 +78,7 @@ describe('Admin page', () => {
           <Admin />
         </Tree>
       )
-      // not sure why this stopped working...
-      // fireEvent.click(screen.getByLabelText('edit-signer'))
-      fireEvent.click(screen.getAllByRole('button')[4])
+      fireEvent.click(screen.getAllByLabelText('edit-signer')[0])
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(
@@ -97,9 +95,7 @@ describe('Admin page', () => {
           <Admin />
         </Tree>
       )
-      // not sure why this stopped working...
-      // fireEvent.click(screen.getByLabelText('remove-signer'))
-      fireEvent.click(screen.getAllByRole('button')[5])
+      fireEvent.click(screen.getAllByLabelText('remove-signer')[0])
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(

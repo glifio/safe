@@ -48,22 +48,24 @@ const SignerRow = ({
         />
       </td>
       <td>
-        <IconsWrapper>
-          <span
-            role='button'
-            aria-label='edit-signer'
-            onClick={() => onChange(signer.robust || signer.id)}
-          >
-            <IconEdit stroke='var(--gray-dark)' />
-          </span>
-          <span
-            role='button'
-            aria-label='remove-signer'
-            onClick={() => onRemove(signer.robust || signer.id)}
-          >
-            <IconClose fill='var(--gray-dark)' />
-          </span>
-        </IconsWrapper>
+        {!userIsSigner && (
+          <IconsWrapper>
+            <span
+              role='button'
+              aria-label='edit-signer'
+              onClick={() => onChange(signer.robust || signer.id)}
+            >
+              <IconEdit stroke='var(--gray-dark)' />
+            </span>
+            <span
+              role='button'
+              aria-label='remove-signer'
+              onClick={() => onRemove(signer.robust || signer.id)}
+            >
+              <IconClose fill='var(--gray-dark)' />
+            </span>
+          </IconsWrapper>
+        )}
       </td>
     </tr>
   )
