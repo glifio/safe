@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Create it allows a user to create a safe 1`] = `
-.c9 {
-  width: 24;
-  height: 24;
-}
-
 .c16 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -139,30 +134,9 @@ exports[`Create it allows a user to create a safe 1`] = `
   stroke: var(--gray-medium);
 }
 
-.c3 {
-  position: relative;
-  display: inline-block;
-  background-color: var(--purple-medium);
-  width: 3em;
-  height: 3em;
-  margin: 0;
-}
-
-.c3:after {
-  position: absolute;
-  display: block;
-  content: '';
-  top: 0;
-  left: 0;
-  background-color: var(--purple-dark);
-  -webkit-animation-name: gxoozo;
-  animation-name: gxoozo;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  width: calc(3em * 0.5);
-  height: calc(3em * 0.5);
+.c9 {
+  width: 24;
+  height: 24;
 }
 
 .c1 {
@@ -224,6 +198,32 @@ exports[`Create it allows a user to create a safe 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c3 {
+  position: relative;
+  display: inline-block;
+  background-color: var(--purple-medium);
+  width: 3em;
+  height: 3em;
+  margin: 0;
+}
+
+.c3:after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  background-color: var(--purple-dark);
+  -webkit-animation-name: gxoozo;
+  animation-name: gxoozo;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  width: calc(3em * 0.5);
+  height: calc(3em * 0.5);
 }
 
 .c0 {
