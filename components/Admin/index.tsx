@@ -15,6 +15,8 @@ import { useMsig } from '../../MsigProvider'
 import { SignersTable } from './SignersTable'
 
 const RequiredApprovals = styled.div`
+  margin-top: var(--space-l);
+
   div {
     display: flex;
     align-items: center;
