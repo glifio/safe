@@ -42,17 +42,18 @@ export default function Owners() {
       <PageTitle>Safe Admin</PageTitle>
       <hr />
       <WideDialog>
+
         <TitleRow>
           <h3>Required Approvals: {NumApprovalsThreshold}</h3>
           <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>Edit</ButtonV2Link>
         </TitleRow>
+        
         <Info>
           The number of approvals required for a Safe proposal to execute.
         </Info>
 
-        <TitleRow>
-          <h3>Signers</h3>
-        </TitleRow>
+        <h3>Signer Addresses</h3>
+
         <SignersTable
           signers={signers}
           wallet={wallet}
@@ -73,6 +74,7 @@ export default function Owners() {
             })
           }}
         />
+
         <ButtonRowCenter>
           <ButtonV2
             onClick={() =>
