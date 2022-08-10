@@ -28,7 +28,7 @@ describe('Admin page', () => {
     )
 
     expect(screen.getByText(/Required Approvals/)).toBeInTheDocument()
-    expect(screen.getByText(/Signers/)).toBeInTheDocument()
+    expect(screen.getByText(/Signer Addresses/)).toBeInTheDocument()
     // signers - "t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi" and f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a from msig provider mocks
     // since the self signer is also listed in the top corner, it should appear twice
     expect(screen.getAllByText(WALLET_ADDRESS).length === 1).toBeTruthy()
@@ -47,9 +47,10 @@ describe('Admin page', () => {
           <Admin />
         </Tree>
       )
-      fireEvent.click(screen.getByText('Add signer'))
-
-      expect(routerPushMock).toHaveBeenCalledWith(PAGE.MSIG_ADD_SIGNER)
+      expect(screen.getByText('Add signer').closest('a')).toHaveAttribute(
+        'href',
+        PAGE.MSIG_ADD_SIGNER
+      )
     })
   })
 
