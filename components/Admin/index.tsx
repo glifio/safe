@@ -7,17 +7,13 @@ import {
   navigate,
   LoadingIcon,
   ButtonV2,
-  ButtonRowCenter
+  ButtonRowCenter,
+  WideDialog
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
 import { useMsig } from '../../MsigProvider'
 import { SignersTable } from './table'
-
-const Wrapper = styled.div`
-  max-width: 50rem;
-  margin: 0 auto;
-`
 
 const TitleRow = styled.div`
   display: flex;
@@ -51,7 +47,7 @@ export default function Owners() {
       <PageTitle>Safe Admin</PageTitle>
       <hr />
 
-      <Wrapper>
+      <WideDialog>
         {NumApprovalsThreshold === 0 ? (
           <Loading>
             <LoadingIcon size='2em' />
@@ -105,7 +101,7 @@ export default function Owners() {
             </ButtonRowCenter>
           </>
         )}
-      </Wrapper>
+      </WideDialog>
     </div>
   )
 }
