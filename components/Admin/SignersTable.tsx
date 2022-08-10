@@ -13,7 +13,7 @@ import { ButtonsTD } from './ButtonsTD'
 
 const SignerRow = ({
   signer,
-  userIsSigner,
+  isCurrentUser,
   onChange,
   onRemove
 }: SignerRowProps) => {
@@ -27,7 +27,7 @@ const SignerRow = ({
         />
       </td>
       <ButtonsTD>
-        {userIsSigner ? (
+        {isCurrentUser ? (
           <>this is you</>
         ) : (
           <div>
@@ -54,14 +54,14 @@ const SignerRow = ({
 
 type SignerRowProps = {
   signer: Address
-  userIsSigner: boolean
+  isCurrentUser: boolean
   onRemove: (address: string) => void
   onChange: (address: string) => void
 }
 
 SignerRow.propTypes = {
   signer: GRAPHQL_ADDRESS_PROP_TYPE,
-  userIsSigner: PropTypes.bool.isRequired,
+  isCurrentUser: PropTypes.bool.isRequired,
   onRemove: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired
 }
@@ -76,7 +76,7 @@ export const SignersTable = ({
     <table>
       <thead>
         <tr>
-          <th>Address</th>
+          <th>Current Signers</th>
           <th></th>
         </tr>
       </thead>
@@ -85,7 +85,7 @@ export const SignersTable = ({
           <SignerRow
             key={s.robust}
             signer={s}
-            userIsSigner={isAddrEqual(s, wallet)}
+            isCurrentUser={isAddrEqual(s, wallet)}
             onChange={onChange}
             onRemove={onRemove}
           />
