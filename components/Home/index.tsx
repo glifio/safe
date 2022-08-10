@@ -36,31 +36,25 @@ const VestingBox = styled(BalanceBox)`
 
 const MsigHome = () => {
   const { AvailableBalance, Balance, NumApprovalsThreshold } = useMsig()
-  return (
+  return NumApprovalsThreshold === 0 ? (
+    <LoadingScreen />
+  ) : (
     <>
-      {NumApprovalsThreshold === 0 ? (
-        <LoadingScreen />
-      ) : (
-        <>
-          <BalanceBox>
-            <h3>Available Balance</h3>
-            <span className='value'>
-              {makeFriendlyBalance(AvailableBalance, 6, true)}
-            </span>
-            <ButtonRowCenter>
-              <ButtonV2Link large green href={PAGE.MSIG_WITHDRAW}>
-                Withdraw
-              </ButtonV2Link>
-            </ButtonRowCenter>
-          </BalanceBox>
-          <VestingBox>
-            <h3>Total Vesting</h3>
-            <span className='value'>
-              {makeFriendlyBalance(Balance, 6, true)}
-            </span>
-          </VestingBox>
-        </>
-      )}
+      <BalanceBox>
+        <h3>Available Balance</h3>
+        <span className='value'>
+          {makeFriendlyBalance(AvailableBalance, 6, true)}
+        </span>
+        <ButtonRowCenter>
+          <ButtonV2Link large green href={PAGE.MSIG_WITHDRAW}>
+            Withdraw
+          </ButtonV2Link>
+        </ButtonRowCenter>
+      </BalanceBox>
+      <VestingBox>
+        <h3>Total Vesting</h3>
+        <span className='value'>{makeFriendlyBalance(Balance, 6, true)}</span>
+      </VestingBox>
     </>
   )
 }
