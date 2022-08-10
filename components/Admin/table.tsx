@@ -5,25 +5,33 @@ import {
   IconClose,
   IconEdit,
   isAddrEqual,
-  StatusIcon,
   Wallet,
   WALLET_PROPTYPE
 } from '@glif/react-components'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const IconsWrapper = styled.div`
-  display: flex;
-  align-items: center;
+const ButtonsTD = styled.td`
+  color: var(--gray-medium);
+  text-align: right;
 
-  > span {
-    display: block;
-    cursor: pointer;
-    line-height: 0;
-    margin-left: 0.5em;
-    transition: transform 0.1s ease-out;
-    &:hover {
-      transform: scale(1.2);
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: var(--space-s);
+
+    > span {
+      cursor: pointer;
+      transition: transform 0.1s ease-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      svg {
+        vertical-align: middle;
+      }
     }
   }
 `
@@ -37,18 +45,17 @@ const SignerRow = ({
   return (
     <tr>
       <td>
-        {userIsSigner && <StatusIcon color='purple' margin='4px 0 0 1em' />}
-      </td>
-      <td>
         <AddressLink
           address={signer.robust || signer.id}
           shouldTruncate={false}
           hideCopyText={false}
         />
       </td>
-      <td>
-        {!userIsSigner && (
-          <IconsWrapper>
+      <ButtonsTD>
+        {userIsSigner ? (
+          <>this is you</>
+        ) : (
+          <div>
             <span
               role='button'
               aria-label='edit-signer'
@@ -63,9 +70,9 @@ const SignerRow = ({
             >
               <IconClose fill='var(--gray-dark)' />
             </span>
-          </IconsWrapper>
+          </div>
         )}
-      </td>
+      </ButtonsTD>
     </tr>
   )
 }
@@ -94,7 +101,6 @@ export const SignersTable = ({
     <table>
       <thead>
         <tr>
-          <th></th>
           <th>Address</th>
           <th></th>
         </tr>
