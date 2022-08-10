@@ -8,33 +8,8 @@ import {
   Wallet,
   WALLET_PROPTYPE
 } from '@glif/react-components'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
-
-const ButtonsTD = styled.td`
-  color: var(--gray-medium);
-  text-align: right;
-
-  > div {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    gap: var(--space-s);
-
-    > span {
-      cursor: pointer;
-      transition: transform 0.1s ease-out;
-
-      &:hover {
-        transform: scale(1.2);
-      }
-
-      svg {
-        vertical-align: middle;
-      }
-    }
-  }
-`
+import { ButtonsTD } from './ButtonsTD'
 
 const SignerRow = ({
   signer,
