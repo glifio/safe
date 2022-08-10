@@ -13,7 +13,7 @@ import {
 
 import { PAGE } from '../../constants'
 import { useMsig } from '../../MsigProvider'
-import { SignersTable } from './table'
+import { SignersTable } from './SignersTable'
 
 const TitleRow = styled.div`
   display: flex;
