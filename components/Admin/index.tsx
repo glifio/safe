@@ -5,10 +5,10 @@ import {
   PageTitle,
   useWallet,
   navigate,
-  LoadingIcon,
   ButtonV2,
   ButtonRowCenter,
-  WideDialog
+  WideDialog,
+  LoadingScreen
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
@@ -30,77 +30,60 @@ const Info = styled.p`
   margin-top: 0;
 `
 
-const Loading = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-l);
-`
-
 export default function Owners() {
   const { NumApprovalsThreshold, Signers: signers } = useMsig()
   const wallet = useWallet()
   const router = useRouter()
 
-  return (
+  return NumApprovalsThreshold === 0 ? (
+    <LoadingScreen />
+  ) : (
     <div>
       <PageTitle>Safe Admin</PageTitle>
       <hr />
-
       <WideDialog>
-        {NumApprovalsThreshold === 0 ? (
-          <Loading>
-            <LoadingIcon size='2em' />
-            <span>Loading ...</span>
-          </Loading>
-        ) : (
-          <>
-            <TitleRow>
-              <h3>Required Approvals: {NumApprovalsThreshold}</h3>
-              <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>
-                Edit
-              </ButtonV2Link>
-            </TitleRow>
-            <Info>
-              The number of approvals required for a Safe proposal to execute.
-            </Info>
+        <TitleRow>
+          <h3>Required Approvals: {NumApprovalsThreshold}</h3>
+          <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>Edit</ButtonV2Link>
+        </TitleRow>
+        <Info>
+          The number of approvals required for a Safe proposal to execute.
+        </Info>
 
-            <TitleRow>
-              <h3>Signers</h3>
-            </TitleRow>
-            <SignersTable
-              signers={signers}
-              wallet={wallet}
-              onRemove={(address: string) => {
-                navigate(router, {
-                  pageUrl: PAGE.MSIG_REMOVE_SIGNER,
-                  params: {
-                    address
-                  }
-                })
-              }}
-              onChange={(address: string) => {
-                navigate(router, {
-                  pageUrl: PAGE.MSIG_CHANGE_SIGNER,
-                  params: {
-                    address
-                  }
-                })
-              }}
-            />
-            <ButtonRowCenter>
-              <ButtonV2
-                onClick={() =>
-                  navigate(router, {
-                    pageUrl: PAGE.MSIG_ADD_SIGNER
-                  })
-                }
-              >
-                Add signer
-              </ButtonV2>
-            </ButtonRowCenter>
-          </>
-        )}
+        <TitleRow>
+          <h3>Signers</h3>
+        </TitleRow>
+        <SignersTable
+          signers={signers}
+          wallet={wallet}
+          onRemove={(address: string) => {
+            navigate(router, {
+              pageUrl: PAGE.MSIG_REMOVE_SIGNER,
+              params: {
+                address
+              }
+            })
+          }}
+          onChange={(address: string) => {
+            navigate(router, {
+              pageUrl: PAGE.MSIG_CHANGE_SIGNER,
+              params: {
+                address
+              }
+            })
+          }}
+        />
+        <ButtonRowCenter>
+          <ButtonV2
+            onClick={() =>
+              navigate(router, {
+                pageUrl: PAGE.MSIG_ADD_SIGNER
+              })
+            }
+          >
+            Add signer
+          </ButtonV2>
+        </ButtonRowCenter>
       </WideDialog>
     </div>
   )
