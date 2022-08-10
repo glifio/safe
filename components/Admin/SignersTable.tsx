@@ -8,8 +8,33 @@ import {
   Wallet,
   WALLET_PROPTYPE
 } from '@glif/react-components'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { ButtonsTD } from './ButtonsTD'
+
+export const ButtonsTD = styled.td`
+  color: var(--gray-medium);
+  text-align: right;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: var(--space-s);
+
+    > span {
+      cursor: pointer;
+      transition: transform 0.1s ease-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      svg {
+        vertical-align: middle;
+      }
+    }
+  }
+`
 
 const SignerRow = ({
   signer,
@@ -74,12 +99,6 @@ export const SignersTable = ({
 }: SignersTableProps) => {
   return (
     <table>
-      <thead>
-        <tr>
-          <th>Current Signers</th>
-          <th></th>
-        </tr>
-      </thead>
       <tbody>
         {signers.map((s) => (
           <SignerRow
