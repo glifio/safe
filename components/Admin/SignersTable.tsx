@@ -11,7 +11,7 @@ import {
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-export const ButtonsTD = styled.td`
+const ButtonsTD = styled.td`
   color: var(--gray-medium);
   text-align: right;
 
@@ -36,6 +36,14 @@ export const ButtonsTD = styled.td`
   }
 `
 
+const AddressTD = styled.td`
+  > div {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+  }
+`
+
 const SignerRow = ({
   signer,
   isCurrentUser,
@@ -44,34 +52,33 @@ const SignerRow = ({
 }: SignerRowProps) => {
   return (
     <tr>
-      <td>
-        <AddressLink
-          address={signer.robust || signer.id}
-          shouldTruncate={false}
-          hideCopyText={false}
-        />
-      </td>
+      <AddressTD>
+        <div>
+          {isCurrentUser && <span>(You)</span>}
+          <AddressLink
+            address={signer.robust || signer.id}
+            shouldTruncate={false}
+            hideCopyText={false}
+          />
+        </div>
+      </AddressTD>
       <ButtonsTD>
-        {isCurrentUser ? (
-          <>this is you</>
-        ) : (
-          <div>
-            <span
-              role='button'
-              aria-label='edit-signer'
-              onClick={() => onChange(signer.robust || signer.id)}
-            >
-              <IconEdit stroke='var(--gray-dark)' />
-            </span>
-            <span
-              role='button'
-              aria-label='remove-signer'
-              onClick={() => onRemove(signer.robust || signer.id)}
-            >
-              <IconClose fill='var(--gray-dark)' />
-            </span>
-          </div>
-        )}
+        <div>
+          <span
+            role='button'
+            aria-label='edit-signer'
+            onClick={() => onChange(signer.robust || signer.id)}
+          >
+            <IconEdit stroke='var(--gray-dark)' />
+          </span>
+          <span
+            role='button'
+            aria-label='remove-signer'
+            onClick={() => onRemove(signer.robust || signer.id)}
+          >
+            <IconClose fill='var(--gray-dark)' />
+          </span>
+        </div>
       </ButtonsTD>
     </tr>
   )

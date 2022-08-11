@@ -1,6 +1,6 @@
 import { render, screen, act, fireEvent } from '@testing-library/react'
 import {
-  MULTISIG_SIGNER_ADDRESS_2,
+  MULTISIG_SIGNER_ADDRESS,
   WALLET_ADDRESS,
   WALLET_ADDRESS_2
 } from '../../test-utils/constants'
@@ -21,7 +21,7 @@ describe('Admin page', () => {
   test('it renders the required approvals and the signers', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
-    render(
+    const res = render(
       <Tree>
         <Admin />
       </Tree>
@@ -35,7 +35,7 @@ describe('Admin page', () => {
     expect(screen.getByText(WALLET_ADDRESS_2)).toBeInTheDocument()
 
     // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved
-    // expect(container).toMatchSnapshot()
+    expect(res.container).toMatchSnapshot()
   })
 
   test('it renders a button to go to the add signer page', () => {
@@ -83,7 +83,7 @@ describe('Admin page', () => {
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(
-      `${PAGE.MSIG_CHANGE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS_2}`
+      `${PAGE.MSIG_CHANGE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS}`
     )
   })
 
@@ -100,7 +100,7 @@ describe('Admin page', () => {
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(
-      `${PAGE.MSIG_REMOVE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS_2}`
+      `${PAGE.MSIG_REMOVE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS}`
     )
   })
 })
