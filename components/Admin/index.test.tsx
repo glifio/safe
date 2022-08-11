@@ -33,8 +33,6 @@ describe('Admin page', () => {
     // since the self signer is also listed in the top corner, it should appear twice
     expect(screen.getAllByText(WALLET_ADDRESS).length === 1).toBeTruthy()
     expect(screen.getByText(WALLET_ADDRESS_2)).toBeInTheDocument()
-
-    // snapshot on this test is oddly broken until https://github.com/styled-components/jest-styled-components/issues/399 is resolved
     expect(res.container).toMatchSnapshot()
   })
 
