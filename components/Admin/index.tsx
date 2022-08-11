@@ -5,40 +5,29 @@ import {
   PageTitle,
   useWallet,
   navigate,
-  LoadingIcon,
-  ButtonV2,
-  ButtonRowCenter
+  ButtonRowCenter,
+  WideDialog,
+  LoadingScreen
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
 import { useMsig } from '../../MsigProvider'
-import { SignersTable } from './table'
+import { SignersTable } from './SignersTable'
 
-const Wrapper = styled.div`
-  max-width: 50rem;
-  margin: 0 auto;
-`
+const RequiredApprovals = styled.div`
+  margin-top: var(--space-l);
 
-const TitleRow = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 3em;
-  h3 {
-    margin-top: 0;
-    flex-grow: 1;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-`
 
-const Info = styled.p`
-  color: var(--gray-medium);
-  margin-top: 0;
-`
-
-const Loading = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-l);
+  p {
+    color: var(--gray-medium);
+    margin-top: 0;
+    padding-left: 1em;
+  }
 `
 
 export default function Owners() {
@@ -50,28 +39,24 @@ export default function Owners() {
     <div>
       <PageTitle>Safe Admin</PageTitle>
       <hr />
-
-      <Wrapper>
-        {NumApprovalsThreshold === 0 ? (
-          <Loading>
-            <LoadingIcon size='2em' />
-            <span>Loading ...</span>
-          </Loading>
-        ) : (
-          <>
-            <TitleRow>
+      {NumApprovalsThreshold === 0 ? (
+        <LoadingScreen />
+      ) : (
+        <WideDialog>
+          <RequiredApprovals>
+            <div>
               <h3>Required Approvals: {NumApprovalsThreshold}</h3>
               <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>
                 Edit
               </ButtonV2Link>
-            </TitleRow>
-            <Info>
+            </div>
+            <p>
               The number of approvals required for a Safe proposal to execute.
-            </Info>
+            </p>
+          </RequiredApprovals>
 
-            <TitleRow>
-              <h3>Signers</h3>
-            </TitleRow>
+          <div>
+            <h3>Signer Addresses</h3>
             <SignersTable
               signers={signers}
               wallet={wallet}
@@ -93,19 +78,13 @@ export default function Owners() {
               }}
             />
             <ButtonRowCenter>
-              <ButtonV2
-                onClick={() =>
-                  navigate(router, {
-                    pageUrl: PAGE.MSIG_ADD_SIGNER
-                  })
-                }
-              >
+              <ButtonV2Link href={PAGE.MSIG_ADD_SIGNER}>
                 Add signer
-              </ButtonV2>
+              </ButtonV2Link>
             </ButtonRowCenter>
-          </>
-        )}
-      </Wrapper>
+          </div>
+        </WideDialog>
+      )}
     </div>
   )
 }
