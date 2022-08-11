@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from 'react'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import { CID } from '@glif/filecoin-wallet-provider'
@@ -17,11 +16,9 @@ export const fetchMsigState = async (
   actorID: string,
   signerAddress: string,
   // we give this a default value for tests
-  apolloClient: ApolloClient<object> = createApolloClient(),
-  setLoading: Dispatch<SetStateAction<boolean>>
+  apolloClient: ApolloClient<object> = createApolloClient()
 ): Promise<MsigActorState> => {
   try {
-    setLoading(true)
     const lCli = new LotusRPCEngine({
       apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
     })
@@ -156,7 +153,5 @@ export const fetchMsigState = async (
         unhandledError: err?.message || err
       }
     }
-  } finally {
-    setLoading(false)
   }
 }

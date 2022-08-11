@@ -49,7 +49,10 @@ export const MsigProviderWrapper = ({
   useEffect(() => msigActor && setLoading(true), [msigActor])
 
   // Set loading to false after fetching new data
-  useEffect(() => actor && setLoading(false), [actor])
+  useEffect(
+    () => (actor || msigActorStateError) && setLoading(false),
+    [actor, msigActorStateError]
+  )
 
   return (
     <MsigProviderContext.Provider
