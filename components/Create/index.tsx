@@ -3,7 +3,7 @@ import { useState, useMemo, Context, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { validateAddressString } from '@glif/filecoin-address'
+import { CoinType, validateAddressString } from '@glif/filecoin-address'
 import {
   navigate,
   useWallet,
@@ -12,7 +12,8 @@ import {
   MsigMethod,
   TxState,
   WalletProviderOpts,
-  PendingMsgContextType
+  PendingMsgContextType,
+  actorCodesToNames
 } from '@glif/react-components'
 
 import { useWasm } from '../../lib/WasmLoader'
@@ -28,7 +29,7 @@ export const Create = ({
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
-  const { createMultisig } = useWasm()
+  const { serializeParams } = useWasm()
 
   // Input states
   const [vest, setVest] = useState<number>(0)
@@ -83,6 +84,21 @@ export const Create = ({
   // Placeholder message for getting gas params
   const message = useMemo<Message | null>(() => {
     try {
+      const constructorParams = serializeParams({
+        Signers: [...acceptedSigners],
+        NumApprovalsThreshold: approvals,
+        UnlockDuration: vest,
+        StartEpoch: epoch
+      })
+      const network: CoinType = IS_PROD ? CoinType.MAIN : CoinType.TEST
+      const params = Buffer.from(
+        serializeParams({
+          // Mainnet code cid for multisig creation. Old code cid shouldn't be used to create new actors. So you will get an error.
+          CodeCid: actorCodesToNames[network].multisig,
+          ConstructorParams: Buffer.from(constructorParams).toString('base64')
+        })
+      ).toString('base64')
+
       return isVestValid &&
         isEpochValid &&
         isValueValid &&
@@ -97,16 +113,7 @@ export const Create = ({
             nonce: 0,
             value: value.toAttoFil(),
             method: 2,
-            params: createMultisig(
-              wallet.robust,
-              [...acceptedSigners],
-              value.toAttoFil(),
-              approvals,
-              0,
-              vest.toString(),
-              epoch.toString(),
-              !!IS_PROD ? 'mainnet' : 'calibrationnet'
-            ).Params,
+            params,
             gasPremium: 0,
             gasFeeCap: 0,
             gasLimit: 0
@@ -126,7 +133,7 @@ export const Create = ({
     approvals,
     acceptedSigners,
     wallet.robust,
-    createMultisig
+    serializeParams
   ])
 
   // Calculate max affordable fee (balance minus value)

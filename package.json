@@ -29,7 +29,7 @@
     "@glif/filecoin-wallet-provider": "^2.0.0-beta.18",
     "@glif/logger": "^2.0.0-beta.7",
     "@glif/react-components": "^2.0.0-alpha.144",
-    "@zondax/filecoin-signing-tools": "^1.0.4",
+    "@zondax/filecoin-signing-tools": "^1.1.0",
     "lodash.clonedeep": "^4.5.0",
     "next": "^12.2.3",
     "prop-types": "^15.8.1",
