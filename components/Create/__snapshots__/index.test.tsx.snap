@@ -237,7 +237,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {
@@ -300,9 +300,9 @@ exports[`Create it allows a user to create a safe 1`] = `
 }
 
 .c7 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
 }
 
 .c7 span.info,
@@ -1046,7 +1046,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {
@@ -1109,9 +1109,9 @@ exports[`Create it renders the initial state correctly 1`] = `
 }
 
 .c6 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
 }
 
 .c6 span.info,
@@ -1151,9 +1151,9 @@ exports[`Create it renders the initial state correctly 1`] = `
 }
 
 .c8 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
 }
 
 .c8 span.info,
