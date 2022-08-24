@@ -84,7 +84,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c2 form {
