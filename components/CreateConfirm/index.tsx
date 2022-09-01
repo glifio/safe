@@ -12,7 +12,8 @@ import {
   WarningBox,
   useWallet,
   getAddrFromReceipt,
-  useMessageReceiptQuery
+  useMessageReceiptQuery,
+  useEnvironment
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
@@ -23,12 +24,10 @@ export const CreateConfirm = () => {
   const cid = getQueryParam.string(router, 'cid')
   const { setMsigActor, Address } = useMsig()
   const wallet = useWallet()
+  const { coinType, explorerUrl } = useEnvironment()
 
   // Confirmation state
   const [creationError, setCreationError] = useState<boolean>(false)
-
-  // Get environment variables
-  const { NEXT_PUBLIC_EXPLORER_URL: explorerUrl } = process.env
 
   // Get the message receipt
   const { data: messageReceiptQuery, error: messageReceiptError } =
@@ -46,7 +45,7 @@ export const CreateConfirm = () => {
         if (receipt.exitCode !== 0) throw new Error('Safe creation failed')
 
         // Verify the safe address
-        const { robust } = getAddrFromReceipt(receipt.return)
+        const { robust } = getAddrFromReceipt(receipt.return, coinType)
         if (!robust) throw new Error('Failed to get address from receipt')
 
         // Set the safe address
@@ -55,7 +54,7 @@ export const CreateConfirm = () => {
         setCreationError(true)
       }
     }
-  }, [messageReceiptQuery?.receipt, setMsigActor])
+  }, [messageReceiptQuery?.receipt, setMsigActor, coinType])
 
   // CID was not provided in query parameters
   if (!cid) {

@@ -12,19 +12,21 @@ import {
   MsigMethod,
   TxState,
   WalletProviderOpts,
-  PendingMsgContextType
+  PendingMsgContextType,
+  useLogger,
+  useEnvironment
 } from '@glif/react-components'
 
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE, EXEC_ACTOR } from '../../constants'
-import { logger } from '../../logger'
-
-const IS_PROD = process.env.NEXT_PUBLIC_IS_PROD
 
 export const Create = ({
   walletProviderOpts,
   pendingMsgContext
 }: CreateProps) => {
+  const logger = useLogger()
+  const { isProd } = useEnvironment()
+
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -105,7 +107,7 @@ export const Create = ({
               0,
               vest.toString(),
               epoch.toString(),
-              !!IS_PROD ? 'mainnet' : 'calibrationnet'
+              !!isProd ? 'mainnet' : 'calibrationnet'
             ).Params,
             gasPremium: 0,
             gasFeeCap: 0,
@@ -126,7 +128,9 @@ export const Create = ({
     approvals,
     acceptedSigners,
     wallet.robust,
-    createMultisig
+    createMultisig,
+    logger,
+    isProd
   ])
 
   // Calculate max affordable fee (balance minus value)

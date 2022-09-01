@@ -5,24 +5,22 @@ import {
   AddressDocument,
   AddressQuery,
   decodeActorCID,
-  isAddressSigner
+  isAddressSigner,
+  Network
 } from '@glif/react-components'
 import type { ApolloClient } from '@apollo/client'
 
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
-import { createApolloClient } from '../../apolloClient'
 
 export const fetchMsigState = async (
   actorID: string,
   signerAddress: string,
   // we give this a default value for tests
-  apolloClient: ApolloClient<object> = createApolloClient()
+  lCli: LotusRPCEngine,
+  network: Network,
+  apolloClient: ApolloClient<object>
 ): Promise<MsigActorState> => {
   try {
-    const lCli = new LotusRPCEngine({
-      apiAddress: process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
-    })
-
     const { Code } = await lCli.request<{ Code: CID }>(
       'StateGetActor',
       actorID,
@@ -31,7 +29,7 @@ export const fetchMsigState = async (
 
     let ActorCode = ''
     try {
-      ActorCode = decodeActorCID(Code['/'])
+      ActorCode = decodeActorCID(Code['/'], network)
       if (!ActorCode?.includes('multisig')) throw new Error('Not an Msig actor')
     } catch (e) {
       return {

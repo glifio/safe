@@ -2,9 +2,9 @@ import { ReactNode } from 'react'
 import { act, renderHook } from '@testing-library/react-hooks'
 import {
   WalletProviderWrapper,
-  initialState as _walletProviderInitialState
+  initialState as _walletProviderInitialState,
+  TestEnvironment
 } from '@glif/react-components'
-import { MockedProvider } from '@apollo/client/testing'
 import { waitFor } from '@testing-library/react'
 
 import {
@@ -50,16 +50,16 @@ describe('Not a signer error handling', () => {
       statePreset
     )
     Tree = ({ children }: { children: ReactNode }) => (
-      <MockedProvider mocks={addressMocks}>
+      <TestEnvironment withApollo apolloMocks={addressMocks}>
         <WalletProviderWrapper
-          // @ts-ignore
           getState={() => {}}
           statePreset={statePreset}
+          // @ts-ignore
           initialState={walletProviderInitialState}
         >
           <MsigProviderWrapper test>{children}</MsigProviderWrapper>
         </WalletProviderWrapper>
-      </MockedProvider>
+      </TestEnvironment>
     )
   })
 

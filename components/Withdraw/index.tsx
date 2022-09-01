@@ -12,18 +12,19 @@ import {
   MsigMethod,
   TxState,
   WalletProviderOpts,
-  PendingMsgContextType
+  PendingMsgContextType,
+  useLogger
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
-import { logger } from '../../logger'
 
 export const Withdraw = ({
   walletProviderOpts,
   pendingMsgContext
 }: WithdrawProps) => {
+  const logger = useLogger()
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -72,7 +73,15 @@ export const Withdraw = ({
       logger.error(e)
       return null
     }
-  }, [isValueValid, toAddress, Address, wallet.robust, value, serializeParams])
+  }, [
+    isValueValid,
+    toAddress,
+    Address,
+    wallet.robust,
+    value,
+    serializeParams,
+    logger
+  ])
 
   return (
     <Transaction.Form

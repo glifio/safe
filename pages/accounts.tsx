@@ -1,5 +1,4 @@
 import { useCallback } from 'react'
-import { CoinType } from '@glif/filecoin-address'
 import { useRouter } from 'next/router'
 import {
   navigate,
@@ -11,8 +10,6 @@ import {
 
 import SafePage from '../components/SafePage'
 import { PAGE } from '../constants'
-
-const COIN_TYPE = process.env.NEXT_PUBLIC_COIN_TYPE! as CoinType
 
 const Accounts = () => {
   useDesktopBrowser()
@@ -33,7 +30,6 @@ const Accounts = () => {
             title='Select Account'
             helperText='Your connected wallet creates hundreds of individual accounts. Each account can be an owner of a Safe, and send and receive $FIL.'
             onSelectAccount={onSelectAccount}
-            coinType={COIN_TYPE}
             showSelectedAccount
           />
         </RequireWallet>

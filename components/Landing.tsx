@@ -7,25 +7,24 @@ import {
   OneColumnLargeText,
   Page,
   isMobileOrTablet,
-  useNetworkName,
   SmartLink,
-  FullWidthButtons
+  FullWidthButtons,
+  useEnvironment,
+  Network
 } from '@glif/react-components'
 
 import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../constants'
 
 export default function Landing() {
   const isUnsupportedDevice = useMemo(() => isMobileOrTablet(), [])
-  const { networkName } = useNetworkName(
-    process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
-  )
+  const { networkName } = useEnvironment()
 
   return (
     <Page phishingUrl='https://safe.glif.io' hideAppHeader>
       <LandingPageColumns>
         <AppTile
           title={
-            networkName && networkName !== 'Mainnet'
+            networkName && networkName !== Network.MAINNET
               ? `Safe (${networkName})`
               : 'Safe'
           }
