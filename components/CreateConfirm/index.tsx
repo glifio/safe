@@ -127,8 +127,7 @@ export const CreateConfirm = () => {
           </p>
         </ShadowBox>
         <WarningBox>
-          Please make sure to store your Safe address before continuing to
-          prevent losing access to your Safe.
+          Please make sure to store your Safe address before continuing.
         </WarningBox>
         <ButtonRowCenter>
           {wallet.robust || wallet.id ? (

@@ -13,7 +13,6 @@ import {
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
-  isAddrEqual,
   useLogger
 } from '@glif/react-components'
 
@@ -41,13 +40,10 @@ export const ChangeSigner = ({
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  // Get signer addresses without current wallet owner
+  // Get signer addresses, including current wallet owner
   const signers = useMemo(
-    () =>
-      Signers.filter((signer) => !isAddrEqual(wallet, signer)).map(
-        (signer) => signer.robust || signer.id
-      ),
-    [Signers, wallet]
+    () => Signers.map((signer) => signer.robust || signer.id),
+    [Signers]
   )
 
   // Create message from input
@@ -86,7 +82,15 @@ export const ChangeSigner = ({
       logger.error(e)
       return null
     }
-  }, [signers, oldSigner, newSigner, Address, wallet.robust, serializeParams])
+  }, [
+    signers,
+    oldSigner,
+    newSigner,
+    Address,
+    wallet.robust,
+    serializeParams,
+    logger
+  ])
 
   return (
     <Transaction.Form

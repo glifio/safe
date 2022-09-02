@@ -575,6 +575,11 @@ exports[`ChangeSigner it allows a user to change a signer address 1`] = `
             >
               
               <option
+                value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+              >
+                t1z225 ... 6z6wgi
+              </option>
+              <option
                 value="t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
               >
                 t1mbk7 ... icb2uq
@@ -1156,6 +1161,11 @@ exports[`ChangeSigner it renders the initial state correctly 1`] = `
           >
             <select>
               
+              <option
+                value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+              >
+                t1z225 ... 6z6wgi
+              </option>
               <option
                 value="t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
               >
