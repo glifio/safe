@@ -79,7 +79,7 @@ describe('fetchMsigState', () => {
   })
 
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
-    lCli.request = jest.fn().mockImplementation(() => ({
+    lCli.request = jest.fn().mockImplementation(async () => ({
       Code: { '/': 'xxxyyyzz' }
     }))
     const { errors } = await fetchMsigState(

@@ -95,7 +95,15 @@ export const RemoveSigner = ({
       logger.error(e)
       return null
     }
-  }, [signers, signer, decrease, Address, wallet.robust, serializeParams])
+  }, [
+    signers,
+    signer,
+    decrease,
+    Address,
+    wallet.robust,
+    serializeParams,
+    logger
+  ])
 
   return (
     <Transaction.Form
