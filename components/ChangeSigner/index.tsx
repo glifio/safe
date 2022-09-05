@@ -95,10 +95,10 @@ export const ChangeSigner = ({
 
   const warning = useMemo(
     () =>
-      isAddrEqual(wallet, newSigner)
+      isAddrEqual(wallet, oldSigner)
         ? "You're about to remove yourself as a signer on this Safe."
         : "You're about to change a signer address of your Safe. Please make sure you know and trust the new signer.",
-    [wallet, newSigner]
+    [wallet, oldSigner]
   )
 
   return (
