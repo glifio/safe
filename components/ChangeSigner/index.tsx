@@ -13,19 +13,20 @@ import {
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
+  useLogger,
   isAddrEqual
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
-import { logger } from '../../logger'
 
 export const ChangeSigner = ({
   oldSignerAddress,
   walletProviderOpts,
   pendingMsgContext
 }: ChangeSignerProps) => {
+  const logger = useLogger()
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -40,13 +41,10 @@ export const ChangeSigner = ({
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  // Get signer addresses without current wallet owner
+  // Get signer addresses, including current wallet owner
   const signers = useMemo(
-    () =>
-      Signers.filter((signer) => !isAddrEqual(wallet, signer)).map(
-        (signer) => signer.robust || signer.id
-      ),
-    [Signers, wallet]
+    () => Signers.map((signer) => signer.robust || signer.id),
+    [Signers]
   )
 
   // Create message from input
@@ -85,13 +83,29 @@ export const ChangeSigner = ({
       logger.error(e)
       return null
     }
-  }, [signers, oldSigner, newSigner, Address, wallet.robust, serializeParams])
+  }, [
+    signers,
+    oldSigner,
+    newSigner,
+    Address,
+    wallet.robust,
+    serializeParams,
+    logger
+  ])
+
+  const warning = useMemo(
+    () =>
+      isAddrEqual(wallet, newSigner)
+        ? "You're about to remove yourself as a signer on this Safe."
+        : "You're about to change a signer address of your Safe. Please make sure you know and trust the new signer.",
+    [wallet, newSigner]
+  )
 
   return (
     <Transaction.Form
       title='Change a signer'
       description='Please update the signer address below'
-      warning="You're about to change a signer address of your Safe. Please make sure you know and trust the new signer."
+      warning={warning}
       msig
       method={MsigMethod.SWAP_SIGNER}
       message={message}

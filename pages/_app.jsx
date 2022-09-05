@@ -6,16 +6,16 @@ import {
   ThemeProvider,
   PendingMessageProvider,
   WalletProviderWrapper,
-  BalancePoller
+  BalancePoller,
+  EnvironmentProvider,
+  ApolloWrapper,
+  ErrorBoundary
 } from '@glif/react-components'
 import Script from 'next/script'
 
-import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
 import { MsigProviderWrapper } from '../MsigProvider'
 import { WasmLoader } from '../lib/WasmLoader'
-import { createApolloClient } from '../apolloClient'
-import ErrorBoundary from '../components/ErrorBoundary'
 import JSONLD from '../JSONLD'
 
 class MyApp extends App {
@@ -69,27 +69,26 @@ class MyApp extends App {
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
         />
-        <ApolloProvider client={createApolloClient()}>
-          <SWRConfig value={{ refreshInterval: 20000 }}>
-            <ThemeProvider theme={theme}>
-              <WasmLoader>
-                <WalletProviderWrapper
-                  lotusApiAddr={process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC}
-                  coinType={process.env.NEXT_PUBLIC_COIN_TYPE}
-                >
-                  <MsigProviderWrapper>
-                    <BalancePoller />
-                    <PendingMessageProvider>
-                      <ErrorBoundary>
-                        <Component {...pageProps} />
-                      </ErrorBoundary>
-                    </PendingMessageProvider>
-                  </MsigProviderWrapper>
-                </WalletProviderWrapper>
-              </WasmLoader>
-            </ThemeProvider>
-          </SWRConfig>
-        </ApolloProvider>
+        <EnvironmentProvider>
+          <ApolloWrapper>
+            <SWRConfig value={{ refreshInterval: 20000 }}>
+              <ThemeProvider theme={theme}>
+                <WasmLoader>
+                  <WalletProviderWrapper>
+                    <MsigProviderWrapper>
+                      <BalancePoller />
+                      <PendingMessageProvider>
+                        <ErrorBoundary>
+                          <Component {...pageProps} />
+                        </ErrorBoundary>
+                      </PendingMessageProvider>
+                    </MsigProviderWrapper>
+                  </WalletProviderWrapper>
+                </WasmLoader>
+              </ThemeProvider>
+            </SWRConfig>
+          </ApolloWrapper>
+        </EnvironmentProvider>
       </>
     )
   }

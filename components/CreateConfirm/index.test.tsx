@@ -13,6 +13,7 @@ import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { CreateConfirm } from '.'
 import { PAGE } from '../../constants'
 import { EXEC_MSG_CID, mockReceipt } from '../../test-utils/apolloMocks'
+import { CoinType } from '@glif/filecoin-address'
 
 jest.mock('../../MsigProvider')
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
@@ -64,7 +65,7 @@ describe('confirmation of newly created multisig', () => {
     await waitFor(() => {
       const header = getByRole(result.container, 'heading')
       expect(header).toHaveTextContent('Safe creation completed')
-      const { robust } = getAddrFromReceipt(mockReceipt.return)
+      const { robust } = getAddrFromReceipt(mockReceipt.return, CoinType.TEST)
       expect(screen.getByText(robust)).toBeInTheDocument()
       expect(result.container.firstChild).toMatchSnapshot()
     })

@@ -37,53 +37,55 @@ export default function Owners() {
 
   return (
     <div>
-      <PageTitle>Safe Admin</PageTitle>
-      <hr />
       {NumApprovalsThreshold === 0 ? (
         <LoadingScreen />
       ) : (
-        <WideDialog>
-          <RequiredApprovals>
-            <div>
-              <h3>Required Approvals: {NumApprovalsThreshold}</h3>
-              <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>
-                Edit
-              </ButtonV2Link>
-            </div>
-            <p>
-              The number of approvals required for a Safe proposal to execute.
-            </p>
-          </RequiredApprovals>
+        <>
+          <PageTitle>Safe Admin</PageTitle>
+          <hr />
+          <WideDialog>
+            <RequiredApprovals>
+              <div>
+                <h3>Required Approvals: {NumApprovalsThreshold}</h3>
+                <ButtonV2Link href={PAGE.MSIG_CHANGE_APPROVALS}>
+                  Edit
+                </ButtonV2Link>
+              </div>
+              <p>
+                The number of approvals required for a Safe proposal to execute.
+              </p>
+            </RequiredApprovals>
 
-          <div>
-            <h3>Signer Addresses</h3>
-            <SignersTable
-              signers={signers}
-              wallet={wallet}
-              onRemove={(address: string) => {
-                navigate(router, {
-                  pageUrl: PAGE.MSIG_REMOVE_SIGNER,
-                  params: {
-                    address
-                  }
-                })
-              }}
-              onChange={(address: string) => {
-                navigate(router, {
-                  pageUrl: PAGE.MSIG_CHANGE_SIGNER,
-                  params: {
-                    address
-                  }
-                })
-              }}
-            />
-            <ButtonRowCenter>
-              <ButtonV2Link href={PAGE.MSIG_ADD_SIGNER}>
-                Add signer
-              </ButtonV2Link>
-            </ButtonRowCenter>
-          </div>
-        </WideDialog>
+            <div>
+              <h3>Signer Addresses</h3>
+              <SignersTable
+                signers={signers}
+                wallet={wallet}
+                onRemove={(address: string) => {
+                  navigate(router, {
+                    pageUrl: PAGE.MSIG_REMOVE_SIGNER,
+                    params: {
+                      address
+                    }
+                  })
+                }}
+                onChange={(address: string) => {
+                  navigate(router, {
+                    pageUrl: PAGE.MSIG_CHANGE_SIGNER,
+                    params: {
+                      address
+                    }
+                  })
+                }}
+              />
+              <ButtonRowCenter>
+                <ButtonV2Link href={PAGE.MSIG_ADD_SIGNER}>
+                  Add signer
+                </ButtonV2Link>
+              </ButtonRowCenter>
+            </div>
+          </WideDialog>
+        </>
       )}
     </div>
   )

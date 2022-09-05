@@ -2,7 +2,9 @@ import {
   getQueryParam,
   MessageHistoryTable,
   MessageDetail,
-  appendQueryParams
+  appendQueryParams,
+  useEnvironment,
+  Network
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
@@ -12,6 +14,7 @@ import { useMsig } from '../../MsigProvider'
 const MessageHistory = () => {
   const { Address } = useMsig()
   const router = useRouter()
+  const { networkName } = useEnvironment()
   const cid = getQueryParam.string(router, 'cid')
   return cid ? (
     <MessageDetail cid={cid} />
@@ -19,7 +22,7 @@ const MessageHistory = () => {
     <MessageHistoryTable
       address={Address}
       cidHref={(cid: string) => appendQueryParams(PAGE.MSIG_HISTORY, { cid })}
-      warnMissingData
+      warnMissingData={networkName === Network.MAINNET}
     />
   )
 }

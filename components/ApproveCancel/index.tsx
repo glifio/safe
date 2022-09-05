@@ -17,19 +17,22 @@ import {
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
-  MsigTransaction
+  MsigTransaction,
+  useLogger,
+  useEnvironment
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
-import { logger } from '../../logger'
 
 export const ApproveCancel = ({
   method,
   walletProviderOpts,
   pendingMsgContext
 }: ApproveCancelProps) => {
+  const logger = useLogger()
+  const { coinType, networkName } = useEnvironment()
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -94,12 +97,15 @@ export const ApproveCancel = ({
       logger.error(e)
       return null
     }
-  }, [Address, wallet.robust, method, proposal, serializeParams])
+  }, [Address, wallet.robust, method, proposal, serializeParams, logger])
 
   // Get actor data from proposal
   const { data: actorData, error: actorError } = useActorQuery({
     variables: {
-      address: convertAddrToPrefix(proposal?.to.robust || proposal?.to.id)
+      address: convertAddrToPrefix(
+        proposal?.to.robust || proposal?.to.id,
+        coinType
+      )
     },
     skip: !(proposal?.to.robust || proposal?.to.id)
   })
@@ -108,12 +114,12 @@ export const ApproveCancel = ({
   const actorName = useMemo<string>(() => {
     if (!actorData) return ''
     try {
-      return decodeActorCID(actorData.actor.Code)
+      return decodeActorCID(actorData.actor.Code, networkName)
     } catch (e) {
       logger.error(e)
       return ''
     }
-  }, [actorData])
+  }, [actorData, networkName, logger])
 
   // Set TxState.FillingForm when actor name has loaded
   useEffect(() => actorName && setTxState(TxState.FillingForm), [actorName])

@@ -4,7 +4,8 @@ import {
   ThemeProvider,
   PendingMessageProvider,
   WalletProviderWrapper,
-  initialState as walletProviderInitialState
+  initialState as walletProviderInitialState,
+  TestEnvironment
 } from '@glif/react-components'
 import { MockedProvider } from '@apollo/client/testing'
 import { WasmContext } from '../../lib/WasmLoader'
@@ -35,22 +36,27 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
 
   const Tree = ({ children }) => {
     return (
-      <MockedProvider mocks={apolloMocks} addTypeName={false}>
-        <WasmContext.Provider value={wasmMethods}>
-          <PendingMessageProvider>
-            <WalletProviderWrapper
-              options={options}
-              statePreset={statePreset}
-              getState={cacheWalletProviderState}
-              initialState={initialState}
-            >
-              <MsigProviderWrapper options={options} statePreset={statePreset}>
-                <ThemeProvider theme={theme}>{children}</ThemeProvider>
-              </MsigProviderWrapper>
-            </WalletProviderWrapper>
-          </PendingMessageProvider>
-        </WasmContext.Provider>
-      </MockedProvider>
+      <TestEnvironment>
+        <MockedProvider mocks={apolloMocks} addTypeName={false}>
+          <WasmContext.Provider value={wasmMethods}>
+            <PendingMessageProvider>
+              <WalletProviderWrapper
+                options={options}
+                statePreset={statePreset}
+                getState={cacheWalletProviderState}
+                initialState={initialState}
+              >
+                <MsigProviderWrapper
+                  options={options}
+                  statePreset={statePreset}
+                >
+                  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+                </MsigProviderWrapper>
+              </WalletProviderWrapper>
+            </PendingMessageProvider>
+          </WasmContext.Provider>
+        </MockedProvider>
+      </TestEnvironment>
     )
   }
 

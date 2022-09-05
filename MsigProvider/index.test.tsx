@@ -2,10 +2,10 @@ import { SWRConfig } from 'swr'
 import { act, renderHook } from '@testing-library/react-hooks'
 import { ReactNode } from 'react'
 import { waitFor } from '@testing-library/react'
-import { MockedProvider } from '@apollo/client/testing'
 import {
   WalletProviderWrapper,
-  initialState as _walletProviderInitialState
+  initialState as _walletProviderInitialState,
+  TestEnvironment
 } from '@glif/react-components'
 
 import {
@@ -49,18 +49,18 @@ describe('Multisig provider', () => {
         statePreset
       )
       Tree = ({ children }: { children: ReactNode }) => (
-        <MockedProvider mocks={addressMocks}>
+        <TestEnvironment apolloMocks={addressMocks} withApollo>
           <SWRConfig value={{ dedupingInterval: 0 }}>
             <WalletProviderWrapper
-              // @ts-ignore
               getState={() => {}}
               statePreset={statePreset}
+              // @ts-ignore
               initialState={walletProviderInitialState}
             >
               <MsigProviderWrapper test>{children}</MsigProviderWrapper>
             </WalletProviderWrapper>
           </SWRConfig>
-        </MockedProvider>
+        </TestEnvironment>
       )
     })
 
@@ -114,18 +114,18 @@ describe('Multisig provider', () => {
         statePreset
       )
       Tree = ({ children }: { children: ReactNode }) => (
-        <MockedProvider mocks={addressMocks}>
+        <TestEnvironment withApollo apolloMocks={addressMocks}>
           <SWRConfig value={{ dedupingInterval: 0 }}>
             <WalletProviderWrapper
-              // @ts-ignore
               getState={() => {}}
               statePreset={statePreset}
+              // @ts-ignore
               initialState={walletProviderInitialState}
             >
               <MsigProviderWrapper test>{children}</MsigProviderWrapper>
             </WalletProviderWrapper>
           </SWRConfig>
-        </MockedProvider>
+        </TestEnvironment>
       )
     })
 

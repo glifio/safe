@@ -11,18 +11,19 @@ import {
   MsigMethod,
   TxState,
   WalletProviderOpts,
-  PendingMsgContextType
+  PendingMsgContextType,
+  useLogger
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
-import { logger } from '../../logger'
 
 export const ChangeApprovals = ({
   walletProviderOpts,
   pendingMsgContext
 }: ChangeApprovalsProps) => {
+  const logger = useLogger()
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -75,7 +76,8 @@ export const ChangeApprovals = ({
     NumApprovalsThreshold,
     Address,
     wallet.robust,
-    serializeParams
+    serializeParams,
+    logger
   ])
 
   return (

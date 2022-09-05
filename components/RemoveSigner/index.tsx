@@ -12,19 +12,20 @@ import {
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
-  isAddrEqual
+  isAddrEqual,
+  useLogger
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
-import { logger } from '../../logger'
 
 export const RemoveSigner = ({
   signerAddress,
   walletProviderOpts,
   pendingMsgContext
 }: RemoveSignerProps) => {
+  const logger = useLogger()
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -94,7 +95,15 @@ export const RemoveSigner = ({
       logger.error(e)
       return null
     }
-  }, [signers, signer, decrease, Address, wallet.robust, serializeParams])
+  }, [
+    signers,
+    signer,
+    decrease,
+    Address,
+    wallet.robust,
+    serializeParams,
+    logger
+  ])
 
   return (
     <Transaction.Form

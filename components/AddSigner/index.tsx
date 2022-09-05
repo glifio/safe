@@ -12,18 +12,19 @@ import {
   MsigMethod,
   TxState,
   WalletProviderOpts,
-  PendingMsgContextType
+  PendingMsgContextType,
+  useLogger
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
-import { logger } from '../../logger'
 
 export const AddSigner = ({
   walletProviderOpts,
   pendingMsgContext
 }: AddSignerProps) => {
+  const logger = useLogger()
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -75,7 +76,7 @@ export const AddSigner = ({
       logger.error(e)
       return null
     }
-  }, [signer, increase, Address, wallet.robust, serializeParams])
+  }, [signer, increase, Address, wallet.robust, serializeParams, logger])
 
   return (
     <Transaction.Form
