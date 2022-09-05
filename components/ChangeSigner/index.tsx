@@ -13,7 +13,8 @@ import {
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
-  useLogger
+  useLogger,
+  isAddrEqual
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
@@ -92,11 +93,19 @@ export const ChangeSigner = ({
     logger
   ])
 
+  const warning = useMemo(
+    () =>
+      isAddrEqual(wallet, newSigner)
+        ? "You're about to remove yourself as a signer on this Safe."
+        : "You're about to change a signer address of your Safe. Please make sure you know and trust the new signer.",
+    [wallet, newSigner]
+  )
+
   return (
     <Transaction.Form
       title='Change a signer'
       description='Please update the signer address below'
-      warning="You're about to change a signer address of your Safe. Please make sure you know and trust the new signer."
+      warning={warning}
       msig
       method={MsigMethod.SWAP_SIGNER}
       message={message}

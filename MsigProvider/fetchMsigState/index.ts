@@ -8,17 +8,16 @@ import {
   isAddressSigner,
   Network
 } from '@glif/react-components'
-import type { ApolloClient } from '@apollo/client'
+import type { ApolloClient, NormalizedCacheObject } from '@apollo/client'
 
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
 
 export const fetchMsigState = async (
   actorID: string,
   signerAddress: string,
-  // we give this a default value for tests
   lCli: LotusRPCEngine,
   network: Network,
-  apolloClient: ApolloClient<object>
+  apolloClient: ApolloClient<NormalizedCacheObject>
 ): Promise<MsigActorState> => {
   try {
     const { Code } = await lCli.request<{ Code: CID }>(
@@ -27,10 +26,10 @@ export const fetchMsigState = async (
       null
     )
 
-    let ActorCode = ''
+    let actorName = ''
     try {
-      ActorCode = decodeActorCID(Code['/'], network)
-      if (!ActorCode?.includes('multisig')) throw new Error('Not an Msig actor')
+      actorName = decodeActorCID(Code['/'], network)
+      if (!actorName?.includes('multisig')) throw new Error('Not an Msig actor')
     } catch (e) {
       return {
         ...emptyMsigState,
@@ -104,7 +103,7 @@ export const fetchMsigState = async (
       Balance: new FilecoinNumber(Balance, 'attofil'),
       AvailableBalance: new FilecoinNumber(availableBalance, 'attofil'),
       Signers: signers,
-      ActorCode,
+      ActorCode: actorName,
       InitialBalance: new FilecoinNumber(State.InitialBalance, 'attofil'),
       NextTxnID: State.NextTxnID,
       NumApprovalsThreshold: State.NumApprovalsThreshold,

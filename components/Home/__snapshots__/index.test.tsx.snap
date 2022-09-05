@@ -154,7 +154,7 @@ exports[`Msig Home it renders the vesting balance, available balance, and msig a
   >
     <a
       class="c5"
-      href="/withdraw?network=t"
+      href="/withdraw?network=calibration"
     >
       Withdraw
     </a>
