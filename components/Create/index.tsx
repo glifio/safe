@@ -96,35 +96,34 @@ export const Create = ({
         // For the same reason, check whether value is a FileCoinNumber and not null
         value
       ) {
-        return null
-      }
-
-      const constructorParams = serializeParams({
-        Signers: [...acceptedSigners],
-        NumApprovalsThreshold: approvals,
-        UnlockDuration: vest,
-        StartEpoch: epoch
-      })
-      const params = Buffer.from(
-        serializeParams({
-          // Mainnet code cid for multisig creation. Old code cid shouldn't be used to create new actors. So you will get an error.
-          CodeCid: getActorCode('multisig', networkName),
-          ConstructorParams: Buffer.from(constructorParams).toString('base64')
+        const constructorParams = serializeParams({
+          Signers: [...acceptedSigners],
+          NumApprovalsThreshold: approvals,
+          UnlockDuration: vest,
+          StartEpoch: epoch
         })
-      ).toString('base64')
+        const params = Buffer.from(
+          serializeParams({
+            // Mainnet code cid for multisig creation. Old code cid shouldn't be used to create new actors. So you will get an error.
+            CodeCid: getActorCode('multisig', networkName),
+            ConstructorParams: Buffer.from(constructorParams).toString('base64')
+          })
+        ).toString('base64')
 
-      return new Message({
-        to: EXEC_ACTOR,
-        from: wallet.robust,
-        nonce: 0,
-        value: value.toAttoFil(),
-        method: 2,
-        params,
+        return new Message({
+          to: EXEC_ACTOR,
+          from: wallet.robust,
+          nonce: 0,
+          value: value.toAttoFil(),
+          method: 2,
+          params,
 
-        gasPremium: 0,
-        gasFeeCap: 0,
-        gasLimit: 0
-      })
+          gasPremium: 0,
+          gasFeeCap: 0,
+          gasLimit: 0
+        })
+      }
+      return null
     } catch (e) {
       logger.error(e)
       return null
