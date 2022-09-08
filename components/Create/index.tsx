@@ -16,10 +16,10 @@ import {
   useLogger,
   useEnvironment
 } from '@glif/react-components'
+import { getActorCode } from '@glif/filecoin-actor-utils'
 
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE, EXEC_ACTOR } from '../../constants'
-import { getActorCode } from '@glif/filecoin-actor-utils'
 
 export const Create = ({
   walletProviderOpts,
@@ -86,6 +86,19 @@ export const Create = ({
   // Placeholder message for getting gas params
   const message = useMemo<Message | null>(() => {
     try {
+      if (
+        isVestValid &&
+        isEpochValid &&
+        isValueValid &&
+        // Manually check signer validity to prevent passing invalid addresses to createMultisig.
+        // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
+        !acceptedSigners.some((signer) => !validateAddressString(signer)) &&
+        // For the same reason, check whether value is a FileCoinNumber and not null
+        value
+      ) {
+        return null
+      }
+
       const constructorParams = serializeParams({
         Signers: [...acceptedSigners],
         NumApprovalsThreshold: approvals,
@@ -100,27 +113,18 @@ export const Create = ({
         })
       ).toString('base64')
 
-      return isVestValid &&
-        isEpochValid &&
-        isValueValid &&
-        // Manually check signer validity to prevent passing invalid addresses to createMultisig.
-        // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
-        !acceptedSigners.some((signer) => !validateAddressString(signer)) &&
-        // For the same reason, check whether value is a FileCoinNumber and not null
-        value
-        ? new Message({
-            to: EXEC_ACTOR,
-            from: wallet.robust,
-            nonce: 0,
-            value: value.toAttoFil(),
-            method: 2,
-            params,
+      return new Message({
+        to: EXEC_ACTOR,
+        from: wallet.robust,
+        nonce: 0,
+        value: value.toAttoFil(),
+        method: 2,
+        params,
 
-            gasPremium: 0,
-            gasFeeCap: 0,
-            gasLimit: 0
-          })
-        : null
+        gasPremium: 0,
+        gasFeeCap: 0,
+        gasLimit: 0
+      })
     } catch (e) {
       logger.error(e)
       return null
