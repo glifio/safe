@@ -3,7 +3,7 @@ import { useState, useMemo, Context, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { CoinType, validateAddressString } from '@glif/filecoin-address'
+import { validateAddressString } from '@glif/filecoin-address'
 import {
   navigate,
   useWallet,
@@ -13,19 +13,21 @@ import {
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
-  actorCodesToNames
+  useLogger,
+  useEnvironment
 } from '@glif/react-components'
 
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE, EXEC_ACTOR } from '../../constants'
-import { logger } from '../../logger'
-
-const IS_PROD = process.env.NEXT_PUBLIC_IS_PROD
+import { getActorCode } from '@glif/filecoin-actor-utils'
 
 export const Create = ({
   walletProviderOpts,
   pendingMsgContext
 }: CreateProps) => {
+  const logger = useLogger()
+  const { networkName } = useEnvironment()
+
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
@@ -90,11 +92,10 @@ export const Create = ({
         UnlockDuration: vest,
         StartEpoch: epoch
       })
-      const network: CoinType = IS_PROD ? CoinType.MAIN : CoinType.TEST
       const params = Buffer.from(
         serializeParams({
           // Mainnet code cid for multisig creation. Old code cid shouldn't be used to create new actors. So you will get an error.
-          CodeCid: actorCodesToNames[network].multisig,
+          CodeCid: getActorCode('multisig', networkName),
           ConstructorParams: Buffer.from(constructorParams).toString('base64')
         })
       ).toString('base64')
@@ -114,6 +115,7 @@ export const Create = ({
             value: value.toAttoFil(),
             method: 2,
             params,
+
             gasPremium: 0,
             gasFeeCap: 0,
             gasLimit: 0
@@ -133,7 +135,9 @@ export const Create = ({
     approvals,
     acceptedSigners,
     wallet.robust,
-    serializeParams
+    serializeParams,
+    logger,
+    networkName
   ])
 
   // Calculate max affordable fee (balance minus value)

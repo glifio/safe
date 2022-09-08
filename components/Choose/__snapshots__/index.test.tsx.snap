@@ -182,7 +182,7 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {
@@ -538,7 +538,7 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {
@@ -900,7 +900,7 @@ exports[`Choose it renders the initial state correctly 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {

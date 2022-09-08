@@ -257,7 +257,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {
@@ -510,9 +510,9 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
 }
 
 .c20 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
 }
 
 .c20 span.info,
@@ -1223,7 +1223,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {
@@ -1476,9 +1476,9 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
 }
 
 .c20 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
 }
 
 .c20 span.info,
@@ -2147,7 +2147,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {
@@ -2909,7 +2909,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {

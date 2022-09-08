@@ -1,4 +1,5 @@
 import { act, getByText, render, RenderResult } from '@testing-library/react'
+import { Network } from '@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 import Home from '.'
@@ -7,7 +8,7 @@ import { PAGE } from '../../constants'
 const routerPushMock = jest.fn()
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
   return {
-    query: { network: 't' },
+    query: { network: Network.CALIBRATION },
     pathname: PAGE.MSIG_HOME,
     push: routerPushMock
   }

@@ -143,7 +143,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {
@@ -198,7 +198,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
         stroke-width="2"
       />
     </svg>
-    Please make sure to store your Safe address before continuing to prevent losing access to your Safe.
+    Please make sure to store your Safe address before continuing.
   </div>
   <div
     class="c4 c5"
@@ -275,7 +275,7 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
   gap: var(--space-m);
   width: 100%;
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .c0 form {

@@ -1,6 +1,6 @@
 {
   "name": "safe",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "engines": {
     "node": ">=16.0.0"
   },
@@ -21,14 +21,15 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
-    "@glif/base-css": "^0.0.32",
+    "@glif/base-css": "^0.0.33",
+    "@glif/filecoin-actor-utils": "^2.0.4",
     "@glif/filecoin-address": "^2.0.0-beta.16",
     "@glif/filecoin-message": "^2.0.0-beta.16",
     "@glif/filecoin-number": "^2.0.0-beta.16",
     "@glif/filecoin-rpc-client": "^2.0.0-beta.8",
     "@glif/filecoin-wallet-provider": "^2.0.0-beta.18",
     "@glif/logger": "^2.0.0-beta.7",
-    "@glif/react-components": "^2.0.0-alpha.144",
+    "@glif/react-components": "^2.0.0-alpha.153",
     "@zondax/filecoin-signing-tools": "^1.1.0",
     "lodash.clonedeep": "^4.5.0",
     "next": "^12.2.3",

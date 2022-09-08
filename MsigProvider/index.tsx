@@ -7,7 +7,7 @@ import {
   Dispatch
 } from 'react'
 import { useApolloClient } from '@apollo/client'
-import { useWallet } from '@glif/react-components'
+import { useEnvironment, useWallet } from '@glif/react-components'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import useSWR from 'swr'
 
@@ -40,8 +40,11 @@ export const MsigProviderWrapper = ({
   const [loading, setLoading] = useState<boolean>(false)
   const [msigActor, setMsigActor] = useState(null)
   const apolloClient = useApolloClient()
+  const { lotusApi, networkName } = useEnvironment()
   const { data: actor, error: msigActorStateError } = useSWR(
-    msigActor ? [msigActor, wallet.robust, apolloClient, setLoading] : null,
+    msigActor
+      ? [msigActor, wallet.robust, lotusApi, networkName, apolloClient]
+      : null,
     fetchMsigState
   )
 

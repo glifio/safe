@@ -3,10 +3,10 @@ import {
   walletProviderReducer,
   initialState as walletProviderInitialState,
   actorCodesToNames,
-  noWallet
+  noWallet,
+  Network
 } from '@glif/react-components'
 import createMockWalletProviderContextFuncs from '../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
-import { Network } from '@glif/filecoin-address'
 
 export * from '../../node_modules/@glif/react-components/dist'
 
@@ -99,7 +99,7 @@ export function useWallet() {
 
 export const multisigActorReturn = {
   data: {
-    actor: { Code: { '/': actorCodesToNames[Network.TEST]['multisig'] } }
+    actor: { Code: { '/': actorCodesToNames[Network.CALIBRATION]['multisig'] } }
   }
 }
 
