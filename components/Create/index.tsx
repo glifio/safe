@@ -104,7 +104,6 @@ export const Create = ({
         })
         const params = Buffer.from(
           serializeParams({
-            // Mainnet code cid for multisig creation. Old code cid shouldn't be used to create new actors. So you will get an error.
             CodeCid: getActorCode('multisig', networkName),
             ConstructorParams: Buffer.from(constructorParams).toString('base64')
           })
