@@ -16,6 +16,7 @@ import {
   useLogger,
   useEnvironment
 } from '@glif/react-components'
+import { getActorCode } from '@glif/filecoin-actor-utils'
 
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE, EXEC_ACTOR } from '../../constants'
@@ -25,12 +26,12 @@ export const Create = ({
   pendingMsgContext
 }: CreateProps) => {
   const logger = useLogger()
-  const { isProd } = useEnvironment()
+  const { networkName } = useEnvironment()
 
   const router = useRouter()
   const wallet = useWallet()
   // @ts-expect-error
-  const { createMultisig } = useWasm()
+  const { serializeParams } = useWasm()
 
   // Input states
   const [vest, setVest] = useState<number>(0)
@@ -85,7 +86,8 @@ export const Create = ({
   // Placeholder message for getting gas params
   const message = useMemo<Message | null>(() => {
     try {
-      return isVestValid &&
+      if (
+        isVestValid &&
         isEpochValid &&
         isValueValid &&
         // Manually check signer validity to prevent passing invalid addresses to createMultisig.
@@ -93,27 +95,34 @@ export const Create = ({
         !acceptedSigners.some((signer) => !validateAddressString(signer)) &&
         // For the same reason, check whether value is a FileCoinNumber and not null
         value
-        ? new Message({
-            to: EXEC_ACTOR,
-            from: wallet.robust,
-            nonce: 0,
-            value: value.toAttoFil(),
-            method: 2,
-            params: createMultisig(
-              wallet.robust,
-              [...acceptedSigners],
-              value.toAttoFil(),
-              approvals,
-              0,
-              vest.toString(),
-              epoch.toString(),
-              !!isProd ? 'mainnet' : 'calibrationnet'
-            ).Params,
-            gasPremium: 0,
-            gasFeeCap: 0,
-            gasLimit: 0
+      ) {
+        const constructorParams = serializeParams({
+          Signers: [...acceptedSigners],
+          NumApprovalsThreshold: approvals,
+          UnlockDuration: vest,
+          StartEpoch: epoch
+        })
+        const params = Buffer.from(
+          serializeParams({
+            CodeCid: getActorCode('multisig', networkName),
+            ConstructorParams: Buffer.from(constructorParams).toString('base64')
           })
-        : null
+        ).toString('base64')
+
+        return new Message({
+          to: EXEC_ACTOR,
+          from: wallet.robust,
+          nonce: 0,
+          value: value.toAttoFil(),
+          method: 2,
+          params,
+
+          gasPremium: 0,
+          gasFeeCap: 0,
+          gasLimit: 0
+        })
+      }
+      return null
     } catch (e) {
       logger.error(e)
       return null
@@ -128,9 +137,9 @@ export const Create = ({
     approvals,
     acceptedSigners,
     wallet.robust,
-    createMultisig,
+    serializeParams,
     logger,
-    isProd
+    networkName
   ])
 
   // Calculate max affordable fee (balance minus value)
