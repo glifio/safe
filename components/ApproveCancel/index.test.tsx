@@ -5,8 +5,7 @@ import {
   fireEvent,
   getByText,
   getByRole,
-  RenderResult,
-  getAllByText
+  RenderResult
 } from '@testing-library/react'
 import { Context } from 'react'
 import { BigNumber } from '@glif/filecoin-number'

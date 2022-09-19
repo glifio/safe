@@ -61,13 +61,6 @@ export const ApproveCancel = ({
     return NumApprovalsThreshold - proposal.approved.length
   }, [NumApprovalsThreshold, proposal?.approved])
 
-  // Get parameters object to pass to Parameters component
-  const parameters = useMemo<Record<string, any> | null>(() => {
-    if (!proposal) return null
-    const { id, approved, proposalHash, ...params } = proposal
-    return { params }
-  }, [proposal])
-
   // Create message from input
   const message = useMemo<Message | null>(() => {
     try {
