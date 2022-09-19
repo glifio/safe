@@ -1,10 +1,10 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
+import { getActorName } from '@glif/filecoin-actor-utils'
 import { CID } from '@glif/filecoin-wallet-provider'
 import {
   AddressDocument,
   AddressQuery,
-  decodeActorCID,
   isAddressSigner,
   Network
 } from '@glif/react-components'
@@ -28,7 +28,7 @@ export const fetchMsigState = async (
 
     let actorName = ''
     try {
-      actorName = decodeActorCID(Code['/'], network)
+      actorName = getActorName(Code, network)
       if (!actorName?.includes('multisig')) throw new Error('Not an Msig actor')
     } catch (e) {
       return {

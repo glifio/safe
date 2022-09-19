@@ -221,6 +221,26 @@ exports[`ChangeApprovals it allows a user to change the approvals threshold 1`] 
   height: calc(3em * 0.5);
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.c5 > p,
+.c5 > hr {
+  margin: 0.5em 0;
+}
+
+.c5 > p[role='button'] {
+  margin: 0;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -244,26 +264,6 @@ exports[`ChangeApprovals it allows a user to change the approvals threshold 1`] 
   -ms-flex-direction: column;
   flex-direction: column;
   gap: var(--space-m);
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
-}
-
-.c5 > p,
-.c5 > hr {
-  margin: 0.5em 0;
-}
-
-.c5 > p[role='button'] {
-  margin: 0;
 }
 
 .c7 {

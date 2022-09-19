@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
-.c25 {
+.c23 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -32,34 +32,34 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background: transparent;
 }
 
-.c25 svg path {
+.c23 svg path {
   stroke: var(--black);
 }
 
-.c25:hover {
+.c23:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c25:hover svg path {
+.c23:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c25:active {
+.c23:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c25:active svg path {
+.c23:active svg path {
   stroke: var(--white) !important;
 }
 
-.c25 svg path {
+.c23 svg path {
   stroke: var(--gray-medium);
 }
 
-.c26 {
+.c24 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -93,65 +93,45 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background: transparent;
 }
 
-.c26 svg path {
+.c24 svg path {
   stroke: var(--black);
 }
 
-.c26:hover {
+.c24:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c26:hover svg path {
+.c24:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c26:active {
+.c24:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c26:active svg path {
+.c24:active svg path {
   stroke: var(--white) !important;
 }
 
-.c26 svg path {
+.c24 svg path {
   stroke: var(--white);
 }
 
-.c26:hover {
+.c24:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c26:hover svg path {
+.c24:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c26 svg path {
+.c24 svg path {
   stroke: var(--gray-medium);
-}
-
-.c19 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: var(--space-m);
-  padding: 0 1em;
-  height: 2em;
-  line-height: 2em;
-  border-radius: 1em;
-  text-align: center;
-  white-space: nowrap;
-  color: var(--purple-medium);
-  background-color: var(--purple-light);
 }
 
 .c13 {
@@ -204,7 +184,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c23 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -213,7 +193,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   margin: 1.5em 0;
 }
 
-.c24 {
+.c22 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -244,31 +224,6 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   animation-iteration-count: infinite;
   width: calc(3em * 0.5);
   height: calc(3em * 0.5);
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
-  width: 100%;
-  margin: 0 auto;
-  max-width: 40em;
-}
-
-.c0 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
 }
 
 .c8 h4 {
@@ -441,47 +396,36 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   word-break: break-word;
 }
 
+.c7 > div:last-child > p[role='button'] {
+  margin: 0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 40em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
 .c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1em;
-  line-height: 2.5em;
-  text-align: left;
-  padding-left: 1.5em;
-}
-
-.c18 > div:first-child {
-  -webkit-flex: 0 1 25%;
-  -ms-flex: 0 1 25%;
-  flex: 0 1 25%;
-  min-width: 200px;
-  text-transform: capitalize;
-}
-
-.c18 > div:last-child {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 0.75em;
-  word-break: break-word;
-}
-
-.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -499,7 +443,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c20 > *:first-child {
+.c18 > *:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -509,26 +453,26 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   flex-direction: column;
 }
 
-.c20 > *:last-child:not(.toggle-wrapper) {
+.c18 > *:last-child:not(.toggle-wrapper) {
   -webkit-flex: 0 0 65%;
   -ms-flex: 0 0 65%;
   flex: 0 0 65%;
 }
 
-.c20 span.info,
-.c20 span.error {
+.c18 span.info,
+.c18 span.error {
   font-size: 0.875rem;
 }
 
-.c20 span.error {
+.c18 span.error {
   color: var(--red-medium);
 }
 
-.c21 .toggle-wrapper {
+.c19 .toggle-wrapper {
   position: relative;
 }
 
-.c21 input {
+.c19 input {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -537,7 +481,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   opacity: 0;
 }
 
-.c21 .toggle {
+.c19 .toggle {
   display: inline-block;
   position: relative;
   width: 2.25em;
@@ -549,7 +493,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background-color: var(--gray-light) !important;
 }
 
-.c21 .toggle::after {
+.c19 .toggle::after {
   content: '';
   position: absolute;
   top: 0;
@@ -560,12 +504,12 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background-color: var(--white);
 }
 
-.c21 input:checked ~ .toggle {
+.c19 input:checked ~ .toggle {
   border-color: var(--blue-dark);
   background-color: var(--blue-dark);
 }
 
-.c21 input:checked ~ .toggle::after {
+.c19 input:checked ~ .toggle::after {
   left: auto;
   right: 0;
 }
@@ -613,7 +557,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   flex: 1 0 auto;
 }
 
-.c22 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -628,7 +572,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c22 span {
+.c20 span {
   color: var(--purple-medium);
   font-size: 1.75rem;
 }
@@ -703,17 +647,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
           class="c7"
         >
           <div>
-            Approvals until execution
-          </div>
-          <div>
-            1
-          </div>
-        </div>
-        <div
-          class="c7"
-        >
-          <div>
-            Approved by
+            Proposer
           </div>
           <div>
             <div
@@ -776,127 +710,185 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
             </div>
           </div>
         </div>
-        <hr />
         <div
-          class="c5"
+          class="c7"
         >
-          <div
-            class="c7"
-          >
-            <div>
-              Parameters
-            </div>
-            <div />
+          <div>
+            Approvers (1)
           </div>
-          <div
-            class="c18"
-          >
-            <div>
-              to
-            </div>
-            <div>
+          <div>
+            <div
+              class="c8"
+            >
               <div
-                class="c8"
+                class="c9"
+                color="var(--purple-medium)"
               >
-                <div
-                  class="c9"
-                  color="var(--purple-medium)"
+                <a
+                  href="https://explorer-calibration.glif.link/actor/?address=t13koa6kz5otquokcgwusvtsxcdymuq7lqe4twb4i"
+                  rel="noreferrer noopener"
+                  target="_blank"
                 >
-                  <a
-                    href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    t2i43o ... z2btmy
-                  </a>
-                  <div
-                    class="c10"
-                    color="var(--purple-medium)"
+                  t13koa ... 4twb4i
+                </a>
+                <div
+                  class="c10"
+                  color="var(--purple-medium)"
+                  display="flex"
+                >
+                  <button
+                    class="c11 c12"
                     display="flex"
+                    role="button"
+                    type="button"
                   >
-                    <button
-                      class="c11 c12"
-                      display="flex"
-                      role="button"
-                      type="button"
+                    <svg
+                      class="c13 c14 c15"
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        class="c13 c14 c15"
-                        fill="none"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          fill="#1A0066"
-                          height="12"
-                          width="12"
-                          x="8"
-                          y="4"
-                        />
-                        <rect
-                          fill="#E0D7FE"
-                          height="12"
-                          width="12"
-                          x="4"
-                          y="8"
-                        />
-                      </svg>
-                      <span
-                        class="c16 c17"
-                        color="var(--purple-medium)"
-                      >
-                        Copy
-                      </span>
-                    </button>
-                  </div>
+                      <rect
+                        fill="#1A0066"
+                        height="12"
+                        width="12"
+                        x="8"
+                        y="4"
+                      />
+                      <rect
+                        fill="#E0D7FE"
+                        height="12"
+                        width="12"
+                        x="4"
+                        y="8"
+                      />
+                    </svg>
+                    <span
+                      class="c16 c17"
+                      color="var(--purple-medium)"
+                    >
+                      Copy
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="c18"
-          >
-            <div>
-              value
-            </div>
-            <div>
-              0.4
-               FIL
-            </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <div>
+            Approvals until execution
           </div>
-          <div
-            class="c18"
-          >
-            <div>
-              method
-            </div>
-            <div>
+          <div>
+            1
+          </div>
+        </div>
+        <hr />
+        <div
+          class="c7"
+        >
+          <div>
+            To
+          </div>
+          <div>
+            <div
+              class="c8"
+            >
               <div
-                class="c19"
-                color="purple"
+                class="c9"
+                color="var(--purple-medium)"
               >
-                <span>
-                  SEND
-                </span>
+                <a
+                  href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  t2i43o ... z2btmy
+                </a>
+                <div
+                  class="c10"
+                  color="var(--purple-medium)"
+                  display="flex"
+                >
+                  <button
+                    class="c11 c12"
+                    display="flex"
+                    role="button"
+                    type="button"
+                  >
+                    <svg
+                      class="c13 c14 c15"
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        fill="#1A0066"
+                        height="12"
+                        width="12"
+                        x="8"
+                        y="4"
+                      />
+                      <rect
+                        fill="#E0D7FE"
+                        height="12"
+                        width="12"
+                        x="4"
+                        y="8"
+                      />
+                    </svg>
+                    <span
+                      class="c16 c17"
+                      color="var(--purple-medium)"
+                    >
+                      Copy
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div
-            class="c18"
-          >
-            <div>
-              Parameters
-            </div>
-            <div>
-              —
-            </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <div>
+            Method
+          </div>
+          <div>
+            Send
+          </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <div>
+            Value
+          </div>
+          <div>
+            0.4
+             FIL
+          </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <div>
+            Params
+          </div>
+          <div>
+            –
           </div>
         </div>
         <hr />
         <label
-          class="c20 c21"
+          class="c18 c19"
           disabled=""
         >
           <div>
@@ -932,7 +924,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
         </p>
         <hr />
         <div
-          class="c22"
+          class="c20"
         >
           <span>
             Total
@@ -945,17 +937,17 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
       </div>
     </div>
     <div
-      class="c23 c24"
+      class="c21 c22"
     >
       <button
-        class="c25"
+        class="c23"
         disabled=""
         type="button"
       >
         Back
       </button>
       <button
-        class="c26"
+        class="c24"
         disabled=""
         type="submit"
       >
@@ -967,7 +959,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
 `;
 
 exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
-.c25 {
+.c23 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -998,34 +990,34 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   background: transparent;
 }
 
-.c25 svg path {
+.c23 svg path {
   stroke: var(--black);
 }
 
-.c25:hover {
+.c23:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c25:hover svg path {
+.c23:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c25:active {
+.c23:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c25:active svg path {
+.c23:active svg path {
   stroke: var(--white) !important;
 }
 
-.c25 svg path {
+.c23 svg path {
   stroke: var(--gray-medium);
 }
 
-.c26 {
+.c24 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1059,65 +1051,45 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   background: transparent;
 }
 
-.c26 svg path {
+.c24 svg path {
   stroke: var(--black);
 }
 
-.c26:hover {
+.c24:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c26:hover svg path {
+.c24:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c26:active {
+.c24:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c26:active svg path {
+.c24:active svg path {
   stroke: var(--white) !important;
 }
 
-.c26 svg path {
+.c24 svg path {
   stroke: var(--white);
 }
 
-.c26:hover {
+.c24:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c26:hover svg path {
+.c24:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c26 svg path {
+.c24 svg path {
   stroke: var(--gray-medium);
-}
-
-.c19 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: var(--space-m);
-  padding: 0 1em;
-  height: 2em;
-  line-height: 2em;
-  border-radius: 1em;
-  text-align: center;
-  white-space: nowrap;
-  color: var(--purple-medium);
-  background-color: var(--purple-light);
 }
 
 .c13 {
@@ -1170,7 +1142,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c23 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1179,7 +1151,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   margin: 1.5em 0;
 }
 
-.c24 {
+.c22 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1210,31 +1182,6 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   animation-iteration-count: infinite;
   width: calc(3em * 0.5);
   height: calc(3em * 0.5);
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
-  width: 100%;
-  margin: 0 auto;
-  max-width: 40em;
-}
-
-.c0 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
 }
 
 .c8 h4 {
@@ -1407,47 +1354,36 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   word-break: break-word;
 }
 
+.c7 > div:last-child > p[role='button'] {
+  margin: 0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 40em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
 .c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1em;
-  line-height: 2.5em;
-  text-align: left;
-  padding-left: 1.5em;
-}
-
-.c18 > div:first-child {
-  -webkit-flex: 0 1 25%;
-  -ms-flex: 0 1 25%;
-  flex: 0 1 25%;
-  min-width: 200px;
-  text-transform: capitalize;
-}
-
-.c18 > div:last-child {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 0.75em;
-  word-break: break-word;
-}
-
-.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1465,7 +1401,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c20 > *:first-child {
+.c18 > *:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1475,26 +1411,26 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   flex-direction: column;
 }
 
-.c20 > *:last-child:not(.toggle-wrapper) {
+.c18 > *:last-child:not(.toggle-wrapper) {
   -webkit-flex: 0 0 65%;
   -ms-flex: 0 0 65%;
   flex: 0 0 65%;
 }
 
-.c20 span.info,
-.c20 span.error {
+.c18 span.info,
+.c18 span.error {
   font-size: 0.875rem;
 }
 
-.c20 span.error {
+.c18 span.error {
   color: var(--red-medium);
 }
 
-.c21 .toggle-wrapper {
+.c19 .toggle-wrapper {
   position: relative;
 }
 
-.c21 input {
+.c19 input {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1503,7 +1439,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   opacity: 0;
 }
 
-.c21 .toggle {
+.c19 .toggle {
   display: inline-block;
   position: relative;
   width: 2.25em;
@@ -1515,7 +1451,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   background-color: var(--gray-light) !important;
 }
 
-.c21 .toggle::after {
+.c19 .toggle::after {
   content: '';
   position: absolute;
   top: 0;
@@ -1526,12 +1462,12 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   background-color: var(--white);
 }
 
-.c21 input:checked ~ .toggle {
+.c19 input:checked ~ .toggle {
   border-color: var(--blue-dark);
   background-color: var(--blue-dark);
 }
 
-.c21 input:checked ~ .toggle::after {
+.c19 input:checked ~ .toggle::after {
   left: auto;
   right: 0;
 }
@@ -1579,7 +1515,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   flex: 1 0 auto;
 }
 
-.c22 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1594,7 +1530,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c22 span {
+.c20 span {
   color: var(--purple-medium);
   font-size: 1.75rem;
 }
@@ -1669,17 +1605,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
           class="c7"
         >
           <div>
-            Approvals until execution
-          </div>
-          <div>
-            1
-          </div>
-        </div>
-        <div
-          class="c7"
-        >
-          <div>
-            Approved by
+            Proposer
           </div>
           <div>
             <div
@@ -1742,127 +1668,185 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
             </div>
           </div>
         </div>
-        <hr />
         <div
-          class="c5"
+          class="c7"
         >
-          <div
-            class="c7"
-          >
-            <div>
-              Parameters
-            </div>
-            <div />
+          <div>
+            Approvers (1)
           </div>
-          <div
-            class="c18"
-          >
-            <div>
-              to
-            </div>
-            <div>
+          <div>
+            <div
+              class="c8"
+            >
               <div
-                class="c8"
+                class="c9"
+                color="var(--purple-medium)"
               >
-                <div
-                  class="c9"
-                  color="var(--purple-medium)"
+                <a
+                  href="https://explorer-calibration.glif.link/actor/?address=t13koa6kz5otquokcgwusvtsxcdymuq7lqe4twb4i"
+                  rel="noreferrer noopener"
+                  target="_blank"
                 >
-                  <a
-                    href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    t2i43o ... z2btmy
-                  </a>
-                  <div
-                    class="c10"
-                    color="var(--purple-medium)"
+                  t13koa ... 4twb4i
+                </a>
+                <div
+                  class="c10"
+                  color="var(--purple-medium)"
+                  display="flex"
+                >
+                  <button
+                    class="c11 c12"
                     display="flex"
+                    role="button"
+                    type="button"
                   >
-                    <button
-                      class="c11 c12"
-                      display="flex"
-                      role="button"
-                      type="button"
+                    <svg
+                      class="c13 c14 c15"
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        class="c13 c14 c15"
-                        fill="none"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          fill="#1A0066"
-                          height="12"
-                          width="12"
-                          x="8"
-                          y="4"
-                        />
-                        <rect
-                          fill="#E0D7FE"
-                          height="12"
-                          width="12"
-                          x="4"
-                          y="8"
-                        />
-                      </svg>
-                      <span
-                        class="c16 c17"
-                        color="var(--purple-medium)"
-                      >
-                        Copy
-                      </span>
-                    </button>
-                  </div>
+                      <rect
+                        fill="#1A0066"
+                        height="12"
+                        width="12"
+                        x="8"
+                        y="4"
+                      />
+                      <rect
+                        fill="#E0D7FE"
+                        height="12"
+                        width="12"
+                        x="4"
+                        y="8"
+                      />
+                    </svg>
+                    <span
+                      class="c16 c17"
+                      color="var(--purple-medium)"
+                    >
+                      Copy
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="c18"
-          >
-            <div>
-              value
-            </div>
-            <div>
-              0.4
-               FIL
-            </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <div>
+            Approvals until execution
           </div>
-          <div
-            class="c18"
-          >
-            <div>
-              method
-            </div>
-            <div>
+          <div>
+            1
+          </div>
+        </div>
+        <hr />
+        <div
+          class="c7"
+        >
+          <div>
+            To
+          </div>
+          <div>
+            <div
+              class="c8"
+            >
               <div
-                class="c19"
-                color="purple"
+                class="c9"
+                color="var(--purple-medium)"
               >
-                <span>
-                  SEND
-                </span>
+                <a
+                  href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  t2i43o ... z2btmy
+                </a>
+                <div
+                  class="c10"
+                  color="var(--purple-medium)"
+                  display="flex"
+                >
+                  <button
+                    class="c11 c12"
+                    display="flex"
+                    role="button"
+                    type="button"
+                  >
+                    <svg
+                      class="c13 c14 c15"
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        fill="#1A0066"
+                        height="12"
+                        width="12"
+                        x="8"
+                        y="4"
+                      />
+                      <rect
+                        fill="#E0D7FE"
+                        height="12"
+                        width="12"
+                        x="4"
+                        y="8"
+                      />
+                    </svg>
+                    <span
+                      class="c16 c17"
+                      color="var(--purple-medium)"
+                    >
+                      Copy
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div
-            class="c18"
-          >
-            <div>
-              Parameters
-            </div>
-            <div>
-              —
-            </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <div>
+            Method
+          </div>
+          <div>
+            Send
+          </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <div>
+            Value
+          </div>
+          <div>
+            0.4
+             FIL
+          </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <div>
+            Params
+          </div>
+          <div>
+            –
           </div>
         </div>
         <hr />
         <label
-          class="c20 c21"
+          class="c18 c19"
           disabled=""
         >
           <div>
@@ -1898,7 +1882,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
         </p>
         <hr />
         <div
-          class="c22"
+          class="c20"
         >
           <span>
             Total
@@ -1911,17 +1895,17 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
       </div>
     </div>
     <div
-      class="c23 c24"
+      class="c21 c22"
     >
       <button
-        class="c25"
+        class="c23"
         disabled=""
         type="button"
       >
         Back
       </button>
       <button
-        class="c26"
+        class="c24"
         disabled=""
         type="submit"
       >
@@ -1933,7 +1917,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
 `;
 
 exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
-.c21 {
+.c19 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1960,30 +1944,30 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   font-size: 1.25em;
 }
 
-.c21 svg path {
+.c19 svg path {
   stroke: var(--black);
 }
 
-.c21:hover {
+.c19:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c21:hover svg path {
+.c19:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c21:active {
+.c19:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c21:active svg path {
+.c19:active svg path {
   stroke: var(--white) !important;
 }
 
-.c22 {
+.c20 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2013,61 +1997,41 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   background: var(--green-medium);
 }
 
-.c22 svg path {
+.c20 svg path {
   stroke: var(--black);
 }
 
-.c22:hover {
+.c20:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c22:hover svg path {
+.c20:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c22:active {
+.c20:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c22:active svg path {
+.c20:active svg path {
   stroke: var(--white) !important;
 }
 
-.c22 svg path {
+.c20 svg path {
   stroke: var(--white);
 }
 
-.c22:hover {
+.c20:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c22:hover svg path {
+.c20:hover svg path {
   stroke: var(--green-medium);
-}
-
-.c18 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: var(--space-m);
-  padding: 0 1em;
-  height: 2em;
-  line-height: 2em;
-  border-radius: 1em;
-  text-align: center;
-  white-space: nowrap;
-  color: var(--purple-medium);
-  background-color: var(--purple-light);
 }
 
 .c12 {
@@ -2120,7 +2084,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2129,36 +2093,11 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   margin: 1.5em 0;
 }
 
-.c20 {
+.c18 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
-  width: 100%;
-  margin: 0 auto;
-  max-width: 40em;
-}
-
-.c0 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
 }
 
 .c7 h4 {
@@ -2331,44 +2270,33 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   word-break: break-word;
 }
 
-.c17 {
+.c6 > div:last-child > p[role='button'] {
+  margin: 0;
+}
+
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1em;
-  line-height: 2.5em;
-  text-align: left;
-  padding-left: 1.5em;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 40em;
 }
 
-.c17 > div:first-child {
-  -webkit-flex: 0 1 25%;
-  -ms-flex: 0 1 25%;
-  flex: 0 1 25%;
-  min-width: 200px;
-  text-transform: capitalize;
-}
-
-.c17 > div:last-child {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+.c0 form {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 0.75em;
-  word-break: break-word;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
 }
 
 .c5 {
@@ -2481,17 +2409,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
           class="c6"
         >
           <div>
-            Approvals until execution
-          </div>
-          <div>
-            1
-          </div>
-        </div>
-        <div
-          class="c6"
-        >
-          <div>
-            Approved by
+            Proposer
           </div>
           <div>
             <div
@@ -2554,137 +2472,195 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
             </div>
           </div>
         </div>
-        <hr />
         <div
-          class="c4"
+          class="c6"
         >
-          <div
-            class="c6"
-          >
-            <div>
-              Parameters
-            </div>
-            <div />
+          <div>
+            Approvers (1)
           </div>
-          <div
-            class="c17"
-          >
-            <div>
-              to
-            </div>
-            <div>
+          <div>
+            <div
+              class="c7"
+            >
               <div
-                class="c7"
+                class="c8"
+                color="var(--purple-medium)"
               >
-                <div
-                  class="c8"
-                  color="var(--purple-medium)"
+                <a
+                  href="https://explorer-calibration.glif.link/actor/?address=t13koa6kz5otquokcgwusvtsxcdymuq7lqe4twb4i"
+                  rel="noreferrer noopener"
+                  target="_blank"
                 >
-                  <a
-                    href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    t2i43o ... z2btmy
-                  </a>
-                  <div
-                    class="c9"
-                    color="var(--purple-medium)"
+                  t13koa ... 4twb4i
+                </a>
+                <div
+                  class="c9"
+                  color="var(--purple-medium)"
+                  display="flex"
+                >
+                  <button
+                    class="c10 c11"
                     display="flex"
+                    role="button"
+                    type="button"
                   >
-                    <button
-                      class="c10 c11"
-                      display="flex"
-                      role="button"
-                      type="button"
+                    <svg
+                      class="c12 c13 c14"
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        class="c12 c13 c14"
-                        fill="none"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          fill="#1A0066"
-                          height="12"
-                          width="12"
-                          x="8"
-                          y="4"
-                        />
-                        <rect
-                          fill="#E0D7FE"
-                          height="12"
-                          width="12"
-                          x="4"
-                          y="8"
-                        />
-                      </svg>
-                      <span
-                        class="c15 c16"
-                        color="var(--purple-medium)"
-                      >
-                        Copy
-                      </span>
-                    </button>
-                  </div>
+                      <rect
+                        fill="#1A0066"
+                        height="12"
+                        width="12"
+                        x="8"
+                        y="4"
+                      />
+                      <rect
+                        fill="#E0D7FE"
+                        height="12"
+                        width="12"
+                        x="4"
+                        y="8"
+                      />
+                    </svg>
+                    <span
+                      class="c15 c16"
+                      color="var(--purple-medium)"
+                    >
+                      Copy
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="c17"
-          >
-            <div>
-              value
-            </div>
-            <div>
-              0.4
-               FIL
-            </div>
+        </div>
+        <div
+          class="c6"
+        >
+          <div>
+            Approvals until execution
           </div>
-          <div
-            class="c17"
-          >
-            <div>
-              method
-            </div>
-            <div>
+          <div>
+            1
+          </div>
+        </div>
+        <hr />
+        <div
+          class="c6"
+        >
+          <div>
+            To
+          </div>
+          <div>
+            <div
+              class="c7"
+            >
               <div
-                class="c18"
-                color="purple"
+                class="c8"
+                color="var(--purple-medium)"
               >
-                <span>
-                  SEND
-                </span>
+                <a
+                  href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  t2i43o ... z2btmy
+                </a>
+                <div
+                  class="c9"
+                  color="var(--purple-medium)"
+                  display="flex"
+                >
+                  <button
+                    class="c10 c11"
+                    display="flex"
+                    role="button"
+                    type="button"
+                  >
+                    <svg
+                      class="c12 c13 c14"
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        fill="#1A0066"
+                        height="12"
+                        width="12"
+                        x="8"
+                        y="4"
+                      />
+                      <rect
+                        fill="#E0D7FE"
+                        height="12"
+                        width="12"
+                        x="4"
+                        y="8"
+                      />
+                    </svg>
+                    <span
+                      class="c15 c16"
+                      color="var(--purple-medium)"
+                    >
+                      Copy
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div
-            class="c17"
-          >
-            <div>
-              Parameters
-            </div>
-            <div>
-              —
-            </div>
+        </div>
+        <div
+          class="c6"
+        >
+          <div>
+            Method
+          </div>
+          <div>
+            Send
+          </div>
+        </div>
+        <div
+          class="c6"
+        >
+          <div>
+            Value
+          </div>
+          <div>
+            0.4
+             FIL
+          </div>
+        </div>
+        <div
+          class="c6"
+        >
+          <div>
+            Params
+          </div>
+          <div>
+            –
           </div>
         </div>
       </div>
     </div>
     <div
-      class="c19 c20"
+      class="c17 c18"
     >
       <button
-        class="c21"
+        class="c19"
         type="button"
       >
         Cancel
       </button>
       <button
-        class="c22"
+        class="c20"
         type="submit"
       >
         Review
@@ -2695,7 +2671,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
 `;
 
 exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
-.c21 {
+.c19 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2722,30 +2698,30 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   font-size: 1.25em;
 }
 
-.c21 svg path {
+.c19 svg path {
   stroke: var(--black);
 }
 
-.c21:hover {
+.c19:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c21:hover svg path {
+.c19:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c21:active {
+.c19:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c21:active svg path {
+.c19:active svg path {
   stroke: var(--white) !important;
 }
 
-.c22 {
+.c20 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2775,61 +2751,41 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   background: var(--green-medium);
 }
 
-.c22 svg path {
+.c20 svg path {
   stroke: var(--black);
 }
 
-.c22:hover {
+.c20:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c22:hover svg path {
+.c20:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c22:active {
+.c20:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c22:active svg path {
+.c20:active svg path {
   stroke: var(--white) !important;
 }
 
-.c22 svg path {
+.c20 svg path {
   stroke: var(--white);
 }
 
-.c22:hover {
+.c20:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c22:hover svg path {
+.c20:hover svg path {
   stroke: var(--green-medium);
-}
-
-.c18 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: var(--space-m);
-  padding: 0 1em;
-  height: 2em;
-  line-height: 2em;
-  border-radius: 1em;
-  text-align: center;
-  white-space: nowrap;
-  color: var(--purple-medium);
-  background-color: var(--purple-light);
 }
 
 .c12 {
@@ -2882,7 +2838,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2891,36 +2847,11 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   margin: 1.5em 0;
 }
 
-.c20 {
+.c18 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
-  width: 100%;
-  margin: 0 auto;
-  max-width: 40em;
-}
-
-.c0 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
 }
 
 .c7 h4 {
@@ -3093,44 +3024,33 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   word-break: break-word;
 }
 
-.c17 {
+.c6 > div:last-child > p[role='button'] {
+  margin: 0;
+}
+
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 1em;
-  line-height: 2.5em;
-  text-align: left;
-  padding-left: 1.5em;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 40em;
 }
 
-.c17 > div:first-child {
-  -webkit-flex: 0 1 25%;
-  -ms-flex: 0 1 25%;
-  flex: 0 1 25%;
-  min-width: 200px;
-  text-transform: capitalize;
-}
-
-.c17 > div:last-child {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+.c0 form {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 0.75em;
-  word-break: break-word;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
 }
 
 .c5 {
@@ -3243,17 +3163,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
           class="c6"
         >
           <div>
-            Approvals until execution
-          </div>
-          <div>
-            1
-          </div>
-        </div>
-        <div
-          class="c6"
-        >
-          <div>
-            Approved by
+            Proposer
           </div>
           <div>
             <div
@@ -3316,137 +3226,195 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
             </div>
           </div>
         </div>
-        <hr />
         <div
-          class="c4"
+          class="c6"
         >
-          <div
-            class="c6"
-          >
-            <div>
-              Parameters
-            </div>
-            <div />
+          <div>
+            Approvers (1)
           </div>
-          <div
-            class="c17"
-          >
-            <div>
-              to
-            </div>
-            <div>
+          <div>
+            <div
+              class="c7"
+            >
               <div
-                class="c7"
+                class="c8"
+                color="var(--purple-medium)"
               >
-                <div
-                  class="c8"
-                  color="var(--purple-medium)"
+                <a
+                  href="https://explorer-calibration.glif.link/actor/?address=t13koa6kz5otquokcgwusvtsxcdymuq7lqe4twb4i"
+                  rel="noreferrer noopener"
+                  target="_blank"
                 >
-                  <a
-                    href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    t2i43o ... z2btmy
-                  </a>
-                  <div
-                    class="c9"
-                    color="var(--purple-medium)"
+                  t13koa ... 4twb4i
+                </a>
+                <div
+                  class="c9"
+                  color="var(--purple-medium)"
+                  display="flex"
+                >
+                  <button
+                    class="c10 c11"
                     display="flex"
+                    role="button"
+                    type="button"
                   >
-                    <button
-                      class="c10 c11"
-                      display="flex"
-                      role="button"
-                      type="button"
+                    <svg
+                      class="c12 c13 c14"
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        class="c12 c13 c14"
-                        fill="none"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          fill="#1A0066"
-                          height="12"
-                          width="12"
-                          x="8"
-                          y="4"
-                        />
-                        <rect
-                          fill="#E0D7FE"
-                          height="12"
-                          width="12"
-                          x="4"
-                          y="8"
-                        />
-                      </svg>
-                      <span
-                        class="c15 c16"
-                        color="var(--purple-medium)"
-                      >
-                        Copy
-                      </span>
-                    </button>
-                  </div>
+                      <rect
+                        fill="#1A0066"
+                        height="12"
+                        width="12"
+                        x="8"
+                        y="4"
+                      />
+                      <rect
+                        fill="#E0D7FE"
+                        height="12"
+                        width="12"
+                        x="4"
+                        y="8"
+                      />
+                    </svg>
+                    <span
+                      class="c15 c16"
+                      color="var(--purple-medium)"
+                    >
+                      Copy
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="c17"
-          >
-            <div>
-              value
-            </div>
-            <div>
-              0.4
-               FIL
-            </div>
+        </div>
+        <div
+          class="c6"
+        >
+          <div>
+            Approvals until execution
           </div>
-          <div
-            class="c17"
-          >
-            <div>
-              method
-            </div>
-            <div>
+          <div>
+            1
+          </div>
+        </div>
+        <hr />
+        <div
+          class="c6"
+        >
+          <div>
+            To
+          </div>
+          <div>
+            <div
+              class="c7"
+            >
               <div
-                class="c18"
-                color="purple"
+                class="c8"
+                color="var(--purple-medium)"
               >
-                <span>
-                  SEND
-                </span>
+                <a
+                  href="https://explorer-calibration.glif.link/actor/?address=t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  t2i43o ... z2btmy
+                </a>
+                <div
+                  class="c9"
+                  color="var(--purple-medium)"
+                  display="flex"
+                >
+                  <button
+                    class="c10 c11"
+                    display="flex"
+                    role="button"
+                    type="button"
+                  >
+                    <svg
+                      class="c12 c13 c14"
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        fill="#1A0066"
+                        height="12"
+                        width="12"
+                        x="8"
+                        y="4"
+                      />
+                      <rect
+                        fill="#E0D7FE"
+                        height="12"
+                        width="12"
+                        x="4"
+                        y="8"
+                      />
+                    </svg>
+                    <span
+                      class="c15 c16"
+                      color="var(--purple-medium)"
+                    >
+                      Copy
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div
-            class="c17"
-          >
-            <div>
-              Parameters
-            </div>
-            <div>
-              —
-            </div>
+        </div>
+        <div
+          class="c6"
+        >
+          <div>
+            Method
+          </div>
+          <div>
+            Send
+          </div>
+        </div>
+        <div
+          class="c6"
+        >
+          <div>
+            Value
+          </div>
+          <div>
+            0.4
+             FIL
+          </div>
+        </div>
+        <div
+          class="c6"
+        >
+          <div>
+            Params
+          </div>
+          <div>
+            –
           </div>
         </div>
       </div>
     </div>
     <div
-      class="c19 c20"
+      class="c17 c18"
     >
       <button
-        class="c21"
+        class="c19"
         type="button"
       >
         Cancel
       </button>
       <button
-        class="c22"
+        class="c20"
         type="submit"
       >
         Review

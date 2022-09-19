@@ -5,7 +5,8 @@ import {
   fireEvent,
   getByText,
   getByRole,
-  RenderResult
+  RenderResult,
+  getAllByText
 } from '@testing-library/react'
 import { Context } from 'react'
 import { BigNumber } from '@glif/filecoin-number'
@@ -99,7 +100,11 @@ describe('ApproveCancel', () => {
       expect(expertMode).not.toBeChecked()
 
       // The send button should now be available
-      const send = getByText(result.container, 'Send')
+      const send = getByText(
+        result.container,
+        (content, node) =>
+          content === 'Send' && node.getAttribute('type') === 'submit'
+      )
       expect(send).toBeInTheDocument()
       expect(send).toBeEnabled()
 
@@ -218,7 +223,11 @@ describe('ApproveCancel', () => {
       expect(expertMode).not.toBeChecked()
 
       // The send button should now be available
-      const send = getByText(result.container, 'Send')
+      const send = getByText(
+        result.container,
+        (content, node) =>
+          content === 'Send' && node.getAttribute('type') === 'submit'
+      )
       expect(send).toBeInTheDocument()
       expect(send).toBeEnabled()
 
