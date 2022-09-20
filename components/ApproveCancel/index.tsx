@@ -19,11 +19,13 @@ import {
   MsigTransaction,
   useLogger,
   useEnvironment,
+  useMsigPendingQuery,
   AddressLine,
   MethodLine,
   FilecoinLine,
   LinesParams
 } from '@glif/react-components'
+import { decode, Protocol } from '@glif/filecoin-address'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
@@ -46,16 +48,20 @@ export const ApproveCancel = ({
   const [txState, setTxState] = useState<TxState>(TxState.LoadingMessage)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  // Get proposal info from url
-  const proposalString = getQueryParam.string(router, 'proposal')
-  const proposal = useMemo<MsigTransaction | null>(() => {
-    try {
-      return JSON.parse(decodeURI(proposalString))
-    } catch (e) {
-      setTxState(TxState.LoadingFailed)
-      return null
-    }
-  }, [proposalString])
+  // Get safe proposals
+  const { data: proposals, error: proposalsError } = useMsigPendingQuery({
+    variables: { address: Address },
+    pollInterval: 0
+  })
+
+  // Find current proposal
+  const proposalId = getQueryParam.number(router, 'id')
+  const proposal = useMemo<MsigTransaction | null>(
+    () => proposals?.msigPending.find((p) => p.id === proposalId) || null,
+    [proposals, proposalId]
+  )
+
+  // Get proposal approvals left count
   const approvalsLeft = useMemo<number | null>(() => {
     if (!NumApprovalsThreshold || !proposal?.approved) return null
     return NumApprovalsThreshold - proposal.approved.length
@@ -89,6 +95,18 @@ export const ApproveCancel = ({
     }
   }, [Address, wallet.robust, method, proposal, serializeParams, logger])
 
+  const isAccountActor = useMemo<boolean>(() => {
+    if (proposal?.to.robust || proposal?.to.id) {
+      const addr = decode(proposal?.to.robust || proposal?.to.id)
+
+      return (
+        addr.protocol() === Protocol.SECP256K1 ||
+        addr.protocol() === Protocol.BLS
+      )
+    }
+    return false
+  }, [proposal?.to])
+
   // Get actor data from proposal
   const { data: actorData, error: actorError } = useActorQuery({
     variables: {
@@ -97,11 +115,15 @@ export const ApproveCancel = ({
         coinType
       )
     },
-    skip: !(proposal?.to.robust || proposal?.to.id)
+    skip: !(proposal?.to.robust || proposal?.to.id) || isAccountActor
   })
 
   // Get actor name from actor data
   const actorName = useMemo<string>(() => {
+    if (isAccountActor) {
+      return 'account'
+    }
+
     if (!actorData) return ''
     try {
       return getActorName(actorData.actor.Code, networkName)
@@ -109,13 +131,34 @@ export const ApproveCancel = ({
       logger.error(e)
       return ''
     }
-  }, [actorData, networkName, logger])
+  }, [isAccountActor, actorData, networkName, logger])
 
   // Set TxState.FillingForm when actor name has loaded
   useEffect(() => actorName && setTxState(TxState.FillingForm), [actorName])
 
   // Set TxState.LoadingFailed when actor name failed to load
-  useEffect(() => actorError && setTxState(TxState.LoadingFailed), [actorError])
+  useEffect(() => {
+    if (actorError) {
+      logger.error(actorError)
+      setTxState(TxState.LoadingFailed)
+    }
+  }, [actorError, logger])
+
+  // Set TxState.LoadingFailed when proposals failed to load
+  useEffect(() => {
+    if (proposalsError) {
+      logger.error(proposalsError)
+      setTxState(TxState.LoadingFailed)
+    }
+  }, [proposalsError, logger])
+
+  // Set TxState.LoadingFailed when proposals id is not found
+  useEffect(() => {
+    if (proposals && !proposal) {
+      logger.error(`Proposal id ${proposalId} not found for actor ${Address}`)
+      setTxState(TxState.LoadingFailed)
+    }
+  }, [proposals, proposal, proposalId, logger, Address])
 
   return (
     <Transaction.Form

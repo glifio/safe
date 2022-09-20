@@ -1,13 +1,22 @@
+import { getActorCode } from '@glif/filecoin-actor-utils'
 import {
+  ActorDocument,
   AddressDocument,
   MessageReceipt,
-  MessageReceiptDocument
+  MessageReceiptDocument,
+  MsigPendingDocument,
+  Network
 } from '@glif/react-components'
 import {
+  MULTISIG_ACTOR_ADDRESS,
   MULTISIG_SIGNER_ADDRESS,
   MULTISIG_SIGNER_ADDRESS_2,
   MULTISIG_SIGNER_ID,
-  MULTISIG_SIGNER_ID_2
+  MULTISIG_SIGNER_ID_2,
+  WALLET_ADDRESS,
+  WALLET_ADDRESS_2,
+  WALLET_ID,
+  WALLET_ID_2
 } from './constants'
 
 export const addressMocks = [
@@ -102,4 +111,63 @@ export const receiptMocks = [
   }
 ]
 
-export const apolloMocks = [...addressMocks, ...receiptMocks]
+const msigPendingMocks = [
+  {
+    request: {
+      query: MsigPendingDocument,
+      variables: {
+        address: MULTISIG_ACTOR_ADDRESS
+      }
+    },
+    result: {
+      data: {
+        msigPending: [
+          {
+            id: 2,
+            to: {
+              id: WALLET_ID_2,
+              robust: WALLET_ADDRESS_2
+            },
+            value: '400000000000000000',
+            method: 0,
+            params: null,
+            approved: [
+              {
+                id: WALLET_ID,
+                robust: WALLET_ADDRESS
+              }
+            ],
+            proposalHash: 'JyRolQNt12If0FMxrNMp0RmPUQ3pBrgsczCn9xdkt2w='
+          }
+        ]
+      }
+    }
+  }
+]
+
+const actorQueryMocks = [
+  {
+    request: {
+      query: ActorDocument,
+      variables: {
+        address: WALLET_ADDRESS_2
+      }
+    },
+    result: {
+      data: {
+        actor: {
+          Code: getActorCode('account', Network.CALIBRATION),
+          Balance: '0',
+          id: WALLET_ID_2
+        }
+      }
+    }
+  }
+]
+
+export const apolloMocks = [
+  ...addressMocks,
+  ...receiptMocks,
+  ...msigPendingMocks,
+  ...actorQueryMocks
+]

@@ -2,8 +2,6 @@
 
 exports[`Msig Home it renders the vesting balance, available balance, and msig address 1`] = `
 .c5 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -31,6 +29,8 @@ exports[`Msig Home it renders the vesting balance, available balance, and msig a
   color: var(--white);
   border-color: var(--green-medium);
   background: var(--green-medium);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c5 svg path {
@@ -68,6 +68,11 @@ exports[`Msig Home it renders the vesting balance, available balance, and msig a
 
 .c5:hover svg path {
   stroke: var(--green-medium);
+}
+
+.c5:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0 {

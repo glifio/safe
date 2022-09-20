@@ -34,7 +34,6 @@ export default function Owners() {
   const { NumApprovalsThreshold, Signers: signers } = useMsig()
   const wallet = useWallet()
   const router = useRouter()
-
   return (
     <div>
       {NumApprovalsThreshold === 0 ? (

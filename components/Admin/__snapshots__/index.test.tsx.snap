@@ -2,8 +2,6 @@
 
 exports[`Admin page it renders the required approvals and the signers 1`] = `
 .c5 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -27,6 +25,8 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   border-radius: 8px;
   border-color: var(--black);
   background: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c5 svg path {
@@ -50,6 +50,11 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
 
 .c5:active svg path {
   stroke: var(--white) !important;
+}
+
+.c5:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c12 {
