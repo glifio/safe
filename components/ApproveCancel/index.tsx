@@ -19,16 +19,17 @@ import {
   MsigTransaction,
   useLogger,
   useEnvironment,
+  useMsigPendingQuery,
   AddressLine,
   MethodLine,
   FilecoinLine,
   LinesParams
 } from '@glif/react-components'
+import { decode, Protocol } from '@glif/filecoin-address'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
-import { useMsigPendingQuery } from '@glif/react-components'
 
 export const ApproveCancel = ({
   method,
@@ -94,6 +95,20 @@ export const ApproveCancel = ({
     }
   }, [Address, wallet.robust, method, proposal, serializeParams, logger])
 
+  const isAccountActor = useMemo<boolean>(() => {
+    if (proposal?.to.robust || proposal?.to.id) {
+      const { protocol: addrProtocol } = decode(
+        proposal?.to.robust || proposal?.to.id
+      )
+
+      return (
+        addrProtocol() === Protocol.SECP256K1 || addrProtocol() === Protocol.BLS
+      )
+    }
+
+    return false
+  }, [proposal?.to])
+
   // Get actor data from proposal
   const { data: actorData, error: actorError } = useActorQuery({
     variables: {
@@ -102,11 +117,15 @@ export const ApproveCancel = ({
         coinType
       )
     },
-    skip: !(proposal?.to.robust || proposal?.to.id)
+    skip: !(proposal?.to.robust || proposal?.to.id) || isAccountActor
   })
 
   // Get actor name from actor data
   const actorName = useMemo<string>(() => {
+    if (isAccountActor) {
+      return 'account'
+    }
+
     if (!actorData) return ''
     try {
       return getActorName(actorData.actor.Code, networkName)
@@ -114,7 +133,7 @@ export const ApproveCancel = ({
       logger.error(e)
       return ''
     }
-  }, [actorData, networkName, logger])
+  }, [isAccountActor, actorData, networkName, logger])
 
   // Set TxState.FillingForm when actor name has loaded
   useEffect(() => actorName && setTxState(TxState.FillingForm), [actorName])
