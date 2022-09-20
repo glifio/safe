@@ -21,16 +21,16 @@ const ProposalHistory = () => {
       id={id}
       msigAddress={Address}
       walletAddress={wallet}
-      approve={(id: number) => appendQueryParams(PAGE.MSIG_APPROVE, { id })}
-      cancel={(id: number) => appendQueryParams(PAGE.MSIG_CANCEL, { id })}
+      approveHref={(id: number) => appendQueryParams(PAGE.MSIG_APPROVE, { id })}
+      cancelHref={(id: number) => appendQueryParams(PAGE.MSIG_CANCEL, { id })}
     />
   ) : (
     <ProposalHistoryTable
       msigAddress={Address}
       walletAddress={wallet}
       idHref={(id: number) => appendQueryParams(PAGE.MSIG_PROPOSAL, { id })}
-      approve={(id: number) => appendQueryParams(PAGE.MSIG_APPROVE, { id })}
-      cancel={(id: number) => appendQueryParams(PAGE.MSIG_CANCEL, { id })}
+      approveHref={(id: number) => appendQueryParams(PAGE.MSIG_APPROVE, { id })}
+      cancelHref={(id: number) => appendQueryParams(PAGE.MSIG_CANCEL, { id })}
     />
   )
 }
