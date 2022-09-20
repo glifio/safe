@@ -28,6 +28,7 @@ import {
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
+import { useMsigPendingQuery } from '@glif/react-components'
 
 export const ApproveCancel = ({
   method,
@@ -46,16 +47,20 @@ export const ApproveCancel = ({
   const [txState, setTxState] = useState<TxState>(TxState.LoadingMessage)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  // Get proposal info from url
-  const proposalString = getQueryParam.string(router, 'proposal')
-  const proposal = useMemo<MsigTransaction | null>(() => {
-    try {
-      return JSON.parse(decodeURI(proposalString))
-    } catch (e) {
-      setTxState(TxState.LoadingFailed)
-      return null
-    }
-  }, [proposalString])
+  // Get safe proposals
+  const { data: proposals, error: proposalsError } = useMsigPendingQuery({
+    variables: { address: Address },
+    pollInterval: 0
+  })
+
+  // Find current proposal
+  const proposalId = getQueryParam.number(router, 'id')
+  const proposal = useMemo<MsigTransaction | null>(
+    () => proposals?.msigPending.find((p) => p.id === proposalId) || null,
+    [proposals, proposalId]
+  )
+
+  // Get proposal approvals left count
   const approvalsLeft = useMemo<number | null>(() => {
     if (!NumApprovalsThreshold || !proposal?.approved) return null
     return NumApprovalsThreshold - proposal.approved.length
@@ -116,6 +121,18 @@ export const ApproveCancel = ({
 
   // Set TxState.LoadingFailed when actor name failed to load
   useEffect(() => actorError && setTxState(TxState.LoadingFailed), [actorError])
+
+  // Set TxState.LoadingFailed when proposals failed to load
+  useEffect(
+    () => proposalsError && setTxState(TxState.LoadingFailed),
+    [proposalsError]
+  )
+
+  // Set TxState.LoadingFailed when proposals id is not found
+  useEffect(
+    () => proposals && !proposal && setTxState(TxState.LoadingFailed),
+    [proposals, proposal]
+  )
 
   return (
     <Transaction.Form
