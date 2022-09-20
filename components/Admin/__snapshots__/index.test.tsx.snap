@@ -73,35 +73,6 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   justify-content: center;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
-  width: 100%;
-  margin: 0 auto;
-  max-width: 40em;
-}
-
-.c2 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: var(--space-m);
-}
-
-.c3 {
-  max-width: 50em;
-}
-
 .c7 h4 {
   margin: 0;
   color: var(--gray-dark);
@@ -210,6 +181,35 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   -ms-transform: scale(1.25);
   transform: scale(1.25);
   fill: var(--purple-medium);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 40em;
+}
+
+.c2 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.c3 {
+  max-width: 50em;
 }
 
 .c0 {

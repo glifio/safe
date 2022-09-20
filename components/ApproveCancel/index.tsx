@@ -3,23 +3,26 @@ import { useState, useMemo, Context, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { getActorName } from '@glif/filecoin-actor-utils'
 import {
   getQueryParam,
   navigate,
   convertAddrToPrefix,
-  decodeActorCID,
   useActorQuery,
   useWallet,
   Transaction,
   Line,
-  Parameters,
   MsigMethod,
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
   MsigTransaction,
   useLogger,
-  useEnvironment
+  useEnvironment,
+  AddressLine,
+  MethodLine,
+  FilecoinLine,
+  LinesParams
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
@@ -57,19 +60,6 @@ export const ApproveCancel = ({
     if (!NumApprovalsThreshold || !proposal?.approved) return null
     return NumApprovalsThreshold - proposal.approved.length
   }, [NumApprovalsThreshold, proposal?.approved])
-
-  // Get parameters object to pass to Parameters component
-  const parameters = useMemo<Record<string, any> | null>(() => {
-    if (!proposal) return null
-    const { id, approved, proposalHash, ...params } = proposal
-    return { params }
-  }, [proposal])
-
-  // Get approved object to pass to Parameters component
-  const approved = useMemo<Record<string, any> | null>(() => {
-    if (!proposal) return null
-    return { approved: proposal.approved }
-  }, [proposal])
 
   // Create message from input
   const message = useMemo<Message | null>(() => {
@@ -114,7 +104,7 @@ export const ApproveCancel = ({
   const actorName = useMemo<string>(() => {
     if (!actorData) return ''
     try {
-      return decodeActorCID(actorData.actor.Code, networkName)
+      return getActorName(actorData.actor.Code, networkName)
     } catch (e) {
       logger.error(e)
       return ''
@@ -161,10 +151,33 @@ export const ApproveCancel = ({
       {proposal && actorName && (
         <>
           <Line label='Proposal ID'>{proposal.id}</Line>
+          <AddressLine label='Proposer' value={proposal.approved[0]} />
+          {proposal.approved.map((approver, index) => (
+            <AddressLine
+              key={approver.robust || approver.id}
+              label={
+                index === 0 ? `Approvers (${proposal.approved.length})` : ''
+              }
+              value={approver}
+            />
+          ))}
           <Line label='Approvals until execution'>{approvalsLeft}</Line>
-          <Parameters params={approved} depth={0} actorName={actorName} />
           <hr />
-          <Parameters params={parameters} depth={0} actorName={actorName} />
+          <AddressLine label='To' value={proposal.to} />
+          <MethodLine
+            label='Method'
+            actorName={actorName}
+            methodNum={proposal.method}
+          />
+          <FilecoinLine
+            label='Value'
+            value={new FilecoinNumber(proposal.value, 'attofil')}
+          />
+          <LinesParams
+            address={proposal.to.robust || proposal.to.id}
+            method={proposal.method}
+            params={proposal.params}
+          />
         </>
       )}
     </Transaction.Form>

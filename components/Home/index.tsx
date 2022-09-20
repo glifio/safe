@@ -43,7 +43,7 @@ const MsigHome = () => {
       <BalanceBox>
         <h3>Available Balance</h3>
         <span className='value'>
-          {makeFriendlyBalance(AvailableBalance, 6, true)}
+          {makeFriendlyBalance(AvailableBalance, 6)}
         </span>
         <ButtonRowCenter>
           <ButtonV2Link large green href={PAGE.MSIG_WITHDRAW}>
@@ -53,7 +53,7 @@ const MsigHome = () => {
       </BalanceBox>
       <VestingBox>
         <h3>Total Vesting</h3>
-        <span className='value'>{makeFriendlyBalance(Balance, 6, true)}</span>
+        <span className='value'>{makeFriendlyBalance(Balance, 6)}</span>
       </VestingBox>
     </>
   )

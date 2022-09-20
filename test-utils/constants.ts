@@ -1,6 +1,6 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { getActorCode } from '@glif/filecoin-actor-utils'
 // this breaks when import from regular react components
-import { actorCodesToNames } from '../node_modules/@glif/react-components/dist/generated/actorCodes'
 import { Network } from '../node_modules/@glif/react-components/dist/services/EnvironmentProvider'
 
 export const WALLET_ADDRESS = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
@@ -32,7 +32,7 @@ export const signers = [
 
 export const mockStateGetActorRes = {
   Code: {
-    '/': actorCodesToNames[Network.CALIBRATION]['multisig']
+    '/': getActorCode('multisig', Network.CALIBRATION)
   },
   Balance: '80000000000'
 }
