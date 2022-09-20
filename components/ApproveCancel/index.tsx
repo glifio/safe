@@ -120,19 +120,28 @@ export const ApproveCancel = ({
   useEffect(() => actorName && setTxState(TxState.FillingForm), [actorName])
 
   // Set TxState.LoadingFailed when actor name failed to load
-  useEffect(() => actorError && setTxState(TxState.LoadingFailed), [actorError])
+  useEffect(() => {
+    if (actorError) {
+      logger.error(actorError)
+      setTxState(TxState.LoadingFailed)
+    }
+  }, [actorError, logger])
 
   // Set TxState.LoadingFailed when proposals failed to load
-  useEffect(
-    () => proposalsError && setTxState(TxState.LoadingFailed),
-    [proposalsError]
-  )
+  useEffect(() => {
+    if (proposalsError) {
+      logger.error(proposalsError)
+      setTxState(TxState.LoadingFailed)
+    }
+  }, [proposalsError, logger])
 
   // Set TxState.LoadingFailed when proposals id is not found
-  useEffect(
-    () => proposals && !proposal && setTxState(TxState.LoadingFailed),
-    [proposals, proposal]
-  )
+  useEffect(() => {
+    if (proposals && !proposal) {
+      logger.error(`Proposal id ${proposalId} not found for actor ${Address}`)
+      setTxState(TxState.LoadingFailed)
+    }
+  }, [proposals, proposal, proposalId, logger, Address])
 
   return (
     <Transaction.Form
