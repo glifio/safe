@@ -2,8 +2,6 @@
 
 exports[`confirmation of newly created multisig it displays the multisig address after the message is confirmed 1`] = `
 .c6 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -31,6 +29,8 @@ exports[`confirmation of newly created multisig it displays the multisig address
   color: var(--white);
   border-color: var(--green-medium);
   background: var(--green-medium);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c6 svg path {
@@ -68,6 +68,11 @@ exports[`confirmation of newly created multisig it displays the multisig address
 
 .c6:hover svg path {
   stroke: var(--green-medium);
+}
+
+.c6:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c1 {

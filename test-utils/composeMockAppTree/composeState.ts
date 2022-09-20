@@ -36,6 +36,7 @@ export const composeWalletProviderState = (
           {
             robust: WALLET_ADDRESS,
             id: WALLET_ID,
+            address: WALLET_ADDRESS,
             balance: new FilecoinNumber('1', 'fil'),
             path: createPath(1, 0)
           }
@@ -52,6 +53,7 @@ export const composeWalletProviderState = (
         wallets: [
           {
             robust: WALLET_ADDRESS,
+            address: WALLET_ADDRESS,
             id: WALLET_ID,
             balance: new FilecoinNumber('.000001', 'fil'),
             path: createPath(1, 0)
@@ -68,6 +70,7 @@ export const composeWalletProviderState = (
         wallets: [
           {
             robust: WALLET_ADDRESS,
+            address: WALLET_ADDRESS,
             id: WALLET_ID,
             balance: new FilecoinNumber('1', 'fil'),
             path: createPath(1, 0)

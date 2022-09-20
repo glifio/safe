@@ -97,15 +97,13 @@ export const ApproveCancel = ({
 
   const isAccountActor = useMemo<boolean>(() => {
     if (proposal?.to.robust || proposal?.to.id) {
-      const { protocol: addrProtocol } = decode(
-        proposal?.to.robust || proposal?.to.id
-      )
+      const addr = decode(proposal?.to.robust || proposal?.to.id)
 
       return (
-        addrProtocol() === Protocol.SECP256K1 || addrProtocol() === Protocol.BLS
+        addr.protocol() === Protocol.SECP256K1 ||
+        addr.protocol() === Protocol.BLS
       )
     }
-
     return false
   }, [proposal?.to])
 

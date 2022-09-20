@@ -28,8 +28,6 @@ import { PAGE } from '../../constants'
 jest.mock('@glif/filecoin-wallet-provider')
 
 const routerMock = jest.spyOn(require('next/router'), 'useRouter')
-const encodedProposalURI =
-  '%7B%22id%22:2,%22to%22:%7B%22id%22:%22t030429%22,%22robust%22:%22t2i43oi6rnf2s6rp544rcegfbcdp5l62cayz2btmy%22%7D,%22value%22:%22400000000000000000%22,%22method%22:0,%22params%22:null,%22approved%22:%5B%7B%22id%22:%22t029519%22,%22robust%22:%22t13koa6kz5otquokcgwusvtsxcdymuq7lqe4twb4i%22%7D%5D,%22proposalHash%22:%22JyRolQNt12If0FMxrNMp0RmPUQ3pBrgsczCn9xdkt2w=%22%7D'
 
 describe('ApproveCancel', () => {
   test('it allows a user to approve a proposal', async () => {
@@ -37,7 +35,7 @@ describe('ApproveCancel', () => {
     // in the future, approve / cancel could just go in separate test files...
     routerMock.mockImplementation(() => {
       return {
-        query: { proposal: encodedProposalURI },
+        query: { id: '2' },
         pathname: PAGE.MSIG_APPROVE,
         push: jest.fn()
       }
@@ -160,7 +158,7 @@ describe('ApproveCancel', () => {
     // in the future, approve / cancel could just go in separate test files...
     routerMock.mockImplementation(() => {
       return {
-        query: { proposal: encodedProposalURI },
+        query: { id: '2' },
         pathname: PAGE.MSIG_CANCEL,
         push: jest.fn()
       }
@@ -279,6 +277,13 @@ describe('ApproveCancel', () => {
   })
 
   test('it renders the initial approve state correctly', async () => {
+    routerMock.mockImplementation(() => {
+      return {
+        query: { id: '2' },
+        pathname: PAGE.MSIG_APPROVE,
+        push: jest.fn()
+      }
+    })
     const { Tree } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
 
@@ -290,11 +295,26 @@ describe('ApproveCancel', () => {
       )
     })
 
-    // Check snapshot
-    expect(result.container.firstChild).toMatchSnapshot()
+    await waitFor(() => {
+      expect(result.getByText(/Approve Safe Proposal/)).toBeInTheDocument()
+      expect(result.getByText(/Proposal ID/)).toBeInTheDocument()
+      expect(result.getByText(/Approvals until execution/)).toBeInTheDocument()
+      expect(result.getByText(/Method/)).toBeInTheDocument()
+      expect(result.getByText(/Value/)).toBeInTheDocument()
+      expect(result.getByText(/Params/)).toBeInTheDocument()
+      // Check snapshot
+      expect(result.container.firstChild).toMatchSnapshot()
+    })
   })
 
   test('it renders the initial cancel state correctly', async () => {
+    routerMock.mockImplementation(() => {
+      return {
+        query: { id: '2' },
+        pathname: PAGE.MSIG_CANCEL,
+        push: jest.fn()
+      }
+    })
     const { Tree } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
 
@@ -306,7 +326,15 @@ describe('ApproveCancel', () => {
       )
     })
 
-    // Check snapshot
-    expect(result.container.firstChild).toMatchSnapshot()
+    await waitFor(() => {
+      expect(result.getByText(/Cancel Safe Proposal/)).toBeInTheDocument()
+      expect(result.getByText(/Proposal ID/)).toBeInTheDocument()
+      expect(result.getByText(/Approvals until execution/)).toBeInTheDocument()
+      expect(result.getByText(/Method/)).toBeInTheDocument()
+      expect(result.getByText(/Value/)).toBeInTheDocument()
+      expect(result.getByText(/Params/)).toBeInTheDocument()
+      // Check snapshot
+      expect(result.container.firstChild).toMatchSnapshot()
+    })
   })
 })
