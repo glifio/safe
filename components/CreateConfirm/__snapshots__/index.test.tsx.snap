@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`confirmation of newly created multisig it displays the multisig address after the message is confirmed 1`] = `
-.c6 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -33,46 +33,50 @@ exports[`confirmation of newly created multisig it displays the multisig address
   text-decoration: none;
 }
 
-.c6 svg path {
+.c7 svg path {
   stroke: var(--black);
 }
 
-.c6:hover {
+.c7:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c6:hover svg path {
+.c7:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c6:active {
+.c7:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c6:active svg path {
+.c7:active svg path {
   stroke: var(--white) !important;
 }
 
-.c6 svg path {
+.c7 svg path {
   stroke: var(--white);
 }
 
-.c6:hover {
+.c7:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c6:hover svg path {
+.c7:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c6:hover {
+.c7:hover {
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c4 {
+  vertical-align: middle;
 }
 
 .c1 {
@@ -121,7 +125,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   border-color: var(--yellow-dark);
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,7 +134,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   margin: 1.5em 0;
 }
 
-.c5 {
+.c6 {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -189,27 +193,28 @@ exports[`confirmation of newly created multisig it displays the multisig address
     class="c1 c3"
   >
     <svg
+      class="c4 has-stroke"
       fill="none"
-      height="20px"
+      height="20"
+      stroke="var(--yellow-dark)"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
       viewBox="0 0 22 20"
-      width="22px"
+      width="22"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M11 7.74982V9.99986M11 14.4999H11.0112M3.24282 19H18.7572C20.4815 19 21.5586 17.1246 20.6965 15.6249L12.9393 2.12474C12.0771 0.625088 9.92286 0.625088 9.0607 2.12474L1.30352 15.6249C0.441363 17.1246 1.5185 19 3.24282 19Z"
-        stroke="var(--yellow-dark)"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
       />
     </svg>
     Please make sure to store your Safe address before continuing.
   </div>
   <div
-    class="c4 c5"
+    class="c5 c6"
   >
     <a
-      class="c6"
+      class="c7"
       href="/home"
     >
       Go to the Safe dashboard
@@ -220,16 +225,15 @@ exports[`confirmation of newly created multisig it displays the multisig address
 
 exports[`confirmation of newly created multisig it renders message pending UI while the transaction is pending 1`] = `
 .c3 {
-  width: 24px;
-  height: 24px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c4 {
-  -webkit-animation: WNDHq 4s infinite;
-  animation: WNDHq 4s infinite;
+  vertical-align: middle;
+  -webkit-animation-name: WNDHq;
+  animation-name: WNDHq;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 .c1 {
@@ -305,39 +309,32 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
     </h2>
     <hr />
     <svg
-      class="c3 c4"
-      fill="none"
-      height="24px"
+      class="c3 has-fill"
+      fill="var(--yellow-dark)"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect
-        fill="#FDB221"
-        height="24"
-        rx="12"
-        width="24"
-      />
       <mask
-        fill="white"
-        id="path-2-inside-1"
+        id="iconPendingMask"
       >
         <path
           clip-rule="evenodd"
           d="M11.4006 11.9985L7.08534 6.60939C6.88876 6.36388 7.06355 6 7.37806 6H16.6265C16.9411 6 17.1159 6.36388 16.9193 6.60939L12.6017 12.0015L16.9169 17.3906C17.1135 17.6361 16.9387 18 16.6242 18H7.3757C7.06119 18 6.8864 17.6361 7.08298 17.3906L11.4006 11.9985Z"
+          fill="white"
           fill-rule="evenodd"
         />
       </mask>
-      <path
-        clip-rule="evenodd"
-        d="M11.4006 11.9985L7.08534 6.60939C6.88876 6.36388 7.06355 6 7.37806 6H16.6265C16.9411 6 17.1159 6.36388 16.9193 6.60939L12.6017 12.0015L16.9169 17.3906C17.1135 17.6361 16.9387 18 16.6242 18H7.3757C7.06119 18 6.8864 17.6361 7.08298 17.3906L11.4006 11.9985Z"
-        fill="#FDB221"
-        fill-rule="evenodd"
+      <circle
+        cx="12"
+        cy="12"
+        r="12"
       />
       <path
         d="M11.4006 11.9985L12.5715 12.9361L13.3222 11.9985L12.5715 11.061L11.4006 11.9985ZM7.08534 6.60939L5.91446 7.54695L5.91446 7.54695L7.08534 6.60939ZM16.9193 6.60939L15.7484 5.67183L15.7484 5.67183L16.9193 6.60939ZM12.6017 12.0015L11.4308 11.0639L10.6801 12.0015L11.4308 12.939L12.6017 12.0015ZM16.9169 17.3906L15.746 18.3282L15.746 18.3282L16.9169 17.3906ZM7.08298 17.3906L8.25387 18.3282L8.25387 18.3282L7.08298 17.3906ZM12.5715 11.061L8.25623 5.67183L5.91446 7.54695L10.2297 12.9361L12.5715 11.061ZM8.25623 5.67183C8.84599 6.40835 8.32162 7.5 7.37806 7.5V4.5C5.80547 4.5 4.93153 6.31941 5.91446 7.54695L8.25623 5.67183ZM7.37806 7.5H16.6265V4.5H7.37806V7.5ZM16.6265 7.5C15.683 7.5 15.1586 6.40836 15.7484 5.67183L18.0902 7.54695C19.0731 6.3194 18.1991 4.5 16.6265 4.5V7.5ZM15.7484 5.67183L11.4308 11.0639L13.7726 12.939L18.0902 7.54695L15.7484 5.67183ZM11.4308 12.939L15.746 18.3282L18.0878 16.453L13.7726 11.0639L11.4308 12.939ZM15.746 18.3282C15.1563 17.5916 15.6806 16.5 16.6242 16.5V19.5C18.1968 19.5 19.0707 17.6806 18.0878 16.453L15.746 18.3282ZM16.6242 16.5H7.3757V19.5H16.6242V16.5ZM7.3757 16.5C8.31925 16.5 8.84363 17.5916 8.25387 18.3282L5.9121 16.453C4.92916 17.6806 5.80312 19.5 7.3757 19.5V16.5ZM8.25387 18.3282L12.5715 12.9361L10.2297 11.061L5.9121 16.453L8.25387 18.3282Z"
-        fill="#444444"
-        mask="url(#path-2-inside-1)"
+        fill="var(--gray-dark)"
+        mask="url(#iconPendingMask)"
       />
     </svg>
     <p>

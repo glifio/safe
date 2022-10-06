@@ -1,4 +1,5 @@
 import {
+  Colors,
   Address,
   AddressLink,
   GRAPHQL_ADDRESS_PROP_TYPE,
@@ -19,7 +20,7 @@ const ButtonsTD = styled.td`
     display: flex;
     align-items: center;
     justify-content: end;
-    gap: var(--space-s);
+    gap: var(--space-m);
 
     > span {
       cursor: pointer;
@@ -27,10 +28,6 @@ const ButtonsTD = styled.td`
 
       &:hover {
         transform: scale(1.2);
-      }
-
-      svg {
-        vertical-align: middle;
       }
     }
   }
@@ -69,14 +66,14 @@ const SignerRow = ({
             aria-label='edit-signer'
             onClick={() => onChange(signer.robust || signer.id)}
           >
-            <IconEdit stroke='var(--gray-dark)' />
+            <IconEdit color={Colors.GRAY_DARK} />
           </span>
           <span
             role='button'
             aria-label='remove-signer'
             onClick={() => onRemove(signer.robust || signer.id)}
           >
-            <IconClose fill='var(--gray-dark)' />
+            <IconClose color={Colors.GRAY_DARK} />
           </span>
         </div>
       </ButtonsTD>
