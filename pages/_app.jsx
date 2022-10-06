@@ -2,8 +2,6 @@ import '@glif/base-css'
 import App from 'next/app'
 import Head from 'next/head'
 import {
-  theme,
-  ThemeProvider,
   PendingMessageProvider,
   WalletProviderWrapper,
   BalancePoller,
@@ -72,20 +70,18 @@ class MyApp extends App {
         <EnvironmentProvider>
           <ApolloWrapper>
             <SWRConfig value={{ refreshInterval: 20000 }}>
-              <ThemeProvider theme={theme}>
-                <WasmLoader>
-                  <WalletProviderWrapper>
-                    <MsigProviderWrapper>
-                      <BalancePoller />
-                      <PendingMessageProvider>
-                        <ErrorBoundary>
-                          <Component {...pageProps} />
-                        </ErrorBoundary>
-                      </PendingMessageProvider>
-                    </MsigProviderWrapper>
-                  </WalletProviderWrapper>
-                </WasmLoader>
-              </ThemeProvider>
+              <WasmLoader>
+                <WalletProviderWrapper>
+                  <MsigProviderWrapper>
+                    <BalancePoller />
+                    <PendingMessageProvider>
+                      <ErrorBoundary>
+                        <Component {...pageProps} />
+                      </ErrorBoundary>
+                    </PendingMessageProvider>
+                  </MsigProviderWrapper>
+                </WalletProviderWrapper>
+              </WasmLoader>
             </SWRConfig>
           </ApolloWrapper>
         </EnvironmentProvider>

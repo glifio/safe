@@ -57,12 +57,11 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   text-decoration: none;
 }
 
-.c12 {
-  width: 24;
-  height: 24;
+.c10 {
+  vertical-align: middle;
 }
 
-.c18 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -71,7 +70,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   margin: 1.5em 0;
 }
 
-.c19 {
+.c13 {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -89,69 +88,41 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
 }
 
 .c9 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: var(--purple-medium);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c11 {
-  height: auto;
+  position: relative;
   cursor: pointer;
-  opacity: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
 }
 
-.c14 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
+.c9 svg {
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
-.c10:hover .c13 {
+.c9 .copy-text {
+  position: absolute;
+  top: calc(50% - 0.2em);
+  left: calc(100%);
+  padding-left: 0.5em;
+  color: var(--purple-medium);
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.c9:hover svg {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c16 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-  text-align: left;
-  color: var(--purple-medium);
-  margin-top: 0;
-  margin-left: 4px;
-  margin-top: 0;
-  margin-left: 4px;
-}
-
-.c10:hover .c15 {
+.c9:hover .copy-text {
   opacity: 1;
+  pointer-events: all;
 }
 
 .c8 {
@@ -159,7 +130,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  grid-gap: 0.25em;
+  gap: 0.35em;
   line-height: 1.5;
 }
 
@@ -178,7 +149,6 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
 .c8 > a svg {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
-  vertical-align: middle;
 }
 
 .c8 > a svg:hover {
@@ -253,12 +223,12 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   color: var(--purple-medium);
 }
 
-.c17 {
+.c11 {
   color: var(--gray-medium);
   text-align: right;
 }
 
-.c17 > div {
+.c11 > div {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -271,24 +241,20 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   -webkit-justify-content: end;
   -ms-flex-pack: end;
   justify-content: end;
-  gap: var(--space-s);
+  gap: var(--space-m);
 }
 
-.c17 > div > span {
+.c11 > div > span {
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.1s ease-out;
   -webkit-transition: transform 0.1s ease-out;
   transition: transform 0.1s ease-out;
 }
 
-.c17 > div > span:hover {
+.c11 > div > span:hover {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
-}
-
-.c17 > div > span svg {
-  vertical-align: middle;
 }
 
 .c6 > div {
@@ -390,54 +356,45 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       >
                         t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi
                       </a>
-                      <div
+                      <span
                         class="c9"
                         color="var(--purple-medium)"
-                        display="flex"
+                        role="button"
                       >
-                        <button
-                          class="c10 c11"
-                          display="flex"
-                          role="button"
-                          type="button"
+                        <svg
+                          class="c10"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            class="c12 c13 c14"
-                            fill="none"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            width="24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              fill="#1A0066"
-                              height="12"
-                              width="12"
-                              x="8"
-                              y="4"
-                            />
-                            <rect
-                              fill="#E0D7FE"
-                              height="12"
-                              width="12"
-                              x="4"
-                              y="8"
-                            />
-                          </svg>
-                          <span
-                            class="c15 c16"
-                            color="var(--purple-medium)"
-                          >
-                            Copy
-                          </span>
-                        </button>
-                      </div>
+                          <rect
+                            fill="#1A0066"
+                            height="12"
+                            width="12"
+                            x="4"
+                            y="0"
+                          />
+                          <rect
+                            fill="#E0D7FE"
+                            height="12"
+                            width="12"
+                            x="0"
+                            y="4"
+                          />
+                        </svg>
+                        <span
+                          class="copy-text"
+                        >
+                          Copy
+                        </span>
+                      </span>
                     </div>
                   </div>
                 </div>
               </td>
               <td
-                class="c17"
+                class="c11"
               >
                 <div>
                   <span
@@ -445,20 +402,17 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                     role="button"
                   >
                     <svg
-                      class="c12"
+                      class="c10 has-stroke"
                       fill="none"
-                      height="24"
+                      height="20"
                       stroke="var(--gray-dark)"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      stroke-width="2"
+                      viewBox="2 2 20 20"
+                      width="20"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
                         d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                        fill="none"
-                        fill-rule="evenodd"
-                        stroke-width="2"
                       />
                     </svg>
                   </span>
@@ -467,18 +421,17 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                     role="button"
                   >
                     <svg
-                      class="c12"
+                      class="c10 has-fill"
+                      clip-rule="evenodd"
                       fill="var(--gray-dark)"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      fill-rule="evenodd"
+                      height="16"
+                      viewBox="4 4 16 16"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
                         d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-                        fill="var(--gray-dark)"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -504,54 +457,45 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       >
                         t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq
                       </a>
-                      <div
+                      <span
                         class="c9"
                         color="var(--purple-medium)"
-                        display="flex"
+                        role="button"
                       >
-                        <button
-                          class="c10 c11"
-                          display="flex"
-                          role="button"
-                          type="button"
+                        <svg
+                          class="c10"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            class="c12 c13 c14"
-                            fill="none"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            width="24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              fill="#1A0066"
-                              height="12"
-                              width="12"
-                              x="8"
-                              y="4"
-                            />
-                            <rect
-                              fill="#E0D7FE"
-                              height="12"
-                              width="12"
-                              x="4"
-                              y="8"
-                            />
-                          </svg>
-                          <span
-                            class="c15 c16"
-                            color="var(--purple-medium)"
-                          >
-                            Copy
-                          </span>
-                        </button>
-                      </div>
+                          <rect
+                            fill="#1A0066"
+                            height="12"
+                            width="12"
+                            x="4"
+                            y="0"
+                          />
+                          <rect
+                            fill="#E0D7FE"
+                            height="12"
+                            width="12"
+                            x="0"
+                            y="4"
+                          />
+                        </svg>
+                        <span
+                          class="copy-text"
+                        >
+                          Copy
+                        </span>
+                      </span>
                     </div>
                   </div>
                 </div>
               </td>
               <td
-                class="c17"
+                class="c11"
               >
                 <div>
                   <span
@@ -559,20 +503,17 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                     role="button"
                   >
                     <svg
-                      class="c12"
+                      class="c10 has-stroke"
                       fill="none"
-                      height="24"
+                      height="20"
                       stroke="var(--gray-dark)"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      stroke-width="2"
+                      viewBox="2 2 20 20"
+                      width="20"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
                         d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                        fill="none"
-                        fill-rule="evenodd"
-                        stroke-width="2"
                       />
                     </svg>
                   </span>
@@ -581,18 +522,17 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                     role="button"
                   >
                     <svg
-                      class="c12"
+                      class="c10 has-fill"
+                      clip-rule="evenodd"
                       fill="var(--gray-dark)"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      fill-rule="evenodd"
+                      height="16"
+                      viewBox="4 4 16 16"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
                         d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-                        fill="var(--gray-dark)"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -602,7 +542,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
           </tbody>
         </table>
         <div
-          class="c18 c19"
+          class="c12 c13"
         >
           <a
             class="c5"

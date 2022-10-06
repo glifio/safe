@@ -157,7 +157,7 @@ export const CreateConfirm = () => {
       <ShadowBox>
         <h2>Safe creation in progress</h2>
         <hr />
-        <IconPending flexShrink='0' />
+        <IconPending />
         <p>
           We&apos;re waiting for your transaction to confirm. Click on the
           transaction CID below to follow its progress in the Glif Explorer:

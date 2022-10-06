@@ -1,8 +1,8 @@
-import { Page, PageProps, SafeIconHeaderFooter } from '@glif/react-components'
+import { Page, PageProps, IconSafe } from '@glif/react-components'
 
 export default function SafePage({ children, ...rest }: PageProps) {
   return (
-    <Page appIcon={<SafeIconHeaderFooter />} {...rest}>
+    <Page appIcon={<IconSafe />} {...rest}>
       {children}
     </Page>
   )
