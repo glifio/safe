@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 import {
-  theme,
-  ThemeProvider,
   PendingMessageProvider,
   WalletProviderWrapper,
   initialState as walletProviderInitialState,
@@ -50,7 +48,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
                   options={options}
                   statePreset={statePreset}
                 >
-                  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+                  {children}
                 </MsigProviderWrapper>
               </WalletProviderWrapper>
             </PendingMessageProvider>

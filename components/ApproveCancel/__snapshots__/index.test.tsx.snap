@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
-.c23 {
+.c17 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -32,34 +32,34 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background: transparent;
 }
 
-.c23 svg path {
+.c17 svg path {
   stroke: var(--black);
 }
 
-.c23:hover {
+.c17:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c23:hover svg path {
+.c17:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c23:active {
+.c17:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c23:active svg path {
+.c17:active svg path {
   stroke: var(--white) !important;
 }
 
-.c23 svg path {
+.c17 svg path {
   stroke: var(--gray-medium);
 }
 
-.c24 {
+.c18 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -93,48 +93,48 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background: transparent;
 }
 
-.c24 svg path {
+.c18 svg path {
   stroke: var(--black);
 }
 
-.c24:hover {
+.c18:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c24:hover svg path {
+.c18:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c24:active {
+.c18:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c24:active svg path {
+.c18:active svg path {
   stroke: var(--white) !important;
 }
 
-.c24 svg path {
+.c18 svg path {
   stroke: var(--white);
 }
 
-.c24:hover {
+.c18:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c24:hover svg path {
+.c18:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c24 svg path {
+.c18 svg path {
   stroke: var(--gray-medium);
 }
 
-.c13 {
+.c11 {
   width: 24;
   height: 24;
 }
@@ -184,7 +184,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c21 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -193,7 +193,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   margin: 1.5em 0;
 }
 
-.c22 {
+.c16 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -237,69 +237,39 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
 }
 
 .c10 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: var(--purple-medium);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c12 {
-  height: auto;
+  position: relative;
   cursor: pointer;
-  opacity: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
 }
 
-.c15 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
+.c10 svg {
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
-.c11:hover .c14 {
+.c10 .copy-text {
+  position: absolute;
+  top: calc(50% - 0.2em);
+  left: calc(100% + 0.25em);
+  color: var(--purple-medium);
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+}
+
+.c10:hover svg {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c17 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-  text-align: left;
-  color: var(--purple-medium);
-  margin-top: 0;
-  margin-left: 4px;
-  margin-top: 0;
-  margin-left: 4px;
-}
-
-.c11:hover .c16 {
+.c10:hover .copy-text {
   opacity: 1;
+  pointer-events: all;
 }
 
 .c9 {
@@ -307,7 +277,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  grid-gap: 0.25em;
+  gap: 0.25em;
   line-height: 1.5;
 }
 
@@ -425,7 +395,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   gap: var(--space-m);
 }
 
-.c18 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -443,7 +413,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c18 > *:first-child {
+.c12 > *:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -453,26 +423,26 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   flex-direction: column;
 }
 
-.c18 > *:last-child:not(.toggle-wrapper) {
+.c12 > *:last-child:not(.toggle-wrapper) {
   -webkit-flex: 0 0 65%;
   -ms-flex: 0 0 65%;
   flex: 0 0 65%;
 }
 
-.c18 span.info,
-.c18 span.error {
+.c12 span.info,
+.c12 span.error {
   font-size: 0.875rem;
 }
 
-.c18 span.error {
+.c12 span.error {
   color: var(--red-medium);
 }
 
-.c19 .toggle-wrapper {
+.c13 .toggle-wrapper {
   position: relative;
 }
 
-.c19 input {
+.c13 input {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -481,7 +451,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   opacity: 0;
 }
 
-.c19 .toggle {
+.c13 .toggle {
   display: inline-block;
   position: relative;
   width: 2.25em;
@@ -493,7 +463,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background-color: var(--gray-light) !important;
 }
 
-.c19 .toggle::after {
+.c13 .toggle::after {
   content: '';
   position: absolute;
   top: 0;
@@ -504,12 +474,12 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   background-color: var(--white);
 }
 
-.c19 input:checked ~ .toggle {
+.c13 input:checked ~ .toggle {
   border-color: var(--blue-dark);
   background-color: var(--blue-dark);
 }
 
-.c19 input:checked ~ .toggle::after {
+.c13 input:checked ~ .toggle::after {
   left: auto;
   right: 0;
 }
@@ -557,7 +527,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   flex: 1 0 auto;
 }
 
-.c20 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -572,7 +542,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c20 span {
+.c14 span {
   color: var(--purple-medium);
   font-size: 1.75rem;
 }
@@ -664,48 +634,40 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                 >
                   t1z225 ... 6z6wgi
                 </a>
-                <div
+                <span
                   class="c10"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c11 c12"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c11"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c13 c14 c15"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c16 c17"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -731,48 +693,40 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                 >
                   t1z225 ... 6z6wgi
                 </a>
-                <div
+                <span
                   class="c10"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c11 c12"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c11"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c13 c14 c15"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c16 c17"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -809,48 +763,40 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                 >
                   t1mbk7 ... icb2uq
                 </a>
-                <div
+                <span
                   class="c10"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c11 c12"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c11"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c13 c14 c15"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c16 c17"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -888,7 +834,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
         </div>
         <hr />
         <label
-          class="c18 c19"
+          class="c12 c13"
           disabled=""
         >
           <div>
@@ -924,7 +870,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
         </p>
         <hr />
         <div
-          class="c20"
+          class="c14"
         >
           <span>
             Total
@@ -937,17 +883,17 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
       </div>
     </div>
     <div
-      class="c21 c22"
+      class="c15 c16"
     >
       <button
-        class="c23"
+        class="c17"
         disabled=""
         type="button"
       >
         Back
       </button>
       <button
-        class="c24"
+        class="c18"
         disabled=""
         type="submit"
       >
@@ -959,7 +905,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
 `;
 
 exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
-.c23 {
+.c17 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -990,34 +936,34 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   background: transparent;
 }
 
-.c23 svg path {
+.c17 svg path {
   stroke: var(--black);
 }
 
-.c23:hover {
+.c17:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c23:hover svg path {
+.c17:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c23:active {
+.c17:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c23:active svg path {
+.c17:active svg path {
   stroke: var(--white) !important;
 }
 
-.c23 svg path {
+.c17 svg path {
   stroke: var(--gray-medium);
 }
 
-.c24 {
+.c18 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1051,48 +997,48 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   background: transparent;
 }
 
-.c24 svg path {
+.c18 svg path {
   stroke: var(--black);
 }
 
-.c24:hover {
+.c18:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c24:hover svg path {
+.c18:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c24:active {
+.c18:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c24:active svg path {
+.c18:active svg path {
   stroke: var(--white) !important;
 }
 
-.c24 svg path {
+.c18 svg path {
   stroke: var(--white);
 }
 
-.c24:hover {
+.c18:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c24:hover svg path {
+.c18:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c24 svg path {
+.c18 svg path {
   stroke: var(--gray-medium);
 }
 
-.c13 {
+.c11 {
   width: 24;
   height: 24;
 }
@@ -1142,7 +1088,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c21 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1151,7 +1097,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   margin: 1.5em 0;
 }
 
-.c22 {
+.c16 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1195,69 +1141,39 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
 }
 
 .c10 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: var(--purple-medium);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c12 {
-  height: auto;
+  position: relative;
   cursor: pointer;
-  opacity: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
 }
 
-.c15 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
+.c10 svg {
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
-.c11:hover .c14 {
+.c10 .copy-text {
+  position: absolute;
+  top: calc(50% - 0.2em);
+  left: calc(100% + 0.25em);
+  color: var(--purple-medium);
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+}
+
+.c10:hover svg {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c17 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-  text-align: left;
-  color: var(--purple-medium);
-  margin-top: 0;
-  margin-left: 4px;
-  margin-top: 0;
-  margin-left: 4px;
-}
-
-.c11:hover .c16 {
+.c10:hover .copy-text {
   opacity: 1;
+  pointer-events: all;
 }
 
 .c9 {
@@ -1265,7 +1181,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  grid-gap: 0.25em;
+  gap: 0.25em;
   line-height: 1.5;
 }
 
@@ -1383,7 +1299,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   gap: var(--space-m);
 }
 
-.c18 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1401,7 +1317,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c18 > *:first-child {
+.c12 > *:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1411,26 +1327,26 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   flex-direction: column;
 }
 
-.c18 > *:last-child:not(.toggle-wrapper) {
+.c12 > *:last-child:not(.toggle-wrapper) {
   -webkit-flex: 0 0 65%;
   -ms-flex: 0 0 65%;
   flex: 0 0 65%;
 }
 
-.c18 span.info,
-.c18 span.error {
+.c12 span.info,
+.c12 span.error {
   font-size: 0.875rem;
 }
 
-.c18 span.error {
+.c12 span.error {
   color: var(--red-medium);
 }
 
-.c19 .toggle-wrapper {
+.c13 .toggle-wrapper {
   position: relative;
 }
 
-.c19 input {
+.c13 input {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1439,7 +1355,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   opacity: 0;
 }
 
-.c19 .toggle {
+.c13 .toggle {
   display: inline-block;
   position: relative;
   width: 2.25em;
@@ -1451,7 +1367,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   background-color: var(--gray-light) !important;
 }
 
-.c19 .toggle::after {
+.c13 .toggle::after {
   content: '';
   position: absolute;
   top: 0;
@@ -1462,12 +1378,12 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   background-color: var(--white);
 }
 
-.c19 input:checked ~ .toggle {
+.c13 input:checked ~ .toggle {
   border-color: var(--blue-dark);
   background-color: var(--blue-dark);
 }
 
-.c19 input:checked ~ .toggle::after {
+.c13 input:checked ~ .toggle::after {
   left: auto;
   right: 0;
 }
@@ -1515,7 +1431,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   flex: 1 0 auto;
 }
 
-.c20 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1530,7 +1446,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   justify-content: space-between;
 }
 
-.c20 span {
+.c14 span {
   color: var(--purple-medium);
   font-size: 1.75rem;
 }
@@ -1622,48 +1538,40 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
                 >
                   t1z225 ... 6z6wgi
                 </a>
-                <div
+                <span
                   class="c10"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c11 c12"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c11"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c13 c14 c15"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c16 c17"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -1689,48 +1597,40 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
                 >
                   t1z225 ... 6z6wgi
                 </a>
-                <div
+                <span
                   class="c10"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c11 c12"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c11"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c13 c14 c15"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c16 c17"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -1767,48 +1667,40 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
                 >
                   t1mbk7 ... icb2uq
                 </a>
-                <div
+                <span
                   class="c10"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c11 c12"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c11"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c13 c14 c15"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c16 c17"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -1846,7 +1738,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
         </div>
         <hr />
         <label
-          class="c18 c19"
+          class="c12 c13"
           disabled=""
         >
           <div>
@@ -1882,7 +1774,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
         </p>
         <hr />
         <div
-          class="c20"
+          class="c14"
         >
           <span>
             Total
@@ -1895,17 +1787,17 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
       </div>
     </div>
     <div
-      class="c21 c22"
+      class="c15 c16"
     >
       <button
-        class="c23"
+        class="c17"
         disabled=""
         type="button"
       >
         Back
       </button>
       <button
-        class="c24"
+        class="c18"
         disabled=""
         type="submit"
       >
@@ -1917,7 +1809,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
 `;
 
 exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
-.c19 {
+.c13 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1944,30 +1836,30 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   font-size: 1.25em;
 }
 
-.c19 svg path {
+.c13 svg path {
   stroke: var(--black);
 }
 
-.c19:hover {
+.c13:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c19:hover svg path {
+.c13:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c19:active {
+.c13:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c19:active svg path {
+.c13:active svg path {
   stroke: var(--white) !important;
 }
 
-.c20 {
+.c14 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1997,44 +1889,44 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   background: var(--green-medium);
 }
 
-.c20 svg path {
+.c14 svg path {
   stroke: var(--black);
 }
 
-.c20:hover {
+.c14:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c20:hover svg path {
+.c14:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c20:active {
+.c14:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c20:active svg path {
+.c14:active svg path {
   stroke: var(--white) !important;
 }
 
-.c20 svg path {
+.c14 svg path {
   stroke: var(--white);
 }
 
-.c20:hover {
+.c14:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c20:hover svg path {
+.c14:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c12 {
+.c10 {
   width: 24;
   height: 24;
 }
@@ -2084,7 +1976,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c17 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2093,7 +1985,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   margin: 1.5em 0;
 }
 
-.c18 {
+.c12 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2111,69 +2003,39 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
 }
 
 .c9 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: var(--purple-medium);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c11 {
-  height: auto;
+  position: relative;
   cursor: pointer;
-  opacity: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
 }
 
-.c14 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
+.c9 svg {
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
-.c10:hover .c13 {
+.c9 .copy-text {
+  position: absolute;
+  top: calc(50% - 0.2em);
+  left: calc(100% + 0.25em);
+  color: var(--purple-medium);
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+}
+
+.c9:hover svg {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c16 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-  text-align: left;
-  color: var(--purple-medium);
-  margin-top: 0;
-  margin-left: 4px;
-  margin-top: 0;
-  margin-left: 4px;
-}
-
-.c10:hover .c15 {
+.c9:hover .copy-text {
   opacity: 1;
+  pointer-events: all;
 }
 
 .c8 {
@@ -2181,7 +2043,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  grid-gap: 0.25em;
+  gap: 0.25em;
   line-height: 1.5;
 }
 
@@ -2426,48 +2288,40 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                 >
                   t1z225 ... 6z6wgi
                 </a>
-                <div
+                <span
                   class="c9"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c10 c11"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c10"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c12 c13 c14"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c15 c16"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -2493,48 +2347,40 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                 >
                   t1z225 ... 6z6wgi
                 </a>
-                <div
+                <span
                   class="c9"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c10 c11"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c10"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c12 c13 c14"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c15 c16"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -2571,48 +2417,40 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                 >
                   t1mbk7 ... icb2uq
                 </a>
-                <div
+                <span
                   class="c9"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c10 c11"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c10"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c12 c13 c14"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c15 c16"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -2651,16 +2489,16 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c17 c18"
+      class="c11 c12"
     >
       <button
-        class="c19"
+        class="c13"
         type="button"
       >
         Cancel
       </button>
       <button
-        class="c20"
+        class="c14"
         type="submit"
       >
         Review
@@ -2671,7 +2509,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
 `;
 
 exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
-.c19 {
+.c13 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2698,30 +2536,30 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   font-size: 1.25em;
 }
 
-.c19 svg path {
+.c13 svg path {
   stroke: var(--black);
 }
 
-.c19:hover {
+.c13:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c19:hover svg path {
+.c13:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c19:active {
+.c13:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c19:active svg path {
+.c13:active svg path {
   stroke: var(--white) !important;
 }
 
-.c20 {
+.c14 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2751,44 +2589,44 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   background: var(--green-medium);
 }
 
-.c20 svg path {
+.c14 svg path {
   stroke: var(--black);
 }
 
-.c20:hover {
+.c14:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c20:hover svg path {
+.c14:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c20:active {
+.c14:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c20:active svg path {
+.c14:active svg path {
   stroke: var(--white) !important;
 }
 
-.c20 svg path {
+.c14 svg path {
   stroke: var(--white);
 }
 
-.c20:hover {
+.c14:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c20:hover svg path {
+.c14:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c12 {
+.c10 {
   width: 24;
   height: 24;
 }
@@ -2838,7 +2676,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c17 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2847,7 +2685,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   margin: 1.5em 0;
 }
 
-.c18 {
+.c12 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2865,69 +2703,39 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
 }
 
 .c9 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: var(--purple-medium);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c11 {
-  height: auto;
+  position: relative;
   cursor: pointer;
-  opacity: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
 }
 
-.c14 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
+.c9 svg {
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
-.c10:hover .c13 {
+.c9 .copy-text {
+  position: absolute;
+  top: calc(50% - 0.2em);
+  left: calc(100% + 0.25em);
+  color: var(--purple-medium);
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+}
+
+.c9:hover svg {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c16 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-  text-align: left;
-  color: var(--purple-medium);
-  margin-top: 0;
-  margin-left: 4px;
-  margin-top: 0;
-  margin-left: 4px;
-}
-
-.c10:hover .c15 {
+.c9:hover .copy-text {
   opacity: 1;
+  pointer-events: all;
 }
 
 .c8 {
@@ -2935,7 +2743,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  grid-gap: 0.25em;
+  gap: 0.25em;
   line-height: 1.5;
 }
 
@@ -3180,48 +2988,40 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                 >
                   t1z225 ... 6z6wgi
                 </a>
-                <div
+                <span
                   class="c9"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c10 c11"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c10"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c12 c13 c14"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c15 c16"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -3247,48 +3047,40 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                 >
                   t1z225 ... 6z6wgi
                 </a>
-                <div
+                <span
                   class="c9"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c10 c11"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c10"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c12 c13 c14"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c15 c16"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -3325,48 +3117,40 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                 >
                   t1mbk7 ... icb2uq
                 </a>
-                <div
+                <span
                   class="c9"
                   color="var(--purple-medium)"
-                  display="flex"
+                  role="button"
                 >
-                  <button
-                    class="c10 c11"
-                    display="flex"
-                    role="button"
-                    type="button"
+                  <svg
+                    class="c10"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="c12 c13 c14"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                    <span
-                      class="c15 c16"
-                      color="var(--purple-medium)"
-                    >
-                      Copy
-                    </span>
-                  </button>
-                </div>
+                    <rect
+                      fill="#1A0066"
+                      height="12"
+                      width="12"
+                      x="8"
+                      y="4"
+                    />
+                    <rect
+                      fill="#E0D7FE"
+                      height="12"
+                      width="12"
+                      x="4"
+                      y="8"
+                    />
+                  </svg>
+                  <span
+                    class="copy-text"
+                  >
+                    Copy
+                  </span>
+                </span>
               </div>
             </div>
           </div>
@@ -3405,16 +3189,16 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c17 c18"
+      class="c11 c12"
     >
       <button
-        class="c19"
+        class="c13"
         type="button"
       >
         Cancel
       </button>
       <button
-        class="c20"
+        class="c14"
         type="submit"
       >
         Review
