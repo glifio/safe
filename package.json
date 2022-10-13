@@ -1,6 +1,6 @@
 {
   "name": "safe",
-  "version": "0.2.4-calibration.3",
+  "version": "0.2.4-calibration.4",
   "engines": {
     "node": ">=16.0.0"
   },
