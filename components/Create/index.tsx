@@ -90,7 +90,7 @@ export const Create = ({
         isVestValid &&
         isEpochValid &&
         isValueValid &&
-        // Manually check signer validity to prevent passing invalid addresses to createMultisig.
+        // Manually check signer validity to prevent passing invalid addresses to serializeParams.
         // This can happen due to multiple rerenders when using setIsValid from InputV2.Address.
         !acceptedSigners.some((signer) => !validateAddressString(signer)) &&
         // For the same reason, check whether value is a FileCoinNumber and not null
@@ -116,7 +116,6 @@ export const Create = ({
           value: value.toAttoFil(),
           method: 2,
           params,
-
           gasPremium: 0,
           gasFeeCap: 0,
           gasLimit: 0
