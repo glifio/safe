@@ -248,7 +248,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
 
 .c10 .copy-text {
   position: absolute;
-  top: calc(50% - 0.2em);
+  top: calc(50%);
   left: calc(100%);
   padding-left: 0.5em;
   color: var(--purple-medium);
@@ -1149,7 +1149,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
 
 .c10 .copy-text {
   position: absolute;
-  top: calc(50% - 0.2em);
+  top: calc(50%);
   left: calc(100%);
   padding-left: 0.5em;
   color: var(--purple-medium);
@@ -2008,7 +2008,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
 
 .c9 .copy-text {
   position: absolute;
-  top: calc(50% - 0.2em);
+  top: calc(50%);
   left: calc(100%);
   padding-left: 0.5em;
   color: var(--purple-medium);
@@ -2705,7 +2705,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
 
 .c9 .copy-text {
   position: absolute;
-  top: calc(50% - 0.2em);
+  top: calc(50%);
   left: calc(100%);
   padding-left: 0.5em;
   color: var(--purple-medium);

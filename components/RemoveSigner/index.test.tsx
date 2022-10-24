@@ -125,7 +125,7 @@ describe('RemoveSigner', () => {
     expect(pendingMsg.cid).toBeTruthy()
     expect(pendingMsg.from.robust).toBe(WALLET_ADDRESS)
     expect(pendingMsg.to.robust).toBe(MULTISIG_ACTOR_ADDRESS)
-    expect(pendingMsg.height).toBe('')
+    expect(pendingMsg.height).toBe(0)
     expect(typeof pendingMsg.params).toBe('string')
     expect(pendingMsg.params).toBeTruthy()
     expect(Number(pendingMsg.nonce)).toBeGreaterThanOrEqual(0)

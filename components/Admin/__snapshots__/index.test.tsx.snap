@@ -100,7 +100,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
 
 .c9 .copy-text {
   position: absolute;
-  top: calc(50% - 0.2em);
+  top: calc(50%);
   left: calc(100%);
   padding-left: 0.5em;
   color: var(--purple-medium);
