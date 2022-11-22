@@ -16,6 +16,7 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -91,6 +92,7 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -132,6 +134,49 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
 
 .c13 svg path {
   stroke: var(--gray-medium);
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
+}
+
+.c7 span.info,
+.c7 span.error {
+  font-size: 0.875rem;
+}
+
+.c7 span.error {
+  color: var(--red-medium);
 }
 
 .c1 {
@@ -266,25 +311,7 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
   gap: var(--space-m);
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  text-align: left;
-  pointer-events: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c7 > *:first-child {
+.c8 .suffix-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -292,21 +319,7 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c7 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
-}
-
-.c7 span.info,
-.c7 span.error {
-  font-size: 0.875rem;
-}
-
-.c7 span.error {
-  color: var(--red-medium);
+  gap: var(--space-m);
 }
 
 .c8 .button-wrapper {
@@ -543,25 +556,29 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder="f1..."
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="text"
+                  value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
+                />
+                
+              </div>
             </div>
           </div>
         </label>
@@ -577,29 +594,33 @@ exports[`Withdraw it allows a user to withdraw filecoin 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max="1"
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 3.25em;"
-                type="number"
-                value="0.01"
-              />
-              <span
-                class="unit"
+              <div
+                class="unit-wrapper"
               >
-                FIL
-              </span>
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max="1"
+                  min="0"
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 3.25em;"
+                  type="number"
+                  value="0.01"
+                />
+                <span
+                  class="unit"
+                >
+                  FIL
+                </span>
+              </div>
             </div>
           </div>
         </label>
@@ -691,6 +712,7 @@ exports[`Withdraw it renders correctly after entering the recipient 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -741,6 +763,7 @@ exports[`Withdraw it renders correctly after entering the recipient 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -799,6 +822,48 @@ exports[`Withdraw it renders correctly after entering the recipient 1`] = `
 
 .c11 svg path {
   stroke: var(--gray-medium);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c6 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
+}
+
+.c6 span.info,
+.c6 span.error {
+  font-size: 0.875rem;
+}
+
+.c6 span.error {
+  color: var(--red-medium);
 }
 
 .c1 {
@@ -907,24 +972,7 @@ exports[`Withdraw it renders correctly after entering the recipient 1`] = `
   gap: var(--space-m);
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  text-align: left;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c6 > *:first-child {
+.c7 .suffix-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -932,21 +980,7 @@ exports[`Withdraw it renders correctly after entering the recipient 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c6 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
-}
-
-.c6 span.info,
-.c6 span.error {
-  font-size: 0.875rem;
-}
-
-.c6 span.error {
-  color: var(--red-medium);
+  gap: var(--space-m);
 }
 
 .c7 .button-wrapper {
@@ -1112,24 +1146,28 @@ exports[`Withdraw it renders correctly after entering the recipient 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder="f1..."
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="text"
+                  value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
+                />
+                
+              </div>
             </div>
           </div>
         </label>
@@ -1144,28 +1182,32 @@ exports[`Withdraw it renders correctly after entering the recipient 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                max="1"
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 3.25em;"
-                type="number"
-                value=""
-              />
-              <span
-                class="unit"
+              <div
+                class="unit-wrapper"
               >
-                FIL
-              </span>
+                <input
+                  autocomplete="on"
+                  class=""
+                  max="1"
+                  min="0"
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 3.25em;"
+                  type="number"
+                  value=""
+                />
+                <span
+                  class="unit"
+                >
+                  FIL
+                </span>
+              </div>
             </div>
           </div>
         </label>
@@ -1208,6 +1250,7 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -1258,6 +1301,7 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -1316,6 +1360,48 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
 
 .c11 svg path {
   stroke: var(--gray-medium);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c6 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
+}
+
+.c6 span.info,
+.c6 span.error {
+  font-size: 0.875rem;
+}
+
+.c6 span.error {
+  color: var(--red-medium);
 }
 
 .c1 {
@@ -1424,24 +1510,7 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
   gap: var(--space-m);
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  text-align: left;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c6 > *:first-child {
+.c7 .suffix-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1449,21 +1518,7 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c6 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
-}
-
-.c6 span.info,
-.c6 span.error {
-  font-size: 0.875rem;
-}
-
-.c6 span.error {
-  color: var(--red-medium);
+  gap: var(--space-m);
 }
 
 .c7 .button-wrapper {
@@ -1629,24 +1684,28 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value=""
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder="f1..."
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="text"
+                  value=""
+                />
+                
+              </div>
             </div>
           </div>
         </label>
@@ -1661,28 +1720,32 @@ exports[`Withdraw it renders the initial state correctly 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                max="1"
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 3.25em;"
-                type="number"
-                value=""
-              />
-              <span
-                class="unit"
+              <div
+                class="unit-wrapper"
               >
-                FIL
-              </span>
+                <input
+                  autocomplete="on"
+                  class=""
+                  max="1"
+                  min="0"
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 3.25em;"
+                  type="number"
+                  value=""
+                />
+                <span
+                  class="unit"
+                >
+                  FIL
+                </span>
+              </div>
             </div>
           </div>
         </label>

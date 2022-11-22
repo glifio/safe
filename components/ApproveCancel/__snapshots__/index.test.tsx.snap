@@ -16,6 +16,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -74,6 +75,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -132,6 +134,49 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
 
 .c18 svg path {
   stroke: var(--gray-medium);
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
+}
+
+.c12 span.info,
+.c12 span.error {
+  font-size: 0.875rem;
+}
+
+.c12 span.error {
+  color: var(--red-medium);
 }
 
 .c11 {
@@ -395,49 +440,6 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
   gap: var(--space-m);
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  text-align: left;
-  pointer-events: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c12 > *:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c12 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
-}
-
-.c12 span.info,
-.c12 span.error {
-  font-size: 0.875rem;
-}
-
-.c12 span.error {
-  color: var(--red-medium);
-}
-
 .c13 .toggle-wrapper {
   position: relative;
 }
@@ -628,7 +630,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                  href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -641,9 +643,8 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                 >
                   <svg
                     class="c11"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -686,7 +687,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                  href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -699,9 +700,8 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                 >
                   <svg
                     class="c11"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -755,7 +755,7 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                  href="https://explorer-calibration.glif.link/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -768,9 +768,8 @@ exports[`ApproveCancel it allows a user to approve a proposal 1`] = `
                 >
                   <svg
                     class="c11"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -917,6 +916,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -975,6 +975,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -1033,6 +1034,49 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
 
 .c18 svg path {
   stroke: var(--gray-medium);
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
+}
+
+.c12 span.info,
+.c12 span.error {
+  font-size: 0.875rem;
+}
+
+.c12 span.error {
+  color: var(--red-medium);
 }
 
 .c11 {
@@ -1296,49 +1340,6 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
   gap: var(--space-m);
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  text-align: left;
-  pointer-events: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c12 > *:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c12 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
-}
-
-.c12 span.info,
-.c12 span.error {
-  font-size: 0.875rem;
-}
-
-.c12 span.error {
-  color: var(--red-medium);
-}
-
 .c13 .toggle-wrapper {
   position: relative;
 }
@@ -1529,7 +1530,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                  href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -1542,9 +1543,8 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
                 >
                   <svg
                     class="c11"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -1587,7 +1587,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                  href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -1600,9 +1600,8 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
                 >
                   <svg
                     class="c11"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -1656,7 +1655,7 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                  href="https://explorer-calibration.glif.link/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -1669,9 +1668,8 @@ exports[`ApproveCancel it allows a user to cancel a proposal 1`] = `
                 >
                   <svg
                     class="c11"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -1818,6 +1816,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -1868,6 +1867,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -2276,7 +2276,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                  href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -2289,9 +2289,8 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                 >
                   <svg
                     class="c10"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -2334,7 +2333,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                  href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -2347,9 +2346,8 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                 >
                   <svg
                     class="c10"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -2403,7 +2401,7 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                  href="https://explorer-calibration.glif.link/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -2416,9 +2414,8 @@ exports[`ApproveCancel it renders the initial approve state correctly 1`] = `
                 >
                   <svg
                     class="c10"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -2515,6 +2512,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -2565,6 +2563,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -2973,7 +2972,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                  href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -2986,9 +2985,8 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                 >
                   <svg
                     class="c10"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -3031,7 +3029,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                  href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -3044,9 +3042,8 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                 >
                   <svg
                     class="c10"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
@@ -3100,7 +3097,7 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                 color="var(--purple-medium)"
               >
                 <a
-                  href="https://explorer-calibration.glif.link/actor/?address=t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                  href="https://explorer-calibration.glif.link/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
@@ -3113,9 +3110,8 @@ exports[`ApproveCancel it renders the initial cancel state correctly 1`] = `
                 >
                   <svg
                     class="c10"
-                    height="16"
+                    height="1em"
                     viewBox="0 0 16 16"
-                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect

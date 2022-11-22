@@ -16,6 +16,7 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -66,6 +67,7 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -116,6 +118,31 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
 
 .c8:hover svg path {
   stroke: var(--green-medium);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 * {
+  text-align: center;
+}
+
+.c3 span.info,
+.c3 span.error {
+  font-size: 0.875rem;
+}
+
+.c3 span.error {
+  color: var(--red-medium);
 }
 
 .c1 {
@@ -196,29 +223,15 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
   gap: var(--space-m);
 }
 
-.c3 {
+.c4 .suffix-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: var(--space-m);
-  text-align: left;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c3 * {
-  text-align: center;
-}
-
-.c3 span.info,
-.c3 span.error {
-  font-size: 0.875rem;
-}
-
-.c3 span.error {
-  color: var(--red-medium);
+  gap: var(--space-m);
 }
 
 .c4 .button-wrapper {
@@ -296,24 +309,28 @@ exports[`Choose it renders correctly after entering a valid safe id 1`] = `
         </span>
         
         <div
-          class="button-wrapper"
+          class="suffix-wrapper"
         >
           <div
-            class="unit-wrapper"
+            class="button-wrapper"
           >
-            <input
-              autocomplete="on"
-              class=""
-              max=""
-              min=""
-              name="safe-id"
-              placeholder="f2..."
-              step="any"
-              style="padding-right: 1em;"
-              type="text"
-              value="f2yrhsjwuwypy4gsv2lcikphizkusqe2gp3pp4w5q"
-            />
-            
+            <div
+              class="unit-wrapper"
+            >
+              <input
+                autocomplete="on"
+                class=""
+                max=""
+                min=""
+                name="safe-id"
+                placeholder="f2..."
+                step="any"
+                style="padding-right: 1em;"
+                type="text"
+                value="f2yrhsjwuwypy4gsv2lcikphizkusqe2gp3pp4w5q"
+              />
+              
+            </div>
           </div>
         </div>
         
@@ -364,6 +381,7 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -414,6 +432,7 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -472,6 +491,31 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
 
 .c8 svg path {
   stroke: var(--gray-medium);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 * {
+  text-align: center;
+}
+
+.c3 span.info,
+.c3 span.error {
+  font-size: 0.875rem;
+}
+
+.c3 span.error {
+  color: var(--red-medium);
 }
 
 .c1 {
@@ -552,29 +596,15 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
   gap: var(--space-m);
 }
 
-.c3 {
+.c4 .suffix-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: var(--space-m);
-  text-align: left;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c3 * {
-  text-align: center;
-}
-
-.c3 span.info,
-.c3 span.error {
-  font-size: 0.875rem;
-}
-
-.c3 span.error {
-  color: var(--red-medium);
+  gap: var(--space-m);
 }
 
 .c4 .button-wrapper {
@@ -653,24 +683,28 @@ exports[`Choose it renders correctly after entering an invalid safe id 1`] = `
         </span>
         
         <div
-          class="button-wrapper"
+          class="suffix-wrapper"
         >
           <div
-            class="unit-wrapper"
+            class="button-wrapper"
           >
-            <input
-              autocomplete="on"
-              class="error"
-              max=""
-              min=""
-              name="safe-id"
-              placeholder="f2..."
-              step="any"
-              style="padding-right: 1em;"
-              type="text"
-              value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
-            />
-            
+            <div
+              class="unit-wrapper"
+            >
+              <input
+                autocomplete="on"
+                class="error"
+                max=""
+                min=""
+                name="safe-id"
+                placeholder="f2..."
+                step="any"
+                style="padding-right: 1em;"
+                type="text"
+                value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
+              />
+              
+            </div>
           </div>
         </div>
         <span
@@ -726,6 +760,7 @@ exports[`Choose it renders the initial state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -776,6 +811,7 @@ exports[`Choose it renders the initial state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -834,6 +870,31 @@ exports[`Choose it renders the initial state correctly 1`] = `
 
 .c8 svg path {
   stroke: var(--gray-medium);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 * {
+  text-align: center;
+}
+
+.c3 span.info,
+.c3 span.error {
+  font-size: 0.875rem;
+}
+
+.c3 span.error {
+  color: var(--red-medium);
 }
 
 .c1 {
@@ -914,29 +975,15 @@ exports[`Choose it renders the initial state correctly 1`] = `
   gap: var(--space-m);
 }
 
-.c3 {
+.c4 .suffix-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: var(--space-m);
-  text-align: left;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c3 * {
-  text-align: center;
-}
-
-.c3 span.info,
-.c3 span.error {
-  font-size: 0.875rem;
-}
-
-.c3 span.error {
-  color: var(--red-medium);
+  gap: var(--space-m);
 }
 
 .c4 .button-wrapper {
@@ -1014,24 +1061,28 @@ exports[`Choose it renders the initial state correctly 1`] = `
         </span>
         
         <div
-          class="button-wrapper"
+          class="suffix-wrapper"
         >
           <div
-            class="unit-wrapper"
+            class="button-wrapper"
           >
-            <input
-              autocomplete="on"
-              class=""
-              max=""
-              min=""
-              name="safe-id"
-              placeholder="f2..."
-              step="any"
-              style="padding-right: 1em;"
-              type="text"
-              value=""
-            />
-            
+            <div
+              class="unit-wrapper"
+            >
+              <input
+                autocomplete="on"
+                class=""
+                max=""
+                min=""
+                name="safe-id"
+                placeholder="f2..."
+                step="any"
+                style="padding-right: 1em;"
+                type="text"
+                value=""
+              />
+              
+            </div>
           </div>
         </div>
         

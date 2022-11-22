@@ -16,6 +16,7 @@ exports[`ChangeApprovals it allows a user to change the approvals threshold 1`] 
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -91,6 +92,7 @@ exports[`ChangeApprovals it allows a user to change the approvals threshold 1`] 
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -132,6 +134,49 @@ exports[`ChangeApprovals it allows a user to change the approvals threshold 1`] 
 
 .c13 svg path {
   stroke: var(--gray-medium);
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
+}
+
+.c7 span.info,
+.c7 span.error {
+  font-size: 0.875rem;
+}
+
+.c7 span.error {
+  color: var(--red-medium);
 }
 
 .c1 {
@@ -264,49 +309,6 @@ exports[`ChangeApprovals it allows a user to change the approvals threshold 1`] 
   -ms-flex-direction: column;
   flex-direction: column;
   gap: var(--space-m);
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  text-align: left;
-  pointer-events: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c7 > *:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
-}
-
-.c7 span.info,
-.c7 span.error {
-  font-size: 0.875rem;
-}
-
-.c7 span.error {
-  color: var(--red-medium);
 }
 
 .c8 .select-wrapper {

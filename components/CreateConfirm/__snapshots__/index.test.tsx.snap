@@ -16,6 +16,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -181,7 +182,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
     </p>
     <p>
       <a
-        href="https://explorer-calibration.glif.link/actor/?address=t26kvyvsi5uyf2hykt4l5aigxwcmwgfsr47zul2ri"
+        href="https://explorer-calibration.glif.link/address/t26kvyvsi5uyf2hykt4l5aigxwcmwgfsr47zul2ri"
         rel="noreferrer noopener"
         target="_blank"
       >
@@ -195,13 +196,12 @@ exports[`confirmation of newly created multisig it displays the multisig address
     <svg
       class="c4 has-stroke"
       fill="none"
-      height="20"
+      height="1em"
       stroke="var(--yellow-dark)"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="2"
       viewBox="0 0 22 20"
-      width="22"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -311,9 +311,8 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
     <svg
       class="c3 has-fill"
       fill="var(--yellow-dark)"
-      height="24"
+      height="1.5em"
       viewBox="0 0 24 24"
-      width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <mask
@@ -342,7 +341,7 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
     </p>
     <p>
       <a
-        href="https://explorer-calibration.glif.link/message?cid=bafy2bzaced3ub5g4v35tj7n74zsog3dmcum4tk4qmchbhjx7q747jghal3l4g"
+        href="https://explorer-calibration.glif.link/tx/bafy2bzaced3ub5g4v35tj7n74zsog3dmcum4tk4qmchbhjx7q747jghal3l4g"
         rel="noreferrer noopener"
         target="_blank"
       >

@@ -16,6 +16,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -91,6 +92,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -132,6 +134,49 @@ exports[`Create it allows a user to create a safe 1`] = `
 
 .c15 svg path {
   stroke: var(--gray-medium);
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
+}
+
+.c7 span.info,
+.c7 span.error {
+  font-size: 0.875rem;
+}
+
+.c7 span.error {
+  color: var(--red-medium);
 }
 
 .c9 {
@@ -270,25 +315,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   gap: var(--space-m);
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  text-align: left;
-  pointer-events: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c7 > *:first-child {
+.c8 .suffix-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -296,21 +323,7 @@ exports[`Create it allows a user to create a safe 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c7 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
-}
-
-.c7 span.info,
-.c7 span.error {
-  font-size: 0.875rem;
-}
-
-.c7 span.error {
-  color: var(--red-medium);
+  gap: var(--space-m);
 }
 
 .c8 .button-wrapper {
@@ -563,25 +576,29 @@ exports[`Create it allows a user to create a safe 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder="f1..."
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="text"
+                  value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                />
+                
+              </div>
             </div>
           </div>
         </label>
@@ -597,40 +614,43 @@ exports[`Create it allows a user to create a safe 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder="f1..."
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="text"
+                  value="t1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza"
+                />
+                
+              </div>
+              <svg
+                class="c9 has-fill"
+                clip-rule="evenodd"
+                fill="var(--purple-medium)"
+                fill-rule="evenodd"
+                height="1em"
+                viewBox="4 4 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+                />
+              </svg>
             </div>
-            <svg
-              class="c9 has-fill"
-              clip-rule="evenodd"
-              fill="var(--purple-medium)"
-              fill-rule="evenodd"
-              height="16"
-              viewBox="4 4 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-              />
-            </svg>
           </div>
         </label>
         <label
@@ -643,25 +663,29 @@ exports[`Create it allows a user to create a safe 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max=""
-                min=""
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 1em;"
-                type="button"
-                value="Add Signer"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="button"
+                  value="Add Signer"
+                />
+                
+              </div>
             </div>
           </div>
         </label>
@@ -714,29 +738,33 @@ exports[`Create it allows a user to create a safe 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max="1"
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 3.25em;"
-                type="number"
-                value="0.01"
-              />
-              <span
-                class="unit"
+              <div
+                class="unit-wrapper"
               >
-                FIL
-              </span>
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max="1"
+                  min="0"
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 3.25em;"
+                  type="number"
+                  value="0.01"
+                />
+                <span
+                  class="unit"
+                >
+                  FIL
+                </span>
+              </div>
             </div>
           </div>
         </label>
@@ -752,25 +780,29 @@ exports[`Create it allows a user to create a safe 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max=""
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 1em;"
-                type="number"
-                value="0"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max=""
+                  min="0"
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="number"
+                  value="0"
+                />
+                
+              </div>
             </div>
           </div>
         </label>
@@ -862,6 +894,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -912,6 +945,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.3;
   cursor: pointer;
   gap: 0.75rem;
   padding: 0.5em 0.75em;
@@ -970,6 +1004,91 @@ exports[`Create it renders the initial state correctly 1`] = `
 
 .c14 svg path {
   stroke: var(--gray-medium);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c6 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
+}
+
+.c6 span.info,
+.c6 span.error {
+  font-size: 0.875rem;
+}
+
+.c6 span.error {
+  color: var(--red-medium);
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
+}
+
+.c8 span.info,
+.c8 span.error {
+  font-size: 0.875rem;
+}
+
+.c8 span.error {
+  color: var(--red-medium);
 }
 
 .c1 {
@@ -1078,25 +1197,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   gap: var(--space-m);
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  text-align: left;
-  pointer-events: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c6 > *:first-child {
+.c7 .suffix-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1104,63 +1205,7 @@ exports[`Create it renders the initial state correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c6 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
-}
-
-.c6 span.info,
-.c6 span.error {
-  font-size: 0.875rem;
-}
-
-.c6 span.error {
-  color: var(--red-medium);
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   gap: var(--space-m);
-  text-align: left;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c8 > *:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c8 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
-}
-
-.c8 span.info,
-.c8 span.error {
-  font-size: 0.875rem;
-}
-
-.c8 span.error {
-  color: var(--red-medium);
 }
 
 .c7 .button-wrapper {
@@ -1218,6 +1263,17 @@ exports[`Create it renders the initial state correctly 1`] = `
   transform: translateY(-50%);
   color: var(--purple-medium);
   color: var(--gray-dark) !important;
+}
+
+.c9 .suffix-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
 }
 
 .c9 .button-wrapper {
@@ -1399,25 +1455,29 @@ exports[`Create it renders the initial state correctly 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder="f1..."
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="text"
+                  value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                />
+                
+              </div>
             </div>
           </div>
         </label>
@@ -1430,24 +1490,28 @@ exports[`Create it renders the initial state correctly 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                max=""
-                min=""
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 1em;"
-                type="button"
-                value="Add Signer"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="button"
+                  value="Add Signer"
+                />
+                
+              </div>
             </div>
           </div>
         </label>
@@ -1491,28 +1555,32 @@ exports[`Create it renders the initial state correctly 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                max="1"
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 3.25em;"
-                type="number"
-                value=""
-              />
-              <span
-                class="unit"
+              <div
+                class="unit-wrapper"
               >
-                FIL
-              </span>
+                <input
+                  autocomplete="on"
+                  class=""
+                  max="1"
+                  min="0"
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 3.25em;"
+                  type="number"
+                  value=""
+                />
+                <span
+                  class="unit"
+                >
+                  FIL
+                </span>
+              </div>
             </div>
           </div>
         </label>
@@ -1527,24 +1595,28 @@ exports[`Create it renders the initial state correctly 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                max=""
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 1em;"
-                type="number"
-                value="0"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  max=""
+                  min="0"
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="number"
+                  value="0"
+                />
+                
+              </div>
             </div>
           </div>
         </label>
