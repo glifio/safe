@@ -66,14 +66,14 @@ const SignerRow = ({
             aria-label='edit-signer'
             onClick={() => onChange(signer.robust || signer.id)}
           >
-            <IconEdit color={Colors.GRAY_DARK} />
+            <IconEdit height='1em' color={Colors.GRAY_DARK} />
           </span>
           <span
             role='button'
             aria-label='remove-signer'
             onClick={() => onRemove(signer.robust || signer.id)}
           >
-            <IconClose color={Colors.GRAY_DARK} />
+            <IconClose height='1em' color={Colors.GRAY_DARK} />
           </span>
         </div>
       </ButtonsTD>
