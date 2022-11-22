@@ -103,7 +103,7 @@ export const CreateConfirm = () => {
             to view the transaction in the Glif Explorer:
           </p>
           <p>
-            <SmartLink href={`${explorerUrl}/message`} params={{ cid }}>
+            <SmartLink href={`${explorerUrl}/tx/${cid}`}>
               {cid}
             </SmartLink>
           </p>
@@ -121,7 +121,7 @@ export const CreateConfirm = () => {
           <hr />
           <p>Your new Safe address is:</p>
           <p>
-            <SmartLink href={`${explorerUrl}/actor/?address=${Address}`}>
+            <SmartLink href={`${explorerUrl}/address/${Address}`}>
               {Address}
             </SmartLink>
           </p>
@@ -163,7 +163,7 @@ export const CreateConfirm = () => {
           transaction CID below to follow its progress in the Glif Explorer:
         </p>
         <p>
-          <SmartLink href={`${explorerUrl}/message`} params={{ cid }}>
+          <SmartLink href={`${explorerUrl}/tx/${cid}`}>
             {cid}
           </SmartLink>
         </p>
