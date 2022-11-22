@@ -103,9 +103,7 @@ export const CreateConfirm = () => {
             to view the transaction in the Glif Explorer:
           </p>
           <p>
-            <SmartLink href={`${explorerUrl}/tx/${cid}`}>
-              {cid}
-            </SmartLink>
+            <SmartLink href={`${explorerUrl}/tx/${cid}`}>{cid}</SmartLink>
           </p>
         </ErrorBox>
       </Dialog>
@@ -163,9 +161,7 @@ export const CreateConfirm = () => {
           transaction CID below to follow its progress in the Glif Explorer:
         </p>
         <p>
-          <SmartLink href={`${explorerUrl}/tx/${cid}`}>
-            {cid}
-          </SmartLink>
+          <SmartLink href={`${explorerUrl}/tx/${cid}`}>{cid}</SmartLink>
         </p>
         <p>
           Your new Safe address will show here once the transaction confirms.

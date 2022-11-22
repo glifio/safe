@@ -21,7 +21,9 @@ const MessageHistory = () => {
   ) : (
     <MessageHistoryTable
       address={Address}
-      txIDHref={(txID: string) => appendQueryParams(PAGE.MSIG_HISTORY, { txID })}
+      txIDHref={(txID: string) =>
+        appendQueryParams(PAGE.MSIG_HISTORY, { txID })
+      }
       warnMissingData={networkName === Network.MAINNET}
     />
   )
