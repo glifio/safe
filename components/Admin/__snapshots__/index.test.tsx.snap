@@ -1,62 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Admin page it renders the required approvals and the signers 1`] = `
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c5 svg path {
-  stroke: var(--black);
-}
-
-.c5:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c5:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c5:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c5:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c5:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
 .c10 {
   vertical-align: middle;
 }
@@ -223,6 +167,63 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
   color: var(--purple-medium);
 }
 
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c5 svg path {
+  stroke: var(--black);
+}
+
+.c5:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c5:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c5:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c5:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c5:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 .c11 {
   color: var(--gray-medium);
   text-align: right;
@@ -350,7 +351,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       color="var(--purple-medium)"
                     >
                       <a
-                        href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                        href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                         rel="noreferrer noopener"
                         target="_blank"
                       >
@@ -363,9 +364,8 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       >
                         <svg
                           class="c10"
-                          height="16"
+                          height="1em"
                           viewBox="0 0 16 16"
-                          width="16"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <rect
@@ -404,11 +404,9 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                     <svg
                       class="c10 has-stroke"
                       fill="none"
-                      height="20"
                       stroke="var(--gray-dark)"
                       stroke-width="2"
                       viewBox="2 2 20 20"
-                      width="20"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -425,9 +423,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       clip-rule="evenodd"
                       fill="var(--gray-dark)"
                       fill-rule="evenodd"
-                      height="16"
                       viewBox="4 4 16 16"
-                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -451,7 +447,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       color="var(--purple-medium)"
                     >
                       <a
-                        href="https://explorer-calibration.glif.link/actor/?address=t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                        href="https://explorer-calibration.glif.link/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
                         rel="noreferrer noopener"
                         target="_blank"
                       >
@@ -464,9 +460,8 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       >
                         <svg
                           class="c10"
-                          height="16"
+                          height="1em"
                           viewBox="0 0 16 16"
-                          width="16"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <rect
@@ -505,11 +500,9 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                     <svg
                       class="c10 has-stroke"
                       fill="none"
-                      height="20"
                       stroke="var(--gray-dark)"
                       stroke-width="2"
                       viewBox="2 2 20 20"
-                      width="20"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -526,9 +519,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       clip-rule="evenodd"
                       fill="var(--gray-dark)"
                       fill-rule="evenodd"
-                      height="16"
                       viewBox="4 4 16 16"
-                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
