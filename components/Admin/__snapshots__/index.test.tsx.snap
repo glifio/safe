@@ -404,6 +404,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                     <svg
                       class="c10 has-stroke"
                       fill="none"
+                      height="1em"
                       stroke="var(--gray-dark)"
                       stroke-width="2"
                       viewBox="2 2 20 20"
@@ -423,6 +424,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       clip-rule="evenodd"
                       fill="var(--gray-dark)"
                       fill-rule="evenodd"
+                      height="1em"
                       viewBox="4 4 16 16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -500,6 +502,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                     <svg
                       class="c10 has-stroke"
                       fill="none"
+                      height="1em"
                       stroke="var(--gray-dark)"
                       stroke-width="2"
                       viewBox="2 2 20 20"
@@ -519,6 +522,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       clip-rule="evenodd"
                       fill="var(--gray-dark)"
                       fill-rule="evenodd"
+                      height="1em"
                       viewBox="4 4 16 16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
