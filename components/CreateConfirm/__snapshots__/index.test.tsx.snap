@@ -1,80 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`confirmation of newly created multisig it displays the multisig address after the message is confirmed 1`] = `
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  color: var(--white);
-  border-color: var(--green-medium);
-  background: var(--green-medium);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c7 svg path {
-  stroke: var(--black);
-}
-
-.c7:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c7:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c7:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c7:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c7 svg path {
-  stroke: var(--white);
-}
-
-.c7:hover {
-  color: var(--green-medium);
-  border-color: var(--green-medium);
-  background: var(--white);
-}
-
-.c7:hover svg path {
-  stroke: var(--green-medium);
-}
-
-.c7:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
 .c4 {
   vertical-align: middle;
 }
@@ -166,6 +92,81 @@ exports[`confirmation of newly created multisig it displays the multisig address
   gap: var(--space-m);
 }
 
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c7 svg path {
+  stroke: var(--black);
+}
+
+.c7:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c7:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c7:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c7:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c7 svg path {
+  stroke: var(--white);
+}
+
+.c7:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c7:hover svg path {
+  stroke: var(--green-medium);
+}
+
+.c7:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 <div
   class="c0"
 >
@@ -195,13 +196,12 @@ exports[`confirmation of newly created multisig it displays the multisig address
     <svg
       class="c4 has-stroke"
       fill="none"
-      height="20"
+      height="1em"
       stroke="var(--yellow-dark)"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="2"
       viewBox="0 0 22 20"
-      width="22"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -311,9 +311,8 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
     <svg
       class="c3 has-fill"
       fill="var(--yellow-dark)"
-      height="24"
+      height="2em"
       viewBox="0 0 24 24"
-      width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <mask
