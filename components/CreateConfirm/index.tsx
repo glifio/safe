@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
   getQueryParam,
@@ -30,11 +30,21 @@ export const CreateConfirm = () => {
   const [creationError, setCreationError] = useState<boolean>(false)
 
   // Get the message receipt
-  const { data: messageReceiptQuery, error: messageReceiptError } =
+  const { data: messageReceiptQuery, error: _messageReceiptError } =
     useMessageReceiptQuery({
       variables: { cid },
       pollInterval: 5000
     })
+
+  const messageReceiptError = useMemo(() => {
+    if (
+      _messageReceiptError &&
+      _messageReceiptError.message.includes("didn't find msg")
+    ) {
+      return null
+    }
+    return _messageReceiptError
+  }, [_messageReceiptError])
 
   // Decode the receipt after receiving the message
   useEffect(() => {
@@ -157,7 +167,7 @@ export const CreateConfirm = () => {
       <ShadowBox>
         <h2>Safe creation in progress</h2>
         <hr />
-        <IconPending />
+        <IconPending height='2em' />
         <p>
           We&apos;re waiting for your transaction to confirm. Click on the
           transaction CID below to follow its progress in the Glif Explorer:
