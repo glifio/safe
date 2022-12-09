@@ -15,13 +15,15 @@ const MessageHistory = () => {
   const { Address } = useMsig()
   const router = useRouter()
   const { networkName } = useEnvironment()
-  const cid = getQueryParam.string(router, 'cid')
-  return cid ? (
-    <MessageDetail txID={cid} />
+  const txID = getQueryParam.string(router, 'txID')
+  return txID ? (
+    <MessageDetail txID={txID} />
   ) : (
     <MessageHistoryTable
       address={Address}
-      txIDHref={(cid: string) => appendQueryParams(PAGE.MSIG_HISTORY, { cid })}
+      txIDHref={(txID: string) =>
+        appendQueryParams(PAGE.MSIG_HISTORY, { txID })
+      }
       warnMissingData={networkName === Network.MAINNET}
     />
   )

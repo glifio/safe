@@ -182,7 +182,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
     </p>
     <p>
       <a
-        href="https://explorer-calibration.glif.link/actor/?address=t26kvyvsi5uyf2hykt4l5aigxwcmwgfsr47zul2ri"
+        href="https://explorer-calibration.glif.link/address/t26kvyvsi5uyf2hykt4l5aigxwcmwgfsr47zul2ri"
         rel="noreferrer noopener"
         target="_blank"
       >
@@ -341,7 +341,7 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
     </p>
     <p>
       <a
-        href="https://explorer-calibration.glif.link/message?cid=bafy2bzaced3ub5g4v35tj7n74zsog3dmcum4tk4qmchbhjx7q747jghal3l4g"
+        href="https://explorer-calibration.glif.link/tx/bafy2bzaced3ub5g4v35tj7n74zsog3dmcum4tk4qmchbhjx7q747jghal3l4g"
         rel="noreferrer noopener"
         target="_blank"
       >
