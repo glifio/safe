@@ -311,7 +311,7 @@ exports[`confirmation of newly created multisig it renders message pending UI wh
     <svg
       class="c3 has-fill"
       fill="var(--yellow-dark)"
-      height="1.5em"
+      height="2em"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
