@@ -1,6 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Msig Home it renders the vesting balance, available balance, and msig address 1`] = `
+.c0 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c0 > *:first-child {
+  margin-top: 0;
+}
+
+.c0 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c0 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c0 > h2:first-child {
+  margin: 0;
+}
+
+.c0 header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c1 {
+  background-color: var(--blue-gray);
+}
+
+.c1 hr {
+  border-color: var(--gray-medium);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  margin: 1.5em 0;
+}
+
+.c4 {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .c5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -74,62 +130,6 @@ exports[`Msig Home it renders the vesting balance, available balance, and msig a
 .c5:hover {
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c0 {
-  padding: 1.5em;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  word-break: break-word;
-}
-
-.c0 > *:first-child {
-  margin-top: 0;
-}
-
-.c0 > *:last-child {
-  margin-bottom: 0;
-}
-
-.c0 > svg:first-child {
-  display: block;
-  margin: 0 auto 1em;
-}
-
-.c0 > h2:first-child {
-  margin: 0;
-}
-
-.c0 header:first-child {
-  margin: -1.5em -1.5em 1.5em -1.5em;
-  padding: 1.5em;
-  background-color: var(--purple-medium);
-  color: var(--white);
-}
-
-.c1 {
-  background-color: var(--blue-gray);
-}
-
-.c1 hr {
-  border-color: var(--gray-medium);
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  margin: 1.5em 0;
-}
-
-.c4 {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c2 {

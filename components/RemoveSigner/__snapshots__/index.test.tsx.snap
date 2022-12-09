@@ -1,141 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RemoveSigner it allows a user to remove a signer address 1`] = `
-.c15 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  line-height: 1.3;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
-}
-
-.c15 svg path {
-  stroke: var(--black);
-}
-
-.c15:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c15:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c15:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c15:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c15 svg path {
-  stroke: var(--gray-medium);
-}
-
-.c16 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  line-height: 1.3;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  color: var(--white);
-  border-color: var(--green-medium);
-  background: var(--green-medium);
-  pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
-}
-
-.c16 svg path {
-  stroke: var(--black);
-}
-
-.c16:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c16:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c16:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c16:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c16 svg path {
-  stroke: var(--white);
-}
-
-.c16:hover {
-  color: var(--green-medium);
-  border-color: var(--green-medium);
-  background: var(--white);
-}
-
-.c16:hover svg path {
-  stroke: var(--green-medium);
-}
-
-.c16 svg path {
-  stroke: var(--gray-medium);
-}
-
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -351,6 +216,141 @@ exports[`RemoveSigner it allows a user to remove a signer address 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   gap: var(--space-m);
+}
+
+.c15 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c15 svg path {
+  stroke: var(--black);
+}
+
+.c15:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c15:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c15:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c15:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c15 svg path {
+  stroke: var(--gray-medium);
+}
+
+.c16 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c16 svg path {
+  stroke: var(--black);
+}
+
+.c16:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c16:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c16:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c16:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c16 svg path {
+  stroke: var(--white);
+}
+
+.c16:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c16:hover svg path {
+  stroke: var(--green-medium);
+}
+
+.c16 svg path {
+  stroke: var(--gray-medium);
 }
 
 .c10 .info-wrapper {
@@ -669,125 +669,6 @@ exports[`RemoveSigner it allows a user to remove a signer address 1`] = `
 `;
 
 exports[`RemoveSigner it renders the initial state correctly 1`] = `
-.c12 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  line-height: 1.3;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-}
-
-.c12 svg path {
-  stroke: var(--black);
-}
-
-.c12:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c12:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c12:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c12:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c13 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  line-height: 1.3;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  color: var(--white);
-  border-color: var(--green-medium);
-  background: var(--green-medium);
-}
-
-.c13 svg path {
-  stroke: var(--black);
-}
-
-.c13:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c13:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c13:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c13:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c13 svg path {
-  stroke: var(--white);
-}
-
-.c13:hover {
-  color: var(--green-medium);
-  border-color: var(--green-medium);
-  background: var(--white);
-}
-
-.c13:hover svg path {
-  stroke: var(--green-medium);
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -977,6 +858,125 @@ exports[`RemoveSigner it renders the initial state correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   gap: var(--space-m);
+}
+
+.c12 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+}
+
+.c12 svg path {
+  stroke: var(--black);
+}
+
+.c12:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c12:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c12:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c12:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c13 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+}
+
+.c13 svg path {
+  stroke: var(--black);
+}
+
+.c13:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c13:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c13:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c13:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c13 svg path {
+  stroke: var(--white);
+}
+
+.c13:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c13:hover svg path {
+  stroke: var(--green-medium);
 }
 
 .c7 .select-wrapper {
