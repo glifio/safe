@@ -1,6 +1,6 @@
 {
   "name": "safe",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "engines": {
     "node": ">=16.0.0"
   },
