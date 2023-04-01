@@ -13,12 +13,22 @@ import {
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
-  useLogger
+  useLogger,
+  isAddrEqual
 } from '@glif/react-components'
 
 import { useMsig } from '../../MsigProvider'
 import { useWasm } from '../../lib/WasmLoader'
 import { PAGE } from '../../constants'
+
+const contractsToDisableWithdrawal = [
+  'f2097390',
+  'f2s4fled7kstd343gbzob4harevekx2q4naeurfti',
+  '0x690908f7fa93afC040CFbD9fE1dDd2C2668Aa0e0',
+  'f2097395',
+  'f23wp4q3xdnopf6xbydjkinsqej423ncyijsykhsi',
+  '0x0ec46ad7aa8600118da4bd64239c3dc364fd0274'
+]
 
 export const Withdraw = ({
   walletProviderOpts,
@@ -42,6 +52,12 @@ export const Withdraw = ({
 
   // Create message from input
   const message = useMemo<Message | null>(() => {
+    if (
+      contractsToDisableWithdrawal.some((addr) => isAddrEqual(toAddress, addr))
+    ) {
+      return null
+    }
+
     try {
       return isValueValid &&
         // Manually check address validity to prevent passing invalid addresses to serializeParams.
