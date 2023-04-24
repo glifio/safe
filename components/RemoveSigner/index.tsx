@@ -12,7 +12,6 @@ import {
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
-  isAddrEqual,
   useLogger
 } from '@glif/react-components'
 
@@ -52,11 +51,8 @@ export const RemoveSigner = ({
 
   // Get signer addresses without current wallet owner
   const signers = useMemo(
-    () =>
-      Signers.filter((signer) => !isAddrEqual(wallet, signer)).map(
-        (signer) => signer.robust || signer.id
-      ),
-    [Signers, wallet]
+    () => Signers.map((signer) => signer.robust || signer.id),
+    [Signers]
   )
 
   // Create message from input
