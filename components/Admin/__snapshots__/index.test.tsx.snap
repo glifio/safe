@@ -351,7 +351,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       color="var(--purple-medium)"
                     >
                       <a
-                        href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                        href="https://explorer.glif.io/calibration/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                         rel="noreferrer noopener"
                         target="_blank"
                       >
@@ -449,7 +449,7 @@ exports[`Admin page it renders the required approvals and the signers 1`] = `
                       color="var(--purple-medium)"
                     >
                       <a
-                        href="https://explorer-calibration.glif.link/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                        href="https://explorer.glif.io/calibration/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
                         rel="noreferrer noopener"
                         target="_blank"
                       >
