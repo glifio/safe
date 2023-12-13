@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { useMemo } from 'react'
 import {
   AppTile,
@@ -10,8 +11,20 @@ import {
   SmartLink,
   FullWidthButtons,
   useEnvironment,
-  Network
+  Network,
+  PrimaryBox,
+  IconWarn,
+  Colors
 } from '@glif/react-components'
+
+const DeprecationBox = styled(PrimaryBox)`
+  font-size: 1.25em;
+  a:hover {
+    color: var(--purple-light);
+    text-decoration: underline;
+    text-decoration-color: var(--purple-light);
+  }
+`
 
 import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../constants'
 
@@ -54,6 +67,15 @@ export default function Landing() {
                 Ledger Device
               </ButtonV2Link>
             </FullWidthButtons>
+
+            <DeprecationBox>
+              <IconWarn height='1.25em' color={Colors.WHITE} />
+              The GLIF Safe will be replaced by the multisig on{' '}
+              <SmartLink href='https://glif.io/multisig'>
+                glif.io/multisig
+              </SmartLink>{' '}
+              in January of 2024
+            </DeprecationBox>
 
             <p>
               Want to load this app directly from IPFS or Filecoin?
