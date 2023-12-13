@@ -70,11 +70,11 @@ export default function Landing() {
 
             <DeprecationBox>
               <IconWarn height='1.25em' color={Colors.WHITE} />
-              The GLIF Safe will be replaced by the multisig on{' '}
+              The GLIF Safe will redirect you to{' '}
               <SmartLink href='https://glif.io/multisig'>
-                glif.io/multisig
+                https://glif.io/multisig
               </SmartLink>{' '}
-              in January of 2024
+              in January 2024
             </DeprecationBox>
 
             <p>
